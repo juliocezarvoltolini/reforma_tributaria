@@ -1,0 +1,93 @@
+{
+  "equivalencias": [
+    {
+      "antigo": [
+        "PIS",
+        "PIS/Pasep",
+        "Contribuição para o PIS/Pasep"
+      ],
+      "esfera": "federal",
+      "fundamento": null,
+      "fundamento_ingerido": false,
+      "natureza": "substituicao",
+      "novo": "CBS",
+      "pendente_fundamentacao": true
+    },
+    {
+      "antigo": [
+        "COFINS",
+        "Cofins",
+        "Contribuição para o Financiamento da Seguridade Social"
+      ],
+      "esfera": "federal",
+      "fundamento": null,
+      "fundamento_ingerido": false,
+      "natureza": "substituicao",
+      "novo": "CBS",
+      "pendente_fundamentacao": true
+    },
+    {
+      "antigo": [
+        "ICMS",
+        "Imposto sobre Circulação de Mercadorias e Serviços"
+      ],
+      "esfera": "estadual",
+      "fundamento": null,
+      "fundamento_ingerido": false,
+      "natureza": "substituicao",
+      "novo": "IBS",
+      "pendente_fundamentacao": true
+    },
+    {
+      "antigo": [
+        "ISS",
+        "ISSQN",
+        "Imposto Sobre Serviços"
+      ],
+      "esfera": "municipal",
+      "fundamento": null,
+      "fundamento_ingerido": false,
+      "natureza": "substituicao",
+      "novo": "IBS",
+      "pendente_fundamentacao": true
+    },
+    {
+      "antigo": [
+        "IPI",
+        "Imposto sobre Produtos Industrializados"
+      ],
+      "esfera": "federal",
+      "fundamento": null,
+      "fundamento_ingerido": false,
+      "natureza": "substituicao_parcial",
+      "novo": "IS",
+      "observacao": "Relação NÃO é de substituição simples. O tratamento do IPI e o alcance do Imposto Seletivo precisam ser lidos diretamente nos dispositivos após a ingestão. Não usar esta linha como afirmação.",
+      "pendente_fundamentacao": true
+    }
+  ],
+  "siglas": {
+    "CBS": "Contribuição sobre Bens e Serviços",
+    "CGIBS": "Comitê Gestor do IBS",
+    "IBS": "Imposto sobre Bens e Serviços",
+    "IS": "Imposto Seletivo",
+    "RFB": "Secretaria Especial da Receita Federal do Brasil"
+  },
+  "termos_de_risco": [
+    {
+      "risco": "sentido técnico definido em lei; não usar o sentido comum",
+      "termo": "operação"
+    },
+    {
+      "risco": "definição legal própria, distinta do uso comercial corrente",
+      "termo": "fornecedor"
+    },
+    {
+      "risco": "definição legal própria; não confundir com a do CDC",
+      "termo": "consumidor final"
+    },
+    {
+      "risco": "conceito específico do novo regime, com procedimento próprio de fixação",
+      "termo": "alíquota de referência"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+# Vocabulário controlado — curado à mão, camada 2.
+#
+# Função: as perguntas reais chegam no vocabulário ANTIGO ("quanto de PIS
+# incide sobre..."). Sem este mapa, a busca não encontra o dispositivo novo e a
+# IA responde com o conhecimento próprio — exatamente o que PREMISSAS.md §1.3
+# proíbe.
+#
+# REGRA: toda equivalência precisa de `fundamento` (URN do dispositivo que a
+# estabelece). Enquanto a norma não estiver ingerida, `fundamento` fica null e
+# `pendente_fundamentacao: true`. A equivalência serve então apenas como auxílio
+# de NAVEGAÇÃO — nunca como afirmação citável.
+#
+# Preencher os `fundamento` após a ingestão da EC 132/2023 e da LC 214/2025.
+
+equivalencias:
+  - antigo: ["PIS", "PIS/Pasep", "Contribuição para o PIS/Pasep"]
+    novo: "CBS"
+    natureza: substituicao
+    esfera: federal
+    fundamento: null
+    pendente_fundamentacao: true
+
+  - antigo: ["COFINS", "Cofins", "Contribuição para o Financiamento da Seguridade Social"]
+    novo: "CBS"
+    natureza: substituicao
+    esfera: federal
+    fundamento: null
+    pendente_fundamentacao: true
+
+  - antigo: ["ICMS", "Imposto sobre Circulação de Mercadorias e Serviços"]
+    novo: "IBS"
+    natureza: substituicao
+    esfera: estadual
+    fundamento: null
+    pendente_fundamentacao: true
+
+  - antigo: ["ISS", "ISSQN", "Imposto Sobre Serviços"]
+    novo: "IBS"
+    natureza: substituicao
+    esfera: municipal
+    fundamento: null
+    pendente_fundamentacao: true
+
+  - antigo: ["IPI", "Imposto sobre Produtos Industrializados"]
+    novo: "IS"
+    natureza: substituicao_parcial
+    esfera: federal
+    observacao: >-
+      Relação NÃO é de substituição simples. O tratamento do IPI e o alcance do
+      Imposto Seletivo precisam ser lidos diretamente nos dispositivos após a
+      ingestão. Não usar esta linha como afirmação.
+    fundamento: null
+    pendente_fundamentacao: true
+
+# Siglas em uso no escopo do repositório.
+siglas:
+  IBS: "Imposto sobre Bens e Serviços"
+  CBS: "Contribuição sobre Bens e Serviços"
+  IS: "Imposto Seletivo"
+  CGIBS: "Comitê Gestor do IBS"
+  RFB: "Secretaria Especial da Receita Federal do Brasil"
+
+# Termos cujo sentido técnico difere do coloquial. A definição legal vem do
+# dispositivo, nunca daqui: este bloco apenas sinaliza o risco de leitura.
+termos_de_risco:
+  - termo: "operação"
+    risco: "sentido técnico definido em lei; não usar o sentido comum"
+  - termo: "fornecedor"
+    risco: "definição legal própria, distinta do uso comercial corrente"
+  - termo: "consumidor final"
+    risco: "definição legal própria; não confundir com a do CDC"
+  - termo: "alíquota de referência"
+    risco: "conceito específico do novo regime, com procedimento próprio de fixação"
