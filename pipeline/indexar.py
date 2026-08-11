@@ -16,10 +16,8 @@ import yaml
 
 from comum import (
     DIR_INDICES,
-    DIR_NORMAS,
     RAIZ,
     arquivos_norma,
-    hoje,
     ler_frontmatter,
 )
 
@@ -116,10 +114,13 @@ def main() -> int:
         if meta.get("revisao_temporal_pendente"):
             pendentes[slug] += 1
 
+    # Sem carimbo de data: os índices são derivados e precisam ser função pura
+    # de /normas/. Um timestamp aqui faria a CI de determinismo ("indices em
+    # dia") acusar diff em todo dia posterior ao commit, sem mudança real.
+    # Quando o índice foi gerado é o que o histórico do Git registra.
     gravar(
         "cobertura.json",
         {
-            "gerado_em": hoje(),
             "total_dispositivos": len(dispositivos),
             "normas": {
                 slug: {

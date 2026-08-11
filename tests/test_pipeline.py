@@ -40,6 +40,39 @@ def checar(condicao: bool, descricao: str) -> None:
         falhas.append(descricao)
 
 
+def _snapshot_indices() -> dict[str, str]:
+    return {
+        p.name: p.read_text(encoding="utf-8")
+        for p in sorted((RAIZ / "indices").glob("*.json"))
+    }
+
+
+def determinismo_indices() -> bool:
+    """Os índices são derivados: gerar duas vezes tem de dar o mesmo byte.
+
+    A CI verifica isso com `git diff --quiet -- indices/`. Qualquer valor que
+    varie entre execuções — data, hora, ordem de dicionário — quebraria a CI
+    sem que nada de real tivesse mudado.
+    """
+    import indexar
+
+    indexar.main()
+    primeira = _snapshot_indices()
+    indexar.main()
+    return primeira == _snapshot_indices()
+
+
+def sem_carimbo_de_data() -> bool:
+    """Regressão: `cobertura.json` carimbava a data de geração, o que fazia a
+    CI acusar diff em todo dia posterior ao commit. Quando o índice foi gerado
+    é o que o histórico do Git registra — não pertence ao conteúdo."""
+    import datetime as dt
+
+    hoje_iso = dt.date.today().isoformat()
+    cobertura = (RAIZ / "indices" / "cobertura.json").read_text(encoding="utf-8")
+    return hoje_iso not in cobertura
+
+
 def main() -> int:
     dados = FIXTURE.read_bytes()
 
@@ -136,6 +169,10 @@ def main() -> int:
     ).encode("latin-1")
     texto_latin = html_para_texto(html_latin)
     checar("Operação" in texto_latin, "decodifica iso-8859-1 corretamente")
+
+    print("\nindices deterministicos")
+    checar(determinismo_indices(), "gerar duas vezes produz bytes identicos")
+    checar(sem_carimbo_de_data(), "nenhum indice embute a data da geracao")
 
     print()
     if falhas:
