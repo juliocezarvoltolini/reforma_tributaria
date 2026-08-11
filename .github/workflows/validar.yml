@@ -1,0 +1,47 @@
+name: Validar base normativa
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: pip install pyyaml requests
+
+      - name: Testes do pipeline
+        run: python3 tests/test_pipeline.py
+
+      - name: Validar base
+        run: python3 pipeline/validar.py
+
+      - name: Índices em dia
+        # /indices/ é derivado (PREMISSAS.md §6.3). Se regenerar produz diff,
+        # alguém editou à mão ou esqueceu de rodar indexar.py.
+        run: |
+          python3 pipeline/indexar.py
+          if ! git diff --quiet -- indices/; then
+            echo "::error::indices/ desatualizado ou editado a mao."
+            echo "Rode 'python3 pipeline/indexar.py' e commite o resultado."
+            git diff --stat -- indices/
+            exit 1
+          fi
+
+      - name: Fixture não vazou para a base
+        # O fixture sintético não é norma real e nunca pode entrar em /normas/
+        # ou /fontes/ (PREMISSAS.md §1.3).
+        run: |
+          if grep -rl "FICT\|SINTETICO\|SINTÉTICO" normas/ fontes/ 2>/dev/null | grep -q .; then
+            echo "::error::conteudo sintetico encontrado em normas/ ou fontes/"
+            exit 1
+          fi
