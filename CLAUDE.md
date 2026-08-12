@@ -136,7 +136,9 @@ Não coberto: a forma de apuração depende de ato conjunto ainda não editado
 - **Nunca** edite `/normas/` para "corrigir" texto. Reingira a fonte.
 - Interpretação vai em `/interpretacoes/`, com autor, data, grau de confiança e
   citação obrigatória.
-- Antes de commitar: `python3 pipeline/validar.py`.
+- Antes de commitar: `pipeline/verificar.sh`. Com
+  `git config core.hooksPath .githooks` isso roda sozinho a cada commit e
+  recusa o que violar as premissas.
 
 ---
 

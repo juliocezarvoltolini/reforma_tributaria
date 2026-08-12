@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Verificação local antes de cada commit.
+#
+# Existe porque as premissas deste repositório só valem se forem verificadas
+# por máquina (PREMISSAS.md §7), e o hook não depende de nenhum serviço externo
+# estar disponível.
+#
+# Instalar:  git config core.hooksPath .githooks
+# Pular uma vez (use com parcimônia):  git commit --no-verify
+
+exec pipeline/verificar.sh
