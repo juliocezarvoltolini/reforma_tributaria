@@ -108,14 +108,30 @@ estar vigente há anos e só produzir efeitos no futuro.
 
 ## Contribuir
 
+Ative o hook uma vez, ao clonar:
+
 ```bash
-python3 tests/test_pipeline.py    # testes do parser
-python3 pipeline/validar.py       # premissas como falha de build
+git config core.hooksPath .githooks
 ```
 
-A CI roda os dois, verifica que `/indices/` não foi editado à mão e que conteúdo
-sintético de teste não vazou para `/normas/` ou `/fontes/`.
+A partir daí todo `git commit` roda a verificação e **recusa o commit** se
+alguma premissa for violada. Para rodar à mão:
 
-Regras que a validação faz valer: nada na camada 1 sem `sha256` de fonte;
-nenhuma remissão órfã; nenhuma interpretação sem citação, autor e grau de
-confiança; nenhum intervalo de vigência incoerente.
+```bash
+pipeline/verificar.sh
+pipeline/verificar.sh --corrigir-indices   # regenera indices/ e inclui no commit
+```
+
+O hook e a CI chamam o **mesmo** `pipeline/verificar.sh`, então não podem
+divergir — e a base segue verificável mesmo sem o GitHub Actions disponível.
+
+O que a verificação faz valer:
+
+| Regra | Premissa |
+|---|---|
+| Nada na camada 1 sem `sha256` de fonte | §1.1 |
+| Nenhum texto de teste em `/normas/` ou `/fontes/` | §1.3 |
+| Nenhum intervalo de vigência ou eficácia incoerente | §3.1 |
+| Nenhuma interpretação sem citação, autor e grau de confiança | §4.1 |
+| Nenhuma remissão órfã dentro de norma ingerida | §7 |
+| `/indices/` como função pura de `/normas/` | §6.3 |
