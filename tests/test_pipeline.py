@@ -193,6 +193,21 @@ def main() -> int:
         "'art. 3º desta Lei' resolve, porque o escopo interno e afirmado",
     )
 
+    print("\nqualificador liga-se a mencao mais proxima")
+    # Regressão: a janela ia longe demais e um "da Lei" no fim da frase
+    # descartava as remissões internas anteriores. Derrubou as remissões da
+    # base real de milhares para 82.
+    frase = "observado o art. 12 e o art. 15 da Lei nº 9.430, de 1996"
+    rem_frase = extrair_remissoes(frase, URN_BASE, "99")
+    checar(
+        urn_dispositivo(URN_BASE, "12") in rem_frase,
+        "art. 12 (interno) sobrevive ao 'da Lei' que qualifica o art. 15",
+    )
+    checar(
+        urn_dispositivo(URN_BASE, "15") not in rem_frase,
+        "art. 15 (externo) continua descartado",
+    )
+
     print("\nremissao nao vaza do texto citado")
     art5_proprio = "\n".join(art5["linhas_proprias"])
     rem5 = extrair_remissoes(art5_proprio, URN_BASE, "5")

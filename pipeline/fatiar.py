@@ -187,11 +187,15 @@ def normalizar_artigo(numero: str, sufixo: str | None) -> str:
 def remissao_externa(texto: str, fim: int) -> bool:
     """A remissão que termina em `fim` aponta para outra norma?
 
-    Olha a janela seguinte até a próxima pontuação forte. "desta Lei" vence
-    "da Lei", porque é afirmação explícita de escopo interno.
+    O qualificador de escopo liga-se à menção MAIS PRÓXIMA, então a janela
+    termina na próxima menção de artigo. Sem esse corte, um "da Lei nº X" no
+    fim da frase contamina todas as remissões internas que o precedem: em
+    "o art. 12 e o art. 15 da Lei nº 9.430" só o art. 15 é externo.
+
+    "desta Lei" vence "da Lei", porque afirma escopo interno explicitamente.
     """
     janela = texto[fim:fim + 90]
-    corte = re.search(r"[.;:]", janela)
+    corte = re.search(r"[.;:]|\bart", janela, re.IGNORECASE)
     if corte:
         janela = janela[:corte.start()]
     if RE_ESCOPO_INTERNO.search(janela):
@@ -423,15 +427,45 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     citados = sum(len(a["citados"]) for a in artigos)
     if relatorio:
         faixa = f"{artigos[0]['numero']}..{artigos[-1]['numero']}"
+        base_urn = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
         print(f"[{slug}] RELATORIO (nada escrito)")
         print(f"  artigos proprios: {proprios}  (faixa {faixa})")
         print(f"  artigos citados de outras normas: {citados}")
-        com_citacao = [a for a in artigos if a["citados"]]
-        print(f"  artigos que alteram outras normas: {len(com_citacao)}")
-        for a in com_citacao[:12]:
-            amostra = ", ".join(a["citados"][:8])
-            extra = f" (+{len(a['citados']) - 8})" if len(a["citados"]) > 8 else ""
-            print(f"    art. {a['numero']} cita: {amostra}{extra}")
+
+        # Lacunas na sequência própria. Um artigo que a norma tem mas que a
+        # classificação mandou para "citado" aparece aqui — é o diagnóstico
+        # mais direto de classificação errada.
+        numeros_base = {int(re.match(r"\d+", a["numero"]).group()) for a in artigos}
+        if numeros_base:
+            faltando = sorted(set(range(1, max(numeros_base) + 1)) - numeros_base)
+            print(f"  lacunas na sequencia (1..{max(numeros_base)}): {len(faltando)}")
+            if faltando:
+                amostra = ", ".join(str(n) for n in faltando[:25])
+                extra = f" (+{len(faltando) - 25})" if len(faltando) > 25 else ""
+                print(f"    {amostra}{extra}")
+
+        # Artigos com sufixo alfabético: na norma original são acréscimos
+        # legítimos, mas em bloco de alteração denunciam texto citado que
+        # escapou da classificação.
+        sufixados = [a["numero"] for a in artigos if "-" in a["numero"]]
+        print(f"  artigos com sufixo alfabetico: {len(sufixados)}")
+        if sufixados:
+            print(f"    {', '.join(sufixados[:25])}")
+
+        # Remissões: quantas foram resolvidas e quantas apontam para artigo
+        # que esta ingestão não produziu.
+        proprias = {urn_dispositivo(base_urn, a["numero"]) for a in artigos}
+        total_rem = orfas_rem = 0
+        for a in artigos:
+            for alvo in extrair_remissoes(
+                "\n".join(a["linhas_proprias"]), base_urn, a["numero"]
+            ):
+                total_rem += 1
+                artigo_alvo = alvo.split("!")[0] + "!" + alvo.split("!")[1].split("_")[0]
+                if artigo_alvo not in proprias:
+                    orfas_rem += 1
+        pct = f"{orfas_rem / total_rem:.0%}" if total_rem else "-"
+        print(f"  remissoes internas resolvidas: {total_rem}  (orfas: {orfas_rem} = {pct})")
         return 0
 
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
