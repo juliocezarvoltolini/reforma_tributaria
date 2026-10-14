@@ -317,8 +317,10 @@ python pipeline/propor_vigencia.py --slug emc-132-2023
   ("republicado"), que esta página **não** confirma; uma busca indicou que a
   edição de 23/01/2025 republica só o Anexo XXIII, mas isso só vale depois de
   arquivar aquela edição. Fica como aviso.
-- **EC 132: publicação ainda pelo rodapé** (21.12.2023). Falta arquivar a página
-  do ato no DOU, com `--tipo texto_publicado` e a URL na entrada do catálogo.
+- **Publicação da EC 132 confirmada no DOU**: "Publicado em: 21/12/2023 |
+  Edição: 242 | Seção: 1 | Página: 1", arquivada em
+  `fontes/emc-132-2023/texto_publicado.html`. Coincide com o rodapé do compilado.
+  Os 603 dispositivos da base têm agora `publicacao.fonte: dou`.
 - **A LC 214 traz outro ato no fim do compilado.** Depois dos anexos há um bloco
   citado, uma segunda assinatura ("Brasília, 1º de julho de 2025") e um rodapé
   próprio ("DOU de 2.7.2025"). Não é a publicação da LC; é outro ato, e os

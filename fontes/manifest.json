@@ -13,6 +13,19 @@
       "titulo": "Emenda Constitucional nº 132, de 20 de dezembro de 2023",
       "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm"
     },
+    "emc-132-2023/texto_publicado": {
+      "acesso": "2026-10-14",
+      "arquivo": "fontes/emc-132-2023/texto_publicado.html",
+      "bytes": 215000,
+      "content_type": "text/html;charset=UTF-8",
+      "id": "emc-132-2023",
+      "obtencao": "download",
+      "sha256": "89d66bfdac5729ba8c61485fa345e3a2652101ecb05b1cde3a3f879c970207b6",
+      "slug": "emc-132-2023",
+      "tipo_documento": "texto_publicado",
+      "titulo": "Emenda Constitucional nº 132, de 20 de dezembro de 2023",
+      "url": "https://www.in.gov.br/web/dou/-/emenda-constitucional-n-132-532314756"
+    },
     "lc-214-2025/texto_compilado": {
       "acesso": "2026-10-14",
       "arquivo": "fontes\\lc-214-2025\\texto_compilado.html",

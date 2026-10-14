@@ -63,9 +63,7 @@ clausula_de_vigencia:
       tipo: demais
     motivo: null
   artigos_inexistentes: []
-pendencias_gerais:
-- id: publicacao_nao_confirmada_no_dou
-  descricao: A data de publicação vem do rodapé do texto compilado (Este texto não substitui o publicado no DOU 21.12.2023). O texto publicado no DOU prevalece (PREMISSAS.md §1.4) e ainda não está ingerido.
+pendencias_gerais: []
 decisoes_necessarias:
 - id: norma_alterada_nao_ingerida
   pergunta: Os artigos 1, 2, 3, 4, 5 inserem texto em outra norma (Constituição e/ou ADCT), que não está ingerida. A vigência do artigo desta norma é a da cláusula; quando o texto inserido produz efeitos depende do próprio texto inserido. Ingerir a norma alterada, ou registrar a pendência em /lacunas/?
@@ -91,7 +89,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -102,9 +100,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -162,7 +169,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -173,9 +180,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -238,9 +254,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -292,9 +317,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -347,9 +381,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -385,7 +428,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -396,9 +439,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -446,7 +498,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -457,9 +509,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -518,7 +579,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -529,9 +590,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -570,7 +640,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -581,9 +651,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -655,7 +734,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -666,9 +745,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -726,9 +814,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -768,7 +865,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -779,9 +876,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -889,7 +995,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -900,9 +1006,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1001,7 +1116,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1012,9 +1127,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -1047,7 +1171,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1058,9 +1182,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -1093,7 +1226,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1104,9 +1237,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1145,7 +1287,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1156,9 +1298,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1197,7 +1348,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1208,9 +1359,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1260,7 +1420,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1271,9 +1431,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1350,7 +1519,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1361,9 +1530,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1404,7 +1582,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1415,9 +1593,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1458,7 +1645,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1469,9 +1656,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1514,7 +1710,7 @@ dispositivos:
       evento: publicacao
       data_candidata: '2023-12-21'
       precisao: dia
-      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     motivo: null
     ressalva: null
   efeitos:
@@ -1525,9 +1721,18 @@ dispositivos:
     publicacao:
       datas:
       - '2023-12-21'
-      fonte: rodape_compilado
+      fonte: dou
       trechos:
-      - Este texto não substitui o publicado no DOU 21.12.2023
+      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
+      dou:
+        edicao: '242'
+        secao: '1'
+        pagina: '1'
+      rodape_compilado:
+        datas:
+        - '2023-12-21'
+        trechos:
+        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:

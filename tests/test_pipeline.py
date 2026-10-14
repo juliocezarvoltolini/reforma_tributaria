@@ -1390,15 +1390,15 @@ def dou_prevalece():
 
 @cenario("normas/ reais: data do ato e publicação (pulado se ausentes)")
 def normas_reais_publicacao():
-    """Contrato com a base gravada. Valores lidos à mão: EC, rodapé do compilado
-    ('publicado no DOU 21.12.2023'); LC, cabeçalho da página do DOU arquivada
-    ('Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1'),
-    e o rodapé do compilado ('publicado no DOU de 16.1.2025 - Edição extra e
-    republicado no DOU de 23.1.2025')."""
+    """Contrato com a base gravada. Valores lidos à mão nos cabeçalhos das páginas
+    do DOU arquivadas — EC: 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 |
+    Página: 1'; LC: 'Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B |
+    Página: 1' — e no rodapé do compilado da LC ('publicado no DOU de 16.1.2025 -
+    Edição extra e republicado no DOU de 23.1.2025')."""
     from comum import ler_frontmatter
 
     casos = {
-        "emc-132-2023": ("2023-12-20", ["2023-12-21"], "rodape_compilado"),
+        "emc-132-2023": ("2023-12-20", ["2023-12-21"], "dou"),
         "lc-214-2025": ("2025-01-16", ["2025-01-16"], "dou"),
     }
     for slug, (ato, datas, fonte) in casos.items():
@@ -1462,6 +1462,16 @@ def catalogo_lc214_dou():
            "entrada texto_publicado com a URL do in.gov.br")
     checar(urls.get("texto_compilado") == "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
            "e o texto compilado continua o mesmo")
+
+    ec = next(f for f in fontes if f["id"] == "emc-132-2023")
+    urls = {u["tipo"]: u["url"] for u in ec["urls"]}
+    # URL informada pelo usuário em 2026-10-14, do portal oficial da Imprensa Nacional
+    checar(urls.get("texto_publicado") ==
+           "https://www.in.gov.br/web/dou/-/emenda-constitucional-n-132-532314756",
+           "EC 132: entrada texto_publicado com a URL do in.gov.br")
+    checar(urls.get("texto_compilado") ==
+           "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm",
+           "EC 132: o texto compilado continua o mesmo")
 
 
 # ---------------------------------------------------------------------------

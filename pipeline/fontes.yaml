@@ -23,6 +23,11 @@ fontes:
       - tipo: texto_compilado
         url: "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm"
         url_verificada: false
+      # Texto publicado no DOU — prevalece sobre o compilado (PREMISSAS.md §1.4).
+      # URL informada pelo usuário em 2026-10-14, do portal da Imprensa Nacional.
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/web/dou/-/emenda-constitucional-n-132-532314756"
+        url_verificada: false
     observacao: >-
       Norma de regência constitucional da Reforma Tributária do consumo.
       Ingerir primeiro: os demais diplomas remetem a ela.
