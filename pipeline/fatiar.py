@@ -151,14 +151,29 @@ RE_REMISSOES = [
     ("art", re.compile(r"\bart(?:s|igos?)?\.?\s*(\d+)(-[A-Z])?", re.IGNORECASE)),
 ]
 
-RE_EXTERNA = re.compile(
-    r"(Lei\s+Complementar|Emenda\s+Constitucional|Lei|Decreto|"
-    r"Instru[çc][ãa]o\s+Normativa|Ajuste\s+SINIEF)\s+n[ºo°.]*\s*([\d.]+)",
+# Escopo da remissão. "art. 155, II, da Constituição Federal" NÃO é o art. 155
+# desta norma — resolver para o namespace próprio cria ponteiro ERRADO, que é
+# pior que ponteiro ausente: a IA seguiria a remissão para o dispositivo errado
+# e responderia com confiança. Por isso a resolução é conservadora.
+RE_ESCOPO_EXTERNO = re.compile(
+    r"\bd[ao]s?\s+(?:Constitui[çc][ãa]o|Leis?|Decretos?|Emenda|"
+    r"Medida\s+Provis[óo]ria|C[óo]digo|Ato)\b",
     re.IGNORECASE,
+)
+# "desta Lei" / "deste Decreto" afirmam o contrário: a remissão é interna.
+RE_ESCOPO_INTERNO = re.compile(
+    r"\bdest[ae]\s+(?:Lei|Emenda|Decreto|Constitui[çc][ãa]o)\b", re.IGNORECASE
 )
 
 RE_CONCEITO = re.compile(
     r"considera[- ]se\s+(.{3,60}?)\s+(?:o |a |os |as |aquele|toda|todo)", re.IGNORECASE
+)
+
+# Normas citadas pelo nome, registradas como texto para resolução posterior.
+RE_EXTERNA = re.compile(
+    r"(Lei\s+Complementar|Emenda\s+Constitucional|Lei|Decreto|"
+    r"Instru[çc][ãa]o\s+Normativa|Ajuste\s+SINIEF)\s+n[ºo°.]*\s*([\d.]+)",
+    re.IGNORECASE,
 )
 
 
@@ -169,14 +184,35 @@ def normalizar_artigo(numero: str, sufixo: str | None) -> str:
     return f"{numero}-{sufixo.lstrip('-').strip().upper()}"
 
 
+def remissao_externa(texto: str, fim: int) -> bool:
+    """A remissão que termina em `fim` aponta para outra norma?
+
+    Olha a janela seguinte até a próxima pontuação forte. "desta Lei" vence
+    "da Lei", porque é afirmação explícita de escopo interno.
+    """
+    janela = texto[fim:fim + 90]
+    corte = re.search(r"[.;:]", janela)
+    if corte:
+        janela = janela[:corte.start()]
+    if RE_ESCOPO_INTERNO.search(janela):
+        return False
+    return bool(RE_ESCOPO_EXTERNO.search(janela))
+
+
 def extrair_remissoes(texto: str, urn_base: str, artigo_atual: str) -> list[str]:
-    """Remissões internas resolvidas em URN. É o índice de maior retorno:
-    um artigo lido isoladamente frequentemente diz o oposto do aplicável."""
+    """Remissões INTERNAS resolvidas em URN. É o índice de maior retorno: um
+    artigo lido isoladamente frequentemente diz o oposto do aplicável.
+
+    Recebe apenas o texto próprio do artigo — nunca o texto citado de outra
+    norma que ele altere, cujas remissões pertencem àquela norma.
+    """
     achados: list[str] = []
     consumido = texto
 
     for tipo, regex in RE_REMISSOES:
         for m in regex.finditer(consumido):
+            if remissao_externa(consumido, m.end()):
+                continue
             if tipo == "par":
                 alvo = urn_dispositivo(
                     urn_base, normalizar_artigo(m.group(2), m.group(3)), paragrafo=m.group(1)
@@ -306,6 +342,9 @@ def fatiar(texto: str) -> tuple[list[dict], list[str]]:
                 "rotulo": linha.split(".")[0].strip(),
                 "hierarquia": list(hierarquia),
                 "linhas": [linha],
+                # Só o texto próprio. As remissões saem daqui: as que aparecem
+                # no texto citado pertencem à norma alterada, não a esta.
+                "linhas_proprias": [linha],
                 "citados": [],
             }
             artigos.append(atual)
@@ -314,6 +353,8 @@ def fatiar(texto: str) -> tuple[list[dict], list[str]]:
 
         if atual is not None:
             atual["linhas"].append(linha)
+            if not dentro_de_citacao:
+                atual["linhas_proprias"].append(linha)
 
     if not artigos:
         avisos.append(
@@ -412,10 +453,14 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     for artigo in artigos:
         corpo_linhas = artigo["linhas"]
         corpo = "\n\n".join(corpo_linhas)
+        # Texto próprio, sem o que foi citado de outras normas. As remissões e
+        # os conceitos saem daqui: no texto citado eles pertencem à norma
+        # alterada, e resolvê-los no namespace desta criaria ponteiro errado.
+        corpo_proprio = "\n\n".join(artigo["linhas_proprias"])
         # group(0): a anotação inteira. findall() devolveria só o grupo de
         # captura ("Redação dada"), perdendo a norma que promoveu a alteração.
         anotacoes = [re.sub(r"\s+", " ", m.group(0)) for m in RE_ANOTACAO.finditer(corpo)]
-        conceitos = [c.strip() for c in RE_CONCEITO.findall(corpo)]
+        conceitos = [c.strip() for c in RE_CONCEITO.findall(corpo_proprio)]
 
         meta = {
             "urn": urn_dispositivo(base, artigo["numero"]),
@@ -439,9 +484,13 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
                 "sha256": registro["sha256"],
             },
             "ingerido_em": hoje(),
-            "remete_a": extrair_remissoes(corpo, base, artigo["numero"]),
+            "remete_a": extrair_remissoes(corpo_proprio, base, artigo["numero"]),
             "remete_a_externo": extrair_externas(corpo),
-            "subdivisoes": subdivisoes_de(corpo_linhas, base, artigo["numero"]),
+            # Subdivisões do próprio artigo; as do texto citado pertencem à
+            # norma alterada.
+            "subdivisoes": subdivisoes_de(
+                artigo["linhas_proprias"], base, artigo["numero"]
+            ),
             "anotacoes_oficiais": anotacoes,
             "conceitos_definidos": conceitos,
             # Artigos de OUTRAS normas reproduzidos aqui porque este artigo as

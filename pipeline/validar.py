@@ -102,24 +102,67 @@ def validar_dispositivos() -> list[dict]:
     return metas
 
 
+LIMITE_ORFAS = 0.25  # acima disto, a extração está quebrada, não é ruído
+
+
 def validar_remissoes(metas: list[dict]) -> None:
-    """Remissão órfã dentro de norma já ingerida é erro; para norma ainda não
-    ingerida é apenas aviso — a base não finge cobrir o que não cobre."""
+    """Remissão órfã é sintoma, não necessariamente defeito.
+
+    Um ponteiro quebrado falha seguro: quem o segue não encontra nada. O caso
+    perigoso é o ponteiro ERRADO — apontar para um dispositivo que existe mas
+    não é o referido — e esse é evitado na extração, que só resolve remissão
+    quando o escopo é internamente afirmado (ver fatiar.remissao_externa).
+
+    Por isso aqui o relato é agregado: órfãs viram aviso com contagem, e só
+    viram erro quando a proporção indica que a extração deixou de funcionar.
+    """
     existentes = {m["urn"] for m in metas if m.get("urn")}
     normas_ingeridas = {u.split("!")[0] for u in existentes}
 
+    total = 0
+    orfas: dict[str, list[str]] = defaultdict(list)
+    fora_da_base = 0
+
     for meta in metas:
         for alvo in meta.get("remete_a") or []:
+            total += 1
             if alvo in existentes:
                 continue
             # subdivisão (par/inc/ali) resolve para o artigo que a contém
-            artigo = alvo.split("!")[0] + "!" + alvo.split("!")[1].split("_")[0]
+            partes = alvo.split("!")
+            artigo = partes[0] + "!" + partes[1].split("_")[0] if len(partes) > 1 else alvo
             if artigo in existentes:
                 continue
-            if alvo.split("!")[0] in normas_ingeridas:
-                erro(f"{meta['urn']}: remissao orfa para dispositivo inexistente: {alvo}")
+            if partes[0] in normas_ingeridas:
+                orfas[meta["urn"]].append(alvo)
             else:
-                aviso(f"{meta['urn']}: remissao para norma nao ingerida: {alvo}")
+                fora_da_base += 1
+
+    if fora_da_base:
+        aviso(f"{fora_da_base} remissao(oes) para norma ainda nao ingerida")
+
+    if not orfas:
+        return
+
+    quantidade = sum(len(v) for v in orfas.values())
+    proporcao = quantidade / total if total else 0
+    resumo = (
+        f"{quantidade} de {total} remissoes ({proporcao:.0%}) apontam para "
+        f"dispositivo inexistente em norma ja ingerida, a partir de "
+        f"{len(orfas)} artigo(s)"
+    )
+
+    piores = sorted(orfas.items(), key=lambda kv: -len(kv[1]))[:5]
+    detalhe = "; ".join(f"{urn.split('!')[-1]}: {len(alvos)}" for urn, alvos in piores)
+
+    if proporcao > LIMITE_ORFAS:
+        erro(
+            f"{resumo}. Concentracao: {detalhe}. "
+            "Proporcao alta indica fatiamento ou extracao quebrados — "
+            "rode 'fatiar.py --relatorio' e confira a faixa de artigos proprios."
+        )
+    else:
+        aviso(f"{resumo}. Concentracao: {detalhe}")
 
 
 def validar_hashes() -> None:
@@ -187,10 +230,18 @@ def main() -> int:
     if not metas:
         aviso("nenhum dispositivo em /normas/ — base vazia")
 
-    for msg in avisos:
+    # Enxurrada de mensagens é inútil: esconde o que importa e não cabe na
+    # tela. Mostra as primeiras e diz quantas sobraram.
+    LIMITE = 25
+    for msg in avisos[:LIMITE]:
         print(f"AVISO  {msg}")
-    for msg in erros:
+    if len(avisos) > LIMITE:
+        print(f"AVISO  ... e mais {len(avisos) - LIMITE} aviso(s)")
+
+    for msg in erros[:LIMITE]:
         print(f"ERRO   {msg}", file=sys.stderr)
+    if len(erros) > LIMITE:
+        print(f"ERRO   ... e mais {len(erros) - LIMITE} erro(s)", file=sys.stderr)
 
     print(f"\n{len(metas)} dispositivo(s) validado(s) — "
           f"{len(erros)} erro(s), {len(avisos)} aviso(s)")

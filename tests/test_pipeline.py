@@ -176,6 +176,39 @@ def main() -> int:
         "captura '§ 1º do art. 1º' como paragrafo",
     )
 
+    print("\nescopo da remissao (ponteiro errado e pior que ausente)")
+    art7 = next(a for a in artigos if a["numero"] == "7")
+    corpo7 = "\n".join(art7["linhas_proprias"])
+    rem7 = extrair_remissoes(corpo7, URN_BASE, "7")
+    checar(
+        urn_dispositivo(URN_BASE, "155") not in rem7,
+        "'art. 155 da Constituicao' NAO resolve no namespace proprio",
+    )
+    checar(
+        urn_dispositivo(URN_BASE, "90") not in rem7,
+        "'art. 90 da Lei nº 995' NAO resolve no namespace proprio",
+    )
+    checar(
+        urn_dispositivo(URN_BASE, "3") in rem7,
+        "'art. 3º desta Lei' resolve, porque o escopo interno e afirmado",
+    )
+
+    print("\nremissao nao vaza do texto citado")
+    art5_proprio = "\n".join(art5["linhas_proprias"])
+    rem5 = extrair_remissoes(art5_proprio, URN_BASE, "5")
+    checar(
+        urn_dispositivo(URN_BASE, "195") not in rem5,
+        "o art. 195 citado nao entra como remissao do art. 5",
+    )
+    checar(
+        "Art. 195" not in art5_proprio,
+        "linhas_proprias exclui o texto entre aspas",
+    )
+    checar(
+        any("Art. 195" in ln for ln in art5["linhas"]),
+        "mas linhas (corpo verbatim) preserva o texto citado",
+    )
+
     print("\nremissoes externas")
     ext = extrair_externas(corpo2)
     checar(any("998" in e for e in ext), f"captura norma alteradora: {ext}")
