@@ -635,7 +635,9 @@ def construir(slug: str) -> dict:
                 motivo_efe = ("os efeitos não decorrem só da cláusula de vigência: o "
                               "dispositivo " + " e ".join(causas))
             else:
-                proposta_efe = inicio_vig
+                # Cópia, não o mesmo objeto: senão o YAML grava âncora (&id001/*id001)
+                # e quem revisa o arquivo à mão não vê a proposta de efeitos.
+                proposta_efe = dict(inicio_vig)
                 motivo_efe = ("nenhum marco temporal detectado pelos padrões do script (isto NÃO "
                               "garante que não exista): LER O TEXTO antes de aceitar que os "
                               "efeitos acompanham a vigência")

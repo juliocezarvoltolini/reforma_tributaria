@@ -1071,6 +1071,22 @@ def proposta_referencias():
            "o rodapé de outro ato é devolvido à parte, com a assinatura que o precede")
 
 
+@cenario("proposta: YAML legível para quem revisa (sem âncoras)")
+def proposta_sem_ancoras():
+    """Quebra: reaproveitar o mesmo objeto em dois lugares. O YAML grava '&id001' num
+    e '*id001' no outro, e quem edita o arquivo à mão não vê a proposta de efeitos."""
+    import tempfile
+
+    if not (RAIZ / "normas" / "emc-132-2023").exists():
+        print("  pulado: normas/ da EC 132 ausente")
+        return
+    with tempfile.TemporaryDirectory() as tmp:
+        alvo = Path(tmp) / "p.yaml"
+        _pv().gravar_proposta(alvo, _pv().construir("emc-132-2023"))
+        texto = alvo.read_text(encoding="utf-8")
+    checar("&id0" not in texto and "*id0" not in texto, "nenhuma âncora/alias no arquivo gerado")
+
+
 @cenario("proposta: nunca sobrescreve revisão humana")
 def proposta_nao_sobrescreve_revisao():
     """Quebra: regenerar a proposta apagaria a decisão que um humano já tomou."""

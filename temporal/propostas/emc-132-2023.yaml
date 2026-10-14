@@ -1047,7 +1047,7 @@ dispositivos:
     inciso: III
     fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     natureza: derivado
-    proposta: &id001
+    proposta:
       tipo: evento
       evento: publicacao
       data_candidata: '2023-12-21'
@@ -1059,7 +1059,12 @@ dispositivos:
     inciso: null
     fundamento: null
     natureza: null
-    proposta: *id001
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     excecoes: []
     motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
     ressalva: null
@@ -1095,7 +1100,7 @@ dispositivos:
     inciso: III
     fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     natureza: derivado
-    proposta: &id002
+    proposta:
       tipo: evento
       evento: publicacao
       data_candidata: '2023-12-21'
@@ -1107,7 +1112,12 @@ dispositivos:
     inciso: null
     fundamento: null
     natureza: null
-    proposta: *id002
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 242, seção 1, página 1)
     excecoes: []
     motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
     ressalva: null
