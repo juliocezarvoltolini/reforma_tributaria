@@ -17,6 +17,7 @@ sys.path.insert(0, str(RAIZ / "pipeline"))
 
 from comum import status_em, urn_dispositivo, urn_norma  # noqa: E402
 from fatiar import (  # noqa: E402
+    chave_ordem,
     detectar_encoding,
     extrair_externas,
     extrair_remissoes,
@@ -106,10 +107,44 @@ def main() -> int:
 
     print("\nfatiar")
     artigos, avisos = fatiar(texto)
-    checar(len(artigos) == 5, f"5 artigos reconhecidos (achou {len(artigos)})")
+    checar(len(artigos) == 8, f"8 artigos proprios reconhecidos (achou {len(artigos)})")
     checar(not avisos, f"sem avisos (achou {avisos})")
     numeros = [a["numero"] for a in artigos]
-    checar(numeros == ["1", "2", "3", "4", "4-A"], f"numeracao correta: {numeros}")
+    checar(
+        numeros == ["1", "2", "3", "4", "4-A", "5", "6", "7"],
+        f"numeracao correta: {numeros}",
+    )
+
+    print("\nartigo citado x artigo proprio (perda de dados na ingestao real)")
+    art5 = next(a for a in artigos if a["numero"] == "5")
+    art6 = next(a for a in artigos if a["numero"] == "6")
+    checar("195" in art5["citados"], "art. 195 entre aspas vira citado, nao proprio")
+    checar(
+        not any(a["numero"] == "195" for a in artigos),
+        "art. 195 NAO cria arquivo proprio",
+    )
+    checar(
+        any("Art. 195" in ln for ln in art5["linhas"]),
+        "texto do art. 195 fica no corpo do art. 5 que o altera",
+    )
+    checar(
+        any("§ 1º Parágrafo do artigo citado" in ln for ln in art5["linhas"]),
+        "paragrafo do artigo citado nao vaza para fora da citacao",
+    )
+    checar("2" in art6["citados"], "art. 2 fora de ordem e sem aspas vira citado")
+    checar(
+        len([a for a in artigos if a["numero"] == "2"]) == 1,
+        "o art. 2 proprio continua unico — nada foi sobrescrito",
+    )
+
+    print("\nmonotonicidade e colisao")
+    chaves = [chave_ordem(n) for n in numeros]
+    checar(chaves == sorted(chaves), "artigos proprios estritamente crescentes")
+    checar(len(numeros) == len(set(numeros)), "nenhuma colisao de nome de arquivo")
+    checar(
+        chave_ordem("4") < chave_ordem("4-A") < chave_ordem("5"),
+        "ordenacao: 4 < 4-A < 5",
+    )
 
     art1, art2 = artigos[0], artigos[1]
     checar(

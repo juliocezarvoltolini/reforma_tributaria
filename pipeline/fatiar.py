@@ -118,6 +118,24 @@ RE_PAR_UNICO = re.compile(r"^Par[áa]grafo\s+[úu]nico", re.IGNORECASE)
 RE_INCISO = re.compile(r"^([IVXLC]+)\s*[-–]\s")
 RE_ALINEA = re.compile(r"^([a-z])\)\s")
 
+# Texto alterado vem entre aspas (técnica legislativa da LC 95/1998). O Planalto
+# usa aspas curvas; aceitamos as retas e as angulares por segurança.
+RE_ABRE_CITACAO = re.compile(r'^\s*[“"«]')
+RE_FECHA_CITACAO = re.compile(r'[”"»]\s*\.?\s*$')
+
+
+def chave_ordem(numero: str) -> tuple[int, str]:
+    """Ordena 'Art. 4º' antes de 'Art. 4º-A' antes de 'Art. 5º'.
+
+    Permite exigir que os artigos próprios de uma norma sejam estritamente
+    crescentes, o que distingue artigo próprio de artigo citado.
+    """
+    base = re.match(r"\d+", numero)
+    ordinal = int(base.group()) if base else 0
+    sufixo = numero[numero.index("-") + 1:].upper() if "-" in numero else ""
+    return (ordinal, sufixo)
+
+
 # Remissões, do mais específico para o mais genérico.
 RE_REMISSOES = [
     (
@@ -219,14 +237,35 @@ def subdivisoes_de(linhas: list[str], urn_base: str, artigo: str) -> list[str]:
 # ---------------------------------------------------------------------------
 
 def fatiar(texto: str) -> tuple[list[dict], list[str]]:
-    """Devolve (artigos, avisos). Cada artigo traz linhas e hierarquia."""
+    """Devolve (artigos, avisos). Cada artigo traz linhas e hierarquia.
+
+    Classifica cada linha "Art. N" em duas categorias, porque tratar as duas
+    como artigo próprio destrói dados:
+
+    `proprio`  — artigo da norma sendo ingerida.
+    `citado`   — artigo de OUTRA norma, reproduzido porque esta a está
+                 alterando. A EC 132 insere "Art. 156-A" na Constituição; a
+                 LC 214 altera artigos de outras leis nas disposições finais.
+                 Esse texto pertence ao artigo que promove a alteração, não é
+                 artigo da norma ingerida.
+
+    Dois sinais distinguem, em ordem:
+
+    1. Aspas. A técnica legislativa (LC 95/1998) exige que o texto alterado
+       venha entre aspas. É o sinal mais confiável.
+    2. Ordem. Os artigos próprios de uma norma são estritamente crescentes.
+       "Art. 195" depois de "Art. 3º" não é o artigo 195 desta norma.
+    """
     hierarquia: list[str] = []
     artigos: list[dict] = []
     avisos: list[str] = []
     atual: dict | None = None
+    em_citacao = False
+    ultima_chave: tuple[int, str] = (0, "")
+    citados_orfaos = 0
 
     for linha in texto.split("\n"):
-        if RE_ESTRUTURA.match(linha) and len(linha) < 200:
+        if RE_ESTRUTURA.match(linha) and len(linha) < 200 and not em_citacao:
             marcador = linha.upper().split()[0]
             ordem = ["LIVRO", "PARTE", "TITULO", "TÍTULO", "CAPITULO", "CAPÍTULO",
                      "SECAO", "SEÇÃO", "SUBSECAO", "SUBSEÇÃO"]
@@ -237,14 +276,40 @@ def fatiar(texto: str) -> tuple[list[dict], list[str]]:
             hierarquia.append(linha)
             continue
 
-        if m := RE_ARTIGO.match(linha):
+        abre_citacao = bool(RE_ABRE_CITACAO.match(linha))
+        dentro_de_citacao = em_citacao or abre_citacao
+        if abre_citacao and not RE_FECHA_CITACAO.search(linha):
+            em_citacao = True
+        elif em_citacao and RE_FECHA_CITACAO.search(linha):
+            em_citacao = False
+
+        # A aspas de abertura precede o "Art.", então o reconhecimento tem de
+        # ignorá-la. O texto apensado ao artigo continua sendo a linha original,
+        # verbatim.
+        linha_nua = linha.lstrip("“\"«' ")
+        if m := RE_ARTIGO.match(linha_nua):
+            numero = normalizar_artigo(m.group(1), m.group(2))
+            chave = chave_ordem(numero)
+
+            if dentro_de_citacao or chave <= ultima_chave:
+                # Artigo citado: texto de outra norma, alterado por este artigo.
+                if atual is not None:
+                    atual["linhas"].append(linha)
+                    if numero not in atual["citados"]:
+                        atual["citados"].append(numero)
+                else:
+                    citados_orfaos += 1
+                continue
+
             atual = {
-                "numero": normalizar_artigo(m.group(1), m.group(2)),
+                "numero": numero,
                 "rotulo": linha.split(".")[0].strip(),
                 "hierarquia": list(hierarquia),
                 "linhas": [linha],
+                "citados": [],
             }
             artigos.append(atual)
+            ultima_chave = chave
             continue
 
         if atual is not None:
@@ -256,10 +321,20 @@ def fatiar(texto: str) -> tuple[list[dict], list[str]]:
             "da norma e nao uma pagina de erro ou indice"
         )
 
+    if citados_orfaos:
+        avisos.append(
+            f"{citados_orfaos} linha(s) 'Art.' antes do primeiro artigo proprio "
+            "foram descartadas (provavel cabecalho, ementa ou indice)"
+        )
+
+    # Colisão aqui significa perda de dados na escrita. É erro, não aviso.
     numeros = [a["numero"] for a in artigos]
     if len(numeros) != len(set(numeros)):
-        repetidos = sorted({n for n in numeros if numeros.count(n) > 1})
-        avisos.append(f"artigos duplicados no fatiamento: {', '.join(repetidos)}")
+        repetidos = sorted({n for n in numeros if numeros.count(n) > 1}, key=chave_ordem)
+        avisos.append(
+            "ERRO artigos proprios duplicados, o que sobrescreveria arquivos: "
+            + ", ".join(repetidos)
+        )
 
     return artigos, avisos
 
@@ -273,7 +348,7 @@ def nome_arquivo(numero: str) -> str:
     return nome
 
 
-def processar_norma(fonte: dict, manifest: dict) -> int:
+def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int:
     slug = fonte["slug"]
     chave = f"{slug}/texto_compilado"
     registro = manifest["documentos"].get(chave)
@@ -289,15 +364,49 @@ def processar_norma(fonte: dict, manifest: dict) -> int:
 
     texto = html_para_texto(caminho.read_bytes())
     artigos, avisos = fatiar(texto)
+
+    erros = [a for a in avisos if a.startswith("ERRO")]
     for aviso in avisos:
-        print(f"[{slug}] AVISO: {aviso}", file=sys.stderr)
+        print(f"[{slug}] {'ERRO' if aviso.startswith('ERRO') else 'AVISO'}: "
+              f"{aviso.removeprefix('ERRO ')}", file=sys.stderr)
     if not artigos:
         return 1
+    if erros:
+        # Escrever com números repetidos sobrescreveria arquivos silenciosamente.
+        # Abortar preserva o dado e expõe o problema para correção.
+        print(f"[{slug}] nada foi escrito — corrija o fatiamento antes de ingerir",
+              file=sys.stderr)
+        return 1
+
+    proprios = len(artigos)
+    citados = sum(len(a["citados"]) for a in artigos)
+    if relatorio:
+        faixa = f"{artigos[0]['numero']}..{artigos[-1]['numero']}"
+        print(f"[{slug}] RELATORIO (nada escrito)")
+        print(f"  artigos proprios: {proprios}  (faixa {faixa})")
+        print(f"  artigos citados de outras normas: {citados}")
+        com_citacao = [a for a in artigos if a["citados"]]
+        print(f"  artigos que alteram outras normas: {len(com_citacao)}")
+        for a in com_citacao[:12]:
+            amostra = ", ".join(a["citados"][:8])
+            extra = f" (+{len(a['citados']) - 8})" if len(a["citados"]) > 8 else ""
+            print(f"    art. {a['numero']} cita: {amostra}{extra}")
+        return 0
 
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
     publicacao = fonte["data"]
     referencia = _dt.date.today()
     destino_dir = DIR_NORMAS / slug
+
+    # Remove o resultado de execuções anteriores. Sem isso, um fatiamento que
+    # antes produzia artigos espúrios deixa esses arquivos para trás, e a base
+    # passa a conter dispositivos que a norma não tem.
+    if destino_dir.exists():
+        antigos = list(destino_dir.glob("art-*.md"))
+        for arquivo in antigos:
+            arquivo.unlink()
+        if antigos:
+            print(f"[{slug}] {len(antigos)} arquivo(s) da ingestao anterior removidos")
     destino_dir.mkdir(parents=True, exist_ok=True)
 
     for artigo in artigos:
@@ -335,6 +444,9 @@ def processar_norma(fonte: dict, manifest: dict) -> int:
             "subdivisoes": subdivisoes_de(corpo_linhas, base, artigo["numero"]),
             "anotacoes_oficiais": anotacoes,
             "conceitos_definidos": conceitos,
+            # Artigos de OUTRAS normas reproduzidos aqui porque este artigo as
+            # altera. Não são dispositivos desta norma.
+            "dispositivos_citados": artigo["citados"],
             "altera": [],
             "alterado_por": [],
             "extracao": "automatica",
@@ -346,8 +458,12 @@ def processar_norma(fonte: dict, manifest: dict) -> int:
 
         escrever_frontmatter(destino_dir / f"{nome_arquivo(artigo['numero'])}.md", meta, corpo)
 
-    print(f"[{slug}] {len(artigos)} artigos escritos em {destino_dir.relative_to(DIR_NORMAS.parent)}")
-    print(f"[{slug}] ATENCAO: {len(artigos)} dispositivos com revisao_temporal_pendente")
+    print(f"[{slug}] {proprios} artigos proprios escritos em "
+          f"{destino_dir.relative_to(DIR_NORMAS.parent)} "
+          f"(faixa {artigos[0]['numero']}..{artigos[-1]['numero']})")
+    print(f"[{slug}] {citados} artigo(s) de outras normas tratados como texto "
+          "alterado, nao como dispositivo proprio")
+    print(f"[{slug}] ATENCAO: {proprios} dispositivos com revisao_temporal_pendente")
     return 0
 
 
@@ -355,6 +471,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--slug", help="fatiar apenas esta norma")
     ap.add_argument("--todas", action="store_true", help="fatiar tudo que foi baixado")
+    ap.add_argument(
+        "--relatorio",
+        action="store_true",
+        help="mostra a classificacao proprio/citado sem escrever nada — use para "
+        "auditar o fatiamento antes de confiar nele",
+    )
     args = ap.parse_args()
 
     if not args.slug and not args.todas:
@@ -375,7 +497,7 @@ def main() -> int:
             print(f"slug '{args.slug}' nao esta em fontes.yaml", file=sys.stderr)
             return 2
 
-    return min(1, sum(processar_norma(f, manifest) for f in fontes))
+    return min(1, sum(processar_norma(f, manifest, args.relatorio) for f in fontes))
 
 
 if __name__ == "__main__":
