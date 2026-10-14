@@ -225,8 +225,34 @@ def baixar_um(
     )
 
 
+def entrada_por_tipo(fonte: dict, tipo: str | None) -> dict:
+    """A entrada do catálogo a que um arquivo corresponde.
+
+    Sem `tipo`, só vale se a norma tiver uma única URL. Antes, `--de-arquivo` usava
+    sempre a primeira: um PDF do DOU seria registrado como texto compilado, com a
+    URL do Planalto como procedência.
+    """
+    entradas = fonte["urls"]
+    tipos = ", ".join(e["tipo"] for e in entradas)
+    if tipo is None:
+        if len(entradas) == 1:
+            return entradas[0]
+        raise ValueError(f"'{fonte['id']}' tem mais de um documento ({tipos}): informe --tipo")
+    for entrada in entradas:
+        if entrada["tipo"] == tipo:
+            return entrada
+    raise ValueError(f"'{fonte['id']}' nao tem documento do tipo '{tipo}' (tem: {tipos})")
+
+
+def entradas_para_baixar(fonte: dict, tipo: str | None) -> list[dict]:
+    """Sem `tipo`, todas as URLs da norma; com `tipo`, só aquela."""
+    if tipo is None:
+        return list(fonte["urls"])
+    return [entrada_por_tipo(fonte, tipo)]
+
+
 def ingerir_arquivo_local(
-    fonte: dict, caminho: Path, manifest: dict, aceitar_deriva: bool
+    fonte: dict, caminho: Path, manifest: dict, aceitar_deriva: bool, tipo: str | None = None
 ) -> int:
     """Ingere um original que o usuário baixou pelo navegador.
 
@@ -234,6 +260,12 @@ def ingerir_arquivo_local(
     dos bytes reais e a data de acesso é registrada. O campo `obtencao`
     distingue isto de um download automatizado, para auditoria.
     """
+    try:
+        entrada = entrada_por_tipo(fonte, tipo)
+    except ValueError as exc:
+        print(f"     {exc}", file=sys.stderr)
+        return 1
+
     if not caminho.exists():
         print(f"     arquivo nao encontrado: {caminho}", file=sys.stderr)
         return 1
@@ -243,7 +275,6 @@ def ingerir_arquivo_local(
         print(f"     arquivo vazio: {caminho}", file=sys.stderr)
         return 1
 
-    entrada = fonte["urls"][0]
     print(f"  -> arquivo local: {caminho}")
     print(f"     procedencia declarada: {entrada['url']}")
 
@@ -259,6 +290,11 @@ def main() -> int:
         metavar="CAMINHO",
         help="ingere um original baixado manualmente, em vez de buscar na rede "
         "(exige --id)",
+    )
+    ap.add_argument(
+        "--tipo",
+        help="documento da norma (texto_compilado, texto_publicado...). Obrigatorio com "
+        "--de-arquivo quando a norma tem mais de um documento",
     )
     ap.add_argument(
         "--aceitar-deriva",
@@ -289,11 +325,18 @@ def main() -> int:
 
         if args.de_arquivo:
             falhas += ingerir_arquivo_local(
-                fonte, Path(args.de_arquivo).expanduser(), manifest, args.aceitar_deriva
+                fonte, Path(args.de_arquivo).expanduser(), manifest, args.aceitar_deriva,
+                args.tipo,
             )
             continue
 
-        for entrada in fonte["urls"]:
+        try:
+            entradas = entradas_para_baixar(fonte, args.tipo)
+        except ValueError as exc:
+            print(f"     {exc}", file=sys.stderr)
+            falhas += 1
+            continue
+        for entrada in entradas:
             if not entrada.get("url_verificada", False):
                 print("     aviso: URL ainda nao verificada (fontes.yaml)")
             falhas += baixar_um(fonte, entrada, manifest, args.aceitar_deriva, s)

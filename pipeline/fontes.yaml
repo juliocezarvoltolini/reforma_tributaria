@@ -40,6 +40,11 @@ fontes:
       - tipo: texto_compilado
         url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm"
         url_verificada: false
+      # Texto publicado no DOU — prevalece sobre o compilado (PREMISSAS.md §1.4).
+      # URL informada pelo usuário em 2026-10-14, do portal da Imprensa Nacional.
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/en/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-607430757"
+        url_verificada: false
     observacao: >-
       Diploma central de instituição do IBS, da CBS e do Imposto Seletivo.
       Atenção na revisão: dispositivos vetados e vetos posteriormente

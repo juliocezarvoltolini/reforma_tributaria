@@ -1363,6 +1363,51 @@ def normas_reais_publicacao():
                f"{slug}: publicação {datas} (obteve {pub})")
 
 
+@cenario("baixar: o tipo do documento decide a entrada do catálogo")
+def baixar_escolhe_por_tipo():
+    """Quebra: `--de-arquivo` usava sempre a PRIMEIRA URL da norma. Um PDF do DOU
+    seria registrado como texto compilado, com a URL do Planalto como origem, e
+    com --aceitar-deriva substituiria o HTML de que saem as normas."""
+    import baixar
+
+    compilado = {"tipo": "texto_compilado", "url": "https://planalto.invalido/lcp999.htm"}
+    publicado = {"tipo": "texto_publicado", "url": "https://dou.invalido/lcp-999"}
+    duas = {"id": "lcp-999", "urls": [compilado, publicado]}
+    checar(baixar.entrada_por_tipo(duas, "texto_publicado") is publicado,
+           "--tipo texto_publicado escolhe a URL do DOU")
+    checar(baixar.entrada_por_tipo({"id": "x", "urls": [compilado]}, None) is compilado,
+           "norma com uma só URL dispensa --tipo")
+    for tipo, descricao in ((None, "sem --tipo, numa norma com duas URLs"),
+                            ("texto_inexistente", "com tipo que a norma não tem")):
+        try:
+            baixar.entrada_por_tipo(duas, tipo)
+            checar(False, f"{descricao}: recusa")
+        except ValueError as exc:
+            checar("texto_compilado" in str(exc) and "texto_publicado" in str(exc),
+                   f"{descricao}: recusa, listando os tipos disponíveis")
+    checar(baixar.entradas_para_baixar(duas, "texto_publicado") == [publicado],
+           "download com --tipo busca só aquela URL")
+    checar(baixar.entradas_para_baixar(duas, None) == [compilado, publicado],
+           "download sem --tipo busca todas, como antes")
+
+
+@cenario("catálogo: a LC 214 tem a URL do DOU como texto publicado")
+def catalogo_lc214_dou():
+    import yaml
+
+    from fatiar import CATALOGO
+
+    fontes = yaml.safe_load(CATALOGO.read_text(encoding="utf-8"))["fontes"]
+    lc = next(f for f in fontes if f["id"] == "lcp-214-2025")
+    urls = {u["tipo"]: u["url"] for u in lc["urls"]}
+    # URL informada pelo usuário em 2026-10-14, do portal oficial da Imprensa Nacional
+    checar(urls.get("texto_publicado") ==
+           "https://www.in.gov.br/en/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-607430757",
+           "entrada texto_publicado com a URL do in.gov.br")
+    checar(urls.get("texto_compilado") == "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+           "e o texto compilado continua o mesmo")
+
+
 # ---------------------------------------------------------------------------
 # Índices e portabilidade
 # ---------------------------------------------------------------------------
