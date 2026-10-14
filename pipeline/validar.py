@@ -53,6 +53,9 @@ def rel(caminho: Path) -> str:
 def validar_dispositivos() -> list[dict]:
     metas: list[dict] = []
     por_urn: dict[str, list[str]] = defaultdict(list)
+    # O mesmo aviso em centenas de dispositivos da mesma norma vira uma linha só:
+    # repetido, ele empurraria para fora da tela os avisos que importam.
+    avisos_temporais: dict[str, list[str]] = defaultdict(list)
 
     for caminho in arquivos_norma():
         try:
@@ -99,7 +102,7 @@ def validar_dispositivos() -> list[dict]:
         for msg in erros_t:
             erro(f"{rel(caminho)}: {msg}")
         for msg in avisos_t:
-            aviso(f"{rel(caminho)}: {msg}")
+            avisos_temporais[msg].append(rel(caminho))
 
         if meta.get("urn"):
             por_urn[meta["urn"]].append(rel(caminho))
@@ -109,6 +112,10 @@ def validar_dispositivos() -> list[dict]:
     for urn, caminhos in por_urn.items():
         if len(caminhos) > 1:
             erro(f"URN duplicada em {len(caminhos)} arquivos: {urn} -> {', '.join(caminhos)}")
+
+    for msg, caminhos in sorted(avisos_temporais.items()):
+        exemplo = caminhos[0] if len(caminhos) == 1 else f"{caminhos[0]} e mais {len(caminhos) - 1}"
+        aviso(f"{len(caminhos)} dispositivo(s): {msg} ({exemplo})")
 
     return metas
 

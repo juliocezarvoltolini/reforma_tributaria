@@ -60,9 +60,13 @@ ordem: 12
 # --- tempo (ver PREMISSAS.md §3) ---
 data_ato: "2025-01-16"            # (*) data do ato (título); é a que compõe a URN
 publicacao:                       # (*) entrada no mundo jurídico — NÃO é a data do ato
-  datas: ["2025-01-16", "2025-01-23"]   # original e republicação, se houver
-  fonte: "rodape_compilado"       #     rodape_compilado | dou (o DOU prevalece, §1.4)
-  trechos: ["Este texto não substitui o publicado no DOU de 16.1.2025 - ..."]
+  datas: ["2025-01-16"]
+  fonte: "dou"                    #     dou | rodape_compilado (o DOU prevalece, §1.4)
+  trechos: ["Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"]
+  dou: {edicao: "11-B", secao: "1 - Extra B", pagina: "1"}
+  rodape_compilado:               #     o que o compilado diz, mantido à parte
+    datas: ["2025-01-16", "2025-01-23"]   # 23/01 não confirmada no DOU → aviso
+    trechos: ["Este texto não substitui o publicado no DOU de 16.1.2025 - ..."]
 vigencia_inicio: "2026-01-01"     # (*) quando a norma vale
 vigencia_fim: null                #     null = sem termo final conhecido
 efeitos_inicio: "2027-01-01"      # (*) quando produz efeitos — pode diferir
@@ -113,6 +117,10 @@ Art. 12. [texto verbatim, sem edição, sem paráfrase]
   `revisao_temporal_pendente: true` marca isso.
 - `data_ato` e `publicacao` são datas diferentes. "Entra em vigor na data de sua
   publicação" refere-se à publicação no DOU, não à data que dá nome ao ato.
+- `publicacao.fonte: dou` diz que a data foi lida da página do ato no DOU,
+  arquivada em `fontes/<slug>/texto_publicado.html` (`baixar.py --tipo
+  texto_publicado`). O rodapé do compilado continua em `rodape_compilado`, e a
+  data que só ele cita gera aviso de não confirmada.
 - `publicacao.fonte: rodape_compilado` diz que a data foi lida no rodapé do texto
   compilado ("publicado no DOU ..."), sem confirmação no DOU. Só o **primeiro**
   rodapé conta: o compilado pode trazer, depois dos anexos, outro ato com

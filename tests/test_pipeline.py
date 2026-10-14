@@ -1340,18 +1340,68 @@ def consulta_precisao_e_excecoes():
            "e o parágrafo aparece com o próprio estado")
 
 
+@cenario("DOU: cabeçalho de publicação lido da página do ato")
+def dou_cabecalho():
+    """Quebra: tomar a data de outro lugar da página (o título repetido na navegação,
+    o rodapé do site) ou tropeçar no <span> sem fechar do original."""
+    dados = (FIXTURES / "dou-materia.html").read_bytes()
+    checar(
+        F.publicacao_dou(dados) == {
+            "data": "1900-01-02", "edicao": "99-B", "secao": "1 - Extra B", "pagina": "1",
+            "trecho": "Publicado em: 02/01/1900 | Edição: 99-B | Seção: 1 - Extra B | Página: 1",
+        },
+        f"data, edição, seção e página do cabeçalho (obteve {F.publicacao_dou(dados)})",
+    )
+    checar(F.publicacao_dou(fixture("planalto-ec.html")) is None,
+           "página sem cabeçalho do DOU: nada, não um palpite")
+    texto = dados.decode("utf-8")
+    com_vizinho = texto.replace(
+        '<article id="materia">',
+        '<aside><span class="publicado-dou-data">31/12/1899</span></aside> <article id="materia">', 1)
+    checar(F.publicacao_dou(com_vizinho.encode("utf-8"))["data"] == "1900-01-02",
+           "um campo de data fora de <article id=\"materia\"> (ato vizinho) é ignorado")
+
+
+@cenario("DOU: a publicação confirmada prevalece; o rodapé fica registrado")
+def dou_prevalece():
+    """Quebra: descartar o que o rodapé do compilado diz, ou mantê-lo como se fosse
+    confirmado. A data que só o rodapé cita (na LC 214, a republicação de 23/01/2025)
+    precisa continuar visível, como não confirmada."""
+    dou = F.publicacao_dou((FIXTURES / "dou-materia.html").read_bytes())
+    refs = {"publicacao_dou": {"valores": ["1900-01-02", "1900-01-09"],
+                               "trechos": ["... DOU de 2.1.1900 e republicado no DOU de 9.1.1900"]}}
+    pub = F.publicacao_de(refs, dou)
+    checar(pub["datas"] == ["1900-01-02"] and pub["fonte"] == "dou"
+           and pub["trechos"] == [dou["trecho"]],
+           "datas e trecho vêm do DOU")
+    checar(pub["dou"] == {"edicao": "99-B", "secao": "1 - Extra B", "pagina": "1"},
+           "edição, seção e página registradas")
+    checar(pub["rodape_compilado"] == {"datas": ["1900-01-02", "1900-01-09"],
+                                       "trechos": refs["publicacao_dou"]["trechos"]},
+           "o rodapé do compilado continua registrado, à parte")
+    meta = {"urn": urn_dispositivo(URN_EC, "1"), "publicacao": pub,
+            "extracao": "automatica", "revisao_temporal_pendente": True}
+    erros, avisos = _rt().problemas_no_dispositivo(meta)
+    checar(not erros and any("1900-01-09" in a for a in avisos),
+           "a data que só o rodapé cita vira aviso de não confirmada")
+    checar(F.publicacao_de(refs) ["fonte"] == "rodape_compilado",
+           "sem DOU arquivado, continua o rodapé")
+
+
 @cenario("normas/ reais: data do ato e publicação (pulado se ausentes)")
 def normas_reais_publicacao():
-    """Contrato com a base gravada. Valores lidos à mão nos rodapés dos compilados:
-    EC 'publicado no DOU 21.12.2023'; LC 'publicado no DOU de 16.1.2025 - Edição
-    extra e republicado no DOU de 23.1.2025'."""
+    """Contrato com a base gravada. Valores lidos à mão: EC, rodapé do compilado
+    ('publicado no DOU 21.12.2023'); LC, cabeçalho da página do DOU arquivada
+    ('Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1'),
+    e o rodapé do compilado ('publicado no DOU de 16.1.2025 - Edição extra e
+    republicado no DOU de 23.1.2025')."""
     from comum import ler_frontmatter
 
     casos = {
-        "emc-132-2023": ("2023-12-20", ["2023-12-21"]),
-        "lc-214-2025": ("2025-01-16", ["2025-01-16", "2025-01-23"]),
+        "emc-132-2023": ("2023-12-20", ["2023-12-21"], "rodape_compilado"),
+        "lc-214-2025": ("2025-01-16", ["2025-01-16"], "dou"),
     }
-    for slug, (ato, datas) in casos.items():
+    for slug, (ato, datas, fonte) in casos.items():
         arq = RAIZ / "normas" / slug / "art-0001.md"
         if not arq.exists():
             print(f"  pulado: {slug} (normas/ ausente)")
@@ -1359,8 +1409,14 @@ def normas_reais_publicacao():
         meta, _ = ler_frontmatter(arq)
         checar(meta.get("data_ato") == ato, f"{slug}: data_ato {ato} (obteve {meta.get('data_ato')})")
         pub = meta.get("publicacao")
-        checar(isinstance(pub, dict) and pub.get("datas") == datas,
-               f"{slug}: publicação {datas} (obteve {pub})")
+        checar(isinstance(pub, dict) and pub.get("datas") == datas and pub.get("fonte") == fonte,
+               f"{slug}: publicação {datas}, fonte {fonte} (obteve {pub})")
+    arq = RAIZ / "normas" / "lc-214-2025" / "art-0001.md"
+    if arq.exists():
+        pub = ler_frontmatter(arq)[0].get("publicacao") or {}
+        checar((pub.get("dou") or {}).get("edicao") == "11-B"
+               and (pub.get("rodape_compilado") or {}).get("datas") == ["2025-01-16", "2025-01-23"],
+               "lc-214-2025: edição 11-B do DOU, e o rodapé (com 23/01) registrado à parte")
 
 
 @cenario("baixar: o tipo do documento decide a entrada do catálogo")

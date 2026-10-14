@@ -144,6 +144,13 @@ def problemas_no_dispositivo(meta: dict) -> tuple[list[str], list[str]]:
                 erros.append("publicacao.datas sem fonte")
             if not pub["datas"]:
                 avisos.append("publicação não localizada no original")
+            rodape = (pub.get("rodape_compilado") or {}).get("datas") or []
+            if any(_iso(d) is None for d in rodape):
+                erros.append("publicacao.rodape_compilado.datas fora do formato AAAA-MM-DD")
+            sem_confirmacao = sorted({_iso(d) for d in rodape} - {_iso(d) for d in pub["datas"]})
+            if pub.get("fonte") == "dou" and sem_confirmacao:
+                avisos.append("o rodapé do compilado cita publicação não confirmada no DOU: "
+                              + ", ".join(d for d in sem_confirmacao if d))
 
     erros += _problemas_precisao(meta.get("precisao"), meta)
     for exc in meta.get("excecoes_subdivisao") or []:

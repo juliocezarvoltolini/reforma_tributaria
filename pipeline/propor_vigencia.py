@@ -270,7 +270,7 @@ def marcos_proprios(corpo: list[str], urn_base: str, artigo: str) -> dict:
 RE_REVOGAM_SE = re.compile(r"^Art\.\s*\d+\s*[ºo°]?\.?\s+Revogam-se\b", re.IGNORECASE)
 
 
-def _inicio_proposto(termo: dict, refs: dict) -> dict:
+def _inicio_proposto(termo: dict, pub: dict) -> dict:
     if termo["tipo"] == "ano":
         return {
             "tipo": "ano",
@@ -280,16 +280,21 @@ def _inicio_proposto(termo: dict, refs: dict) -> dict:
             "nota": "o texto diz só o ano: grava-se AAAA-01-01 com `precisao: ano`, e a "
                     "consulta avisa quando a data consultada cai nesse ano",
         }
-    valores = refs["publicacao_dou"]["valores"]
-    return {
-        "tipo": "evento",
-        "evento": "publicacao",
-        "data_candidata": valores[0] if len(valores) == 1 else None,
-        "precisao": "dia",
-        "nota": "data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), "
-                "que não está ingerido" if len(valores) == 1
-                else "publicação não localizada ou ambígua no original: preencher à mão",
-    }
+    datas = pub.get("datas") or []
+    if pub.get("fonte") == "dou" and datas:
+        dou = pub.get("dou") or {}
+        candidata = datas[0]
+        nota = (f"publicação no DOU, lida da página do ato arquivada (edição {dou.get('edicao')}, "
+                f"seção {dou.get('secao')}, página {dou.get('pagina')})")
+    elif len(datas) == 1:
+        candidata = datas[0]
+        nota = ("data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), "
+                "que não está ingerido")
+    else:
+        candidata = None
+        nota = "publicação não localizada ou ambígua no original: preencher à mão"
+    return {"tipo": "evento", "evento": "publicacao", "data_candidata": candidata,
+            "precisao": "dia", "nota": nota}
 
 
 def _decisoes(dispositivos: list[dict]) -> list[dict]:
@@ -334,9 +339,20 @@ INSTRUCOES_REVISAO = (
 )
 
 
-def _pendencias_gerais(refs: dict) -> list[dict]:
+def _pendencias_gerais(refs: dict, pub: dict) -> list[dict]:
     pendencias = []
-    if refs["publicacao_dou"]["valores"]:
+    if pub.get("fonte") == "dou":
+        sem_confirmacao = sorted(set((pub.get("rodape_compilado") or {}).get("datas") or [])
+                                 - set(pub.get("datas") or []))
+        if sem_confirmacao:
+            pendencias.append({
+                "id": "rodape_cita_publicacao_nao_confirmada",
+                "descricao": "O rodapé do texto compilado cita publicação em "
+                             f"{', '.join(sem_confirmacao)}, que a página do DOU arquivada não "
+                             "confirma. Pode ser republicação de parte do ato; arquivar essa "
+                             "edição do DOU antes de usar a data.",
+            })
+    elif refs["publicacao_dou"]["valores"]:
         pendencias.append({
             "id": "publicacao_nao_confirmada_no_dou",
             "descricao": "A data de publicação vem do rodapé do texto compilado "
@@ -384,6 +400,9 @@ def construir(slug: str) -> dict:
     refs = extrair_referencias(
         [ln.completa for ln in html_para_linhas(caminho_fonte(registro).read_bytes())])
 
+    # A publicação que fatiar.py gravou: do DOU, se arquivado; senão, do rodapé.
+    publicacao = metas[ordem[0]].get("publicacao") or {}
+
     candidatos = localizar_clausula(corpos)
     if len(candidatos) == 1:
         clausula = interpretar_clausula(corpos[candidatos[0]], base, candidatos[0], ordem)
@@ -422,7 +441,7 @@ def construir(slug: str) -> dict:
         if citados:
             pendencias.append("texto_inserido_em_outra_norma")
 
-        inicio = _inicio_proposto(m["termo"], refs) if m["inciso"] else None
+        inicio = _inicio_proposto(m["termo"], publicacao) if m["inciso"] else None
         if inicio is None:
             efeitos = {"proposta": None, "motivo": m["motivo"]}
         elif marcos["marcos"] or citados:
@@ -498,7 +517,7 @@ def construir(slug: str) -> dict:
         "instrucoes_revisao": INSTRUCOES_REVISAO,
         "referencias": refs,
         "clausula_de_vigencia": {k: v for k, v in clausula.items() if k != "mapa"},
-        "pendencias_gerais": _pendencias_gerais(refs),
+        "pendencias_gerais": _pendencias_gerais(refs, publicacao),
         "decisoes_necessarias": _decisoes(dispositivos),
         "resumo": {
             "dispositivos": len(dispositivos),

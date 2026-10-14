@@ -177,6 +177,8 @@ Cada linha custou uma rodada. A coluna da direita é a lição.
 | 15 | `arquivo` do manifest com `\` | No Linux é um único nome de arquivo inexistente. Leitores normalizam, o escritor grava `/` |
 | 16 | `verificar.sh` reprovava todo commit que muda os índices | A condição `git diff --cached` exigia o staged igual ao HEAD; a correção sugerida nunca passaria |
 | 17 | Todos os rodapés "publicado no DOU" tomados como publicação da norma | A LC 214 traz, depois dos anexos, outro ato com assinatura e rodapé próprios (2.7.2025). A publicação é a do **primeiro** rodapé; os demais são outro ato |
+| 18 | `--de-arquivo` registrava o arquivo como a primeira URL da norma | Um PDF do DOU viraria "texto compilado" com a URL do Planalto. O documento é escolhido por `--tipo`; sem ele, norma com mais de um documento é recusada |
+| 19 | PDF "do DOU" que não era do DOU | Os metadados mostravam Word de terceiro com o cabeçalho da página copiado. Leia os metadados antes de aceitar um arquivo como fonte |
 
 ### O fixture de teste não é referência de formato
 
@@ -307,9 +309,16 @@ python pipeline/propor_vigencia.py --slug emc-132-2023
   texto em outra norma, **não há proposta de efeitos**: o `Art. 22` revoga "em
   2027" e "em 2033" artigos da Constituição e do ADCT, o `Art. 7º` compensa "a
   partir de 2027", e os `Arts. 12` e `13` fixam valores por exercício.
-- **Publicação ainda não confirmada no DOU.** As datas vêm do rodapé do compilado
-  (EC: 21.12.2023; LC: 16.1.2025, republicada em 23.1.2025). O texto publicado no
-  DOU prevalece (PREMISSAS.md §1.4) e ainda não está ingerido.
+- **Publicação da LC 214 confirmada no DOU.** A página do ato no portal da
+  Imprensa Nacional está arquivada em `fontes/lc-214-2025/texto_publicado.html`
+  (baixada por `baixar.py --tipo texto_publicado`): "Publicado em: 16/01/2025 |
+  Edição: 11-B | Seção: 1 - Extra B | Página: 1". Os 580 dispositivos têm
+  `publicacao.fonte: dou`. O rodapé do compilado cita também 23/01/2025
+  ("republicado"), que esta página **não** confirma; uma busca indicou que a
+  edição de 23/01/2025 republica só o Anexo XXIII, mas isso só vale depois de
+  arquivar aquela edição. Fica como aviso.
+- **EC 132: publicação ainda pelo rodapé** (21.12.2023). Falta arquivar a página
+  do ato no DOU, com `--tipo texto_publicado` e a URL na entrada do catálogo.
 - **A LC 214 traz outro ato no fim do compilado.** Depois dos anexos há um bloco
   citado, uma segunda assinatura ("Brasília, 1º de julho de 2025") e um rodapé
   próprio ("DOU de 2.7.2025"). Não é a publicação da LC; é outro ato, e os

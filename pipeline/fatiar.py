@@ -865,17 +865,67 @@ def _imprimir_estatisticas(stats: dict, prefixo: str = "  ") -> None:
           "NAO incorporados a /normas/ — permanecem em fontes/")
 
 
-def publicacao_de(refs: dict) -> dict:
-    """`publicacao` do front-matter, a partir das datas lidas do original.
+# Cabeçalho da página de um ato no portal da Imprensa Nacional (in.gov.br),
+# em campos marcados por classe dentro de <article id="materia">. O <span> da
+# seção não é fechado no original; por isso cada campo é lido pela própria
+# classe, e não pela estrutura de tags.
+RE_DOU_DATA = re.compile(r'class="publicado-dou-data">\s*(\d{2})/(\d{2})/(\d{4})\s*<')
+RE_DOU_EDICAO = re.compile(r'class="edicao-dou-data">\s*([^<]+?)\s*<')
+RE_DOU_SECAO = re.compile(r'class="secao-dou">\s*Se[çc][ãa]o:\s*([^<]+?)\s*<')
+RE_DOU_PAGINA = re.compile(r'class="secao-dou-data">\s*([^<]+?)\s*<')
 
-    Hoje a única origem é o rodapé do texto compilado ("publicado no DOU ..."),
-    e é isso que `fonte` declara. O texto publicado no DOU prevalece sobre o
-    compilado (PREMISSAS.md §1.4); quando for ingerido, `fonte` passa a `dou`.
+
+def publicacao_dou(dados: bytes) -> dict | None:
+    """Data, edição, seção e página da publicação, lidas da página do ato no DOU.
+
+    Só dentro de <article id="materia">: fora dele a página repete o título na
+    navegação. None se o cabeçalho não está lá — nunca um palpite.
     """
-    dou = refs.get("publicacao_dou") or {}
-    datas = list(dou.get("valores") or [])
-    return {"datas": datas, "fonte": "rodape_compilado" if datas else None,
-            "trechos": list(dou.get("trechos") or []) if datas else []}
+    html = _decodificar(dados)
+    inicio = html.find('<article id="materia"')
+    if inicio < 0:
+        return None
+    materia = html[inicio:]
+    m = RE_DOU_DATA.search(materia)
+    if not m:
+        return None
+    try:
+        data = _dt.date(int(m.group(3)), int(m.group(2)), int(m.group(1))).isoformat()
+    except ValueError:
+        return None
+    campos = {}
+    for nome, regex in (("edicao", RE_DOU_EDICAO), ("secao", RE_DOU_SECAO),
+                        ("pagina", RE_DOU_PAGINA)):
+        achado = regex.search(materia)
+        campos[nome] = achado.group(1) if achado else None
+    trecho = next((ln.completa for ln in html_para_linhas(dados)
+                   if ln.completa.startswith("Publicado em:")), None)
+    return {"data": data, **campos, "trecho": trecho}
+
+
+def publicacao_de(refs: dict, dou: dict | None = None) -> dict:
+    """`publicacao` do front-matter.
+
+    Com a página do DOU arquivada, a publicação vem dela (`fonte: dou`): o texto
+    publicado prevalece sobre o compilado (PREMISSAS.md §1.4). O rodapé do
+    compilado continua registrado à parte, e a data que só ele cita fica visível
+    como não confirmada — na LC 214, a "republicação" de 23/01/2025.
+
+    Sem o DOU, a publicação é a do rodapé do compilado, declarada como tal.
+    """
+    rodape = refs.get("publicacao_dou") or {}
+    rodape_datas = list(rodape.get("valores") or [])
+    rodape_trechos = list(rodape.get("trechos") or []) if rodape_datas else []
+    if dou:
+        pub = {"datas": [dou["data"]], "fonte": "dou",
+               "trechos": [dou["trecho"]] if dou.get("trecho") else [],
+               "dou": {"edicao": dou.get("edicao"), "secao": dou.get("secao"),
+                       "pagina": dou.get("pagina")}}
+        if rodape_datas:
+            pub["rodape_compilado"] = {"datas": rodape_datas, "trechos": rodape_trechos}
+        return pub
+    return {"datas": rodape_datas, "fonte": "rodape_compilado" if rodape_datas else None,
+            "trechos": rodape_trechos}
 
 
 def montar_meta(
@@ -981,7 +1031,23 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
         print(f"[{slug}] AVISO: data do ato no original ({ato_lido}) difere da do catalogo "
               f"({fonte['data']}), que compoe a URN — confira pipeline/fontes.yaml",
               file=sys.stderr)
-    publicacao = publicacao_de(refs)
+
+    # A página do ato no DOU, se arquivada, dá a publicação (prevalece, §1.4).
+    dou = None
+    registro_dou = manifest["documentos"].get(f"{slug}/texto_publicado")
+    if registro_dou:
+        arquivo_dou = caminho_fonte(registro_dou)
+        dou = publicacao_dou(arquivo_dou.read_bytes()) if arquivo_dou.exists() else None
+        if dou is None:
+            print(f"[{slug}] AVISO: texto publicado arquivado sem cabecalho de publicacao "
+                  "reconhecivel — a publicacao continua lida do rodape do compilado",
+                  file=sys.stderr)
+    primeira_rodape = (refs["publicacao_dou"]["valores"] or [None])[0]
+    if dou and primeira_rodape and dou["data"] != primeira_rodape:
+        print(f"[{slug}] AVISO: publicacao no DOU ({dou['data']}) difere da do rodape do "
+              f"compilado ({primeira_rodape}); prevalece o DOU (PREMISSAS.md §1.4)",
+              file=sys.stderr)
+    publicacao = publicacao_de(refs, dou)
 
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
     exigir_escopo = exige_escopo_interno(fonte)
