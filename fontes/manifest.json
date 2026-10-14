@@ -1,0 +1,30 @@
+{
+  "documentos": {
+    "emc-132-2023/texto_compilado": {
+      "acesso": "2026-10-14",
+      "arquivo": "fontes\\emc-132-2023\\texto_compilado.html",
+      "bytes": 510399,
+      "content_type": "text/html",
+      "id": "emc-132-2023",
+      "obtencao": "download",
+      "sha256": "f8d7213311adbdd651d5c16257b223bb67e7626f45d38a53ac25e550e4eecf54",
+      "slug": "emc-132-2023",
+      "tipo_documento": "texto_compilado",
+      "titulo": "Emenda Constitucional nº 132, de 20 de dezembro de 2023",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm"
+    },
+    "lc-214-2025/texto_compilado": {
+      "acesso": "2026-10-14",
+      "arquivo": "fontes\\lc-214-2025\\texto_compilado.html",
+      "bytes": 5403613,
+      "content_type": "text/html",
+      "id": "lcp-214-2025",
+      "obtencao": "download",
+      "sha256": "b184c4673ce39ffbc367b83c71dc41f6b5d7ea8b507874002e2733c107d9a74a",
+      "slug": "lc-214-2025",
+      "tipo_documento": "texto_compilado",
+      "titulo": "Lei Complementar nº 214, de 16 de janeiro de 2025",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm"
+    }
+  }
+}

@@ -1,1 +1,107 @@
-{}
+{
+  "ainda importação de serviço": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64"
+  ],
+  "alienação": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art254"
+  ],
+  "bem móvel usado": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art171"
+  ],
+  "benefício oneroso, não se aplicando": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art385"
+  ],
+  "coligada": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art5"
+  ],
+  "como domicílio principal do adquirente": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
+  ],
+  "como saf": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art292"
+  ],
+  "constituído": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art46"
+  ],
+  "desconto incondicional": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art12",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art417"
+  ],
+  "devido": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art427"
+  ],
+  "documento fiscal idôneo": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art60"
+  ],
+  "documento fiscal não idôneo, entre outros,": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-G"
+  ],
+  "exportação": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art98"
+  ],
+  "fornecimento de produto florestal inclusive": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art137"
+  ],
+  "in natura": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art137"
+  ],
+  "indenizações correspondentes": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art235"
+  ],
+  "local da entrega ou disponibilização do bem ao destinatário": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
+  ],
+  "local da operação": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
+  ],
+  "local do domicílio principal do adquirente ou, conforme": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
+  ],
+  "local do imóvel": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
+  ],
+  "matéria-prima para fins do disposto no caput": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art100"
+  ],
+  "ocorrida": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64"
+  ],
+  "ocorrido": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art254",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art28",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art412",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art67"
+  ],
+  "pessoa jurídica inclusive": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art164"
+  ],
+  "pessoal, para": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art332"
+  ],
+  "produtor rural integrado": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art164"
+  ],
+  "que": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art5"
+  ],
+  "receita bruta": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art486",
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art487"
+  ],
+  "reincidência específica": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-G"
+  ],
+  "saldo devedor do ibs, para cada percentual de incentivo,": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art450"
+  ],
+  "serviço de hotelaria": [
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art278"
+  ]
+}
