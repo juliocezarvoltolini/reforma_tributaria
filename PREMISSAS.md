@@ -121,6 +121,30 @@ Além do tempo de vigência, registra-se o **tempo de conhecimento** (`ingerido_
 Sem isso, a base reescreve o próprio passado a cada atualização e nenhuma
 decisão anterior é auditável.
 
+### P3.4 — Quem fixa vigência e eficácia
+
+O parser não infere vigência nem eficácia. As datas saem da cláusula de vigência
+da própria norma, por um destes três caminhos, e o registro de cada dispositivo
+diz qual foi usado (`revisado_por`) e para quais eixos (`eixos_revisados`):
+
+| Caminho | Quando vale | `revisado_por` |
+|---|---|---|
+| **Regra literal** | a data está escrita na cláusula, o dispositivo é nomeado nela (ou é "demais dispositivos", com todos os alcances lidos) e a publicação está confirmada no DOU | `regra:<nome>/<versão>` |
+| **Regra derivada aprovada** | a data sai de uma regra escrita em `temporal/regras.yaml` — por exemplo, "primeiro dia do quarto mês subsequente ao da publicação" —, aprovada uma vez por um humano (`aprovada_por`, `aprovada_em`) e aplicada por código | `regra:<nome>/<versão>` |
+| **Interpretação** | todo o resto | nome de quem revisou |
+
+Regras são código determinístico e testado, não conhecimento de modelo. Nenhuma
+regra decide um ponto que o texto deixa aberto: o que ela não resolve fica
+pendente.
+
+Uma IA pode **propor** uma interpretação, mas só com a citação literal do trecho
+que a sustenta, verificada mecanicamente contra o texto da camada 1. Um registro
+feito por IA leva `revisado_por: ia:<modelo>`, não equivale a revisão humana e
+aparece assim na consulta.
+
+A decisão humana prevalece sobre a de regra, e a de regra é refeita a cada
+execução. Por isso uma regra nunca sobrescreve uma decisão humana.
+
 ---
 
 ## 4. Camadas
