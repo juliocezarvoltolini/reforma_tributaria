@@ -26,42 +26,64 @@ referencias:
 clausula_de_vigencia:
   urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23
   caput: 'Art. 23. Esta Emenda Constitucional entra em vigor:'
+  forma: vigencia_por_inciso
+  vigencia: null
   incisos:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incI
     rotulo: I
     texto: I - em 2027, em relação aos arts. 3º e 11;
     interpretado: true
+    alcance_interpretado: true
     termo:
       tipo: ano
       ano: 2027
     alcance:
       tipo: artigos
-      artigos:
-      - '3'
-      - '11'
+      itens:
+      - artigos:
+        - '3'
+        intervalo: null
+        somente: null
+        exceto: null
+      - artigos:
+        - '11'
+        intervalo: null
+        somente: null
+        exceto: null
     motivo: null
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incII
     rotulo: II
     texto: II - em 2033, em relação aos arts. 4º e 5º; e
     interpretado: true
+    alcance_interpretado: true
     termo:
       tipo: ano
       ano: 2033
     alcance:
       tipo: artigos
-      artigos:
-      - '4'
-      - '5'
+      itens:
+      - artigos:
+        - '4'
+        intervalo: null
+        somente: null
+        exceto: null
+      - artigos:
+        - '5'
+        intervalo: null
+        somente: null
+        exceto: null
     motivo: null
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     rotulo: III
     texto: III - na data de sua publicação, em relação aos demais dispositivos.
     interpretado: true
+    alcance_interpretado: true
     termo:
       tipo: publicacao
     alcance:
       tipo: demais
     motivo: null
+  redacoes_anteriores: []
   artigos_inexistentes: []
 pendencias_gerais: []
 decisoes_necessarias:
@@ -71,6 +93,7 @@ decisoes_necessarias:
   pergunta: 'Há artigos que dependem de lei futura: transitórios (''Até que lei complementar...'') ou que remetem a ela (''Lei complementar definirá...''). Se a lei foi editada, o efeito muda, mas verificar isso é interpretação (camada 3) e exige a norma regulamentadora. Registrar como pendente em /lacunas/ até lá? O rótulo `depende_de_lei_futura` tem cobertura parcial: sua ausência não prova que não há dependência.'
 resumo:
   dispositivos: 23
+  forma_da_clausula: vigencia_por_inciso
   por_inciso:
     III: 19
     I: 2
@@ -93,25 +116,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -143,7 +160,6 @@ dispositivos:
     - '225'
     linhas_com_marcos: 12
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - texto_inserido_em_outra_norma
   revisao:
     decisao: null
@@ -173,25 +189,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -217,7 +227,6 @@ dispositivos:
     - '137'
     linhas_com_marcos: 48
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - texto_inserido_em_outra_norma
   revisao:
     decisao: null
@@ -247,25 +256,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -310,25 +313,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -374,25 +371,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
@@ -432,25 +423,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -470,7 +455,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - condicao_regulamentacao
   - evento_relativo
@@ -502,25 +486,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -552,7 +530,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - depende_de_lei_futura
   revisao:
@@ -583,25 +560,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -613,7 +584,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - depende_de_lei_futura
   revisao:
@@ -644,25 +614,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -707,7 +671,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - depende_de_lei_futura
   revisao:
@@ -738,25 +701,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -775,7 +732,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
@@ -807,25 +763,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -869,25 +819,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -967,7 +911,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
@@ -999,25 +942,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1090,7 +1027,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   revisao:
     decisao: null
@@ -1120,33 +1056,26 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: *id001
+    excecoes: []
     motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
-  pendencias:
-  - publicacao_nao_confirmada_no_dou
+  pendencias: []
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -1175,33 +1104,26 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: *id002
+    excecoes: []
     motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
-  pendencias:
-  - publicacao_nao_confirmada_no_dou
+  pendencias: []
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -1230,25 +1152,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1260,7 +1176,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - condicao_regulamentacao
   revisao:
@@ -1291,25 +1206,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1321,7 +1230,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - evento_relativo
   revisao:
@@ -1352,25 +1260,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1393,7 +1295,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - evento_relativo
   revisao:
@@ -1424,25 +1325,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1491,7 +1386,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
@@ -1523,25 +1417,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1554,7 +1442,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - condicao_regulamentacao
   - evento_relativo
@@ -1586,25 +1473,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1617,7 +1498,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
@@ -1649,25 +1529,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1683,7 +1557,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - revogacao_expressa
   revisao:
@@ -1714,25 +1587,19 @@ dispositivos:
     motivo: null
     ressalva: null
   efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
     proposta: null
+    excecoes: []
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
   atual_no_pipeline:
     data_ato: '2023-12-20'
     publicacao:
       datas:
       - '2023-12-21'
       fonte: dou
-      trechos:
-      - 'Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1'
-      dou:
-        edicao: '242'
-        secao: '1'
-        pagina: '1'
-      rodape_compilado:
-        datas:
-        - '2023-12-21'
-        trechos:
-        - Este texto não substitui o publicado no DOU 21.12.2023
     vigencia_inicio: '2023-12-21'
     efeitos_inicio: '2023-12-21'
   marcos_proprios:
@@ -1756,7 +1623,6 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   pendencias:
-  - publicacao_nao_confirmada_no_dou
   - marcos_proprios
   - evento_relativo
   revisao:

@@ -795,22 +795,31 @@ def proposta_clausula_mapeia_artigos():
 
 @cenario("proposta: o que não casa com o padrão exato não é interpretado")
 def proposta_clausula_nao_interpreta():
-    """Quebra: interpretar 'arts. 3º a 5º' como 3 e 5, ou deixar 'demais
-    dispositivos' cair no inciso III quando um inciso anterior tem alcance
-    desconhecido. O artigo 3º seria datado errado, com aparência de certo."""
+    """Quebra: dar data a um termo relativo, ou deixar 'demais dispositivos' cair
+    no inciso III quando um inciso anterior tem ALCANCE desconhecido. O artigo
+    seria datado errado, com aparência de certo.
+
+    Termo e alcance são lidos separadamente: o termo relativo do inciso I não
+    impede saber que ele nomeia os arts. 3º e 5º; a sobra 'o Anexo I' no II
+    impede saber o que ele nomeia."""
     clausula = [
         "Art. 9º Esta Lei fictícia entra em vigor:",
-        "I - a partir de 1º de janeiro de 2030, em relação aos arts. 3º a 5º;",
-        "II - em 2035, em relação ao art. 7º, exceto o § 1º; e",
+        "I - a partir do primeiro dia do quarto mês subsequente ao da sua publicação, "
+        "em relação aos arts. 3º e 5º;",
+        "II - em 2035, em relação aos arts. 6º e o Anexo I; e",
         "III - na data de sua publicação, em relação aos demais dispositivos.",
     ]
     r = _pv().interpretar_clausula(clausula, URN_BASE, "9", EXISTENTES_FICT)
     checar([i["interpretado"] for i in r["incisos"]] == [False, False, True],
-           "intervalo, data completa e 'exceto' não são interpretados")
-    checar(all(m["inciso"] is None for m in r["mapa"].values()),
-           "e então 'demais dispositivos' não pode ser resolvido para artigo nenhum")
-    checar(all(m["motivo"] for m in r["mapa"].values()),
-           "cada artigo indeterminado diz por quê")
+           "termo relativo e alcance com sobra não são interpretados")
+    checar([i["alcance_interpretado"] for i in r["incisos"]] == [True, False, True],
+           "mas o alcance do inciso I é lido")
+    checar(r["mapa"]["3"]["inciso"] == "I" and r["mapa"]["3"]["termo"] is None
+           and r["mapa"]["3"]["motivo"] and r["mapa"]["3"]["ressalva"],
+           "art. 3: no inciso I, sem data (termo relativo), com ressalva do inciso II")
+    nao_nomeados = [n for n in EXISTENTES_FICT if n not in ("3", "5")]
+    checar(all(r["mapa"][n]["inciso"] is None and r["mapa"][n]["motivo"] for n in nao_nomeados),
+           "o alcance do II é desconhecido: 'demais dispositivos' não é resolvido")
 
     prazo = [
         "Art. 9º Esta Lei fictícia entra em vigor:",
@@ -838,12 +847,103 @@ def proposta_clausula_nao_interpreta():
     parcial = [
         "Art. 9º Esta Lei fictícia entra em vigor:",
         "I - em 2030, em relação aos arts. 3º e 5º;",
-        "II - em 2035, em relação aos arts. 6º a 7º.",
+        "II - em 2035, em relação aos arts. 6º e o Anexo I.",
     ]
     r = _pv().interpretar_clausula(parcial, URN_BASE, "9", EXISTENTES_FICT)
     checar(r["mapa"]["3"]["inciso"] == "I" and r["mapa"]["3"]["ressalva"],
            "nomeado por inciso interpretado segue atribuído, mas com ressalva: o inciso "
            "não interpretado pode nomeá-lo também")
+
+
+@cenario("proposta: leitura do alcance de um inciso")
+def proposta_ler_alcance():
+    """Quebra: separar a lista por ' e ' antes de reconhecer as subdivisões.
+    '450, §§ 1º e 5º' viraria os artigos 450 e 5; '58, caput' viraria o art. 58
+    inteiro; '480 a 484' viraria 480 e 484."""
+    ler = _pv().ler_alcance
+
+    def resumo(itens):
+        return None if itens is None else [
+            (i["artigos"], i["somente"], i["exceto"]) for i in itens]
+
+    checar(resumo(ler("6º, §§ 1º e 5º, 13 e 15"))
+           == [(["6"], ["par1", "par5"], None), (["13"], None, None), (["15"], None, None)],
+           "'§§ 1º e 5º' são parágrafos do art. 6, não o art. 5")
+    checar(resumo(ler("3º, 4º, caput, 5º, § 3º, 9º a 11 e 20"))
+           == [(["3"], None, None), (["4"], ["par0"], None), (["5"], ["par3"], None),
+               (["9", "10", "11"], None, None), (["20"], None, None)],
+           "caput, parágrafo (§ 3º) e intervalo")
+    checar(resumo(ler("6º, exceto os §§ 1º e 5º, 12 e 14"))
+           == [(["6"], None, ["par1", "par5"]), (["12"], None, None), (["14"], None, None)],
+           "'exceto os §§' fica com o artigo que o precede")
+    checar(ler("6º e o Anexo I") is None, "qualquer sobra: a lista inteira não é interpretada")
+    checar(ler("6º; 7º") is None and ler("6º, 7º,") is None,
+           "separador desconhecido ou vírgula final: nada é descartado em silêncio")
+    checar(ler("4º-A a 4º-C") is None, "intervalo entre artigos com sufixo não é interpretado")
+    checar(ler("9º a 11, § 2º") is None, "subdivisão aplicada a um intervalo não é interpretada")
+
+
+CL_LC = [
+    "Art. 90. Esta Lei Complementar fictícia entra em vigor na data de sua publicação, "
+    "produzindo efeitos: Produção de efeitos",
+    "I - a partir do primeiro dia do quarto mês subsequente ao da sua publicação, "
+    "em relação aos arts. 7º a 8º;",
+    "II - a partir de 1º de janeiro de 2030, em relação aos arts. 3º, 4º, caput, 5º, § 3º, "
+    "9º a 11 e 20;",
+    "~~III - a partir de 1º de janeiro de 2031, em relação aos arts. 6º, exceto os §§ 1º e 5º, "
+    "12 e 14;~~",
+    "III - a partir de 1º de janeiro de 2031, em relação aos arts. 2º, 6º, exceto os §§ 1º e 5º, "
+    "12 e 14; (Redação dada pela Lei Complementar nº 998, de 2030)",
+    "IV - a partir de 1º de janeiro de 2032, em relação aos arts. 6º, §§ 1º e 5º, 13 e 15; e",
+    "V - a partir de 1º de janeiro de 2029, em relação aos demais dispositivos.",
+]
+EXISTENTES_LC = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "10-A", "11", "12", "13",
+                 "14", "15", "20", "90"]
+
+
+@cenario("proposta: cláusula que dá a vigência no caput e os efeitos nos incisos")
+def proposta_clausula_efeitos():
+    """A forma da LC 214: 'entra em vigor na data de sua publicação, produzindo
+    efeitos: I - ...'. Quebra: tratar os incisos como vigência (como na EC), ou
+    perder as subdivisões, a redação anterior e o sufixo dentro de intervalo."""
+    r = _pv().interpretar_clausula(CL_LC, URN_BASE, "90", EXISTENTES_LC)
+    u = lambda n, **kw: urn_dispositivo(URN_BASE, n, **kw)  # noqa: E731
+    checar(r["forma"] == "efeitos_por_inciso", "forma reconhecida pelo caput")
+    checar(r["vigencia"] == {"termo": {"tipo": "publicacao"}, "fundamento": u("90")},
+           "a vigência de todos vem do caput, na publicação")
+    atribuido = {n: m["inciso"] for n, m in r["mapa"].items()}
+    checar(atribuido == {"1": "V", "2": "III", "3": "II", "4": "V", "5": "V", "6": "III",
+                         "7": "I", "8": "I", "9": "II", "10": "II", "10-A": None, "11": "II",
+                         "12": "III", "13": "IV", "14": "III", "15": "IV", "20": "II",
+                         "90": "V"},
+           f"efeitos de cada artigo no seu inciso (obteve {atribuido})")
+    checar(r["mapa"]["3"]["termo"] == {"tipo": "data", "data": "2030-01-01"},
+           "'a partir de 1º de janeiro de 2030' vira data")
+    checar(r["mapa"]["7"]["termo"] is None and r["mapa"]["7"]["motivo"],
+           "termo relativo ('quarto mês subsequente'): sem data, com motivo")
+    checar(r["mapa"]["10-A"]["motivo"],
+           "10-A dentro do intervalo '9º a 11': indeterminado, com motivo")
+    exc = {n: [(e["urn"], e["inciso"]) for e in r["mapa"][n]["excecoes"]]
+           for n in ("4", "5", "6")}
+    checar(exc == {"4": [(u("4", paragrafo="0"), "II")], "5": [(u("5", paragrafo="3"), "II")],
+                   "6": [(u("6", paragrafo="1"), "IV"), (u("6", paragrafo="5"), "IV")]},
+           f"subdivisões com inciso próprio viram exceções (obteve {exc})")
+    checar([n for n, m in r["mapa"].items() if m["alterado_pela_redacao_posterior"]] == ["2"],
+           "o art. 2, que só a redação nova do III nomeia, é sinalizado")
+
+    # Inteiro num inciso e em parte noutro, SEM 'exceto': qual prevalece no § 1º é
+    # interpretação, não leitura.
+    ambiguo = [
+        "Art. 90. Esta Lei Complementar fictícia entra em vigor na data de sua publicação, "
+        "produzindo efeitos:",
+        "I - a partir de 1º de janeiro de 2030, em relação aos arts. 3º e 6º;",
+        "II - a partir de 1º de janeiro de 2031, em relação aos arts. 6º, § 1º; e",
+        "III - a partir de 1º de janeiro de 2029, em relação aos demais dispositivos.",
+    ]
+    r = _pv().interpretar_clausula(ambiguo, URN_BASE, "90", EXISTENTES_LC)
+    checar(r["mapa"]["6"]["inciso"] is None and r["mapa"]["6"]["motivo"]
+           and r["mapa"]["3"]["inciso"] == "I",
+           "art. 6 inteiro no I e § 1º no II, sem 'exceto': indeterminado")
 
 
 @cenario("proposta: conflito, artigo inexistente e ausência de 'demais'")
@@ -1124,6 +1224,30 @@ def revisao_erros():
     checar(len(erros) == 1, "revisão para dispositivo que a norma não tem: erro")
 
 
+@cenario("revisão: 'aceitar' com efeitos de outro inciso e exceções propostas")
+def revisao_aceitar_efeitos_e_excecoes():
+    """Quebra: fundamentar os efeitos no dispositivo da vigência, ou descartar as
+    exceções por subdivisão que a cláusula estabelece (LC 214, art. 450)."""
+    entrada = _entrada("6", {"decisao": "aceitar", **REVISOR}, termo="publicacao")
+    entrada["vigencia"]["fundamento"] = urn_dispositivo(URN_EC, "90")
+    exc = {"urn": urn_dispositivo(URN_EC, "6", paragrafo="1"), "efeitos_inicio": "2032-01-01",
+           "fundamento": [urn_dispositivo(URN_EC, "90", inciso="IV")]}
+    entrada["efeitos"] = {
+        "inciso": "III", "fundamento": urn_dispositivo(URN_EC, "90", inciso="III"),
+        "proposta": {"tipo": "data", "data_candidata": "2031-01-01", "precisao": "dia"},
+        "excecoes": [exc],
+    }
+    revs, erros = _carregar([entrada])
+    r = revs.get(urn_dispositivo(URN_EC, "6"))
+    checar(not erros and r is not None, f"aceita sem erro (erros: {erros})")
+    checar(r and r["fundamento_temporal"] == {
+        "vigencia": [urn_dispositivo(URN_EC, "90")],
+        "efeitos": [urn_dispositivo(URN_EC, "90", inciso="III")]},
+        "vigência fundamentada no caput, efeitos no inciso III")
+    checar(r and r["efeitos_inicio"] == "2031-01-01" and r["excecoes_subdivisao"] == [exc],
+           "e o § 1º com a própria data, do inciso IV")
+
+
 @cenario("revisão: data sem aspas no YAML editado à mão")
 def revisao_data_sem_aspas():
     """Quebra: tratar só texto como data. Quem revisa escreve `2027-01-01` sem
@@ -1266,6 +1390,51 @@ def front_matter_ato_e_publicacao():
                              {"datas": [], "fonte": None, "trechos": []}, False)
     checar(meta2["vigencia_inicio"] == "1900-01-01",
            "sem publicação localizada, a provisória cai para a data do ato")
+
+
+@cenario("proposta: LC 214 real (pulado se normas/ ou fontes/ ausentes)")
+def proposta_lc_real():
+    """Contrato com o art. 544 real, lido à mão em normas/lc-214-2025/art-0544.md:
+    vigência na publicação; efeitos I (termo relativo) 537 a 540; II 1º/1/2025 com
+    35, '58, caput', '60, § 3º', 480 a 484; III (redação dada pela LC 227/2026)
+    1º/1/2027 com 168 a 171 e '450, exceto os §§ 1º e 5º'; IV 1º/1/2029 com 446 e
+    '450, §§ 1º e 5º'; V 1º/1/2033 com 518; VI 1º/1/2026 os demais. Publicação no
+    DOU em 16/01/2025."""
+    if not (RAIZ / "normas" / "lc-214-2025").exists() or \
+            not (RAIZ / "fontes" / "lc-214-2025" / "texto_compilado.html").exists():
+        print("  pulado: normas/ ou fontes/ da LC 214 ausentes")
+        return
+    prop = _pv().construir("lc-214-2025")
+    base = urn_norma("br:federal:lei.complementar", "2025-01-16", "214")
+    u = lambda n, **kw: urn_dispositivo(base, n, **kw)  # noqa: E731
+    por = {d["artigo"]: d for d in prop["dispositivos"]}
+    checar(prop["clausula_de_vigencia"]["forma"] == "efeitos_por_inciso"
+           and prop["clausula_de_vigencia"]["urn"] == u("544"), "cláusula: art. 544, forma da LC")
+    checar(all(d["vigencia"]["proposta"]["data_candidata"] == "2025-01-16"
+               and d["vigencia"]["fundamento"] == u("544") for d in prop["dispositivos"]),
+           "vigência de todos: publicação no DOU, fundamentada no caput")
+    esperado = {"35": ("II", "2025-01-01"), "1": ("VI", "2026-01-01"), "168": ("III", "2027-01-01"),
+                "446": ("IV", "2029-01-01"), "518": ("V", "2033-01-01"), "482": ("II", "2025-01-01"),
+                "537": ("I", None), "482-A": (None, None)}
+    obtido = {n: (por[n]["efeitos"]["inciso"],
+                  (por[n]["efeitos"]["proposta"] or {}).get("data_candidata"))
+              for n in esperado}
+    checar(obtido == esperado, f"efeitos por inciso (obteve {obtido})")
+    exc = {n: [(e["urn"], e["efeitos_inicio"]) for e in por[n]["efeitos"]["excecoes"]]
+           for n in ("58", "60", "450")}
+    checar(exc == {"58": [(u("58", paragrafo="0"), "2025-01-01")],
+                   "60": [(u("60", paragrafo="3"), "2025-01-01")],
+                   "450": [(u("450", paragrafo="1"), "2029-01-01"),
+                           (u("450", paragrafo="5"), "2029-01-01")]},
+           f"subdivisões com efeitos próprios (obteve {exc})")
+    checar(por["58"]["efeitos"]["inciso"] == "VI" and por["450"]["efeitos"]["inciso"] == "III",
+           "o resto do art. 58 cai em 'demais'; o art. 450 fica no III")
+    checar("alcance_alterado_pela_redacao_posterior" in por["168"]["pendencias"]
+           and "alcance_alterado_pela_redacao_posterior" not in por["461"]["pendencias"],
+           "168 só está na redação nova do III; 461 está nas duas")
+    ids = {p["id"] for p in prop["pendencias_gerais"]}
+    checar({"outro_ato_no_compilado", "rodape_cita_publicacao_nao_confirmada"} <= ids,
+           "pendências gerais: o outro ato anexado e o 23/01/2025 não confirmado")
 
 
 @cenario("contrato: a proposta gerada é consumível pela revisão (EC 132 real)")

@@ -326,12 +326,26 @@ python pipeline/propor_vigencia.py --slug emc-132-2023
   próprio ("DOU de 2.7.2025"). Não é a publicação da LC; é outro ato, e os
   dispositivos que ele trouxe podem ter vigência própria. Identificar quais são
   é pré-requisito da revisão da LC.
-- **LC 214: proposta ainda não.** A cláusula dela (`Art. 544`) tem forma diferente
-  da EC: "entra em vigor na data de sua publicação, produzindo efeitos: I - ...",
-  isto é, a vigência vem do caput e os incisos dão os EFEITOS. Usa ainda data
-  completa, intervalos ("arts. 537 a 540"), subdivisões ("58, caput", "60, § 3º")
-  e exceções ("exceto os §§ 1º e 5º"), e o próprio inciso III tem redação
-  anterior riscada. Estender o gerador é o próximo passo.
+- **LC 214: proposta aguardando revisão** em `temporal/propostas/lc-214-2025.yaml`.
+  A cláusula (`Art. 544`) tem a forma "entra em vigor na data de sua publicação,
+  produzindo efeitos: I - ...": a vigência de todos os 580 artigos é a publicação
+  no DOU (16/01/2025), e os incisos dão os **efeitos**. Por inciso: I, 4 (arts.
+  537 a 540, termo relativo, sem data proposta); II, 12 (1º/1/2025); III, 48
+  (1º/1/2027); IV, 6 (1º/1/2029); V, 2 (1º/1/2033); VI, 507 ("demais
+  dispositivos", 1º/1/2026). Exceções por subdivisão: caput do art. 58 e § 3º do
+  art. 60 em 1º/1/2025 (o resto do artigo em VI); §§ 1º e 5º do art. 450 em
+  1º/1/2029 (o resto em III).
+- **Pontos que a proposta deixa para o revisor na LC 214:**
+  - o termo do inciso I ("primeiro dia do quarto mês subsequente ao da sua
+    publicação") não é calculado;
+  - o art. 482-A (incluído depois) fica dentro de "480 a 484": se o intervalo o
+    abrange é interpretação;
+  - o inciso III tem redação dada pela LC 227/2026, que acrescentou os arts.
+    168–171, 309–315, 444 e 462; antes dela, esses caíam em "demais
+    dispositivos". A data em que a nova redação passou a valer depende da LC 227,
+    que não está ingerida;
+  - o compilado traz outro ato anexado (2.7.2025), cujos dispositivos podem ter
+    vigência própria.
 
 ---
 

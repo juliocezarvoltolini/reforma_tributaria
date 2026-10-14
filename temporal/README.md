@@ -26,6 +26,23 @@ do artigo em trecho literal (vigência não é eficácia) e campos `revisao` vaz
   `pendencias_gerais` o que vale para a norma inteira (publicação não confirmada
   no DOU, outro ato anexado ao compilado).
 
+## Formas de cláusula reconhecidas
+
+| Forma | Exemplo real | O que os incisos dão |
+|---|---|---|
+| `vigencia_por_inciso` | EC 132, art. 23: "entra em vigor: I - em 2027, em relação aos arts. 3º e 11" | a vigência; os efeitos só são propostos iguais a ela quando o artigo não tem marco próprio |
+| `efeitos_por_inciso` | LC 214, art. 544: "entra em vigor na data de sua publicação, produzindo efeitos: I - ..." | os efeitos; a vigência de todos vem do caput |
+
+O alcance de cada inciso é lido por inteiro — artigos, intervalos ("480 a 484"),
+`caput`, `§ 3º`, `§§ 1º e 5º`, `exceto os §§ 1º e 5º`, "demais dispositivos" — e
+qualquer sobra invalida a lista. Termo e alcance são independentes: um termo
+relativo ("primeiro dia do quarto mês subsequente") deixa aqueles artigos sem
+data, mas não impede resolver "demais dispositivos". Subdivisões com inciso
+próprio viram `efeitos.excecoes`, que `aceitar` aplica junto. Artigo com sufixo
+dentro de um intervalo (482-A em "480 a 484") fica indeterminado: se o intervalo
+o abrange é interpretação. A diferença entre a redação riscada de um inciso e a
+vigente é sinalizada (`alcance_alterado_pela_redacao_posterior`).
+
 ## Como revisar e aplicar
 
 Em cada dispositivo, preencha o bloco `revisao`:

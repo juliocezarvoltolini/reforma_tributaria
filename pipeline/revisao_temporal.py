@@ -194,19 +194,26 @@ def _revisao_de(entrada: dict) -> tuple[dict | None, list[str]]:
         vig = (entrada.get("vigencia") or {}).get("proposta")
         efe = (entrada.get("efeitos") or {}).get("proposta")
         fundamento = (entrada.get("vigencia") or {}).get("fundamento")
+        # Na forma da LC 214 os efeitos têm fundamento próprio (o inciso); na da
+        # EC 132 acompanham a vigência.
+        fundamento_efeitos = (entrada.get("efeitos") or {}).get("fundamento") or fundamento
         if not vig or not vig.get("data_candidata"):
             problemas.append("'aceitar' sem proposta de vigência com data: use 'alterar'")
         if not efe or not efe.get("data_candidata"):
             problemas.append("'aceitar' sem proposta de efeitos: use 'alterar' e informe "
                              "efeitos_inicio e fundamento_efeitos")
+        # Exceções por subdivisão que a cláusula estabelece ('450, exceto os §§ 1º
+        # e 5º'): aceitar a proposta é aceitá-las também.
+        excecoes = (entrada.get("efeitos") or {}).get("excecoes") or []
+        for exc in excecoes:
+            problemas += _problemas_excecao(exc, urn)
         if problemas:
             return None, problemas
         datas = {"vigencia_inicio": vig["data_candidata"], "vigencia_fim": None,
                  "efeitos_inicio": efe["data_candidata"], "efeitos_fim": None}
         precisao = {c: p for c, p in (("vigencia_inicio", vig.get("precisao")),
                                       ("efeitos_inicio", efe.get("precisao"))) if p == "ano"}
-        fundamentos = {"vigencia": [fundamento], "efeitos": [fundamento]}
-        excecoes: list = []
+        fundamentos = {"vigencia": [fundamento], "efeitos": [fundamento_efeitos]}
     else:  # alterar
         datas = {}
         for campo in CAMPOS_DATA:

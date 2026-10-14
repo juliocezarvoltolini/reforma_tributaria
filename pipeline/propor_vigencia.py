@@ -50,8 +50,10 @@ from comum import (
     urn_dispositivo,
     urn_norma,
 )
+from fatiar import _iso as _data_por_extenso  # noqa: E402
 from fatiar import (
     CATALOGO,
+    RE_ANOTACAO,
     chave_ordem,
     extrair_referencias,
     html_para_linhas,
@@ -66,14 +68,43 @@ DIR_PROPOSTAS = DIR_TEMPORAL / "propostas"
 # ---------------------------------------------------------------------------
 
 RE_ENTRA_EM_VIGOR = re.compile(r"\bentra(?:r[áa])?\s+em\s+vigor\b", re.IGNORECASE)
+
+# Duas formas de cláusula, medidas nos textos reais:
+#   EC 132:  "Esta Emenda Constitucional entra em vigor: I - em 2027, em relação..."
+#            — os incisos dão a VIGÊNCIA.
+#   LC 214:  "Esta Lei Complementar entra em vigor na data de sua publicação,
+#            produzindo efeitos: I - a partir de 1º de janeiro de 2025, ..."
+#            — a vigência de todos vem do caput; os incisos dão os EFEITOS.
+RE_CAPUT_EFEITOS = re.compile(
+    r"\bentra(?:r[áa])?\s+em\s+vigor\s+na\s+data\s+de\s+sua\s+publica[çc][ãa]o\s*,\s*"
+    r"produzindo\s+efeitos\s*:", re.IGNORECASE)
+RE_CAPUT_VIGENCIA = re.compile(r"\bentra(?:r[áa])?\s+em\s+vigor\s*:", re.IGNORECASE)
+
 RE_INCISO = re.compile(r"^([IVXLC]+)\s*[-–]\s*(.+)$")
-RE_TERMO_ANO = re.compile(r"^em\s+((?:19|20)\d{2})\s*,\s*(.+)$", re.IGNORECASE)
-RE_TERMO_PUBLICACAO = re.compile(
-    r"^na\s+data\s+de\s+sua\s+publica[çc][ãa]o\s*,\s*(.+)$", re.IGNORECASE
-)
+# Termo e alcance são lidos separadamente: um termo fora do padrão não impede
+# saber quais artigos o inciso nomeia.
+RE_DIVISAO_ALCANCE = re.compile(r",\s*(?=em\s+rela[çc][ãa]o\s+a)", re.IGNORECASE)
+
+_MESES_TERMO = ("janeiro|fevereiro|mar[çc]o|abril|maio|junho|julho|agosto|setembro|outubro|"
+                "novembro|dezembro")
+RE_TERMO_DATA = re.compile(
+    rf"^(?:em|a\s+partir\s+de)\s+(\d{{1,2}})\s*[ºo°]?\s+de\s+({_MESES_TERMO})\s+de\s+"
+    rf"((?:19|20)\d{{2}})$", re.IGNORECASE)
+RE_TERMO_ANO = re.compile(r"^(?:em|a\s+partir\s+de)\s+((?:19|20)\d{2})$", re.IGNORECASE)
+RE_TERMO_PUBLICACAO = re.compile(r"^na\s+data\s+de\s+sua\s+publica[çc][ãa]o$", re.IGNORECASE)
 RE_ALCANCE_DEMAIS = re.compile(r"^em\s+rela[çc][ãa]o\s+aos\s+demais\s+dispositivos$", re.IGNORECASE)
 RE_ALCANCE_ARTIGOS = re.compile(r"^em\s+rela[çc][ãa]o\s+aos?\s+arts?\.\s*(.+)$", re.IGNORECASE)
-RE_NUMERO = re.compile(r"^(\d+)\s*[ºo°]?(?:\s*-\s*([A-Z]))?$")
+
+# Leitor do alcance. As subdivisões se ligam ao artigo que as precede e são
+# reconhecidas ANTES da separação por ' e ': '450, §§ 1º e 5º' são parágrafos do
+# art. 450, não o art. 5. No plural, vírgula só entre números com 'º', para não
+# engolir o artigo seguinte ('§§ 1º e 5º, 464').
+# Espaço só é consumido junto com o ordinal: "13 e 15" não pode perder o espaço
+# antes do "e", ou o separador deixa de casar.
+RE_ITEM = re.compile(r"(\d+)(?:\s*[ºo°])?(-[A-Z])?(?:\s+a\s+(\d+)(?:\s*[ºo°])?(-[A-Z])?)?")
+_PARAGRAFOS = r"§§\s*\d+(?:\s*º)?(?:\s*,\s*\d+\s*º)*\s+e\s+\d+(?:\s*º)?|§\s*\d+(?:\s*º)?"
+RE_QUALIFICADOR = re.compile(rf",\s*(?:(caput)|exceto\s+os?\s+({_PARAGRAFOS})|({_PARAGRAFOS}))")
+RE_SEPARADOR = re.compile(r"\s*,\s*|\s+e\s+")
 
 
 def localizar_clausula(corpos: dict[str, list[str]]) -> list[str]:
@@ -82,110 +113,223 @@ def localizar_clausula(corpos: dict[str, list[str]]) -> list[str]:
     return [n for n, linhas in corpos.items() if linhas and RE_ENTRA_EM_VIGOR.search(linhas[0])]
 
 
-def _numeros(lista: str) -> list[str] | None:
-    """'3º e 11' -> ['3', '11']. None se houver QUALQUER coisa além de números
-    separados por vírgula ou 'e' (intervalo 'a', 'exceto', parágrafo...)."""
-    saida = []
-    for token in re.split(r"\s*,\s*|\s+e\s+", lista.strip()):
-        m = RE_NUMERO.match(token.strip())
+def ler_alcance(lista: str) -> list[dict] | None:
+    """'3º, 58, caput, 60, § 3º, 480 a 484 e 541' -> itens. None se sobrar
+    QUALQUER coisa que não seja artigo, intervalo ou subdivisão reconhecida."""
+    lista = lista.strip()
+    itens, pos = [], 0
+    while True:
+        m = RE_ITEM.match(lista, pos)
         if not m:
             return None
-        saida.append(m.group(1) + (f"-{m.group(2)}" if m.group(2) else ""))
-    return saida
+        ini, suf_ini, fim, suf_fim = m.groups()
+        if fim:
+            # intervalo entre artigos com sufixo ('4º-A a 4º-C') não é interpretado
+            if suf_ini or suf_fim or int(fim) <= int(ini):
+                return None
+            item = {"artigos": [str(n) for n in range(int(ini), int(fim) + 1)],
+                    "intervalo": [int(ini), int(fim)], "somente": None, "exceto": None}
+        else:
+            item = {"artigos": [ini + (suf_ini or "")], "intervalo": None,
+                    "somente": None, "exceto": None}
+        pos = m.end()
+        q = RE_QUALIFICADOR.match(lista, pos)
+        if q:
+            if item["intervalo"]:
+                return None
+            caput, exceto, somente = q.groups()
+            if caput:
+                item["somente"] = ["par0"]
+            elif exceto:
+                item["exceto"] = [f"par{n}" for n in re.findall(r"\d+", exceto)]
+            else:
+                item["somente"] = [f"par{n}" for n in re.findall(r"\d+", somente)]
+            pos = q.end()
+        itens.append(item)
+        if pos == len(lista):
+            return itens
+        s = RE_SEPARADOR.match(lista, pos)
+        if not s or s.end() == len(lista):
+            return None
+        pos = s.end()
 
 
-def _interpretar_inciso(texto: str) -> tuple[dict | None, dict | None, str | None]:
-    """(termo, alcance, motivo). Motivo preenchido = não interpretado."""
-    # "; e" ao fim liga o inciso ao seguinte; ";" e "." encerram.
-    texto = re.sub(r"\s*;\s*e\s*$", "", texto).rstrip(" ;.")
-
+def _ler_termo(texto: str) -> dict | None:
+    texto = texto.strip()
+    if m := RE_TERMO_DATA.match(texto):
+        data = _data_por_extenso(m.group(1), m.group(2), m.group(3))
+        return {"tipo": "data", "data": data} if data else None
     if m := RE_TERMO_ANO.match(texto):
-        termo, resto = {"tipo": "ano", "ano": int(m.group(1))}, m.group(2)
-    elif m := RE_TERMO_PUBLICACAO.match(texto):
-        termo, resto = {"tipo": "publicacao"}, m.group(1)
-    else:
-        return None, None, ("termo fora dos padrões reconhecidos "
-                            "('em <ano>' ou 'na data de sua publicação')")
+        return {"tipo": "ano", "ano": int(m.group(1))}
+    if RE_TERMO_PUBLICACAO.match(texto):
+        return {"tipo": "publicacao"}
+    return None
 
-    if RE_ALCANCE_DEMAIS.match(resto):
-        return termo, {"tipo": "demais"}, None
-    if m := RE_ALCANCE_ARTIGOS.match(resto):
-        artigos = _numeros(m.group(1))
-        if artigos is None:
-            return termo, None, ("lista de artigos fora do padrão (só números separados "
-                                 "por vírgula e 'e'; intervalo, 'exceto' e subdivisão "
-                                 "não são interpretados)")
-        return termo, {"tipo": "artigos", "artigos": artigos}, None
-    return termo, None, "alcance fora dos padrões reconhecidos"
+
+def _ler_inciso(linha: str, urn_base: str, artigo: str) -> dict | None:
+    texto = RE_ANOTACAO.sub("", linha).strip()
+    m = RE_INCISO.match(texto)
+    if not m:
+        return None
+    rotulo, corpo = m.group(1), m.group(2)
+    # "; e" ao fim liga o inciso ao seguinte; ";" e "." encerram.
+    corpo = re.sub(r"\s*;\s*e\s*$", "", corpo).rstrip(" ;.")
+    partes = RE_DIVISAO_ALCANCE.split(corpo, maxsplit=1)
+    termo = _ler_termo(partes[0])
+    alcance = None
+    if len(partes) == 2:
+        if RE_ALCANCE_DEMAIS.match(partes[1]):
+            alcance = {"tipo": "demais"}
+        elif am := RE_ALCANCE_ARTIGOS.match(partes[1]):
+            itens = ler_alcance(am.group(1))
+            if itens is not None:
+                alcance = {"tipo": "artigos", "itens": itens}
+    motivos = []
+    if termo is None:
+        motivos.append("termo fora dos padrões reconhecidos ('em <ano>', 'a partir de <data>', "
+                       "'na data de sua publicação')")
+    if alcance is None:
+        motivos.append("alcance fora dos padrões (só artigos, intervalos 'a', 'caput', '§', "
+                       "'§§ x e y', 'exceto os §§' e 'demais dispositivos'; qualquer sobra "
+                       "invalida a lista inteira)")
+    return {
+        "urn": urn_dispositivo(urn_base, artigo, inciso=rotulo),
+        "rotulo": rotulo,
+        "texto": linha,
+        "interpretado": termo is not None and alcance is not None,
+        "alcance_interpretado": alcance is not None,
+        "termo": termo,
+        "alcance": alcance,
+        "motivo": "; ".join(motivos) or None,
+    }
+
+
+def _nomeados(inciso: dict) -> set[str]:
+    alcance = inciso.get("alcance") or {}
+    return {a for item in alcance.get("itens") or [] for a in item["artigos"]}
 
 
 def interpretar_clausula(
     linhas: list[str], urn_base: str, artigo: str, existentes: list[str]
 ) -> dict:
-    """Aplica a cláusula de vigência a cada artigo da norma."""
-    incisos = []
-    for linha in linhas[1:]:
-        m = RE_INCISO.match(linha)
-        if not m:
-            continue
-        rotulo, texto = m.group(1), m.group(2)
-        termo, alcance, motivo = _interpretar_inciso(texto)
-        incisos.append({
-            "urn": urn_dispositivo(urn_base, artigo, inciso=rotulo),
-            "rotulo": rotulo,
-            "texto": linha,
-            "interpretado": motivo is None,
-            "termo": termo if motivo is None else None,
-            "alcance": alcance if motivo is None else None,
-            "motivo": motivo,
-        })
+    """Aplica a cláusula de vigência a cada artigo da norma.
 
-    interpretados = [i for i in incisos if i["interpretado"]]
-    nao_interpretados = [i["rotulo"] for i in incisos if not i["interpretado"]]
-    nomeados: dict[str, list[dict]] = {}
-    inexistentes: list[str] = []
-    for i in interpretados:
-        if i["alcance"]["tipo"] == "artigos":
-            for n in i["alcance"]["artigos"]:
-                nomeados.setdefault(n, []).append(i)
-                if n not in existentes and n not in inexistentes:
-                    inexistentes.append(n)
-    demais = [i for i in interpretados if i["alcance"]["tipo"] == "demais"]
+    Devolve, por artigo, o inciso que o alcança, o termo, o fundamento e as
+    exceções por subdivisão ('58, caput', '450, exceto os §§ 1º e 5º'). O que o
+    texto não decide fica com `inciso: None` e o `motivo`.
+    """
+    caput = linhas[0] if linhas else ""
+    if RE_CAPUT_EFEITOS.search(caput):
+        forma = "efeitos_por_inciso"
+        vigencia = {"termo": {"tipo": "publicacao"}, "fundamento": urn_dispositivo(urn_base, artigo)}
+    elif RE_CAPUT_VIGENCIA.search(caput):
+        forma, vigencia = "vigencia_por_inciso", None
+    else:
+        forma, vigencia = None, None
+
+    incisos, anteriores = [], {}
+    for linha in linhas[1:]:
+        if linha.startswith("~~"):
+            # Redação anterior, riscada: só serve para ver o que a nova mudou.
+            antigo = _ler_inciso(linha.strip("~").strip(), urn_base, artigo)
+            if antigo:
+                anteriores[antigo["rotulo"]] = antigo
+            continue
+        inciso = _ler_inciso(linha, urn_base, artigo)
+        if inciso:
+            incisos.append(inciso)
+
+    alcance_desconhecido = [i["rotulo"] for i in incisos if not i["alcance_interpretado"]]
+    demais = [i for i in incisos if i["alcance_interpretado"] and i["alcance"]["tipo"] == "demais"]
+    nomeacoes: dict[str, list[tuple[dict, dict]]] = {}
+    intervalos: list[tuple[int, int, str]] = []
+    for inc in incisos:
+        for item in (inc["alcance"] or {}).get("itens") or []:
+            for a in item["artigos"]:
+                nomeacoes.setdefault(a, []).append((inc, item))
+            if item["intervalo"]:
+                intervalos.append((*item["intervalo"], inc["rotulo"]))
+    inexistentes = [a for a in nomeacoes if a not in existentes]
+    alterados = set()
+    for rotulo, antigo in anteriores.items():
+        atual = next((i for i in incisos if i["rotulo"] == rotulo), None)
+        if atual and antigo["alcance_interpretado"] and atual["alcance_interpretado"]:
+            alterados |= _nomeados(atual) ^ _nomeados(antigo)
+
+    def excecao(sub: str, n: str, inc: dict) -> dict:
+        return {"subdivisao": sub, "urn": urn_dispositivo(urn_base, n, paragrafo=sub[3:]),
+                "inciso": inc["rotulo"], "termo": inc["termo"], "fundamento": inc["urn"]}
+
+    def resolver(n: str) -> tuple[dict | None, list[dict], str | None]:
+        """(inciso principal, exceções, motivo de indeterminação)."""
+        if forma is None:
+            return None, [], "caput fora das formas reconhecidas ('entra em vigor:' ou 'entra em " \
+                             "vigor na data de sua publicação, produzindo efeitos:')"
+        noms = nomeacoes.get(n, [])
+        if not noms and "-" in n:
+            base = int(n.split("-")[0])
+            dentro = [f"'{a} a {b}' do inciso {r}" for a, b, r in intervalos if a <= base <= b]
+            if dentro:
+                return None, [], (f"art. {n} tem sufixo e fica dentro do intervalo {dentro[0]}: "
+                                  "se o intervalo o abrange é interpretação")
+        inteiros = [(i, it) for i, it in noms if not it["somente"]]
+        parciais = [(i, it) for i, it in noms if it["somente"]]
+        if len(inteiros) > 1:
+            return None, [], "nomeado em mais de um inciso: " + ", ".join(i["rotulo"] for i, _ in inteiros)
+        if inteiros and parciais and not inteiros[0][1]["exceto"]:
+            return None, [], (f"nomeado inteiro no inciso {inteiros[0][0]['rotulo']} e em parte "
+                              f"no {parciais[0][0]['rotulo']}: qual prevalece é interpretação")
+        principal = inteiros[0][0] if inteiros else None
+        if principal is None:
+            if alcance_desconhecido:
+                return None, [], (f"inciso(s) {', '.join(alcance_desconhecido)} com alcance não "
+                                  "interpretado: não se sabe se este artigo é nomeado por eles, "
+                                  "então 'demais dispositivos' não pode ser resolvido")
+            if len(demais) != 1:
+                return None, [], ("mais de um inciso 'demais dispositivos'" if demais else
+                                  "nenhum inciso nomeia este artigo e a cláusula não tem "
+                                  "'demais dispositivos'")
+            principal = demais[0]
+        excecoes, vistos = [], set()
+        for inc, item in parciais:
+            for sub in item["somente"]:
+                if sub in vistos:
+                    return None, [], f"subdivisão {sub} nomeada em mais de um inciso"
+                vistos.add(sub)
+                excecoes.append(excecao(sub, n, inc))
+        for sub in (inteiros[0][1]["exceto"] or []) if inteiros else []:
+            if sub in vistos:
+                continue
+            if len(demais) != 1 or alcance_desconhecido:
+                return None, [], (f"{sub} é excetuada e não é nomeada em outro inciso, e "
+                                  "'demais dispositivos' não pode ser resolvido")
+            excecoes.append(excecao(sub, n, demais[0]))
+        return principal, excecoes, None
 
     mapa = {}
     for n in existentes:
-        entrada = {"inciso": None, "termo": None, "fundamento": None, "motivo": None,
-                   "ressalva": None}
-        nomes = nomeados.get(n, [])
-        if len(nomes) > 1:
-            entrada["motivo"] = "nomeado em mais de um inciso: " + ", ".join(
-                i["rotulo"] for i in nomes)
-        elif len(nomes) == 1:
-            entrada.update(inciso=nomes[0]["rotulo"], termo=nomes[0]["termo"],
-                           fundamento=nomes[0]["urn"])
-            if nao_interpretados:
-                entrada["ressalva"] = (
-                    "inciso(s) " + ", ".join(nao_interpretados) + " não interpretado(s) "
-                    "podem também nomear este artigo")
-        elif nao_interpretados:
-            entrada["motivo"] = (
-                "inciso(s) " + ", ".join(nao_interpretados) + " não interpretado(s): não se "
-                "sabe se este artigo é nomeado por eles, então 'demais dispositivos' não "
-                "pode ser resolvido")
-        elif len(demais) == 1:
-            entrada.update(inciso=demais[0]["rotulo"], termo=demais[0]["termo"],
-                           fundamento=demais[0]["urn"])
-        elif len(demais) > 1:
-            entrada["motivo"] = "mais de um inciso 'demais dispositivos'"
-        else:
-            entrada["motivo"] = ("nenhum inciso nomeia este artigo e a cláusula não tem "
-                                 "'demais dispositivos'")
+        principal, excecoes, motivo = resolver(n)
+        entrada = {"inciso": None, "termo": None, "fundamento": None, "excecoes": [],
+                   "motivo": motivo, "ressalva": None,
+                   "alterado_pela_redacao_posterior": n in alterados}
+        if principal is not None:
+            entrada.update(inciso=principal["rotulo"], termo=principal["termo"],
+                           fundamento=principal["urn"], excecoes=excecoes)
+            if principal["termo"] is None:
+                entrada["motivo"] = f"termo do inciso {principal['rotulo']} não interpretado: " \
+                                    f"{principal['motivo']}"
+            if alcance_desconhecido and nomeacoes.get(n):
+                entrada["ressalva"] = (f"inciso(s) {', '.join(alcance_desconhecido)} não "
+                                       "interpretado(s) podem também nomear este artigo")
         mapa[n] = entrada
 
     return {
         "urn": urn_dispositivo(urn_base, artigo),
-        "caput": linhas[0] if linhas else None,
+        "caput": caput or None,
+        "forma": forma,
+        "vigencia": vigencia,
         "incisos": incisos,
+        "redacoes_anteriores": list(anteriores.values()),
         "mapa": mapa,
         "artigos_inexistentes": inexistentes,
     }
@@ -271,6 +415,9 @@ RE_REVOGAM_SE = re.compile(r"^Art\.\s*\d+\s*[ºo°]?\.?\s+Revogam-se\b", re.IGNO
 
 
 def _inicio_proposto(termo: dict, pub: dict) -> dict:
+    if termo["tipo"] == "data":
+        return {"tipo": "data", "data_candidata": termo["data"], "precisao": "dia",
+                "nota": "data escrita no inciso"}
     if termo["tipo"] == "ano":
         return {
             "tipo": "ano",
@@ -407,12 +554,15 @@ def construir(slug: str) -> dict:
     if len(candidatos) == 1:
         clausula = interpretar_clausula(corpos[candidatos[0]], base, candidatos[0], ordem)
     else:
-        clausula = {"urn": None, "incisos": [], "artigos_inexistentes": [],
+        clausula = {"urn": None, "forma": None, "vigencia": None, "incisos": [],
+                    "redacoes_anteriores": [], "artigos_inexistentes": [],
                     "mapa": {n: {"inciso": None, "termo": None, "fundamento": None,
+                                 "excecoes": [], "alterado_pela_redacao_posterior": False,
                                  "motivo": "cláusula de vigência não localizada de forma única "
                                            f"(candidatos: {candidatos})", "ressalva": None}
                              for n in ordem}}
 
+    forma = clausula.get("forma")
     dispositivos = []
     for n in ordem:
         meta, corpo = metas[n], corpos[n]
@@ -420,14 +570,85 @@ def construir(slug: str) -> dict:
         marcos = marcos_proprios(corpo, base, n)
         tipos = {t for x in marcos["marcos"] for t in x["tipos"]}
         citados = list(meta.get("dispositivos_citados") or [])
-
         pendencias = []
-        if m["inciso"] is None:
+
+        # Vigência: na forma da LC, do caput para todos; na da EC, do inciso.
+        if forma == "efeitos_por_inciso":
+            vig_termo, vig_fundamento, vig_inciso, vig_motivo, vig_ressalva = (
+                clausula["vigencia"]["termo"], clausula["vigencia"]["fundamento"], None, None, None)
+        else:
+            vig_termo, vig_fundamento, vig_inciso, vig_motivo, vig_ressalva = (
+                m["termo"], m["fundamento"], m["inciso"], m["motivo"], m["ressalva"])
+        inicio_vig = _inicio_proposto(vig_termo, publicacao) if vig_termo else None
+        if inicio_vig is None:
             pendencias.append("vigencia_nao_determinada")
-        elif m["termo"]["tipo"] == "ano":
+
+        termos = [vig_termo]
+        if forma == "efeitos_por_inciso":
+            # Os efeitos vêm do inciso, com as exceções por subdivisão que ele
+            # estabelece, no formato que revisao_temporal.py aceita.
+            inicio_efe = _inicio_proposto(m["termo"], publicacao) if m["termo"] else None
+            excecoes, sem_data = [], []
+            for e in m["excecoes"]:
+                cand = _inicio_proposto(e["termo"], publicacao) if e["termo"] else None
+                if not cand or not cand["data_candidata"]:
+                    sem_data.append(e["urn"].split("!")[-1])
+                    continue
+                exc = {"urn": e["urn"], "efeitos_inicio": cand["data_candidata"],
+                       "fundamento": [e["fundamento"]]}
+                if cand["precisao"] == "ano":
+                    exc["precisao"] = {"efeitos_inicio": "ano"}
+                excecoes.append(exc)
+                termos.append(e["termo"])
+            motivo_efe = m["motivo"]
+            if sem_data:
+                inicio_efe = None
+                motivo_efe = (f"exceção sem data ({', '.join(sem_data)}): o termo do inciso que "
+                              "a alcança não foi interpretado")
+            efeitos = {"inciso": m["inciso"], "fundamento": m["fundamento"],
+                       "natureza": "derivado" if m["inciso"] else None, "proposta": inicio_efe,
+                       "excecoes": excecoes, "motivo": motivo_efe, "ressalva": m["ressalva"]}
+            termos.append(m["termo"])
+            if m["inciso"] is None:
+                pendencias.append("efeitos_nao_determinados")
+            elif m["termo"] is None:
+                pendencias.append("termo_nao_interpretado")
+            if m["excecoes"]:
+                pendencias.append("datas_por_subdivisao")
+        else:
+            # Forma da EC: a cláusula só dá a vigência. Efeitos são propostos iguais
+            # a ela apenas quando o artigo não tem marco próprio nem texto inserido.
+            if m.get("excecoes"):
+                proposta_efe, motivo_efe = None, ("exceções por subdivisão numa cláusula de "
+                                                  "vigência: revisar à mão")
+                pendencias.append("datas_por_subdivisao")
+            elif inicio_vig is None:
+                proposta_efe, motivo_efe = None, m["motivo"]
+            elif marcos["marcos"] or citados:
+                causas = []
+                if marcos["marcos"]:
+                    causas.append("tem marco(s) temporal(is) ou dependência de lei futura no "
+                                  "próprio texto (ver `marcos_proprios`)")
+                if citados:
+                    causas.append("insere texto em outra norma, ainda não ingerida")
+                proposta_efe = None
+                motivo_efe = ("os efeitos não decorrem só da cláusula de vigência: o "
+                              "dispositivo " + " e ".join(causas))
+            else:
+                proposta_efe = inicio_vig
+                motivo_efe = ("nenhum marco temporal detectado pelos padrões do script (isto NÃO "
+                              "garante que não exista): LER O TEXTO antes de aceitar que os "
+                              "efeitos acompanham a vigência")
+            efeitos = {"inciso": None, "fundamento": None, "natureza": None,
+                       "proposta": proposta_efe, "excecoes": [], "motivo": motivo_efe,
+                       "ressalva": None}
+
+        if any(t and t["tipo"] == "ano" for t in termos):
             pendencias.append("ano_sem_dia")
-        elif m["termo"]["tipo"] == "publicacao":
+        if vig_termo and vig_termo["tipo"] == "publicacao" and publicacao.get("fonte") != "dou":
             pendencias.append("publicacao_nao_confirmada_no_dou")
+        if m.get("alterado_pela_redacao_posterior"):
+            pendencias.append("alcance_alterado_pela_redacao_posterior")
         if marcos["marcos"]:
             pendencias.append("marcos_proprios")
         if "condicao_ate_que" in tipos:
@@ -441,40 +662,22 @@ def construir(slug: str) -> dict:
         if citados:
             pendencias.append("texto_inserido_em_outra_norma")
 
-        inicio = _inicio_proposto(m["termo"], publicacao) if m["inciso"] else None
-        if inicio is None:
-            efeitos = {"proposta": None, "motivo": m["motivo"]}
-        elif marcos["marcos"] or citados:
-            causas = []
-            if marcos["marcos"]:
-                causas.append("tem marco(s) temporal(is) ou dependência de lei futura no "
-                              "próprio texto (ver `marcos_proprios`)")
-            if citados:
-                causas.append("insere texto em outra norma, ainda não ingerida")
-            efeitos = {"proposta": None,
-                       "motivo": "os efeitos não decorrem só da cláusula de vigência: o "
-                                 "dispositivo " + " e ".join(causas)}
-        else:
-            efeitos = {"proposta": inicio,
-                       "motivo": "nenhum marco temporal detectado pelos padrões do script (isto NÃO "
-                                 "garante que não exista): LER O TEXTO antes de aceitar que os "
-                                 "efeitos acompanham a vigência"}
-
         dispositivos.append({
             "urn": meta["urn"],
             "artigo": n,
             "vigencia": {
-                "inciso": m["inciso"],
-                "fundamento": m["fundamento"],
-                "natureza": "derivado" if m["inciso"] else None,
-                "proposta": inicio,
-                "motivo": m["motivo"],
-                "ressalva": m["ressalva"],
+                "inciso": vig_inciso,
+                "fundamento": vig_fundamento,
+                "natureza": "derivado" if inicio_vig else None,
+                "proposta": inicio_vig,
+                "motivo": vig_motivo,
+                "ressalva": vig_ressalva,
             },
             "efeitos": efeitos,
             "atual_no_pipeline": {
                 "data_ato": meta.get("data_ato"),
-                "publicacao": meta.get("publicacao"),
+                # Só datas e fonte: o registro completo é o mesmo para a norma inteira.
+                "publicacao": {k: (meta.get("publicacao") or {}).get(k) for k in ("datas", "fonte")},
                 "vigencia_inicio": meta.get("vigencia_inicio"),
                 "efeitos_inicio": meta.get("efeitos_inicio"),
             },
@@ -497,9 +700,12 @@ def construir(slug: str) -> dict:
             },
         })
 
+    # Contagem pelo inciso que a cláusula usa para cada artigo: o da vigência na
+    # forma da EC, o dos efeitos na forma da LC.
     por_inciso: dict[str, int] = {}
     for d in dispositivos:
-        k = d["vigencia"]["inciso"] or "indeterminado"
+        lado = d["efeitos"] if forma == "efeitos_por_inciso" else d["vigencia"]
+        k = lado["inciso"] or "indeterminado"
         por_inciso[k] = por_inciso.get(k, 0) + 1
 
     return {
@@ -521,6 +727,7 @@ def construir(slug: str) -> dict:
         "decisoes_necessarias": _decisoes(dispositivos),
         "resumo": {
             "dispositivos": len(dispositivos),
+            "forma_da_clausula": forma,
             "por_inciso": por_inciso,
             "com_marcos_proprios": sum(1 for d in dispositivos if d["marcos_proprios"]),
             "com_texto_inserido_em_outra_norma": sum(
