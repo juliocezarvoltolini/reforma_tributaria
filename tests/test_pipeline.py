@@ -207,8 +207,9 @@ def ec_classificacao():
             "publicação."],
         "o último artigo termina onde o texto da norma termina",
     )
-    checar(stats["linhas_apos_o_fim"] == 3,
-           f"3 linhas depois do fim reportadas, não anexadas (obteve {stats['linhas_apos_o_fim']})")
+    # Brasília..., Mesa..., rodapé do DOU, "Art. 5º" depois do fim
+    checar(stats["linhas_apos_o_fim"] == 4,
+           f"4 linhas depois do fim reportadas, não anexadas (obteve {stats['linhas_apos_o_fim']})")
 
 
 @cenario("remissões não vazam do texto citado")
@@ -955,6 +956,20 @@ def proposta_referencias():
     checar(r["data_do_ato"]["valor"] is None and r["publicacao_dou"]["valores"] == [],
            "o que não se encontra é nulo, não é suposto")
 
+    # Medido na LC 214 real: depois dos anexos, o compilado traz OUTRO ato, com
+    # assinatura e rodapé próprios. A publicação da norma é a do primeiro rodapé.
+    com_outro_ato = fonte + [
+        "ANEXO I",
+        "Brasília, 1º de julho de 1901",
+        "Este texto não substitui o publicado no DOU de 2.7.1901.",
+    ]
+    r = _pv().extrair_referencias(com_outro_ato)
+    checar(r["publicacao_dou"]["valores"] == ["1900-03-06"],
+           "a publicação é a do rodapé que segue a primeira assinatura")
+    checar([x["valores"] for x in r["rodapes_adicionais"]] == [["1901-07-02"]]
+           and r["rodapes_adicionais"][0]["assinatura"] == "Brasília, 1º de julho de 1901",
+           "o rodapé de outro ato é devolvido à parte, com a assinatura que o precede")
+
 
 @cenario("proposta: nunca sobrescreve revisão humana")
 def proposta_nao_sobrescreve_revisao():
@@ -1009,6 +1024,346 @@ def proposta_ec_real():
 
 
 # ---------------------------------------------------------------------------
+# Revisão temporal: do YAML revisado ao front-matter (pipeline/revisao_temporal.py)
+# ---------------------------------------------------------------------------
+
+def _rt():
+    import revisao_temporal
+
+    return revisao_temporal
+
+
+SHA_FICT = "a" * 64
+URN_EC = urn_norma("br:federal:emenda.constitucional", "1900-01-01", "999")
+
+
+def _entrada(artigo: str, revisao: dict, efeitos_proposta: bool = True,
+             termo: str = "ano") -> dict:
+    """Uma entrada de proposta no formato que propor_vigencia.py grava."""
+    if termo == "ano":
+        vig = {"tipo": "ano", "ano": 2030, "data_candidata": "2030-01-01", "precisao": "ano"}
+    else:
+        vig = {"tipo": "evento", "evento": "publicacao", "data_candidata": "1900-01-02",
+               "precisao": "dia"}
+    base = {"decisao": None, "vigencia_inicio": None, "vigencia_fim": None,
+            "efeitos_inicio": None, "efeitos_fim": None, "precisao": {},
+            "fundamento_vigencia": [], "fundamento_efeitos": [],
+            "excecoes_subdivisao": [], "revisado_por": None, "revisado_em": None,
+            "observacao": None}
+    base.update(revisao)
+    return {
+        "urn": urn_dispositivo(URN_EC, artigo),
+        "artigo": artigo,
+        "vigencia": {"inciso": "I", "fundamento": urn_dispositivo(URN_EC, "23", inciso="I"),
+                     "proposta": vig},
+        "efeitos": {"proposta": dict(vig) if efeitos_proposta else None},
+        "revisao": base,
+    }
+
+
+def _carregar(entradas: list[dict], sha: str = SHA_FICT, urns: set | None = None):
+    import tempfile
+
+    import yaml
+
+    with tempfile.TemporaryDirectory() as tmp:
+        caminho = Path(tmp) / "p.yaml"
+        caminho.write_text(yaml.safe_dump({"fonte_sha256": SHA_FICT, "dispositivos": entradas},
+                                          allow_unicode=True), encoding="utf-8")
+        if urns is None:
+            urns = {e["urn"] for e in entradas}
+        return _rt().carregar_revisoes(caminho, sha, urns)
+
+
+REVISOR = {"revisado_por": "Revisora Fictícia", "revisado_em": "1900-02-01"}
+
+
+@cenario("revisão: 'aceitar' adota a proposta, com precisão e fundamento")
+def revisao_aceitar():
+    revs, erros = _carregar([_entrada("3", {"decisao": "aceitar", **REVISOR})])
+    r = revs.get(urn_dispositivo(URN_EC, "3"))
+    checar(not erros and r is not None, f"aceita sem erro (erros: {erros})")
+    checar(r["vigencia_inicio"] == "2030-01-01" and r["efeitos_inicio"] == "2030-01-01",
+           "as datas vêm da proposta")
+    checar(r["precisao"] == {"vigencia_inicio": "ano", "efeitos_inicio": "ano"},
+           "'em 2030' fica registrado como precisão de ano, não como 1º de janeiro")
+    checar(r["fundamento_temporal"]
+           == {"vigencia": [urn_dispositivo(URN_EC, "23", inciso="I")],
+               "efeitos": [urn_dispositivo(URN_EC, "23", inciso="I")]},
+           "e cada data cita o inciso da cláusula que a estabelece")
+
+
+@cenario("revisão: o que não pode ser aplicado é erro, não silêncio")
+def revisao_erros():
+    """Quebra: aplicar data sem fundamento, sem revisor, ou aceitar efeitos que o
+    gerador não propôs. Cada caso precisa barrar a escrita, não ser ignorado."""
+    _, erros = _carregar([_entrada("3", {"decisao": "aceitar", **REVISOR},
+                                   efeitos_proposta=False)])
+    checar(len(erros) == 1, "'aceitar' sem proposta de efeitos: erro (use 'alterar')")
+
+    _, erros = _carregar([_entrada("3", {"decisao": "aceitar"})])
+    checar(len(erros) == 1, "decisão sem revisado_por/revisado_em: erro")
+
+    _, erros = _carregar([_entrada("3", {
+        "decisao": "alterar", **REVISOR, "vigencia_inicio": "1900-01-02",
+        "efeitos_inicio": "1901-01-01", "fundamento_vigencia": [urn_dispositivo(URN_EC, "23")],
+        "fundamento_efeitos": []})])
+    checar(len(erros) == 1, "'alterar' sem fundamento dos efeitos: erro")
+
+    _, erros = _carregar([_entrada("3", {
+        "decisao": "alterar", **REVISOR, "vigencia_inicio": "1900-01-02",
+        "efeitos_inicio": "1901-03-01", "precisao": {"efeitos_inicio": "ano"},
+        "fundamento_vigencia": [urn_dispositivo(URN_EC, "23")],
+        "fundamento_efeitos": [urn_dispositivo(URN_EC, "7")]})])
+    checar(len(erros) == 1, "precisão de ano exige a convenção 1º de janeiro (AAAA-01-01)")
+
+    _, erros = _carregar([_entrada("3", {"decisao": "talvez", **REVISOR})])
+    checar(len(erros) == 1, "decisão fora de aceitar/alterar/rejeitar: erro")
+
+    _, erros = _carregar([_entrada("3", {"decisao": "aceitar", **REVISOR})], urns=set())
+    checar(len(erros) == 1, "revisão para dispositivo que a norma não tem: erro")
+
+
+@cenario("revisão: data sem aspas no YAML editado à mão")
+def revisao_data_sem_aspas():
+    """Quebra: tratar só texto como data. Quem revisa escreve `2027-01-01` sem
+    aspas, e o YAML entrega um objeto `date`; a revisão seria rejeitada ou, pior,
+    gravada num formato que a comparação depois não reconhece."""
+    import datetime as dt
+
+    revisao = {"decisao": "alterar", "revisado_por": "Revisora Fictícia",
+               "revisado_em": dt.date(1900, 2, 1),
+               "vigencia_inicio": dt.date(1900, 1, 2), "efeitos_inicio": dt.date(1901, 1, 1),
+               "precisao": {"efeitos_inicio": "ano"},
+               "fundamento_vigencia": [urn_dispositivo(URN_EC, "23", inciso="III")],
+               "fundamento_efeitos": [urn_dispositivo(URN_EC, "7")]}
+    revs, erros = _carregar([_entrada("3", revisao)])
+    r = revs.get(urn_dispositivo(URN_EC, "3"))
+    checar(not erros and r is not None, f"datas sem aspas são aceitas (erros: {erros})")
+    checar(r and r["vigencia_inicio"] == "1900-01-02" and r["revisado_em"] == "1900-02-01",
+           "e gravadas como texto AAAA-MM-DD")
+
+
+@cenario("revisão: deriva da fonte invalida a revisão")
+def revisao_deriva():
+    """Quebra: aplicar uma revisão feita sobre outro texto. Se o sha256 do original
+    mudou, a decisão humana pode não valer mais para o texto atual."""
+    revs, erros = _carregar([_entrada("3", {"decisao": "aceitar", **REVISOR})], sha="b" * 64)
+    checar(not revs and len(erros) == 1, "sha256 diferente: nada aplicado, um erro")
+    revs, erros = _carregar([_entrada("3", {})], sha="b" * 64)
+    checar(not revs and not erros, "sem decisão nenhuma, a deriva não é erro (nada a aplicar)")
+
+
+@cenario("revisão: 'rejeitar' e 'alterar' com exceção por subdivisão")
+def revisao_rejeitar_e_excecao():
+    revs, erros = _carregar([_entrada("3", {"decisao": "rejeitar", **REVISOR})])
+    checar(not revs and not erros, "'rejeitar' não aplica nada e não é erro")
+
+    exc = {"urn": urn_dispositivo(URN_EC, "5", paragrafo="1"), "efeitos_inicio": "1905-01-01",
+           "fundamento": [urn_dispositivo(URN_EC, "23", inciso="II")]}
+    revisao = {"decisao": "alterar", **REVISOR, "vigencia_inicio": "1900-01-02",
+               "efeitos_inicio": "1900-01-02",
+               "fundamento_vigencia": [urn_dispositivo(URN_EC, "23", inciso="III")],
+               "fundamento_efeitos": [urn_dispositivo(URN_EC, "23", inciso="III")],
+               "excecoes_subdivisao": [exc]}
+    revs, erros = _carregar([_entrada("5", revisao, termo="publicacao")])
+    checar(not erros and revs[urn_dispositivo(URN_EC, "5")]["excecoes_subdivisao"] == [exc],
+           f"exceção do § 1º é aceita (erros: {erros})")
+
+    alheia = dict(exc, urn=urn_dispositivo(URN_EC, "6", paragrafo="1"))
+    _, erros = _carregar([_entrada("5", dict(revisao, excecoes_subdivisao=[alheia]),
+                                   termo="publicacao")])
+    checar(len(erros) == 1, "exceção que não é subdivisão do próprio artigo: erro")
+
+
+@cenario("revisão: aplicar ao front-matter")
+def revisao_aplicar():
+    meta = {"urn": urn_dispositivo(URN_EC, "3"), "vigencia_inicio": "1900-01-02",
+            "efeitos_inicio": "1900-01-02", "vigencia_fim": None, "efeitos_fim": None,
+            "extracao": "automatica", "revisao_temporal_pendente": True,
+            "revisado_por": None, "revisado_em": None}
+    revs, _ = _carregar([_entrada("3", {"decisao": "aceitar", **REVISOR})])
+    novo = _rt().aplicar_revisao(meta, revs[urn_dispositivo(URN_EC, "3")])
+    checar(novo["vigencia_inicio"] == "2030-01-01" and novo["extracao"] == "revisada"
+           and novo["revisao_temporal_pendente"] is False
+           and novo["revisado_por"] == "Revisora Fictícia",
+           "datas, extracao, pendência e revisor atualizados")
+    checar(meta["extracao"] == "automatica", "o meta original não é alterado")
+    erros, _ = _rt().problemas_no_dispositivo(novo)
+    checar(not erros, f"o resultado passa na validação (erros: {erros})")
+
+
+@cenario("validação do front-matter temporal")
+def revisao_validacao_front_matter():
+    """Quebra: aceitar em normas/ um dispositivo 'revisado' sem fundamento, ou com
+    precisão inventada. É o que a CI precisa recusar mesmo se alguém editar à mão."""
+    ok = {"urn": urn_dispositivo(URN_EC, "3"), "data_ato": "1900-01-01",
+          "publicacao": {"datas": ["1900-01-02"], "fonte": "rodape_compilado"},
+          "vigencia_inicio": "1900-01-02", "efeitos_inicio": "1900-01-02",
+          "extracao": "automatica", "revisao_temporal_pendente": True}
+    erros, avisos = _rt().problemas_no_dispositivo(ok)
+    checar(not erros, f"dispositivo automático coerente passa (erros: {erros})")
+
+    erros, _ = _rt().problemas_no_dispositivo(dict(ok, extracao="revisada",
+                                                   revisao_temporal_pendente=False))
+    checar(erros, "'revisada' sem revisor nem fundamento: erro")
+    erros, _ = _rt().problemas_no_dispositivo(dict(
+        ok, extracao="revisada", revisao_temporal_pendente=False,
+        revisado_por="Revisora Fictícia", revisado_em="1900-02-01"))
+    checar(erros == ["extracao revisada sem fundamento_temporal de vigência e de efeitos"],
+           "'revisada' com revisor mas sem fundamento: erro, e só esse")
+    erros, _ = _rt().problemas_no_dispositivo(dict(ok, precisao={"vigencia_inicio": "mes"}))
+    checar(erros, "precisão fora de ano/dia: erro")
+    erros, _ = _rt().problemas_no_dispositivo(dict(ok, publicacao={"datas": ["21/12/2023"],
+                                                                     "fonte": "dou"}))
+    checar(erros, "data de publicação fora do formato ISO: erro")
+    erros, avisos = _rt().problemas_no_dispositivo(dict(ok, publicacao={"datas": [],
+                                                                          "fonte": None}))
+    checar(not erros and avisos, "publicação não localizada: aviso, não erro")
+
+
+@cenario("validação: decisão tomada e ainda não aplicada a normas/")
+def revisao_nao_aplicada():
+    revs, _ = _carregar([_entrada("3", {"decisao": "aceitar", **REVISOR})])
+    urn = urn_dispositivo(URN_EC, "3")
+    automatico = {"urn": urn, "vigencia_inicio": "1900-01-02", "efeitos_inicio": "1900-01-02",
+                  "extracao": "automatica"}
+    checar(len(_rt().revisoes_nao_aplicadas(revs, [automatico])) == 1,
+           "revisão decidida com normas/ ainda automático: erro (rode fatiar.py)")
+    aplicado = _rt().aplicar_revisao(automatico, revs[urn])
+    checar(_rt().revisoes_nao_aplicadas(revs, [aplicado]) == [],
+           "depois de aplicada, nada a acusar")
+
+
+@cenario("front-matter: data do ato separada da publicação")
+def front_matter_ato_e_publicacao():
+    """Quebra: gravar a data do ato como `publicacao`. A EC diz 'entra em vigor na
+    data de sua publicação', e a publicação no DOU é outro dia."""
+    refs = F.extrair_referencias([ln.completa for ln in F.html_para_linhas(fixture("planalto-ec.html"))])
+    pub = F.publicacao_de(refs)
+    checar(pub == {"datas": ["1900-01-02"], "fonte": "rodape_compilado",
+                   "trechos": ["Este texto não substitui o publicado no DOU 2.1.1900"]},
+           f"publicação lida do rodapé do fixture, com a origem declarada (obteve {pub})")
+    checar(F.publicacao_de({"publicacao_dou": {"valores": [], "trechos": []}})
+           == {"datas": [], "fonte": None, "trechos": []},
+           "sem rodapé: publicação vazia, não suposta")
+
+    fonte = {"titulo": "Emenda fictícia", "slug": "emc-999-1900", "data": "1900-01-01"}
+    registro = {"url": "https://exemplo.invalido", "tipo_documento": "texto_compilado",
+                "acesso": "1900-03-01", "sha256": "a" * 64}
+    artigo = {"numero": "3", "hierarquia": [], "linhas": ["Art. 3º Texto."],
+              "linhas_vigentes": ["Art. 3º Texto."], "linhas_proprias": ["Art. 3º Texto."],
+              "citados": []}
+    meta, corpo = F.montar_meta(artigo, fonte, registro, URN_EC, pub, False)
+    checar(meta["data_ato"] == "1900-01-01" and meta["publicacao"] == pub,
+           "data_ato do catálogo e publicação do rodapé, em campos distintos")
+    checar(meta["vigencia_inicio"] == "1900-01-02" and meta["efeitos_inicio"] == "1900-01-02",
+           "provisórias: a primeira publicação, não a data do ato")
+    checar(list(meta)[:8] == ["urn", "norma", "norma_slug", "dispositivo", "camada",
+                              "hierarquia", "data_ato", "publicacao"],
+           "ordem canônica do front-matter")
+    meta2, _ = F.montar_meta(artigo, fonte, registro, URN_EC,
+                             {"datas": [], "fonte": None, "trechos": []}, False)
+    checar(meta2["vigencia_inicio"] == "1900-01-01",
+           "sem publicação localizada, a provisória cai para a data do ato")
+
+
+@cenario("contrato: a proposta gerada é consumível pela revisão (EC 132 real)")
+def contrato_proposta_revisao():
+    """Quebra: o gerador e o consumidor divergirem no formato. A revisão humana seria
+    feita num arquivo que o fatiamento depois rejeita, ou lê errado."""
+    import json
+    import tempfile
+
+    import yaml
+
+    if not (RAIZ / "normas" / "emc-132-2023").exists() or \
+            not (RAIZ / "fontes" / "emc-132-2023" / "texto_compilado.html").exists():
+        print("  pulado: normas/ ou fontes/ da EC 132 ausentes")
+        return
+    prop = _pv().construir("emc-132-2023")
+    manifest = json.loads((RAIZ / "fontes" / "manifest.json").read_text(encoding="utf-8"))
+    sha = manifest["documentos"]["emc-132-2023/texto_compilado"]["sha256"]
+    checar(prop.get("fonte_sha256") == sha, "a proposta registra o sha256 do original")
+
+    # Art. 14: inciso III do art. 23 e nenhum marco próprio (lido no texto).
+    entrada = next(d for d in prop["dispositivos"] if d["artigo"] == "14")
+    entrada["revisao"].update({"decisao": "aceitar", "revisado_por": "Teste",
+                               "revisado_em": "2026-01-01"})
+    with tempfile.TemporaryDirectory() as tmp:
+        caminho = Path(tmp) / "emc-132-2023.yaml"
+        caminho.write_text(yaml.safe_dump(prop, allow_unicode=True), encoding="utf-8")
+        revs, erros = _rt().carregar_revisoes(
+            caminho, sha, {d["urn"] for d in prop["dispositivos"]})
+    r = revs.get(entrada["urn"])
+    checar(not erros and r is not None, f"carregada sem erro (erros: {erros})")
+    checar(r and r["vigencia_inicio"] == "2023-12-21" and r["efeitos_inicio"] == "2023-12-21"
+           and r["fundamento_temporal"]["vigencia"] == [prop["clausula_de_vigencia"]["urn"] + "_incIII"],
+           "art. 14: publicação no DOU segundo o rodapé, fundamentada no art. 23, III")
+
+
+@cenario("consulta: precisão de ano e exceções por subdivisão")
+def consulta_precisao_e_excecoes():
+    """Quebra: omitir da consulta, como 'revogado', um dispositivo cuja revogação é
+    'em 2033' quando a data consultada cai em 2033 (o dia não está no texto); ou
+    omitir um artigo ainda futuro que tem um parágrafo já em vigor."""
+    import datetime as dt
+
+    import consultar as C
+
+    revogado_em_ano = {
+        "urn": urn_dispositivo(URN_EC, "22"), "vigencia_inicio": "1900-01-02",
+        "vigencia_fim": "2033-01-01", "efeitos_inicio": "1900-01-02", "efeitos_fim": None,
+        "precisao": {"vigencia_fim": "ano"},
+    }
+    checar(C.incertezas(revogado_em_ano, dt.date(2033, 6, 1)) != [],
+           "em 2033 o estado é incerto: há aviso")
+    checar(C.incertezas(revogado_em_ano, dt.date(2032, 6, 1)) == [], "em 2032, nenhum aviso")
+    checar(status_em(revogado_em_ano, dt.date(2033, 6, 1)) == "revogado"
+           and C.relevante_na_data(revogado_em_ano, dt.date(2033, 6, 1)),
+           "'revogado' pela convenção de 1º de janeiro, mas NÃO omitido no ano incerto")
+    checar(not C.relevante_na_data(revogado_em_ano, dt.date(2034, 6, 1)),
+           "em 2034 a revogação é certa: omitido")
+
+    par3 = urn_dispositivo(URN_EC, "9", paragrafo="3")
+    futuro = {
+        "urn": urn_dispositivo(URN_EC, "9"), "vigencia_inicio": "2030-01-01",
+        "vigencia_fim": None, "efeitos_inicio": "2030-01-01", "efeitos_fim": None,
+        "excecoes_subdivisao": [{"urn": par3, "vigencia_inicio": "1900-01-02",
+                                 "efeitos_inicio": "1900-01-02",
+                                 "fundamento": [urn_dispositivo(URN_EC, "23")]}],
+    }
+    ref = dt.date(1950, 1, 1)
+    checar(status_em(futuro, ref) == "futuro" and C.relevante_na_data(futuro, ref),
+           "artigo futuro com parágrafo já vigente aparece na consulta")
+    checar(C.excecoes_na_data(futuro, ref) == [(par3, "vigente")],
+           "e o parágrafo aparece com o próprio estado")
+
+
+@cenario("normas/ reais: data do ato e publicação (pulado se ausentes)")
+def normas_reais_publicacao():
+    """Contrato com a base gravada. Valores lidos à mão nos rodapés dos compilados:
+    EC 'publicado no DOU 21.12.2023'; LC 'publicado no DOU de 16.1.2025 - Edição
+    extra e republicado no DOU de 23.1.2025'."""
+    from comum import ler_frontmatter
+
+    casos = {
+        "emc-132-2023": ("2023-12-20", ["2023-12-21"]),
+        "lc-214-2025": ("2025-01-16", ["2025-01-16", "2025-01-23"]),
+    }
+    for slug, (ato, datas) in casos.items():
+        arq = RAIZ / "normas" / slug / "art-0001.md"
+        if not arq.exists():
+            print(f"  pulado: {slug} (normas/ ausente)")
+            continue
+        meta, _ = ler_frontmatter(arq)
+        checar(meta.get("data_ato") == ato, f"{slug}: data_ato {ato} (obteve {meta.get('data_ato')})")
+        pub = meta.get("publicacao")
+        checar(isinstance(pub, dict) and pub.get("datas") == datas,
+               f"{slug}: publicação {datas} (obteve {pub})")
+
+
+# ---------------------------------------------------------------------------
 # Índices e portabilidade
 # ---------------------------------------------------------------------------
 
@@ -1033,6 +1388,13 @@ def indices():
     primeira = _snapshot_indices()
     indexar.main()
     checar(primeira == _snapshot_indices(), "gerar duas vezes produz bytes idênticos")
+
+    # Regressão: str(None) gravava a string "None" onde o campo é nulo.
+    import json
+
+    temporal = json.loads((RAIZ / "indices" / "temporal.json").read_text(encoding="utf-8"))
+    checar(all(v != "None" for d in temporal.values() for v in d.values()),
+           "temporal.json grava null, não a string 'None'")
 
     # Regressão: `cobertura.json` carimbava a data de geração, o que fazia a CI
     # acusar diff em todo dia posterior ao commit.

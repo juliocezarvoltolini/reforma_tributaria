@@ -44,6 +44,7 @@ CAMPOS_OBRIGATORIOS = (
     "norma_slug",
     "dispositivo",
     "camada",
+    "data_ato",
     "publicacao",
     "vigencia_inicio",
     "efeitos_inicio",

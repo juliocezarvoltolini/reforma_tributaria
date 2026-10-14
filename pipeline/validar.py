@@ -22,6 +22,7 @@ from comum import (
     DIR_NORMAS,
     MANIFEST,
     MARCA_NAO_VERIFICADO,
+    DIR_TEMPORAL,
     STATUS_VALIDOS,
     arquivos_norma,
     caminho_fonte,
@@ -29,6 +30,7 @@ from comum import (
     para_data,
     sha256_arquivo,
 )
+from revisao_temporal import carregar_revisoes, problemas_no_dispositivo, revisoes_nao_aplicadas
 
 erros: list[str] = []
 avisos: list[str] = []
@@ -90,6 +92,14 @@ def validar_dispositivos() -> list[dict]:
         ef = para_data(meta.get("efeitos_fim"))
         if ei and ef and ef <= ei:
             erro(f"{rel(caminho)}: efeitos_fim ({ef}) nao e posterior a efeitos_inicio ({ei})")
+
+        # data do ato x publicação, precisão de ano, exceções por subdivisão e
+        # coerência de um dispositivo marcado como revisado
+        erros_t, avisos_t = problemas_no_dispositivo(meta)
+        for msg in erros_t:
+            erro(f"{rel(caminho)}: {msg}")
+        for msg in avisos_t:
+            aviso(f"{rel(caminho)}: {msg}")
 
         if meta.get("urn"):
             por_urn[meta["urn"]].append(rel(caminho))
@@ -207,13 +217,47 @@ def validar_interpretacoes() -> None:
             erro(f"{rel(caminho)}: grau de confianca invalido: {meta.get('confianca')!r}")
 
 
+def validar_revisoes_temporais(metas: list[dict]) -> None:
+    """Revisão humana em temporal/propostas/ coerente, e já refletida em normas/.
+
+    Decisão tomada e não aplicada é erro: a base responderia com a data
+    provisória enquanto o revisor acredita que a correção está em vigor.
+    """
+    pasta = DIR_TEMPORAL / "propostas"
+    if not pasta.exists():
+        return
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
+    for caminho in sorted(pasta.glob("*.yaml")):
+        slug = caminho.stem
+        registro = (manifest.get("documentos") or {}).get(f"{slug}/texto_compilado")
+        if not registro:
+            aviso(f"temporal/propostas/{caminho.name}: norma sem fonte no manifest")
+            continue
+        da_norma = [m for m in metas if m.get("norma_slug") == slug]
+        revisoes, erros_rev = carregar_revisoes(
+            caminho, registro["sha256"], {m["urn"] for m in da_norma})
+        for msg in erros_rev:
+            erro(f"temporal/propostas/{caminho.name}: {msg}")
+        for msg in revisoes_nao_aplicadas(revisoes, da_norma):
+            erro(f"temporal/propostas/{caminho.name}: {msg}")
+
+
 def relatar_pendencias(metas: list[dict]) -> None:
     pendentes = [m for m in metas if m.get("revisao_temporal_pendente")]
     if pendentes:
         aviso(
             f"{len(pendentes)} de {len(metas)} dispositivos com "
-            "revisao_temporal_pendente: vigencia e eficacia ainda sao a data de "
-            "publicacao. Revisar a clausula de vigencia antes de usar em producao."
+            "revisao_temporal_pendente: vigencia e eficacia ainda sao provisorias "
+            "(primeira publicacao, ou data do ato). Revisar a clausula de vigencia "
+            "antes de usar em producao."
+        )
+    nao_confirmadas = [m for m in metas
+                       if isinstance(m.get("publicacao"), dict)
+                       and m["publicacao"].get("fonte") == "rodape_compilado"]
+    if nao_confirmadas:
+        aviso(
+            f"{len(nao_confirmadas)} de {len(metas)} dispositivos com a data de publicacao "
+            "lida do rodape do texto compilado, nao confirmada no DOU (PREMISSAS.md §1.4)."
         )
 
 
@@ -226,6 +270,7 @@ def main() -> int:
     validar_remissoes(metas)
     validar_hashes()
     validar_interpretacoes()
+    validar_revisoes_temporais(metas)
     relatar_pendencias(metas)
 
     if not metas:

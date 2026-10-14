@@ -36,7 +36,6 @@ import argparse
 import json
 import re
 import sys
-import unicodedata
 from pathlib import Path
 
 import yaml
@@ -54,6 +53,7 @@ from comum import (
 from fatiar import (
     CATALOGO,
     chave_ordem,
+    extrair_referencias,
     html_para_linhas,
     linhas_citadas,
     subdivisao_por_linha,
@@ -264,65 +264,6 @@ def marcos_proprios(corpo: list[str], urn_base: str, artigo: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Datas de referência, lidas do original
-# ---------------------------------------------------------------------------
-
-def _sem_acento(texto: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFD", texto) if not unicodedata.combining(c))
-
-
-_NUM_MES = {m: i for i, m in enumerate(
-    ["janeiro", "fevereiro", "marco", "abril", "maio", "junho", "julho", "agosto",
-     "setembro", "outubro", "novembro", "dezembro"], 1)}
-
-RE_TITULO = re.compile(
-    r"^(?:EMENDA CONSTITUCIONAL|LEI COMPLEMENTAR|LEI|DECRETO)\b.*?\bDE (\d{1,2})[ºO°]? DE "
-    r"([A-ZÇÃÉÊ]+) DE (\d{4})\s*$"
-)
-RE_ASSINATURA = re.compile(r"^Bras[ií]lia,\s+(?:em\s+)?(\d{1,2})\s*[ºo°]?\s+de\s+(\w+)\s+de\s+(\d{4})")
-RE_DOU = re.compile(r"publicado\s+no\s+DOU\s+(?:de\s+)?(\d{1,2})\.(\d{1,2})\.(\d{4})")
-
-
-def _iso(dia: str, mes: str | int, ano: str) -> str | None:
-    if isinstance(mes, str):
-        mes = int(mes) if mes.isdigit() else _NUM_MES.get(_sem_acento(mes).lower())
-    if not mes:
-        return None
-    return f"{int(ano):04d}-{int(mes):02d}-{int(dia):02d}"
-
-
-def extrair_referencias(linhas_fonte: list[str]) -> dict:
-    """Data do ato (título e linha de assinatura) e publicação no DOU (rodapé do
-    compilado), cada uma com o trecho literal. O que não se acha fica nulo."""
-    fontes = []
-    for linha in linhas_fonte[:40]:
-        if m := RE_TITULO.match(linha):
-            if iso := _iso(m.group(1), m.group(2), m.group(3)):
-                fontes.append({"origem": "titulo", "valor": iso, "trecho": linha})
-                break
-    for linha in linhas_fonte:
-        if m := RE_ASSINATURA.match(linha):
-            if iso := _iso(m.group(1), m.group(2), m.group(3)):
-                fontes.append({"origem": "assinatura", "valor": iso, "trecho": linha})
-                break
-    valores = {f["valor"] for f in fontes}
-    ato = {
-        "valor": fontes[0]["valor"] if fontes else None,
-        "fontes": fontes,
-        "concordam": (len(valores) == 1) if len(fontes) > 1 else None,
-    }
-
-    dou_valores, dou_trechos = [], []
-    for linha in linhas_fonte:
-        achados = [_iso(d, mes, a) for d, mes, a in RE_DOU.findall(linha)]
-        if achados:
-            dou_valores.extend(a for a in achados if a)
-            dou_trechos.append(linha)
-    return {"data_do_ato": ato,
-            "publicacao_dou": {"valores": dou_valores, "trechos": dou_trechos}}
-
-
-# ---------------------------------------------------------------------------
 # Montagem da proposta
 # ---------------------------------------------------------------------------
 
@@ -336,8 +277,8 @@ def _inicio_proposto(termo: dict, refs: dict) -> dict:
             "ano": termo["ano"],
             "data_candidata": f"{termo['ano']}-01-01",
             "precisao": "ano",
-            "nota": "o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), "
-                    "não está no texto",
+            "nota": "o texto diz só o ano: grava-se AAAA-01-01 com `precisao: ano`, e a "
+                    "consulta avisa quando a data consultada cai nesse ano",
         }
     valores = refs["publicacao_dou"]["valores"]
     return {
@@ -351,36 +292,10 @@ def _inicio_proposto(termo: dict, refs: dict) -> dict:
     }
 
 
-def _decisoes(refs: dict, gravadas: set[str], dispositivos: list[dict]) -> list[dict]:
+def _decisoes(dispositivos: list[dict]) -> list[dict]:
+    """O que o modelo de dados ainda não responde. Data do ato x publicação,
+    precisão de ano e datas por subdivisão já são campos do front-matter."""
     decisoes = []
-    if any(d["vigencia"]["proposta"] and d["vigencia"]["proposta"]["tipo"] == "ano"
-           for d in dispositivos):
-        decisoes.append({
-            "id": "ano_sem_dia",
-            "pergunta": "Quando a cláusula diz 'em <ano>', o campo vigencia_inicio exige uma "
-                        "data completa. A proposta usa 1º de janeiro como candidata, por "
-                        "convenção e não por texto. Aceitar a convenção, fixar outra data, ou "
-                        "ampliar o modelo para aceitar ano?",
-        })
-    dou = refs["publicacao_dou"]["valores"]
-    ato = refs["data_do_ato"]["valor"]
-    if gravadas and dou and set(dou) != gravadas:
-        decisoes.append({
-            "id": "publicacao_x_data_do_ato",
-            "pergunta": f"O pipeline grava como `publicacao` a data do ato ({', '.join(sorted(gravadas))}), "
-                        f"e é dela que partem vigencia_inicio e efeitos_inicio provisórios. A "
-                        f"cláusula 'na data de sua publicação' refere-se à publicação no DOU, "
-                        f"que o rodapé do compilado informa ser {', '.join(dou)} (data do ato lida do "
-                        f"original: {ato}). Separar `data_do_ato` de `publicacao` no modelo?",
-        })
-    if any(len(d["marcos_proprios"]) > 1 for d in dispositivos):
-        decisoes.append({
-            "id": "datas_por_subdivisao",
-            "pergunta": "Vários artigos têm marcos temporais por subdivisão (incisos e "
-                        "parágrafos). O front-matter guarda um par vigência/efeitos por "
-                        "artigo. Registrar por subdivisão, ou manter por artigo e remeter ao "
-                        "texto?",
-        })
     inseridos = [d["artigo"] for d in dispositivos if "texto_inserido_em_outra_norma" in d["pendencias"]]
     if inseridos:
         decisoes.append({
@@ -404,6 +319,45 @@ def _decisoes(refs: dict, gravadas: set[str], dispositivos: list[dict]) -> list[
                         "prova que não há dependência.",
         })
     return decisoes
+
+
+INSTRUCOES_REVISAO = (
+    "Em cada dispositivo, preencha `revisao`. decisao: aceitar adota a proposta de "
+    "vigência E a de efeitos, e só vale se houver proposta de efeitos. decisao: alterar "
+    "exige vigencia_inicio, efeitos_inicio, fundamento_vigencia e fundamento_efeitos "
+    "(listas de URN); opcionais: vigencia_fim, efeitos_fim, precisao ({campo: ano}, com a "
+    "data em AAAA-01-01) e excecoes_subdivisao (urn de § ou inciso do próprio artigo, as "
+    "datas que diferem e fundamento). decisao: rejeitar mantém o dispositivo pendente. "
+    "Toda decisão exige revisado_por e revisado_em. Depois, rode pipeline/fatiar.py: é "
+    "ele que aplica a revisão a normas/. Se o original mudar (sha256), a revisão deixa "
+    "de ser aplicada e precisa ser refeita."
+)
+
+
+def _pendencias_gerais(refs: dict) -> list[dict]:
+    pendencias = []
+    if refs["publicacao_dou"]["valores"]:
+        pendencias.append({
+            "id": "publicacao_nao_confirmada_no_dou",
+            "descricao": "A data de publicação vem do rodapé do texto compilado "
+                         f"({'; '.join(refs['publicacao_dou']['trechos'])}). O texto publicado "
+                         "no DOU prevalece (PREMISSAS.md §1.4) e ainda não está ingerido.",
+        })
+    else:
+        pendencias.append({
+            "id": "publicacao_nao_localizada",
+            "descricao": "O original não informa a publicação no DOU. As propostas que "
+                         "dependem dela ficam sem data candidata.",
+        })
+    for extra in refs.get("rodapes_adicionais") or []:
+        pendencias.append({
+            "id": "outro_ato_no_compilado",
+            "descricao": "O compilado traz, depois do texto da norma, outro bloco assinado "
+                         f"({extra['assinatura']}) com rodapé próprio ({extra['trecho']}). É "
+                         "outro ato publicado em outra data; os dispositivos que ele trouxe "
+                         "podem ter vigência própria. Identificar quais são antes de revisar.",
+        })
+    return pendencias
 
 
 def construir(slug: str) -> dict:
@@ -500,24 +454,30 @@ def construir(slug: str) -> dict:
             },
             "efeitos": efeitos,
             "atual_no_pipeline": {
-                "publicacao": str(meta.get("publicacao")),
-                "vigencia_inicio": str(meta.get("vigencia_inicio")),
-                "efeitos_inicio": str(meta.get("efeitos_inicio")),
+                "data_ato": meta.get("data_ato"),
+                "publicacao": meta.get("publicacao"),
+                "vigencia_inicio": meta.get("vigencia_inicio"),
+                "efeitos_inicio": meta.get("efeitos_inicio"),
             },
             "marcos_proprios": marcos["marcos"],
             "texto_inserido": {"artigos": citados, "linhas_com_marcos": marcos["citado_com_marcos"]},
             "pendencias": pendencias,
             "revisao": {
-                "decisao": None,  # aceitar | alterar | rejeitar
-                "vigencia_inicio_final": None,
-                "efeitos_inicio_final": None,
+                "decisao": None,  # aceitar | alterar | rejeitar (ver instrucoes_revisao)
+                "vigencia_inicio": None,
+                "vigencia_fim": None,
+                "efeitos_inicio": None,
+                "efeitos_fim": None,
+                "precisao": {},
+                "fundamento_vigencia": [],
+                "fundamento_efeitos": [],
+                "excecoes_subdivisao": [],
                 "revisado_por": None,
                 "revisado_em": None,
                 "observacao": None,
             },
         })
 
-    gravadas = {d["atual_no_pipeline"]["publicacao"] for d in dispositivos}
     por_inciso: dict[str, int] = {}
     for d in dispositivos:
         k = d["vigencia"]["inciso"] or "indeterminado"
@@ -533,9 +493,13 @@ def construir(slug: str) -> dict:
                  "exige decisão humana em `revisao`. O script só interpreta padrões exatos; o "
                  "resto está marcado como não interpretado. Vigência não é eficácia: os marcos "
                  "próprios de cada artigo estão em `marcos_proprios`, em trecho literal.",
-        "referencias": {**refs, "publicacao_gravada_hoje_nos_dispositivos": sorted(gravadas)},
+        # A revisão só vale para este texto: se o original mudar, fatiar.py não a aplica.
+        "fonte_sha256": registro["sha256"],
+        "instrucoes_revisao": INSTRUCOES_REVISAO,
+        "referencias": refs,
         "clausula_de_vigencia": {k: v for k, v in clausula.items() if k != "mapa"},
-        "decisoes_necessarias": _decisoes(refs, gravadas, dispositivos),
+        "pendencias_gerais": _pendencias_gerais(refs),
+        "decisoes_necessarias": _decisoes(dispositivos),
         "resumo": {
             "dispositivos": len(dispositivos),
             "por_inciso": por_inciso,

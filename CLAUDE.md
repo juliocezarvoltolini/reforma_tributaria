@@ -75,6 +75,17 @@ São campos distintos e frequentemente divergentes:
 Um dispositivo pode estar vigente há anos e só produzir efeitos no futuro.
 Responder pela vigência quando a pergunta é sobre efeitos é erro material.
 
+Antes de usar essas datas:
+
+- `revisao_temporal_pendente: true` — as datas são **provisórias** (primeira
+  publicação). Diga isso na resposta; não responda pela data como se revisada.
+- `precisao: {campo: ano}` — o texto diz só o ano ("em 2027"). Se a data de
+  referência cai nesse ano, o estado é **incerto**: diga que o dia não está no
+  texto.
+- `excecoes_subdivisao` — um § ou inciso tem datas próprias. O estado do artigo
+  não vale para ele.
+- `data_ato` não é `publicacao`. "Na data de sua publicação" é a do DOU.
+
 Verifique também `status`: `vigente`, `futuro`, `revogado`,
 `pendente_regulamentacao`.
 

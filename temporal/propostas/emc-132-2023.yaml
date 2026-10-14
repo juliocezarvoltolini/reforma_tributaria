@@ -4,6 +4,8 @@ titulo: Emenda Constitucional nº 132, de 20 de dezembro de 2023
 gerado_por: pipeline/propor_vigencia.py
 status: proposta
 aviso: 'PROPOSTA MECÂNICA, NÃO APLICADA. Nada em /normas/ foi alterado. Cada dispositivo exige decisão humana em `revisao`. O script só interpreta padrões exatos; o resto está marcado como não interpretado. Vigência não é eficácia: os marcos próprios de cada artigo estão em `marcos_proprios`, em trecho literal.'
+fonte_sha256: f8d7213311adbdd651d5c16257b223bb67e7626f45d38a53ac25e550e4eecf54
+instrucoes_revisao: 'Em cada dispositivo, preencha `revisao`. decisao: aceitar adota a proposta de vigência E a de efeitos, e só vale se houver proposta de efeitos. decisao: alterar exige vigencia_inicio, efeitos_inicio, fundamento_vigencia e fundamento_efeitos (listas de URN); opcionais: vigencia_fim, efeitos_fim, precisao ({campo: ano}, com a data em AAAA-01-01) e excecoes_subdivisao (urn de § ou inciso do próprio artigo, as datas que diferem e fundamento). decisao: rejeitar mantém o dispositivo pendente. Toda decisão exige revisado_por e revisado_em. Depois, rode pipeline/fatiar.py: é ele que aplica a revisão a normas/. Se o original mudar (sha256), a revisão deixa de ser aplicada e precisa ser refeita.'
 referencias:
   data_do_ato:
     valor: '2023-12-20'
@@ -20,8 +22,7 @@ referencias:
     - '2023-12-21'
     trechos:
     - Este texto não substitui o publicado no DOU 21.12.2023
-  publicacao_gravada_hoje_nos_dispositivos:
-  - '2023-12-20'
+  rodapes_adicionais: []
 clausula_de_vigencia:
   urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23
   caput: 'Art. 23. Esta Emenda Constitucional entra em vigor:'
@@ -62,13 +63,10 @@ clausula_de_vigencia:
       tipo: demais
     motivo: null
   artigos_inexistentes: []
+pendencias_gerais:
+- id: publicacao_nao_confirmada_no_dou
+  descricao: A data de publicação vem do rodapé do texto compilado (Este texto não substitui o publicado no DOU 21.12.2023). O texto publicado no DOU prevalece (PREMISSAS.md §1.4) e ainda não está ingerido.
 decisoes_necessarias:
-- id: ano_sem_dia
-  pergunta: Quando a cláusula diz 'em <ano>', o campo vigencia_inicio exige uma data completa. A proposta usa 1º de janeiro como candidata, por convenção e não por texto. Aceitar a convenção, fixar outra data, ou ampliar o modelo para aceitar ano?
-- id: publicacao_x_data_do_ato
-  pergunta: 'O pipeline grava como `publicacao` a data do ato (2023-12-20), e é dela que partem vigencia_inicio e efeitos_inicio provisórios. A cláusula ''na data de sua publicação'' refere-se à publicação no DOU, que o rodapé do compilado informa ser 2023-12-21 (data do ato lida do original: 2023-12-20). Separar `data_do_ato` de `publicacao` no modelo?'
-- id: datas_por_subdivisao
-  pergunta: Vários artigos têm marcos temporais por subdivisão (incisos e parágrafos). O front-matter guarda um par vigência/efeitos por artigo. Registrar por subdivisão, ou manter por artigo e remeter ao texto?
 - id: norma_alterada_nao_ingerida
   pergunta: Os artigos 1, 2, 3, 4, 5 inserem texto em outra norma (Constituição e/ou ADCT), que não está ingerida. A vigência do artigo desta norma é a da cláusula; quando o texto inserido produz efeitos depende do próprio texto inserido. Ingerir a norma alterada, ou registrar a pendência em /lacunas/?
 - id: depende_de_lei_futura
@@ -100,9 +98,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -136,8 +140,14 @@ dispositivos:
   - texto_inserido_em_outra_norma
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -159,9 +169,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -189,8 +205,14 @@ dispositivos:
   - texto_inserido_em_outra_norma
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -205,16 +227,22 @@ dispositivos:
       ano: 2027
       data_candidata: '2027-01-01'
       precisao: ano
-      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+      nota: 'o texto diz só o ano: grava-se AAAA-01-01 com `precisao: ano`, e a consulta avisa quando a data consultada cai nesse ano'
     motivo: null
     ressalva: null
   efeitos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -231,8 +259,14 @@ dispositivos:
   - texto_inserido_em_outra_norma
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -247,16 +281,22 @@ dispositivos:
       ano: 2033
       data_candidata: '2033-01-01'
       precisao: ano
-      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+      nota: 'o texto diz só o ano: grava-se AAAA-01-01 com `precisao: ano`, e a consulta avisa quando a data consultada cai nesse ano'
     motivo: null
     ressalva: null
   efeitos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -274,8 +314,14 @@ dispositivos:
   - texto_inserido_em_outra_norma
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -290,16 +336,22 @@ dispositivos:
       ano: 2033
       data_candidata: '2033-01-01'
       precisao: ano
-      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+      nota: 'o texto diz só o ano: grava-se AAAA-01-01 com `precisao: ano`, e a consulta avisa quando a data consultada cai nesse ano'
     motivo: null
     ressalva: null
   efeitos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -311,8 +363,14 @@ dispositivos:
   - texto_inserido_em_outra_norma
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -334,9 +392,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art6
     tipos:
@@ -360,8 +424,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -383,9 +453,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7
     tipos:
@@ -420,8 +496,14 @@ dispositivos:
   - depende_de_lei_futura
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -443,9 +525,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art8_parU
     tipos:
@@ -460,8 +548,14 @@ dispositivos:
   - depende_de_lei_futura
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -483,9 +577,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9
     tipos:
@@ -533,8 +633,14 @@ dispositivos:
   - depende_de_lei_futura
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -556,9 +662,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10_par1_incII
     tipos:
@@ -581,8 +693,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -597,16 +715,22 @@ dispositivos:
       ano: 2027
       data_candidata: '2027-01-01'
       precisao: ano
-      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+      nota: 'o texto diz só o ano: grava-se AAAA-01-01 com `precisao: ano`, e a consulta avisa quando a data consultada cai nesse ano'
     motivo: null
     ressalva: null
   efeitos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art11
     tipos:
@@ -622,8 +746,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -645,9 +775,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12
     tipos:
@@ -731,8 +867,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -754,9 +896,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13
     tipos:
@@ -831,8 +979,14 @@ dispositivos:
   - marcos_proprios
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -854,9 +1008,15 @@ dispositivos:
     proposta: *id001
     motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -865,8 +1025,14 @@ dispositivos:
   - publicacao_nao_confirmada_no_dou
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -888,9 +1054,15 @@ dispositivos:
     proposta: *id002
     motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -899,8 +1071,14 @@ dispositivos:
   - publicacao_nao_confirmada_no_dou
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -922,9 +1100,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art16
     tipos:
@@ -939,8 +1123,14 @@ dispositivos:
   - condicao_regulamentacao
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -962,9 +1152,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art17
     tipos:
@@ -979,8 +1175,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -1002,9 +1204,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art18_incI
     tipos:
@@ -1030,8 +1238,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -1053,9 +1267,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19
     tipos:
@@ -1108,8 +1328,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -1131,9 +1357,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art20
     tipos:
@@ -1150,8 +1382,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -1173,9 +1411,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art21
     tipos:
@@ -1192,8 +1436,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -1215,9 +1465,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art22_incI
     tipos:
@@ -1236,8 +1492,14 @@ dispositivos:
   - revogacao_expressa
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null
@@ -1259,9 +1521,15 @@ dispositivos:
     proposta: null
     motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
   atual_no_pipeline:
-    publicacao: '2023-12-20'
-    vigencia_inicio: '2023-12-20'
-    efeitos_inicio: '2023-12-20'
+    data_ato: '2023-12-20'
+    publicacao:
+      datas:
+      - '2023-12-21'
+      fonte: rodape_compilado
+      trechos:
+      - Este texto não substitui o publicado no DOU 21.12.2023
+    vigencia_inicio: '2023-12-21'
+    efeitos_inicio: '2023-12-21'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23
     tipos:
@@ -1288,8 +1556,14 @@ dispositivos:
   - evento_relativo
   revisao:
     decisao: null
-    vigencia_inicio_final: null
-    efeitos_inicio_final: null
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
     revisado_por: null
     revisado_em: null
     observacao: null

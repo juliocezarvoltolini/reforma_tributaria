@@ -19,6 +19,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import NamedTuple
@@ -27,6 +28,7 @@ import yaml
 
 from comum import (
     DIR_NORMAS,
+    DIR_TEMPORAL,
     MANIFEST,
     caminho_fonte,
     escrever_frontmatter,
@@ -36,6 +38,8 @@ from comum import (
     urn_norma,
 )
 import datetime as _dt
+
+from revisao_temporal import aplicar_revisao, carregar_revisoes, ordenar_meta
 
 CATALOGO = Path(__file__).resolve().parent / "fontes.yaml"
 
@@ -216,6 +220,76 @@ def html_para_linhas(dados: bytes) -> list[Linha]:
 def html_para_texto(dados: bytes) -> str:
     """Texto corrido, inclusive o trecho riscado (a leitura `completa`)."""
     return "\n".join(ln.completa for ln in html_para_linhas(dados))
+
+
+# ---------------------------------------------------------------------------
+# Datas de referência, lidas do original
+# ---------------------------------------------------------------------------
+
+def _sem_acento(texto: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFD", texto) if not unicodedata.combining(c))
+
+
+_NUM_MES = {m: i for i, m in enumerate(
+    ["janeiro", "fevereiro", "marco", "abril", "maio", "junho", "julho", "agosto",
+     "setembro", "outubro", "novembro", "dezembro"], 1)}
+
+RE_TITULO = re.compile(
+    r"^(?:EMENDA CONSTITUCIONAL|LEI COMPLEMENTAR|LEI|DECRETO)\b.*?\bDE (\d{1,2})[ºO°]? DE "
+    r"([A-ZÇÃÉÊ]+) DE (\d{4})\s*$"
+)
+RE_ASSINATURA = re.compile(r"^Bras[ií]lia,\s+(?:em\s+)?(\d{1,2})\s*[ºo°]?\s+de\s+(\w+)\s+de\s+(\d{4})")
+RE_DOU = re.compile(r"publicado\s+no\s+DOU\s+(?:de\s+)?(\d{1,2})\.(\d{1,2})\.(\d{4})")
+
+
+def _iso(dia: str, mes: str | int, ano: str) -> str | None:
+    if isinstance(mes, str):
+        mes = int(mes) if mes.isdigit() else _NUM_MES.get(_sem_acento(mes).lower())
+    if not mes:
+        return None
+    return f"{int(ano):04d}-{int(mes):02d}-{int(dia):02d}"
+
+
+def extrair_referencias(linhas_fonte: list[str]) -> dict:
+    """Data do ato (título e linha de assinatura) e publicação no DOU (rodapé do
+    compilado), cada uma com o trecho literal. O que não se acha fica nulo."""
+    fontes = []
+    for linha in linhas_fonte[:40]:
+        if m := RE_TITULO.match(linha):
+            if iso := _iso(m.group(1), m.group(2), m.group(3)):
+                fontes.append({"origem": "titulo", "valor": iso, "trecho": linha})
+                break
+    for linha in linhas_fonte:
+        if m := RE_ASSINATURA.match(linha):
+            if iso := _iso(m.group(1), m.group(2), m.group(3)):
+                fontes.append({"origem": "assinatura", "valor": iso, "trecho": linha})
+                break
+    valores = {f["valor"] for f in fontes}
+    ato = {
+        "valor": fontes[0]["valor"] if fontes else None,
+        "fontes": fontes,
+        "concordam": (len(valores) == 1) if len(fontes) > 1 else None,
+    }
+
+    # A publicação da norma é a do PRIMEIRO rodapé. O compilado pode trazer, depois
+    # dos anexos, outro ato com assinatura e rodapé próprios (LC 214: "Brasília,
+    # 1º de julho de 2025" e "DOU de 2.7.2025"). Esse rodapé não é a publicação da
+    # norma, mas também não pode sumir: o outro ato pode ter vigência própria.
+    rodapes, assinatura = [], None
+    for linha in linhas_fonte:
+        if RE_ASSINATURA.match(linha):
+            assinatura = linha
+        achados = [a for a in (_iso(d, mes, ano) for d, mes, ano in RE_DOU.findall(linha)) if a]
+        if achados:
+            rodapes.append({"assinatura": assinatura, "trecho": linha, "valores": achados})
+    principal = rodapes[0] if rodapes else None
+    return {
+        "data_do_ato": ato,
+        "publicacao_dou": {"valores": principal["valores"] if principal else [],
+                           "trechos": [principal["trecho"]] if principal else []},
+        "rodapes_adicionais": rodapes[1:],
+    }
+
 
 
 # ---------------------------------------------------------------------------
@@ -791,6 +865,86 @@ def _imprimir_estatisticas(stats: dict, prefixo: str = "  ") -> None:
           "NAO incorporados a /normas/ — permanecem em fontes/")
 
 
+def publicacao_de(refs: dict) -> dict:
+    """`publicacao` do front-matter, a partir das datas lidas do original.
+
+    Hoje a única origem é o rodapé do texto compilado ("publicado no DOU ..."),
+    e é isso que `fonte` declara. O texto publicado no DOU prevalece sobre o
+    compilado (PREMISSAS.md §1.4); quando for ingerido, `fonte` passa a `dou`.
+    """
+    dou = refs.get("publicacao_dou") or {}
+    datas = list(dou.get("valores") or [])
+    return {"datas": datas, "fonte": "rodape_compilado" if datas else None,
+            "trechos": list(dou.get("trechos") or []) if datas else []}
+
+
+def montar_meta(
+    artigo: dict, fonte: dict, registro: dict, base: str, publicacao: dict,
+    exigir_escopo: bool,
+) -> tuple[dict, str]:
+    """(front-matter, corpo) de um artigo, ainda sem revisão temporal."""
+    # Corpo do arquivo: tudo que o portal mostra, o riscado entre ~~ ~~.
+    corpo = "\n\n".join(artigo["linhas"])
+    # Sem o texto riscado: a anotação "(Revogado ...)" e as normas mencionadas
+    # valem para o que está em vigor, não para a redação superada.
+    vigente = "\n\n".join(artigo["linhas_vigentes"])
+    # Texto próprio vigente, sem o que foi citado de outras normas. As
+    # remissões e os conceitos saem daqui: no texto citado eles pertencem à
+    # norma alterada, e resolvê-los no namespace desta criaria ponteiro errado.
+    corpo_proprio = "\n\n".join(artigo["linhas_proprias"])
+    # group(0): a anotação inteira. findall() devolveria só o grupo de
+    # captura ("Redação dada"), perdendo a norma que promoveu a alteração.
+    anotacoes = [re.sub(r"\s+", " ", m.group(0)) for m in RE_ANOTACAO.finditer(vigente)]
+    conceitos = [c.strip() for c in RE_CONCEITO.findall(corpo_proprio)]
+
+    # Datas PROVISÓRIAS até a revisão humana da cláusula de vigência (ver
+    # revisao_temporal_pendente): a primeira publicação, ou a data do ato se a
+    # publicação não foi localizada no original.
+    provisoria = publicacao["datas"][0] if publicacao["datas"] else fonte["data"]
+
+    meta = {
+        "urn": urn_dispositivo(base, artigo["numero"]),
+        "norma": fonte["titulo"],
+        "norma_slug": fonte["slug"],
+        "dispositivo": f"art. {artigo['numero']}",
+        "camada": 1,
+        "hierarquia": artigo["hierarquia"],
+        # Data do ato: a do título, que também compõe a URN. Não é a publicação.
+        "data_ato": fonte["data"],
+        "publicacao": publicacao,
+        "vigencia_inicio": provisoria,
+        "vigencia_fim": None,
+        "efeitos_inicio": provisoria,
+        "efeitos_fim": None,
+        "status": None,
+        "fonte": {
+            "url": registro["url"],
+            "tipo": registro["tipo_documento"],
+            "acesso": registro["acesso"],
+            "sha256": registro["sha256"],
+        },
+        "ingerido_em": hoje(),
+        "remete_a": extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo),
+        "remete_a_externo": extrair_externas(vigente),
+        # Subdivisões do próprio artigo; as do texto citado pertencem à
+        # norma alterada.
+        "subdivisoes": subdivisoes_de(artigo["linhas_proprias"], base, artigo["numero"]),
+        "anotacoes_oficiais": anotacoes,
+        "conceitos_definidos": conceitos,
+        # Artigos de OUTRAS normas reproduzidos aqui porque este artigo as
+        # altera. Não são dispositivos desta norma.
+        "dispositivos_citados": artigo["citados"],
+        "altera": [],
+        "alterado_por": [],
+        "extracao": "automatica",
+        "revisao_temporal_pendente": True,
+        "revisado_por": None,
+        "revisado_em": None,
+    }
+    meta["status"] = status_em(meta, _dt.date.today())
+    return ordenar_meta(meta), corpo
+
+
 def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int:
     slug = fonte["slug"]
     chave = f"{slug}/texto_compilado"
@@ -805,7 +959,8 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
         print(f"[{slug}] arquivo ausente: {caminho}", file=sys.stderr)
         return 1
 
-    artigos, avisos, stats = fatiar(html_para_linhas(caminho.read_bytes()))
+    linhas = html_para_linhas(caminho.read_bytes())
+    artigos, avisos, stats = fatiar(linhas)
 
     erros = [a for a in avisos if a.startswith("ERRO")]
     for aviso in avisos:
@@ -820,16 +975,39 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
               file=sys.stderr)
         return 1
 
+    refs = extrair_referencias([ln.completa for ln in linhas])
+    ato_lido = refs["data_do_ato"]["valor"]
+    if ato_lido and ato_lido != fonte["data"]:
+        print(f"[{slug}] AVISO: data do ato no original ({ato_lido}) difere da do catalogo "
+              f"({fonte['data']}), que compoe a URN — confira pipeline/fontes.yaml",
+              file=sys.stderr)
+    publicacao = publicacao_de(refs)
+
+    base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
+    exigir_escopo = exige_escopo_interno(fonte)
+    gerados = [montar_meta(a, fonte, registro, base, publicacao, exigir_escopo)
+               for a in artigos]
+
+    # Revisão temporal humana, se houver. Erro aqui aborta ANTES de apagar
+    # qualquer arquivo: aplicar parte de uma revisão, ou descartá-la em silêncio,
+    # deixaria a base num estado que ninguém decidiu.
+    revisoes, erros_rev = carregar_revisoes(
+        DIR_TEMPORAL / "propostas" / f"{slug}.yaml", registro["sha256"],
+        {m["urn"] for m, _ in gerados})
+    for erro in erros_rev:
+        print(f"[{slug}] ERRO revisao temporal: {erro}", file=sys.stderr)
+
     proprios = len(artigos)
     citados = sum(len(a["citados"]) for a in artigos)
-    exigir_escopo = exige_escopo_interno(fonte)
     if relatorio:
         faixa = f"{artigos[0]['numero']}..{artigos[-1]['numero']}"
-        base_urn = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
         print(f"[{slug}] RELATORIO (nada escrito)")
         print(f"  artigos proprios: {proprios}  (faixa {faixa})")
         print(f"  artigos citados de outras normas: {citados}")
         _imprimir_estatisticas(stats)
+        print(f"  data do ato: {fonte['data']}   publicacao: {publicacao['datas'] or 'nao localizada'}"
+              f" ({publicacao['fonte'] or '-'})")
+        print(f"  revisoes temporais aplicaveis: {len(revisoes)}  (erros: {len(erros_rev)})")
 
         # Lacunas na sequência própria. Um artigo que a norma tem mas que a
         # classificação mandou para "citado" aparece aqui — é o diagnóstico
@@ -853,25 +1031,24 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
 
         # Remissões: quantas foram resolvidas e quantas apontam para artigo
         # que esta ingestão não produziu.
-        proprias = {urn_dispositivo(base_urn, a["numero"]) for a in artigos}
+        proprias = {m["urn"] for m, _ in gerados}
         total_rem = orfas_rem = 0
-        for a in artigos:
-            for alvo in extrair_remissoes(
-                "\n".join(a["linhas_proprias"]), base_urn, a["numero"], exigir_escopo
-            ):
+        for meta, _ in gerados:
+            for alvo in meta["remete_a"]:
                 total_rem += 1
                 artigo_alvo = alvo.split("!")[0] + "!" + alvo.split("!")[1].split("_")[0]
                 if artigo_alvo not in proprias:
                     orfas_rem += 1
         pct = f"{orfas_rem / total_rem:.0%}" if total_rem else "-"
         print(f"  remissoes internas resolvidas: {total_rem}  (orfas: {orfas_rem} = {pct})")
-        return 0
+        return 1 if erros_rev else 0
 
-    base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
-    publicacao = fonte["data"]
-    referencia = _dt.date.today()
+    if erros_rev:
+        print(f"[{slug}] nada foi escrito — corrija a revisao em "
+              f"temporal/propostas/{slug}.yaml antes de ingerir", file=sys.stderr)
+        return 1
+
     destino_dir = DIR_NORMAS / slug
-
     # Remove o resultado de execuções anteriores. Sem isso, um fatiamento que
     # antes produzia artigos espúrios deixa esses arquivos para trás, e a base
     # passa a conter dispositivos que a norma não tem.
@@ -883,66 +1060,13 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
             print(f"[{slug}] {len(antigos)} arquivo(s) da ingestao anterior removidos")
     destino_dir.mkdir(parents=True, exist_ok=True)
 
-    for artigo in artigos:
-        # Corpo do arquivo: tudo que o portal mostra, o riscado entre ~~ ~~.
-        corpo = "\n\n".join(artigo["linhas"])
-        # Sem o texto riscado: a anotação "(Revogado ...)" e as normas mencionadas
-        # valem para o que está em vigor, não para a redação superada.
-        vigente = "\n\n".join(artigo["linhas_vigentes"])
-        # Texto próprio vigente, sem o que foi citado de outras normas. As
-        # remissões e os conceitos saem daqui: no texto citado eles pertencem à
-        # norma alterada, e resolvê-los no namespace desta criaria ponteiro errado.
-        corpo_proprio = "\n\n".join(artigo["linhas_proprias"])
-        # group(0): a anotação inteira. findall() devolveria só o grupo de
-        # captura ("Redação dada"), perdendo a norma que promoveu a alteração.
-        anotacoes = [re.sub(r"\s+", " ", m.group(0)) for m in RE_ANOTACAO.finditer(vigente)]
-        conceitos = [c.strip() for c in RE_CONCEITO.findall(corpo_proprio)]
-
-        meta = {
-            "urn": urn_dispositivo(base, artigo["numero"]),
-            "norma": fonte["titulo"],
-            "norma_slug": slug,
-            "dispositivo": f"art. {artigo['numero']}",
-            "camada": 1,
-            "hierarquia": artigo["hierarquia"],
-            "publicacao": publicacao,
-            # Datas provisórias — iguais à publicação até revisão humana da
-            # cláusula de vigência. Ver revisao_temporal_pendente.
-            "vigencia_inicio": publicacao,
-            "vigencia_fim": None,
-            "efeitos_inicio": publicacao,
-            "efeitos_fim": None,
-            "status": None,
-            "fonte": {
-                "url": registro["url"],
-                "tipo": registro["tipo_documento"],
-                "acesso": registro["acesso"],
-                "sha256": registro["sha256"],
-            },
-            "ingerido_em": hoje(),
-            "remete_a": extrair_remissoes(
-                corpo_proprio, base, artigo["numero"], exigir_escopo
-            ),
-            "remete_a_externo": extrair_externas(vigente),
-            # Subdivisões do próprio artigo; as do texto citado pertencem à
-            # norma alterada.
-            "subdivisoes": subdivisoes_de(
-                artigo["linhas_proprias"], base, artigo["numero"]
-            ),
-            "anotacoes_oficiais": anotacoes,
-            "conceitos_definidos": conceitos,
-            # Artigos de OUTRAS normas reproduzidos aqui porque este artigo as
-            # altera. Não são dispositivos desta norma.
-            "dispositivos_citados": artigo["citados"],
-            "altera": [],
-            "alterado_por": [],
-            "extracao": "automatica",
-            "revisao_temporal_pendente": True,
-            "revisado_por": None,
-            "revisado_em": None,
-        }
-        meta["status"] = status_em(meta, referencia)
-
+    referencia = _dt.date.today()
+    pendentes = 0
+    for (meta, corpo), artigo in zip(gerados, artigos):
+        if meta["urn"] in revisoes:
+            meta = aplicar_revisao(meta, revisoes[meta["urn"]])
+            meta["status"] = status_em(meta, referencia)
+        pendentes += bool(meta["revisao_temporal_pendente"])
         escrever_frontmatter(destino_dir / f"{nome_arquivo(artigo['numero'])}.md", meta, corpo)
 
     print(f"[{slug}] {proprios} artigos proprios escritos em "
@@ -951,7 +1075,10 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     print(f"[{slug}] {citados} artigo(s) de outras normas tratados como texto "
           "alterado, nao como dispositivo proprio")
     _imprimir_estatisticas(stats, prefixo=f"[{slug}] ")
-    print(f"[{slug}] ATENCAO: {proprios} dispositivos com revisao_temporal_pendente")
+    print(f"[{slug}] publicacao: {publicacao['datas'] or 'nao localizada'} "
+          f"({publicacao['fonte'] or '-'}); data do ato: {fonte['data']}")
+    print(f"[{slug}] revisao temporal aplicada a {len(revisoes)} dispositivo(s)")
+    print(f"[{slug}] ATENCAO: {pendentes} dispositivos com revisao_temporal_pendente")
     return 0
 
 

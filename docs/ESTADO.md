@@ -176,6 +176,7 @@ Cada linha custou uma rodada. A coluna da direita é a lição.
 | 14 | `Path.write_text` grava CRLF no Windows | A base commitada daqui diferiria byte a byte da gerada no Linux/CI. Escrita com `newline="\n"` |
 | 15 | `arquivo` do manifest com `\` | No Linux é um único nome de arquivo inexistente. Leitores normalizam, o escritor grava `/` |
 | 16 | `verificar.sh` reprovava todo commit que muda os índices | A condição `git diff --cached` exigia o staged igual ao HEAD; a correção sugerida nunca passaria |
+| 17 | Todos os rodapés "publicado no DOU" tomados como publicação da norma | A LC 214 traz, depois dos anexos, outro ato com assinatura e rodapé próprios (2.7.2025). A publicação é a do **primeiro** rodapé; os demais são outro ato |
 
 ### O fixture de teste não é referência de formato
 
@@ -271,19 +272,11 @@ escolhido. Estão aqui para serem revistas.
    colada ao trecho riscado. Ainda: 6 anotações `(Incluído pela …)` que seguem
    um cabeçalho de capítulo são atribuídas ao artigo **anterior**.
 
-5. **`publicacao` guarda a data do ato, não a da publicação.** O pipeline grava
-   `publicacao: 2023-12-20` nos 23 dispositivos da EC, e dela partem a
-   `vigencia_inicio` e a `efeitos_inicio` provisórias. A cláusula do `Art. 23`
-   diz "na data de sua publicação", e o rodapé do compilado informa
-   "publicado no DOU 21.12.2023". O DOU (`in.gov.br`) não está ingerido, então
-   essa data é leitura do rodapé, não confirmação. A LC 214 tem duas publicações
-   no rodapé (original e republicação). A proposta de vigência sinaliza isto
-   (`publicacao_x_data_do_ato`); separar `data_do_ato` de `publicacao` no modelo
-   é decisão sua.
-6. **`temporal.json` grava a string `"None"`** onde o campo é nulo
-   (`"efeitos_fim": "None"`), pelo `str(meta.get(...))` do `indexar.py`. Nenhum
-   leitor usa o índice hoje (`consultar.py` lê os arquivos), então não quebra
-   nada ainda; quem consumir o índice receberá texto no lugar de `null`.
+5. **Resolvidas em 2026-10-14, seguindo a recomendação aceita:** `data_ato`
+   separado de `publicacao` (que pode ter várias datas e declara a `fonte`),
+   `precisao: ano` para "em 2027", e `excecoes_subdivisao` para datas de § e
+   inciso. Ver `docs/MODELO-DADOS.md`. O `temporal.json` deixou de gravar a
+   string `"None"`.
 
 ---
 
@@ -298,19 +291,36 @@ nenhuma. Ver [`temporal/README.md`](../temporal/README.md).
 python pipeline/propor_vigencia.py --slug emc-132-2023
 ```
 
-- **EC 132: proposta gerada** em `temporal/propostas/emc-132-2023.yaml`. Dos 23
-  artigos, 19 caem no inciso III do `Art. 23` ("na data de sua publicação"),
-  dois no I ("em 2027": arts. 3º e 11) e dois no II ("em 2033": arts. 4º e 5º).
-  16 têm marcos temporais próprios ou dependem de lei futura, e 5 inserem texto
-  na Constituição/ADCT, que não estão ingeridas. Aguarda revisão.
+- **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
+  proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três
+  travas: deriva do `sha256` invalida a revisão; revisão inválida aborta antes de
+  apagar arquivo; `validar.py` acusa decisão não aplicada. Verificado ponta a
+  ponta numa cópia do repositório, com decisões de teste que não foram gravadas
+  aqui.
+- **EC 132: proposta aguardando revisão** em `temporal/propostas/emc-132-2023.yaml`.
+  Dos 23 artigos, 19 caem no inciso III do `Art. 23` ("na data de sua
+  publicação"), dois no I ("em 2027": arts. 3º e 11) e dois no II ("em 2033":
+  arts. 4º e 5º). 16 têm marcos temporais próprios ou dependem de lei futura, e
+  5 inserem texto na Constituição/ADCT, que não estão ingeridas. Nenhuma decisão
+  foi preenchida: é trabalho humano.
 - **Vigência não é eficácia.** Para todo artigo com marco próprio, ou que insere
   texto em outra norma, **não há proposta de efeitos**: o `Art. 22` revoga "em
-  2027" e "em 2033" artigos da Constituição e do ADCT, o `Art. 7º` compensa "a partir de
-  2027", e os `Arts. 12` e `13` fixam valores por exercício.
-- **LC 214: ainda não.** A cláusula dela (`Art. 544`) usa data completa, intervalos
-  ("arts. 537 a 540") e exceções ("exceto os §§ 1º e 5º"), que o script não
-  interpreta de propósito. Estender o gerador é o próximo passo, depois de
-  decidido o §9.
+  2027" e "em 2033" artigos da Constituição e do ADCT, o `Art. 7º` compensa "a
+  partir de 2027", e os `Arts. 12` e `13` fixam valores por exercício.
+- **Publicação ainda não confirmada no DOU.** As datas vêm do rodapé do compilado
+  (EC: 21.12.2023; LC: 16.1.2025, republicada em 23.1.2025). O texto publicado no
+  DOU prevalece (PREMISSAS.md §1.4) e ainda não está ingerido.
+- **A LC 214 traz outro ato no fim do compilado.** Depois dos anexos há um bloco
+  citado, uma segunda assinatura ("Brasília, 1º de julho de 2025") e um rodapé
+  próprio ("DOU de 2.7.2025"). Não é a publicação da LC; é outro ato, e os
+  dispositivos que ele trouxe podem ter vigência própria. Identificar quais são
+  é pré-requisito da revisão da LC.
+- **LC 214: proposta ainda não.** A cláusula dela (`Art. 544`) tem forma diferente
+  da EC: "entra em vigor na data de sua publicação, produzindo efeitos: I - ...",
+  isto é, a vigência vem do caput e os incisos dão os EFEITOS. Usa ainda data
+  completa, intervalos ("arts. 537 a 540"), subdivisões ("58, caput", "60, § 3º")
+  e exceções ("exceto os §§ 1º e 5º"), e o próprio inciso III tem redação
+  anterior riscada. Estender o gerador é o próximo passo.
 
 ---
 
