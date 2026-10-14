@@ -795,28 +795,27 @@ def proposta_clausula_mapeia_artigos():
 
 @cenario("proposta: o que não casa com o padrão exato não é interpretado")
 def proposta_clausula_nao_interpreta():
-    """Quebra: dar data a um termo relativo, ou deixar 'demais dispositivos' cair
-    no inciso III quando um inciso anterior tem ALCANCE desconhecido. O artigo
-    seria datado errado, com aparência de certo.
+    """Quebra: dar data a um termo fora do padrão, ou deixar 'demais dispositivos'
+    cair no inciso III quando um inciso anterior tem ALCANCE desconhecido. O
+    artigo seria datado errado, com aparência de certo.
 
-    Termo e alcance são lidos separadamente: o termo relativo do inciso I não
-    impede saber que ele nomeia os arts. 3º e 5º; a sobra 'o Anexo I' no II
+    Termo e alcance são lidos separadamente: o termo fora do padrão do inciso I
+    não impede saber que ele nomeia os arts. 3º e 5º; a sobra 'o Anexo I' no II
     impede saber o que ele nomeia."""
     clausula = [
         "Art. 9º Esta Lei fictícia entra em vigor:",
-        "I - a partir do primeiro dia do quarto mês subsequente ao da sua publicação, "
-        "em relação aos arts. 3º e 5º;",
+        "I - noventa dias após a data de sua publicação, em relação aos arts. 3º e 5º;",
         "II - em 2035, em relação aos arts. 6º e o Anexo I; e",
         "III - na data de sua publicação, em relação aos demais dispositivos.",
     ]
     r = _pv().interpretar_clausula(clausula, URN_BASE, "9", EXISTENTES_FICT)
     checar([i["interpretado"] for i in r["incisos"]] == [False, False, True],
-           "termo relativo e alcance com sobra não são interpretados")
+           "termo fora do padrão e alcance com sobra não são interpretados")
     checar([i["alcance_interpretado"] for i in r["incisos"]] == [True, False, True],
            "mas o alcance do inciso I é lido")
     checar(r["mapa"]["3"]["inciso"] == "I" and r["mapa"]["3"]["termo"] is None
            and r["mapa"]["3"]["motivo"] and r["mapa"]["3"]["ressalva"],
-           "art. 3: no inciso I, sem data (termo relativo), com ressalva do inciso II")
+           "art. 3: no inciso I, sem data (termo fora do padrão), com ressalva do inciso II")
     nao_nomeados = [n for n in EXISTENTES_FICT if n not in ("3", "5")]
     checar(all(r["mapa"][n]["inciso"] is None and r["mapa"][n]["motivo"] for n in nao_nomeados),
            "o alcance do II é desconhecido: 'demais dispositivos' não é resolvido")
@@ -919,8 +918,10 @@ def proposta_clausula_efeitos():
            f"efeitos de cada artigo no seu inciso (obteve {atribuido})")
     checar(r["mapa"]["3"]["termo"] == {"tipo": "data", "data": "2030-01-01"},
            "'a partir de 1º de janeiro de 2030' vira data")
-    checar(r["mapa"]["7"]["termo"] is None and r["mapa"]["7"]["motivo"],
-           "termo relativo ('quarto mês subsequente'): sem data, com motivo")
+    checar(r["mapa"]["7"]["termo"] == {"tipo": "relativo_publicacao",
+                                       "regra": "primeiro-dia-do-mes-subsequente", "meses": 4}
+           and r["mapa"]["7"]["motivo"] is None,
+           "termo relativo ('quarto mês subsequente'): lido, com o nome da regra que o converte")
     checar(r["mapa"]["10-A"]["motivo"],
            "10-A dentro do intervalo '9º a 11': indeterminado, com motivo")
     exc = {n: [(e["urn"], e["inciso"]) for e in r["mapa"][n]["excecoes"]]
@@ -1177,7 +1178,8 @@ def _entrada(artigo: str, revisao: dict, efeitos_proposta: bool = True,
     }
 
 
-def _carregar(entradas: list[dict], sha: str = SHA_FICT, urns: set | None = None):
+def _carregar(entradas: list[dict], sha: str = SHA_FICT, urns: set | None = None,
+              regras: dict | None = None):
     import tempfile
 
     import yaml
@@ -1188,7 +1190,7 @@ def _carregar(entradas: list[dict], sha: str = SHA_FICT, urns: set | None = None
                                           allow_unicode=True), encoding="utf-8")
         if urns is None:
             urns = {e["urn"] for e in entradas}
-        return _rt().carregar_revisoes(caminho, sha, urns)
+        return _rt().carregar_revisoes(caminho, sha, urns, regras={} if regras is None else regras)
 
 
 REVISOR = {"revisado_por": "Revisora Fictícia", "revisado_em": "1900-02-01"}
@@ -1262,6 +1264,312 @@ def revisao_aceitar_efeitos_e_excecoes():
         "vigência fundamentada no caput, efeitos no inciso III")
     checar(r and r["efeitos_inicio"] == "2031-01-01" and r["excecoes_subdivisao"] == [exc],
            "e o § 1º com a própria data, do inciso IV")
+
+
+@cenario("revisão parcial: só a vigência")
+def revisao_parcial():
+    """Quebra: exigir os dois eixos juntos. Na EC 132 a regra fixa a vigência dos 23
+    artigos, mas os efeitos da maioria precisam de leitura; sem revisão parcial, a
+    base continuaria dando o art. 3º como vigente desde 2023, contra o art. 23."""
+    entrada = _entrada("3", {"decisao": "aceitar", "escopo": ["vigencia"], **REVISOR},
+                       efeitos_proposta=False)
+    revs, erros = _carregar([entrada])
+    r = revs.get(urn_dispositivo(URN_EC, "3"))
+    checar(not erros and r is not None and r["eixos"] == ["vigencia"],
+           f"aceita só a vigência, sem proposta de efeitos (erros: {erros})")
+    meta = {"urn": urn_dispositivo(URN_EC, "3"), "vigencia_inicio": "1900-01-02",
+            "efeitos_inicio": "1900-01-02", "vigencia_fim": None, "efeitos_fim": None,
+            "extracao": "automatica", "revisao_temporal_pendente": True}
+    novo = _rt().aplicar_revisao(meta, r)
+    checar(novo["vigencia_inicio"] == "2030-01-01" and novo["efeitos_inicio"] == "1900-01-02",
+           "a vigência muda; os efeitos ficam como estavam")
+    checar(novo["revisao_temporal_pendente"] is True and novo["eixos_revisados"] == ["vigencia"]
+           and novo["precisao"] == {"vigencia_inicio": "ano"},
+           "e o dispositivo continua pendente, dizendo qual eixo foi revisado")
+    erros_v, _ = _rt().problemas_no_dispositivo(novo)
+    checar(not erros_v, f"o resultado passa na validação (erros: {erros_v})")
+    erros_v, _ = _rt().problemas_no_dispositivo(dict(novo, revisao_temporal_pendente=False))
+    checar(erros_v, "só a vigência revisada e pendência false: incoerente, erro")
+    checar(_rt().revisoes_nao_aplicadas(revs, [novo]) == [],
+           "a comparação de 'decisão não aplicada' olha só o eixo revisado")
+    _, erros = _carregar([_entrada("3", {"decisao": "aceitar", "escopo": ["prazo"], **REVISOR})])
+    checar(len(erros) == 1, "escopo fora de vigencia/efeitos: erro")
+
+
+@cenario("regras derivadas: só valem aprovadas")
+def regras_derivadas():
+    """Quebra: aplicar uma regra que ninguém aprovou, ou calcular o mês errado."""
+    import regras_temporais as R
+
+    checar(R.primeiro_dia_do_mes_subsequente("1900-01-16", 4) == "1900-05-01",
+           "publicação em janeiro, quarto mês subsequente: 1º de maio")
+    checar(R.primeiro_dia_do_mes_subsequente("1900-12-05", 2) == "1901-02-01",
+           "atravessa o ano")
+    regras = {"x": {"aprovada": True, "aprovada_por": "Fulana", "aprovada_em": "1900-01-01"},
+              "y": {"aprovada": True, "aprovada_por": None, "aprovada_em": "1900-01-01"},
+              "z": {"aprovada": False, "aprovada_por": "Fulana", "aprovada_em": "1900-01-01"}}
+    checar(R.aprovada(regras, "x") and not R.aprovada(regras, "y")
+           and not R.aprovada(regras, "z") and not R.aprovada(regras, "w"),
+           "aprovada exige aprovada: true, aprovada_por e aprovada_em")
+
+
+def _proposta_para_regra(forma: str, entradas: list[dict]) -> dict:
+    return {"fonte_sha256": SHA_FICT, "resumo": {"forma_da_clausula": forma},
+            "dispositivos": entradas}
+
+
+def _entrada_lc(artigo: str, efeitos_data: str | None, **extra) -> dict:
+    caput = urn_dispositivo(URN_EC, "90")
+    e = {
+        "urn": urn_dispositivo(URN_EC, artigo), "artigo": artigo,
+        "vigencia": {"inciso": None, "fundamento": caput, "motivo": None, "ressalva": None,
+                     "proposta": {"tipo": "evento", "evento": "publicacao",
+                                  "data_candidata": "1900-01-02", "precisao": "dia"}},
+        "efeitos": {"inciso": "II", "fundamento": urn_dispositivo(URN_EC, "90", inciso="II"),
+                    "motivo": None, "ressalva": None, "excecoes": [],
+                    "proposta": ({"tipo": "data", "data_candidata": efeitos_data,
+                                  "precisao": "dia"} if efeitos_data else None)},
+        "atual_no_pipeline": {"publicacao": {"datas": ["1900-01-02"], "fonte": "dou"}},
+        "pendencias": [],
+        "revisao": {"decisao": None, "revisado_por": None, "revisado_em": None},
+    }
+    for chave, valor in extra.items():
+        if chave in ("vigencia", "efeitos"):
+            e[chave].update(valor)
+        else:
+            e[chave] = valor
+    return e
+
+
+@cenario("revisão por regra: o que é literal decide; o resto fica pendente")
+def revisao_por_regra():
+    import revisar_por_regra as RR
+
+    regras = {"ano-primeiro-dia": {"aprovada": True, "aprovada_por": "F", "aprovada_em": "1900-01-01"}}
+    humano = _entrada_lc("9", "1930-01-01")
+    humano["revisao"] = {"decisao": "rejeitar", "revisado_por": "Revisora", "revisado_em": "1900-01-05"}
+    prop = _proposta_para_regra("efeitos_por_inciso", [
+        _entrada_lc("1", "1930-01-01"),
+        _entrada_lc("2", None),
+        _entrada_lc("3", "1930-01-01", pendencias=["alcance_alterado_pela_redacao_posterior"]),
+        _entrada_lc("4", "1930-01-01", efeitos={"ressalva": "inciso II pode nomeá-lo"}),
+        _entrada_lc("5", "1930-01-01", atual_no_pipeline={"publicacao": {"datas": ["1900-01-02"],
+                                                                          "fonte": "rodape_compilado"}}),
+        humano,
+    ])
+    novo, resumo = RR.decidir_por_regra(prop, regras, "1900-02-01")
+    rev = {d["artigo"]: d["revisao"] for d in novo["dispositivos"]}
+    checar(rev["1"]["decisao"] == "aceitar" and rev["1"]["escopo"] == ["vigencia", "efeitos"]
+           and rev["1"]["revisado_por"] == "regra:clausula-literal/v1",
+           "data escrita no inciso, publicação no DOU: vigência e efeitos, por regra")
+    checar(rev["2"]["escopo"] == ["vigencia"], "sem data de efeitos: só a vigência")
+    checar(rev["3"]["escopo"] == ["vigencia"] and rev["4"]["escopo"] == ["vigencia"],
+           "alcance mudado pela redação nova, ou ressalva: efeitos ficam para leitura")
+    checar(rev["5"]["decisao"] is None,
+           "publicação só pelo rodapé (sem DOU): nada por regra")
+    checar(rev["9"] == humano["revisao"], "decisão humana nunca é tocada")
+    checar(resumo == {"vigencia_e_efeitos": 1, "so_vigencia": 3, "so_efeitos": 0, "nada": 1,
+                      "humanas": 1},
+           f"resumo da execução (obteve {resumo})")
+
+    ec = _entrada_lc("3", "1930-01-01")
+    ec["vigencia"]["proposta"] = {"tipo": "ano", "ano": 1930, "data_candidata": "1930-01-01",
+                                  "precisao": "ano"}
+    novo, _ = RR.decidir_por_regra(_proposta_para_regra("vigencia_por_inciso", [ec]), regras, "1900-02-01")
+    r = novo["dispositivos"][0]["revisao"]
+    checar(r["escopo"] == ["vigencia"] and r["revisado_por"] == "regra:clausula-literal/v1+ano-primeiro-dia",
+           "forma da EC: só a vigência, e a regra do ano registrada")
+    novo, _ = RR.decidir_por_regra(_proposta_para_regra("vigencia_por_inciso", [ec]), {}, "1900-02-01")
+    checar(novo["dispositivos"][0]["revisao"]["decisao"] is None,
+           "'em 1930' sem a regra do ano aprovada: nada")
+
+    # Reexecução em outro dia: a decisão de regra não muda, então a data também não.
+    prop2 = _proposta_para_regra("efeitos_por_inciso", [_entrada_lc("1", "1930-01-01")])
+    uma, _ = RR.decidir_por_regra(prop2, regras, "1900-02-01")
+    outra, _ = RR.decidir_por_regra(uma, regras, "1900-03-01")
+    checar(outra["dispositivos"][0]["revisao"]["revisado_em"] == "1900-02-01",
+           "reexecutar sem mudança não altera revisado_em (nada de diff a cada dia)")
+
+
+@cenario("revisão por regra: ponto aberto bloqueia")
+def revisao_por_regra_bloqueios():
+    """Quebra: decidir por regra um artigo cuja redação veio de outro ato, que fixa
+    o tempo de dispositivos no próprio texto, ou cuja data depende de uma
+    publicação ainda em aberto. A data sairia certa na aparência e errada no fato."""
+    import revisar_por_regra as RR
+
+    aprov = {"aprovada": True, "aprovada_por": "F", "aprovada_em": "1900-01-01"}
+    todas = {"ano-primeiro-dia": aprov, "primeiro-dia-do-mes-subsequente": aprov}
+
+    def rodar(entradas, gerais=(), forma="efeitos_por_inciso", regras=todas):
+        prop = _proposta_para_regra(forma, entradas)
+        prop["pendencias_gerais"] = list(gerais)
+        novo, resumo = RR.decidir_por_regra(prop, regras, "1900-02-01")
+        return {d["artigo"]: d["revisao"] for d in novo["dispositivos"]}, resumo
+
+    for p in ("redacao_de_outro_ato", "parte_de_outro_ato", "clausula_temporal_propria",
+              "alcancado_por_clausula_temporal"):
+        rev, _ = rodar([_entrada_lc("1", "1930-01-01", pendencias=[p])])
+        checar(rev["1"]["decisao"] is None, f"pendência {p}: nada por regra")
+
+    relativo = {"proposta": {"tipo": "relativo", "regra": "primeiro-dia-do-mes-subsequente",
+                             "data_candidata": "1900-05-01", "precisao": "dia"}}
+    republicacao = [{"id": "rodape_cita_publicacao_nao_confirmada"}]
+    rev, resumo = rodar([_entrada_lc("1", "1930-01-01"), _entrada_lc("2", None),
+                         _entrada_lc("3", None, efeitos=relativo)], republicacao)
+    checar(rev["1"]["escopo"] == ["efeitos"] and resumo["so_efeitos"] == 1,
+           "republicação em aberto: a vigência (na publicação) espera; a data escrita dos "
+           "efeitos não depende dela")
+    checar(rev["2"]["decisao"] is None and rev["3"]["decisao"] is None,
+           "republicação em aberto: nada que dependa da data de publicação")
+
+    rev, _ = rodar([_entrada_lc("1", "1930-01-01"), _entrada_lc("2", "1930-01-01")],
+                   [{"id": "outro_ato_no_compilado", "artigos": ["1"]}])
+    checar(rev["1"]["decisao"] is None and rev["2"]["decisao"] == "aceitar",
+           "outro ato no compilado: só os artigos que ele trouxe saem da regra")
+    rev, _ = rodar([_entrada_lc("2", "1930-01-01")],
+                   [{"id": "outro_ato_no_compilado", "artigos": None}])
+    checar(rev["2"]["decisao"] is None, "outro ato sem artigos identificados: nada por regra")
+    rev, _ = rodar([_entrada_lc("2", "1930-01-01")], [{"id": "ponto_que_a_regra_nao_conhece"}])
+    checar(rev["2"]["decisao"] is None, "pendência geral desconhecida: na dúvida, nada")
+
+    rev, _ = rodar([_entrada_lc("3", None, efeitos=relativo)])
+    checar(rev["3"]["escopo"] == ["vigencia", "efeitos"] and rev["3"]["revisado_por"]
+           == "regra:clausula-literal/v1+primeiro-dia-do-mes-subsequente",
+           "termo relativo com a regra aprovada: decide, e registra a regra")
+    rev, _ = rodar([_entrada_lc("3", None, efeitos=relativo)],
+                   regras={"ano-primeiro-dia": aprov})
+    checar(rev["3"]["escopo"] == ["vigencia"], "regra do termo relativo não aprovada: efeitos ficam")
+
+    exc = {"excecoes": [{"urn": urn_dispositivo(URN_EC, "1", paragrafo="1"),
+                         "efeitos_inicio": "1931-01-01", "fundamento": ["x"]}]}
+    rev, _ = rodar([_entrada_lc("1", "1930-01-01", efeitos=dict(exc))])
+    checar(rev["1"]["escopo"] == ["vigencia"],
+           "exceção por subdivisão sem o tipo do termo registrado: efeitos ficam")
+    rev, _ = rodar([_entrada_lc("1", "1930-01-01",
+                                efeitos={**exc, "termos_das_excecoes": ["data"]})])
+    checar(rev["1"]["escopo"] == ["vigencia", "efeitos"], "exceção com data escrita: decide")
+    rev, _ = rodar([_entrada_lc("1", "1930-01-01",
+                                efeitos={**exc, "termos_das_excecoes": ["evento"]})],
+                   republicacao)
+    checar(rev["1"]["decisao"] is None,
+           "exceção que depende da publicação em aberto: os efeitos ficam (e a vigência também)")
+
+    ec = _entrada_lc("3", None, pendencias=["alcance_alterado_pela_redacao_posterior"])
+    ec["vigencia"]["inciso"] = "I"
+    rev, _ = rodar([ec], forma="vigencia_por_inciso")
+    checar(rev["3"]["decisao"] is None,
+           "forma da EC: o inciso que dá a vigência mudou de alcance, nada por regra")
+
+
+@cenario("revisão: decisão de regra só vale com as regras que ela usa aprovadas")
+def revisao_regra_revogada():
+    """Quebra: revogar a aprovação de uma regra derivada e o fatiamento continuar
+    aplicando as datas que dependiam dela, porque ninguém rodou revisar_por_regra.py;
+    ou aceitar um `revisado_por: regra:...` que não é regra nenhuma do código."""
+    rev = {"decisao": "aceitar", "escopo": ["vigencia"],
+           "revisado_por": "regra:clausula-literal/v1+ano-primeiro-dia", "revisado_em": "1900-02-01"}
+    aprov = {"ano-primeiro-dia": {"aprovada": True, "aprovada_por": "F", "aprovada_em": "1900-01-01"}}
+    revs, erros = _carregar([_entrada("3", rev)], regras=aprov)
+    checar(not erros and revs, f"regra aprovada: aplica (erros: {erros})")
+    revs, erros = _carregar([_entrada("3", rev)], regras={})
+    checar(not revs and len(erros) == 1 and "revisar_por_regra" in erros[0],
+           f"regra que deixou de estar aprovada: erro, nada aplicado (obteve {erros})")
+    literal = {**rev, "revisado_por": "regra:clausula-literal/v1"}
+    revs, erros = _carregar([_entrada("3", literal)], regras={})
+    checar(not erros and revs, "a regra literal é código, não depende de aprovação")
+    inventada = {**rev, "revisado_por": "regra:inventada/v1"}
+    revs, erros = _carregar([_entrada("3", inventada)], regras=aprov)
+    checar(not revs and len(erros) == 1, "regra que o código não tem: erro")
+
+
+@cenario("proposta: termo relativo à publicação só vira data com a regra aprovada")
+def proposta_termo_relativo():
+    """Quebra: converter 'quarto mês subsequente' em data sem a regra aprovada, ou
+    aceitar uma forma sem ordinal, que o padrão não conhece."""
+    pv = _pv()
+    lido = pv._ler_termo("a partir do primeiro dia do quarto mês subsequente ao da sua publicação")
+    checar(lido == {"tipo": "relativo_publicacao", "regra": "primeiro-dia-do-mes-subsequente",
+                    "meses": 4}, f"ordinal por extenso vira número de meses (obteve {lido})")
+    checar(pv._ler_termo("a partir do primeiro dia do mês subsequente ao da sua publicação")
+           is None, "sem ordinal: fora do padrão, não interpretado")
+    pub = {"datas": ["1900-01-16"], "fonte": "dou", "dou": {}}
+    aprovada = {"primeiro-dia-do-mes-subsequente": {"aprovada": True, "aprovada_por": "F",
+                                                    "aprovada_em": "1900-01-01"}}
+    com = pv._inicio_proposto(lido, pub, aprovada)
+    sem = pv._inicio_proposto(lido, pub, {})
+    checar(com["tipo"] == "relativo" and com["regra"] == "primeiro-dia-do-mes-subsequente"
+           and com["data_candidata"] == "1900-05-01", "regra aprovada: a data é calculada")
+    checar(sem["data_candidata"] is None and sem["resultado_se_aprovada"] == "1900-05-01",
+           "regra não aprovada: sem data, mas a proposta mostra o que ela daria")
+    nada = pv._inicio_proposto(lido, {"datas": [], "fonte": None}, aprovada)
+    checar(nada["data_candidata"] is None and nada["resultado_se_aprovada"] is None,
+           "sem publicação localizada: nada a calcular")
+
+
+@cenario("proposta: redação de outro ato, partes trazidas por outro ato, cláusula própria")
+def proposta_outro_ato():
+    """Quebra: tratar como texto original um artigo que lei posterior incluiu,
+    alterou ou revogou em parte, ou que um ato de promulgação de partes vetadas
+    trouxe — a cláusula de vigência desta norma não vale para esse texto; ou
+    ignorar um artigo que fixa, no próprio texto, quando ele ou outro dispositivo
+    entra em vigor ou produz efeitos."""
+    pv = _pv()
+    corpo = ["Art. 3º Texto original de R$ 10,00 (dez reais).",
+             "§ 1º Outro. (Incluído pela Lei Complementar nº 998, de 2030)",
+             "~~II - antigo. (Revogado)~~",
+             "III - (VETADO)",
+             "IV - item. (Promulgação partes vetadas)"]
+    checar(pv.marcas_de_outro_ato(corpo) == [
+        "(Incluído pela Lei Complementar nº 998, de 2030)", "(Revogado)", "(VETADO)",
+        "(Promulgação partes vetadas)"], "anotações de outro ato, na ordem do texto")
+    checar(pv.marcas_de_outro_ato(["Art. 4º Valor de R$ 10,00 (dez reais)."]) == [],
+           "parêntese comum não é anotação")
+
+    linhas = ["Art. 1º Texto.", "Art. 2º Texto.", "Brasília, 1º de janeiro de 1900.", "FULANO",
+              "Este texto não substitui o publicado no DOU de 2.1.1900", "ANEXO I", "tabela",
+              "O PRESIDENTE DA REPÚBLICA Faço saber que o Congresso Nacional decreta e eu "
+              "promulgo as seguintes partes vetadas da Lei fictícia.",
+              "“Art. 2º ..........", "..........", "X - item.", "“Art. 3º-A ..........",
+              "Brasília, 1º de julho de 1900.", "FULANO",
+              "Este texto não substitui o publicado no DOU de 2.7.1900."]
+    checar(pv.artigos_de_outros_atos(linhas) == [
+        {"assinatura": "Brasília, 1º de julho de 1900.", "artigos": ["2", "3-A"]}],
+        "o bloco de promulgação cita, entre aspas, os arts. 2 e 3-A")
+    sem_citacao = linhas[:8] + ["Art. 1º Fica revogado o que for."] + linhas[12:]
+    checar(pv.artigos_de_outros_atos(sem_citacao)[0]["artigos"] is None,
+           "bloco sem artigo citado entre aspas: não se sabe o que ele trouxe")
+    sem_preambulo = linhas[:7] + linhas[8:]
+    checar(pv.artigos_de_outros_atos(sem_preambulo)[0]["artigos"] is None,
+           "sem o preâmbulo do outro ato, o bloco não é delimitado: não se sabe")
+
+    marcos = [{"urn": "x", "tipos": ["produz_efeitos", "ano"],
+               "trecho": "§ 2º O disposto no art. 7º desta Lei produzirá efeitos a partir de 1930."},
+              {"urn": "y", "tipos": ["ano"], "trecho": "§ 3º Em 1931, aplica-se o art. 8º desta Lei."}]
+    checar(pv.clausula_temporal_propria(marcos, URN_BASE, "3", False) == (True, ["7"]),
+           "o artigo fixa o tempo de outro dispositivo: os dois ficam fora da regra")
+    checar(pv.clausula_temporal_propria(marcos[1:], URN_BASE, "3", False) == (False, []),
+           "marco de ano não é cláusula temporal")
+
+
+@cenario("proposta: decisão de regra não impede regenerar; humana impede")
+def proposta_guarda_regra():
+    import tempfile
+
+    import yaml
+
+    p = _pv()
+    with tempfile.TemporaryDirectory() as tmp:
+        alvo = Path(tmp) / "proposta.yaml"
+        so_regra = {"dispositivos": [{"artigo": "1", "revisao": {
+            "decisao": "aceitar", "revisado_por": "regra:clausula-literal/v1"}}]}
+        alvo.write_text(yaml.safe_dump(so_regra), encoding="utf-8")
+        checar(p.gravar_proposta(alvo, {"dispositivos": []}) is True,
+               "só decisões de regra: pode regenerar (elas são refeitas por revisar_por_regra)")
+        humana = {"dispositivos": [{"artigo": "1", "revisao": {
+            "decisao": "aceitar", "revisado_por": "Revisora"}}]}
+        alvo.write_text(yaml.safe_dump(humana), encoding="utf-8")
+        checar(p.gravar_proposta(alvo, {"dispositivos": []}) is False, "decisão humana: recusa")
 
 
 @cenario("revisão: data sem aspas no YAML editado à mão")
@@ -1420,7 +1728,7 @@ def proposta_lc_real():
             not (RAIZ / "fontes" / "lc-214-2025" / "texto_compilado.html").exists():
         print("  pulado: normas/ ou fontes/ da LC 214 ausentes")
         return
-    prop = _pv().construir("lc-214-2025")
+    prop = _pv().construir("lc-214-2025", regras={})
     base = urn_norma("br:federal:lei.complementar", "2025-01-16", "214")
     u = lambda n, **kw: urn_dispositivo(base, n, **kw)  # noqa: E731
     por = {d["artigo"]: d for d in prop["dispositivos"]}
@@ -1443,14 +1751,37 @@ def proposta_lc_real():
                    "450": [(u("450", paragrafo="1"), "2029-01-01"),
                            (u("450", paragrafo="5"), "2029-01-01")]},
            f"subdivisões com efeitos próprios (obteve {exc})")
+    checar(por["58"]["efeitos"]["termos_das_excecoes"] == ["data"]
+           and por["450"]["efeitos"]["termos_das_excecoes"] == ["data", "data"],
+           "o tipo do termo de cada exceção fica registrado, para a revisão por regra")
     checar(por["58"]["efeitos"]["inciso"] == "VI" and por["450"]["efeitos"]["inciso"] == "III",
            "o resto do art. 58 cai em 'demais'; o art. 450 fica no III")
     checar("alcance_alterado_pela_redacao_posterior" in por["168"]["pendencias"]
            and "alcance_alterado_pela_redacao_posterior" not in por["461"]["pendencias"],
            "168 só está na redação nova do III; 461 está nas duas")
     ids = {p["id"] for p in prop["pendencias_gerais"]}
-    checar({"outro_ato_no_compilado", "rodape_cita_publicacao_nao_confirmada"} <= ids,
-           "pendências gerais: o outro ato anexado e o 23/01/2025 não confirmado")
+    checar({"outro_ato_no_compilado", "rodape_cita_publicacao_nao_confirmada",
+            "regra_derivada_nao_aprovada"} <= ids,
+           "pendências gerais: o outro ato anexado, o 23/01/2025 não confirmado e a regra do "
+           "inciso I ainda não aprovada")
+    checar(por["537"]["efeitos"]["proposta"]["resultado_se_aprovada"] == "2025-05-01",
+           "inciso I: 'quarto mês subsequente' à publicação de 16/01/2025, se a regra for aprovada")
+    outro = next(p for p in prop["pendencias_gerais"] if p["id"] == "outro_ato_no_compilado")
+    checar(outro["artigos"] == ["26"], f"o ato de 1º/07/2025 trouxe partes do art. 26 (obteve "
+                                       f"{outro['artigos']})")
+    checar({"redacao_de_outro_ato", "parte_de_outro_ato"} <= set(por["26"]["pendencias"]),
+           "art. 26: anotado e trazido em parte pelo outro ato")
+    checar("redacao_de_outro_ato" in por["482-A"]["pendencias"]
+           and "redacao_de_outro_ato" not in por["1"]["pendencias"],
+           "482-A incluído por lei posterior; art. 1 sem anotação")
+    checar("clausula_temporal_propria" in por["19"]["pendencias"]
+           and "clausula_temporal_propria" not in por["544"]["pendencias"],
+           "art. 19, II 'somente entrará em vigor com...': cláusula própria; a do 544 é a da norma")
+    aprovada = {"primeiro-dia-do-mes-subsequente": {"aprovada": True, "aprovada_por": "F",
+                                                    "aprovada_em": "1900-01-01"}}
+    com = {d["artigo"]: d for d in _pv().construir("lc-214-2025", regras=aprovada)["dispositivos"]}
+    checar(com["537"]["efeitos"]["proposta"]["data_candidata"] == "2025-05-01",
+           "com a regra aprovada, a data é proposta")
 
 
 @cenario("contrato: a proposta gerada é consumível pela revisão (EC 132 real)")
@@ -1523,6 +1854,68 @@ def consulta_precisao_e_excecoes():
            "artigo futuro com parágrafo já vigente aparece na consulta")
     checar(C.excecoes_na_data(futuro, ref) == [(par3, "vigente")],
            "e o parágrafo aparece com o próprio estado")
+
+
+@cenario("status: todo estado que status_em produz está no vocabulário")
+def status_no_vocabulario():
+    """Quebra: a validação chamar de 'fora do vocabulário' um estado que o próprio
+    código calcula — vigente e ainda sem efeitos é justamente o caso que separa
+    vigência de eficácia (PREMISSAS.md §3.1)."""
+    import datetime as dt
+
+    from comum import STATUS_VALIDOS
+
+    base = {"vigencia_inicio": "1900-01-01", "vigencia_fim": None,
+            "efeitos_inicio": "1900-01-01", "efeitos_fim": None}
+    casos = [base, {**base, "vigencia_fim": "1900-06-01"}, {**base, "vigencia_inicio": "1950-01-01"},
+             {**base, "efeitos_fim": "1900-06-01"}, {**base, "efeitos_inicio": "1950-01-01"}]
+    estados = {status_em(m, dt.date(1910, 1, 1)) for m in casos}
+    checar(len(estados) == 5 and estados <= STATUS_VALIDOS,
+           f"estados produzidos {sorted(estados)} cabem em {sorted(STATUS_VALIDOS)}")
+
+
+@cenario("validação: o aviso de pendência separa o todo provisório do eixo que falta")
+def validar_resumo_pendencias():
+    """Quebra: dizer 'vigência e eficácia provisórias' de um dispositivo que já teve
+    um dos eixos decidido, ou contar decisão de regra como revisão humana."""
+    import validar as V
+
+    auto = {"extracao": "automatica", "revisao_temporal_pendente": True}
+    so_vig = {"extracao": "revisada", "eixos_revisados": ["vigencia"],
+              "revisao_temporal_pendente": True, "revisado_por": "regra:clausula-literal/v1"}
+    so_efe = {**so_vig, "eixos_revisados": ["efeitos"]}
+    humano = {"extracao": "revisada", "eixos_revisados": ["vigencia", "efeitos"],
+              "revisao_temporal_pendente": False, "revisado_por": "Revisora"}
+    r = V.resumo_pendencias([auto, so_vig, so_efe, so_efe, humano])
+    checar(r == {"total": 5, "tudo_provisorio": 1, "falta_efeitos": 1, "falta_vigencia": 2,
+                 "por_regra": 3, "por_ia": 0, "por_pessoa": 1}, f"contagem (obteve {r})")
+
+
+@cenario("consulta: diz quem fixou as datas e o que continua provisório")
+def consulta_origem_das_datas():
+    """Quebra: apresentar data fixada por regra ou por IA como se fosse revisão
+    humana, ou calar que os efeitos continuam provisórios quando só a vigência
+    foi decidida (PREMISSAS.md §3.4)."""
+    import consultar as C
+
+    auto = {"extracao": "automatica", "revisao_temporal_pendente": True}
+    checar(any("PROVISORI" in linha for linha in C.origem_das_datas(auto)),
+           "extração automática: tudo provisório")
+    regra = {"extracao": "revisada", "eixos_revisados": ["vigencia"],
+             "revisao_temporal_pendente": True, "revisado_por": "regra:clausula-literal/v1",
+             "revisado_em": "1900-01-01"}
+    linhas = C.origem_das_datas(regra)
+    checar(any("vigencia" in linha and "regra" in linha and "sem leitura humana" in linha
+               for linha in linhas), f"vigência fixada por regra, dito assim (obteve {linhas})")
+    checar(any("efeitos" in linha and "PROVISORI" in linha for linha in linhas),
+           "efeitos ainda provisórios, dito assim")
+    ia = {**regra, "eixos_revisados": ["vigencia", "efeitos"], "revisao_temporal_pendente": False,
+          "revisado_por": "ia:modelo-x"}
+    checar(any("NAO equivale a revisao humana" in linha for linha in C.origem_das_datas(ia)),
+           "registro de IA não passa por revisão humana")
+    humano = {**ia, "revisado_por": "Revisora"}
+    checar(C.origem_das_datas(humano) == ["vigencia e efeitos revisados por Revisora em 1900-01-01"],
+           f"revisão humana (obteve {C.origem_das_datas(humano)})")
 
 
 @cenario("DOU: cabeçalho de publicação lido da página do ato")

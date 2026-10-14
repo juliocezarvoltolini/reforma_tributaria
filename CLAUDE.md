@@ -77,8 +77,12 @@ Responder pela vigência quando a pergunta é sobre efeitos é erro material.
 
 Antes de usar essas datas:
 
-- `revisao_temporal_pendente: true` — as datas são **provisórias** (primeira
-  publicação). Diga isso na resposta; não responda pela data como se revisada.
+- `revisao_temporal_pendente: true` — ao menos um eixo é **provisório** (primeira
+  publicação). `eixos_revisados` diz qual foi decidido; o outro não vale como
+  revisado. Diga isso na resposta.
+- `revisado_por` diz quem decidiu: um nome (pessoa), `regra:...` (leitura
+  literal da cláusula, por código — PREMISSAS.md §3.4) ou `ia:...` (proposta de
+  IA, **não** equivale a revisão humana: diga isso na resposta).
 - `precisao: {campo: ano}` — o texto diz só o ano ("em 2027"). Se a data de
   referência cai nesse ano, o estado é **incerto**: diga que o dia não está no
   texto.
@@ -86,8 +90,9 @@ Antes de usar essas datas:
   não vale para ele.
 - `data_ato` não é `publicacao`. "Na data de sua publicação" é a do DOU.
 
-Verifique também `status`: `vigente`, `futuro`, `revogado`,
-`pendente_regulamentacao`.
+Verifique também `status`: `vigente`, `vigente_sem_efeitos`, `sem_efeitos`,
+`futuro`, `revogado`, `pendente_regulamentacao`. É o estado na data de
+ingestão; para a data de referência, use `consultar.py`.
 
 ### 5. Consulte as lacunas
 

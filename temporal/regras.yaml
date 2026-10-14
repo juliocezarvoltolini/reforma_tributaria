@@ -1,0 +1,43 @@
+# Regras temporais derivadas (PREMISSAS.md §3.4).
+#
+# Uma regra derivada transforma um texto que não traz a data pronta numa data. Só
+# produz efeito depois de aprovada por um humano: `aprovada: true`, `aprovada_por`
+# e `aprovada_em`. Faltando qualquer um dos três, o que depende dela fica pendente.
+#
+# O código de cada regra está em pipeline/regras_temporais.py e é testado. Mudar a
+# leitura de uma regra é mudar a versão.
+#
+# Aprovar ou revogar (aprovada: false) e depois rodar, nesta ordem:
+#   python pipeline/propor_vigencia.py --slug <norma>
+#   python pipeline/revisar_por_regra.py --slug <norma>
+#   python pipeline/fatiar.py --slug <norma>
+regras:
+  ano-primeiro-dia:
+    versao: 1
+    texto_coberto: "'em <ano>' ou 'a partir de <ano>', sem dia nem mês"
+    leitura: >-
+      grava-se <ano>-01-01 com `precisao: ano`. A data não afirma o dia 1º de
+      janeiro: a consulta avisa quando a data consultada cai nesse ano.
+    exemplo: "EC 132/2023, art. 23, I ('em 2027') -> 2027-01-01, precisão de ano"
+    aprovada: true
+    aprovada_por: Júlio Voltolini
+    aprovada_em: '2026-10-14'
+    origem_da_aprovacao: >-
+      convenção AAAA-01-01 com precisão de ano (recomendação 2 do modelo de datas),
+      aceita na sessão de trabalho em que o campo `precisao` foi criado.
+
+  primeiro-dia-do-mes-subsequente:
+    versao: 1
+    texto_coberto: >-
+      'a partir do primeiro dia do <ordinal> mês subsequente ao da sua publicação',
+      com o ordinal por extenso (primeiro a décimo)
+    leitura: >-
+      conta-se o mês da publicação no DOU como ponto de partida: o mês seguinte é
+      o primeiro subsequente. A data é o dia 1º do <ordinal>-ésimo mês depois do
+      mês da publicação.
+    exemplo: >-
+      LC 214/2025, art. 544, I: publicação no DOU em 16/01/2025; fevereiro é o
+      primeiro mês subsequente, maio o quarto -> 2025-05-01
+    aprovada: false
+    aprovada_por: null
+    aprovada_em: null

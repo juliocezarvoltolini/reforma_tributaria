@@ -309,7 +309,7 @@ RE_ESTRUTURA = re.compile(
 )
 RE_ANOTACAO = re.compile(
     r"\((Reda[çc][ãa]o dada|Revogad[oa]|Inclu[íi]d[oa]|Vide|Vig[êe]ncia|"
-    r"Produ[çc][ãa]o de efeito|Vetado)[^)]*\)",
+    r"Produ[çc][ãa]o de efeito|Vetad[oa]|Promulga[çc][ãa]o)[^)]*\)",
     re.IGNORECASE,
 )
 

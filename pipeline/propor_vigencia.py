@@ -54,12 +54,16 @@ from fatiar import _iso as _data_por_extenso  # noqa: E402
 from fatiar import (
     CATALOGO,
     RE_ANOTACAO,
+    RE_ASSINATURA,
     chave_ordem,
+    exige_escopo_interno,
     extrair_referencias,
+    extrair_remissoes,
     html_para_linhas,
     linhas_citadas,
     subdivisao_por_linha,
 )
+from regras_temporais import aprovada, carregar_regras, primeiro_dia_do_mes_subsequente
 
 DIR_PROPOSTAS = DIR_TEMPORAL / "propostas"
 
@@ -92,6 +96,14 @@ RE_TERMO_DATA = re.compile(
     rf"((?:19|20)\d{{2}})$", re.IGNORECASE)
 RE_TERMO_ANO = re.compile(r"^(?:em|a\s+partir\s+de)\s+((?:19|20)\d{2})$", re.IGNORECASE)
 RE_TERMO_PUBLICACAO = re.compile(r"^na\s+data\s+de\s+sua\s+publica[çc][ãa]o$", re.IGNORECASE)
+# "a partir do primeiro dia do quarto mês subsequente ao da sua publicação" (LC 214,
+# art. 544, I). O texto é lido aqui; a data só sai pela regra derivada
+# 'primeiro-dia-do-mes-subsequente', depois de aprovada (PREMISSAS.md §3.4).
+ORDINAIS = {"primeiro": 1, "segundo": 2, "terceiro": 3, "quarto": 4, "quinto": 5, "sexto": 6,
+            "sétimo": 7, "setimo": 7, "oitavo": 8, "nono": 9, "décimo": 10, "decimo": 10}
+RE_TERMO_RELATIVO = re.compile(
+    rf"^a\s+partir\s+do\s+primeiro\s+dia\s+do\s+({'|'.join(ORDINAIS)})\s+m[êe]s\s+subsequente\s+"
+    r"ao\s+da\s+sua\s+publica[çc][ãa]o$", re.IGNORECASE)
 RE_ALCANCE_DEMAIS = re.compile(r"^em\s+rela[çc][ãa]o\s+aos\s+demais\s+dispositivos$", re.IGNORECASE)
 RE_ALCANCE_ARTIGOS = re.compile(r"^em\s+rela[çc][ãa]o\s+aos?\s+arts?\.\s*(.+)$", re.IGNORECASE)
 
@@ -163,6 +175,9 @@ def _ler_termo(texto: str) -> dict | None:
         return {"tipo": "ano", "ano": int(m.group(1))}
     if RE_TERMO_PUBLICACAO.match(texto):
         return {"tipo": "publicacao"}
+    if m := RE_TERMO_RELATIVO.match(texto):
+        return {"tipo": "relativo_publicacao", "regra": "primeiro-dia-do-mes-subsequente",
+                "meses": ORDINAIS[m.group(1).lower()]}
     return None
 
 
@@ -187,7 +202,8 @@ def _ler_inciso(linha: str, urn_base: str, artigo: str) -> dict | None:
     motivos = []
     if termo is None:
         motivos.append("termo fora dos padrões reconhecidos ('em <ano>', 'a partir de <data>', "
-                       "'na data de sua publicação')")
+                       "'na data de sua publicação', 'a partir do primeiro dia do <ordinal> mês "
+                       "subsequente ao da sua publicação')")
     if alcance is None:
         motivos.append("alcance fora dos padrões (só artigos, intervalos 'a', 'caput', '§', "
                        "'§§ x e y', 'exceto os §§' e 'demais dispositivos'; qualquer sobra "
@@ -407,6 +423,67 @@ def marcos_proprios(corpo: list[str], urn_base: str, artigo: str) -> dict:
     return {"marcos": marcos, "citado_com_marcos": citado_com_marcos}
 
 
+# Um artigo que diz, no próprio texto, quando ele (ou outro dispositivo) entra em
+# vigor ou produz efeitos ("II - somente entrará em vigor com...") não recebe a
+# data da cláusula sem leitura.
+TIPOS_CLAUSULA_PROPRIA = {"produz_efeitos", "entrada_em_vigor"}
+RE_ARTIGO_DA_URN = re.compile(r"!art(\d+(?:-[A-Z]+)?)")
+
+
+def clausula_temporal_propria(
+    marcos: list[dict], urn_base: str, artigo: str, exigir_escopo: bool
+) -> tuple[bool, list[str]]:
+    """(o artigo tem cláusula temporal própria?, outros artigos desta norma que ela cita)."""
+    linhas = [m["trecho"] for m in marcos if TIPOS_CLAUSULA_PROPRIA & set(m["tipos"])]
+    citados = []
+    for linha in linhas:
+        for urn in extrair_remissoes(RE_RISCADO.sub("", linha), urn_base, artigo, exigir_escopo):
+            m = RE_ARTIGO_DA_URN.search(urn)
+            if m and m.group(1) != artigo and m.group(1) not in citados:
+                citados.append(m.group(1))
+    return bool(linhas), citados
+
+
+# ---------------------------------------------------------------------------
+# Texto que veio de outro ato
+# ---------------------------------------------------------------------------
+
+RE_PREAMBULO = re.compile(r"^O\s+PRESIDENTE\s+DA\s+REP[ÚU]BLICA\b")
+RE_ARTIGO_CITADO = re.compile(r"^[“\"]\s*Art\.\s*(\d+)\s*[ºo°]?\s*(-[A-Z])?")
+
+
+def marcas_de_outro_ato(corpo: list[str]) -> list[str]:
+    """Anotações oficiais do compilado no artigo, inclusive no texto riscado, na
+    ordem: incluído, alterado, revogado, vetado ou promulgado por outro ato, ou
+    remetido a ele. A cláusula de vigência desta norma não decide esse texto."""
+    marcas: list[str] = []
+    for linha in corpo:
+        for m in RE_ANOTACAO.finditer(linha):
+            if m.group(0) not in marcas:
+                marcas.append(m.group(0))
+    return marcas
+
+
+def artigos_de_outros_atos(linhas: list[str]) -> list[dict]:
+    """Para cada assinatura depois da primeira, os artigos desta norma que aquele
+    ato traz, citados entre aspas depois do preâmbulo dele ("O PRESIDENTE DA
+    REPÚBLICA Faço saber..."). `artigos` é None quando não dá para saber: sem
+    preâmbulo, o bloco não é delimitado; sem citação, não se sabe o que ele trouxe."""
+    assinaturas = [i for i, linha in enumerate(linhas) if RE_ASSINATURA.match(linha)]
+    blocos = []
+    for anterior, atual in zip(assinaturas, assinaturas[1:]):
+        trecho = linhas[anterior + 1:atual]
+        inicio = max((k for k, linha in enumerate(trecho) if RE_PREAMBULO.match(linha)),
+                     default=None)
+        artigos = None
+        if inicio is not None:
+            achados = [m.group(1) + (m.group(2) or "") for linha in trecho[inicio + 1:]
+                       if (m := RE_ARTIGO_CITADO.match(linha))]
+            artigos = list(dict.fromkeys(achados)) or None
+        blocos.append({"assinatura": linhas[atual], "artigos": artigos})
+    return blocos
+
+
 # ---------------------------------------------------------------------------
 # Montagem da proposta
 # ---------------------------------------------------------------------------
@@ -414,7 +491,21 @@ def marcos_proprios(corpo: list[str], urn_base: str, artigo: str) -> dict:
 RE_REVOGAM_SE = re.compile(r"^Art\.\s*\d+\s*[ºo°]?\.?\s+Revogam-se\b", re.IGNORECASE)
 
 
-def _inicio_proposto(termo: dict, pub: dict) -> dict:
+def _inicio_proposto(termo: dict, pub: dict, regras: dict | None = None) -> dict:
+    if termo["tipo"] == "relativo_publicacao":
+        # A data só é proposta com a regra aprovada; sem ela, a proposta mostra o
+        # que a regra daria, para quem decide aprová-la.
+        datas = pub.get("datas") or []
+        base = datas[0] if (pub.get("fonte") == "dou" and datas) or len(datas) == 1 else None
+        resultado = primeiro_dia_do_mes_subsequente(base, termo["meses"]) if base else None
+        ok = aprovada(regras or {}, termo["regra"])
+        return {
+            "tipo": "relativo", "regra": termo["regra"], "meses": termo["meses"],
+            "data_candidata": resultado if ok else None, "resultado_se_aprovada": resultado,
+            "precisao": "dia",
+            "nota": (f"regra '{termo['regra']}' aprovada em temporal/regras.yaml" if ok else
+                     f"regra '{termo['regra']}' não aprovada em temporal/regras.yaml: sem data"),
+        }
     if termo["tipo"] == "data":
         return {"tipo": "data", "data_candidata": termo["data"], "precisao": "dia",
                 "nota": "data escrita no inciso"}
@@ -474,19 +565,24 @@ def _decisoes(dispositivos: list[dict]) -> list[dict]:
 
 
 INSTRUCOES_REVISAO = (
-    "Em cada dispositivo, preencha `revisao`. decisao: aceitar adota a proposta de "
-    "vigência E a de efeitos, e só vale se houver proposta de efeitos. decisao: alterar "
-    "exige vigencia_inicio, efeitos_inicio, fundamento_vigencia e fundamento_efeitos "
-    "(listas de URN); opcionais: vigencia_fim, efeitos_fim, precisao ({campo: ano}, com a "
-    "data em AAAA-01-01) e excecoes_subdivisao (urn de § ou inciso do próprio artigo, as "
-    "datas que diferem e fundamento). decisao: rejeitar mantém o dispositivo pendente. "
-    "Toda decisão exige revisado_por e revisado_em. Depois, rode pipeline/fatiar.py: é "
-    "ele que aplica a revisão a normas/. Se o original mudar (sha256), a revisão deixa "
-    "de ser aplicada e precisa ser refeita."
+    "Primeiro rode pipeline/revisar_por_regra.py: ele decide o que a cláusula diz "
+    "literalmente (revisado_por: regra:...) e deixa o resto em branco. Em cada dispositivo "
+    "sem decisão, preencha `revisao`. escopo: [vigencia], [efeitos] ou os dois (padrão) diz "
+    "quais eixos a decisão cobre; o eixo de fora continua provisório. decisao: aceitar "
+    "adota as propostas dos eixos do escopo, e só vale se cada um tiver proposta com data. "
+    "decisao: alterar exige, para os eixos do escopo, vigencia_inicio/efeitos_inicio e "
+    "fundamento_vigencia/fundamento_efeitos (listas de URN); opcionais: vigencia_fim, "
+    "efeitos_fim, precisao ({campo: ano}, com a data em AAAA-01-01) e excecoes_subdivisao "
+    "(urn de § ou inciso do próprio artigo, as datas que diferem e fundamento). decisao: "
+    "rejeitar mantém o dispositivo pendente. Toda decisão exige revisado_por e revisado_em; "
+    "a decisão humana prevalece e nunca é refeita por regra. Depois, rode "
+    "pipeline/fatiar.py: é ele que aplica a revisão a normas/. Se o original mudar "
+    "(sha256), a revisão deixa de ser aplicada e precisa ser refeita."
 )
 
 
-def _pendencias_gerais(refs: dict, pub: dict) -> list[dict]:
+def _pendencias_gerais(refs: dict, pub: dict, outros: list[dict] | None = None) -> list[dict]:
+    artigos_por_assinatura = {o["assinatura"]: o["artigos"] for o in outros or []}
     pendencias = []
     if pub.get("fonte") == "dou":
         sem_confirmacao = sorted(set((pub.get("rodape_compilado") or {}).get("datas") or [])
@@ -513,23 +609,34 @@ def _pendencias_gerais(refs: dict, pub: dict) -> list[dict]:
                          "dependem dela ficam sem data candidata.",
         })
     for extra in refs.get("rodapes_adicionais") or []:
+        artigos = artigos_por_assinatura.get(extra["assinatura"])
         pendencias.append({
             "id": "outro_ato_no_compilado",
             "descricao": "O compilado traz, depois do texto da norma, outro bloco assinado "
                          f"({extra['assinatura']}) com rodapé próprio ({extra['trecho']}). É "
                          "outro ato publicado em outra data; os dispositivos que ele trouxe "
-                         "podem ter vigência própria. Identificar quais são antes de revisar.",
+                         "podem ter vigência própria. "
+                         + (f"Pelo texto do bloco, ele traz partes dos arts. {', '.join(artigos)}."
+                            if artigos else
+                            "Não foi possível identificar, no bloco, quais artigos ele traz: "
+                            "identificar antes de revisar."),
+            # None: não identificados. revisar_por_regra.py não decide nada da norma.
+            "artigos": artigos,
         })
     return pendencias
 
 
-def construir(slug: str) -> dict:
-    """Monta a proposta (dicionário) sem gravar nada."""
+def construir(slug: str, regras: dict | None = None) -> dict:
+    """Monta a proposta (dicionário) sem gravar nada. `regras`: as regras derivadas
+    (temporal/regras.yaml, se não informadas)."""
+    if regras is None:
+        regras = carregar_regras()
     catalogo = yaml.safe_load(CATALOGO.read_text(encoding="utf-8"))
     fonte = next((f for f in catalogo.get("fontes") or [] if f["slug"] == slug), None)
     if fonte is None:
         raise SystemExit(f"slug '{slug}' nao esta em fontes.yaml")
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
+    exigir_escopo = exige_escopo_interno(fonte)
 
     metas, corpos = {}, {}
     for caminho in arquivos_norma(slug):
@@ -544,8 +651,10 @@ def construir(slug: str) -> dict:
 
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     registro = manifest["documentos"][f"{slug}/texto_compilado"]
-    refs = extrair_referencias(
-        [ln.completa for ln in html_para_linhas(caminho_fonte(registro).read_bytes())])
+    linhas_fonte = [ln.completa for ln in html_para_linhas(caminho_fonte(registro).read_bytes())]
+    refs = extrair_referencias(linhas_fonte)
+    outros = artigos_de_outros_atos(linhas_fonte)
+    trazidos = {a for o in outros for a in o["artigos"] or []}
 
     # A publicação que fatiar.py gravou: do DOU, se arquivado; senão, do rodapé.
     publicacao = metas[ordem[0]].get("publicacao") or {}
@@ -563,6 +672,17 @@ def construir(slug: str) -> dict:
                              for n in ordem}}
 
     forma = clausula.get("forma")
+    artigo_clausula = candidatos[0] if len(candidatos) == 1 else None
+    proprias: dict[str, list[str]] = {}
+    for n in ordem:
+        if n == artigo_clausula:
+            continue
+        tem, citados_na_clausula = clausula_temporal_propria(
+            marcos_proprios(corpos[n], base, n)["marcos"], base, n, exigir_escopo)
+        if tem:
+            proprias[n] = citados_na_clausula
+    alcancados = {c for cs in proprias.values() for c in cs}
+
     dispositivos = []
     for n in ordem:
         meta, corpo = metas[n], corpos[n]
@@ -579,7 +699,7 @@ def construir(slug: str) -> dict:
         else:
             vig_termo, vig_fundamento, vig_inciso, vig_motivo, vig_ressalva = (
                 m["termo"], m["fundamento"], m["inciso"], m["motivo"], m["ressalva"])
-        inicio_vig = _inicio_proposto(vig_termo, publicacao) if vig_termo else None
+        inicio_vig = _inicio_proposto(vig_termo, publicacao, regras) if vig_termo else None
         if inicio_vig is None:
             pendencias.append("vigencia_nao_determinada")
 
@@ -587,10 +707,10 @@ def construir(slug: str) -> dict:
         if forma == "efeitos_por_inciso":
             # Os efeitos vêm do inciso, com as exceções por subdivisão que ele
             # estabelece, no formato que revisao_temporal.py aceita.
-            inicio_efe = _inicio_proposto(m["termo"], publicacao) if m["termo"] else None
-            excecoes, sem_data = [], []
+            inicio_efe = _inicio_proposto(m["termo"], publicacao, regras) if m["termo"] else None
+            excecoes, termos_excecoes, sem_data = [], [], []
             for e in m["excecoes"]:
-                cand = _inicio_proposto(e["termo"], publicacao) if e["termo"] else None
+                cand = _inicio_proposto(e["termo"], publicacao, regras) if e["termo"] else None
                 if not cand or not cand["data_candidata"]:
                     sem_data.append(e["urn"].split("!")[-1])
                     continue
@@ -599,15 +719,20 @@ def construir(slug: str) -> dict:
                 if cand["precisao"] == "ano":
                     exc["precisao"] = {"efeitos_inicio": "ano"}
                 excecoes.append(exc)
+                termos_excecoes.append(cand["tipo"])
                 termos.append(e["termo"])
             motivo_efe = m["motivo"]
             if sem_data:
                 inicio_efe = None
                 motivo_efe = (f"exceção sem data ({', '.join(sem_data)}): o termo do inciso que "
-                              "a alcança não foi interpretado")
+                              "a alcança não foi interpretado ou depende de regra não aprovada")
             efeitos = {"inciso": m["inciso"], "fundamento": m["fundamento"],
                        "natureza": "derivado" if m["inciso"] else None, "proposta": inicio_efe,
-                       "excecoes": excecoes, "motivo": motivo_efe, "ressalva": m["ressalva"]}
+                       "excecoes": excecoes,
+                       # De onde vem a data de cada exceção (data, ano, evento, relativo):
+                       # a revisão por regra só aceita exceção cujo termo ela pode adotar.
+                       "termos_das_excecoes": termos_excecoes,
+                       "motivo": motivo_efe, "ressalva": m["ressalva"]}
             termos.append(m["termo"])
             if m["inciso"] is None:
                 pendencias.append("efeitos_nao_determinados")
@@ -663,6 +788,18 @@ def construir(slug: str) -> dict:
             pendencias.append("revogacao_expressa")
         if citados:
             pendencias.append("texto_inserido_em_outra_norma")
+        marcas = marcas_de_outro_ato(corpo)
+        if marcas:
+            pendencias.append("redacao_de_outro_ato")
+        if n in trazidos:
+            pendencias.append("parte_de_outro_ato")
+        if n in proprias:
+            pendencias.append("clausula_temporal_propria")
+        if n in alcancados:
+            pendencias.append("alcancado_por_clausula_temporal")
+        if any(t and t["tipo"] == "relativo_publicacao" and not aprovada(regras, t["regra"])
+               for t in termos):
+            pendencias.append("regra_derivada_nao_aprovada")
 
         dispositivos.append({
             "urn": meta["urn"],
@@ -685,6 +822,8 @@ def construir(slug: str) -> dict:
             },
             "marcos_proprios": marcos["marcos"],
             "texto_inserido": {"artigos": citados, "linhas_com_marcos": marcos["citado_com_marcos"]},
+            # Anotações do compilado que mostram texto vindo de outro ato.
+            "marcas_de_outro_ato": marcas,
             "pendencias": pendencias,
             "revisao": {
                 "decisao": None,  # aceitar | alterar | rejeitar (ver instrucoes_revisao)
@@ -710,6 +849,34 @@ def construir(slug: str) -> dict:
         k = lado["inciso"] or "indeterminado"
         por_inciso[k] = por_inciso.get(k, 0) + 1
 
+    pendencias_gerais = _pendencias_gerais(refs, publicacao, outros)
+    # Regra derivada que a cláusula usa e ninguém aprovou: uma decisão só, que
+    # resolve todos os artigos que dependem dela.
+    nao_aprovadas: dict[str, dict] = {}
+    for d in dispositivos:
+        for lado in (d["vigencia"], d["efeitos"]):
+            p = lado.get("proposta") or {}
+            if p.get("tipo") == "relativo" and p.get("data_candidata") is None:
+                item = nao_aprovadas.setdefault(p["regra"], {"artigos": [], "resultados": set(),
+                                                             "fundamentos": set()})
+                item["artigos"].append(d["artigo"])
+                item["resultados"].add(p.get("resultado_se_aprovada"))
+                item["fundamentos"].add(lado.get("fundamento"))
+    for nome, item in nao_aprovadas.items():
+        resultados = sorted(r for r in item["resultados"] if r)
+        pendencias_gerais.append({
+            "id": "regra_derivada_nao_aprovada",
+            "regra": nome,
+            "fundamento": sorted(f for f in item["fundamentos"] if f),
+            "artigos": item["artigos"],
+            "resultado_se_aprovada": resultados,
+            "descricao": f"O termo de {', '.join(sorted(f for f in item['fundamentos'] if f))} "
+                         f"só vira data pela regra '{nome}', que não está aprovada em "
+                         "temporal/regras.yaml. Aprovada, ela daria "
+                         f"{', '.join(resultados) or 'nenhuma data (publicação não localizada)'} "
+                         f"para {len(item['artigos'])} artigo(s). Até lá, sem data.",
+        })
+
     return {
         "norma": slug,
         "urn_norma": base,
@@ -725,7 +892,7 @@ def construir(slug: str) -> dict:
         "instrucoes_revisao": INSTRUCOES_REVISAO,
         "referencias": refs,
         "clausula_de_vigencia": {k: v for k, v in clausula.items() if k != "mapa"},
-        "pendencias_gerais": _pendencias_gerais(refs, publicacao),
+        "pendencias_gerais": pendencias_gerais,
         "decisoes_necessarias": _decisoes(dispositivos),
         "resumo": {
             "dispositivos": len(dispositivos),
@@ -740,10 +907,15 @@ def construir(slug: str) -> dict:
 
 
 def gravar_proposta(caminho: Path, proposta: dict) -> bool:
-    """Grava a proposta. Recusa (False) se o arquivo existente já tem decisão humana."""
+    """Grava a proposta. Recusa (False) se o arquivo existente já tem decisão HUMANA.
+
+    Decisão de regra (`revisado_por: regra:...`) não impede: ela é refeita por
+    revisar_por_regra.py depois de regenerar.
+    """
     if caminho.exists():
         existente = yaml.safe_load(caminho.read_text(encoding="utf-8")) or {}
         if any((d.get("revisao") or {}).get("decisao") is not None
+               and not str((d.get("revisao") or {}).get("revisado_por") or "").startswith("regra:")
                for d in existente.get("dispositivos") or []):
             return False
     caminho.parent.mkdir(parents=True, exist_ok=True)
@@ -770,7 +942,8 @@ def main() -> int:
     print(f"  com marcos temporais proprios: {r['com_marcos_proprios']}   "
           f"inserindo texto em outra norma: {r['com_texto_inserido_em_outra_norma']}")
     print(f"  decisoes necessarias: {[d['id'] for d in proposta['decisoes_necessarias']]}")
-    print("  NADA em /normas/ foi alterado. Revise, preencha `revisao` e so entao aplique.")
+    print("  NADA em /normas/ foi alterado. Proximo passo: "
+          f"python pipeline/revisar_por_regra.py --slug {args.slug}")
     return 0
 
 

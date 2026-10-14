@@ -249,15 +249,40 @@ def validar_revisoes_temporais(metas: list[dict]) -> None:
             erro(f"temporal/propostas/{caminho.name}: {msg}")
 
 
+def resumo_pendencias(metas: list[dict]) -> dict:
+    """Quantos dispositivos estão todo provisórios, quantos têm só um eixo decidido,
+    e quem decidiu o que foi decidido (PREMISSAS.md §3.4)."""
+    r = {"total": len(metas), "tudo_provisorio": 0, "falta_efeitos": 0, "falta_vigencia": 0,
+         "por_regra": 0, "por_ia": 0, "por_pessoa": 0}
+    for m in metas:
+        if m.get("extracao") != "revisada":
+            r["tudo_provisorio"] += 1
+            continue
+        eixos = set(m.get("eixos_revisados") or ["vigencia", "efeitos"])
+        if eixos == {"vigencia"}:
+            r["falta_efeitos"] += 1
+        elif eixos == {"efeitos"}:
+            r["falta_vigencia"] += 1
+        por = str(m.get("revisado_por") or "")
+        r["por_regra" if por.startswith("regra:") else "por_ia" if por.startswith("ia:")
+          else "por_pessoa"] += 1
+    return r
+
+
 def relatar_pendencias(metas: list[dict]) -> None:
-    pendentes = [m for m in metas if m.get("revisao_temporal_pendente")]
+    r = resumo_pendencias(metas)
+    pendentes = r["tudo_provisorio"] + r["falta_efeitos"] + r["falta_vigencia"]
     if pendentes:
         aviso(
-            f"{len(pendentes)} de {len(metas)} dispositivos com "
-            "revisao_temporal_pendente: vigencia e eficacia ainda sao provisorias "
-            "(primeira publicacao, ou data do ato). Revisar a clausula de vigencia "
-            "antes de usar em producao."
+            f"{pendentes} de {r['total']} dispositivos com revisao_temporal_pendente: "
+            f"{r['tudo_provisorio']} com vigencia e eficacia provisorias (primeira publicacao, "
+            f"ou data do ato); {r['falta_efeitos']} so com a vigencia decidida; "
+            f"{r['falta_vigencia']} so com os efeitos decididos. O eixo nao decidido e "
+            "provisorio: revisar antes de usar em producao."
         )
+    if r["por_regra"] or r["por_ia"] or r["por_pessoa"]:
+        print(f"  decisoes temporais aplicadas: {r['por_regra']} por regra, {r['por_ia']} por IA "
+              f"(nao equivale a revisao humana), {r['por_pessoa']} por pessoa")
     nao_confirmadas = [m for m in metas
                        if isinstance(m.get("publicacao"), dict)
                        and m["publicacao"].get("fonte") == "rodape_compilado"]

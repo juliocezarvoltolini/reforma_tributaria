@@ -5,7 +5,8 @@ gerado_por: pipeline/propor_vigencia.py
 status: proposta
 aviso: 'PROPOSTA MECÂNICA, NÃO APLICADA. Nada em /normas/ foi alterado. Cada dispositivo exige decisão humana em `revisao`. O script só interpreta padrões exatos; o resto está marcado como não interpretado. Vigência não é eficácia: os marcos próprios de cada artigo estão em `marcos_proprios`, em trecho literal.'
 fonte_sha256: f8d7213311adbdd651d5c16257b223bb67e7626f45d38a53ac25e550e4eecf54
-instrucoes_revisao: 'Em cada dispositivo, preencha `revisao`. decisao: aceitar adota a proposta de vigência E a de efeitos, e só vale se houver proposta de efeitos. decisao: alterar exige vigencia_inicio, efeitos_inicio, fundamento_vigencia e fundamento_efeitos (listas de URN); opcionais: vigencia_fim, efeitos_fim, precisao ({campo: ano}, com a data em AAAA-01-01) e excecoes_subdivisao (urn de § ou inciso do próprio artigo, as datas que diferem e fundamento). decisao: rejeitar mantém o dispositivo pendente. Toda decisão exige revisado_por e revisado_em. Depois, rode pipeline/fatiar.py: é ele que aplica a revisão a normas/. Se o original mudar (sha256), a revisão deixa de ser aplicada e precisa ser refeita.'
+instrucoes_revisao: 'Primeiro rode pipeline/revisar_por_regra.py: ele decide o que a cláusula diz literalmente (revisado_por: regra:...) e deixa o resto em branco. Em cada dispositivo sem decisão, preencha `revisao`. escopo: [vigencia], [efeitos] ou os dois (padrão) diz quais eixos a decisão cobre; o eixo de fora continua provisório. decisao: aceitar adota as propostas dos eixos do escopo, e só vale se cada um tiver proposta com data. decisao: alterar exige, para os eixos do escopo, vigencia_inicio/efeitos_inicio e fundamento_vigencia/fundamento_efeitos (listas de URN); opcionais: vigencia_fim, efeitos_fim, precisao ({campo: ano}, com a data em AAAA-01-01) e excecoes_subdivisao (urn de § ou inciso do próprio artigo, as datas que diferem e fundamento). decisao: rejeitar mantém o dispositivo pendente. Toda decisão exige revisado_por e revisado_em; a decisão humana prevalece e nunca é refeita por regra. Depois, rode pipeline/fatiar.py: é ele que aplica a revisão a normas/. Se o original mudar
+  (sha256), a revisão deixa de ser aplicada e precisa ser refeita.'
 referencias:
   data_do_ato:
     valor: '2023-12-20'
@@ -159,10 +160,11 @@ dispositivos:
     - 212-A
     - '225'
     linhas_com_marcos: 12
+  marcas_de_outro_ato: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -171,9 +173,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art2
   artigo: '2'
   vigencia:
@@ -226,10 +230,11 @@ dispositivos:
     - '136'
     - '137'
     linhas_com_marcos: 48
+  marcas_de_outro_ato: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -238,9 +243,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art3
   artigo: '3'
   vigencia:
@@ -282,11 +289,12 @@ dispositivos:
     - '225'
     - '239'
     linhas_com_marcos: 2
+  marcas_de_outro_ato: []
   pendencias:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -295,9 +303,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1+ano-primeiro-dia
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art4
   artigo: '4'
   vigencia:
@@ -340,11 +350,12 @@ dispositivos:
     - 212-A
     - '225'
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -353,9 +364,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1+ano-primeiro-dia
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art5
   artigo: '5'
   vigencia:
@@ -392,9 +405,12 @@ dispositivos:
     - '82'
     - '104'
     linhas_com_marcos: 0
+  marcas_de_outro_ato:
+  - (Revogado)
   pendencias:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
+  - redacao_de_outro_ato
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -408,6 +424,7 @@ dispositivos:
     revisado_por: null
     revisado_em: null
     observacao: null
+    escopo: null
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art6
   artigo: '6'
   vigencia:
@@ -454,12 +471,13 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - condicao_regulamentacao
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -468,9 +486,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7
   artigo: '7'
   vigencia:
@@ -529,11 +549,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -542,9 +563,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art8
   artigo: '8'
   vigencia:
@@ -583,11 +606,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -596,9 +620,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9
   artigo: '9'
   vigencia:
@@ -670,11 +696,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -683,9 +710,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10
   artigo: '10'
   vigencia:
@@ -731,10 +760,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
+  - clausula_temporal_propria
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -748,6 +779,7 @@ dispositivos:
     revisado_por: null
     revisado_em: null
     observacao: null
+    escopo: null
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art11
   artigo: '11'
   vigencia:
@@ -787,10 +819,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - ano_sem_dia
   - marcos_proprios
   - evento_relativo
+  - clausula_temporal_propria
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -804,6 +838,7 @@ dispositivos:
     revisado_por: null
     revisado_em: null
     observacao: null
+    escopo: null
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12
   artigo: '12'
   vigencia:
@@ -910,12 +945,13 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -924,9 +960,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13
   artigo: '13'
   vigencia:
@@ -1026,10 +1064,11 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1038,9 +1077,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art14
   artigo: '14'
   vigencia:
@@ -1080,9 +1121,10 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1091,9 +1133,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art15
   artigo: '15'
   vigencia:
@@ -1133,9 +1177,10 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1144,9 +1189,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art16
   artigo: '16'
   vigencia:
@@ -1185,11 +1232,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - condicao_regulamentacao
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1198,9 +1246,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art17
   artigo: '17'
   vigencia:
@@ -1239,11 +1289,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1252,9 +1303,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art18
   artigo: '18'
   vigencia:
@@ -1304,11 +1357,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1317,9 +1371,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19
   artigo: '19'
   vigencia:
@@ -1395,12 +1451,13 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1409,9 +1466,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art20
   artigo: '20'
   vigencia:
@@ -1451,12 +1510,13 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - condicao_regulamentacao
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1465,9 +1525,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art21
   artigo: '21'
   vigencia:
@@ -1507,10 +1569,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
   - evento_relativo
+  - clausula_temporal_propria
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -1524,6 +1588,7 @@ dispositivos:
     revisado_por: null
     revisado_em: null
     observacao: null
+    escopo: null
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art22
   artigo: '22'
   vigencia:
@@ -1566,11 +1631,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - revogacao_expressa
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1579,9 +1645,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23
   artigo: '23'
   vigencia:
@@ -1632,11 +1700,12 @@ dispositivos:
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
+  marcas_de_outro_ato: []
   pendencias:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1645,6 +1714,8 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-14'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia

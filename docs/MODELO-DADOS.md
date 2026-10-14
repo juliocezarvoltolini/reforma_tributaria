@@ -80,7 +80,8 @@ excecoes_subdivisao:              #     subdivisões com datas próprias
 fundamento_temporal:              #     de onde vem cada data (só após revisão)
   vigencia: ["urn:...!art544"]
   efeitos: ["urn:...!art544_incIII"]
-status: "futuro"                  # (*) vigente|futuro|revogado|pendente_regulamentacao
+status: "futuro"                  # (*) vigente|vigente_sem_efeitos|sem_efeitos|futuro|
+                                  #     revogado|pendente_regulamentacao
 
 # --- procedência (ver PREMISSAS.md §1) ---
 fonte:                            # (*)
@@ -99,8 +100,9 @@ conceitos_definidos: ["operação onerosa"]
 
 # --- controle ---
 extracao: "automatica"            # automatica | revisada
-revisao_temporal_pendente: true   # false só com extracao: revisada
-revisado_por: null
+eixos_revisados: [vigencia]       #     só com revisada: quais eixos foram decididos
+revisao_temporal_pendente: true   # false só com os dois eixos revisados
+revisado_por: null                #     pessoa | regra:<nome>/<versão>[+<derivada>] | ia:<modelo>
 revisado_em: null
 ---
 
@@ -111,7 +113,10 @@ Art. 12. [texto verbatim, sem edição, sem paráfrase]
 
 - `vigencia_*` e `efeitos_*` **nunca** são inferidos pelo parser. O parser
   extrai texto e estrutura; datas de eficácia vêm da cláusula de vigência da
-  própria norma e exigem revisão humana (`extracao: revisada`).
+  própria norma, por regra literal, regra derivada aprovada ou interpretação
+  (PREMISSAS.md §3.4), e `revisado_por` diz qual (`extracao: revisada`).
+- `eixos_revisados` diz quais eixos foram decididos. Com um só, o outro continua
+  provisório e `revisao_temporal_pendente` continua `true`.
 - Até a revisão, `vigencia_inicio` e `efeitos_inicio` são **provisórias**: a
   primeira data de `publicacao`, ou `data_ato` se a publicação não foi localizada.
   `revisao_temporal_pendente: true` marca isso.

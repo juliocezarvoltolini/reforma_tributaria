@@ -95,6 +95,31 @@ def carregar() -> list[tuple[dict, str]]:
     return itens
 
 
+def origem_das_datas(meta: dict) -> list[str]:
+    """Quem fixou cada eixo temporal e qual continua provisório (PREMISSAS.md §3.4).
+
+    Decisão de regra e registro de IA não são revisão humana e não aparecem como tal.
+    """
+    eixos_todos = ["vigencia", "efeitos"]
+    if meta.get("extracao") != "revisada":
+        return ["vigencia e efeitos PROVISORIOS (revisao_temporal_pendente): datas da primeira "
+                "publicacao, ou do ato. Nao usar para decisao sem revisar a fonte."]
+    eixos = [e for e in eixos_todos if e in (meta.get("eixos_revisados") or eixos_todos)]
+    por = str(meta.get("revisado_por") or "")
+    if por.startswith("regra:"):
+        quem = f"fixados por regra ({por.removeprefix('regra:')}), sem leitura humana,"
+    elif por.startswith("ia:"):
+        quem = (f"propostos por IA ({por.removeprefix('ia:')}) — NAO equivale a revisao humana —")
+    else:
+        quem = f"revisados por {por}"
+    linhas = [f"{' e '.join(eixos)} {quem} em {meta.get('revisado_em')}"]
+    faltam = [e for e in eixos_todos if e not in eixos]
+    if faltam:
+        linhas.append(f"{' e '.join(faltam)} PROVISORIOS: ainda nao revisados. Nao usar para "
+                      "decisao sem revisar a fonte.")
+    return linhas
+
+
 def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None) -> None:
     estado = status_em(meta, referencia)
     print(f"\n{'=' * 72}")
@@ -117,9 +142,9 @@ def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None) -
     if fundamento:
         print(f"  fundamento temporal: vigencia {fundamento.get('vigencia')}; "
               f"efeitos {fundamento.get('efeitos')}")
-    if meta.get("revisao_temporal_pendente"):
-        print("  ATENCAO: revisao_temporal_pendente — datas provisorias (primeira "
-              "publicacao, ou data do ato). Nao usar para decisao sem revisar a fonte.")
+    for linha in origem_das_datas(meta):
+        alerta = "PROVISORI" in linha or "NAO equivale" in linha
+        print(f"  {'ATENCAO' if alerta else 'origem das datas'}: {linha}")
     if meta.get("hierarquia"):
         print(f"  contexto: {' > '.join(meta['hierarquia'])}")
     print(f"  fonte: {meta['fonte']['url']} (acesso {meta['fonte']['acesso']})")

@@ -53,7 +53,10 @@ CAMPOS_OBRIGATORIOS = (
     "ingerido_em",
 )
 
-STATUS_VALIDOS = {"vigente", "futuro", "revogado", "pendente_regulamentacao"}
+# Os estados que status_em() calcula, mais o de regulamentação pendente.
+# 'vigente_sem_efeitos' e 'sem_efeitos' existem porque vigência não é eficácia.
+STATUS_VALIDOS = {"vigente", "vigente_sem_efeitos", "sem_efeitos", "futuro", "revogado",
+                  "pendente_regulamentacao"}
 
 # Marca que impede a promoção acidental de conteúdo não verificado para a
 # camada 1. A validação falha se encontrar isto em /normas/.

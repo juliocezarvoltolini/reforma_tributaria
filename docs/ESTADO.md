@@ -286,12 +286,35 @@ escolhido. Estão aqui para serem revistas.
 
 A revisão tem duas partes: o que a **cláusula de vigência** diz de cada artigo
 (mecânico) e o que o **próprio texto** do artigo diz sobre quando produz efeitos
-(leitura humana). `pipeline/propor_vigencia.py` prepara as duas e não decide
-nenhuma. Ver [`temporal/README.md`](../temporal/README.md).
+(leitura). `pipeline/propor_vigencia.py` prepara as duas e não decide nenhuma;
+`pipeline/revisar_por_regra.py` decide o que é literal (PREMISSAS.md §3.4) e
+deixa o resto pendente. Ver [`temporal/README.md`](../temporal/README.md).
 
 ```bash
 python pipeline/propor_vigencia.py --slug emc-132-2023
+python pipeline/revisar_por_regra.py --slug emc-132-2023
+python pipeline/fatiar.py --slug emc-132-2023
 ```
+
+**Estado em 2026-10-14 (decisões por regra aplicadas a `normas/`):**
+
+| Norma | Por regra | Sem decisão | Por quê |
+|---|---|---|---|
+| EC 132 | vigência de 19 artigos (arts. 3º e 4º com precisão de ano) | 4 | art. 5º tem partes revogadas; arts. 10, 11 e 21 dizem no próprio texto quando algo entra em vigor ou produz efeitos |
+| LC 214 | efeitos de 415 artigos | vigência dos 580; efeitos de 165 | vigência: a republicação de 23/01/2025 citada no rodapé não está confirmada. Efeitos: 146 com texto de outro ato (LC 227/2026, LC 235/2026, vetos, ADI), 10 com alcance mudado pela LC 227, 4 com cláusula própria (19, 165, 373, 374), 4 do inciso I (537 a 540), o art. 26 (promulgação de partes vetadas) |
+
+Nenhuma decisão humana foi tomada. Os efeitos na EC 132 nunca são decididos por
+regra (a cláusula só dá a vigência).
+
+**Decisões que destravam mais de um artigo de uma vez:**
+
+1. **Republicação de 23/01/2025 (LC 214).** Arquivar a página do DOU dessa
+   edição. Se ela republicar só anexo, como uma busca indicou, a vigência dos
+   artigos é a publicação de 16/01/2025 — mas isso é leitura daquela página, e o
+   pipeline ainda não a lê.
+2. **Regra `primeiro-dia-do-mes-subsequente`** (`temporal/regras.yaml`, não
+   aprovada): daria 1º/05/2025 aos efeitos dos arts. 537 a 540 (LC 214, art. 544,
+   I). Mesmo aprovada, depende também do item 1, porque a data sai da publicação.
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
   proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três
@@ -299,12 +322,11 @@ python pipeline/propor_vigencia.py --slug emc-132-2023
   apagar arquivo; `validar.py` acusa decisão não aplicada. Verificado ponta a
   ponta numa cópia do repositório, com decisões de teste que não foram gravadas
   aqui.
-- **EC 132: proposta aguardando revisão** em `temporal/propostas/emc-132-2023.yaml`.
+- **EC 132: proposta** em `temporal/propostas/emc-132-2023.yaml`.
   Dos 23 artigos, 19 caem no inciso III do `Art. 23` ("na data de sua
   publicação"), dois no I ("em 2027": arts. 3º e 11) e dois no II ("em 2033":
   arts. 4º e 5º). 16 têm marcos temporais próprios ou dependem de lei futura, e
-  5 inserem texto na Constituição/ADCT, que não estão ingeridas. Nenhuma decisão
-  foi preenchida: é trabalho humano.
+  5 inserem texto na Constituição/ADCT, que não estão ingeridas.
 - **Vigência não é eficácia.** Para todo artigo com marco próprio, ou que insere
   texto em outra norma, **não há proposta de efeitos**: o `Art. 22` revoga "em
   2027" e "em 2033" artigos da Constituição e do ADCT, o `Art. 7º` compensa "a
@@ -324,9 +346,10 @@ python pipeline/propor_vigencia.py --slug emc-132-2023
 - **A LC 214 traz outro ato no fim do compilado.** Depois dos anexos há um bloco
   citado, uma segunda assinatura ("Brasília, 1º de julho de 2025") e um rodapé
   próprio ("DOU de 2.7.2025"). Não é a publicação da LC; é outro ato, e os
-  dispositivos que ele trouxe podem ter vigência própria. Identificar quais são
-  é pré-requisito da revisão da LC.
-- **LC 214: proposta aguardando revisão** em `temporal/propostas/lc-214-2025.yaml`.
+  dispositivos que ele trouxe podem ter vigência própria. Pelo próprio bloco
+  (preâmbulo "promulgo ... as seguintes partes vetadas" e artigos citados entre
+  aspas), ele traz os incisos V e X do art. 26, que ficam fora da regra.
+- **LC 214: proposta** em `temporal/propostas/lc-214-2025.yaml`.
   A cláusula (`Art. 544`) tem a forma "entra em vigor na data de sua publicação,
   produzindo efeitos: I - ...": a vigência de todos os 580 artigos é a publicação
   no DOU (16/01/2025), e os incisos dão os **efeitos**. Por inciso: I, 4 (arts.
@@ -337,7 +360,7 @@ python pipeline/propor_vigencia.py --slug emc-132-2023
   1º/1/2029 (o resto em III).
 - **Pontos que a proposta deixa para o revisor na LC 214:**
   - o termo do inciso I ("primeiro dia do quarto mês subsequente ao da sua
-    publicação") não é calculado;
+    publicação") é lido, mas só vira data pela regra derivada, não aprovada;
   - o art. 482-A (incluído depois) fica dentro de "480 a 484": se o intervalo o
     abrange é interpretação;
   - o inciso III tem redação dada pela LC 227/2026, que acrescentou os arts.
@@ -351,9 +374,9 @@ python pipeline/propor_vigencia.py --slug emc-132-2023
 
 ## 11. Fora de escopo agora
 
-- Revisão das cláusulas de vigência — trabalho humano, depois que o fatiamento
-  estiver correto. É o que separa a base de ser útil ou perigosa, dada a
-  transição escalonada por exercício.
+- Propostas de interpretação por IA (o terceiro caminho da PREMISSAS.md §3.4),
+  com citação literal verificada mecanicamente e `revisado_por: ia:<modelo>`. O
+  que a regra não decide continua pendente até lá, ou até uma decisão humana.
 - Busca vetorial. O filtro temporal é determinístico e vem antes da busca;
   embedding ignora tempo.
 - Jurisprudência e legislação estadual ou municipal.
