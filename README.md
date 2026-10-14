@@ -15,6 +15,7 @@ Leia antes de usar ou contribuir:
 | [`PREMISSAS.md`](PREMISSAS.md) | regras de confiabilidade — vinculantes |
 | [`CLAUDE.md`](CLAUDE.md) | protocolo obrigatório de consulta por IA |
 | [`docs/MODELO-DADOS.md`](docs/MODELO-DADOS.md) | URN, front-matter, camadas, índices |
+| [`docs/ESTADO.md`](docs/ESTADO.md) | onde o trabalho parou, evidência medida e armadilhas já pagas |
 
 ---
 
