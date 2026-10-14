@@ -10,10 +10,21 @@ from __future__ import annotations
 import datetime as _dt
 import hashlib
 import re
+import sys
 import unicodedata
 from pathlib import Path
 
 import yaml
+
+# No Windows, a saída usa a codepage local (cp1252) quando redirecionada, e
+# imprimir "§", "—" ou "→" levanta UnicodeEncodeError — o texto legal é cheio
+# desses caracteres. Até o UTF-8 virar padrão (PEP 686, Python 3.15), força os
+# fluxos. Importado por todos os scripts do pipeline, então cobre todos eles.
+for _fluxo in (sys.stdout, sys.stderr):
+    try:
+        _fluxo.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError, OSError):
+        pass
 
 RAIZ = Path(__file__).resolve().parent.parent
 

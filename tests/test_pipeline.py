@@ -73,6 +73,27 @@ def sem_carimbo_de_data() -> bool:
     return hoje_iso not in cobertura
 
 
+def saida_sobrevive_codepage_legada() -> bool:
+    """Regressão: no Windows a saída redirecionada usa a codepage local
+    (cp1252) e imprimir "§", "—" ou "→" levantava UnicodeEncodeError — e o
+    texto legal é cheio desses caracteres. Pior: eles aparecem sobretudo nas
+    MENSAGENS DE ERRO, então a falha só surgia quando algo já tinha dado
+    errado. comum.py força os fluxos para UTF-8."""
+    import os
+    import subprocess
+
+    ambiente = dict(os.environ, PYTHONIOENCODING="cp1252")
+    codigo = (
+        "import sys; sys.path.insert(0, 'pipeline'); import comum; "
+        "print('art. 12, § 1º — remete a → art. 57')"
+    )
+    resultado = subprocess.run(
+        [sys.executable, "-c", codigo],
+        cwd=RAIZ, env=ambiente, capture_output=True,
+    )
+    return resultado.returncode == 0
+
+
 def main() -> int:
     dados = FIXTURE.read_bytes()
 
@@ -173,6 +194,12 @@ def main() -> int:
     print("\nindices deterministicos")
     checar(determinismo_indices(), "gerar duas vezes produz bytes identicos")
     checar(sem_carimbo_de_data(), "nenhum indice embute a data da geracao")
+
+    print("\nportabilidade de saida")
+    checar(
+        saida_sobrevive_codepage_legada(),
+        "imprime §, — e → sob codepage legada (cp1252 do Windows)",
+    )
 
     print()
     if falhas:

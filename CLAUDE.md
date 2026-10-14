@@ -49,6 +49,8 @@ grep -rl "termo" normas/
 python3 pipeline/consultar.py --data 2027-01-01 --termo "termo"
 ```
 
+No Windows o comando é `python` (ou `py`), não `python3`.
+
 Prefira `consultar.py`: ele aplica o filtro temporal antes de devolver resultado.
 Busca textual crua ignora vigência e devolve dispositivo que ainda não vale.
 

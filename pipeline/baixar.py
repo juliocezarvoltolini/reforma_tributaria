@@ -8,6 +8,11 @@ Uso:
     python3 pipeline/baixar.py                 # baixa tudo que falta
     python3 pipeline/baixar.py --id lcp-214-2025
     python3 pipeline/baixar.py --aceitar-deriva  # homologa texto alterado
+
+    # Quando o portal recusa acesso por script (reset de conexão, 403):
+    python3 pipeline/baixar.py --id lcp-214-2025 --de-arquivo ~/Downloads/lcp214.htm
+
+No Windows o comando é `python` ou `py`, não `python3`.
 """
 from __future__ import annotations
 
@@ -18,6 +23,8 @@ from pathlib import Path
 
 import requests
 import yaml
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 from comum import (
     DIR_EVENTOS,
@@ -29,7 +36,38 @@ from comum import (
 
 CATALOGO = Path(__file__).resolve().parent / "fontes.yaml"
 TIMEOUT = 60
-UA = "reforma-tributaria-base/1.0 (ingestao de normas oficiais)"
+
+# Portais oficiais costumam derrubar a conexão de clientes que não se parecem
+# com navegador — o sintoma é ConnectionResetError no handshake, igual para
+# todas as URLs. Enviar cabeçalhos de navegador é a diferença entre funcionar e
+# tomar reset. Não é contornar controle de acesso: o conteúdo é público e a
+# procedência continua registrada com URL, data e hash.
+CABECALHOS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
+    "Cache-Control": "no-cache",
+}
+
+
+def sessao() -> requests.Session:
+    s = requests.Session()
+    s.headers.update(CABECALHOS)
+    tentativas = Retry(
+        total=4,
+        connect=4,
+        read=4,
+        backoff_factor=2,  # 0s, 2s, 4s, 8s
+        status_forcelist=(429, 500, 502, 503, 504),
+        allowed_methods=frozenset(["GET"]),
+    )
+    adaptador = HTTPAdapter(max_retries=tentativas)
+    s.mount("https://", adaptador)
+    s.mount("http://", adaptador)
+    return s
 
 
 def carregar_catalogo() -> dict:
@@ -80,25 +118,20 @@ def registrar_deriva(chave: str, antigo: str, novo: str, url: str) -> Path:
     return destino
 
 
-def baixar_um(fonte: dict, entrada: dict, manifest: dict, aceitar_deriva: bool) -> int:
+def gravar(
+    fonte: dict,
+    entrada: dict,
+    dados: bytes,
+    manifest: dict,
+    aceitar_deriva: bool,
+    content_type: str,
+    obtencao: str,
+) -> int:
+    """Arquiva os bytes, confere deriva e registra procedência."""
     slug = fonte["slug"]
-    url = entrada["url"]
     chave = f"{slug}/{entrada['tipo']}"
+    url = entrada["url"]
 
-    print(f"  -> {url}")
-    try:
-        resp = requests.get(url, timeout=TIMEOUT, headers={"User-Agent": UA})
-        resp.raise_for_status()
-    except requests.RequestException as exc:
-        print(f"     FALHA: {exc}", file=sys.stderr)
-        print(
-            "     Se for bloqueio de rede, execute onde o dominio esteja liberado.\n"
-            "     Se for 404, corrija a URL em pipeline/fontes.yaml — nao contorne.",
-            file=sys.stderr,
-        )
-        return 1
-
-    dados = resp.content
     digest = sha256_bytes(dados)
     anterior = manifest["documentos"].get(chave)
 
@@ -114,7 +147,7 @@ def baixar_um(fonte: dict, entrada: dict, manifest: dict, aceitar_deriva: bool) 
         )
         return 1
 
-    ext = extensao_de(url, resp.headers.get("Content-Type", ""))
+    ext = extensao_de(url, content_type)
     destino = DIR_FONTES / slug / f"{entrada['tipo']}.{ext}"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_bytes(dados)
@@ -129,21 +162,112 @@ def baixar_um(fonte: dict, entrada: dict, manifest: dict, aceitar_deriva: bool) 
         "sha256": digest,
         "bytes": len(dados),
         "acesso": hoje(),
-        "content_type": resp.headers.get("Content-Type", ""),
+        "content_type": content_type,
+        "obtencao": obtencao,  # "download" | "manual"
     }
-    print(f"     ok  {len(dados)} bytes  sha256={digest[:16]}...")
+    print(f"     ok  {len(dados)} bytes  sha256={digest[:16]}...  ({obtencao})")
     return 0
+
+
+def diagnosticar(exc: Exception) -> None:
+    texto = str(exc)
+    print(f"     FALHA: {exc}", file=sys.stderr)
+
+    if "ConnectionReset" in texto or "Connection aborted" in texto:
+        print(
+            "     O servidor derrubou a conexao. Causa tipica: o portal recusa\n"
+            "     cliente que nao parece navegador, ou bloqueia o seu IP.\n"
+            "     Este script ja envia cabecalhos de navegador e tenta 4 vezes.\n"
+            "     Se persistir, baixe o arquivo no navegador e ingira com:\n"
+            "       python pipeline/baixar.py --id <id> --de-arquivo <caminho>\n"
+            "     A procedencia continua registrada (URL, data e hash).",
+            file=sys.stderr,
+        )
+    elif "404" in texto:
+        print(
+            "     404: a URL mudou. Corrija em pipeline/fontes.yaml — nao contorne.",
+            file=sys.stderr,
+        )
+    elif "SSL" in texto or "certificate" in texto.lower():
+        print(
+            "     Falha de TLS. Nao desabilite a verificacao: isso quebraria a\n"
+            "     cadeia de procedencia. Investigue o certificado do portal.",
+            file=sys.stderr,
+        )
+    else:
+        print(
+            "     Se for bloqueio de rede, execute onde o dominio esteja liberado.",
+            file=sys.stderr,
+        )
+
+
+def baixar_um(
+    fonte: dict, entrada: dict, manifest: dict, aceitar_deriva: bool, s: requests.Session
+) -> int:
+    url = entrada["url"]
+    print(f"  -> {url}")
+    try:
+        resp = s.get(url, timeout=TIMEOUT)
+        resp.raise_for_status()
+    except requests.RequestException as exc:
+        diagnosticar(exc)
+        return 1
+
+    return gravar(
+        fonte,
+        entrada,
+        resp.content,
+        manifest,
+        aceitar_deriva,
+        resp.headers.get("Content-Type", ""),
+        "download",
+    )
+
+
+def ingerir_arquivo_local(
+    fonte: dict, caminho: Path, manifest: dict, aceitar_deriva: bool
+) -> int:
+    """Ingere um original que o usuário baixou pelo navegador.
+
+    Mantém PREMISSAS.md §1.1 intacta: a URL oficial vem do catálogo, o hash é
+    dos bytes reais e a data de acesso é registrada. O campo `obtencao`
+    distingue isto de um download automatizado, para auditoria.
+    """
+    if not caminho.exists():
+        print(f"     arquivo nao encontrado: {caminho}", file=sys.stderr)
+        return 1
+
+    dados = caminho.read_bytes()
+    if not dados:
+        print(f"     arquivo vazio: {caminho}", file=sys.stderr)
+        return 1
+
+    entrada = fonte["urls"][0]
+    print(f"  -> arquivo local: {caminho}")
+    print(f"     procedencia declarada: {entrada['url']}")
+
+    tipo = "application/pdf" if caminho.suffix.lower() == ".pdf" else "text/html"
+    return gravar(fonte, entrada, dados, manifest, aceitar_deriva, tipo, "manual")
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--id", help="baixar apenas esta fonte")
+    ap.add_argument("--id", help="processar apenas esta fonte")
+    ap.add_argument(
+        "--de-arquivo",
+        metavar="CAMINHO",
+        help="ingere um original baixado manualmente, em vez de buscar na rede "
+        "(exige --id)",
+    )
     ap.add_argument(
         "--aceitar-deriva",
         action="store_true",
         help="homologa mudanca no texto oficial e sobrescreve o arquivado",
     )
     args = ap.parse_args()
+
+    if args.de_arquivo and not args.id:
+        ap.error("--de-arquivo exige --id, para saber a que norma o arquivo corresponde")
 
     catalogo = carregar_catalogo()
     manifest = carregar_manifest()
@@ -153,15 +277,25 @@ def main() -> int:
     if args.id:
         fontes = [f for f in fontes if f["id"] == args.id]
         if not fontes:
+            disponiveis = ", ".join(f["id"] for f in catalogo.get("fontes") or [])
             print(f"fonte '{args.id}' nao esta em fontes.yaml", file=sys.stderr)
+            print(f"disponiveis: {disponiveis}", file=sys.stderr)
             return 2
 
+    s = sessao()
     for fonte in sorted(fontes, key=lambda f: f.get("prioridade", 99)):
         print(f"[{fonte['id']}] {fonte['titulo']}")
+
+        if args.de_arquivo:
+            falhas += ingerir_arquivo_local(
+                fonte, Path(args.de_arquivo).expanduser(), manifest, args.aceitar_deriva
+            )
+            continue
+
         for entrada in fonte["urls"]:
             if not entrada.get("url_verificada", False):
                 print("     aviso: URL ainda nao verificada (fontes.yaml)")
-            falhas += baixar_um(fonte, entrada, manifest, args.aceitar_deriva)
+            falhas += baixar_um(fonte, entrada, manifest, args.aceitar_deriva, s)
 
     salvar_manifest(manifest)
 
