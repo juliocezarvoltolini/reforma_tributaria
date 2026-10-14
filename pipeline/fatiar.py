@@ -471,32 +471,63 @@ def extrair_externas(texto: str) -> list[str]:
     return vistos
 
 
-def subdivisoes_de(linhas: list[str], urn_base: str, artigo: str) -> list[str]:
-    """URNs das subdivisões presentes no artigo, para citação granular."""
-    urns: list[str] = []
+def _subdivisao_aberta_por_linha(
+    linhas: list[str], urn_base: str, artigo: str
+) -> list[str | None]:
+    """URN da subdivisão que cada linha ABRE; None se a linha não tem rótulo."""
+    saida: list[str | None] = []
     par_atual: str | None = None
     inc_atual: str | None = None
 
     for linha in linhas:
+        urn: str | None = None
         if m := RE_PARAGRAFO.match(linha):
             par_atual, inc_atual = m.group(1), None
-            urns.append(urn_dispositivo(urn_base, artigo, paragrafo=par_atual))
+            urn = urn_dispositivo(urn_base, artigo, paragrafo=par_atual)
         elif RE_PAR_UNICO.match(linha):
             par_atual, inc_atual = "U", None
-            urns.append(urn_dispositivo(urn_base, artigo, paragrafo="U"))
+            urn = urn_dispositivo(urn_base, artigo, paragrafo="U")
         elif m := RE_INCISO.match(linha):
             inc_atual = m.group(1)
-            urns.append(
-                urn_dispositivo(urn_base, artigo, paragrafo=par_atual, inciso=inc_atual)
-            )
+            urn = urn_dispositivo(urn_base, artigo, paragrafo=par_atual, inciso=inc_atual)
         elif m := RE_ALINEA.match(linha):
-            urns.append(
-                urn_dispositivo(
-                    urn_base, artigo, paragrafo=par_atual, inciso=inc_atual,
-                    alinea=m.group(1),
-                )
+            urn = urn_dispositivo(
+                urn_base, artigo, paragrafo=par_atual, inciso=inc_atual, alinea=m.group(1)
             )
-    return urns
+        saida.append(urn)
+    return saida
+
+
+def subdivisoes_de(linhas: list[str], urn_base: str, artigo: str) -> list[str]:
+    """URNs das subdivisões presentes no artigo, para citação granular."""
+    return [u for u in _subdivisao_aberta_por_linha(linhas, urn_base, artigo) if u]
+
+
+def subdivisao_por_linha(linhas: list[str], urn_base: str, artigo: str) -> list[str]:
+    """URN da subdivisão a que cada linha pertence: a da última linha rotulada, ou
+    a do próprio artigo enquanto não houver rótulo. É o `fundamento` de um trecho."""
+    atual = urn_dispositivo(urn_base, artigo)
+    saida: list[str] = []
+    for urn in _subdivisao_aberta_por_linha(linhas, urn_base, artigo):
+        atual = urn or atual
+        saida.append(atual)
+    return saida
+
+
+def linhas_citadas(linhas: list[str]) -> list[bool]:
+    """Para as linhas do CORPO de um dispositivo, quais são texto de outra norma.
+
+    Mesmo balanço de aspas do fatiamento. O corpo guarda o texto riscado entre
+    `~~ ~~`, então a marca precisa sair antes de olhar o primeiro caractere: um
+    bloco citado riscado começa com `~~“`.
+    """
+    aspas = _Aspas()
+    saida: list[bool] = []
+    for linha in linhas:
+        nua = linha.lstrip("~")
+        saida.append(aspas.dentro or aspas.abre_bloco(nua))
+        aspas.consumir(nua)
+    return saida
 
 
 # ---------------------------------------------------------------------------

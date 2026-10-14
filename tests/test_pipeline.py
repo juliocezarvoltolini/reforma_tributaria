@@ -630,6 +630,51 @@ def remissao_em_emenda():
            "lei complementar mantém o padrão")
 
 
+@cenario("corpo de um dispositivo: quais linhas são texto de outra norma")
+def linhas_citadas_do_corpo():
+    """Quebra: reconhecer o início de bloco só no primeiro caractere. No corpo, a
+    linha riscada começa com '~~', e um bloco citado riscado ('~~“Art. 7º ...”~~')
+    seria lido como texto próprio."""
+    corpo = [
+        "Art. 1º A lei passa a vigorar assim:",
+        "“Art. 9º Primeiro artigo do bloco.",
+        "Art. 10. Segundo, sem aspa de abertura.",
+        "§ 1º continua. ” (NR)",
+        "Art. 2º Próprio de novo.",
+        "~~“Art. 7º Bloco citado riscado.” (NR)~~",
+    ]
+    checar(
+        F.linhas_citadas(corpo) == [False, True, True, True, False, True],
+        "só o texto entre as aspas é marcado como citado, riscado inclusive",
+    )
+
+
+@cenario("subdivisão de cada linha do corpo")
+def subdivisao_por_linha():
+    """Cada linha herda a subdivisão da última linha rotulada; sem rótulo ainda, o
+    artigo. Dá à proposta temporal o `fundamento` (URN) de cada trecho."""
+    corpo = [
+        "Art. 5º Texto do caput:",
+        "§ 1º Um parágrafo:",
+        "I - um inciso:",
+        "a) uma alínea;",
+        "continuação da alínea, sem rótulo",
+        "Parágrafo único. Outro.",
+    ]
+    u = lambda **kw: urn_dispositivo(URN_BASE, "5", **kw)  # noqa: E731
+    checar(
+        F.subdivisao_por_linha(corpo, URN_BASE, "5") == [
+            u(),
+            u(paragrafo="1"),
+            u(paragrafo="1", inciso="I"),
+            u(paragrafo="1", inciso="I", alinea="a"),
+            u(paragrafo="1", inciso="I", alinea="a"),
+            u(paragrafo="U"),
+        ],
+        "uma URN por linha, herdada quando a linha não tem rótulo",
+    )
+
+
 @cenario("normas externas e parágrafo único")
 def externas_e_paragrafo():
     ext = extrair_externas("A Lei nº 998, de 1899, passa a vigorar com a seguinte redação.")
@@ -703,6 +748,264 @@ def fontes_reais():
         checar(not any(re.match(r"^(Bras[ií]lia,|ANEXO\b)", ln)
                        for a in artigos for ln in a["linhas_proprias"]),
                f"{slug}: nenhum artigo engloba a assinatura ou anexos da norma")
+
+
+# ---------------------------------------------------------------------------
+# Proposta de revisão da vigência (pipeline/propor_vigencia.py)
+# ---------------------------------------------------------------------------
+
+def _pv():
+    import propor_vigencia
+
+    return propor_vigencia
+
+
+EXISTENTES_FICT = ["1", "2", "3", "4", "4-A", "5", "6", "7", "8", "9", "11"]
+
+
+@cenario("proposta: a cláusula de vigência atribui cada artigo ao seu inciso")
+def proposta_clausula_mapeia_artigos():
+    """Quebra: errar a atribuição de um artigo a um inciso, ou resolver 'demais
+    dispositivos' sobre o conjunto errado. O resultado vira data de vigência."""
+    clausula = [
+        "Art. 9º Esta Emenda Constitucional fictícia entra em vigor:",
+        "I - em 2030, em relação aos arts. 3º e 11;",
+        "II - em 2035, em relação aos arts. 4º-A, 5º e 6º; e",
+        "III - na data de sua publicação, em relação aos demais dispositivos.",
+    ]
+    r = _pv().interpretar_clausula(clausula, URN_BASE, "9", EXISTENTES_FICT)
+    atribuido = {n: m["inciso"] for n, m in r["mapa"].items()}
+    checar(
+        atribuido == {"1": "III", "2": "III", "3": "I", "4": "III", "4-A": "II", "5": "II",
+                      "6": "II", "7": "III", "8": "III", "9": "III", "11": "I"},
+        f"cada artigo no seu inciso (obteve {atribuido})",
+    )
+    checar(r["mapa"]["3"]["termo"] == {"tipo": "ano", "ano": 2030},
+           "inciso I: 'em 2030' vira termo de ano")
+    checar(r["mapa"]["7"]["termo"] == {"tipo": "publicacao"},
+           "inciso III: 'na data de sua publicação' vira termo de evento")
+    checar(r["urn"] == urn_dispositivo(URN_BASE, "9"), "a cláusula é identificada pela URN")
+    checar(
+        [i["urn"] for i in r["incisos"]]
+        == [urn_dispositivo(URN_BASE, "9", inciso=x) for x in ("I", "II", "III")],
+        "cada inciso carrega a URN que será o `fundamento` da proposta",
+    )
+
+
+@cenario("proposta: o que não casa com o padrão exato não é interpretado")
+def proposta_clausula_nao_interpreta():
+    """Quebra: interpretar 'arts. 3º a 5º' como 3 e 5, ou deixar 'demais
+    dispositivos' cair no inciso III quando um inciso anterior tem alcance
+    desconhecido. O artigo 3º seria datado errado, com aparência de certo."""
+    clausula = [
+        "Art. 9º Esta Lei fictícia entra em vigor:",
+        "I - a partir de 1º de janeiro de 2030, em relação aos arts. 3º a 5º;",
+        "II - em 2035, em relação ao art. 7º, exceto o § 1º; e",
+        "III - na data de sua publicação, em relação aos demais dispositivos.",
+    ]
+    r = _pv().interpretar_clausula(clausula, URN_BASE, "9", EXISTENTES_FICT)
+    checar([i["interpretado"] for i in r["incisos"]] == [False, False, True],
+           "intervalo, data completa e 'exceto' não são interpretados")
+    checar(all(m["inciso"] is None for m in r["mapa"].values()),
+           "e então 'demais dispositivos' não pode ser resolvido para artigo nenhum")
+    checar(all(m["motivo"] for m in r["mapa"].values()),
+           "cada artigo indeterminado diz por quê")
+
+    prazo = [
+        "Art. 9º Esta Lei fictícia entra em vigor:",
+        "I - em 90 dias, em relação aos arts. 3º e 5º; e",
+        "II - na data de sua publicação, em relação aos demais dispositivos.",
+    ]
+    r = _pv().interpretar_clausula(prazo, URN_BASE, "9", EXISTENTES_FICT)
+    checar(r["incisos"][0]["interpretado"] is False and r["incisos"][0]["termo"] is None,
+           "'em 90 dias' é prazo, não ano: não vira 'ano 90'")
+    r = _pv().interpretar_clausula(
+        ["Art. 9º Esta Lei fictícia entra em vigor:",
+         "I - em 300, em relação aos arts. 3º e 5º."], URN_BASE, "9", EXISTENTES_FICT)
+    checar(r["incisos"][0]["interpretado"] is False,
+           "número que não é ano (fora de 1900-2099) não é aceito como ano")
+
+    dois_demais = [
+        "Art. 9º Esta Lei fictícia entra em vigor:",
+        "I - em 2030, em relação aos demais dispositivos; e",
+        "II - na data de sua publicação, em relação aos demais dispositivos.",
+    ]
+    r = _pv().interpretar_clausula(dois_demais, URN_BASE, "9", EXISTENTES_FICT)
+    checar(all(m["inciso"] is None and m["motivo"] for m in r["mapa"].values()),
+           "dois incisos 'demais dispositivos': ambíguo, nenhum artigo é atribuído")
+
+    parcial = [
+        "Art. 9º Esta Lei fictícia entra em vigor:",
+        "I - em 2030, em relação aos arts. 3º e 5º;",
+        "II - em 2035, em relação aos arts. 6º a 7º.",
+    ]
+    r = _pv().interpretar_clausula(parcial, URN_BASE, "9", EXISTENTES_FICT)
+    checar(r["mapa"]["3"]["inciso"] == "I" and r["mapa"]["3"]["ressalva"],
+           "nomeado por inciso interpretado segue atribuído, mas com ressalva: o inciso "
+           "não interpretado pode nomeá-lo também")
+
+
+@cenario("proposta: conflito, artigo inexistente e ausência de 'demais'")
+def proposta_clausula_anomalias():
+    conflito = [
+        "Art. 9º Esta Emenda fictícia entra em vigor:",
+        "I - em 2030, em relação aos arts. 3º e 5º;",
+        "II - em 2035, em relação aos arts. 5º e 6º; e",
+        "III - na data de sua publicação, em relação aos demais dispositivos.",
+    ]
+    r = _pv().interpretar_clausula(conflito, URN_BASE, "9", EXISTENTES_FICT)
+    checar(r["mapa"]["5"]["inciso"] is None and r["mapa"]["5"]["motivo"],
+           "artigo nomeado em dois incisos fica indeterminado, não vai para o primeiro")
+    checar(r["mapa"]["3"]["inciso"] == "I" and r["mapa"]["6"]["inciso"] == "II",
+           "os não conflitantes seguem atribuídos")
+
+    inexistente = [
+        "Art. 9º Esta Emenda fictícia entra em vigor:",
+        "I - em 2030, em relação aos arts. 3º e 99; e",
+        "II - na data de sua publicação, em relação aos demais dispositivos.",
+    ]
+    r = _pv().interpretar_clausula(inexistente, URN_BASE, "9", EXISTENTES_FICT)
+    checar(r["artigos_inexistentes"] == ["99"], "artigo nomeado que a norma não tem é reportado")
+
+    sem_demais = [
+        "Art. 9º Esta Emenda fictícia entra em vigor:",
+        "I - em 2030, em relação aos arts. 3º e 5º.",
+    ]
+    r = _pv().interpretar_clausula(sem_demais, URN_BASE, "9", EXISTENTES_FICT)
+    checar(r["mapa"]["3"]["inciso"] == "I" and r["mapa"]["1"]["inciso"] is None
+           and r["mapa"]["1"]["motivo"],
+           "sem 'demais dispositivos', o artigo não nomeado fica sem vigência proposta")
+
+
+@cenario("proposta: localizar o artigo que contém a cláusula")
+def proposta_localiza_clausula():
+    p = _pv()
+    corpos = {
+        "8": ["Art. 8º Fica criado o fundo; vigora a lei desde a entrada em vigor do regime."],
+        "9": ["Art. 9º Esta Emenda fictícia entra em vigor:", "I - em 2030, em relação ao art. 3º."],
+    }
+    checar(p.localizar_clausula(corpos) == ["9"],
+           "só o caput 'entra em vigor' é cláusula; menção no meio do texto não é")
+    corpos["10"] = ["Art. 10. Esta outra parte entra em vigor:"]
+    checar(sorted(p.localizar_clausula(corpos)) == ["10", "9"],
+           "mais de um candidato é devolvido como tal, para o gerador recusar")
+
+
+@cenario("proposta: marcos temporais próprios, em trecho literal e sem interpretação")
+def proposta_marcos_proprios():
+    """Quebra: tratar a data de OUTRA lei citada como marco desta norma; deixar o
+    texto riscado entrar; contar texto citado como próprio."""
+    corpo = [
+        "Art. 5º Fica criado fundo, nos termos da Lei nº 9.999, de 1º de janeiro de 1999.",
+        "§ 1º A partir de 2040, o valor será revisto.",
+        "§ 2º Até que lei complementar disponha, vale o regime atual.",
+        "§ 3º Vale para o que existir na data de publicação desta Emenda.",
+        "§ 4º Em até 90 (noventa) dias após a promulgação desta Emenda, o Executivo enviará projeto.",
+        "§ 5º A redução é de até 100% (cem por cento).",
+        "§ 6º Com a redação vigente em 31 de maio de 2023, aplica-se o disposto.",
+        "§ 7º ~~Texto antigo de 2020, riscado~~ Texto novo sem marco.",
+        "§ 8º Lei complementar definirá os produtos beneficiados.",
+        "§ 9º O crédito será concedido nos termos de lei complementar.",
+        "§ 10. A lei complementar que instituir o imposto poderá prever regimes.",
+        "“Art. 9º Texto citado de outra norma, em 2045.” (NR)",
+    ]
+    r = _pv().marcos_proprios(corpo, URN_BASE, "5")
+    achado = {" ".join(m["trecho"].split(" ")[:2]): set(m["tipos"]) for m in r["marcos"]}
+    checar(
+        achado == {
+            "§ 1º": {"ano", "a_partir_de_ate"},
+            "§ 2º": {"condicao_ate_que"},
+            "§ 3º": {"evento_publicacao"},
+            "§ 4º": {"evento_promulgacao", "prazo_relativo"},
+            "§ 6º": {"ano", "data_explicita"},
+            "§ 8º": {"depende_de_lei_futura"},
+            "§ 9º": {"depende_de_lei_futura"},
+            "§ 10.": {"depende_de_lei_futura"},
+        },
+        f"só os parágrafos com marco próprio, com os tipos certos (obteve {achado})",
+    )
+    checar(r["marcos"][0]["urn"] == urn_dispositivo(URN_BASE, "5", paragrafo="1"),
+           "cada marco traz a URN da subdivisão em que está")
+    checar(r["citado_com_marcos"] == 1,
+           "o ano do texto citado é contado à parte, não como marco desta norma")
+
+
+@cenario("proposta: data do ato e publicação no DOU, lidas do original")
+def proposta_referencias():
+    fonte = [
+        "EMENDA CONSTITUCIONAL FICTÍCIA Nº 999, DE 5 DE MARÇO DE 1900",
+        "Art. 1º Texto.",
+        "Brasília, em 5 de março de 1900",
+        "Este texto não substitui o publicado no DOU 6.3.1900",
+    ]
+    r = _pv().extrair_referencias(fonte)
+    checar(r["data_do_ato"]["valor"] == "1900-03-05", "data do ato lida do título")
+    checar(r["publicacao_dou"]["valores"] == ["1900-03-06"], "publicação lida do rodapé")
+    checar(r["publicacao_dou"]["trechos"] == ["Este texto não substitui o publicado no DOU 6.3.1900"],
+           "e o trecho literal acompanha o valor")
+
+    duas = fonte[:3] + [
+        "Este texto não substitui o publicado no DOU de 6.3.1900 - Edição extra e "
+        "republicado no DOU de 13.3.1900"]
+    checar(_pv().extrair_referencias(duas)["publicacao_dou"]["valores"]
+           == ["1900-03-06", "1900-03-13"],
+           "duas publicações (original e republicação) são ambas devolvidas")
+
+    r = _pv().extrair_referencias(["Art. 1º Sem rodapé algum."])
+    checar(r["data_do_ato"]["valor"] is None and r["publicacao_dou"]["valores"] == [],
+           "o que não se encontra é nulo, não é suposto")
+
+
+@cenario("proposta: nunca sobrescreve revisão humana")
+def proposta_nao_sobrescreve_revisao():
+    """Quebra: regenerar a proposta apagaria a decisão que um humano já tomou."""
+    import tempfile
+
+    import yaml
+
+    p = _pv()
+    with tempfile.TemporaryDirectory() as tmp:
+        alvo = Path(tmp) / "proposta.yaml"
+        novo = {"dispositivos": [{"artigo": "1", "revisao": {"decisao": None}}]}
+        checar(p.gravar_proposta(alvo, novo) is True, "arquivo novo é gravado")
+        checar(p.gravar_proposta(alvo, novo) is True, "proposta sem decisão pode ser regenerada")
+
+        revisado = {"dispositivos": [{"artigo": "1", "revisao": {"decisao": "aceitar"}}]}
+        alvo.write_text(yaml.safe_dump(revisado), encoding="utf-8")
+        antes = alvo.read_bytes()
+        checar(p.gravar_proposta(alvo, novo) is False, "com decisão humana, recusa")
+        checar(alvo.read_bytes() == antes, "e o arquivo revisado permanece intacto")
+
+
+@cenario("proposta: EC 132 real (pulado se normas/ ou fontes/ ausentes)")
+def proposta_ec_real():
+    """Contrato com o documento real. Valores lidos à mão no `Art. 23` (incisos I a
+    III) e no rodapé do compilado; não vêm da saída do gerador."""
+    if not (RAIZ / "normas" / "emc-132-2023").exists() or \
+            not (RAIZ / "fontes" / "emc-132-2023" / "texto_compilado.html").exists():
+        print("  pulado: normas/ ou fontes/ da EC 132 ausentes")
+        return
+    prop = _pv().construir("emc-132-2023")
+    atribuido = {d["artigo"]: d["vigencia"]["inciso"] for d in prop["dispositivos"]}
+    esperado = {str(n): "III" for n in range(1, 24)}
+    esperado.update({"3": "I", "11": "I", "4": "II", "5": "II"})
+    checar(atribuido == esperado, f"Art. 23 aplicado aos 23 artigos (obteve {atribuido})")
+    checar(prop["clausula_de_vigencia"]["urn"].endswith("!art23"),
+           "a cláusula é o art. 23")
+    checar(prop["referencias"]["data_do_ato"]["valor"] == "2023-12-20", "data do ato")
+    checar(prop["referencias"]["publicacao_dou"]["valores"] == ["2023-12-21"],
+           "publicação no DOU, como diz o rodapé")
+    por_artigo = {d["artigo"]: d for d in prop["dispositivos"]}
+    checar("revogacao_expressa" in por_artigo["22"]["pendencias"],
+           "o art. 22 ('Revogam-se: ... em 2027 ... em 2033') é sinalizado")
+    checar("texto_inserido_em_outra_norma" in por_artigo["1"]["pendencias"],
+           "o art. 1 insere texto na Constituição, que não está ingerida")
+    # Art. 8, parágrafo único: "Lei complementar definirá os produtos ..." (lido no texto)
+    checar("depende_de_lei_futura" in por_artigo["8"]["pendencias"]
+           and por_artigo["8"]["efeitos"]["proposta"] is None,
+           "o art. 8 depende de lei complementar futura: sem proposta de efeitos")
+    checar(all(d["revisao"]["decisao"] is None for d in prop["dispositivos"]),
+           "nenhuma decisão vem preenchida: a proposta não decide")
 
 
 # ---------------------------------------------------------------------------

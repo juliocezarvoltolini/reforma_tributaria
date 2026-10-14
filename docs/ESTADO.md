@@ -271,9 +271,50 @@ escolhido. Estão aqui para serem revistas.
    colada ao trecho riscado. Ainda: 6 anotações `(Incluído pela …)` que seguem
    um cabeçalho de capítulo são atribuídas ao artigo **anterior**.
 
+5. **`publicacao` guarda a data do ato, não a da publicação.** O pipeline grava
+   `publicacao: 2023-12-20` nos 23 dispositivos da EC, e dela partem a
+   `vigencia_inicio` e a `efeitos_inicio` provisórias. A cláusula do `Art. 23`
+   diz "na data de sua publicação", e o rodapé do compilado informa
+   "publicado no DOU 21.12.2023". O DOU (`in.gov.br`) não está ingerido, então
+   essa data é leitura do rodapé, não confirmação. A LC 214 tem duas publicações
+   no rodapé (original e republicação). A proposta de vigência sinaliza isto
+   (`publicacao_x_data_do_ato`); separar `data_do_ato` de `publicacao` no modelo
+   é decisão sua.
+6. **`temporal.json` grava a string `"None"`** onde o campo é nulo
+   (`"efeitos_fim": "None"`), pelo `str(meta.get(...))` do `indexar.py`. Nenhum
+   leitor usa o índice hoje (`consultar.py` lê os arquivos), então não quebra
+   nada ainda; quem consumir o índice receberá texto no lugar de `null`.
+
 ---
 
-## 10. Fora de escopo agora
+## 10. Revisão da vigência — em andamento
+
+A revisão tem duas partes: o que a **cláusula de vigência** diz de cada artigo
+(mecânico) e o que o **próprio texto** do artigo diz sobre quando produz efeitos
+(leitura humana). `pipeline/propor_vigencia.py` prepara as duas e não decide
+nenhuma. Ver [`temporal/README.md`](../temporal/README.md).
+
+```bash
+python pipeline/propor_vigencia.py --slug emc-132-2023
+```
+
+- **EC 132: proposta gerada** em `temporal/propostas/emc-132-2023.yaml`. Dos 23
+  artigos, 19 caem no inciso III do `Art. 23` ("na data de sua publicação"),
+  dois no I ("em 2027": arts. 3º e 11) e dois no II ("em 2033": arts. 4º e 5º).
+  16 têm marcos temporais próprios ou dependem de lei futura, e 5 inserem texto
+  na Constituição/ADCT, que não estão ingeridas. Aguarda revisão.
+- **Vigência não é eficácia.** Para todo artigo com marco próprio, ou que insere
+  texto em outra norma, **não há proposta de efeitos**: o `Art. 22` revoga "em
+  2027" e "em 2033" artigos da Constituição e do ADCT, o `Art. 7º` compensa "a partir de
+  2027", e os `Arts. 12` e `13` fixam valores por exercício.
+- **LC 214: ainda não.** A cláusula dela (`Art. 544`) usa data completa, intervalos
+  ("arts. 537 a 540") e exceções ("exceto os §§ 1º e 5º"), que o script não
+  interpreta de propósito. Estender o gerador é o próximo passo, depois de
+  decidido o §9.
+
+---
+
+## 11. Fora de escopo agora
 
 - Revisão das cláusulas de vigência — trabalho humano, depois que o fatiamento
   estiver correto. É o que separa a base de ser útil ou perigosa, dada a

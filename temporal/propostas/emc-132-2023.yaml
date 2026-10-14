@@ -1,0 +1,1295 @@
+norma: emc-132-2023
+urn_norma: urn:lex:br:federal:emenda.constitucional:2023-12-20;132
+titulo: Emenda Constitucional nº 132, de 20 de dezembro de 2023
+gerado_por: pipeline/propor_vigencia.py
+status: proposta
+aviso: 'PROPOSTA MECÂNICA, NÃO APLICADA. Nada em /normas/ foi alterado. Cada dispositivo exige decisão humana em `revisao`. O script só interpreta padrões exatos; o resto está marcado como não interpretado. Vigência não é eficácia: os marcos próprios de cada artigo estão em `marcos_proprios`, em trecho literal.'
+referencias:
+  data_do_ato:
+    valor: '2023-12-20'
+    fontes:
+    - origem: titulo
+      valor: '2023-12-20'
+      trecho: EMENDA CONSTITUCIONAL Nº 132, DE 20 DE DEZEMBRO DE 2023
+    - origem: assinatura
+      valor: '2023-12-20'
+      trecho: Brasília, em 20 de dezembro de 2023
+    concordam: true
+  publicacao_dou:
+    valores:
+    - '2023-12-21'
+    trechos:
+    - Este texto não substitui o publicado no DOU 21.12.2023
+  publicacao_gravada_hoje_nos_dispositivos:
+  - '2023-12-20'
+clausula_de_vigencia:
+  urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23
+  caput: 'Art. 23. Esta Emenda Constitucional entra em vigor:'
+  incisos:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incI
+    rotulo: I
+    texto: I - em 2027, em relação aos arts. 3º e 11;
+    interpretado: true
+    termo:
+      tipo: ano
+      ano: 2027
+    alcance:
+      tipo: artigos
+      artigos:
+      - '3'
+      - '11'
+    motivo: null
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incII
+    rotulo: II
+    texto: II - em 2033, em relação aos arts. 4º e 5º; e
+    interpretado: true
+    termo:
+      tipo: ano
+      ano: 2033
+    alcance:
+      tipo: artigos
+      artigos:
+      - '4'
+      - '5'
+    motivo: null
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    rotulo: III
+    texto: III - na data de sua publicação, em relação aos demais dispositivos.
+    interpretado: true
+    termo:
+      tipo: publicacao
+    alcance:
+      tipo: demais
+    motivo: null
+  artigos_inexistentes: []
+decisoes_necessarias:
+- id: ano_sem_dia
+  pergunta: Quando a cláusula diz 'em <ano>', o campo vigencia_inicio exige uma data completa. A proposta usa 1º de janeiro como candidata, por convenção e não por texto. Aceitar a convenção, fixar outra data, ou ampliar o modelo para aceitar ano?
+- id: publicacao_x_data_do_ato
+  pergunta: 'O pipeline grava como `publicacao` a data do ato (2023-12-20), e é dela que partem vigencia_inicio e efeitos_inicio provisórios. A cláusula ''na data de sua publicação'' refere-se à publicação no DOU, que o rodapé do compilado informa ser 2023-12-21 (data do ato lida do original: 2023-12-20). Separar `data_do_ato` de `publicacao` no modelo?'
+- id: datas_por_subdivisao
+  pergunta: Vários artigos têm marcos temporais por subdivisão (incisos e parágrafos). O front-matter guarda um par vigência/efeitos por artigo. Registrar por subdivisão, ou manter por artigo e remeter ao texto?
+- id: norma_alterada_nao_ingerida
+  pergunta: Os artigos 1, 2, 3, 4, 5 inserem texto em outra norma (Constituição e/ou ADCT), que não está ingerida. A vigência do artigo desta norma é a da cláusula; quando o texto inserido produz efeitos depende do próprio texto inserido. Ingerir a norma alterada, ou registrar a pendência em /lacunas/?
+- id: depende_de_lei_futura
+  pergunta: 'Há artigos que dependem de lei futura: transitórios (''Até que lei complementar...'') ou que remetem a ela (''Lei complementar definirá...''). Se a lei foi editada, o efeito muda, mas verificar isso é interpretação (camada 3) e exige a norma regulamentadora. Registrar como pendente em /lacunas/ até lá? O rótulo `depende_de_lei_futura` tem cobertura parcial: sua ausência não prova que não há dependência.'
+resumo:
+  dispositivos: 23
+  por_inciso:
+    III: 19
+    I: 2
+    II: 2
+  com_marcos_proprios: 16
+  com_texto_inserido_em_outra_norma: 5
+dispositivos:
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art1
+  artigo: '1'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '43'
+    - '50'
+    - '105'
+    - '145'
+    - '146'
+    - 149-A
+    - 149-B
+    - 149-C
+    - '150'
+    - '153'
+    - '155'
+    - '156'
+    - 156-A
+    - 156-B
+    - '158'
+    - '159'
+    - 159-A
+    - '161'
+    - '167'
+    - '177'
+    - '195'
+    - '198'
+    - 212-A
+    - '225'
+    linhas_com_marcos: 12
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art2
+  artigo: '2'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - 76-A
+    - 76-B
+    - 92-B
+    - '104'
+    - '124'
+    - '125'
+    - '126'
+    - '127'
+    - '128'
+    - '129'
+    - '130'
+    - '131'
+    - '132'
+    - '133'
+    - '134'
+    - '135'
+    - '136'
+    - '137'
+    linhas_com_marcos: 48
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art3
+  artigo: '3'
+  vigencia:
+    inciso: I
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incI
+    natureza: derivado
+    proposta:
+      tipo: ano
+      ano: 2027
+      data_candidata: '2027-01-01'
+      precisao: ano
+      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '37'
+    - '146'
+    - '153'
+    - 156-A
+    - '195'
+    - '225'
+    - '239'
+    linhas_com_marcos: 2
+  pendencias:
+  - ano_sem_dia
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art4
+  artigo: '4'
+  vigencia:
+    inciso: II
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incII
+    natureza: derivado
+    proposta:
+      tipo: ano
+      ano: 2033
+      data_candidata: '2033-01-01'
+      precisao: ano
+      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '146'
+    - '150'
+    - '153'
+    - 156-A
+    - '159'
+    - '195'
+    - 212-A
+    - '225'
+    linhas_com_marcos: 0
+  pendencias:
+  - ano_sem_dia
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art5
+  artigo: '5'
+  vigencia:
+    inciso: II
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incII
+    natureza: derivado
+    proposta:
+      tipo: ano
+      ano: 2033
+      data_candidata: '2033-01-01'
+      precisao: ano
+      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '82'
+    - '104'
+    linhas_com_marcos: 0
+  pendencias:
+  - ano_sem_dia
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art6
+  artigo: '6'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art6
+    tipos:
+    - condicao_ate_que
+    trecho: 'Art. 6º Até que lei complementar disponha sobre a matéria:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art6_incI
+    tipos:
+    - prazo_relativo
+    trecho: I - o crédito das parcelas de que trata o art. 158, IV, "b", da Constituição Federal, obedecido o § 2º do referido artigo, com redação dada pelo art. 1º desta Emenda Constitucional, observará, no que couber, os critérios e os prazos aplicáveis ao Imposto sobre Operações relativas à Circulação de Mercadorias e sobre Prestação de Serviços de Transporte Interestadual e Intermunicipal e de Comunicação a que se refere a Lei Complementar nº 63, de 11 de janeiro de 1990, e respectivas alterações;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art6_par1
+    tipos:
+    - evento_promulgacao
+    trecho: § 1º As vinculações de receita dos impostos previstos nos arts. 155, II, e 156, III, estabelecidas em legislação de Estados, Distrito Federal ou Municípios até a data de promulgação desta Emenda Constitucional serão aplicadas, em mesmo percentual, sobre a receita do imposto previsto no art. 156-A do ente federativo competente.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - condicao_regulamentacao
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7
+  artigo: '7'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7
+    tipos:
+    - ano
+    - a_partir_de_ate
+    - depende_de_lei_futura
+    trecho: Art. 7º A partir de 2027, a União compensará eventual redução no montante dos valores entregues nos termos do art. 159, I e II, em razão da substituição da arrecadação do imposto previsto no art. 153, IV, pela arrecadação do imposto previsto no art. 153, VIII, todos da Constituição Federal, nos termos de lei complementar.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7_par1_incI
+    tipos:
+    - ano
+    trecho: 'I - terá como referência a média de recursos transferidos do imposto previsto no art. 153, IV, de 2022 a 2026, atualizada:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7_par1_incI_ali-a
+    tipos:
+    - ano
+    - a_partir_de_ate
+    trecho: a) até 2027, na forma da lei complementar;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7_par1_incI_ali-b
+    tipos:
+    - ano
+    - a_partir_de_ate
+    trecho: b) a partir de 2028, pela variação do produto da arrecadação da contribuição prevista no art. 195, V, da Constituição Federal, apurada com base na alíquota de referência de que trata o art. 130 do Ato das Disposições Constitucionais Transitórias; e
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art7_par1_incII
+    tipos:
+    - prazo_relativo
+    trecho: II - observará os mesmos critérios, prazos e garantias aplicáveis à entrega de recursos de que trata o art. 159, I e II, da Constituição Federal.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - depende_de_lei_futura
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art8
+  artigo: '8'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art8_parU
+    tipos:
+    - depende_de_lei_futura
+    trecho: Parágrafo único. Lei complementar definirá os produtos destinados à alimentação humana que comporão a Cesta Básica Nacional de Alimentos, sobre os quais as alíquotas dos tributos previstos nos arts. 156-A e 195, V, da Constituição Federal serão reduzidas a zero.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - depende_de_lei_futura
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9
+  artigo: '9'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9
+    tipos:
+    - depende_de_lei_futura
+    trecho: Art. 9º A lei complementar que instituir o imposto de que trata o art. 156-A e a contribuição de que trata o art. 195, V, ambos da Constituição Federal, poderá prever os regimes diferenciados de tributação de que trata este artigo, desde que sejam uniformes em todo o território nacional e sejam realizados os respectivos ajustes nas alíquotas de referência com vistas a reequilibrar a arrecadação da esfera federativa.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par1
+    tipos:
+    - depende_de_lei_futura
+    trecho: '§ 1º A lei complementar definirá as operações beneficiadas com redução de 60% (sessenta por cento) das alíquotas dos tributos de que trata o caput entre as relativas aos seguintes bens e serviços:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par3_incII_ali-d
+    tipos:
+    - depende_de_lei_futura
+    trecho: d) automóveis de passageiros, conforme critérios e requisitos estabelecidos em lei complementar, quando adquiridos por pessoas com deficiência e pessoas com transtorno do espectro autista, diretamente ou por intermédio de seu representante legal ou por motoristas profissionais, nos termos de lei complementar, que destinem o automóvel à utilização na categoria de aluguel (táxi);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par4
+    tipos:
+    - ano
+    - data_explicita
+    trecho: § 4º O produtor rural pessoa física ou jurídica que obtiver receita anual inferior a R$ 3.600.000,00 (três milhões e seiscentos mil reais), atualizada anualmente pelo Índice Nacional de Preços ao Consumidor Amplo (IPCA), e o produtor integrado de que trata o art. 2º, II, da Lei nº 13.288, de 16 de maio de 2016, com a redação vigente em 31 de maio de 2023, poderão optar por ser contribuintes dos tributos de que trata o caput.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par5
+    tipos:
+    - depende_de_lei_futura
+    trecho: '§ 5º É autorizada a concessão de crédito ao contribuinte adquirente de bens e serviços de produtor rural pessoa física ou jurídica que não opte por ser contribuinte na hipótese de que trata o § 4º, nos termos da lei complementar, observado o seguinte:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par6_incI
+    tipos:
+    - depende_de_lei_futura
+    trecho: I - serviços de transportador autônomo de carga pessoa física que não seja contribuinte do imposto, nos termos da lei complementar;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par7
+    tipos:
+    - depende_de_lei_futura
+    trecho: § 7º Lei complementar poderá prever a concessão de crédito ao contribuinte que adquira bens móveis usados de pessoa física não contribuinte para revenda, desde que esta seja tributada e o crédito seja vinculado ao respectivo bem, vedado o ressarcimento.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par10
+    tipos:
+    - prazo_relativo
+    trecho: § 10. Os regimes diferenciados de que trata este artigo serão submetidos a avaliação quinquenal de custo-benefício, podendo a lei fixar regime de transição para a alíquota padrão, não observado o disposto no § 2º, garantidos os respectivos ajustes nas alíquotas de referência.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par12
+    tipos:
+    - depende_de_lei_futura
+    trecho: § 12. A lei complementar estabelecerá as operações beneficiadas com redução de 30% (trinta por cento) das alíquotas dos tributos de que trata o caput relativas à prestação de serviços de profissão intelectual, de natureza científica, literária ou artística, desde que sejam submetidas a fiscalização por conselho profissional.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - depende_de_lei_futura
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10
+  artigo: '10'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10_par1_incII
+    tipos:
+    - a_partir_de_ate
+    - evento_promulgacao
+    - entrada_em_vigor
+    - prazo_relativo
+    trecho: II - os demais serviços financeiros sujeitam-se ao regime específico de que trata o art. 156-A, § 6º, II, da Constituição Federal, devendo as alíquotas e as bases de cálculo ser definidas de modo a manter, em caráter geral, até o final do quinto ano da entrada em vigor do regime, a carga tributária decorrente dos tributos extintos por esta Emenda Constitucional incidente sobre as operações de crédito na data de sua promulgação, e a manter, em caráter específico, aquela incidente sobre as operações relacionadas ao fundo de garantia por tempo de serviço, podendo, neste caso, definir alíquota e base de cálculo diferenciadas e abranger os serviços de que trata o inciso I deste parágrafo, não se lhes aplicando o prazo previsto neste inciso.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10_par2
+    tipos:
+    - depende_de_lei_futura
+    trecho: § 2º O disposto no § 1º, II, em relação ao fundo de garantia do tempo de serviço, poderá, nos termos da lei complementar, ser estendido para outros fundos garantidores ou executores de políticas públicas previstos em lei.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - depende_de_lei_futura
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art11
+  artigo: '11'
+  vigencia:
+    inciso: I
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incI
+    natureza: derivado
+    proposta:
+      tipo: ano
+      ano: 2027
+      data_candidata: '2027-01-01'
+      precisao: ano
+      nota: o texto diz só o ano; 1º de janeiro é CONVENÇÃO (primeiro dia do ano), não está no texto
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art11
+    tipos:
+    - evento_publicacao
+    - produz_efeitos
+    trecho: Art. 11. A revogação do art. 195, I, "b", não produzirá efeitos sobre as contribuições incidentes sobre a receita ou o faturamento vigentes na data de publicação desta Emenda Constitucional que substituam a contribuição de que trata o art. 195, I, "a", ambos da Constituição Federal, e sejam cobradas com base naquele dispositivo, observado o disposto no art. 30 da Emenda Constitucional nº 103, de 12 de novembro de 2019. Vigência
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - ano_sem_dia
+  - marcos_proprios
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12
+  artigo: '12'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12
+    tipos:
+    - ano
+    - data_explicita
+    - prazo_relativo
+    trecho: Art. 12.Fica instituído o Fundo de Compensação de Benefícios Fiscais ou Financeiro-Fiscais do imposto de que trata o art. 155, II, da Constituição Federal, com vistas a compensar, entre 1º de janeiro de 2029 e 31 de dezembro de 2032, pessoas físicas ou jurídicas beneficiárias de isenções, incentivos e benefícios fiscais ou financeiro-fiscais relativos àquele imposto, concedidos por prazo certo e sob condição.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1
+    tipos:
+    - ano
+    trecho: '§ 1º De 2025 a 2032, a União entregará ao Fundo recursos que corresponderão aos seguintes valores, atualizados, de 2023 até o ano anterior ao da entrega, pela variação acumulada do IPCA ou de outro índice que vier a substituí-lo:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incI
+    tipos:
+    - ano
+    trecho: I - em 2025, a R$ 8.000.000.000,00 (oito bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incII
+    tipos:
+    - ano
+    trecho: II - em 2026, a R$ 16.000.000.000,00 (dezesseis bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incIII
+    tipos:
+    - ano
+    trecho: III - em 2027, a R$ 24.000.000.000,00 (vinte e quatro bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incIV
+    tipos:
+    - ano
+    trecho: IV - em 2028, a R$ 32.000.000.000,00 (trinta e dois bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incV
+    tipos:
+    - ano
+    trecho: V - em 2029, a R$ 32.000.000.000,00 (trinta e dois bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incVI
+    tipos:
+    - ano
+    trecho: VI - em 2030, a R$ 24.000.000.000,00 (vinte e quatro bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incVII
+    tipos:
+    - ano
+    trecho: VII - em 2031, a R$ 16.000.000.000,00 (dezesseis bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1_incVIII
+    tipos:
+    - ano
+    trecho: VIII - em 2032, a R$ 8.000.000.000,00 (oito bilhões de reais).
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par3
+    tipos:
+    - prazo_relativo
+    trecho: § 3º Para efeitos deste artigo, consideram-se benefícios onerosos as isenções, os incentivos e os benefícios fiscais ou financeiro-fiscais vinculados ao imposto referido no caput deste artigo concedidos por prazo certo e sob condição, na forma do art. 178 da Lei nº 5.172, de 25 de outubro de 1966 (Código Tributário Nacional).
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par4_incI
+    tipos:
+    - ano
+    - data_explicita
+    - a_partir_de_ate
+    - prazo_relativo
+    trecho: I - aplica-se aos titulares de benefícios onerosos referentes ao imposto previsto no art. 155, II, da Constituição Federal regularmente concedidos até 31 de maio de 2023, sem prejuízo de ulteriores prorrogações ou renovações, observados o prazo estabelecido no caput e, se aplicável, a exigência de registro e depósito estabelecida pelo art. 3º, II, da Lei Complementar nº 160, de 7 de agosto de 2017, que tenham cumprido tempestivamente as condições exigidas pela norma concessiva do benefício, bem como aos titulares de projetos abrangidos pelos benefícios a que se refere o art. 19 desta Emenda Constitucional;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par6
+    tipos:
+    - depende_de_lei_futura
+    trecho: '§ 6º Lei complementar estabelecerá:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par7
+    tipos:
+    - prazo_relativo
+    trecho: § 7º É vedada a prorrogação dos prazos de que trata o art. 3º, §§ 2º e 2º-A, da Lei Complementar nº 160, de 7 de agosto de 2017.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par9
+    tipos:
+    - ano
+    - data_explicita
+    trecho: § 9º Eventual saldo financeiro existente em 31 de dezembro de 2032 será transferido ao Fundo de que trata o art. 159-A da Constituição Federal, com a redação dada pelo art. 1º desta Emenda Constitucional, sem redução ou compensação dos valores consignados no art. 13 desta Emenda Constitucional.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par10
+    tipos:
+    - ano
+    - data_explicita
+    - evento_promulgacao
+    trecho: § 10. O disposto no § 4º, I, aplica-se também aos titulares de benefícios onerosos que, por força de mudanças na legislação estadual, tenham migrado para outros programas ou benefícios entre 31 de maio de 2023 e a data de promulgação desta Emenda Constitucional, ou estejam em processo de migração na data de promulgação desta Emenda Constitucional.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - depende_de_lei_futura
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13
+  artigo: '13'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13
+    tipos:
+    - ano
+    trecho: 'Art. 13. Os recursos de que trata o art. 159-A da Constituição Federal, com a redação dada pelo art. 1º desta Emenda Constitucional, corresponderão aos seguintes valores, atualizados, de 2023 até o ano anterior ao da entrega, pela variação acumulada do IPCA ou de outro índice que vier a substituí-lo:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incI
+    tipos:
+    - ano
+    trecho: I - em 2029, a R$ 8.000.000.000,00 (oito bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incII
+    tipos:
+    - ano
+    trecho: II - em 2030, a R$ 16.000.000.000,00 (dezesseis bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incIII
+    tipos:
+    - ano
+    trecho: III - em 2031, a R$ 24.000.000.000,00 (vinte e quatro bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incIV
+    tipos:
+    - ano
+    trecho: IV - em 2032, a R$ 32.000.000.000,00 (trinta e dois bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incV
+    tipos:
+    - ano
+    trecho: V - em 2033, a R$ 40.000.000.000,00 (quarenta bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incVI
+    tipos:
+    - ano
+    trecho: VI - em 2034, a R$ 42.000.000.000,00 (quarenta e dois bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incVII
+    tipos:
+    - ano
+    trecho: VII - em 2035, a R$ 44.000.000.000,00 (quarenta e quatro bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incVIII
+    tipos:
+    - ano
+    trecho: VIII - em 2036, a R$ 46.000.000.000,00 (quarenta e seis bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incIX
+    tipos:
+    - ano
+    trecho: IX - em 2037, a R$ 48.000.000.000,00 (quarenta e oito bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incX
+    tipos:
+    - ano
+    trecho: X - em 2038, a R$ 50.000.000.000,00 (cinquenta bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incXI
+    tipos:
+    - ano
+    trecho: XI - em 2039, a R$ 52.000.000.000,00 (cinquenta e dois bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incXII
+    tipos:
+    - ano
+    trecho: XII - em 2040, a R$ 54.000.000.000,00 (cinquenta e quatro bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incXIII
+    tipos:
+    - ano
+    trecho: XIII - em 2041, a R$ 56.000.000.000,00 (cinquenta e seis bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incXIV
+    tipos:
+    - ano
+    trecho: XIV - em 2042, a R$ 58.000.000.000,00 (cinquenta e oito bilhões de reais);
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art13_incXV
+    tipos:
+    - ano
+    - a_partir_de_ate
+    trecho: XV - a partir de 2043, a R$ 60.000.000.000,00 (sessenta bilhões de reais), por ano.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art14
+  artigo: '14'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta: &id001
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: *id001
+    motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios: []
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art15
+  artigo: '15'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta: &id002
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: *id002
+    motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios: []
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art16
+  artigo: '16'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art16
+    tipos:
+    - condicao_ate_que
+    trecho: 'Art. 16. Até que lei complementar regule o disposto no art. 155, § 1º, III, da Constituição Federal, o imposto incidente nas hipóteses de que trata o referido dispositivo competirá:'
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - condicao_regulamentacao
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art17
+  artigo: '17'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art17
+    tipos:
+    - evento_publicacao
+    trecho: Art. 17.A alteração do art. 155, § 1º, II, da Constituição Federal, promovida pelo art. 1º desta Emenda Constitucional, aplica-se às sucessões abertas a partir da data de publicação desta Emenda Constitucional.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art18
+  artigo: '18'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art18_incI
+    tipos:
+    - evento_promulgacao
+    - prazo_relativo
+    trecho: I - em até 90 (noventa) dias após a promulgação desta Emenda Constitucional, projeto de lei que reforme a tributação da renda, acompanhado das correspondentes estimativas e estudos de impactos orçamentários e financeiros;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art18_incII
+    tipos:
+    - evento_promulgacao
+    - prazo_relativo
+    trecho: II - em até 180 (cento e oitenta) dias após a promulgação desta Emenda Constitucional, os projetos de lei referidos nesta Emenda Constitucional;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art18_incIII
+    tipos:
+    - evento_promulgacao
+    - prazo_relativo
+    trecho: III - em até 90 (noventa) dias após a promulgação desta Emenda Constitucional, projeto de lei que reforme a tributação da folha de salários.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19
+  artigo: '19'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19
+    tipos:
+    - ano
+    - data_explicita
+    - a_partir_de_ate
+    trecho: Art. 19. Os projetos habilitados à fruição dos benefícios estabelecidos pelo art. 11-C da Lei nº 9.440, de 14 de março de 1997, e pelos arts. 1º a 4º da Lei nº 9.826, de 23 de agosto de 1999, farão jus, até 31 de dezembro de 2032, a crédito presumido da contribuição prevista no art. 195, V, da Constituição Federal.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19_par1_incII_ali-a
+    tipos:
+    - ano
+    - data_explicita
+    - a_partir_de_ate
+    - evento_promulgacao
+    trecho: a) a projetos aprovados até 31 de dezembro de 2024 de pessoas jurídicas habilitadas à fruição dos benefícios estabelecidos pelo art. 11-C da Lei nº 9.440, de 14 de março de 1997, e pelos arts. 1º a 4º da Lei nº 9.826, de 23 de agosto de 1999, na data de promulgação desta Emenda Constitucional;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19_par1_incII_ali-b
+    tipos:
+    - ano
+    - data_explicita
+    - a_partir_de_ate
+    trecho: b) a novos projetos, aprovados até 31 de dezembro de 2025, que ampliem ou reiniciem a produção em planta industrial utilizada em projetos ativos ou inativos habilitados à fruição dos benefícios de que trata a alínea "a"deste inciso;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19_par1_incIV
+    tipos:
+    - ano
+    trecho: IV - equivalerá ao nível de benefício estabelecido, para o ano de 2025, pelo art. 11-C da Lei nº 9.440, de 14 de março de 1997, e pelos arts. 1º a 4º da Lei nº 9.826, de 23 de agosto de 1999; e
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19_par1_incV
+    tipos:
+    - ano
+    trecho: V - será reduzido à razão de 20% (vinte por cento) ao ano entre 2029 e 2032.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19_par3_incI
+    tipos:
+    - ano
+    - data_explicita
+    - a_partir_de_ate
+    trecho: I - no caso de montadoras de veículos, inicie a produção de veículos que atendam ao disposto no § 1º, I, até 1º de janeiro de 2028; e
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19_par3_incII_ali-c
+    tipos:
+    - prazo_relativo
+    trecho: c) à manutenção da produção por prazo mínimo, inclusive após o encerramento do benefício.
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19_par4
+    tipos:
+    - depende_de_lei_futura
+    trecho: § 4º A lei complementar estabelecerá as penalidades aplicáveis em razão do descumprimento das condições exigidas para fruição do crédito presumido de que trata este artigo.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - depende_de_lei_futura
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art20
+  artigo: '20'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art20
+    tipos:
+    - evento_publicacao
+    - condicao_ate_que
+    trecho: Art. 20. Até que lei disponha sobre a matéria, a contribuição para o Programa de Formação do Patrimônio do Servidor Público, criado pela Lei Complementar nº 8, de 3 de dezembro de 1970, de que trata o art. 239 da Constituição Federal, permanecerá sendo cobrada na forma do art. 2º, III, da Lei nº 9.715, de 25 de novembro de 1998, e dos demais dispositivos legais a ele referentes em vigor na data de publicação desta Emenda Constitucional.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - condicao_regulamentacao
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art21
+  artigo: '21'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art21
+    tipos:
+    - entrada_em_vigor
+    - depende_de_lei_futura
+    trecho: Art. 21. Lei complementar poderá estabelecer instrumentos de ajustes nos contratos firmados anteriormente à entrada em vigor das leis instituidoras dos tributos de que tratam o art. 156-A e o art. 195, V, da Constituição Federal, inclusive concessões públicas.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - depende_de_lei_futura
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art22
+  artigo: '22'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art22_incI
+    tipos:
+    - ano
+    trecho: I - em 2027, o art. 195, I, "b", e IV, e § 12, da Constituição Federal;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art22_incII
+    tipos:
+    - ano
+    trecho: 'II - em 2033:'
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - revogacao_expressa
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
+- urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23
+  artigo: '23'
+  vigencia:
+    inciso: III
+    fundamento: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2023-12-21'
+      precisao: dia
+      nota: data lida do rodapé do texto compilado; confirmar no DOU (in.gov.br), que não está ingerido
+    motivo: null
+    ressalva: null
+  efeitos:
+    proposta: null
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+  atual_no_pipeline:
+    publicacao: '2023-12-20'
+    vigencia_inicio: '2023-12-20'
+    efeitos_inicio: '2023-12-20'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23
+    tipos:
+    - entrada_em_vigor
+    trecho: 'Art. 23. Esta Emenda Constitucional entra em vigor:'
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incI
+    tipos:
+    - ano
+    trecho: I - em 2027, em relação aos arts. 3º e 11;
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incII
+    tipos:
+    - ano
+    trecho: II - em 2033, em relação aos arts. 4º e 5º; e
+  - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    tipos:
+    - evento_publicacao
+    trecho: III - na data de sua publicação, em relação aos demais dispositivos.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  pendencias:
+  - publicacao_nao_confirmada_no_dou
+  - marcos_proprios
+  - evento_relativo
+  revisao:
+    decisao: null
+    vigencia_inicio_final: null
+    efeitos_inicio_final: null
+    revisado_por: null
+    revisado_em: null
+    observacao: null
