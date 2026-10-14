@@ -66,7 +66,12 @@ fi
 # ---------------------------------------------------------------- 3. índices
 titulo "Índices derivados em dia (PREMISSAS.md §6.3)"
 "$PY" pipeline/indexar.py >/dev/null 2>&1
-if git diff --quiet -- indices/ && git diff --cached --quiet -- indices/; then
+# O índice REGENERADO tem de coincidir com o que está no índice do Git (staged).
+# Exigir também que o staged coincida com o HEAD (`git diff --cached`) reprovaria
+# todo commit que muda os índices de forma legítima, e a correção sugerida abaixo
+# (`git add indices/`) nunca passaria. Arquivo novo ainda não rastreado também conta.
+novos=$(git ls-files --others --exclude-standard -- indices/)
+if git diff --quiet -- indices/ && [[ -z "$novos" ]]; then
   ok "indices/ é função pura de normas/"
 elif [[ $CORRIGIR -eq 1 ]]; then
   git add indices/

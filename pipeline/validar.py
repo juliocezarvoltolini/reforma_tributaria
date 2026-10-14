@@ -24,6 +24,7 @@ from comum import (
     MARCA_NAO_VERIFICADO,
     STATUS_VALIDOS,
     arquivos_norma,
+    caminho_fonte,
     ler_frontmatter,
     para_data,
     sha256_arquivo,
@@ -171,7 +172,7 @@ def validar_hashes() -> None:
         return
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     for chave, registro in manifest.get("documentos", {}).items():
-        caminho = DIR_FONTES.parent / registro["arquivo"]
+        caminho = caminho_fonte(registro)
         if not caminho.exists():
             erro(f"manifest {chave}: arquivo arquivado ausente ({registro['arquivo']})")
             continue

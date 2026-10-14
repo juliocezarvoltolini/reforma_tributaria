@@ -109,12 +109,34 @@ def ler_frontmatter(caminho: Path) -> tuple[dict, str]:
     return meta, partes[2].lstrip("\n")
 
 
+def arquivo_posix(arquivo: str) -> str:
+    """Caminho do manifest com '/'. Gerado no Windows, o manifest traz '\\\\'; no
+    Linux isso seria um único nome de arquivo inexistente."""
+    return arquivo.replace("\\", "/")
+
+
+def caminho_fonte(registro: dict) -> Path:
+    """Arquivo arquivado de um registro do manifest, resolvido a partir da raiz."""
+    return RAIZ / arquivo_posix(registro["arquivo"])
+
+
+def gravar_texto(caminho: Path, conteudo: str) -> None:
+    """Grava UTF-8 com fim de linha LF em qualquer plataforma.
+
+    `Path.write_text` traduz "\\n" para "\\r\\n" no Windows. Os arquivos gerados
+    são commitados e comparados byte a byte (`git diff --quiet -- indices/`), então
+    a mesma entrada tem de produzir os mesmos bytes no Windows, no Linux e na CI.
+    """
+    with open(caminho, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(conteudo)
+
+
 def escrever_frontmatter(caminho: Path, meta: dict, corpo: str) -> None:
     caminho.parent.mkdir(parents=True, exist_ok=True)
     bloco = yaml.safe_dump(
         meta, allow_unicode=True, sort_keys=False, default_flow_style=False
     )
-    caminho.write_text(f"---\n{bloco}---\n\n{corpo.rstrip()}\n", encoding="utf-8")
+    gravar_texto(caminho, f"---\n{bloco}---\n\n{corpo.rstrip()}\n")
 
 
 def arquivos_norma(slug: str | None = None):

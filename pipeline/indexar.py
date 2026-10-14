@@ -18,6 +18,7 @@ from comum import (
     DIR_INDICES,
     RAIZ,
     arquivos_norma,
+    gravar_texto,
     ler_frontmatter,
 )
 
@@ -26,9 +27,9 @@ GLOSSARIO = RAIZ / "glossario" / "vocabulario.yaml"
 
 def gravar(nome: str, dados) -> None:
     DIR_INDICES.mkdir(parents=True, exist_ok=True)
-    (DIR_INDICES / nome).write_text(
+    gravar_texto(
+        DIR_INDICES / nome,
         json.dumps(dados, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
     )
     print(f"  indices/{nome}")
 

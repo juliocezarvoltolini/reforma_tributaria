@@ -30,6 +30,7 @@ from comum import (
     DIR_EVENTOS,
     DIR_FONTES,
     MANIFEST,
+    gravar_texto,
     hoje,
     sha256_bytes,
 )
@@ -82,9 +83,9 @@ def carregar_manifest() -> dict:
 
 def salvar_manifest(manifest: dict) -> None:
     DIR_FONTES.mkdir(parents=True, exist_ok=True)
-    MANIFEST.write_text(
+    gravar_texto(
+        MANIFEST,
         json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
     )
 
 
@@ -98,7 +99,8 @@ def registrar_deriva(chave: str, antigo: str, novo: str, url: str) -> Path:
     """Grava um evento de deriva de texto oficial para revisão humana."""
     DIR_EVENTOS.mkdir(parents=True, exist_ok=True)
     destino = DIR_EVENTOS / f"deriva-{chave.replace('/', '-')}-{hoje()}.md"
-    destino.write_text(
+    gravar_texto(
+        destino,
         "---\n"
         f"tipo: deriva_fonte\n"
         f"documento: {chave}\n"
@@ -113,7 +115,6 @@ def registrar_deriva(chave: str, antigo: str, novo: str, url: str) -> Path:
         "legislativa, correção de erro material) antes de homologar. Após a\n"
         "análise, reingerir com `--aceitar-deriva` e registrar a conclusão\n"
         "aqui, alterando `status`.\n",
-        encoding="utf-8",
     )
     return destino
 
@@ -158,7 +159,7 @@ def gravar(
         "titulo": fonte["titulo"],
         "tipo_documento": entrada["tipo"],
         "url": url,
-        "arquivo": str(destino.relative_to(DIR_FONTES.parent)),
+        "arquivo": destino.relative_to(DIR_FONTES.parent).as_posix(),
         "sha256": digest,
         "bytes": len(dados),
         "acesso": hoje(),

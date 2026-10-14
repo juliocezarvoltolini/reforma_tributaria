@@ -9,8 +9,9 @@ vêm da cláusula de vigência da norma e exigem revisão humana. Todo dispositi
 sai marcado com `revisao_temporal_pendente: true`.
 
 Uso:
-    python3 pipeline/fatiar.py --slug lc-214-2025
-    python3 pipeline/fatiar.py --todas
+    python pipeline/fatiar.py --slug lc-214-2025
+    python pipeline/fatiar.py --todas
+    python pipeline/fatiar.py --todas --relatorio     # não escreve nada
 """
 from __future__ import annotations
 
@@ -20,13 +21,14 @@ import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
+from typing import NamedTuple
 
 import yaml
 
 from comum import (
-    DIR_FONTES,
     DIR_NORMAS,
     MANIFEST,
+    caminho_fonte,
     escrever_frontmatter,
     hoje,
     status_em,
@@ -41,34 +43,148 @@ CATALOGO = Path(__file__).resolve().parent / "fontes.yaml"
 # HTML -> texto
 # ---------------------------------------------------------------------------
 
-_QUEBRA = {"p", "br", "div", "tr", "li", "h1", "h2", "h3", "h4", "h5", "h6"}
+# Só estas tags terminam uma linha. A quebra de linha do CÓDIGO-FONTE do HTML não
+# é quebra de parágrafo: o portal quebra o código no meio da frase, e tratá-la
+# como quebra deixava "arts. 156-A e 195, V" ou "art. 195, I, ..." no início de
+# uma linha, onde o parser os lia como início de artigo.
+_QUEBRA = {"p", "br", "div", "tr", "li", "blockquote", "h1", "h2", "h3", "h4", "h5", "h6"}
+_CELULA = {"td", "th"}
 _IGNORAR = {"script", "style", "head"}
+_VAZIAS = {"br", "img", "hr", "meta", "link", "input"}
+# O portal marca texto superado de duas formas, as duas presentes no mesmo
+# documento (LC 214): <span style="...text-decoration:line-through"> e <strike>.
+_TAGS_RISCO = {"s", "strike", "del"}
+
+_RE_ESPACOS = re.compile(r"\s+")
+_ZERO_LARGURA = dict.fromkeys(map(ord, "​﻿"), None)
+
+MARCA_RISCADO = "~~"
+
+
+class Linha(NamedTuple):
+    """Uma linha lógica do documento (um parágrafo), em três leituras.
+
+    completa    tudo que o portal publicou, inclusive o texto riscado. Serve ao
+                reconhecimento de estrutura: cabeçalho de artigo, aspas.
+    vigente     sem os trechos riscados (texto superado ou revogado). É a base de
+                todos os metadados: remissões, conceitos, subdivisões, anotações.
+    marcada     o texto riscado entre `~~ ~~`. É o que vai para o corpo do
+                arquivo: nada que o portal mostra se perde, e a anotação
+                "(Revogado pela ...)" continua colada ao trecho que ela revoga.
+                Descartar o riscado a deixaria solta no corpo do artigo, que
+                passaria a parecer revogado por inteiro.
+    blockquote  o parágrafo está dentro de <blockquote>? None = não se sabe.
+    """
+
+    completa: str
+    vigente: str
+    marcada: str
+    blockquote: bool | None = None
+
+
+def _normalizar(texto: str) -> str:
+    return _RE_ESPACOS.sub(" ", texto).strip()
+
+
+def _riscado(tag: str, attrs) -> bool:
+    if tag in _TAGS_RISCO:
+        return True
+    estilo = dict(attrs).get("style") or ""
+    return "line-through" in _RE_ESPACOS.sub("", estilo).lower()
+
+
+def _marcar(segmentos: list[tuple[str, bool]]) -> str:
+    """Junta os segmentos envolvendo cada trecho riscado em `~~ ~~`.
+
+    Espaço em branco não tem estado: vai para o trecho em curso, de modo que dois
+    pedaços riscados separados só por espaço formam um trecho só.
+    """
+    trechos: list[list] = []  # [texto, riscado]
+    for texto, riscado in segmentos:
+        if trechos and (trechos[-1][1] == riscado or not texto.strip()):
+            trechos[-1][0] += texto
+        else:
+            trechos.append([texto, riscado])
+
+    saida: list[str] = []
+    for texto, riscado in trechos:
+        miolo = texto.strip()
+        if riscado and miolo:
+            ini = texto[: len(texto) - len(texto.lstrip())]
+            fim = texto[len(texto.rstrip()):]
+            saida.append(f"{ini}{MARCA_RISCADO}{miolo}{MARCA_RISCADO}{fim}")
+        else:
+            saida.append(texto)
+    return "".join(saida)
 
 
 class _Extrator(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
-        self.partes: list[str] = []
+        self.linhas: list[Linha] = []
+        self._pilha: list[tuple[str, bool]] = []
         self._pular = 0
+        self._blockquote = 0
+        self._segmentos: list[tuple[str, bool]] = []
+        self._bq_na_linha = False
 
     def handle_starttag(self, tag, attrs):
         if tag in _IGNORAR:
             self._pular += 1
-        elif tag in _QUEBRA:
-            self.partes.append("\n")
+            return
+        if self._pular:
+            return
+        if tag in _QUEBRA:
+            self._fechar_linha()
+        if tag == "blockquote":
+            self._blockquote += 1
+        if tag not in _VAZIAS:
+            self._pilha.append((tag, _riscado(tag, attrs)))
 
     def handle_endtag(self, tag):
-        if tag in _IGNORAR and self._pular:
-            self._pular -= 1
-        elif tag in _QUEBRA:
-            self.partes.append("\n")
+        if tag in _IGNORAR:
+            if self._pular:
+                self._pular -= 1
+            return
+        if self._pular:
+            return
+        if tag in _QUEBRA:
+            self._fechar_linha()
+        if tag == "blockquote" and self._blockquote:
+            self._blockquote -= 1
+        if tag in _CELULA:
+            self._segmentos.append((" ", False))
+        # HTML do Word deixa tags sem fechar: fecha tudo que estava aberto dentro
+        # da tag que se fecha, para que um riscado esquecido não vaze adiante.
+        for i in range(len(self._pilha) - 1, -1, -1):
+            if self._pilha[i][0] == tag:
+                del self._pilha[i:]
+                break
 
     def handle_data(self, dados):
-        if not self._pular:
-            self.partes.append(dados)
+        if self._pular:
+            return
+        dados = dados.replace("\xa0", " ").translate(_ZERO_LARGURA)
+        if not dados:
+            return
+        if not self._segmentos:
+            self._bq_na_linha = self._blockquote > 0
+        self._segmentos.append((dados, any(r for _, r in self._pilha)))
 
-    def texto(self) -> str:
-        return "".join(self.partes)
+    def _fechar_linha(self) -> None:
+        segmentos, self._segmentos = self._segmentos, []
+        completa = _normalizar("".join(t for t, _ in segmentos))
+        if not completa:
+            return
+        vigente = _normalizar("".join(t for t, r in segmentos if not r))
+        self.linhas.append(
+            Linha(completa, vigente, _normalizar(_marcar(segmentos)), self._bq_na_linha)
+        )
+
+    def concluir(self) -> list[Linha]:
+        self.close()
+        self._fechar_linha()
+        return self.linhas
 
 
 def detectar_encoding(dados: bytes) -> str:
@@ -79,22 +195,27 @@ def detectar_encoding(dados: bytes) -> str:
     return "utf-8"
 
 
-def html_para_texto(dados: bytes) -> str:
+def _decodificar(dados: bytes) -> str:
+    """O charset declarado não é confiável: a LC 214 não declara nenhum, os bytes
+    são windows-1252, e o padrão utf-8 falha no decode estrito."""
     enc = detectar_encoding(dados)
     for tentativa in (enc, "utf-8", "cp1252", "latin-1"):
         try:
-            bruto = dados.decode(tentativa)
-            break
+            return dados.decode(tentativa)
         except (UnicodeDecodeError, LookupError):
             continue
-    else:  # pragma: no cover - latin-1 nunca falha
-        bruto = dados.decode("latin-1", "replace")
+    return dados.decode("latin-1", "replace")  # pragma: no cover - latin-1 nunca falha
 
+
+def html_para_linhas(dados: bytes) -> list[Linha]:
     ex = _Extrator()
-    ex.feed(bruto)
-    texto = ex.texto().replace("\xa0", " ").replace("​", "")
-    linhas = [re.sub(r"[ \t]+", " ", ln).strip() for ln in texto.split("\n")]
-    return "\n".join(ln for ln in linhas if ln)
+    ex.feed(_decodificar(dados))
+    return ex.concluir()
+
+
+def html_para_texto(dados: bytes) -> str:
+    """Texto corrido, inclusive o trecho riscado (a leitura `completa`)."""
+    return "\n".join(ln.completa for ln in html_para_linhas(dados))
 
 
 # ---------------------------------------------------------------------------
@@ -103,7 +224,12 @@ def html_para_texto(dados: bytes) -> str:
 
 # "Art. 4º-A": o marcador ordinal vem ANTES do sufixo alfabético. Casar o
 # sufixo direto após o número faria "4º-A" virar "4", colidindo com o art. 4º.
-RE_ARTIGO = re.compile(r"^Art\.?\s*(\d+)\s*[ºo°]?\s*(-\s*[A-Z])?", re.IGNORECASE)
+#
+# Sem IGNORECASE: o portal publica todo cabeçalho como "Art." maiúsculo, e uma
+# remissão em minúscula que cai no início de linha ("art. 195, I, ...") não é
+# cabeçalho. Defesa em profundidade além da extração, que já não quebra linha
+# no meio do parágrafo.
+RE_ARTIGO = re.compile(r"^Art\.?\s*(\d+)\s*[ºo°]?\s*(-\s*[A-Z])?")
 RE_ESTRUTURA = re.compile(
     r"^(LIVRO|PARTE|T[ÍI]TULO|CAP[ÍI]TULO|SE[ÇC][ÃA]O|SUBSE[ÇC][ÃA]O)\b.*", re.IGNORECASE
 )
@@ -113,22 +239,87 @@ RE_ANOTACAO = re.compile(
     re.IGNORECASE,
 )
 
+# Fim do texto da norma. Depois do último artigo vêm o local e a data da
+# assinatura ("Brasília, 16 de janeiro de 2025; ..."), os signatários, o rodapé e,
+# na LC 214, os anexos. Nada disso é do último artigo; anexado a ele, o art. 544
+# da LC 214 virava um arquivo de 97 KB. Os dois documentos reais terminam assim.
+RE_FIM_DO_TEXTO = re.compile(r"^(?:Bras[ií]lia,\s|ANEXO\b)")
+RE_ANEXO = re.compile(r"^ANEXO\s+[IVXLC]+\b")
+
 RE_PARAGRAFO = re.compile(r"^§\s*(\d+)")
 RE_PAR_UNICO = re.compile(r"^Par[áa]grafo\s+[úu]nico", re.IGNORECASE)
 RE_INCISO = re.compile(r"^([IVXLC]+)\s*[-–]\s")
 RE_ALINEA = re.compile(r"^([a-z])\)\s")
 
-# Texto alterado vem entre aspas (técnica legislativa da LC 95/1998). O Planalto
-# usa aspas curvas; aceitamos as retas e as angulares por segurança.
-RE_ABRE_CITACAO = re.compile(r'^\s*[“"«]')
-RE_FECHA_CITACAO = re.compile(r'[”"»]\s*\.?\s*$')
+# Texto alterado vem entre aspas (técnica legislativa da LC 95/1998). O que o
+# portal publica, medido nos HTML reais, NÃO é uniforme:
+#   - a EC 132 usa aspas RETAS (&quot;), a LC 214 usa aspas CURVAS (“ ”);
+#   - o bloco tem UM par de aspas, mesmo inserindo vários artigos: só o primeiro
+#     abre aspas (o "Art. 156-B" seguinte vem sem aspa de abertura);
+#   - o fechamento vem como `” (NR)` — a aspa NÃO está no fim da linha;
+#   - há aspas internas ("a", "b") no meio do bloco, às vezes no fim da linha;
+#   - a fonte tem erros: um ” sem abertura, e ’ onde devia haver ”.
+# Por isso o sinal não é "a linha começa/termina com aspa" e sim o BALANÇO de
+# aspas desde o início do documento.
+ABRE_ASPAS = "“«"   # “ «
+FECHA_ASPAS = "”»"  # ” »
+ASPA_RETA = '"'
+
+
+class _Aspas:
+    """Balanço de aspas, linha a linha.
+
+    Aspas curvas têm direção, então contam-se por profundidade. A aspa reta é a
+    mesma para abrir e fechar, então conta-se por paridade: as internas ("a")
+    vêm em par e não alteram a paridade do bloco que as contém.
+
+    A aspa simples tipográfica (’) é ignorada: a fonte a usa por engano no lugar
+    de ” (LC 214), e o bloco continua depois dela.
+    """
+
+    def __init__(self) -> None:
+        self.profundidade = 0
+        self.paridade = 0
+        self.fechamentos_sem_abertura = 0
+
+    @property
+    def dentro(self) -> bool:
+        return self.profundidade > 0 or self.paridade == 1
+
+    @property
+    def residuo(self) -> int:
+        """0 = balanceado. Diferente de 0 ao fim do documento = bloco que nunca fechou."""
+        return self.profundidade + self.paridade
+
+    def abre_bloco(self, texto: str) -> bool:
+        """A linha ABRE bloco: começa por aspa de abertura. A aspa reta só abre
+        quando a paridade diz que se está fora; dentro de bloco ela é interna."""
+        if not texto:
+            return False
+        return texto[0] in ABRE_ASPAS or (texto[0] == ASPA_RETA and self.paridade == 0)
+
+    def consumir(self, texto: str) -> None:
+        for c in texto:
+            if c in ABRE_ASPAS:
+                self.profundidade += 1
+            elif c in FECHA_ASPAS:
+                # Piso em zero: um ” solto não pode tornar a profundidade negativa
+                # e contaminar os artigos seguintes. Fica contado, para reporte.
+                if self.profundidade:
+                    self.profundidade -= 1
+                else:
+                    self.fechamentos_sem_abertura += 1
+            elif c == ASPA_RETA:
+                self.paridade ^= 1
 
 
 def chave_ordem(numero: str) -> tuple[int, str]:
     """Ordena 'Art. 4º' antes de 'Art. 4º-A' antes de 'Art. 5º'.
 
-    Permite exigir que os artigos próprios de uma norma sejam estritamente
-    crescentes, o que distingue artigo próprio de artigo citado.
+    Os artigos próprios de uma norma são estritamente crescentes. Isso é uma
+    VALIDAÇÃO do fatiamento, não um critério de classificação: usada como
+    critério, um único falso positivo alto fixava o piso lá em cima e todo o
+    resto do documento passava a ser lido como "citado", em silêncio.
     """
     base = re.match(r"\d+", numero)
     ordinal = int(base.group()) if base else 0
@@ -157,7 +348,7 @@ RE_REMISSOES = [
 # e responderia com confiança. Por isso a resolução é conservadora.
 RE_ESCOPO_EXTERNO = re.compile(
     r"\bd[ao]s?\s+(?:Constitui[çc][ãa]o|Leis?|Decretos?|Emenda|"
-    r"Medida\s+Provis[óo]ria|C[óo]digo|Ato)\b",
+    r"Medida\s+Provis[óo]ria|C[óo]digo|Ato|ADCT)\b",
     re.IGNORECASE,
 )
 # "desta Lei" / "deste Decreto" afirmam o contrário: a remissão é interna.
@@ -194,21 +385,52 @@ def remissao_externa(texto: str, fim: int) -> bool:
 
     "desta Lei" vence "da Lei", porque afirma escopo interno explicitamente.
     """
-    janela = texto[fim:fim + 90]
-    corte = re.search(r"[.;:]|\bart", janela, re.IGNORECASE)
-    if corte:
-        janela = janela[:corte.start()]
+    janela = _janela_da_mencao(texto, fim)
     if RE_ESCOPO_INTERNO.search(janela):
         return False
     return bool(RE_ESCOPO_EXTERNO.search(janela))
 
 
-def extrair_remissoes(texto: str, urn_base: str, artigo_atual: str) -> list[str]:
+def _janela_da_mencao(texto: str, fim: int) -> str:
+    janela = texto[fim:fim + 90]
+    corte = re.search(r"[.;:]|\bart", janela, re.IGNORECASE)
+    return janela[:corte.start()] if corte else janela
+
+
+def escopo_interno_afirmado(texto: str, fim: int) -> bool:
+    """A remissão que termina em `fim` diz expressamente "desta Lei/Emenda"?"""
+    return bool(RE_ESCOPO_INTERNO.search(_janela_da_mencao(texto, fim)))
+
+
+def exige_escopo_interno(fonte: dict) -> bool:
+    """Numa emenda constitucional, "art. N" sem qualificador é, quase sempre, da
+    Constituição que ela altera — não da própria emenda. Medido na EC 132: das
+    remissões que o padrão "interno salvo qualificador externo" resolvia, 8 de 20
+    apontavam para artigos que a emenda não tem, todas referências à
+    Constituição. Nessas normas, só se resolve o que é afirmado interno.
+
+    Nas leis, o padrão continua "interno salvo qualificador externo". Essa é uma
+    decisão de política em aberto (ver docs/ESTADO.md): mais de metade das
+    menções na LC 214 não têm qualificador algum.
+    """
+    return fonte.get("tipo") == "emenda.constitucional"
+
+
+def extrair_remissoes(
+    texto: str,
+    urn_base: str,
+    artigo_atual: str,
+    exigir_escopo_interno: bool = False,
+) -> list[str]:
     """Remissões INTERNAS resolvidas em URN. É o índice de maior retorno: um
     artigo lido isoladamente frequentemente diz o oposto do aplicável.
 
     Recebe apenas o texto próprio do artigo — nunca o texto citado de outra
     norma que ele altere, cujas remissões pertencem àquela norma.
+
+    Com `exigir_escopo_interno`, só resolve a remissão que afirma "desta Emenda"
+    e semelhantes; a sem qualificador fica sem ponteiro. Ponteiro ausente falha
+    seguro; ponteiro errado leva ao dispositivo equivocado.
     """
     achados: list[str] = []
     consumido = texto
@@ -216,6 +438,8 @@ def extrair_remissoes(texto: str, urn_base: str, artigo_atual: str) -> list[str]
     for tipo, regex in RE_REMISSOES:
         for m in regex.finditer(consumido):
             if remissao_externa(consumido, m.end()):
+                continue
+            if exigir_escopo_interno and not escopo_interno_afirmado(consumido, m.end()):
                 continue
             if tipo == "par":
                 alvo = urn_dispositivo(
@@ -230,8 +454,11 @@ def extrair_remissoes(texto: str, urn_base: str, artigo_atual: str) -> list[str]
             if alvo not in achados:
                 achados.append(alvo)
 
+    # Auto-remissão é o próprio artigo ou uma subdivisão dele ("art1", "art1_par2").
+    # Comparar por prefixo de texto descartava também "art10", "art158": o art. 1
+    # perdia toda remissão aos artigos 10-19, 100-199 etc.
     proprio = urn_dispositivo(urn_base, artigo_atual)
-    return [a for a in achados if not a.startswith(proprio)]
+    return [a for a in achados if a != proprio and not a.startswith(f"{proprio}_")]
 
 
 def extrair_externas(texto: str) -> list[str]:
@@ -276,8 +503,61 @@ def subdivisoes_de(linhas: list[str], urn_base: str, artigo: str) -> list[str]:
 # Fatiamento
 # ---------------------------------------------------------------------------
 
-def fatiar(texto: str) -> tuple[list[dict], list[str]]:
-    """Devolve (artigos, avisos). Cada artigo traz linhas e hierarquia.
+_NIVEIS = ["LIVRO", "PARTE", "TITULO", "TÍTULO", "CAPITULO", "CAPÍTULO",
+           "SECAO", "SEÇÃO", "SUBSECAO", "SUBSEÇÃO"]
+
+
+def _atualizar_hierarquia(hierarquia: list[str], linha: str) -> list[str]:
+    marcador = linha.upper().split()[0]
+    nivel = next((i for i, o in enumerate(_NIVEIS) if marcador.startswith(o[:5])), len(_NIVEIS))
+    mantidos = [h for h in hierarquia
+                if next((i for i, o in enumerate(_NIVEIS)
+                         if h.upper().startswith(o[:5])), len(_NIVEIS)) < nivel]
+    mantidos.append(linha)
+    return mantidos
+
+
+def _como_linhas(entrada: str | list[Linha]) -> list[Linha]:
+    if isinstance(entrada, str):
+        return [Linha(ln, ln, ln) for ln in entrada.split("\n") if ln.strip()]
+    return entrada
+
+
+def _so_riscado(linha: Linha) -> bool:
+    """Tudo na linha está riscado, salvo as anotações oficiais."""
+    return linha.vigente != linha.completa and not RE_ANOTACAO.sub("", linha.vigente).strip()
+
+
+def _novo_artigo(numero: str, hierarquia: list[str]) -> dict:
+    return {
+        "numero": numero,
+        "hierarquia": list(hierarquia),
+        # Corpo do arquivo: tudo que o portal mostra, o riscado entre ~~ ~~.
+        "linhas": [],
+        # Sem o riscado, incluindo o texto citado. Base das anotações oficiais e
+        # das normas externas mencionadas.
+        "linhas_vigentes": [],
+        # Sem o riscado e sem o texto citado de outra norma. Base das remissões,
+        # dos conceitos e das subdivisões: as que aparecem no texto citado
+        # pertencem à norma alterada, e as do texto riscado não valem mais.
+        "linhas_proprias": [],
+        "citados": [],
+        # O cabeçalho mais recente está riscado: é redação superada, e um
+        # cabeçalho de mesmo número logo a seguir é a redação que a substitui.
+        "cabecalho_riscado": False,
+    }
+
+
+def _anexar(artigo: dict, linha: Linha, proprio: bool) -> None:
+    artigo["linhas"].append(linha.marcada)
+    if linha.vigente:
+        artigo["linhas_vigentes"].append(linha.vigente)
+        if proprio:
+            artigo["linhas_proprias"].append(linha.vigente)
+
+
+def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
+    """Devolve (artigos, avisos, estatisticas). Cada artigo traz linhas e hierarquia.
 
     Classifica cada linha "Art. N" em duas categorias, porque tratar as duas
     como artigo próprio destrói dados:
@@ -289,76 +569,114 @@ def fatiar(texto: str) -> tuple[list[dict], list[str]]:
                  Esse texto pertence ao artigo que promove a alteração, não é
                  artigo da norma ingerida.
 
-    Dois sinais distinguem, em ordem:
+    O critério é o BALANÇO de aspas (ver `_Aspas`): o artigo é citado se, ao
+    início da linha, há bloco aberto, ou se a própria linha o abre. Dois
+    portais, dois formatos de aspas, e um bloco que insere vários artigos tem um
+    par só — por isso nem "a linha começa com aspa" nem "termina com aspa"
+    servem de critério.
 
-    1. Aspas. A técnica legislativa (LC 95/1998) exige que o texto alterado
-       venha entre aspas. É o sinal mais confiável.
-    2. Ordem. Os artigos próprios de uma norma são estritamente crescentes.
-       "Art. 195" depois de "Art. 3º" não é o artigo 195 desta norma.
+    A numeração estritamente crescente dos artigos próprios é VALIDAÇÃO, não
+    critério: o que a violar vira ERRO e a escrita é abortada. Como critério,
+    um falso positivo alto fixava o piso lá em cima e todo o resto do documento
+    virava "citado" em silêncio.
+
+    Texto riscado (superado) é mantido no corpo, marcado, e excluído dos
+    metadados. Um cabeçalho riscado seguido de cabeçalho de mesmo número é a
+    redação anterior do mesmo dispositivo: os dois se fundem num artigo só, em
+    vez de colidir. Dois cabeçalhos de mesmo número SEM riscado continuam sendo
+    colisão, e aborta.
+
+    `estatisticas` são contagens para o relatório, não critério de nada.
     """
+    linhas = _como_linhas(entrada)
     hierarquia: list[str] = []
     artigos: list[dict] = []
     avisos: list[str] = []
     atual: dict | None = None
-    em_citacao = False
-    ultima_chave: tuple[int, str] = (0, "")
+    aspas = _Aspas()
     citados_orfaos = 0
+    discordantes: list[str] = []
+    stats = {
+        "aspas_fechamento_sem_abertura": 0,
+        "aspas_abertura_dentro_de_bloco": 0,
+        "aspas_estado_final": 0,
+        "discordancia_blockquote": 0,
+        "linhas_com_riscado": 0,
+        "redacoes_anteriores_mescladas": 0,
+        "linhas_apos_o_fim": 0,
+        "anexos_nao_incorporados": 0,
+    }
+    fim_do_texto = False
 
-    for linha in texto.split("\n"):
-        if RE_ESTRUTURA.match(linha) and len(linha) < 200 and not em_citacao:
-            marcador = linha.upper().split()[0]
-            ordem = ["LIVRO", "PARTE", "TITULO", "TÍTULO", "CAPITULO", "CAPÍTULO",
-                     "SECAO", "SEÇÃO", "SUBSECAO", "SUBSEÇÃO"]
-            nivel = next((i for i, o in enumerate(ordem) if marcador.startswith(o[:5])), len(ordem))
-            hierarquia = [h for h in hierarquia
-                          if next((i for i, o in enumerate(ordem)
-                                   if h.upper().startswith(o[:5])), len(ordem)) < nivel]
-            hierarquia.append(linha)
+    for linha in linhas:
+        completa = linha.completa
+        if fim_do_texto:
+            stats["linhas_apos_o_fim"] += 1
+            if RE_ANEXO.match(completa):
+                stats["anexos_nao_incorporados"] += 1
+            continue
+        if linha.vigente != completa:
+            stats["linhas_com_riscado"] += 1
+
+        dentro_antes = aspas.dentro
+        abre = aspas.abre_bloco(completa)
+        dentro = dentro_antes or abre
+        aspas.consumir(completa)
+
+        # Só encerra fora de bloco citado: as leis que esta norma altera também
+        # podem ter anexos.
+        if atual is not None and not dentro and RE_FIM_DO_TEXTO.match(completa):
+            fim_do_texto = True
+            stats["linhas_apos_o_fim"] += 1
+            if RE_ANEXO.match(completa):
+                stats["anexos_nao_incorporados"] += 1
             continue
 
-        abre_citacao = bool(RE_ABRE_CITACAO.match(linha))
-        dentro_de_citacao = em_citacao or abre_citacao
-        if abre_citacao and not RE_FECHA_CITACAO.search(linha):
-            em_citacao = True
-        elif em_citacao and RE_FECHA_CITACAO.search(linha):
-            em_citacao = False
+        if RE_ESTRUTURA.match(completa) and len(completa) < 200 and not dentro_antes:
+            if linha.vigente:  # estrutura inteiramente riscada foi superada pelo portal
+                hierarquia = _atualizar_hierarquia(hierarquia, linha.vigente)
+            continue
 
-        # A aspas de abertura precede o "Art.", então o reconhecimento tem de
+        # A aspa de abertura precede o "Art.", então o reconhecimento tem de
         # ignorá-la. O texto apensado ao artigo continua sendo a linha original,
         # verbatim.
-        linha_nua = linha.lstrip("“\"«' ")
-        if m := RE_ARTIGO.match(linha_nua):
+        m = RE_ARTIGO.match(completa.lstrip(ABRE_ASPAS + ASPA_RETA + "' "))
+        if m:
             numero = normalizar_artigo(m.group(1), m.group(2))
-            chave = chave_ordem(numero)
 
-            if dentro_de_citacao or chave <= ultima_chave:
+            if abre and dentro_antes:
+                stats["aspas_abertura_dentro_de_bloco"] += 1
+            # Verificação cruzada: o portal marca texto citado também por
+            # <blockquote>. Os dois sinais são independentes; se discordam, é dado
+            # a reportar, e não motivo para escolher um deles em silêncio.
+            if linha.blockquote is not None and linha.blockquote != dentro:
+                stats["discordancia_blockquote"] += 1
+                discordantes.append(numero)
+
+            if dentro:
                 # Artigo citado: texto de outra norma, alterado por este artigo.
                 if atual is not None:
-                    atual["linhas"].append(linha)
+                    _anexar(atual, linha, proprio=False)
                     if numero not in atual["citados"]:
                         atual["citados"].append(numero)
                 else:
                     citados_orfaos += 1
                 continue
 
-            atual = {
-                "numero": numero,
-                "rotulo": linha.split(".")[0].strip(),
-                "hierarquia": list(hierarquia),
-                "linhas": [linha],
-                # Só o texto próprio. As remissões saem daqui: as que aparecem
-                # no texto citado pertencem à norma alterada, não a esta.
-                "linhas_proprias": [linha],
-                "citados": [],
-            }
-            artigos.append(atual)
-            ultima_chave = chave
+            if atual is not None and atual["numero"] == numero and atual["cabecalho_riscado"]:
+                stats["redacoes_anteriores_mescladas"] += 1
+            else:
+                atual = _novo_artigo(numero, hierarquia)
+                artigos.append(atual)
+            atual["cabecalho_riscado"] = _so_riscado(linha)
+            _anexar(atual, linha, proprio=True)
             continue
 
         if atual is not None:
-            atual["linhas"].append(linha)
-            if not dentro_de_citacao:
-                atual["linhas_proprias"].append(linha)
+            _anexar(atual, linha, proprio=not dentro)
+
+    stats["aspas_fechamento_sem_abertura"] = aspas.fechamentos_sem_abertura
+    stats["aspas_estado_final"] = aspas.residuo
 
     if not artigos:
         avisos.append(
@@ -372,6 +690,29 @@ def fatiar(texto: str) -> tuple[list[dict], list[str]]:
             "foram descartadas (provavel cabecalho, ementa ou indice)"
         )
 
+    # Anomalias do documento: reportadas, nunca corrigidas em silêncio.
+    if aspas.residuo:
+        avisos.append(
+            "bloco de aspas ficou aberto ate o fim do documento — o que veio "
+            "depois dele pode ter sido lido como texto citado"
+        )
+    if aspas.fechamentos_sem_abertura:
+        avisos.append(
+            f"{aspas.fechamentos_sem_abertura} aspa(s) de fechamento sem abertura "
+            "na fonte — ignoradas"
+        )
+    if stats["aspas_abertura_dentro_de_bloco"]:
+        avisos.append(
+            f"{stats['aspas_abertura_dentro_de_bloco']} bloco(s) abrem dentro de outro "
+            "bloco — possivel fechamento perdido"
+        )
+    if discordantes:
+        avisos.append(
+            f"aspas e <blockquote> discordam em {len(discordantes)} cabecalho(s): "
+            + ", ".join(discordantes[:10])
+            + " — a classificacao seguiu as aspas"
+        )
+
     # Colisão aqui significa perda de dados na escrita. É erro, não aviso.
     numeros = [a["numero"] for a in artigos]
     if len(numeros) != len(set(numeros)):
@@ -381,7 +722,19 @@ def fatiar(texto: str) -> tuple[list[dict], list[str]]:
             + ", ".join(repetidos)
         )
 
-    return artigos, avisos
+    chaves = [chave_ordem(n) for n in numeros]
+    fora_de_ordem = [
+        f"{numeros[i]} depois de {numeros[i - 1]}"
+        for i in range(1, len(numeros))
+        if chaves[i] < chaves[i - 1]
+    ]
+    if fora_de_ordem:
+        avisos.append(
+            "ERRO artigos proprios fora de ordem — provavel texto de outra norma "
+            "lido como proprio, ou aspas desbalanceadas: " + "; ".join(fora_de_ordem[:10])
+        )
+
+    return artigos, avisos, stats
 
 
 def nome_arquivo(numero: str) -> str:
@@ -393,6 +746,20 @@ def nome_arquivo(numero: str) -> str:
     return nome
 
 
+def _imprimir_estatisticas(stats: dict, prefixo: str = "  ") -> None:
+    """O que o documento tinha de incomum, com números, para o humano conferir."""
+    print(f"{prefixo}linhas com texto riscado: {stats['linhas_com_riscado']}  "
+          f"(redacoes anteriores mescladas ao dispositivo: "
+          f"{stats['redacoes_anteriores_mescladas']})")
+    print(f"{prefixo}aspas: fechamento sem abertura={stats['aspas_fechamento_sem_abertura']}  "
+          f"abertura dentro de bloco={stats['aspas_abertura_dentro_de_bloco']}  "
+          f"saldo final={stats['aspas_estado_final']}")
+    print(f"{prefixo}aspas x <blockquote>: {stats['discordancia_blockquote']} discordancia(s)")
+    print(f"{prefixo}depois do fim do texto (assinatura, anexos): "
+          f"{stats['linhas_apos_o_fim']} linha(s), {stats['anexos_nao_incorporados']} anexo(s) "
+          "NAO incorporados a /normas/ — permanecem em fontes/")
+
+
 def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int:
     slug = fonte["slug"]
     chave = f"{slug}/texto_compilado"
@@ -402,13 +769,12 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
               file=sys.stderr)
         return 1
 
-    caminho = DIR_FONTES.parent / registro["arquivo"]
+    caminho = caminho_fonte(registro)
     if not caminho.exists():
         print(f"[{slug}] arquivo ausente: {caminho}", file=sys.stderr)
         return 1
 
-    texto = html_para_texto(caminho.read_bytes())
-    artigos, avisos = fatiar(texto)
+    artigos, avisos, stats = fatiar(html_para_linhas(caminho.read_bytes()))
 
     erros = [a for a in avisos if a.startswith("ERRO")]
     for aviso in avisos:
@@ -425,12 +791,14 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
 
     proprios = len(artigos)
     citados = sum(len(a["citados"]) for a in artigos)
+    exigir_escopo = exige_escopo_interno(fonte)
     if relatorio:
         faixa = f"{artigos[0]['numero']}..{artigos[-1]['numero']}"
         base_urn = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
         print(f"[{slug}] RELATORIO (nada escrito)")
         print(f"  artigos proprios: {proprios}  (faixa {faixa})")
         print(f"  artigos citados de outras normas: {citados}")
+        _imprimir_estatisticas(stats)
 
         # Lacunas na sequência própria. Um artigo que a norma tem mas que a
         # classificação mandou para "citado" aparece aqui — é o diagnóstico
@@ -458,7 +826,7 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
         total_rem = orfas_rem = 0
         for a in artigos:
             for alvo in extrair_remissoes(
-                "\n".join(a["linhas_proprias"]), base_urn, a["numero"]
+                "\n".join(a["linhas_proprias"]), base_urn, a["numero"], exigir_escopo
             ):
                 total_rem += 1
                 artigo_alvo = alvo.split("!")[0] + "!" + alvo.split("!")[1].split("_")[0]
@@ -485,15 +853,18 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     destino_dir.mkdir(parents=True, exist_ok=True)
 
     for artigo in artigos:
-        corpo_linhas = artigo["linhas"]
-        corpo = "\n\n".join(corpo_linhas)
-        # Texto próprio, sem o que foi citado de outras normas. As remissões e
-        # os conceitos saem daqui: no texto citado eles pertencem à norma
-        # alterada, e resolvê-los no namespace desta criaria ponteiro errado.
+        # Corpo do arquivo: tudo que o portal mostra, o riscado entre ~~ ~~.
+        corpo = "\n\n".join(artigo["linhas"])
+        # Sem o texto riscado: a anotação "(Revogado ...)" e as normas mencionadas
+        # valem para o que está em vigor, não para a redação superada.
+        vigente = "\n\n".join(artigo["linhas_vigentes"])
+        # Texto próprio vigente, sem o que foi citado de outras normas. As
+        # remissões e os conceitos saem daqui: no texto citado eles pertencem à
+        # norma alterada, e resolvê-los no namespace desta criaria ponteiro errado.
         corpo_proprio = "\n\n".join(artigo["linhas_proprias"])
         # group(0): a anotação inteira. findall() devolveria só o grupo de
         # captura ("Redação dada"), perdendo a norma que promoveu a alteração.
-        anotacoes = [re.sub(r"\s+", " ", m.group(0)) for m in RE_ANOTACAO.finditer(corpo)]
+        anotacoes = [re.sub(r"\s+", " ", m.group(0)) for m in RE_ANOTACAO.finditer(vigente)]
         conceitos = [c.strip() for c in RE_CONCEITO.findall(corpo_proprio)]
 
         meta = {
@@ -518,8 +889,10 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
                 "sha256": registro["sha256"],
             },
             "ingerido_em": hoje(),
-            "remete_a": extrair_remissoes(corpo_proprio, base, artigo["numero"]),
-            "remete_a_externo": extrair_externas(corpo),
+            "remete_a": extrair_remissoes(
+                corpo_proprio, base, artigo["numero"], exigir_escopo
+            ),
+            "remete_a_externo": extrair_externas(vigente),
             # Subdivisões do próprio artigo; as do texto citado pertencem à
             # norma alterada.
             "subdivisoes": subdivisoes_de(
@@ -546,6 +919,7 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
           f"(faixa {artigos[0]['numero']}..{artigos[-1]['numero']})")
     print(f"[{slug}] {citados} artigo(s) de outras normas tratados como texto "
           "alterado, nao como dispositivo proprio")
+    _imprimir_estatisticas(stats, prefixo=f"[{slug}] ")
     print(f"[{slug}] ATENCAO: {proprios} dispositivos com revisao_temporal_pendente")
     return 0
 
