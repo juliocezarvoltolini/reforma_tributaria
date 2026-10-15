@@ -50,6 +50,16 @@ fontes:
       - tipo: texto_publicado
         url: "https://www.in.gov.br/en/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-607430757"
         url_verificada: false
+      # Promulgação de partes vetadas (art. 66, § 5º, da Constituição Federal),
+      # o outro ato que o compilado traz depois dos anexos. URL informada pelo
+      # usuário em 2026-10-14 como a republicação de 23/01/2025; o cabeçalho da
+      # página baixada diz "Publicado em: 02/07/2025 | Edição: 122 | Seção: 1 |
+      # Página: 3" e o texto traz os incisos V e X do art. 26.
+      - tipo: texto_publicado_partes_vetadas
+        url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-639344828"
+        url_verificada: false
+      # A republicação citada no rodapé do compilado ("republicado no DOU de
+      # 23.1.2025") ainda não tem URL registrada.
     observacao: >-
       Diploma central de instituição do IBS, da CBS e do Imposto Seletivo.
       Atenção na revisão: dispositivos vetados e vetos posteriormente
