@@ -11,7 +11,9 @@ e o trecho literal) e o que ela resolve:
 
   resolve_pendencias  pendências gerais de uma norma (`norma`) que a leitura fecha;
   regra               uma regra derivada que a leitura aplica — só nas decisões de
-                      IA; a regra continua não aprovada para as decisões de regra.
+                      IA; a regra continua não aprovada para as decisões de regra;
+  trata: vetado       item "(VETADO)" não tem texto e não muda as datas do resto
+                      do artigo (nunca se o caput é vetado).
 
 `revisar_por_regra.py` só usa a IA onde a regra não decidiu nada, e grava
 `revisado_por: ia:<modelo>` com `interpretacoes_ia: [ids]`. A revisão temporal
@@ -94,7 +96,7 @@ def problemas_da_interpretacao(interp: dict, raiz: Path = RAIZ) -> list[str]:
         if not verificar_citacao(citacao, raiz):
             problemas.append(f"interpretação {interp.get('id')!r}: trecho não encontrado em "
                              f"{citacao.get('fonte')!r}: {str(citacao.get('trecho'))[:80]!r}")
-    if not (interp.get("resolve_pendencias") or interp.get("regra")):
+    if not (interp.get("resolve_pendencias") or interp.get("regra") or interp.get("trata")):
         problemas.append(f"interpretação {interp.get('id')!r} não diz o que resolve")
     return problemas
 
@@ -130,6 +132,8 @@ def contexto(interpretacoes: dict, slug: str, bases: dict[str, str]) -> dict:
     for id_, interp in interpretacoes["por_id"].items():
         if interp.get("regra"):
             ctx["regras"][interp["regra"]] = id_
+        if interp.get("trata") == "vetado":
+            ctx["vetado"] = id_
         norma = interp.get("norma")
         for pendencia in interp.get("resolve_pendencias") or []:
             if norma == slug:

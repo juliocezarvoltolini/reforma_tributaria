@@ -633,6 +633,24 @@ def combinar_alteracao(tipo: str, conferida: bool, ato_vig: str | None, ato_efe:
     return {"resultado_se_aprovada": resultado, "proposta": proposta, "motivo": None}
 
 
+RE_VETADO = re.compile(r"\(\s*VETAD[OA]\s*\)", re.IGNORECASE)
+
+
+def vetados_do_artigo(corpo: list[str], urn_base: str, artigo: str) -> dict:
+    """Itens "(VETADO)" do artigo: quantas ocorrências, em que subdivisões, e se o
+    próprio caput é vetado (o artigo inteiro sem texto)."""
+    sem_marca = [linha.replace("~~", "") for linha in corpo]
+    ocorrencias, subdivisoes = 0, []
+    for linha, sub in zip(sem_marca, subdivisao_por_linha(sem_marca, urn_base, artigo)):
+        achadas = len(RE_VETADO.findall(linha))
+        if achadas:
+            ocorrencias += achadas
+            if sub not in subdivisoes:
+                subdivisoes.append(sub)
+    return {"ocorrencias": ocorrencias, "subdivisoes": subdivisoes,
+            "caput_vetado": bool(corpo) and RE_VETADO.search(corpo[0]) is not None}
+
+
 def subdivisao_existe(urn: str, subdivisoes: list[str]) -> bool:
     """A subdivisão que a cláusula nomeia existe no artigo? O caput sempre existe."""
     return urn.endswith("_par0") or urn in subdivisoes
@@ -1133,6 +1151,9 @@ def construir(slug: str, regras: dict | None = None, _com_alteracoes: bool = Tru
             # é decidido por regra.
             "alteracoes_cobrem_as_marcas": bool(alteracoes) and len(alteracoes) == sum(
                 len(RE_ANOTACAO.findall(linha)) for linha in corpo),
+            # Contagens para a leitura dos itens vetados (nível C, temporal/ia.yaml).
+            "marcas_ocorrencias": sum(len(RE_ANOTACAO.findall(linha)) for linha in corpo),
+            "vetados": vetados_do_artigo(corpo, base, n),
             "pendencias": pendencias,
             "revisao": {
                 "decisao": None,  # aceitar | alterar | rejeitar (ver instrucoes_revisao)

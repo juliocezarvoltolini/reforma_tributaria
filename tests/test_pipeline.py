@@ -2113,6 +2113,74 @@ def ia_decisoes():
         checar(not revs and erros, "citação que o texto não tem: erro, nada aplicado")
 
 
+@cenario("nível C: item vetado não tem texto e não muda as datas do resto do artigo")
+def ia_vetado():
+    """Quebra: dar datas a artigo inteiro vetado (caput '(VETADO)'); datar como
+    exceção um item vetado que a lei alteradora incluiu; deixar passar artigo com
+    outra anotação além do VETADO; ou decidir sem a interpretação."""
+    import copy
+
+    import revisar_por_regra as RR
+
+    pv = _pv()
+    u = lambda sub=None: urn_dispositivo(URN_BASE, "3") + (f"_{sub}" if sub else "")  # noqa: E731
+    corpo = ["Art. 3º Caput.", "I - (VETADO);",
+             "§ 1º (VETADO). (Incluído pela Lei Complementar nº 999, de 1900)", "§ 2º Texto."]
+    checar(pv.vetados_do_artigo(corpo, URN_BASE, "3")
+           == {"ocorrencias": 2, "subdivisoes": [u("incI"), u("par1")], "caput_vetado": False},
+           f"vetados por subdivisão (obteve {pv.vetados_do_artigo(corpo, URN_BASE, '3')})")
+    checar(pv.vetados_do_artigo(["Art. 4º (VETADO). Produção de efeitos"], URN_BASE, "4")["caput_vetado"],
+           "caput vetado: o artigo inteiro não tem texto")
+
+    art = urn_dispositivo(URN_EC, "1")
+    so_vetado = _entrada_lc("1", "1930-01-01", pendencias=["redacao_de_outro_ato"])
+    so_vetado.update(alteracoes=[], alteracoes_cobrem_as_marcas=False, marcas_ocorrencias=1,
+                     vetados={"ocorrencias": 1, "subdivisoes": [art + "_incI"], "caput_vetado": False})
+    ctx = {"modelo": "modelo-x", "resolve_pendencias": {}, "regras": {}, "atos": {},
+           "vetado": "iv"}
+
+    def rodar(entrada, ia=ctx):
+        novo, _ = RR.decidir_por_regra(_proposta_para_regra("efeitos_por_inciso", [entrada]),
+                                       {}, "1900-02-01", ia=ia)
+        return novo["dispositivos"][0]["revisao"]
+
+    r = rodar(copy.deepcopy(so_vetado))
+    checar(r["decisao"] == "aceitar" and r["revisado_por"] == "ia:modelo-x"
+           and r["interpretacoes_ia"] == ["iv"], f"só VETADO: decide por IA (obteve {r})")
+    checar(rodar(copy.deepcopy(so_vetado), ia=None)["decisao"] is None,
+           "sem a interpretação: nada")
+    e = copy.deepcopy(so_vetado)
+    e["vetados"]["caput_vetado"] = True
+    checar(rodar(e)["decisao"] is None, "caput vetado: nada")
+    e = copy.deepcopy(so_vetado)
+    e["marcas_ocorrencias"] = 2
+    checar(rodar(e)["decisao"] is None, "outra anotação além do VETADO: nada")
+
+    # VETADO + texto incluído pela lei alteradora, inclusive um item incluído já vetado.
+    incluido = {"vigencia_inicio": "1926-01-14", "efeitos_inicio": "1926-01-14"}
+
+    def alt(sub):
+        return {"subdivisao": sub, "tipo": "incluido", "anotacao": "(Incluído pela ...)",
+                "ato": URN_999 + "!art7", "conferida": True,
+                "ato_vigencia": {"data": "1926-01-14", "fundamento": URN_999 + "!art9"},
+                "ato_efeitos": {"data": "1926-01-14", "fundamento": URN_999 + "!art9_incIII"},
+                "resultado_se_aprovada": incluido, "proposta": incluido, "motivo": None}
+
+    misto = _entrada_lc("1", "1926-01-01", pendencias=["redacao_de_outro_ato"])
+    misto.update(alteracoes=[alt(art + "_par2"), alt(art + "_par1")],
+                 alteracoes_cobrem_as_marcas=False, marcas_ocorrencias=3,
+                 vetados={"ocorrencias": 1, "subdivisoes": [art + "_par1"], "caput_vetado": False})
+    prop = _proposta_para_regra("efeitos_por_inciso", [misto])
+    prop["atos_alteradores"] = [{"slug": "lc-999", "urn": URN_999, "pendencias_gerais": []}]
+    aprov = {"texto-alterado-por-ato-posterior": {"aprovada": True, "aprovada_por": "F",
+                                                  "aprovada_em": "1900-01-01"}}
+    novo, _ = RR.decidir_por_regra(prop, aprov, "1900-02-01", ia=ctx)
+    r = novo["dispositivos"][0]["revisao"]
+    checar(r["decisao"] == "alterar" and r["interpretacoes_ia"] == ["iv"]
+           and [x["urn"] for x in r["excecoes_subdivisao"]] == [art + "_par2"],
+           f"VETADO + incluído: o item vetado (par1) não vira exceção (obteve {r})")
+
+
 @cenario("proposta: termo relativo à publicação só vira data com a regra aprovada")
 def proposta_termo_relativo():
     """Quebra: converter 'quarto mês subsequente' em data sem a regra aprovada, ou

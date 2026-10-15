@@ -298,6 +298,28 @@ def _contexto_ia(ia: dict, regras: dict, gerais: list[dict], atos: list[dict]):
     return regras_ia, gerais_ia, atos_ia, ids_norma, sorted(ids_atos), regras_por_id
 
 
+def _sem_vetado(entrada: dict) -> dict | None:
+    """A entrada lida com a interpretação de item vetado (sem texto, não muda as
+    datas do resto do artigo), ou None se ela não se aplica: caput vetado, ou
+    anotação que não é VETADO nem alteração ligada."""
+    vetados = entrada.get("vetados") or {}
+    if (not vetados.get("ocorrencias") or vetados.get("caput_vetado")
+            or "redacao_de_outro_ato" not in (entrada.get("pendencias") or [])):
+        return None
+    todas = entrada.get("alteracoes") or []
+    if len(todas) + vetados["ocorrencias"] != entrada.get("marcas_ocorrencias"):
+        return None
+    vetadas = set(vetados.get("subdivisoes") or [])
+    nova = copy.deepcopy(entrada)
+    # Item vetado não tem texto: a alteração que o incluiu não vira exceção.
+    nova["alteracoes"] = [a for a in todas if a.get("subdivisao") not in vetadas]
+    if nova["alteracoes"]:
+        nova["alteracoes_cobrem_as_marcas"] = True
+    else:
+        nova["pendencias"] = [p for p in nova["pendencias"] if p != "redacao_de_outro_ato"]
+    return nova
+
+
 def decidir_por_regra(proposta: dict, regras: dict, data: str,
                       aplicadas: dict[str, dict] | None = None,
                       ia: dict | None = None) -> tuple[dict, dict]:
@@ -327,9 +349,12 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str,
         escopo, usadas, alterar = _tentar(copy.deepcopy(entrada), forma, regras, gerais, atos)
         por_ia, ids = False, []
         if escopo is None and ia:
-            escopo, usadas, alterar = _tentar(copy.deepcopy(entrada), forma, regras_ia, gerais_ia,
+            alvo, ids_vetado = entrada, []
+            if ia.get("vetado") and (sem_vetado := _sem_vetado(entrada)) is not None:
+                alvo, ids_vetado = sem_vetado, [ia["vetado"]]
+            escopo, usadas, alterar = _tentar(copy.deepcopy(alvo), forma, regras_ia, gerais_ia,
                                               atos_ia)
-            ids = sorted(set(ids_norma + (ids_atos if alterar else [])
+            ids = sorted(set(ids_norma + (ids_atos if alterar else []) + ids_vetado
                              + [regras_por_id[r] for r in usadas if r in regras_por_id]))
             if escopo is not None and not ids:
                 escopo, usadas, alterar = None, [], None  # nada da IA foi usado

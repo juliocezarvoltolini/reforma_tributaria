@@ -72,3 +72,23 @@ interpretacoes:
         trecho: "III - a partir da sua publicação, em relação aos demais dispositivos."
       - fonte: normas/lc-214-2025/art-0544.md
         trecho: "Esta Lei Complementar entra em vigor na data de sua publicação, produzindo efeitos:"
+
+  - id: item-vetado-sem-texto
+    trata: vetado
+    registrado_em: '2026-10-15'
+    leitura: >-
+      Um item marcado "(VETADO)" no lugar do texto não tem texto normativo: o
+      compilado mostra só o rótulo do dispositivo e a marca do veto. Não há, nele,
+      o que passe a valer ou produzir efeitos, e ele não muda as datas que a
+      cláusula de vigência dá ao resto do artigo. Isso não vale quando o próprio
+      caput é vetado — aí o artigo inteiro não tem texto e fica sem datas — nem
+      quando o item vetado depois foi promulgado (anotação de promulgação de
+      partes vetadas), que é texto de outro ato. Item vetado que a lei alteradora
+      incluiu também não tem texto: não vira exceção com datas.
+    citacoes:
+      - fonte: normas/lc-214-2025/art-0036.md
+        trecho: "§ 2º (VETADO)."
+      - fonte: normas/lc-214-2025/art-0116.md
+        trecho: "§ 5º (VETADO). (Incluído pela Lei Complementar nº 227, de 2026)"
+      - fonte: normas/lc-214-2025/art-0334.md
+        trecho: "Art. 334. (VETADO)."

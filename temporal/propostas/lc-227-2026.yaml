@@ -170,6 +170,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -248,6 +253,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -311,6 +321,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -377,6 +392,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -441,10 +461,16 @@ dispositivos:
   - (VETADO)
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 1
+  vetados:
+    ocorrencias: 1
+    subdivisoes:
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art5_par5
+    caput_vetado: false
   pendencias:
   - redacao_de_outro_ato
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -453,10 +479,15 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: item-vetado-sem-texto, lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - item-vetado-sem-texto
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art6
   artigo: '6'
   vigencia:
@@ -500,6 +531,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -562,6 +598,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -628,6 +669,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -699,6 +745,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -762,6 +813,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -828,6 +884,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -891,6 +952,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -953,6 +1019,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1015,6 +1086,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1077,6 +1153,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1143,6 +1224,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -1206,6 +1292,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1268,6 +1359,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1330,6 +1426,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1392,6 +1493,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1454,6 +1560,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1516,6 +1627,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1578,6 +1694,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1640,6 +1761,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1702,6 +1828,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1764,6 +1895,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1826,6 +1962,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1888,6 +2029,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1950,6 +2096,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2012,6 +2163,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2074,6 +2230,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2136,6 +2297,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2198,6 +2364,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2260,6 +2431,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2322,6 +2498,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2384,6 +2565,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2446,6 +2632,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2512,6 +2703,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -2575,6 +2771,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2637,6 +2838,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2699,6 +2905,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2761,6 +2972,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2823,6 +3039,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2885,6 +3106,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -2947,6 +3173,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3009,6 +3240,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3087,6 +3323,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -3150,6 +3391,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3212,6 +3458,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3274,6 +3525,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3364,6 +3620,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -3461,6 +3722,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - datas_por_subdivisao
   - marcos_proprios
@@ -3530,6 +3796,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -3593,6 +3864,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3655,6 +3931,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3717,6 +3998,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3779,6 +4065,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3841,6 +4132,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3903,6 +4199,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -3973,6 +4274,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4044,6 +4350,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4123,6 +4434,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4186,6 +4502,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -4256,6 +4577,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4319,6 +4645,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -4381,6 +4712,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -4447,6 +4783,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4514,6 +4855,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4577,6 +4923,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -4643,6 +4994,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4710,6 +5066,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4773,6 +5134,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -4839,6 +5205,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -4902,6 +5273,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -4972,6 +5348,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -5040,6 +5421,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - datas_por_subdivisao
   revisao:
@@ -5103,6 +5489,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5165,6 +5556,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5235,6 +5631,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -5306,6 +5707,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -5373,6 +5779,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -5436,6 +5847,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5498,6 +5914,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5560,6 +5981,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5622,6 +6048,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5684,6 +6115,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5746,6 +6182,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5808,6 +6249,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5870,6 +6316,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5932,6 +6383,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -5994,6 +6450,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6056,6 +6517,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6118,6 +6584,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6180,6 +6651,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6242,6 +6718,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6304,6 +6785,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6366,6 +6852,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6428,6 +6919,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6490,6 +6986,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6560,6 +7061,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -6623,6 +7129,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6685,6 +7196,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6747,6 +7263,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6813,6 +7334,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -6876,6 +7402,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -6942,6 +7473,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7005,6 +7541,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -7067,6 +7608,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -7145,6 +7691,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7220,6 +7771,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7283,6 +7839,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -7349,6 +7910,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7412,6 +7978,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -7479,6 +8050,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7569,6 +8145,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7650,6 +8231,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   - evento_relativo
@@ -7747,6 +8333,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7819,6 +8410,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7886,6 +8482,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -7958,6 +8559,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8021,6 +8627,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -8087,6 +8698,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8154,6 +8770,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8221,6 +8842,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8288,6 +8914,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8355,6 +8986,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8422,6 +9058,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8489,6 +9130,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8591,6 +9237,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   - evento_relativo
@@ -8659,6 +9310,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8722,6 +9378,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -8809,6 +9470,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8878,6 +9544,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -8969,6 +9640,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9032,6 +9708,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -9098,6 +9779,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9169,6 +9855,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9232,6 +9923,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -9307,6 +10003,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9375,6 +10076,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9443,6 +10149,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9511,6 +10222,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9584,6 +10300,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9664,6 +10385,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9732,6 +10458,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -9795,6 +10526,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -9857,6 +10593,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -9919,6 +10660,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -9981,6 +10727,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10043,6 +10794,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10105,6 +10861,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10167,6 +10928,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10229,6 +10995,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10291,6 +11062,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10357,6 +11133,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -10420,6 +11201,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10482,6 +11268,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10544,6 +11335,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10606,6 +11402,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10668,6 +11469,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10730,6 +11536,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10792,6 +11603,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10854,6 +11670,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10916,6 +11737,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -10985,6 +11811,12 @@ dispositivos:
   - (VETADO)
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 2
+  vetados:
+    ocorrencias: 1
+    subdivisoes:
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art165_parU
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   - redacao_de_outro_ato
@@ -11047,6 +11879,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11111,6 +11948,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11179,6 +12021,11 @@ dispositivos:
   - (revogado)
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 2
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   - redacao_de_outro_ato
@@ -11230,7 +12077,7 @@ dispositivos:
       - '2026-01-14'
       fonte: dou
     vigencia_inicio: '2026-01-14'
-    efeitos_inicio: '2026-01-14'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -11243,6 +12090,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11308,6 +12160,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11372,6 +12229,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11437,6 +12299,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11509,6 +12376,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11701,6 +12573,19 @@ dispositivos:
   - '(Vigência: 1º/1/2032 até 31/12/2032)'
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 44
+  vetados:
+    ocorrencias: 11
+    subdivisoes:
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par3
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par4_incIII
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par5
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par4_incI
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par8
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par9
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par10
+    - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174_par2_incIII
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   - redacao_de_outro_ato
@@ -11762,6 +12647,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11827,6 +12717,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11892,6 +12787,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -11956,6 +12856,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -12019,6 +12924,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -12085,6 +12995,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -12158,6 +13073,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   - revogacao_expressa
@@ -12233,6 +13153,11 @@ dispositivos:
   marcas_de_outro_ato: []
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
+  vetados:
+    ocorrencias: 0
+    subdivisoes: []
+    caput_vetado: false
   pendencias:
   - marcos_proprios
   - evento_relativo

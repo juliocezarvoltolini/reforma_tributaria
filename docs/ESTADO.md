@@ -331,6 +331,21 @@ para `Lcp214.htm#art493a` concordam, e isso fica em aviso. As duas leis têm
 `remissoes: so_escopo_afirmado` no catálogo: são leis de alteração, e "art. N"
 sem qualificador nelas é, quase sempre, da norma alterada.
 
+**Item vetado (nível C, 2026-10-15).** Terceira interpretação de IA,
+`item-vetado-sem-texto`: item "(VETADO)" não tem texto e não muda as datas do
+resto do artigo. Não vale para caput vetado (LC 214, arts. 334, 494, 495 e 536:
+o artigo inteiro sem texto fica sem datas), nem com promulgação de partes
+vetadas (art. 26); item vetado incluído pela lei alteradora não vira exceção.
+Mais 17 decisões de IA; pendentes: 89 de 802.
+
+**Controverso, não decidido: LC 214, art. 544, III (redação dada pela LC
+227).** Os arts. 168–171, 309–315, 444 e 462 só estão na redação nova do inciso
+III (efeitos em 1º/01/2027). Pela redação anterior, os que já existiam caíam em
+"demais dispositivos" (1º/01/2026), e a LC 227 é de 14/01/2026. Entre 1º e
+14/01/2026 eles podem ter produzido efeitos pela redação anterior, e o modelo
+guarda uma data só de início de efeitos. Gravar 1º/01/2027 esconderia essa
+janela; por isso os efeitos ficam pendentes, só com a vigência decidida.
+
 **Nível C aplicado em 2026-10-15** (autorizado pelo usuário, que declarou não
 poder aprovar as regras derivadas). Duas interpretações de IA em
 `temporal/ia.yaml`, com 13 citações literais conferidas:
