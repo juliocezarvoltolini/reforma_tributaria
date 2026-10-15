@@ -10,6 +10,7 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import re
 import json
 import sys
 from collections import defaultdict
@@ -22,12 +23,16 @@ from comum import (
     DIR_NORMAS,
     MANIFEST,
     MARCA_NAO_VERIFICADO,
+    DIR_TEMPORAL,
     STATUS_VALIDOS,
     arquivos_norma,
+    caminho_fonte,
     ler_frontmatter,
     para_data,
     sha256_arquivo,
 )
+from alteracoes import conferir
+from revisao_temporal import carregar_revisoes, problemas_no_dispositivo, revisoes_nao_aplicadas
 
 erros: list[str] = []
 avisos: list[str] = []
@@ -47,9 +52,13 @@ def rel(caminho: Path) -> str:
 
 # ---------------------------------------------------------------------------
 
-def validar_dispositivos() -> list[dict]:
+def validar_dispositivos(corpos: dict[str, str] | None = None) -> list[dict]:
+    """Valida cada dispositivo. `corpos`, se dado, recebe {urn: corpo}."""
     metas: list[dict] = []
     por_urn: dict[str, list[str]] = defaultdict(list)
+    # O mesmo aviso em centenas de dispositivos da mesma norma vira uma linha só:
+    # repetido, ele empurraria para fora da tela os avisos que importam.
+    avisos_temporais: dict[str, list[str]] = defaultdict(list)
 
     for caminho in arquivos_norma():
         try:
@@ -90,8 +99,18 @@ def validar_dispositivos() -> list[dict]:
         if ei and ef and ef <= ei:
             erro(f"{rel(caminho)}: efeitos_fim ({ef}) nao e posterior a efeitos_inicio ({ei})")
 
+        # data do ato x publicação, precisão de ano, exceções por subdivisão e
+        # coerência de um dispositivo marcado como revisado
+        erros_t, avisos_t = problemas_no_dispositivo(meta)
+        for msg in erros_t:
+            erro(f"{rel(caminho)}: {msg}")
+        for msg in avisos_t:
+            avisos_temporais[msg].append(rel(caminho))
+
         if meta.get("urn"):
             por_urn[meta["urn"]].append(rel(caminho))
+            if corpos is not None:
+                corpos[meta["urn"]] = corpo
 
         metas.append(meta)
 
@@ -99,27 +118,74 @@ def validar_dispositivos() -> list[dict]:
         if len(caminhos) > 1:
             erro(f"URN duplicada em {len(caminhos)} arquivos: {urn} -> {', '.join(caminhos)}")
 
+    for msg, caminhos in sorted(avisos_temporais.items()):
+        exemplo = caminhos[0] if len(caminhos) == 1 else f"{caminhos[0]} e mais {len(caminhos) - 1}"
+        aviso(f"{len(caminhos)} dispositivo(s): {msg} ({exemplo})")
+
     return metas
 
 
+LIMITE_ORFAS = 0.25  # acima disto, a extração está quebrada, não é ruído
+
+
 def validar_remissoes(metas: list[dict]) -> None:
-    """Remissão órfã dentro de norma já ingerida é erro; para norma ainda não
-    ingerida é apenas aviso — a base não finge cobrir o que não cobre."""
+    """Remissão órfã é sintoma, não necessariamente defeito.
+
+    Um ponteiro quebrado falha seguro: quem o segue não encontra nada. O caso
+    perigoso é o ponteiro ERRADO — apontar para um dispositivo que existe mas
+    não é o referido — e esse é evitado na extração, que só resolve remissão
+    quando o escopo é internamente afirmado (ver fatiar.remissao_externa).
+
+    Por isso aqui o relato é agregado: órfãs viram aviso com contagem, e só
+    viram erro quando a proporção indica que a extração deixou de funcionar.
+    """
     existentes = {m["urn"] for m in metas if m.get("urn")}
     normas_ingeridas = {u.split("!")[0] for u in existentes}
 
+    total = 0
+    orfas: dict[str, list[str]] = defaultdict(list)
+    fora_da_base = 0
+
     for meta in metas:
         for alvo in meta.get("remete_a") or []:
+            total += 1
             if alvo in existentes:
                 continue
             # subdivisão (par/inc/ali) resolve para o artigo que a contém
-            artigo = alvo.split("!")[0] + "!" + alvo.split("!")[1].split("_")[0]
+            partes = alvo.split("!")
+            artigo = partes[0] + "!" + partes[1].split("_")[0] if len(partes) > 1 else alvo
             if artigo in existentes:
                 continue
-            if alvo.split("!")[0] in normas_ingeridas:
-                erro(f"{meta['urn']}: remissao orfa para dispositivo inexistente: {alvo}")
+            if partes[0] in normas_ingeridas:
+                orfas[meta["urn"]].append(alvo)
             else:
-                aviso(f"{meta['urn']}: remissao para norma nao ingerida: {alvo}")
+                fora_da_base += 1
+
+    if fora_da_base:
+        aviso(f"{fora_da_base} remissao(oes) para norma ainda nao ingerida")
+
+    if not orfas:
+        return
+
+    quantidade = sum(len(v) for v in orfas.values())
+    proporcao = quantidade / total if total else 0
+    resumo = (
+        f"{quantidade} de {total} remissoes ({proporcao:.0%}) apontam para "
+        f"dispositivo inexistente em norma ja ingerida, a partir de "
+        f"{len(orfas)} artigo(s)"
+    )
+
+    piores = sorted(orfas.items(), key=lambda kv: -len(kv[1]))[:5]
+    detalhe = "; ".join(f"{urn.split('!')[-1]}: {len(alvos)}" for urn, alvos in piores)
+
+    if proporcao > LIMITE_ORFAS:
+        erro(
+            f"{resumo}. Concentracao: {detalhe}. "
+            "Proporcao alta indica fatiamento ou extracao quebrados — "
+            "rode 'fatiar.py --relatorio' e confira a faixa de artigos proprios."
+        )
+    else:
+        aviso(f"{resumo}. Concentracao: {detalhe}")
 
 
 def validar_hashes() -> None:
@@ -128,7 +194,7 @@ def validar_hashes() -> None:
         return
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     for chave, registro in manifest.get("documentos", {}).items():
-        caminho = DIR_FONTES.parent / registro["arquivo"]
+        caminho = caminho_fonte(registro)
         if not caminho.exists():
             erro(f"manifest {chave}: arquivo arquivado ausente ({registro['arquivo']})")
             continue
@@ -163,14 +229,127 @@ def validar_interpretacoes() -> None:
             erro(f"{rel(caminho)}: grau de confianca invalido: {meta.get('confianca')!r}")
 
 
+def validar_revisoes_temporais(metas: list[dict]) -> None:
+    """Revisão humana em temporal/propostas/ coerente, e já refletida em normas/.
+
+    Decisão tomada e não aplicada é erro: a base responderia com a data
+    provisória enquanto o revisor acredita que a correção está em vigor.
+    """
+    pasta = DIR_TEMPORAL / "propostas"
+    if not pasta.exists():
+        return
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
+    for caminho in sorted(pasta.glob("*.yaml")):
+        slug = caminho.stem
+        registro = (manifest.get("documentos") or {}).get(f"{slug}/texto_compilado")
+        if not registro:
+            aviso(f"temporal/propostas/{caminho.name}: norma sem fonte no manifest")
+            continue
+        da_norma = [m for m in metas if m.get("norma_slug") == slug]
+        revisoes, erros_rev = carregar_revisoes(
+            caminho, registro["sha256"], {m["urn"] for m in da_norma})
+        for msg in erros_rev:
+            erro(f"temporal/propostas/{caminho.name}: {msg}")
+        for msg in revisoes_nao_aplicadas(revisoes, da_norma):
+            erro(f"temporal/propostas/{caminho.name}: {msg}")
+
+
+def resumo_pendencias(metas: list[dict]) -> dict:
+    """Quantos dispositivos estão todo provisórios, quantos têm só um eixo decidido,
+    e quem decidiu o que foi decidido (PREMISSAS.md §3.4)."""
+    r = {"total": len(metas), "tudo_provisorio": 0, "falta_efeitos": 0, "falta_vigencia": 0,
+         "por_regra": 0, "por_ia": 0, "por_pessoa": 0}
+    for m in metas:
+        if m.get("extracao") != "revisada":
+            r["tudo_provisorio"] += 1
+            continue
+        eixos = set(m.get("eixos_revisados") or ["vigencia", "efeitos"])
+        if eixos == {"vigencia"}:
+            r["falta_efeitos"] += 1
+        elif eixos == {"efeitos"}:
+            r["falta_vigencia"] += 1
+        por = str(m.get("revisado_por") or "")
+        r["por_regra" if por.startswith("regra:") else "por_ia" if por.startswith("ia:")
+          else "por_pessoa"] += 1
+    return r
+
+
 def relatar_pendencias(metas: list[dict]) -> None:
-    pendentes = [m for m in metas if m.get("revisao_temporal_pendente")]
+    r = resumo_pendencias(metas)
+    pendentes = r["tudo_provisorio"] + r["falta_efeitos"] + r["falta_vigencia"]
     if pendentes:
         aviso(
-            f"{len(pendentes)} de {len(metas)} dispositivos com "
-            "revisao_temporal_pendente: vigencia e eficacia ainda sao a data de "
-            "publicacao. Revisar a clausula de vigencia antes de usar em producao."
+            f"{pendentes} de {r['total']} dispositivos com revisao_temporal_pendente: "
+            f"{r['tudo_provisorio']} com vigencia e eficacia provisorias (primeira publicacao, "
+            f"ou data do ato); {r['falta_efeitos']} so com a vigencia decidida; "
+            f"{r['falta_vigencia']} so com os efeitos decididos. O eixo nao decidido e "
+            "provisorio: revisar antes de usar em producao."
         )
+    if r["por_regra"] or r["por_ia"] or r["por_pessoa"]:
+        print(f"  decisoes temporais aplicadas: {r['por_regra']} por regra, {r['por_ia']} por IA "
+              f"(nao equivale a revisao humana), {r['por_pessoa']} por pessoa")
+    nao_confirmadas = [m for m in metas
+                       if isinstance(m.get("publicacao"), dict)
+                       and m["publicacao"].get("fonte") == "rodape_compilado"]
+    if nao_confirmadas:
+        aviso(
+            f"{len(nao_confirmadas)} de {len(metas)} dispositivos com a data de publicacao "
+            "lida do rodape do texto compilado, nao confirmada no DOU (PREMISSAS.md §1.4)."
+        )
+
+
+RE_NUMERO_DA_URN = re.compile(r"!art([^_!]+)$")
+
+
+def conferir_alteracoes(itens: list[tuple[dict, str]]) -> dict:
+    """Cada anotação ligada a um artigo alterador (`alterado_por`) é conferida no
+    texto dele, que é outra fonte: ele cita, ou revoga, o artigo anotado?"""
+    por_urn = {meta.get("urn"): (meta, corpo) for meta, corpo in itens}
+    r = {"confirmadas": 0, "sem_ato": 0, "nao_confirmadas": [], "alterador_ausente": [],
+         "isoladas_nao_confirmadas": []}
+    for meta, _ in itens:
+        m = RE_NUMERO_DA_URN.search(meta.get("urn") or "")
+        nome = (meta.get("norma") or "").split(",")[0].strip()
+        for alteracao in meta.get("alterado_por") or []:
+            if not alteracao.get("ato"):
+                r["sem_ato"] += 1
+                continue
+            alvo = por_urn.get(alteracao["ato"])
+            if alvo is None:
+                r["alterador_ausente"].append(alteracao["ato"])
+            elif m and conferir(m.group(1), nome, *alvo):
+                r["confirmadas"] += 1
+            elif alteracao.get("isolada"):
+                # Anotação sozinha na linha: pode ser de um título inserido que
+                # caiu neste artigo (docs/ESTADO.md). Contada à parte.
+                r["isoladas_nao_confirmadas"].append(alteracao["ato"])
+            else:
+                r["nao_confirmadas"].append(alteracao["ato"])
+    return r
+
+
+def relatar_alteracoes(metas: list[dict], corpos: dict[str, str]) -> None:
+    r = conferir_alteracoes([(m, corpos.get(m.get("urn"), "")) for m in metas])
+    total = (r["confirmadas"] + r["sem_ato"] + len(r["nao_confirmadas"])
+             + len(r["alterador_ausente"]) + len(r["isoladas_nao_confirmadas"]))
+    if total:
+        print(f"  anotacoes ligadas ao ato alterador: {r['confirmadas']} confirmadas no texto dele, "
+              f"{len(r['nao_confirmadas'])} nao confirmadas, "
+              f"{len(r['isoladas_nao_confirmadas'])} isoladas nao confirmadas, "
+              f"{len(r['alterador_ausente'])} com alterador fora da base, "
+              f"{r['sem_ato']} sem ato resolvido")
+    if r["nao_confirmadas"]:
+        exemplos = sorted(set(r["nao_confirmadas"]))[:5]
+        aviso(f"{len(r['nao_confirmadas'])} anotacao(oes) ligada(s) a artigo alterador que nao "
+              f"confirma a alteracao no proprio texto: {', '.join(exemplos)}")
+    if r["isoladas_nao_confirmadas"]:
+        aviso(f"{len(r['isoladas_nao_confirmadas'])} anotacao(oes) sozinha(s) na linha, nao "
+              "confirmada(s) pelo alterador: provavelmente de titulo inserido que caiu no "
+              "artigo anterior (docs/ESTADO.md); o artigo continua com a pendencia")
+    if r["alterador_ausente"]:
+        exemplos = sorted(set(r["alterador_ausente"]))[:5]
+        aviso(f"{len(r['alterador_ausente'])} anotacao(oes) ligada(s) a artigo que nao esta na "
+              f"base: {', '.join(exemplos)}")
 
 
 def main() -> int:
@@ -178,19 +357,30 @@ def main() -> int:
     ap.add_argument("--estrito", action="store_true", help="avisos tambem falham")
     args = ap.parse_args()
 
-    metas = validar_dispositivos()
+    corpos: dict[str, str] = {}
+    metas = validar_dispositivos(corpos)
     validar_remissoes(metas)
     validar_hashes()
     validar_interpretacoes()
+    validar_revisoes_temporais(metas)
     relatar_pendencias(metas)
+    relatar_alteracoes(metas, corpos)
 
     if not metas:
         aviso("nenhum dispositivo em /normas/ — base vazia")
 
-    for msg in avisos:
+    # Enxurrada de mensagens é inútil: esconde o que importa e não cabe na
+    # tela. Mostra as primeiras e diz quantas sobraram.
+    LIMITE = 25
+    for msg in avisos[:LIMITE]:
         print(f"AVISO  {msg}")
-    for msg in erros:
+    if len(avisos) > LIMITE:
+        print(f"AVISO  ... e mais {len(avisos) - LIMITE} aviso(s)")
+
+    for msg in erros[:LIMITE]:
         print(f"ERRO   {msg}", file=sys.stderr)
+    if len(erros) > LIMITE:
+        print(f"ERRO   ... e mais {len(erros) - LIMITE} erro(s)", file=sys.stderr)
 
     print(f"\n{len(metas)} dispositivo(s) validado(s) — "
           f"{len(erros)} erro(s), {len(avisos)} aviso(s)")

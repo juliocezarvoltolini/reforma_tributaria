@@ -18,6 +18,7 @@ from comum import (
     DIR_INDICES,
     RAIZ,
     arquivos_norma,
+    gravar_texto,
     ler_frontmatter,
 )
 
@@ -26,9 +27,9 @@ GLOSSARIO = RAIZ / "glossario" / "vocabulario.yaml"
 
 def gravar(nome: str, dados) -> None:
     DIR_INDICES.mkdir(parents=True, exist_ok=True)
-    (DIR_INDICES / nome).write_text(
+    gravar_texto(
+        DIR_INDICES / nome,
         json.dumps(dados, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
     )
     print(f"  indices/{nome}")
 
@@ -60,15 +61,20 @@ def main() -> int:
     gravar("remissoes.json", remissoes)
 
     # -- temporal: resolve "estado em D" por filtro, não por semântica -------
+    # Valores como estão no front-matter: null continua null. str() gravava a
+    # string "None", que um leitor do índice tomaria por valor.
     temporal = {
         meta["urn"]: {
             "dispositivo": meta["dispositivo"],
             "norma": meta.get("norma_slug"),
-            "publicacao": str(meta.get("publicacao")),
-            "vigencia_inicio": str(meta.get("vigencia_inicio")),
-            "vigencia_fim": str(meta.get("vigencia_fim")),
-            "efeitos_inicio": str(meta.get("efeitos_inicio")),
-            "efeitos_fim": str(meta.get("efeitos_fim")),
+            "data_ato": meta.get("data_ato"),
+            "publicacao": meta.get("publicacao"),
+            "vigencia_inicio": meta.get("vigencia_inicio"),
+            "vigencia_fim": meta.get("vigencia_fim"),
+            "efeitos_inicio": meta.get("efeitos_inicio"),
+            "efeitos_fim": meta.get("efeitos_fim"),
+            "precisao": meta.get("precisao") or {},
+            "excecoes_subdivisao": meta.get("excecoes_subdivisao") or [],
             "revisao_temporal_pendente": bool(meta.get("revisao_temporal_pendente")),
         }
         for _, meta in dispositivos

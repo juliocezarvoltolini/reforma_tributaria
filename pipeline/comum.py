@@ -10,10 +10,21 @@ from __future__ import annotations
 import datetime as _dt
 import hashlib
 import re
+import sys
 import unicodedata
 from pathlib import Path
 
 import yaml
+
+# No Windows, a saída usa a codepage local (cp1252) quando redirecionada, e
+# imprimir "§", "—" ou "→" levanta UnicodeEncodeError — o texto legal é cheio
+# desses caracteres. Até o UTF-8 virar padrão (PEP 686, Python 3.15), força os
+# fluxos. Importado por todos os scripts do pipeline, então cobre todos eles.
+for _fluxo in (sys.stdout, sys.stderr):
+    try:
+        _fluxo.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError, OSError):
+        pass
 
 RAIZ = Path(__file__).resolve().parent.parent
 
@@ -33,6 +44,7 @@ CAMPOS_OBRIGATORIOS = (
     "norma_slug",
     "dispositivo",
     "camada",
+    "data_ato",
     "publicacao",
     "vigencia_inicio",
     "efeitos_inicio",
@@ -41,7 +53,10 @@ CAMPOS_OBRIGATORIOS = (
     "ingerido_em",
 )
 
-STATUS_VALIDOS = {"vigente", "futuro", "revogado", "pendente_regulamentacao"}
+# Os estados que status_em() calcula, mais o de regulamentação pendente.
+# 'vigente_sem_efeitos' e 'sem_efeitos' existem porque vigência não é eficácia.
+STATUS_VALIDOS = {"vigente", "vigente_sem_efeitos", "sem_efeitos", "futuro", "revogado",
+                  "pendente_regulamentacao"}
 
 # Marca que impede a promoção acidental de conteúdo não verificado para a
 # camada 1. A validação falha se encontrar isto em /normas/.
@@ -98,12 +113,34 @@ def ler_frontmatter(caminho: Path) -> tuple[dict, str]:
     return meta, partes[2].lstrip("\n")
 
 
+def arquivo_posix(arquivo: str) -> str:
+    """Caminho do manifest com '/'. Gerado no Windows, o manifest traz '\\\\'; no
+    Linux isso seria um único nome de arquivo inexistente."""
+    return arquivo.replace("\\", "/")
+
+
+def caminho_fonte(registro: dict) -> Path:
+    """Arquivo arquivado de um registro do manifest, resolvido a partir da raiz."""
+    return RAIZ / arquivo_posix(registro["arquivo"])
+
+
+def gravar_texto(caminho: Path, conteudo: str) -> None:
+    """Grava UTF-8 com fim de linha LF em qualquer plataforma.
+
+    `Path.write_text` traduz "\\n" para "\\r\\n" no Windows. Os arquivos gerados
+    são commitados e comparados byte a byte (`git diff --quiet -- indices/`), então
+    a mesma entrada tem de produzir os mesmos bytes no Windows, no Linux e na CI.
+    """
+    with open(caminho, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(conteudo)
+
+
 def escrever_frontmatter(caminho: Path, meta: dict, corpo: str) -> None:
     caminho.parent.mkdir(parents=True, exist_ok=True)
     bloco = yaml.safe_dump(
         meta, allow_unicode=True, sort_keys=False, default_flow_style=False
     )
-    caminho.write_text(f"---\n{bloco}---\n\n{corpo.rstrip()}\n", encoding="utf-8")
+    gravar_texto(caminho, f"---\n{bloco}---\n\n{corpo.rstrip()}\n")
 
 
 def arquivos_norma(slug: str | None = None):

@@ -27,6 +27,59 @@ ROTULO = {
 }
 
 
+FORA_DE_VIGOR = {"futuro", "revogado", "sem_efeitos"}
+
+
+def _datas_com_precisao_de_ano(item: dict) -> list[tuple[str, _dt.date]]:
+    precisao = item.get("precisao") or {}
+    saida = []
+    for campo, valor in precisao.items():
+        data = para_data(item.get(campo))
+        if valor == "ano" and data is not None:
+            saida.append((campo, data))
+    return saida
+
+
+def incertezas(meta: dict, referencia: _dt.date) -> list[str]:
+    """Avisos para datas de precisão de ano que caem no ano consultado.
+
+    "Em 2027" não diz o dia. A base grava 1º de janeiro por convenção; dentro do
+    ano, o estado calculado pode estar errado e quem consulta precisa saber.
+    """
+    avisos = []
+    for item in [meta, *(meta.get("excecoes_subdivisao") or [])]:
+        rotulo = "" if item is meta else f" ({item.get('urn', '').split('!')[-1]})"
+        for campo, data in _datas_com_precisao_de_ano(item):
+            if data.year == referencia.year:
+                avisos.append(f"{campo}{rotulo} tem precisao de ANO ({data.year}): o texto "
+                              f"nao diz o dia, e o estado em {referencia} e incerto")
+    return avisos
+
+
+def excecoes_na_data(meta: dict, referencia: _dt.date) -> list[tuple[str, str]]:
+    """(urn, estado) de cada subdivisão com datas próprias. O que a exceção não
+    diz herda do artigo."""
+    saida = []
+    for exc in meta.get("excecoes_subdivisao") or []:
+        datas = {c: exc.get(c, meta.get(c)) for c in
+                 ("vigencia_inicio", "vigencia_fim", "efeitos_inicio", "efeitos_fim")}
+        saida.append((exc["urn"], status_em(datas, referencia)))
+    return saida
+
+
+def relevante_na_data(meta: dict, referencia: _dt.date) -> bool:
+    """O dispositivo entra no resultado da consulta nesta data?
+
+    Não omite o que é incerto (data de precisão de ano no ano consultado), nem o
+    artigo que, fora de vigor, tem uma subdivisão em vigor.
+    """
+    if status_em(meta, referencia) not in FORA_DE_VIGOR:
+        return True
+    if incertezas(meta, referencia):
+        return True
+    return any(estado not in FORA_DE_VIGOR for _, estado in excecoes_na_data(meta, referencia))
+
+
 def normalizar(texto: str) -> str:
     norm = unicodedata.normalize("NFKD", texto.lower())
     return "".join(c for c in norm if not unicodedata.combining(c))
@@ -42,6 +95,33 @@ def carregar() -> list[tuple[dict, str]]:
     return itens
 
 
+def origem_das_datas(meta: dict) -> list[str]:
+    """Quem fixou cada eixo temporal e qual continua provisório (PREMISSAS.md §3.4).
+
+    Decisão de regra e registro de IA não são revisão humana e não aparecem como tal.
+    """
+    eixos_todos = ["vigencia", "efeitos"]
+    if meta.get("extracao") != "revisada":
+        return ["vigencia e efeitos PROVISORIOS (revisao_temporal_pendente): datas da primeira "
+                "publicacao, ou do ato. Nao usar para decisao sem revisar a fonte."]
+    eixos = [e for e in eixos_todos if e in (meta.get("eixos_revisados") or eixos_todos)]
+    por = str(meta.get("revisado_por") or "")
+    if por.startswith("regra:"):
+        quem = f"fixados por regra ({por.removeprefix('regra:')}), sem leitura humana,"
+    elif por.startswith("ia:"):
+        ids = ", ".join(meta.get("interpretacoes_ia") or []) or "?"
+        quem = (f"propostos por IA ({por.removeprefix('ia:')}; interpretacoes: {ids}, ver "
+                "temporal/ia.yaml) — NAO equivale a revisao humana —")
+    else:
+        quem = f"revisados por {por}"
+    linhas = [f"{' e '.join(eixos)} {quem} em {meta.get('revisado_em')}"]
+    faltam = [e for e in eixos_todos if e not in eixos]
+    if faltam:
+        linhas.append(f"{' e '.join(faltam)} PROVISORIOS: ainda nao revisados. Nao usar para "
+                      "decisao sem revisar a fonte.")
+    return linhas
+
+
 def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None) -> None:
     estado = status_em(meta, referencia)
     print(f"\n{'=' * 72}")
@@ -50,9 +130,23 @@ def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None) -
     print(f"Estado em {referencia}: {ROTULO.get(estado, estado)}")
     print(f"  vigencia: {meta.get('vigencia_inicio')} -> {meta.get('vigencia_fim') or 'sem termo'}")
     print(f"  efeitos:  {meta.get('efeitos_inicio')} -> {meta.get('efeitos_fim') or 'sem termo'}")
-    if meta.get("revisao_temporal_pendente"):
-        print("  ATENCAO: revisao_temporal_pendente — datas provisorias, "
-              "iguais a publicacao. Nao usar para decisao sem revisar a fonte.")
+    pub = meta.get("publicacao")
+    if isinstance(pub, dict):
+        origem = {"dou": "DOU", "rodape_compilado": "rodape do compilado, NAO confirmada no DOU"}
+        print(f"  ato: {meta.get('data_ato')}   publicacao: {', '.join(pub.get('datas') or []) or 'nao localizada'}"
+              f" ({origem.get(pub.get('fonte'), '-')})")
+    for aviso in incertezas(meta, referencia):
+        print(f"  ATENCAO: {aviso}")
+    for urn, estado_exc in excecoes_na_data(meta, referencia):
+        print(f"  subdivisao com datas proprias: {urn.split('!')[-1]} — "
+              f"{ROTULO.get(estado_exc, estado_exc)}")
+    fundamento = meta.get("fundamento_temporal") or {}
+    if fundamento:
+        print(f"  fundamento temporal: vigencia {fundamento.get('vigencia')}; "
+              f"efeitos {fundamento.get('efeitos')}")
+    for linha in origem_das_datas(meta):
+        alerta = "PROVISORI" in linha or "NAO equivale" in linha
+        print(f"  {'ATENCAO' if alerta else 'origem das datas'}: {linha}")
     if meta.get("hierarquia"):
         print(f"  contexto: {' > '.join(meta['hierarquia'])}")
     print(f"  fonte: {meta['fonte']['url']} (acesso {meta['fonte']['acesso']})")
@@ -113,10 +207,7 @@ def main() -> int:
 
     if not args.incluir_nao_vigentes:
         antes = len(resultados)
-        resultados = [
-            r for r in resultados
-            if status_em(r[0], referencia) not in {"futuro", "revogado", "sem_efeitos"}
-        ]
+        resultados = [r for r in resultados if relevante_na_data(r[0], referencia)]
         filtrados = antes - len(resultados)
         if filtrados:
             print(f"({filtrados} dispositivo(s) omitido(s) por nao estarem em vigor "
