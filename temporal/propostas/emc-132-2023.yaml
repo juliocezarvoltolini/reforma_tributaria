@@ -276,7 +276,7 @@ dispositivos:
       datas:
       - '2023-12-21'
       fonte: dou
-    vigencia_inicio: '2023-12-21'
+    vigencia_inicio: '2027-01-01'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:
@@ -336,7 +336,7 @@ dispositivos:
       datas:
       - '2023-12-21'
       fonte: dou
-    vigencia_inicio: '2023-12-21'
+    vigencia_inicio: '2033-01-01'
     efeitos_inicio: '2023-12-21'
   marcos_proprios: []
   texto_inserido:

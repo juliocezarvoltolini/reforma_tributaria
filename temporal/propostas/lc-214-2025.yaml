@@ -447,24 +447,14 @@ clausula_de_vigencia:
     motivo: null
   artigos_inexistentes: []
 pendencias_gerais:
-- id: rodape_cita_publicacao_nao_confirmada
-  descricao: O rodapé do texto compilado cita publicação em 2025-01-23, que a página do DOU arquivada não confirma. Pode ser republicação de parte do ato; arquivar essa edição do DOU antes de usar a data.
+- id: republicacao_sem_artigo
+  regra: republicacao-sem-artigo
+  descricao: A página do DOU de 2025-01-23 republica só o(s) Anexo(s) XXIII, nenhum artigo. Que a publicação dos artigos continua a original é a regra derivada 'republicacao-sem-artigo', não aprovada em temporal/regras.yaml. Até lá, nada que dependa da data de publicação é decidido por regra.
+  nota: '(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.'
 - id: outro_ato_no_compilado
   descricao: O compilado traz, depois do texto da norma, outro bloco assinado (Brasília, 1º de julho de 2025; 204º da Independência e 137º da República.) com rodapé próprio (Este texto não substitui o publicado no DOU de 2.7.2025.). É outro ato publicado em outra data; os dispositivos que ele trouxe podem ter vigência própria. Pelo texto do bloco, ele traz partes dos arts. 26.
   artigos:
   - '26'
-- id: regra_derivada_nao_aprovada
-  regra: primeiro-dia-do-mes-subsequente
-  fundamento:
-  - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incI
-  artigos:
-  - '537'
-  - '538'
-  - '539'
-  - '540'
-  resultado_se_aprovada:
-  - '2025-05-01'
-  descricao: O termo de urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incI só vira data pela regra 'primeiro-dia-do-mes-subsequente', que não está aprovada em temporal/regras.yaml. Aprovada, ela daria 2025-05-01 para 4 artigo(s). Até lá, sem data.
 decisoes_necessarias:
 - id: norma_alterada_nao_ingerida
   pergunta: Os artigos 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 537, 538, 539 inserem texto em outra norma (Constituição e/ou ADCT), que não está ingerida. A vigência do artigo desta norma é a da cláusula; quando o texto inserido produz efeitos depende do próprio texto inserido. Ingerir a norma alterada, ou registrar a pendência em /lacunas/?
@@ -518,7 +508,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -574,7 +564,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -932,7 +922,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -1082,7 +1072,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -1138,7 +1128,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -1454,7 +1444,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -1510,7 +1500,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -1566,7 +1556,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -1685,7 +1675,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -1741,7 +1731,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art18_incI
     tipos:
@@ -1893,7 +1883,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art20_par1_incI
     tipos:
@@ -1958,7 +1948,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -2156,7 +2146,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -2212,7 +2202,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -2268,7 +2258,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -2502,7 +2492,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -2731,7 +2721,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -3145,7 +3135,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -3263,7 +3253,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -3319,7 +3309,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -3375,7 +3365,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art39_par3
     tipos:
@@ -3469,7 +3459,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art40
     tipos:
@@ -3534,7 +3524,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -3590,7 +3580,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -3646,7 +3636,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -3702,7 +3692,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art44_incI
     tipos:
@@ -3763,7 +3753,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art45_par6
     tipos:
@@ -3824,7 +3814,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art46_par4
     tipos:
@@ -3977,7 +3967,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4033,7 +4023,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4089,7 +4079,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4145,7 +4135,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4201,7 +4191,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4257,7 +4247,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4313,7 +4303,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art54
     tipos:
@@ -4374,7 +4364,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art55_parU
     tipos:
@@ -4435,7 +4425,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4806,7 +4796,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -4862,7 +4852,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art62_par1
     tipos:
@@ -4931,7 +4921,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5089,7 +5079,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5145,7 +5135,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art66_incI_ali-a
     tipos:
@@ -5206,7 +5196,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5262,7 +5252,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5318,7 +5308,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5374,7 +5364,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5492,7 +5482,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5610,7 +5600,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5666,7 +5656,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5784,7 +5774,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5840,7 +5830,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -5896,7 +5886,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6057,7 +6047,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6263,7 +6253,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art83
     tipos:
@@ -6337,7 +6327,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6393,7 +6383,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6449,7 +6439,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6505,7 +6495,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6561,7 +6551,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6693,7 +6683,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art90_par5
     tipos:
@@ -6754,7 +6744,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6810,7 +6800,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6866,7 +6856,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art93_par3
     tipos:
@@ -6937,7 +6927,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -6993,7 +6983,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7049,7 +7039,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7105,7 +7095,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7347,7 +7337,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art99_par4
     tipos:
@@ -7408,7 +7398,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7464,7 +7454,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7520,7 +7510,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7576,7 +7566,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7632,7 +7622,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7688,7 +7678,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art105_par3
     tipos:
@@ -7817,7 +7807,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7873,7 +7863,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -7929,7 +7919,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art109_par1
     tipos:
@@ -7994,7 +7984,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8050,7 +8040,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8106,7 +8096,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8162,7 +8152,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8218,7 +8208,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art114_par1_incVIII
     tipos:
@@ -8279,7 +8269,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8468,7 +8458,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8524,7 +8514,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8580,7 +8570,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8636,7 +8626,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8692,7 +8682,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8748,7 +8738,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art123
     tipos:
@@ -8817,7 +8807,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8873,7 +8863,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -8997,7 +8987,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9053,7 +9043,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9109,7 +9099,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9165,7 +9155,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9221,7 +9211,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art131_par2
     tipos:
@@ -9284,7 +9274,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art132_par2
     tipos:
@@ -9347,7 +9337,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9403,7 +9393,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art134
     tipos:
@@ -9466,7 +9456,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9522,7 +9512,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9578,7 +9568,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9696,7 +9686,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9752,7 +9742,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art140_incIII
     tipos:
@@ -9813,7 +9803,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9931,7 +9921,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -9987,7 +9977,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10043,7 +10033,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art145_incII_ali-b
     tipos:
@@ -10223,7 +10213,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10279,7 +10269,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10470,7 +10460,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10589,7 +10579,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10645,7 +10635,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10701,7 +10691,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10819,7 +10809,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10875,7 +10865,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10931,7 +10921,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -10987,7 +10977,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -11043,7 +11033,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -11099,7 +11089,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art162_incV
     tipos:
@@ -11168,7 +11158,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -11224,7 +11214,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art164_par2
     tipos:
@@ -11352,7 +11342,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art166_parU
     tipos:
@@ -11413,7 +11403,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -11859,7 +11849,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12066,7 +12056,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art175_par3
     tipos:
@@ -12137,7 +12127,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12193,7 +12183,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12249,7 +12239,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12305,7 +12295,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12361,7 +12351,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12417,7 +12407,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12611,7 +12601,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12667,7 +12657,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12723,7 +12713,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12779,7 +12769,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12835,7 +12825,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -12891,7 +12881,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art189_incI
     tipos:
@@ -12957,7 +12947,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13013,7 +13003,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13133,7 +13123,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13189,7 +13179,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art194_incII
     tipos:
@@ -13250,7 +13240,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13306,7 +13296,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art196
     tipos:
@@ -13438,7 +13428,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13494,7 +13484,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13550,7 +13540,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13672,7 +13662,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13728,7 +13718,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13784,7 +13774,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13840,7 +13830,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13896,7 +13886,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -13952,7 +13942,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14008,7 +13998,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14064,7 +14054,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14120,7 +14110,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14176,7 +14166,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14357,7 +14347,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art213_par3
     tipos:
@@ -14490,7 +14480,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14546,7 +14536,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14664,7 +14654,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -14812,7 +14802,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art219_par1
     tipos:
@@ -14951,7 +14941,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15007,7 +14997,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15063,7 +15053,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15119,7 +15109,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15175,7 +15165,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15231,7 +15221,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15287,7 +15277,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15343,7 +15333,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15399,7 +15389,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15455,7 +15445,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15511,7 +15501,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15634,7 +15624,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15867,7 +15857,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15923,7 +15913,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -15979,7 +15969,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16035,7 +16025,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16153,7 +16143,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16209,7 +16199,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16265,7 +16255,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16321,7 +16311,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16377,7 +16367,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16433,7 +16423,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16489,7 +16479,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16545,7 +16535,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16601,7 +16591,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16657,7 +16647,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16713,7 +16703,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16769,7 +16759,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -16825,7 +16815,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art251_par4
     tipos:
@@ -17054,7 +17044,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17110,7 +17100,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17166,7 +17156,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17222,7 +17212,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art257
     tipos:
@@ -17395,7 +17385,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17518,7 +17508,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17574,7 +17564,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art262_par5
     tipos:
@@ -17636,7 +17626,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17692,7 +17682,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17748,7 +17738,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17804,7 +17794,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art266
     tipos:
@@ -17865,7 +17855,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17921,7 +17911,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -17977,7 +17967,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18033,7 +18023,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18089,7 +18079,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18145,7 +18135,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18201,7 +18191,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18257,7 +18247,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18313,7 +18303,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18369,7 +18359,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18425,7 +18415,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18481,7 +18471,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18537,7 +18527,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18655,7 +18645,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18711,7 +18701,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18767,7 +18757,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18823,7 +18813,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art284_par3
     tipos:
@@ -18884,7 +18874,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18940,7 +18930,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -18996,7 +18986,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19052,7 +19042,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19108,7 +19098,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19164,7 +19154,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19220,7 +19210,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19276,7 +19266,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19408,7 +19398,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art294
     tipos:
@@ -19498,7 +19488,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19554,7 +19544,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19610,7 +19600,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19666,7 +19656,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19722,7 +19712,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art299
     tipos:
@@ -19784,7 +19774,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19840,7 +19830,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art301_parU
     tipos:
@@ -19901,7 +19891,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -19957,7 +19947,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -20013,7 +20003,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -20069,7 +20059,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -20125,7 +20115,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -20181,7 +20171,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -20237,7 +20227,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art308_par2
     tipos:
@@ -20768,7 +20758,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art316
     tipos:
@@ -20836,7 +20826,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -20892,7 +20882,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -20948,7 +20938,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -21004,7 +20994,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -21207,7 +21197,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art323
     tipos:
@@ -22325,7 +22315,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -22488,7 +22478,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -22544,7 +22534,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -22675,7 +22665,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art328_par2
     tipos:
@@ -22736,7 +22726,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -22867,7 +22857,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -22980,7 +22970,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -23093,7 +23083,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -23149,7 +23139,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art336
     tipos:
@@ -23211,7 +23201,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -23267,7 +23257,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art338_par5
     tipos:
@@ -23328,7 +23318,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art339_incII
     tipos:
@@ -23389,7 +23379,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art340_par1_incII
     tipos:
@@ -24315,7 +24305,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art342_incI
     tipos:
@@ -24388,7 +24378,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art343
     tipos:
@@ -24517,7 +24507,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art345_incI
     tipos:
@@ -24582,7 +24572,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art346
     tipos:
@@ -24644,7 +24634,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art347
     tipos:
@@ -24790,7 +24780,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art349_incI
     tipos:
@@ -24955,7 +24945,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -25011,7 +25001,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art352
     tipos:
@@ -25080,7 +25070,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art353
     tipos:
@@ -25166,7 +25156,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art354
     tipos:
@@ -25247,7 +25237,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art355
     tipos:
@@ -25332,7 +25322,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art356
     tipos:
@@ -25413,7 +25403,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art357
     tipos:
@@ -25494,7 +25484,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art358
     tipos:
@@ -25575,7 +25565,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art359
     tipos:
@@ -25656,7 +25646,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art360
     tipos:
@@ -26360,7 +26350,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art366
     tipos:
@@ -26425,7 +26415,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art367_incI
     tipos:
@@ -26510,7 +26500,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art368
     tipos:
@@ -26583,7 +26573,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art369
     tipos:
@@ -26657,7 +26647,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art370_incI
     tipos:
@@ -26762,7 +26752,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art371
     tipos:
@@ -26823,7 +26813,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art372_incI_ali-a
     tipos:
@@ -27055,7 +27045,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -27111,7 +27101,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art376_incV_ali-c
     tipos:
@@ -27176,7 +27166,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -27232,7 +27222,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art378_incI
     tipos:
@@ -27293,7 +27283,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art379
     tipos:
@@ -27356,7 +27346,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -27412,7 +27402,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art381
     tipos:
@@ -27496,7 +27486,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -27552,7 +27542,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art383
     tipos:
@@ -27697,7 +27687,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art385_incI
     tipos:
@@ -27779,7 +27769,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art386_incXI
     tipos:
@@ -27840,7 +27830,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -27896,7 +27886,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art388_parU
     tipos:
@@ -27958,7 +27948,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art389_incII_ali-a
     tipos:
@@ -28028,7 +28018,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -28084,7 +28074,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art391_par3
     tipos:
@@ -28254,7 +28244,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art393_par2
     tipos:
@@ -28328,7 +28318,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art394_par4
     tipos:
@@ -28402,7 +28392,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art395
     tipos:
@@ -28481,7 +28471,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art396
     tipos:
@@ -28542,7 +28532,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art397
     tipos:
@@ -28603,7 +28593,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art398
     tipos:
@@ -28664,7 +28654,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -28720,7 +28710,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -28776,7 +28766,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -28832,7 +28822,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art402_incI
     tipos:
@@ -28893,7 +28883,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art403
     tipos:
@@ -28955,7 +28945,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29011,7 +29001,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art405
     tipos:
@@ -29083,7 +29073,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art406
     tipos:
@@ -29203,7 +29193,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art407_par2
     tipos:
@@ -29363,7 +29353,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29419,7 +29409,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29475,7 +29465,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29531,7 +29521,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29711,7 +29701,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29767,7 +29757,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29823,7 +29813,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art417_par4
     tipos:
@@ -29886,7 +29876,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29942,7 +29932,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29998,7 +29988,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30054,7 +30044,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30177,7 +30167,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30295,7 +30285,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30351,7 +30341,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30407,7 +30397,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30463,7 +30453,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30576,7 +30566,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art430_incI
     tipos:
@@ -30637,7 +30627,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30693,7 +30683,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30749,7 +30739,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30867,7 +30857,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30923,7 +30913,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30979,7 +30969,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31035,7 +31025,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31091,7 +31081,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31209,7 +31199,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31331,7 +31321,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31450,7 +31440,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art445_par4
     tipos:
@@ -31511,7 +31501,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2029-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31567,7 +31557,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2029-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art447_par2_incI
     tipos:
@@ -31628,7 +31618,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31684,7 +31674,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2029-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31841,7 +31831,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31897,7 +31887,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -31953,7 +31943,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32084,7 +32074,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32140,7 +32130,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32196,7 +32186,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art457
     tipos:
@@ -32271,7 +32261,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32327,7 +32317,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32449,7 +32439,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32568,7 +32558,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art463_par4
     tipos:
@@ -32629,7 +32619,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2029-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32685,7 +32675,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2029-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art465_par2_incI
     tipos:
@@ -32746,7 +32736,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32802,7 +32792,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32858,7 +32848,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -32914,7 +32904,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -33784,7 +33774,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2029-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art474
     tipos:
@@ -33954,7 +33944,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art476
     tipos:
@@ -34015,7 +34005,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art477
     tipos:
@@ -34082,7 +34072,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art478_incI
     tipos:
@@ -34156,7 +34146,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art479
     tipos:
@@ -34217,7 +34207,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art480
     tipos:
@@ -35046,7 +35036,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art488
     tipos:
@@ -35131,7 +35121,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -35187,7 +35177,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -35243,7 +35233,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -35299,7 +35289,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art492_incI
     tipos:
@@ -35366,7 +35356,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -35686,7 +35676,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -35744,7 +35734,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -35802,7 +35792,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -35860,7 +35850,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -35918,7 +35908,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -35977,7 +35967,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36035,7 +36025,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36093,7 +36083,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36151,7 +36141,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36209,7 +36199,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36267,7 +36257,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36325,7 +36315,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36383,7 +36373,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36441,7 +36431,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36505,7 +36495,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36564,7 +36554,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36622,7 +36612,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36680,7 +36670,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36738,7 +36728,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -36796,7 +36786,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37009,7 +36999,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2033-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37072,7 +37062,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -37128,7 +37118,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -37184,7 +37174,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37242,7 +37232,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37301,7 +37291,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37359,7 +37349,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37417,7 +37407,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37476,7 +37466,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37535,7 +37525,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37593,7 +37583,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37651,7 +37641,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37709,7 +37699,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37769,7 +37759,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37828,7 +37818,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37886,7 +37876,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -37944,7 +37934,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -38003,7 +37993,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:
@@ -38106,10 +38096,10 @@ dispositivos:
       tipo: relativo
       regra: primeiro-dia-do-mes-subsequente
       meses: 4
-      data_candidata: null
+      data_candidata: '2025-05-01'
       resultado_se_aprovada: '2025-05-01'
       precisao: dia
-      nota: 'regra ''primeiro-dia-do-mes-subsequente'' não aprovada em temporal/regras.yaml: sem data'
+      nota: regra 'primeiro-dia-do-mes-subsequente' aprovada em temporal/regras.yaml
     excecoes: []
     termos_das_excecoes: []
     motivo: null
@@ -38130,7 +38120,6 @@ dispositivos:
   marcas_de_outro_ato: []
   pendencias:
   - texto_inserido_em_outra_norma
-  - regra_derivada_nao_aprovada
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -38167,10 +38156,10 @@ dispositivos:
       tipo: relativo
       regra: primeiro-dia-do-mes-subsequente
       meses: 4
-      data_candidata: null
+      data_candidata: '2025-05-01'
       resultado_se_aprovada: '2025-05-01'
       precisao: dia
-      nota: 'regra ''primeiro-dia-do-mes-subsequente'' não aprovada em temporal/regras.yaml: sem data'
+      nota: regra 'primeiro-dia-do-mes-subsequente' aprovada em temporal/regras.yaml
     excecoes: []
     termos_das_excecoes: []
     motivo: null
@@ -38191,7 +38180,6 @@ dispositivos:
   marcas_de_outro_ato: []
   pendencias:
   - texto_inserido_em_outra_norma
-  - regra_derivada_nao_aprovada
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -38228,10 +38216,10 @@ dispositivos:
       tipo: relativo
       regra: primeiro-dia-do-mes-subsequente
       meses: 4
-      data_candidata: null
+      data_candidata: '2025-05-01'
       resultado_se_aprovada: '2025-05-01'
       precisao: dia
-      nota: 'regra ''primeiro-dia-do-mes-subsequente'' não aprovada em temporal/regras.yaml: sem data'
+      nota: regra 'primeiro-dia-do-mes-subsequente' aprovada em temporal/regras.yaml
     excecoes: []
     termos_das_excecoes: []
     motivo: null
@@ -38252,7 +38240,6 @@ dispositivos:
   marcas_de_outro_ato: []
   pendencias:
   - texto_inserido_em_outra_norma
-  - regra_derivada_nao_aprovada
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -38289,10 +38276,10 @@ dispositivos:
       tipo: relativo
       regra: primeiro-dia-do-mes-subsequente
       meses: 4
-      data_candidata: null
+      data_candidata: '2025-05-01'
       resultado_se_aprovada: '2025-05-01'
       precisao: dia
-      nota: 'regra ''primeiro-dia-do-mes-subsequente'' não aprovada em temporal/regras.yaml: sem data'
+      nota: regra 'primeiro-dia-do-mes-subsequente' aprovada em temporal/regras.yaml
     excecoes: []
     termos_das_excecoes: []
     motivo: null
@@ -38310,8 +38297,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
-  pendencias:
-  - regra_derivada_nao_aprovada
+  pendencias: []
   revisao:
     decisao: null
     vigencia_inicio: null
@@ -38360,7 +38346,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art541
     tipos:
@@ -38495,7 +38481,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2033-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art543
     tipos:

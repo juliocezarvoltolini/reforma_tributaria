@@ -903,13 +903,16 @@ def publicacao_dou(dados: bytes) -> dict | None:
     return {"data": data, **campos, "trecho": trecho}
 
 
-def publicacao_de(refs: dict, dou: dict | None = None) -> dict:
+def publicacao_de(refs: dict, dou: dict | None = None,
+                  republicacoes: list[dict] | None = None) -> dict:
     """`publicacao` do front-matter.
 
     Com a página do DOU arquivada, a publicação vem dela (`fonte: dou`): o texto
     publicado prevalece sobre o compilado (PREMISSAS.md §1.4). O rodapé do
     compilado continua registrado à parte, e a data que só ele cita fica visível
-    como não confirmada — na LC 214, a "republicação" de 23/01/2025.
+    como não confirmada — salvo se uma página arquivada a confirma como
+    REPUBLICAÇÃO (`republicacoes`, com o que foi republicado). A republicação não
+    substitui a publicação: o que ela muda é decisão da revisão temporal.
 
     Sem o DOU, a publicação é a do rodapé do compilado, declarada como tal.
     """
@@ -923,6 +926,8 @@ def publicacao_de(refs: dict, dou: dict | None = None) -> dict:
                        "pagina": dou.get("pagina")}}
         if rodape_datas:
             pub["rodape_compilado"] = {"datas": rodape_datas, "trechos": rodape_trechos}
+        if republicacoes:
+            pub["republicacoes"] = list(republicacoes)
         return pub
     return {"datas": rodape_datas, "fonte": "rodape_compilado" if rodape_datas else None,
             "trechos": rodape_trechos}
@@ -1047,7 +1052,24 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
         print(f"[{slug}] AVISO: publicacao no DOU ({dou['data']}) difere da do rodape do "
               f"compilado ({primeira_rodape}); prevalece o DOU (PREMISSAS.md §1.4)",
               file=sys.stderr)
-    publicacao = publicacao_de(refs, dou)
+    # A página da republicação, se arquivada (PDF da versão certificada). Não
+    # achar a norma nela é erro: o arquivo está registrado como a republicação.
+    republicacoes = []
+    registro_rep = manifest["documentos"].get(f"{slug}/texto_republicado")
+    if registro_rep:
+        from dou_pdf import ler_republicacao, linhas_do_pdf
+        try:
+            rep = ler_republicacao(linhas_do_pdf(caminho_fonte(registro_rep).read_bytes()),
+                                   fonte["titulo"])
+        except ValueError as exc:
+            raise SystemExit(f"[{slug}] ERRO texto_republicado: {exc}") from exc
+        if rep is None:
+            raise SystemExit(f"[{slug}] ERRO texto_republicado: a página arquivada não traz "
+                             f"republicação de '{fonte['titulo']}'")
+        republicacoes.append(rep)
+        print(f"[{slug}] republicacao no DOU de {rep['data']} (p. {rep['pagina']}): "
+              f"artigos {rep['artigos'] or 'nenhum'}, anexos {rep['anexos'] or 'nenhum'}")
+    publicacao = publicacao_de(refs, dou, republicacoes)
 
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
     exigir_escopo = exige_escopo_interno(fonte)

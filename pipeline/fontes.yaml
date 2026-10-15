@@ -58,8 +58,14 @@ fontes:
       - tipo: texto_publicado_partes_vetadas
         url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-639344828"
         url_verificada: false
-      # A republicação citada no rodapé do compilado ("republicado no DOU de
-      # 23.1.2025") ainda não tem URL registrada.
+      # Republicação citada no rodapé do compilado ("republicado no DOU de
+      # 23.1.2025"). PDF da página no visualizador da Imprensa Nacional, baixado
+      # pelo usuário em 2026-10-15 (o visualizador pede captcha). A página é a do
+      # código de autenticidade impresso no PDF, 05152025012300001: jornal 515,
+      # 23/01/2025, página 1.
+      - tipo: texto_republicado
+        url: "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?jornal=515&pagina=1&data=23/01/2025"
+        url_verificada: false
     observacao: >-
       Diploma central de instituição do IBS, da CBS e do Imposto Seletivo.
       Atenção na revisão: dispositivos vetados e vetos posteriormente

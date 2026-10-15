@@ -126,6 +126,13 @@ Art. 12. [texto verbatim, sem edição, sem paráfrase]
   arquivada em `fontes/<slug>/texto_publicado.html` (`baixar.py --tipo
   texto_publicado`). O rodapé do compilado continua em `rodape_compilado`, e a
   data que só ele cita gera aviso de não confirmada.
+- `publicacao.republicacoes` registra republicação confirmada por página do DOU
+  arquivada (`texto_republicado`, PDF da versão certificada, lido por
+  `pipeline/dou_pdf.py`): data, edição, página, código de autenticidade, a nota
+  "(\*)" literal e o que foi republicado (`artigos`, `anexos`). Não substitui
+  `datas`: se a republicação muda a publicação que vale para os artigos é decisão
+  da revisão temporal (regra `republicacao-sem-artigo`, em `temporal/regras.yaml`).
+  A data do rodapé confirmada como republicação deixa de gerar aviso.
 - `publicacao.fonte: rodape_compilado` diz que a data foi lida no rodapé do texto
   compilado ("publicado no DOU ..."), sem confirmação no DOU. Só o **primeiro**
   rodapé conta: o compilado pode trazer, depois dos anexos, outro ato com

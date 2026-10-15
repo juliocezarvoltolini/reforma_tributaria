@@ -44,7 +44,7 @@ import sys
 
 import yaml
 
-from comum import DIR_TEMPORAL, gravar_texto, hoje
+from comum import DIR_TEMPORAL, arquivos_norma, gravar_texto, hoje, ler_frontmatter
 from regras_temporais import REGRA_LITERAL, aprovada, carregar_regras
 
 EIXOS = ["vigencia", "efeitos"]
@@ -53,7 +53,7 @@ EIXOS = ["vigencia", "efeitos"]
 BLOQUEIAM_ARTIGO = {"redacao_de_outro_ato", "parte_de_outro_ato", "clausula_temporal_propria",
                     "alcancado_por_clausula_temporal"}
 # Pendências gerais que a regra sabe tratar. Qualquer outra bloqueia a norma toda.
-PUBLICACAO_EM_ABERTO = {"rodape_cita_publicacao_nao_confirmada"}
+PUBLICACAO_EM_ABERTO = {"rodape_cita_publicacao_nao_confirmada", "republicacao_sem_artigo"}
 GERAIS_CONHECIDAS = PUBLICACAO_EM_ABERTO | {"outro_ato_no_compilado", "regra_derivada_nao_aprovada"}
 # Termos cuja data sai da data de publicação.
 DEPENDEM_DA_PUBLICACAO = {"evento", "relativo"}
@@ -156,8 +156,30 @@ CHAVE_RESUMO = {("vigencia", "efeitos"): "vigencia_e_efeitos", ("vigencia",): "s
                 ("efeitos",): "so_efeitos"}
 
 
-def decidir_por_regra(proposta: dict, regras: dict, data: str) -> tuple[dict, dict]:
-    """(proposta com as decisões de regra, resumo). Não altera a original."""
+def _igual_a_aplicada(entrada: dict, escopo: list[str], por: str, meta: dict | None) -> bool:
+    """A decisão é a mesma que normas/ já tem aplicada? (mesma regra, mesmos eixos,
+    mesmas datas). É a memória de `revisado_em` quando a proposta foi regenerada."""
+    if not meta or meta.get("extracao") != "revisada" or meta.get("revisado_por") != por:
+        return False
+    if (meta.get("eixos_revisados") or EIXOS) != escopo:
+        return False
+    for eixo in escopo:
+        lado = entrada.get(eixo) or {}
+        adotada = (lado.get("proposta") or {}).get("data_candidata")
+        if str(meta.get(f"{eixo}_inicio")) != str(adotada):
+            return False
+        if eixo == "efeitos" and (meta.get("excecoes_subdivisao") or []) != (lado.get("excecoes") or []):
+            return False
+    return True
+
+
+def decidir_por_regra(proposta: dict, regras: dict, data: str,
+                      aplicadas: dict[str, dict] | None = None) -> tuple[dict, dict]:
+    """(proposta com as decisões de regra, resumo). Não altera a original.
+
+    `aplicadas`: {urn: front-matter de normas/}. Decisão igual à já aplicada
+    mantém o `revisado_em` de lá, mesmo com a proposta regenerada.
+    """
     nova = copy.deepcopy(proposta)
     forma = (nova.get("resumo") or {}).get("forma_da_clausula")
     tudo, publicacao_em_aberto, trazidos = _bloqueios_gerais(nova)
@@ -184,7 +206,13 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str) -> tuple[dict, di
         )
         mesma = (anterior.get("decisao") == "aceitar" and anterior.get("escopo") == escopo
                  and anterior.get("revisado_por") == por)
-        revisao["revisado_em"] = anterior.get("revisado_em") if mesma else data
+        meta = (aplicadas or {}).get(entrada.get("urn"))
+        if mesma:
+            revisao["revisado_em"] = anterior.get("revisado_em")
+        elif _igual_a_aplicada(entrada, escopo, por, meta):
+            revisao["revisado_em"] = str(meta.get("revisado_em"))
+        else:
+            revisao["revisado_em"] = data
         resumo[CHAVE_RESUMO[tuple(escopo)]] += 1
     return nova, resumo
 
@@ -199,7 +227,11 @@ def main() -> int:
         print(f"{caminho} nao existe — rode pipeline/propor_vigencia.py antes", file=sys.stderr)
         return 2
     proposta = yaml.safe_load(caminho.read_text(encoding="utf-8"))
-    nova, resumo = decidir_por_regra(proposta, carregar_regras(), hoje())
+    aplicadas = {}
+    for arquivo in arquivos_norma(args.slug):
+        meta, _ = ler_frontmatter(arquivo)
+        aplicadas[meta["urn"]] = meta
+    nova, resumo = decidir_por_regra(proposta, carregar_regras(), hoje(), aplicadas)
     gravar_texto(caminho, yaml.safe_dump(nova, allow_unicode=True, sort_keys=False,
                                          default_flow_style=False, width=1000))
     print(f"[{args.slug}] decisoes por regra: vigencia e efeitos {resumo['vigencia_e_efeitos']}, "

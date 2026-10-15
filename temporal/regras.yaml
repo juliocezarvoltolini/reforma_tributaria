@@ -24,7 +24,8 @@ regras:
     aprovada_em: '2026-10-14'
     origem_da_aprovacao: >-
       convenção AAAA-01-01 com precisão de ano (recomendação 2 do modelo de datas),
-      aceita na sessão de trabalho em que o campo `precisao` foi criado.
+      aceita na sessão de trabalho em que o campo `precisao` foi criado, e
+      confirmada expressamente em 2026-10-15.
 
   primeiro-dia-do-mes-subsequente:
     versao: 1
@@ -38,6 +39,27 @@ regras:
     exemplo: >-
       LC 214/2025, art. 544, I: publicação no DOU em 16/01/2025; fevereiro é o
       primeiro mês subsequente, maio o quarto -> 2025-05-01
+    aprovada: true
+    aprovada_por: Júlio Voltolini
+    aprovada_em: '2026-10-15'
+
+  republicacao-sem-artigo:
+    versao: 1
+    texto_coberto: >-
+      republicação da norma no DOU, confirmada por página arquivada
+      (texto_republicado), cujo trecho republicado não traz nenhum artigo e cuja
+      nota '(*)' diz o que foi republicado
+    leitura: >-
+      a data de publicação que vale para os artigos — por exemplo, em "entra em
+      vigor na data de sua publicação" — continua a da publicação original. A
+      republicação não muda a data de publicação dos artigos que ela não traz.
+    exemplo: >-
+      LC 214/2025: DOU de 23/01/2025, p. 1 (código 05152025012300001), nota
+      "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de
+      janeiro de 2025, por ter sido constada inexatidão material, quanto ao
+      original, na Edição Extra do Diário Oficial da União de 16 de janeiro de
+      2025, Edição: 11-B - Seção: 1 - Extra B, página 64."; nenhum artigo no
+      trecho republicado -> a publicação dos artigos continua 16/01/2025
     aprovada: false
     aprovada_por: null
     aprovada_em: null

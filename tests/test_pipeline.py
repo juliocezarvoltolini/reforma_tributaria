@@ -1390,6 +1390,19 @@ def revisao_por_regra():
     checar(outra["dispositivos"][0]["revisao"]["revisado_em"] == "1900-02-01",
            "reexecutar sem mudança não altera revisado_em (nada de diff a cada dia)")
 
+    # Proposta regenerada (sem decisões): a memória é o que normas/ já tem aplicado.
+    urn = prop2["dispositivos"][0]["urn"]
+    aplicada = {"urn": urn, "extracao": "revisada", "eixos_revisados": ["vigencia", "efeitos"],
+                "revisado_por": "regra:clausula-literal/v1", "revisado_em": "1900-02-01",
+                "vigencia_inicio": "1900-01-02", "efeitos_inicio": "1930-01-01"}
+    nova, _ = RR.decidir_por_regra(prop2, regras, "1900-03-01", {urn: aplicada})
+    checar(nova["dispositivos"][0]["revisao"]["revisado_em"] == "1900-02-01",
+           "proposta regenerada, decisão igual à aplicada em normas/: revisado_em original")
+    mudou = {**aplicada, "efeitos_inicio": "1929-01-01"}
+    nova, _ = RR.decidir_por_regra(prop2, regras, "1900-03-01", {urn: mudou})
+    checar(nova["dispositivos"][0]["revisao"]["revisado_em"] == "1900-03-01",
+           "a data adotada mudou: é outra decisão, revisado_em novo")
+
 
 @cenario("revisão por regra: ponto aberto bloqueia")
 def revisao_por_regra_bloqueios():
@@ -1422,6 +1435,12 @@ def revisao_por_regra_bloqueios():
            "efeitos não depende dela")
     checar(rev["2"]["decisao"] is None and rev["3"]["decisao"] is None,
            "republicação em aberto: nada que dependa da data de publicação")
+    rev, _ = rodar([_entrada_lc("1", "1930-01-01"), _entrada_lc("2", None)],
+                   [{"id": "republicacao_sem_artigo"}])
+    checar(rev["1"]["escopo"] == ["efeitos"] and rev["2"]["decisao"] is None,
+           "republicação só de anexo com a regra não aprovada: igual à publicação em aberto")
+    rev, _ = rodar([_entrada_lc("1", "1930-01-01")], [{"id": "republicacao_de_artigos"}])
+    checar(rev["1"]["decisao"] is None, "republicação que traz artigo: nada por regra")
 
     rev, _ = rodar([_entrada_lc("1", "1930-01-01"), _entrada_lc("2", "1930-01-01")],
                    [{"id": "outro_ato_no_compilado", "artigos": ["1"]}])
@@ -1760,10 +1779,11 @@ def proposta_lc_real():
            and "alcance_alterado_pela_redacao_posterior" not in por["461"]["pendencias"],
            "168 só está na redação nova do III; 461 está nas duas")
     ids = {p["id"] for p in prop["pendencias_gerais"]}
-    checar({"outro_ato_no_compilado", "rodape_cita_publicacao_nao_confirmada",
-            "regra_derivada_nao_aprovada"} <= ids,
-           "pendências gerais: o outro ato anexado, o 23/01/2025 não confirmado e a regra do "
-           "inciso I ainda não aprovada")
+    checar({"outro_ato_no_compilado", "republicacao_sem_artigo",
+            "regra_derivada_nao_aprovada"} <= ids
+           and "rodape_cita_publicacao_nao_confirmada" not in ids,
+           f"pendências gerais: o outro ato anexado, a republicação de 23/01/2025 (só o Anexo "
+           f"XXIII) e, sem regras aprovadas, a do inciso I (obteve {sorted(ids)})")
     checar(por["537"]["efeitos"]["proposta"]["resultado_se_aprovada"] == "2025-05-01",
            "inciso I: 'quarto mês subsequente' à publicação de 16/01/2025, se a regra for aprovada")
     outro = next(p for p in prop["pendencias_gerais"] if p["id"] == "outro_ato_no_compilado")
@@ -1964,6 +1984,128 @@ def dou_prevalece():
            "a data que só o rodapé cita vira aviso de não confirmada")
     checar(F.publicacao_de(refs) ["fonte"] == "rodape_compilado",
            "sem DOU arquivado, continua o rodapé")
+
+
+# Estrutura das linhas que o pypdf extrai da página do DOU em PDF (LC 214, DOU de
+# 23/01/2025, p. 1): cabeçalho com data e número, código de autenticidade,
+# 'R E P U B L I C A Ç Ã O' antes do título, o bloco republicado, a nota '(*)' e,
+# logo depois, o próximo ato da página. Conteúdo fictício.
+LINHAS_REPUB = [
+    "REPÚBLICA FEDERATIVA DO BRASIL • IMPRENSA NACIONAL",
+    "Ano I Nº 7 Brasília - DF, terça-feira, 9 de janeiro de 1900",
+    "ISSN 0000-0000",
+    "1",
+    "Documento assinado digitalmente conforme MP nº 0, de 1º/01/1900,",
+    "http://www.in.gov.br/autenticidade.html, pelo código 05151900010900003",
+    "Sumário",
+    "Atos do Poder Legislativo",
+    "R E P U B L I C A Ç Ã O",
+    "LEI COMPLEMENTAR Nº 999, DE 2 DE JANEIRO DE 1900 (*)",
+    "Ementa fictícia da lei.",
+    '"ANEXO II',
+    "Tabela fictícia",
+    '"',
+    "(*) Republicação do Anexo II a Lei Complementar nº 999, de 2 de janeiro de 1900, por",
+    "ter sido constatada inexatidão material, quanto ao original, na edição de 2/1/1900.",
+    "LEI Nº 1, DE 8 DE JANEIRO DE 1900",
+    "Art. 1º Outra lei fictícia.",
+]
+TITULO_FICT = "Lei Complementar nº 999, de 2 de janeiro de 1900"
+
+
+@cenario("DOU em PDF: republicação lida da página")
+def dou_republicacao():
+    """Quebra: tomar por republicação desta norma a de outro ato da mesma página,
+    contar o 'Art. 1º' do ato seguinte como artigo republicado, ou aceitar página
+    cujo código de autenticidade não bate com a data do cabeçalho."""
+    import dou_pdf as D
+
+    r = D.ler_republicacao(LINHAS_REPUB, TITULO_FICT)
+    checar(r == {
+        "data": "1900-01-09", "edicao": "7", "pagina": 3,
+        "codigo_autenticidade": "05151900010900003",
+        "trecho": "Ano I Nº 7 Brasília - DF, terça-feira, 9 de janeiro de 1900",
+        "nota": "(*) Republicação do Anexo II a Lei Complementar nº 999, de 2 de janeiro de "
+                "1900, por ter sido constatada inexatidão material, quanto ao original, na "
+                "edição de 2/1/1900.",
+        "artigos": [], "anexos": ["II"],
+    }, f"data, página, nota literal e o que foi republicado (obteve {r})")
+    com_artigo = LINHAS_REPUB[:12] + ["Art. 5º Texto republicado."] + LINHAS_REPUB[12:]
+    checar(D.ler_republicacao(com_artigo, TITULO_FICT)["artigos"] == ["5"],
+           "artigo dentro do bloco republicado é contado")
+    checar(D.ler_republicacao(LINHAS_REPUB, "Lei Complementar nº 998, de 2 de janeiro de 1900")
+           is None, "republicação de outra norma: nada")
+    sem_marca = [linha for linha in LINHAS_REPUB if not linha.startswith("R E P")]
+    checar(D.ler_republicacao(sem_marca, TITULO_FICT) is None,
+           "título sem 'REPUBLICAÇÃO' antes: não é republicação")
+    trocado = [linha.replace("05151900010900003", "05151900011000003") for linha in LINHAS_REPUB]
+    try:
+        D.ler_republicacao(trocado, TITULO_FICT)
+        recusou = False
+    except ValueError:
+        recusou = True
+    checar(recusou, "código de autenticidade com outra data: erro, não palpite")
+
+
+@cenario("DOU em PDF: republicação real da LC 214 (pulado se ausente)")
+def dou_republicacao_real():
+    """Contrato com o PDF arquivado, lido à mão: página 1 do DOU de 23/01/2025
+    (código 05152025012300001), nota '(*) Republicação do Anexo XXIII a Lei
+    Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada
+    inexatidão material...', e nenhum artigo no bloco republicado."""
+    arquivo = RAIZ / "fontes" / "lc-214-2025" / "texto_republicado.pdf"
+    if not arquivo.exists():
+        print("  pulado: fontes/lc-214-2025/texto_republicado.pdf ausente")
+        return
+    import dou_pdf as D
+
+    r = D.ler_republicacao(D.linhas_do_pdf(arquivo.read_bytes()),
+                           "Lei Complementar nº 214, de 16 de janeiro de 2025")
+    checar(r is not None and r["data"] == "2025-01-23" and r["pagina"] == 1
+           and r["codigo_autenticidade"] == "05152025012300001",
+           f"DOU de 23/01/2025, página 1 (obteve {r and {k: r[k] for k in ('data', 'pagina')}})")
+    checar(r and r["artigos"] == [] and r["anexos"] == ["XXIII"],
+           f"só o Anexo XXIII, nenhum artigo (obteve {r and (r['artigos'], r['anexos'])})")
+    checar(r and r["nota"].startswith("(*) Republicação do Anexo XXIII a Lei Complementar nº "
+                                      "214, de 16 de janeiro de 2025, por ter sido constada"),
+           "nota literal")
+
+
+@cenario("DOU: republicação confirmada não fica como 'não confirmada'")
+def dou_republicacao_confirmada():
+    """Quebra: continuar chamando de 'não confirmada' a data que a página arquivada
+    confirma como republicação; trocar a publicação pela republicação; ou deixar a
+    regra decidir datas que dependem da publicação quando a republicação traz artigo."""
+    dou = F.publicacao_dou((FIXTURES / "dou-materia.html").read_bytes())
+    refs = {"publicacao_dou": {"valores": ["1900-01-02", "1900-01-09"],
+                               "trechos": ["... DOU de 2.1.1900 e republicado no DOU de 9.1.1900"]},
+            "rodapes_adicionais": []}
+    rep = {"data": "1900-01-09", "edicao": "7", "pagina": 3,
+           "codigo_autenticidade": "05151900010900003", "trecho": "Ano I Nº 7 ...",
+           "nota": "(*) Republicação do Anexo II ...", "artigos": [], "anexos": ["II"]}
+    pub = F.publicacao_de(refs, dou, [rep])
+    checar(pub["datas"] == ["1900-01-02"] and pub["republicacoes"] == [rep],
+           "a publicação continua a original; a republicação fica registrada à parte")
+    meta = {"urn": urn_dispositivo(URN_EC, "1"), "publicacao": pub,
+            "extracao": "automatica", "revisao_temporal_pendente": True}
+    erros, avisos = _rt().problemas_no_dispositivo(meta)
+    checar(not erros and not any("1900-01-09" in a for a in avisos),
+           f"data do rodapé confirmada como republicação: sem aviso (avisos: {avisos})")
+
+    pv = _pv()
+    aprov = {"aprovada": True, "aprovada_por": "F", "aprovada_em": "1900-01-01"}
+
+    def ids(publicacao, regras):
+        return {p["id"] for p in pv._pendencias_gerais(refs, publicacao, [], regras)}
+
+    checar(ids(pub, {}) == {"republicacao_sem_artigo"},
+           "republicação só de anexo, regra não aprovada: pendência própria, que bloqueia o "
+           "que depende da publicação")
+    checar(ids(pub, {"republicacao-sem-artigo": aprov}) == set(),
+           "regra aprovada: a publicação dos artigos é a original, sem pendência")
+    com_artigo = F.publicacao_de(refs, dou, [{**rep, "artigos": ["5"]}])
+    checar(ids(com_artigo, {"republicacao-sem-artigo": aprov}) == {"republicacao_de_artigos"},
+           "republicação que traz artigo: a regra não se aplica")
 
 
 @cenario("normas/ reais: data do ato e publicação (pulado se ausentes)")

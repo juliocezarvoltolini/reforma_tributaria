@@ -64,6 +64,19 @@
       "tipo_documento": "texto_publicado_partes_vetadas",
       "titulo": "Lei Complementar nº 214, de 16 de janeiro de 2025",
       "url": "https://www.in.gov.br/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-639344828"
+    },
+    "lc-214-2025/texto_republicado": {
+      "acesso": "2026-10-15",
+      "arquivo": "fontes/lc-214-2025/texto_republicado.pdf",
+      "bytes": 375588,
+      "content_type": "application/pdf",
+      "id": "lcp-214-2025",
+      "obtencao": "manual",
+      "sha256": "b665891dad08bc8ec30ea3754b5f360808e2a214591dd4359ce4e635eec47181",
+      "slug": "lc-214-2025",
+      "tipo_documento": "texto_republicado",
+      "titulo": "Lei Complementar nº 214, de 16 de janeiro de 2025",
+      "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?jornal=515&pagina=1&data=23/01/2025"
     }
   }
 }

@@ -308,13 +308,19 @@ regra (a cláusula só dá a vigência).
 
 **Decisões que destravam mais de um artigo de uma vez:**
 
-1. **Republicação de 23/01/2025 (LC 214).** Arquivar a página do DOU dessa
-   edição. Se ela republicar só anexo, como uma busca indicou, a vigência dos
-   artigos é a publicação de 16/01/2025 — mas isso é leitura daquela página, e o
-   pipeline ainda não a lê.
-2. **Regra `primeiro-dia-do-mes-subsequente`** (`temporal/regras.yaml`, não
-   aprovada): daria 1º/05/2025 aos efeitos dos arts. 537 a 540 (LC 214, art. 544,
-   I). Mesmo aprovada, depende também do item 1, porque a data sai da publicação.
+1. **Regra `republicacao-sem-artigo`** (`temporal/regras.yaml`, não aprovada).
+   A republicação de 23/01/2025 está arquivada (PDF da página 1 do DOU,
+   `fontes/lc-214-2025/texto_republicado.pdf`) e lida por `pipeline/dou_pdf.py`:
+   a nota diz "(\*) Republicação do Anexo XXIII a Lei Complementar nº 214...", e
+   o trecho republicado não tem artigo. Aprovada a regra, a publicação dos
+   artigos continua 16/01/2025, e a vigência de todos os artigos sem outro
+   bloqueio sai por regra.
+2. **Regra `primeiro-dia-do-mes-subsequente`**: aprovada em 2026-10-15. Dá
+   1º/05/2025 aos efeitos dos arts. 537 a 540 (LC 214, art. 544, I), mas só
+   depois do item 1, porque a data sai da publicação.
+
+A PREMISSAS.md §3.4 e a regra `ano-primeiro-dia` foram aprovadas pelo usuário em
+2026-10-15.
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
   proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três
@@ -336,9 +342,13 @@ regra (a cláusula só dá a vigência).
   (baixada por `baixar.py --tipo texto_publicado`): "Publicado em: 16/01/2025 |
   Edição: 11-B | Seção: 1 - Extra B | Página: 1". Os 580 dispositivos têm
   `publicacao.fonte: dou`. O rodapé do compilado cita também 23/01/2025
-  ("republicado"), que esta página **não** confirma; uma busca indicou que a
-  edição de 23/01/2025 republica só o Anexo XXIII, mas isso só vale depois de
-  arquivar aquela edição. Fica como aviso.
+  ("republicado"): é a republicação do Anexo XXIII, confirmada pela página 1 do
+  DOU de 23/01/2025 arquivada em PDF (código de autenticidade
+  05152025012300001) e registrada em `publicacao.republicacoes`.
+- **Promulgação das partes vetadas confirmada no DOU**: "Publicado em: 02/07/2025
+  | Edição: 122 | Seção: 1 | Página: 3", arquivada em
+  `fontes/lc-214-2025/texto_publicado_partes_vetadas.html`: os incisos V e X do
+  art. 26.
 - **Publicação da EC 132 confirmada no DOU**: "Publicado em: 21/12/2023 |
   Edição: 242 | Seção: 1 | Página: 1", arquivada em
   `fontes/emc-132-2023/texto_publicado.html`. Coincide com o rodapé do compilado.

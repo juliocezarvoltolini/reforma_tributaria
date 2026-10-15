@@ -36,7 +36,7 @@ correta a essa restrição.
 Para popular, execute em ambiente com acesso aos domínios oficiais:
 
 ```bash
-pip install pyyaml requests
+pip install pyyaml requests pypdf
 
 # Linux/macOS use python3; no Windows o comando é python (ou py).
 python3 pipeline/baixar.py                     # baixa, arquiva e registra hash

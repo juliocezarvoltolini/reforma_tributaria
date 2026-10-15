@@ -581,12 +581,37 @@ INSTRUCOES_REVISAO = (
 )
 
 
-def _pendencias_gerais(refs: dict, pub: dict, outros: list[dict] | None = None) -> list[dict]:
+def _pendencias_gerais(refs: dict, pub: dict, outros: list[dict] | None = None,
+                       regras: dict | None = None) -> list[dict]:
     artigos_por_assinatura = {o["assinatura"]: o["artigos"] for o in outros or []}
+    republicacoes = pub.get("republicacoes") or []
     pendencias = []
+    for rep in republicacoes:
+        if rep.get("artigos"):
+            pendencias.append({
+                "id": "republicacao_de_artigos",
+                "descricao": f"A página do DOU de {rep['data']} republica os arts. "
+                             f"{', '.join(rep['artigos'])}. Se a data de publicação deles muda é "
+                             "interpretação: nada que dependa da publicação é decidido por regra.",
+                "nota": rep.get("nota"),
+                "artigos": rep["artigos"],
+            })
+        elif not aprovada(regras or {}, "republicacao-sem-artigo"):
+            pendencias.append({
+                "id": "republicacao_sem_artigo",
+                "regra": "republicacao-sem-artigo",
+                "descricao": f"A página do DOU de {rep['data']} republica só "
+                             f"{'o(s) Anexo(s) ' + ', '.join(rep['anexos']) if rep.get('anexos') else 'texto sem artigo'}"
+                             ", nenhum artigo. Que a publicação dos artigos continua a original "
+                             "é a regra derivada 'republicacao-sem-artigo', não aprovada em "
+                             "temporal/regras.yaml. Até lá, nada que dependa da data de "
+                             "publicação é decidido por regra.",
+                "nota": rep.get("nota"),
+            })
     if pub.get("fonte") == "dou":
         sem_confirmacao = sorted(set((pub.get("rodape_compilado") or {}).get("datas") or [])
-                                 - set(pub.get("datas") or []))
+                                 - set(pub.get("datas") or [])
+                                 - {r.get("data") for r in republicacoes})
         if sem_confirmacao:
             pendencias.append({
                 "id": "rodape_cita_publicacao_nao_confirmada",
@@ -849,7 +874,7 @@ def construir(slug: str, regras: dict | None = None) -> dict:
         k = lado["inciso"] or "indeterminado"
         por_inciso[k] = por_inciso.get(k, 0) + 1
 
-    pendencias_gerais = _pendencias_gerais(refs, publicacao, outros)
+    pendencias_gerais = _pendencias_gerais(refs, publicacao, outros, regras)
     # Regra derivada que a cláusula usa e ninguém aprovou: uma decisão só, que
     # resolve todos os artigos que dependem dela.
     nao_aprovadas: dict[str, dict] = {}

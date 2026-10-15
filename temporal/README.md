@@ -25,9 +25,12 @@ do artigo em trecho literal (vigência não é eficácia) e campos `revisao` vaz
   é refeita por `revisar_por_regra.py`.
 - `decisoes_necessarias` lista o que o modelo de dados ainda não responde, e
   `pendencias_gerais` o que vale para a norma inteira: publicação não confirmada
-  no DOU, republicação citada no rodapé e não confirmada, outro ato anexado ao
-  compilado (com os artigos que ele traz, lidos no próprio bloco), regra derivada
-  não aprovada (com o resultado que ela daria).
+  no DOU, republicação citada no rodapé e não confirmada, republicação confirmada
+  que não traz artigo (`republicacao_sem_artigo`, enquanto a regra
+  `republicacao-sem-artigo` não for aprovada) ou que traz
+  (`republicacao_de_artigos`), outro ato anexado ao compilado (com os artigos que
+  ele traz, lidos no próprio bloco), regra derivada não aprovada (com o resultado
+  que ela daria).
 - Cada dispositivo traz `marcas_de_outro_ato`: as anotações oficiais do
   compilado (incluído, redação dada, revogado, vetado, promulgação de partes
   vetadas, vide) que mostram texto vindo de outro ato.
@@ -51,8 +54,10 @@ nem no artigo que:
   (`clausula_temporal_propria`), ou é citado por um artigo que faz isso
   (`alcancado_por_clausula_temporal`).
 
-Com a publicação em aberto (`rodape_cita_publicacao_nao_confirmada`), nada que
-dependa da data de publicação é decidido; a data escrita no inciso, sim. Na forma
+Com a publicação em aberto (`rodape_cita_publicacao_nao_confirmada` ou
+`republicacao_sem_artigo`), nada que dependa da data de publicação é decidido; a
+data escrita no inciso, sim. Republicação que traz artigo
+(`republicacao_de_artigos`) bloqueia a norma toda. Na forma
 `vigencia_por_inciso` os efeitos nunca são decididos por regra. Pendência geral
 que a regra não conhece bloqueia a norma toda.
 
