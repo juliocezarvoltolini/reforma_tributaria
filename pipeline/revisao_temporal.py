@@ -166,7 +166,8 @@ def problemas_no_dispositivo(meta: dict) -> tuple[list[str], list[str]]:
                               + ", ".join(d for d in sem_confirmacao if d))
             trechos = list(pub.get("trechos") or []) + list(
                 (pub.get("rodape_compilado") or {}).get("trechos") or [])
-            if any(re.search(r"\bretificad[oa]\b", t or "", re.IGNORECASE) for t in trechos):
+            if not pub.get("retificacoes") and any(
+                    re.search(r"\bretificad[oa]\b", t or "", re.IGNORECASE) for t in trechos):
                 avisos.append("o rodapé do compilado cita retificação, não arquivada")
 
     erros += _problemas_precisao(meta.get("precisao"), meta)

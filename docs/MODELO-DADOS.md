@@ -137,6 +137,13 @@ Art. 12. [texto verbatim, sem edição, sem paráfrase]
   `datas`: se a republicação muda a publicação que vale para os artigos é decisão
   da revisão temporal (regra `republicacao-sem-artigo`, em `temporal/regras.yaml`).
   A data do rodapé confirmada como republicação deixa de gerar aviso.
+- Quando o DOU não é acessível, o ato de republicação ou de retificação vem do
+  Planalto (`ccivil_03/.../ret/*-rep.doc`, `*-ret.doc`, lido por
+  `pipeline/atos_planalto.py`): `publicacao.republicacoes` e
+  `publicacao.retificacoes` com `fonte: planalto`, a nota ou o "onde se lê / leia-se"
+  literal e os `artigos_tocados` — os que o ato nomeia e os que inserem, em outra
+  norma, o artigo que ele cita entre aspas. O ato do Planalto dá o ALCANCE, não a
+  data da edição do DOU.
 - `publicacao.fonte: rodape_compilado` diz que a data foi lida no rodapé do texto
   compilado ("publicado no DOU ..."), sem confirmação no DOU. Só o **primeiro**
   rodapé conta: o compilado pode trazer, depois dos anexos, outro ato com

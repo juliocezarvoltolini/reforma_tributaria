@@ -968,7 +968,8 @@ def publicacao_dou(dados: bytes) -> dict | None:
 
 
 def publicacao_de(refs: dict, dou: dict | None = None,
-                  republicacoes: list[dict] | None = None) -> dict:
+                  republicacoes: list[dict] | None = None,
+                  retificacoes: list[dict] | None = None) -> dict:
     """`publicacao` do front-matter.
 
     Com a página do DOU arquivada, a publicação vem dela (`fonte: dou`): o texto
@@ -992,6 +993,8 @@ def publicacao_de(refs: dict, dou: dict | None = None,
             pub["rodape_compilado"] = {"datas": rodape_datas, "trechos": rodape_trechos}
         if republicacoes:
             pub["republicacoes"] = list(republicacoes)
+        if retificacoes:
+            pub["retificacoes"] = list(retificacoes)
         return pub
     return {"datas": rodape_datas, "fonte": "rodape_compilado" if rodape_datas else None,
             "trechos": rodape_trechos}
@@ -1123,9 +1126,20 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
               file=sys.stderr)
     # A página da republicação, se arquivada (PDF da versão certificada). Não
     # achar a norma nela é erro: o arquivo está registrado como a republicação.
-    republicacoes = []
+    republicacoes, retificacoes = [], []
     registro_rep = manifest["documentos"].get(f"{slug}/texto_republicado")
-    if registro_rep:
+    registro_ret = manifest["documentos"].get(f"{slug}/texto_retificado")
+    if registro_rep and registro_rep["arquivo"].endswith(".doc"):
+        # Ato do Planalto: dá o alcance (quais artigos), não a data da edição.
+        import atos_planalto
+        rep = atos_planalto.ler_republicacao(
+            atos_planalto.linhas_do_doc(caminho_fonte(registro_rep)), fonte["titulo"])
+        if rep is None:
+            raise SystemExit(f"[{slug}] ERRO texto_republicado: o ato arquivado não traz "
+                             f"republicação de '{fonte['titulo']}'")
+        republicacoes.append({**rep, "artigos_tocados": atos_planalto.artigos_tocados(rep, artigos)})
+        print(f"[{slug}] republicacao (Planalto): artigos tocados {republicacoes[-1]['artigos_tocados']}")
+    elif registro_rep:
         from dou_pdf import ler_republicacao, linhas_do_pdf
         try:
             rep = ler_republicacao(linhas_do_pdf(caminho_fonte(registro_rep).read_bytes()),
@@ -1138,7 +1152,16 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
         republicacoes.append(rep)
         print(f"[{slug}] republicacao no DOU de {rep['data']} (p. {rep['pagina']}): "
               f"artigos {rep['artigos'] or 'nenhum'}, anexos {rep['anexos'] or 'nenhum'}")
-    publicacao = publicacao_de(refs, dou, republicacoes)
+    if registro_ret:
+        import atos_planalto
+        ret = atos_planalto.ler_retificacao(
+            atos_planalto.linhas_do_doc(caminho_fonte(registro_ret)), fonte["titulo"])
+        if ret is None:
+            raise SystemExit(f"[{slug}] ERRO texto_retificado: o ato arquivado não traz "
+                             f"retificação de '{fonte['titulo']}'")
+        retificacoes.append({**ret, "artigos_tocados": atos_planalto.artigos_tocados(ret, artigos)})
+        print(f"[{slug}] retificacao (Planalto): artigos tocados {retificacoes[-1]['artigos_tocados']}")
+    publicacao = publicacao_de(refs, dou, republicacoes, retificacoes)
 
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
     exigir_escopo = exige_escopo_interno(fonte)

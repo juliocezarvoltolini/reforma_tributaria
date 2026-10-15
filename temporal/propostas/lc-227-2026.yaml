@@ -92,10 +92,28 @@ clausula_de_vigencia:
   redacoes_anteriores: []
   artigos_inexistentes: []
 pendencias_gerais:
+- id: republicacao_de_artigos
+  descricao: 'O ato de republicação (Planalto) traz texto dos arts. 174 desta norma. Nota: (*) Republicação parcial da Lei Complementar nº 227, de 13 de janeiro de 2026, publicada na Edição nº 9, do Diário Oficial da União de 14 de janeiro de 2026, Seção 1, página 1, por ter constado inexatidão material. Se a data de publicação muda é interpretação: nada que dependa da publicação é decidido por regra.'
+  nota: (*) Republicação parcial da Lei Complementar nº 227, de 13 de janeiro de 2026, publicada na Edição nº 9, do Diário Oficial da União de 14 de janeiro de 2026, Seção 1, página 1, por ter constado inexatidão material.
+  artigos:
+  - '174'
 - id: rodape_cita_publicacao_nao_confirmada
   descricao: O rodapé do texto compilado cita publicação em 2026-01-15, que a página do DOU arquivada não confirma. Pode ser republicação de parte do ato; arquivar essa edição do DOU antes de usar a data.
-- id: retificacao_citada_no_rodape
-  descricao: 'O rodapé do compilado cita retificação (Este texto não substitui o publicado no DOU de 14.1.2026, republicado no DOU de 15.1.2026 e retificado em 23.1.2026.), que não está arquivada. Uma retificação pode mudar texto e datas: arquivar a página do DOU dela antes de decidir. Até lá, nada desta norma é decidido por regra.'
+- id: retificacao
+  descricao: 'O ato de retificação (Planalto) corrige texto dos arts. 172 desta norma (Na LEI COMPLEMENTAR Nº 227, DE 13 DE JANEIRO DE 2026, publicada no DOU de 14/1/2026, Seção 1, pág. 1, onde se lê:). O compilado traz o texto corrigido; se a correção muda datas é interpretação: nada desta norma é decidido por regra até isso ser lido.'
+  artigos:
+  - '172'
+  onde_se_le:
+  - 'Art. 172. A Lei nº 1.079, de 10 de abril de 1950, passa a vigorar acrescida da seguinte Parte Quinta:'
+  - TÍTULO ÚNICO
+  - CAPÍTULO ÚNICO
+  - DO PRESIDENTE DO COMITÊ GESTOR DO IMPOSTO SOBRE BENS E SERVIÇOS (CGIBS)
+  leia_se:
+  - 'Art. 172. A Lei nº 1.079, de 10 de abril de 1950, passa a vigorar acrescida da seguinte Parte Quinta:'
+  - '"PARTE QUINTA'
+  - TÍTULO ÚNICO
+  - CAPÍTULO ÚNICO
+  - DO PRESIDENTE DO COMITÊ GESTOR DO IMPOSTO SOBRE BENS E SERVIÇOS (CGIBS)
 atos_alteradores: []
 decisoes_necessarias:
 - id: norma_alterada_nao_ingerida

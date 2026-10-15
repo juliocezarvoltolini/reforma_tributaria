@@ -1719,8 +1719,9 @@ def proposta_texto_alterado():
     checar(("regra_derivada_nao_aprovada", "texto-alterado-por-ato-posterior") in ids,
            "a combinação aparece como regra derivada não aprovada")
     atos = {a["slug"]: a for a in prop["atos_alteradores"]}
-    checar("retificacao_citada_no_rodape" in atos["lc-227-2026"]["pendencias_gerais"],
-           "e as pendências do ato alterador ficam à vista")
+    checar({"retificacao", "republicacao_de_artigos"}
+           <= set(atos["lc-227-2026"]["pendencias_gerais"]),
+           "e as pendências do ato alterador ficam à vista (retificação e republicação)")
 
 
 @cenario("proposta: cláusula única, só vigência ('entra em vigor na data de sua publicação.')")
@@ -2484,6 +2485,104 @@ def dou_republicacao_confirmada():
     com_artigo = F.publicacao_de(refs, dou, [{**rep, "artigos": ["5"]}])
     checar(ids(com_artigo, {"republicacao-sem-artigo": aprov}) == {"republicacao_de_artigos"},
            "republicação que traz artigo: a regra não se aplica")
+
+
+@cenario("Planalto: republicação e retificação lidas do ato")
+def atos_planalto():
+    """Estrutura medida nos .doc do Planalto da LC 227 (texto extraído pelo
+    antiword): 'REPUBLICAÇÃO', o título com '(*)', a ementa, o trecho republicado
+    e a nota '(*) Republicação parcial ...'; 'RETIFICAÇÃO', 'Na LEI ..., onde se
+    lê:', o trecho, 'Leia-se:', o trecho. Quebra: tomar o artigo citado entre
+    aspas por artigo da norma, ou perder qual artigo foi retificado."""
+    import atos_planalto as P
+
+    rep = ["REPUBLICAÇÃO", "LEI COMPLEMENTAR Nº 999, DE 2 DE JANEIRO DE 1900 (*)",
+           "Ementa fictícia.", "“Art. 293.", "§ 4º", "I - (VETADO);”",
+           "(*) Republicação parcial da Lei Complementar nº 999, de 2 de janeiro de 1900, "
+           "publicada na Edição nº 9, do Diário Oficial da União de 3 de janeiro de 1900, Seção 1, "
+           "página 1, por ter constado inexatidão material."]
+    r = P.ler_republicacao(rep, TITULO_FICT)
+    checar(r == {"fonte": "planalto", "nota": rep[-1], "parcial": True,
+                 "artigos_proprios": [], "artigos_citados": ["293"]},
+           f"republicação parcial: só texto citado (obteve {r})")
+    checar(P.ler_republicacao(rep, "Lei Complementar nº 998, de 2 de janeiro de 1900") is None,
+           "outra norma: nada")
+    ret = ["RETIFICAÇÃO",
+           "Na LEI COMPLEMENTAR Nº 999, DE 2 DE JANEIRO DE 1900, publicada no DOU de 3/1/1900, "
+           "Seção 1, pág. 1, onde se lê:",
+           "Art. 172. A Lei nº 1 passa a vigorar acrescida da seguinte Parte Quinta:",
+           "TÍTULO ÚNICO", "Leia-se:",
+           "Art. 172. A Lei nº 1 passa a vigorar acrescida da seguinte Parte Quinta:",
+           "\"PARTE QUINTA", "TÍTULO ÚNICO"]
+    r = P.ler_retificacao(ret, TITULO_FICT)
+    checar(r and r["artigos_proprios"] == ["172"] and r["onde_se_le"] == ret[2:4]
+           and r["leia_se"] == ret[5:], f"retificação: o art. 172, o antes e o depois (obteve {r})")
+    checar(P.ler_retificacao(ret[:4], TITULO_FICT) is None,
+           "sem 'Leia-se:' não é a estrutura de retificação: nada")
+
+    artigos = [{"numero": "171", "citados": []}, {"numero": "174", "citados": ["26", "293"]},
+               {"numero": "176", "citados": ["5"]}]
+    checar(P.artigos_tocados({"artigos_proprios": [], "artigos_citados": ["293"]}, artigos)
+           == ["174"] and P.artigos_tocados({"artigos_proprios": ["172"]}, artigos) == ["172"],
+           "tocado: o artigo nomeado, ou o que insere o artigo citado")
+
+    dou = F.publicacao_dou((FIXTURES / "dou-materia.html").read_bytes())
+    trecho = ("Este texto não substitui o publicado no DOU de 2.1.1900, republicado no DOU de "
+              "3.1.1900 e retificado em 9.1.1900.")
+    refs = {"publicacao_dou": {"valores": ["1900-01-02", "1900-01-03"], "trechos": [trecho]},
+            "rodapes_adicionais": []}
+    rep_p = {"fonte": "planalto", "nota": "(*) Republicação parcial ...", "parcial": True,
+             "artigos_proprios": [], "artigos_citados": ["293"], "artigos_tocados": ["174"]}
+    ret_p = {"fonte": "planalto", "cabecalho": "Na LEI ...", "artigos_proprios": ["172"],
+             "onde_se_le": ["a"], "leia_se": ["b"], "artigos_tocados": ["172"]}
+    pub = F.publicacao_de(refs, dou, [rep_p], [ret_p])
+    checar(pub["republicacoes"] == [rep_p] and pub["retificacoes"] == [ret_p],
+           "os dois atos registrados na publicação")
+    meta = {"urn": urn_dispositivo(URN_EC, "1"), "publicacao": pub,
+            "extracao": "automatica", "revisao_temporal_pendente": True}
+    _, avisos = _rt().problemas_no_dispositivo(meta)
+    checar(not any("retifica" in a for a in avisos),
+           f"retificação arquivada: sem o aviso de 'não arquivada' (avisos: {avisos})")
+    gerais = {g["id"]: g for g in _pv()._pendencias_gerais(refs, pub, [], {})}
+    checar(gerais.get("republicacao_de_artigos", {}).get("artigos") == ["174"]
+           and gerais.get("retificacao", {}).get("artigos") == ["172"]
+           and "retificacao_citada_no_rodape" not in gerais,
+           f"pendências com o alcance lido dos atos (obteve {sorted(gerais)})")
+
+    arq = RAIZ / "fontes" / "lc-227-2026"
+    if not (arq / "texto_republicado.doc").exists():
+        print("  pulado (real): .doc da LC 227 ausentes")
+        return
+    titulo = "Lei Complementar nº 227, de 13 de janeiro de 2026"
+    r = P.ler_republicacao(P.linhas_do_doc(arq / "texto_republicado.doc"), titulo)
+    checar(r and r["artigos_citados"] == ["293"] and r["artigos_proprios"] == [] and r["parcial"]
+           and r["nota"].startswith("(*) Republicação parcial da Lei Complementar nº 227"),
+           "LC 227: republicação parcial, só o 'Art. 293' citado")
+    r = P.ler_retificacao(P.linhas_do_doc(arq / "texto_retificado.doc"), titulo)
+    checar(r and r["artigos_proprios"] == ["172"], "LC 227: retificação do art. 172")
+    if (RAIZ / "normas" / "lc-227-2026").exists():
+        from comum import ler_frontmatter
+
+        meta, _ = ler_frontmatter(RAIZ / "normas" / "lc-227-2026" / "art-0001.md")
+        pub = meta["publicacao"]
+        checar([r["artigos_tocados"] for r in pub.get("republicacoes") or []] == [["174"]]
+               and [r["artigos_tocados"] for r in pub.get("retificacoes") or []] == [["172"]],
+               "LC 227 em normas/: republicação toca o art. 174 (o 'Art. 293' citado é texto "
+               "que ele insere na LC 214); retificação, o 172")
+
+
+@cenario("download: a extensão do arquivo segue o tipo do documento")
+def baixar_extensao():
+    """Quebra: gravar o .doc da republicação da LC 227 (Planalto, application/msword)
+    como .html — o leitor tentaria HTML num binário do Word."""
+    import baixar as B
+
+    checar(B.extensao_de("https://x/lcp227-26-rep.doc", "application/msword") == "doc"
+           and B.extensao_de("https://x/sem-extensao", "application/msword") == "doc",
+           "Word (.doc ou application/msword) vira .doc")
+    checar(B.extensao_de("https://x/a.pdf", "") == "pdf"
+           and B.extensao_de("https://x/a.htm", "text/html") == "html",
+           "PDF e HTML como antes")
 
 
 @cenario("rodapé que cita retificação: pendência, não silêncio")

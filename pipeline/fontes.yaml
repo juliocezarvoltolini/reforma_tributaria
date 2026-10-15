@@ -94,6 +94,16 @@ fontes:
       - tipo: texto_publicado
         url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-227-de-13-de-janeiro-de-2026-681157850"
         url_verificada: false
+      # Republicação (DOU de 15.1.2026) e retificação (23.1.2026) citadas no
+      # rodapé do compilado: os atos no Planalto, achados por busca em
+      # 2026-10-15 (o DOU recusa acesso deste ambiente). Download autorizado pelo
+      # usuário. O que cada um traz é lido do arquivo, não presumido.
+      - tipo: texto_republicado
+        url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/ret/lcp227-26-rep.doc"
+        url_verificada: false
+      - tipo: texto_retificado
+        url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/ret/lcp227-26-ret.doc"
+        url_verificada: false
     observacao: >-
       Altera a LC 214/2025: a maior parte das anotações "(Incluído pela...)" e
       "(Redação dada pela...)" do compilado da LC 214 é dela. A vigência do

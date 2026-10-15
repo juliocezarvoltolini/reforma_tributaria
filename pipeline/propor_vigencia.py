@@ -776,6 +776,19 @@ def _pendencias_gerais(refs: dict, pub: dict, outros: list[dict] | None = None,
     republicacoes = pub.get("republicacoes") or []
     pendencias = []
     for rep in republicacoes:
+        if rep.get("fonte") == "planalto":
+            # Ato do Planalto: o alcance é conhecido, a data da edição não.
+            pendencias.append({
+                "id": "republicacao_de_artigos",
+                "descricao": "O ato de republicação (Planalto) traz texto dos arts. "
+                             f"{', '.join(rep.get('artigos_tocados') or []) or '(nenhum)'} "
+                             f"desta norma. Nota: {rep.get('nota')} Se a data de publicação "
+                             "muda é interpretação: nada que dependa da publicação é decidido "
+                             "por regra.",
+                "nota": rep.get("nota"),
+                "artigos": rep.get("artigos_tocados") or [],
+            })
+            continue
         if rep.get("artigos"):
             pendencias.append({
                 "id": "republicacao_de_artigos",
@@ -822,9 +835,21 @@ def _pendencias_gerais(refs: dict, pub: dict, outros: list[dict] | None = None,
             "descricao": "O original não informa a publicação no DOU. As propostas que "
                          "dependem dela ficam sem data candidata.",
         })
+    for ret in pub.get("retificacoes") or []:
+        pendencias.append({
+            "id": "retificacao",
+            "descricao": "O ato de retificação (Planalto) corrige texto dos arts. "
+                         f"{', '.join(ret.get('artigos_tocados') or [])} desta norma "
+                         f"({ret.get('cabecalho')}). O compilado traz o texto corrigido; se a "
+                         "correção muda datas é interpretação: nada desta norma é decidido "
+                         "por regra até isso ser lido.",
+            "artigos": ret.get("artigos_tocados") or [],
+            "onde_se_le": ret.get("onde_se_le"),
+            "leia_se": ret.get("leia_se"),
+        })
     retificacoes = [t for t in (refs.get("publicacao_dou") or {}).get("trechos") or []
                     if RE_RETIFICACAO.search(t)]
-    if retificacoes:
+    if retificacoes and not pub.get("retificacoes"):
         pendencias.append({
             "id": "retificacao_citada_no_rodape",
             "descricao": "O rodapé do compilado cita retificação "

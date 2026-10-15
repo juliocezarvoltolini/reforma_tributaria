@@ -331,6 +331,18 @@ para `Lcp214.htm#art493a` concordam, e isso fica em aviso. As duas leis têm
 `remissoes: so_escopo_afirmado` no catálogo: são leis de alteração, e "art. N"
 sem qualificador nelas é, quase sempre, da norma alterada.
 
+**Republicação e retificação da LC 227, lidas em 2026-10-15** (atos no
+Planalto, `fontes/lc-227-2026/texto_republicado.doc` e `texto_retificado.doc`;
+o DOU recusa acesso deste ambiente):
+- republicação parcial "por ter constado inexatidão material": o trecho
+  republicado é só "“Art. 293. … § 4º … I - (VETADO);”", texto que o art. 174
+  da LC 227 insere na LC 214 — toca o art. 174;
+- retificação: "onde se lê / leia-se" no art. 172 (a Parte Quinta que ele
+  insere na Lei nº 1.079/1950).
+O alcance é conhecido; a data da edição da republicação (15/01/2026) continua
+só no rodapé. Se esses atos mudam a publicação dos artigos é interpretação: a
+LC 227 continua sem decisão por regra.
+
 **Próximo bloco:** os 146 artigos da LC 214 com texto de outro ato dependem da
 cláusula de vigência da LC 227 (art. 182), que espera:
 1. arquivar a republicação (DOU de 15/01/2026) e a retificação (23/01/2026);

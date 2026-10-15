@@ -595,8 +595,9 @@ atos_alteradores:
 - slug: lc-227-2026
   urn: urn:lex:br:federal:lei.complementar:2026-01-13;227
   pendencias_gerais:
+  - republicacao_de_artigos
   - rodape_cita_publicacao_nao_confirmada
-  - retificacao_citada_no_rodape
+  - retificacao
 - slug: lc-235-2026
   urn: urn:lex:br:federal:lei.complementar:2026-08-27;235
   pendencias_gerais: []

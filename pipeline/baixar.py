@@ -92,6 +92,9 @@ def salvar_manifest(manifest: dict) -> None:
 def extensao_de(url: str, content_type: str) -> str:
     if url.lower().endswith(".pdf") or "pdf" in content_type:
         return "pdf"
+    # Atos de republicação e retificação no Planalto (ccivil_03/.../ret/*.doc).
+    if url.lower().endswith(".doc") or "msword" in content_type:
+        return "doc"
     return "html"
 
 
