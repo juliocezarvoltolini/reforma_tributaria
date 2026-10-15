@@ -15,6 +15,7 @@ Leia antes de usar ou contribuir:
 | [`PREMISSAS.md`](PREMISSAS.md) | regras de confiabilidade — vinculantes |
 | [`CLAUDE.md`](CLAUDE.md) | protocolo obrigatório de consulta por IA |
 | [`docs/MODELO-DADOS.md`](docs/MODELO-DADOS.md) | URN, front-matter, camadas, índices |
+| [`docs/ESTADO.md`](docs/ESTADO.md) | onde o trabalho parou, evidência medida e armadilhas já pagas |
 
 ---
 
@@ -35,15 +36,53 @@ correta a essa restrição.
 Para popular, execute em ambiente com acesso aos domínios oficiais:
 
 ```bash
-pip install pyyaml requests
+pip install pyyaml requests pypdf
 
+# Linux/macOS use python3; no Windows o comando é python (ou py).
 python3 pipeline/baixar.py                     # baixa, arquiva e registra hash
 python3 pipeline/fatiar.py --todas             # fatia em dispositivos
 python3 pipeline/indexar.py                    # gera índices derivados
 python3 pipeline/validar.py                    # verifica as premissas
 ```
 
-Duas advertências para a primeira execução:
+> **Windows:** não existe `python3` — o atalho com esse nome é o instalador da
+> Microsoft Store e não executa nada. Use `python` ou `py`. O
+> `pipeline/verificar.sh` detecta o interpretador sozinho; os scripts avulsos
+> não, então ajuste o comando.
+
+### Quando o portal recusa acesso por script
+
+Portais oficiais derrubam a conexão de clientes que não parecem navegador. O
+sintoma é `ConnectionResetError` igual em todas as URLs. O `baixar.py` já envia
+cabeçalhos de navegador e tenta quatro vezes com espera crescente; se ainda
+assim o portal recusar, baixe o arquivo no navegador e ingira a partir dele:
+
+```bash
+python pipeline/baixar.py --id lcp-214-2025 --de-arquivo caminho/do/lcp214.htm
+```
+
+Isso **não** afrouxa a premissa de procedência: a URL oficial vem do catálogo, o
+`sha256` é dos bytes reais e a data de acesso é registrada. O manifest grava
+`obtencao: manual` para distinguir de um download automatizado, e a detecção de
+deriva continua valendo nas reingestões.
+
+### Audite o fatiamento antes de confiar nele
+
+```bash
+python pipeline/fatiar.py --todas --relatorio
+```
+
+Mostra, sem escrever nada, quantos artigos são **próprios** da norma e quantos
+são artigos de **outras normas** citados porque esta as altera. A EC 132 insere
+artigos na Constituição e a LC 214 altera outras leis nas disposições finais —
+esse texto pertence ao artigo que promove a alteração, e tratá-lo como artigo
+próprio sobrescreve arquivos e destrói dados.
+
+A classificação usa dois sinais: aspas (técnica da LC 95/1998) e ordem crescente
+da numeração própria. Confira a faixa de artigos próprios contra a norma real
+antes de considerar a ingestão boa.
+
+Três advertências para a primeira execução:
 
 1. As URLs em `pipeline/fontes.yaml` estão marcadas `url_verificada: false` —
    seguem o padrão conhecido dos portais, mas não foram confirmadas por acesso
@@ -52,6 +91,10 @@ Duas advertências para a primeira execução:
    texto e estrutura, mas **não infere vigência nem eficácia** — essas datas vêm
    da cláusula de vigência da norma e exigem revisão humana. Sem essa revisão a
    base responde com datas provisórias.
+3. O `fatiar.py` **apaga o resultado da ingestão anterior** antes de escrever.
+   Isso é deliberado: sem apagar, um fatiamento corrigido deixa para trás os
+   arquivos espúrios do fatiamento antigo, e a base passa a conter dispositivos
+   que a norma não tem.
 
 ---
 

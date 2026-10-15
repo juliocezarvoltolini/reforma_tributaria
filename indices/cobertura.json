@@ -1,5 +1,22 @@
 {
   "aviso": "Esta base cobre apenas o que esta listado aqui. Nao presuma que uma norma esta indexada porque ela existe no mundo.",
-  "normas": {},
-  "total_dispositivos": 0
+  "normas": {
+    "emc-132-2023": {
+      "dispositivos": 23,
+      "revisao_temporal_pendente": 23
+    },
+    "lc-214-2025": {
+      "dispositivos": 580,
+      "revisao_temporal_pendente": 59
+    },
+    "lc-227-2026": {
+      "dispositivos": 182,
+      "revisao_temporal_pendente": 5
+    },
+    "lc-235-2026": {
+      "dispositivos": 17,
+      "revisao_temporal_pendente": 17
+    }
+  },
+  "total_dispositivos": 802
 }

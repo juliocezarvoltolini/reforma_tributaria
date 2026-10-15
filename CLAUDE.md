@@ -49,6 +49,8 @@ grep -rl "termo" normas/
 python3 pipeline/consultar.py --data 2027-01-01 --termo "termo"
 ```
 
+No Windows o comando é `python` (ou `py`), não `python3`.
+
 Prefira `consultar.py`: ele aplica o filtro temporal antes de devolver resultado.
 Busca textual crua ignora vigência e devolve dispositivo que ainda não vale.
 
@@ -73,8 +75,25 @@ São campos distintos e frequentemente divergentes:
 Um dispositivo pode estar vigente há anos e só produzir efeitos no futuro.
 Responder pela vigência quando a pergunta é sobre efeitos é erro material.
 
-Verifique também `status`: `vigente`, `futuro`, `revogado`,
-`pendente_regulamentacao`.
+Antes de usar essas datas:
+
+- `revisao_temporal_pendente: true` — ao menos um eixo é **provisório** (primeira
+  publicação). `eixos_revisados` diz qual foi decidido; o outro não vale como
+  revisado. Diga isso na resposta.
+- `revisado_por` diz quem decidiu: um nome (pessoa), `regra:...` (leitura
+  literal da cláusula, por código — PREMISSAS.md §3.4) ou `ia:...` (proposta de
+  IA, **não** equivale a revisão humana: diga isso na resposta, com os ids de
+  `interpretacoes_ia`, cuja leitura e citações estão em `temporal/ia.yaml`).
+- `precisao: {campo: ano}` — o texto diz só o ano ("em 2027"). Se a data de
+  referência cai nesse ano, o estado é **incerto**: diga que o dia não está no
+  texto.
+- `excecoes_subdivisao` — um § ou inciso tem datas próprias. O estado do artigo
+  não vale para ele.
+- `data_ato` não é `publicacao`. "Na data de sua publicação" é a do DOU.
+
+Verifique também `status`: `vigente`, `vigente_sem_efeitos`, `sem_efeitos`,
+`futuro`, `revogado`, `pendente_regulamentacao`. É o estado na data de
+ingestão; para a data de referência, use `consultar.py`.
 
 ### 5. Consulte as lacunas
 

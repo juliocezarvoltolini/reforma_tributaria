@@ -23,6 +23,11 @@ fontes:
       - tipo: texto_compilado
         url: "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm"
         url_verificada: false
+      # Texto publicado no DOU — prevalece sobre o compilado (PREMISSAS.md §1.4).
+      # URL informada pelo usuário em 2026-10-14, do portal da Imprensa Nacional.
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/web/dou/-/emenda-constitucional-n-132-532314756"
+        url_verificada: false
     observacao: >-
       Norma de regência constitucional da Reforma Tributária do consumo.
       Ingerir primeiro: os demais diplomas remetem a ela.
@@ -40,11 +45,88 @@ fontes:
       - tipo: texto_compilado
         url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm"
         url_verificada: false
+      # Texto publicado no DOU — prevalece sobre o compilado (PREMISSAS.md §1.4).
+      # URL informada pelo usuário em 2026-10-14, do portal da Imprensa Nacional.
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/en/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-607430757"
+        url_verificada: false
+      # Promulgação de partes vetadas (art. 66, § 5º, da Constituição Federal),
+      # o outro ato que o compilado traz depois dos anexos. URL informada pelo
+      # usuário em 2026-10-14 como a republicação de 23/01/2025; o cabeçalho da
+      # página baixada diz "Publicado em: 02/07/2025 | Edição: 122 | Seção: 1 |
+      # Página: 3" e o texto traz os incisos V e X do art. 26.
+      - tipo: texto_publicado_partes_vetadas
+        url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-214-de-16-de-janeiro-de-2025-639344828"
+        url_verificada: false
+      # Republicação citada no rodapé do compilado ("republicado no DOU de
+      # 23.1.2025"). PDF da página no visualizador da Imprensa Nacional, baixado
+      # pelo usuário em 2026-10-15 (o visualizador pede captcha). A página é a do
+      # código de autenticidade impresso no PDF, 05152025012300001: jornal 515,
+      # 23/01/2025, página 1.
+      - tipo: texto_republicado
+        url: "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?jornal=515&pagina=1&data=23/01/2025"
+        url_verificada: false
     observacao: >-
       Diploma central de instituição do IBS, da CBS e do Imposto Seletivo.
       Atenção na revisão: dispositivos vetados e vetos posteriormente
       derrubados precisam de marcação própria em /eventos/ — o texto
       compilado nem sempre reflete a derrubada de imediato.
+
+  # ---------------------------------------------------------------- nível 2
+  # Leis que alteram a LC 214. Número, data e URLs informados pelo usuário em
+  # 2026-10-15; as anotações do compilado da LC 214 citam "Lei Complementar nº
+  # 227, de 2026" e "nº 235, de 2026". `remissoes: so_escopo_afirmado`: lei de
+  # alteração, como a emenda — "art. N" sem qualificador é, quase sempre, da
+  # norma alterada (ver fatiar.exige_escopo_interno).
+  - id: lcp-227-2026
+    titulo: "Lei Complementar nº 227, de 13 de janeiro de 2026"
+    slug: lc-227-2026
+    tipo: lei.complementar
+    numero: "227"
+    data: "2026-01-13"
+    autoridade: "br:federal:lei.complementar"
+    prioridade: 2
+    remissoes: so_escopo_afirmado
+    urls:
+      - tipo: texto_compilado
+        url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm"
+        url_verificada: false
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-227-de-13-de-janeiro-de-2026-681157850"
+        url_verificada: false
+      # Republicação (DOU de 15.1.2026) e retificação (23.1.2026) citadas no
+      # rodapé do compilado: os atos no Planalto, achados por busca em
+      # 2026-10-15 (o DOU recusa acesso deste ambiente). Download autorizado pelo
+      # usuário. O que cada um traz é lido do arquivo, não presumido.
+      - tipo: texto_republicado
+        url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/ret/lcp227-26-rep.doc"
+        url_verificada: false
+      - tipo: texto_retificado
+        url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/ret/lcp227-26-ret.doc"
+        url_verificada: false
+    observacao: >-
+      Altera a LC 214/2025: a maior parte das anotações "(Incluído pela...)" e
+      "(Redação dada pela...)" do compilado da LC 214 é dela. A vigência do
+      texto que ela incluiu ou alterou sai da cláusula de vigência DELA.
+
+  - id: lcp-235-2026
+    titulo: "Lei Complementar nº 235, de 27 de agosto de 2026"
+    slug: lc-235-2026
+    tipo: lei.complementar
+    numero: "235"
+    data: "2026-08-27"
+    autoridade: "br:federal:lei.complementar"
+    prioridade: 2
+    remissoes: so_escopo_afirmado
+    urls:
+      - tipo: texto_compilado
+        url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp235.htm"
+        url_verificada: false
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-235-de-27-de-agosto-de-2026-728568253"
+        url_verificada: false
+    observacao: >-
+      Altera a LC 214/2025 (4 anotações no compilado da LC 214).
 
 # ---------------------------------------------------------------------------
 # A INGERIR — pendente de identificação da URL oficial.
