@@ -60,6 +60,6 @@ regras:
       original, na Edição Extra do Diário Oficial da União de 16 de janeiro de
       2025, Edição: 11-B - Seção: 1 - Extra B, página 64."; nenhum artigo no
       trecho republicado -> a publicação dos artigos continua 16/01/2025
-    aprovada: false
-    aprovada_por: null
-    aprovada_em: null
+    aprovada: true
+    aprovada_por: Júlio Voltolini
+    aprovada_em: '2026-10-15'

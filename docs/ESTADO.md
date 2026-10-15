@@ -296,31 +296,30 @@ python pipeline/revisar_por_regra.py --slug emc-132-2023
 python pipeline/fatiar.py --slug emc-132-2023
 ```
 
-**Estado em 2026-10-14 (decisões por regra aplicadas a `normas/`):**
+**Estado em 2026-10-15 (decisões por regra aplicadas a `normas/`):**
 
-| Norma | Por regra | Sem decisão | Por quê |
-|---|---|---|---|
-| EC 132 | vigência de 19 artigos (arts. 3º e 4º com precisão de ano) | 4 | art. 5º tem partes revogadas; arts. 10, 11 e 21 dizem no próprio texto quando algo entra em vigor ou produz efeitos |
-| LC 214 | efeitos de 415 artigos | vigência dos 580; efeitos de 165 | vigência: a republicação de 23/01/2025 citada no rodapé não está confirmada. Efeitos: 146 com texto de outro ato (LC 227/2026, LC 235/2026, vetos, ADI), 10 com alcance mudado pela LC 227, 4 com cláusula própria (19, 165, 373, 374), 4 do inciso I (537 a 540), o art. 26 (promulgação de partes vetadas) |
+| Norma | Vigência e efeitos por regra | Só vigência por regra | Sem decisão | Por quê |
+|---|---|---|---|---|
+| EC 132 | — | 19 (arts. 3º e 4º com precisão de ano) | 4 | art. 5º tem partes revogadas; arts. 10, 11 e 21 dizem no próprio texto quando algo entra em vigor ou produz efeitos |
+| LC 214 | 419 (arts. 537 a 540 com efeitos em 1º/05/2025) | 10 | 151 | só vigência: alcance do inciso mudado pela LC 227. Sem decisão: 146 com texto de outro ato (LC 227/2026, LC 235/2026, vetos, ADI), 4 com cláusula própria (19, 165, 373, 374), o art. 26 (promulgação de partes vetadas) |
 
-Nenhuma decisão humana foi tomada. Os efeitos na EC 132 nunca são decididos por
-regra (a cláusula só dá a vigência).
+Nenhuma decisão humana foi tomada: as 448 são de regra. Os efeitos na EC 132
+nunca são decididos por regra (a cláusula só dá a vigência).
 
-**Decisões que destravam mais de um artigo de uma vez:**
+**Regras derivadas aprovadas pelo usuário em 2026-10-15** (`temporal/regras.yaml`),
+com a PREMISSAS.md §3.4:
 
-1. **Regra `republicacao-sem-artigo`** (`temporal/regras.yaml`, não aprovada).
-   A republicação de 23/01/2025 está arquivada (PDF da página 1 do DOU,
-   `fontes/lc-214-2025/texto_republicado.pdf`) e lida por `pipeline/dou_pdf.py`:
-   a nota diz "(\*) Republicação do Anexo XXIII a Lei Complementar nº 214...", e
-   o trecho republicado não tem artigo. Aprovada a regra, a publicação dos
-   artigos continua 16/01/2025, e a vigência de todos os artigos sem outro
-   bloqueio sai por regra.
-2. **Regra `primeiro-dia-do-mes-subsequente`**: aprovada em 2026-10-15. Dá
-   1º/05/2025 aos efeitos dos arts. 537 a 540 (LC 214, art. 544, I), mas só
-   depois do item 1, porque a data sai da publicação.
+- `ano-primeiro-dia` (confirmada): "em 2027" -> 2027-01-01, precisão de ano.
+- `primeiro-dia-do-mes-subsequente`: LC 214, art. 544, I -> 1º/05/2025.
+- `republicacao-sem-artigo`: a republicação de 23/01/2025, arquivada (PDF da
+  página 1 do DOU, `fontes/lc-214-2025/texto_republicado.pdf`) e lida por
+  `pipeline/dou_pdf.py`, traz só o Anexo XXIII ("(\*) Republicação do Anexo
+  XXIII a Lei Complementar nº 214..."), nenhum artigo; a publicação dos artigos
+  continua 16/01/2025.
 
-A PREMISSAS.md §3.4 e a regra `ano-primeiro-dia` foram aprovadas pelo usuário em
-2026-10-15.
+**Próximo bloco:** os 146 artigos com texto de outro ato dependem da cláusula de
+vigência das normas que os alteraram — LC 227/2026, sobretudo — que não estão
+ingeridas.
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
   proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três
