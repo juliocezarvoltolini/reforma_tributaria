@@ -94,7 +94,11 @@ ingerido_em: "2026-08-11"         # (*) tempo de conhecimento (bitemporal)
 # --- relações ---
 remete_a: ["urn:...!art9", "urn:...!art57_par2"]
 altera: []
-alterado_por: []
+alterado_por:                     # anotação oficial ligada ao artigo que fez a alteração
+  - anotacao: "(Incluído pela Lei Complementar nº 227, de 2026)"
+    subdivisao: "urn:...;214!art26_par9"  # onde a anotação está; null se sozinha na linha
+    link: "Lcp227.htm#art174"             # href do compilado, literal
+    ato: "urn:...;227!art174"             # null se não leva a norma ingerida
 tributos: ["IBS", "CBS"]
 conceitos_definidos: ["operação onerosa"]
 
@@ -140,6 +144,13 @@ Art. 12. [texto verbatim, sem edição, sem paráfrase]
 - `precisao: {campo: ano}` registra o que o texto diz de fato. A data gravada é
   AAAA-01-01 por convenção, e `consultar.py` avisa — e não omite o dispositivo —
   quando a data consultada cai naquele ano.
+- `alterado_por` vem dos links das anotações no compilado do Planalto
+  (`pipeline/alteracoes.py`). `ato` só é preenchido quando o arquivo é de norma
+  do catálogo e a âncora é `artN`; âncora irregular, link para o próprio arquivo
+  ou para fora (STF, decreto não ingerido) ficam com `ato: null`. `validar.py`
+  confere cada ligação no texto do artigo alterador: ele cita o artigo anotado
+  (alteração) ou o lista no inciso que nomeia a norma (revogação). Anotação
+  sozinha na linha (`isolada: true`) fica sem subdivisão.
 - `excecoes_subdivisao` cobre o que a cláusula diz de uma subdivisão ("exceto
   os §§ 1º e 5º"). A URN tem de ser de subdivisão do próprio artigo, e cada
   exceção tem `fundamento`.

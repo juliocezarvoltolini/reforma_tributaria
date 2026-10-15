@@ -587,6 +587,139 @@ def abertura_implicita():
            "link para âncora do MESMO arquivo não é sinal de outra norma")
 
 
+URN_999 = "urn:lex:br:federal:lei.complementar:1900-01-03;999"
+
+
+@cenario("anotação ligada ao artigo que fez a alteração")
+def alteracoes_ligadas():
+    """Markup medido no compilado da LC 214: '<a href="Lcp227.htm#art174">(Incluído
+    pela Lei Complementar nº 227, de 2026)</a>' — a anotação é um link para o artigo
+    da lei alteradora. Quebra: perder o link (o artigo alterado fica sem saber de
+    quem vem a vigência do texto novo), ligar a um artigo inventado a partir de
+    âncora irregular, ou tomar link de remissão comum por alteração."""
+    import alteracoes as A
+
+    html = ('<p>§ 1º Texto. <a href="Lcp999.htm#art7">(Incluído pela Lei Complementar nº '
+            '999, de 1900)</a></p><p>Art. 2º Ver o <a href="#art1">art. 1º</a>.</p>').encode("utf-8")
+    linhas = F.html_para_linhas(html)
+    checar(linhas[0].links == (("Lcp999.htm#art7",
+                                "(Incluído pela Lei Complementar nº 999, de 1900)"),)
+           and linhas[1].links == (("#art1", "art. 1º"),),
+           f"cada linha guarda seus links (obteve {[l.links for l in linhas]})")
+
+    mapa = {"lcp999.htm": URN_999}
+    checar(A.resolver_link("Lcp999.htm#art7", mapa) == URN_999 + "!art7"
+           and A.resolver_link("../lcp/LCP999.htm#art7a", mapa) == URN_999 + "!art7-A",
+           "arquivo de norma ingerida + âncora 'artN': URN do artigo")
+    checar(A.resolver_link("Lcp999.htm#art181-4-a", mapa) is None
+           and A.resolver_link("outra.htm#art7", mapa) is None
+           and A.resolver_link("#art7", mapa) is None and A.resolver_link("Lcp999.htm", mapa) is None,
+           "âncora irregular, norma não ingerida, mesmo arquivo ou sem âncora: não resolve")
+
+    corpo = ["Art. 3º Caput.",
+             "§ 1º Texto. (Incluído pela Lei Complementar nº 999, de 1900)",
+             "~~§ 2º Antigo.~~ (Revogado pela Lei Complementar nº 999, de 1900)",
+             "§ 3º Ver o art. 1º."]
+    links = [(), (("Lcp999.htm#art7", "(Incluído pela Lei Complementar nº 999, de 1900)"),),
+             (("Lcp999.htm#art9", "(Revogado pela Lei Complementar nº 999, de 1900)"),),
+             (("#art1", "art. 1º"),)]
+    r = A.alteracoes_do_artigo(corpo, links, URN_BASE, "3", mapa)
+    checar(r == [
+        {"anotacao": "(Incluído pela Lei Complementar nº 999, de 1900)",
+         "subdivisao": urn_dispositivo(URN_BASE, "3", paragrafo="1"),
+         "link": "Lcp999.htm#art7", "ato": URN_999 + "!art7"},
+        {"anotacao": "(Revogado pela Lei Complementar nº 999, de 1900)",
+         "subdivisao": urn_dispositivo(URN_BASE, "3", paragrafo="2"),
+         "link": "Lcp999.htm#art9", "ato": URN_999 + "!art9"},
+    ], f"só links de anotação, com a subdivisão onde estão (obteve {r})")
+    isolada = A.alteracoes_do_artigo(
+        ["Art. 3º Caput.", "(Incluído pela Lei Complementar nº 999, de 1900)"],
+        [(), (("Lcp999.htm#art7", "(Incluído pela Lei Complementar nº 999, de 1900)"),)],
+        URN_BASE, "3", mapa)
+    checar(isolada == [{"anotacao": "(Incluído pela Lei Complementar nº 999, de 1900)",
+                        "subdivisao": None, "isolada": True, "link": "Lcp999.htm#art7",
+                        "ato": URN_999 + "!art7"}],
+           "anotação sozinha na linha (LC 214: a do título inserido, que caiu no artigo "
+           "anterior): sem subdivisão, marcada como isolada")
+
+    nome = "Lei Complementar nº 214"
+    alteradora = ({"dispositivos_citados": ["3", "5"]},
+                  "Art. 7º A Lei Complementar nº 214, de 1º de janeiro de 1900, passa a vigorar "
+                  "com as seguintes alterações:\n\n“Art. 3º ...”")
+    checar(A.conferir("3", nome, *alteradora) == "citacao"
+           and A.conferir("4", nome, *alteradora) is None,
+           "artigo de alteração: confirma só o que ele cita, se o caput nomeia a norma")
+    outra = ({"dispositivos_citados": ["3"]},
+             "Art. 7º A Lei nº 1, de 1900, passa a vigorar com as seguintes alterações:")
+    prefixo = ({"dispositivos_citados": ["3"]},
+               "Art. 7º A Lei Complementar nº 2140, de 1900, passa a vigorar com as seguintes "
+               "alterações:")
+    checar(A.conferir("3", nome, *outra) is None and A.conferir("3", nome, *prefixo) is None,
+           "cita o art. 3º, mas de outra norma (ou 'nº 2140', não 'nº 214'): não confirma")
+    revogadora = ({"dispositivos_citados": []},
+                  "Art. 9º Revogam-se:\n\nI - os seguintes dispositivos da Lei nº 1, de 1900:\n\n"
+                  "a) o art. 4º;\n\nII - os seguintes dispositivos da Lei Complementar nº 214, "
+                  "de 1º de janeiro de 1900:\n\na) o § 8º do art. 3º;\n\nb) os arts. 6º e 8º.")
+    checar(A.conferir("3", nome, *revogadora) == "lista_de_revogacao"
+           and A.conferir("8", nome, *revogadora) == "lista_de_revogacao",
+           "artigo de revogação: confirma o que está no inciso que nomeia a norma")
+    checar(A.conferir("4", nome, *revogadora) is None,
+           "o art. 4º revogado é de OUTRA lei (inciso I): não confirma")
+
+
+@cenario("validação: a ligação da anotação é conferida no artigo alterador")
+def validar_alteracoes():
+    """Quebra: aceitar link de anotação que o artigo alterador não confirma, ou
+    calar quando o alterador não está na base."""
+    import validar as V
+
+    base = URN_BASE
+    alterado = ({"urn": base + "!art3", "norma": "Lei Complementar nº 214, de 1º de janeiro de 1900",
+                 "alterado_por": [
+                     {"anotacao": "(Incluído pela ...)", "subdivisao": base + "!art3_par1",
+                      "link": "Lcp999.htm#art7", "ato": URN_999 + "!art7"},
+                     {"anotacao": "(Incluído pela ...)", "subdivisao": base + "!art3_par2",
+                      "link": "Lcp999.htm#art8", "ato": URN_999 + "!art8"},
+                     {"anotacao": "(Vide ADI 1)", "subdivisao": base + "!art3",
+                      "link": "https://stf/x", "ato": None},
+                     {"anotacao": "(Incluído pela ...)", "subdivisao": base + "!art3_par3",
+                      "link": "Lcp999.htm#art50", "ato": URN_999 + "!art50"},
+                     {"anotacao": "(Incluído pela ...)", "subdivisao": None, "isolada": True,
+                      "link": "Lcp999.htm#art8", "ato": URN_999 + "!art8"}]}, "Art. 3º ...")
+    art7 = ({"urn": URN_999 + "!art7", "dispositivos_citados": ["3"]},
+            "Art. 7º A Lei Complementar nº 214, de 1º de janeiro de 1900, passa a vigorar com "
+            "as seguintes alterações:")
+    art8 = ({"urn": URN_999 + "!art8", "dispositivos_citados": ["4"]},
+            "Art. 8º A Lei Complementar nº 214, de 1º de janeiro de 1900, passa a vigorar com "
+            "as seguintes alterações:")
+    r = V.conferir_alteracoes([alterado, art7, art8])
+    checar(r["confirmadas"] == 1 and r["sem_ato"] == 1
+           and [x.split("!")[-1] for x in r["nao_confirmadas"]] == ["art8"]
+           and [x.split("!")[-1] for x in r["alterador_ausente"]] == ["art50"]
+           and [x.split("!")[-1] for x in r["isoladas_nao_confirmadas"]] == ["art8"],
+           f"uma confirmada, uma que o alterador não cita, uma sem alterador na base, uma "
+           f"sem ato, e a isolada não confirmada contada à parte (obteve {r})")
+
+
+@cenario("normas/ reais: LC 214 ligada às leis que a alteraram (pulado se ausentes)")
+def alteracoes_reais():
+    """Contrato com o compilado da LC 214: anotações do art. 26 e do art. 482-A
+    apontam para 'Lcp227.htm#art174' (lido no HTML)."""
+    if not (RAIZ / "normas" / "lc-214-2025").exists():
+        print("  pulado: normas/lc-214-2025 ausente")
+        return
+    from comum import ler_frontmatter
+
+    art174 = urn_norma("br:federal:lei.complementar", "2026-01-13", "227") + "!art174"
+    meta, _ = ler_frontmatter(RAIZ / "normas" / "lc-214-2025" / "art-0482-A.md")
+    da_227 = [a for a in meta.get("alterado_por") or [] if "227" in a["anotacao"]]
+    checar(da_227 and all(a["ato"] == art174 for a in da_227),
+           f"482-A: as anotações da LC 227 ligadas ao art. 174 dela (obteve {da_227[:2]})")
+    meta, _ = ler_frontmatter(RAIZ / "normas" / "lc-214-2025" / "art-0026.md")
+    checar(any(a["ato"] == art174 for a in meta.get("alterado_por") or []),
+           "art. 26: ligado ao art. 174 da LC 227")
+
+
 # ---------------------------------------------------------------------------
 # Escopo da remissão — operam sobre texto, sem depender do HTML
 # ---------------------------------------------------------------------------

@@ -334,8 +334,15 @@ sem qualificador nelas é, quase sempre, da norma alterada.
 **Próximo bloco:** os 146 artigos da LC 214 com texto de outro ato dependem da
 cláusula de vigência da LC 227 (art. 182), que espera:
 1. arquivar a republicação (DOU de 15/01/2026) e a retificação (23/01/2026);
-2. ligar cada anotação "(Incluído pela Lei Complementar nº 227...)" da LC 214
-   ao artigo da LC 227 que fez a alteração.
+2. ~~ligar cada anotação "(Incluído pela Lei Complementar nº 227...)" da LC 214
+   ao artigo da LC 227 que fez a alteração~~ — feito: `alterado_por`, a partir
+   dos links do compilado. Das anotações ligadas a artigo da base, 775 são
+   confirmadas no texto do alterador (o art. 174 da LC 227 cita o artigo; o
+   art. 181 o revoga no inciso da LC 214), 0 não confirmadas e 4 isoladas não
+   confirmadas (arts. 98, 341, 470 e 471: a anotação do título inserido que
+   caiu no artigo anterior, ver item 4 das decisões em aberto);
+3. usar `alterado_por` na proposta: o texto incluído ou alterado pela LC 227
+   tem a vigência e os efeitos que o art. 182 dela dá ao art. 174 (e ao 181).
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
   proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três

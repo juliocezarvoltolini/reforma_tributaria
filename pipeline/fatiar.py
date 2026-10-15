@@ -39,6 +39,7 @@ from comum import (
 )
 import datetime as _dt
 
+from alteracoes import alteracoes_do_artigo, mapa_de_links  # noqa: E402
 from revisao_temporal import aplicar_revisao, carregar_revisoes, ordenar_meta
 
 CATALOGO = Path(__file__).resolve().parent / "fontes.yaml"
@@ -81,6 +82,9 @@ class Linha(NamedTuple):
     link_externo  o primeiro texto do parágrafo está num link para OUTRO arquivo
                 (`<a href="Lcp214.htm#art493a">Art. 493-A.</a>`): o arquivo. É
                 como o Planalto liga o cabeçalho citado à norma alterada.
+    links       (href, texto) de cada <a href> do parágrafo. A anotação
+                "(Incluído pela Lei Complementar nº 227, de 2026)" é um link para o
+                artigo da lei que fez a alteração (`Lcp227.htm#art174`).
     """
 
     completa: str
@@ -88,6 +92,7 @@ class Linha(NamedTuple):
     marcada: str
     blockquote: bool | None = None
     link_externo: str | None = None
+    links: tuple[tuple[str, str], ...] = ()
 
 
 def _normalizar(texto: str) -> str:
@@ -138,6 +143,9 @@ class _Extrator(HTMLParser):
         self._href_externo: str | None = None  # arquivo do <a href> aberto, se outro
         self._texto_na_linha = False
         self._link_na_linha: str | None = None
+        self._href: str | None = None  # <a href> aberto
+        self._texto_href: list[str] = []
+        self._links_na_linha: list[tuple[str, str]] = []
 
     def handle_starttag(self, tag, attrs):
         if tag in _IGNORAR:
@@ -150,8 +158,10 @@ class _Extrator(HTMLParser):
         if tag == "blockquote":
             self._blockquote += 1
         if tag == "a":
-            arquivo = (dict(attrs).get("href") or "").split("#", 1)[0].strip()
+            href = (dict(attrs).get("href") or "").strip()
+            arquivo = href.split("#", 1)[0].strip()
             self._href_externo = arquivo or None
+            self._href, self._texto_href = (href or None), []
         if tag not in _VAZIAS:
             self._pilha.append((tag, _riscado(tag, attrs)))
 
@@ -168,6 +178,10 @@ class _Extrator(HTMLParser):
             self._blockquote -= 1
         if tag == "a":
             self._href_externo = None
+            texto = _normalizar("".join(self._texto_href))
+            if self._href and texto:
+                self._links_na_linha.append((self._href, texto))
+            self._href, self._texto_href = None, []
         if tag in _CELULA:
             self._segmentos.append((" ", False))
         # HTML do Word deixa tags sem fechar: fecha tudo que estava aberto dentro
@@ -188,17 +202,21 @@ class _Extrator(HTMLParser):
         if not self._texto_na_linha and dados.strip():
             self._texto_na_linha = True
             self._link_na_linha = self._href_externo
+        if self._href:
+            self._texto_href.append(dados)
         self._segmentos.append((dados, any(r for _, r in self._pilha)))
 
     def _fechar_linha(self) -> None:
         segmentos, self._segmentos = self._segmentos, []
         link, self._link_na_linha, self._texto_na_linha = self._link_na_linha, None, False
+        links, self._links_na_linha = tuple(self._links_na_linha), []
         completa = _normalizar("".join(t for t, _ in segmentos))
         if not completa:
             return
         vigente = _normalizar("".join(t for t, r in segmentos if not r))
         self.linhas.append(
-            Linha(completa, vigente, _normalizar(_marcar(segmentos)), self._bq_na_linha, link)
+            Linha(completa, vigente, _normalizar(_marcar(segmentos)), self._bq_na_linha, link,
+                  links)
         )
 
     def concluir(self) -> list[Linha]:
@@ -663,6 +681,9 @@ def _novo_artigo(numero: str, hierarquia: list[str]) -> dict:
         "hierarquia": list(hierarquia),
         # Corpo do arquivo: tudo que o portal mostra, o riscado entre ~~ ~~.
         "linhas": [],
+        # Links de cada linha de `linhas`, na mesma ordem: as anotações oficiais
+        # são links para o artigo da lei que fez a alteração.
+        "links": [],
         # Sem o riscado, incluindo o texto citado. Base das anotações oficiais e
         # das normas externas mencionadas.
         "linhas_vigentes": [],
@@ -679,6 +700,7 @@ def _novo_artigo(numero: str, hierarquia: list[str]) -> dict:
 
 def _anexar(artigo: dict, linha: Linha, proprio: bool) -> None:
     artigo["linhas"].append(linha.marcada)
+    artigo["links"].append(linha.links)
     if linha.vigente:
         artigo["linhas_vigentes"].append(linha.vigente)
         if proprio:
@@ -977,7 +999,7 @@ def publicacao_de(refs: dict, dou: dict | None = None,
 
 def montar_meta(
     artigo: dict, fonte: dict, registro: dict, base: str, publicacao: dict,
-    exigir_escopo: bool,
+    exigir_escopo: bool, mapa_links: dict[str, str] | None = None,
 ) -> tuple[dict, str]:
     """(front-matter, corpo) de um artigo, ainda sem revisão temporal."""
     # Corpo do arquivo: tudo que o portal mostra, o riscado entre ~~ ~~.
@@ -1032,7 +1054,12 @@ def montar_meta(
         # altera. Não são dispositivos desta norma.
         "dispositivos_citados": artigo["citados"],
         "altera": [],
-        "alterado_por": [],
+        # Cada anotação oficial ligada ao artigo da lei que fez a alteração
+        # (ver alteracoes.py). `ato: null` quando o link não leva a norma ingerida.
+        "alterado_por": alteracoes_do_artigo(artigo["linhas"],
+                                             artigo.get("links") or [()] * len(artigo["linhas"]),
+                                             base,
+                                             artigo["numero"], mapa_links or {}),
         "extracao": "automatica",
         "revisao_temporal_pendente": True,
         "revisado_por": None,
@@ -1115,7 +1142,8 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
 
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
     exigir_escopo = exige_escopo_interno(fonte)
-    gerados = [montar_meta(a, fonte, registro, base, publicacao, exigir_escopo)
+    mapa_links = mapa_de_links(yaml.safe_load(CATALOGO.read_text(encoding="utf-8")))
+    gerados = [montar_meta(a, fonte, registro, base, publicacao, exigir_escopo, mapa_links)
                for a in artigos]
 
     # Revisão temporal humana, se houver. Erro aqui aborta ANTES de apagar

@@ -10,6 +10,7 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import re
 import json
 import sys
 from collections import defaultdict
@@ -30,6 +31,7 @@ from comum import (
     para_data,
     sha256_arquivo,
 )
+from alteracoes import conferir
 from revisao_temporal import carregar_revisoes, problemas_no_dispositivo, revisoes_nao_aplicadas
 
 erros: list[str] = []
@@ -50,7 +52,8 @@ def rel(caminho: Path) -> str:
 
 # ---------------------------------------------------------------------------
 
-def validar_dispositivos() -> list[dict]:
+def validar_dispositivos(corpos: dict[str, str] | None = None) -> list[dict]:
+    """Valida cada dispositivo. `corpos`, se dado, recebe {urn: corpo}."""
     metas: list[dict] = []
     por_urn: dict[str, list[str]] = defaultdict(list)
     # O mesmo aviso em centenas de dispositivos da mesma norma vira uma linha só:
@@ -106,6 +109,8 @@ def validar_dispositivos() -> list[dict]:
 
         if meta.get("urn"):
             por_urn[meta["urn"]].append(rel(caminho))
+            if corpos is not None:
+                corpos[meta["urn"]] = corpo
 
         metas.append(meta)
 
@@ -293,17 +298,73 @@ def relatar_pendencias(metas: list[dict]) -> None:
         )
 
 
+RE_NUMERO_DA_URN = re.compile(r"!art([^_!]+)$")
+
+
+def conferir_alteracoes(itens: list[tuple[dict, str]]) -> dict:
+    """Cada anotação ligada a um artigo alterador (`alterado_por`) é conferida no
+    texto dele, que é outra fonte: ele cita, ou revoga, o artigo anotado?"""
+    por_urn = {meta.get("urn"): (meta, corpo) for meta, corpo in itens}
+    r = {"confirmadas": 0, "sem_ato": 0, "nao_confirmadas": [], "alterador_ausente": [],
+         "isoladas_nao_confirmadas": []}
+    for meta, _ in itens:
+        m = RE_NUMERO_DA_URN.search(meta.get("urn") or "")
+        nome = (meta.get("norma") or "").split(",")[0].strip()
+        for alteracao in meta.get("alterado_por") or []:
+            if not alteracao.get("ato"):
+                r["sem_ato"] += 1
+                continue
+            alvo = por_urn.get(alteracao["ato"])
+            if alvo is None:
+                r["alterador_ausente"].append(alteracao["ato"])
+            elif m and conferir(m.group(1), nome, *alvo):
+                r["confirmadas"] += 1
+            elif alteracao.get("isolada"):
+                # Anotação sozinha na linha: pode ser de um título inserido que
+                # caiu neste artigo (docs/ESTADO.md). Contada à parte.
+                r["isoladas_nao_confirmadas"].append(alteracao["ato"])
+            else:
+                r["nao_confirmadas"].append(alteracao["ato"])
+    return r
+
+
+def relatar_alteracoes(metas: list[dict], corpos: dict[str, str]) -> None:
+    r = conferir_alteracoes([(m, corpos.get(m.get("urn"), "")) for m in metas])
+    total = (r["confirmadas"] + r["sem_ato"] + len(r["nao_confirmadas"])
+             + len(r["alterador_ausente"]) + len(r["isoladas_nao_confirmadas"]))
+    if total:
+        print(f"  anotacoes ligadas ao ato alterador: {r['confirmadas']} confirmadas no texto dele, "
+              f"{len(r['nao_confirmadas'])} nao confirmadas, "
+              f"{len(r['isoladas_nao_confirmadas'])} isoladas nao confirmadas, "
+              f"{len(r['alterador_ausente'])} com alterador fora da base, "
+              f"{r['sem_ato']} sem ato resolvido")
+    if r["nao_confirmadas"]:
+        exemplos = sorted(set(r["nao_confirmadas"]))[:5]
+        aviso(f"{len(r['nao_confirmadas'])} anotacao(oes) ligada(s) a artigo alterador que nao "
+              f"confirma a alteracao no proprio texto: {', '.join(exemplos)}")
+    if r["isoladas_nao_confirmadas"]:
+        aviso(f"{len(r['isoladas_nao_confirmadas'])} anotacao(oes) sozinha(s) na linha, nao "
+              "confirmada(s) pelo alterador: provavelmente de titulo inserido que caiu no "
+              "artigo anterior (docs/ESTADO.md); o artigo continua com a pendencia")
+    if r["alterador_ausente"]:
+        exemplos = sorted(set(r["alterador_ausente"]))[:5]
+        aviso(f"{len(r['alterador_ausente'])} anotacao(oes) ligada(s) a artigo que nao esta na "
+              f"base: {', '.join(exemplos)}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--estrito", action="store_true", help="avisos tambem falham")
     args = ap.parse_args()
 
-    metas = validar_dispositivos()
+    corpos: dict[str, str] = {}
+    metas = validar_dispositivos(corpos)
     validar_remissoes(metas)
     validar_hashes()
     validar_interpretacoes()
     validar_revisoes_temporais(metas)
     relatar_pendencias(metas)
+    relatar_alteracoes(metas, corpos)
 
     if not metas:
         aviso("nenhum dispositivo em /normas/ — base vazia")
