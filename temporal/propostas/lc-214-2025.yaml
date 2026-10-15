@@ -617,7 +617,7 @@ resumo:
     indeterminado: 1
     V: 2
     I: 4
-  com_marcos_proprios: 258
+  com_marcos_proprios: 255
   com_texto_inserido_em_outra_norma: 41
 dispositivos:
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art1
@@ -6213,7 +6213,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art36_par3_incII
     tipos:
@@ -11767,43 +11767,22 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
-  marcos_proprios:
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art98_parU
-    tipos:
-    - ano
-    trecho: (Incluído pela Lei Complementar nº 227, de 2026)
+    efeitos_inicio: '2026-01-01'
+  marcos_proprios: []
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
-  marcas_de_outro_ato:
-  - (Incluído pela Lei Complementar nº 227, de 2026)
-  alteracoes:
-  - subdivisao: null
-    tipo: incluido
-    anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
-    ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-    conferida: false
-    ato_vigencia:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-    ato_efeitos:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    resultado_se_aprovada: null
-    proposta: null
-    motivo: ligação não confirmada no texto do ato alterador
-  alteracoes_cobrem_as_marcas: true
-  marcas_ocorrencias: 1
+  marcas_de_outro_ato: []
+  alteracoes: []
+  alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
   vetados:
     ocorrencias: 0
     subdivisoes: []
     caput_vetado: false
-  pendencias:
-  - marcos_proprios
-  - redacao_de_outro_ato
+  pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11812,10 +11791,12 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art98-A
   artigo: 98-A
   vigencia:
@@ -13201,7 +13182,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art116_par3
     tipos:
@@ -14740,7 +14721,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art138_par10
     tipos:
@@ -18739,7 +18720,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art183_par1
     tipos:
@@ -23070,7 +23051,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art231_par1_incIV
     tipos:
@@ -25192,7 +25173,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art252_par2_incI
     tipos:
@@ -28354,7 +28335,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art293_par4_incII
     tipos:
@@ -32033,7 +32014,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-F
     tipos:
@@ -32044,10 +32025,6 @@ dispositivos:
     - ano
     - prazo_relativo
     trecho: Parágrafo único. A solução de consulta será definitiva e deverá ser proferida no prazo definido em regulamento, contado da data da sua protocolização. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-F_parU
-    tipos:
-    - ano
-    trecho: (Incluído pela Lei Complementar nº 227, de 2026)
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -32086,24 +32063,8 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: null
-    tipo: incluido
-    anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
-    ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-    conferida: true
-    ato_vigencia:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-    ato_efeitos:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    resultado_se_aprovada:
-      vigencia_inicio: '2026-01-14'
-      efeitos_inicio: '2026-01-14'
-    proposta: null
-    motivo: null
   alteracoes_cobrem_as_marcas: true
-  marcas_ocorrencias: 3
+  marcas_ocorrencias: 2
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -32112,19 +32073,40 @@ dispositivos:
   - marcos_proprios
   - redacao_de_outro_ato
   revisao:
-    decisao: null
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2025-01-16'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-01-01'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
-    excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+    excecoes_subdivisao:
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-F_par0
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-F_parU
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao, texto-alterado-pela-lc-227: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
+    - texto-alterado-pela-lc-227
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-G
   artigo: 323-G
   vigencia:
@@ -34254,7 +34236,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art327-A
     tipos:
@@ -34785,7 +34767,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -35388,47 +35370,27 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art341_par2
     tipos:
     - prazo_relativo
     trecho: § 2º Na hipótese em que tenham sido aplicadas as medidas a que se referem os incisos II a IV do caput do art. 339, deverão ser observados, para o lançamento de ofício, os prazos de recolhimento estabelecidos no REF.
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art341_par2
-    tipos:
-    - ano
-    trecho: (Incluído pela Lei Complementar nº 227, de 2026)
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
-  marcas_de_outro_ato:
-  - (Incluído pela Lei Complementar nº 227, de 2026)
-  alteracoes:
-  - subdivisao: null
-    tipo: incluido
-    anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
-    ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-    conferida: false
-    ato_vigencia:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-    ato_efeitos:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    resultado_se_aprovada: null
-    proposta: null
-    motivo: ligação não confirmada no texto do ato alterador
-  alteracoes_cobrem_as_marcas: true
-  marcas_ocorrencias: 1
+  marcas_de_outro_ato: []
+  alteracoes: []
+  alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
   vetados:
     ocorrencias: 0
     subdivisoes: []
     caput_vetado: false
   pendencias:
   - marcos_proprios
-  - redacao_de_outro_ato
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -35437,10 +35399,12 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-A
   artigo: 341-A
   vigencia:
@@ -36078,7 +36042,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-F
     tipos:
@@ -38626,10 +38590,6 @@ dispositivos:
     - ano
     - data_explicita
     trecho: Art. 347. Em relação aos fatos geradores ocorridos de 1º de janeiro de 2027 a 31 de dezembro de 2028, a alíquota da CBS será aquela fixada nos termos do inciso I do caput e dos §§ 2º e 3º, todos do art. 14, reduzida em 0,1 (um décimo) ponto percentual, exceto em relação aos combustíveis sujeitos ao regime específico de que tratam os arts. 172 a 180 desta Lei Complementar.
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art347_par2
-    tipos:
-    - ano
-    trecho: Disposições Comuns ao IBS e à CBS em 2026
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -38713,10 +38673,6 @@ dispositivos:
     tipos:
     - ano
     trecho: § 4º O atendimento à intimação a que se refere o § 3º deste artigo importa extinção da penalidade imposta ao sujeito passivo. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art348_par4
-    tipos:
-    - ano
-    trecho: Da Fixação das Alíquotas de Referência de 2027 a 2035
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -42248,10 +42204,6 @@ dispositivos:
     tipos:
     - ano
     trecho: § 3º Na elaboração dos cálculos das alíquotas de referência previstas nos §§ 1º e 2º deste artigo, a base de cálculo a ser utilizada nas estimativas tomará por referência em 2030 e 2031, prioritariamente, a receita do IBS, ajustada de modo a contemplar diferenças na legislação do IBS entre esses anos e 2033, e, subsidiariamente, outras fontes de informação. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_par3
-    tipos:
-    - ano
-    trecho: Da Fixação das Alíquotas de Referência em 2034 e 2035
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -42559,10 +42511,6 @@ dispositivos:
     tipos:
     - ano
     trecho: Art. 366. Observado o disposto nos arts. 19 e 369 desta Lei Complementar, a alíquota de referência da CBS e as alíquotas de referência estadual e municipal do IBS em 2034 e 2035 serão aquelas fixadas para 2033.
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art366
-    tipos:
-    - ano
-    trecho: Do Limite para as Alíquotas de Referência em 2030 e 2035
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -42815,10 +42763,6 @@ dispositivos:
     - ano
     - prazo_relativo
     trecho: § 2º O montante da redução de que trata esse artigo será fixado pelo Senado Federal para o ano de 2035, observados os critérios e os prazos estabelecidos no art. 349 desta Lei Complementar.
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art369_par3
-    tipos:
-    - ano
-    trecho: Do Redutor a ser aplicado sobre as Alíquotas da CBS e do IBS nas Operações Contratadas pela Administração Pública de 2027 a 2033
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -42928,10 +42872,6 @@ dispositivos:
     tipos:
     - ano
     trecho: § 4º Para os anos de vigência de 2029 a 2032, o redutor de que trata o caput será fixado com base em uma média ponderada dos cálculos realizados na forma estabelecida nos §§ 2º e 3º deste artigo, considerando a evolução das alíquotas da CBS e do IBS.
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art370_par4
-    tipos:
-    - ano
-    trecho: DO LIMITE PARA REDUÇÃO DAS ALÍQUOTAS DO IBS DE 2029 A 2077
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -46356,7 +46296,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -47553,7 +47493,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -49512,7 +49452,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art454
     tipos:
@@ -50660,43 +50600,22 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
-  marcos_proprios:
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art470
-    tipos:
-    - ano
-    trecho: (Incluído pela Lei Complementar nº 227, de 2026)
+    efeitos_inicio: '2026-01-01'
+  marcos_proprios: []
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
-  marcas_de_outro_ato:
-  - (Incluído pela Lei Complementar nº 227, de 2026)
-  alteracoes:
-  - subdivisao: null
-    tipo: incluido
-    anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
-    ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-    conferida: false
-    ato_vigencia:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-    ato_efeitos:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    resultado_se_aprovada: null
-    proposta: null
-    motivo: ligação não confirmada no texto do ato alterador
-  alteracoes_cobrem_as_marcas: true
-  marcas_ocorrencias: 1
+  marcas_de_outro_ato: []
+  alteracoes: []
+  alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
   vetados:
     ocorrencias: 0
     subdivisoes: []
     caput_vetado: false
-  pendencias:
-  - marcos_proprios
-  - redacao_de_outro_ato
+  pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -50705,10 +50624,12 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471
   artigo: '471'
   vigencia:
@@ -50743,43 +50664,22 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
-  marcos_proprios:
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471_par2_incV
-    tipos:
-    - ano
-    trecho: (Incluído pela Lei Complementar nº 227, de 2026)
+    efeitos_inicio: '2026-01-01'
+  marcos_proprios: []
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
-  marcas_de_outro_ato:
-  - (Incluído pela Lei Complementar nº 227, de 2026)
-  alteracoes:
-  - subdivisao: null
-    tipo: incluido
-    anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
-    ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-    conferida: false
-    ato_vigencia:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-    ato_efeitos:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    resultado_se_aprovada: null
-    proposta: null
-    motivo: ligação não confirmada no texto do ato alterador
-  alteracoes_cobrem_as_marcas: true
-  marcas_ocorrencias: 1
+  marcas_de_outro_ato: []
+  alteracoes: []
+  alteracoes_cobrem_as_marcas: false
+  marcas_ocorrencias: 0
   vetados:
     ocorrencias: 0
     subdivisoes: []
     caput_vetado: false
-  pendencias:
-  - marcos_proprios
-  - redacao_de_outro_ato
+  pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -50788,10 +50688,12 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-A
   artigo: 471-A
   vigencia:
@@ -51159,7 +51061,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2026-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C
     tipos:
@@ -51198,10 +51100,6 @@ dispositivos:
     tipos:
     - ano
     trecho: Parágrafo único. O disposto nos incisos II, III e V aplica-se, em relação ao IBS e à CBS, exclusivamente no âmbito do PNCT.” (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_parU
-    tipos:
-    - ano
-    trecho: (Incluído pela Lei Complementar nº 227, de 2026)
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -51352,24 +51250,8 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: null
-    tipo: incluido
-    anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
-    ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-    conferida: true
-    ato_vigencia:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-    ato_efeitos:
-      data: '2026-01-14'
-      fundamento: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    resultado_se_aprovada:
-      vigencia_inicio: '2026-01-14'
-      efeitos_inicio: '2026-01-14'
-    proposta: null
-    motivo: null
   alteracoes_cobrem_as_marcas: true
-  marcas_ocorrencias: 10
+  marcas_ocorrencias: 9
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -51378,19 +51260,89 @@ dispositivos:
   - marcos_proprios
   - redacao_de_outro_ato
   revisao:
-    decisao: null
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2025-01-16'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-01-01'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
-    excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+    excecoes_subdivisao:
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_par0
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_incI
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_incII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_incIII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_incIV
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_incV
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_incVI
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_incVII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_parU
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao, texto-alterado-pela-lc-227: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
+    - texto-alterado-pela-lc-227
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-D
   artigo: 471-D
   vigencia:
@@ -52769,10 +52721,6 @@ dispositivos:
     tipos:
     - ano
     trecho: IV - 6/10 (seis décimos), em 2032.
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art474_incIV
-    tipos:
-    - prazo_relativo
-    trecho: DA AVALIAÇÃO QUINQUENAL
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -54363,11 +54311,6 @@ dispositivos:
     tipos:
     - ano
     trecho: II - nos rendimentos provenientes de aplicações financeiras das receitas próprias do CGIBS. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art484_par6
-    tipos:
-    - ano
-    - data_explicita
-    trecho: Das Operações Iniciadas antes de 1º de Janeiro de 2029
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -55242,12 +55185,6 @@ dispositivos:
     tipos:
     - ano
     trecho: § 12. O montante pago nos termos do § 2º deste artigo será distribuído entre as parcelas estadual, distrital e municipal do IBS e a CBS na proporção das respectivas alíquotas de referência. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art487_par12
-    tipos:
-    - ano
-    - data_explicita
-    - a_partir_de_ate
-    trecho: Das Operações Iniciadas a partir de 1º de Janeiro de 2029
   texto_inserido:
     artigos: []
     linhas_com_marcos: 0
@@ -57942,7 +57879,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2025-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos:

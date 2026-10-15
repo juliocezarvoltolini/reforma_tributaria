@@ -54,7 +54,8 @@ dispositivo: "art. 12"                                            # (*)
 camada: 1                                                         # (*)
 
 # --- estrutura ---
-hierarquia: ["LIVRO I", "TÍTULO II", "CAPÍTULO I"]
+hierarquia: ["LIVRO I — DO IBS E DA CBS", "TÍTULO II", "CAPÍTULO I — DO FATO GERADOR"]
+                                  #     etiqueta — título (e a anotação do cabeçalho, se houver)
 ordem: 12
 
 # --- tempo (ver PREMISSAS.md §3) ---

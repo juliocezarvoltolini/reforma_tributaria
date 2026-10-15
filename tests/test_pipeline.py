@@ -462,19 +462,45 @@ def lc_riscado_parcial():
 
 @cenario("LC: estrutura hierárquica")
 def lc_hierarquia():
+    """O título vem na linha seguinte à etiqueta ('CAPÍTULO II' / 'DA REVOGAÇÃO
+    FICTÍCIA', como no compilado real). Quebra: deixar o título no fim do corpo do
+    artigo anterior — texto que não é dele — e fora da hierarquia."""
     artigos, _, _ = _lc()
+    livro, cap1 = "LIVRO I — DAS DISPOSIÇÕES FICTÍCIAS", "CAPÍTULO I — DAS DEFINIÇÕES"
     checar(
-        por_numero(artigos, "1")["hierarquia"] == ["LIVRO I", "TÍTULO I", "CAPÍTULO I"],
-        "hierarquia do art. 1",
+        por_numero(artigos, "1")["hierarquia"] == [livro, "TÍTULO I", cap1],
+        f"hierarquia do art. 1, com os títulos (obteve {por_numero(artigos, '1')['hierarquia']})",
     )
     checar(
-        por_numero(artigos, "3")["hierarquia"] == ["LIVRO I", "TÍTULO I", "CAPÍTULO II"],
+        por_numero(artigos, "3")["hierarquia"] == [livro, "TÍTULO I",
+                                                   "CAPÍTULO II — DA REVOGAÇÃO FICTÍCIA"],
         "CAPÍTULO II substitui CAPÍTULO I no mesmo nível",
     )
     checar(
-        por_numero(artigos, "2")["hierarquia"] == ["LIVRO I", "TÍTULO I", "CAPÍTULO I"],
+        por_numero(artigos, "2")["hierarquia"] == [livro, "TÍTULO I", cap1],
         "a redação mesclada mantém a hierarquia do primeiro cabeçalho",
     )
+    checar(not any("REVOGAÇÃO FICTÍCIA" in linha for linha in por_numero(artigos, "2")["linhas"]),
+           "o título do capítulo seguinte não fica no corpo do art. 2")
+
+    artigos, avisos, _ = F.fatiar(
+        "Art. 1º Texto.\n§ 1º Parágrafo.\nSeção I\n"
+        "(Incluído pela Lei Complementar nº 999, de 1900)\nDisposições Finais\nArt. 2º Outro.")
+    checar(por_numero(artigos, "1")["linhas"] == ["Art. 1º Texto.", "§ 1º Parágrafo."]
+           and por_numero(artigos, "2")["hierarquia"]
+           == ["Seção I — Disposições Finais (Incluído pela Lei Complementar nº 999, de 1900)"],
+           f"anotação entre etiqueta e título: vai com o título para a hierarquia "
+           f"(obteve {por_numero(artigos, '1')['linhas']}, {por_numero(artigos, '2')['hierarquia']})")
+
+    longo = "DA ZONA FRANCA, " * 15 + "E DO PROGRAMA"
+    artigos, _, _ = F.fatiar(f"Art. 1º Texto.\nTÍTULO I\n{longo}\nArt. 2º Outro.")
+    checar(por_numero(artigos, "1")["linhas"] == ["Art. 1º Texto."],
+           f"título longo ({len(longo)} caracteres, como o da LC 214 antes do art. 471) também é título")
+    artigos, avisos, _ = F.fatiar("Art. 1º Texto.\nSeção I\nFrase que é texto normativo.\nArt. 2º Outro.")
+    checar(por_numero(artigos, "1")["linhas"][-1] == "Frase que é texto normativo."
+           and por_numero(artigos, "2")["hierarquia"] == ["Seção I"]
+           and any("NÃO foram lidas como título" in a for a in avisos),
+           "linha terminada em ponto depois da etiqueta: não é título, fica e vira aviso")
 
 
 @cenario("LC: contagem de trechos riscados")
@@ -1714,10 +1740,20 @@ def proposta_texto_alterado():
     checar(por["482-A"]["alteracoes_cobrem_as_marcas"] is True
            and por["26"]["alteracoes_cobrem_as_marcas"] is False,
            "482-A: toda anotação é alteração ligada; 26: há VETADO e promulgação, que não são")
-    isolada = [a for a in por["98"]["alteracoes"] if a["subdivisao"] is None]
-    checar(isolada and all(not a["conferida"] and a["resultado_se_aprovada"] is None
-                           for a in isolada),
-           "art. 98: a anotação isolada (do título inserido) não é conferida, nada a combinar")
+    checar(not any(a["subdivisao"] is None for d in prop["dispositivos"] for a in d["alteracoes"]),
+           "nenhuma anotação isolada: a do título inserido foi para a hierarquia")
+    por_ato = {URN_999 + "!art7": {
+        "vigencia": {"data": "1926-01-14", "fundamento": URN_999 + "!art9"},
+        "efeitos": {"data": "1926-01-14", "fundamento": URN_999 + "!art9_incIII"},
+        "texto": ({"dispositivos_citados": ["4"]},
+                  "Art. 7º A Lei Complementar nº 214, de 1º de janeiro de 1900, passa a vigorar "
+                  "com as seguintes alterações:")}}
+    meta = {"alterado_por": [{"anotacao": "(Incluído pela ...)", "subdivisao": URN_BASE + "!art3_par1",
+                              "link": "Lcp999.htm#art7", "ato": URN_999 + "!art7"}]}
+    r = pv._alteracoes_do_dispositivo(meta, "3", "Lei Complementar nº 214", por_ato,
+                                      "1925-01-16", "1926-01-01", {})
+    checar(r and r[0]["conferida"] is False and r[0]["resultado_se_aprovada"] is None,
+           "ato alterador que não cita o artigo: ligação não conferida, nada a combinar")
     ids = {(g["id"], g.get("regra")) for g in prop["pendencias_gerais"]}
     checar(("regra_derivada_nao_aprovada", "texto-alterado-por-ato-posterior") in ids,
            "a combinação aparece como regra derivada não aprovada")

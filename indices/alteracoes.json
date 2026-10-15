@@ -2338,17 +2338,9 @@
         "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
         "link": "Lcp227.htm#art174",
         "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-F_parU"
-      },
-      {
-        "anotacao": "(Incluído pela Lei Complementar nº 227, de 2026)",
-        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
-        "isolada": true,
-        "link": "Lcp227.htm#art174",
-        "subdivisao": null
       }
     ],
     "anotacoes_oficiais": [
-      "(Incluído pela Lei Complementar nº 227, de 2026)",
       "(Incluído pela Lei Complementar nº 227, de 2026)",
       "(Incluído pela Lei Complementar nº 227, de 2026)"
     ]
@@ -2940,21 +2932,6 @@
     ],
     "anotacoes_oficiais": [
       "(Redação dada pela Lei Complementar nº 227, de 2026)"
-    ]
-  },
-  "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341": {
-    "altera": [],
-    "alterado_por": [
-      {
-        "anotacao": "(Incluído pela Lei Complementar nº 227, de 2026)",
-        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
-        "isolada": true,
-        "link": "Lcp227.htm#art174",
-        "subdivisao": null
-      }
-    ],
-    "anotacoes_oficiais": [
-      "(Incluído pela Lei Complementar nº 227, de 2026)"
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-A": {
@@ -4631,36 +4608,6 @@
       "(Incluído pela Lei Complementar nº 227, de 2026)"
     ]
   },
-  "urn:lex:br:federal:lei.complementar:2025-01-16;214!art470": {
-    "altera": [],
-    "alterado_por": [
-      {
-        "anotacao": "(Incluído pela Lei Complementar nº 227, de 2026)",
-        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
-        "isolada": true,
-        "link": "Lcp227.htm#art174",
-        "subdivisao": null
-      }
-    ],
-    "anotacoes_oficiais": [
-      "(Incluído pela Lei Complementar nº 227, de 2026)"
-    ]
-  },
-  "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471": {
-    "altera": [],
-    "alterado_por": [
-      {
-        "anotacao": "(Incluído pela Lei Complementar nº 227, de 2026)",
-        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
-        "isolada": true,
-        "link": "Lcp227.htm#art174",
-        "subdivisao": null
-      }
-    ],
-    "anotacoes_oficiais": [
-      "(Incluído pela Lei Complementar nº 227, de 2026)"
-    ]
-  },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-A": {
     "altera": [],
     "alterado_por": [
@@ -4780,17 +4727,9 @@
         "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
         "link": "Lcp227.htm#art174",
         "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C_parU"
-      },
-      {
-        "anotacao": "(Incluído pela Lei Complementar nº 227, de 2026)",
-        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
-        "isolada": true,
-        "link": "Lcp227.htm#art174",
-        "subdivisao": null
       }
     ],
     "anotacoes_oficiais": [
-      "(Incluído pela Lei Complementar nº 227, de 2026)",
       "(Incluído pela Lei Complementar nº 227, de 2026)",
       "(Incluído pela Lei Complementar nº 227, de 2026)",
       "(Incluído pela Lei Complementar nº 227, de 2026)",
@@ -6547,21 +6486,6 @@
     "anotacoes_oficiais": [
       "(Redação dada pela Lei Complementar nº 227, de 2026)",
       "(Redação dada pela Lei Complementar nº 227, de 2026)"
-    ]
-  },
-  "urn:lex:br:federal:lei.complementar:2025-01-16;214!art98": {
-    "altera": [],
-    "alterado_por": [
-      {
-        "anotacao": "(Incluído pela Lei Complementar nº 227, de 2026)",
-        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
-        "isolada": true,
-        "link": "Lcp227.htm#art174",
-        "subdivisao": null
-      }
-    ],
-    "anotacoes_oficiais": [
-      "(Incluído pela Lei Complementar nº 227, de 2026)"
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art98-A": {

@@ -757,8 +757,16 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
         "redacoes_anteriores_mescladas": 0,
         "linhas_apos_o_fim": 0,
         "anexos_nao_incorporados": 0,
+        "titulos_de_estrutura": 0,
     }
     fim_do_texto = False
+    # Depois de uma etiqueta de estrutura ("CAPÍTULO II"), a linha seguinte é o
+    # título ("DA REVOGAÇÃO"), às vezes precedido da anotação sozinha "(Incluído
+    # pela ...)" do cabeçalho inserido. Os dois vão para a hierarquia: deixá-los
+    # seguir punha texto do cabeçalho no fim do artigo anterior.
+    titulo_pendente = False
+    anotacoes_do_cabecalho: list[str] = []
+    titulos_suspeitos: list[str] = []
 
     for linha in linhas:
         completa = linha.completa
@@ -797,7 +805,30 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
         if RE_ESTRUTURA.match(completa) and len(completa) < 200 and not dentro_antes:
             if linha.vigente:  # estrutura inteiramente riscada foi superada pelo portal
                 hierarquia = _atualizar_hierarquia(hierarquia, linha.vigente)
+                titulo_pendente, anotacoes_do_cabecalho = True, []
             continue
+
+        if titulo_pendente and not dentro:
+            if not RE_ANOTACAO.sub("", completa).strip():
+                anotacoes_do_cabecalho.append(completa)
+                continue
+            titulo_pendente = False
+            eh_artigo = RE_ARTIGO.match(completa.lstrip(ABRE_ASPAS + ASPA_RETA + "' "))
+            # Título não termina como frase: medido nos compilados (329 títulos, o
+            # maior com 285 caracteres, nenhum com ponto final). Linha que termina
+            # assim é texto, fica onde estava, e vira aviso.
+            pontuada = linha.vigente.rstrip().endswith((".", ";", ":"))
+            if not eh_artigo and linha.vigente and pontuada:
+                titulos_suspeitos.append(linha.vigente[:60])
+            if not eh_artigo and linha.vigente and len(completa) < 400 and not pontuada:
+                hierarquia[-1] = " ".join(
+                    [f"{hierarquia[-1]} — {linha.vigente}"] + anotacoes_do_cabecalho)
+                anotacoes_do_cabecalho = []
+                stats["titulos_de_estrutura"] += 1
+                continue
+            if anotacoes_do_cabecalho:  # cabeçalho sem título: a anotação fica com a etiqueta
+                hierarquia[-1] = " ".join([hierarquia[-1]] + anotacoes_do_cabecalho)
+                anotacoes_do_cabecalho = []
 
         # A aspa de abertura precede o "Art.", então o reconhecimento tem de
         # ignorá-la. O texto apensado ao artigo continua sendo a linha original,
@@ -837,6 +868,12 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
         if atual is not None:
             _anexar(atual, linha, proprio=not dentro)
 
+    if titulos_suspeitos:
+        avisos.append(
+            f"{len(titulos_suspeitos)} linha(s) logo depois de uma etiqueta de estrutura "
+            "terminam como texto (ponto, ponto e vírgula, dois-pontos) e NÃO foram lidas como "
+            "título — ficaram no corpo do artigo anterior: "
+            + "; ".join(titulos_suspeitos[:5]))
     stats["aspas_fechamento_sem_abertura"] = aspas.fechamentos_sem_abertura
     stats["aspas_estado_final"] = aspas.residuo
     stats["aspas_abertura_implicita"] = len(implicitas)

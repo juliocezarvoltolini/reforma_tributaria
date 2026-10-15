@@ -3262,9 +3262,7 @@
     "remete_a": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art339"
     ],
-    "remete_a_externo": [
-      "Lei Complementar nº 227"
-    ]
+    "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-A": {
     "citado_por": [],
@@ -5062,18 +5060,14 @@
     "remete_a": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art462"
     ],
-    "remete_a_externo": [
-      "Lei Complementar nº 227"
-    ]
+    "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471": {
     "citado_por": [],
     "dispositivo": "art. 471",
     "norma": "lc-214-2025",
     "remete_a": [],
-    "remete_a_externo": [
-      "Lei Complementar nº 227"
-    ]
+    "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-A": {
     "citado_por": [
@@ -6763,9 +6757,7 @@
     "dispositivo": "art. 98",
     "norma": "lc-214-2025",
     "remete_a": [],
-    "remete_a_externo": [
-      "Lei Complementar nº 227"
-    ]
+    "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art98-A": {
     "citado_por": [],

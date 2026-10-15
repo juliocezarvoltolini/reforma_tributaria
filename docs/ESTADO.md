@@ -271,8 +271,13 @@ escolhido. Estão aqui para serem revistas.
    neles.
 4. **`anotacoes_oficiais` é uma lista plana por artigo.** `(Revogado …)` de um §
    aparece na lista do artigo. Quem lê deve ir ao corpo, onde a anotação está
-   colada ao trecho riscado. Ainda: 6 anotações `(Incluído pela …)` que seguem
-   um cabeçalho de capítulo são atribuídas ao artigo **anterior**.
+   colada ao trecho riscado. ~~As anotações `(Incluído pela …)` que seguem um
+   cabeçalho de capítulo eram atribuídas ao artigo anterior~~ — corrigido em
+   2026-10-15: o título do cabeçalho (a linha depois da etiqueta "CAPÍTULO II")
+   caía no fim do corpo do artigo anterior em 194 artigos da LC 214 e 69 da LC
+   227. Agora o título, e a anotação que vem entre etiqueta e título, vão para a
+   `hierarquia` ("CAPÍTULO II — DA REVOGAÇÃO"). 323 linhas saíram do fim de corpos
+   e estão todas na hierarquia; nenhum outro texto mudou.
 
 5. **Resolvidas em 2026-10-14, seguindo a recomendação aceita:** `data_ato`
    separado de `publicacao` (que pode ter várias datas e declara a `fonte`),
