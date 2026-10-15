@@ -1659,6 +1659,70 @@ def proposta_clausula_alineas():
            "subdivisão de artigo de OUTRA norma no alcance: não interpretado")
 
 
+@cenario("proposta: texto alterado por ato posterior — o literal e a combinação")
+def proposta_texto_alterado():
+    """Quebra: dar ao texto que a LC 227 incluiu na LC 214 a vigência da LC 214
+    (anterior à existência do texto); combinar datas sem a regra aprovada; ou
+    combinar uma ligação que o ato alterador não confirma."""
+    pv = _pv()
+    checar([pv.tipo_da_anotacao(a) for a in (
+        "(Incluído pela Lei Complementar nº 999, de 1900)", "(Incluída pela ...)",
+        "(Redação dada pela ...)", "(Revogado pela ...)", "(revogada pela ...)", "(Vide ADI 1)")]
+           == ["incluido", "incluido", "redacao_dada", "revogado", "revogado", None],
+           "tipo lido da anotação")
+    aprov = {"texto-alterado-por-ato-posterior": {"aprovada": True, "aprovada_por": "F",
+                                                  "aprovada_em": "1900-01-01"}}
+    r = pv.combinar_alteracao("incluido", True, "1926-01-14", "1926-01-14",
+                              "1925-01-16", "1926-01-01", {})
+    checar(r["resultado_se_aprovada"] == {"vigencia_inicio": "1926-01-14",
+                                          "efeitos_inicio": "1926-01-14"}
+           and r["proposta"] is None,
+           f"incluído depois: vale da data mais tardia; sem a regra, só o resultado (obteve {r})")
+    r = pv.combinar_alteracao("redacao_dada", True, "1926-01-14", "1926-01-14",
+                              "1925-01-16", "1927-01-01", aprov)
+    checar(r["proposta"] == {"vigencia_inicio": "1926-01-14", "efeitos_inicio": "1927-01-01"},
+           "efeitos que a norma alterada dá ao artigo, se mais tardios, prevalecem; com a regra, "
+           "a proposta")
+    r = pv.combinar_alteracao("revogado", True, "1926-01-14", "1926-03-01",
+                              "1925-01-16", "1926-01-01", aprov)
+    checar(r["proposta"] == {"vigencia_fim": "1926-03-01"},
+           "revogado: deixa de valer quando o revogador produz EFEITOS (não quando entra em vigor)")
+    for args, msg in (((False, "1926-01-14", "1926-01-14", "1925-01-16", "1926-01-01"),
+                       "ligação não confirmada"),
+                      ((True, "1926-01-14", None, "1925-01-16", "1926-01-01"),
+                       "efeitos do ato alterador sem data"),
+                      ((True, "1926-01-14", "1926-01-14", "1925-01-16", None),
+                       "efeitos do artigo alterado sem data")):
+        r = pv.combinar_alteracao("incluido", *args, aprov)
+        checar(r["resultado_se_aprovada"] is None and r["proposta"] is None and r["motivo"],
+               f"{msg}: nada a combinar, com motivo")
+
+    if not (RAIZ / "normas" / "lc-227-2026").exists():
+        print("  pulado (real): normas/lc-227-2026 ausente")
+        return
+    prop = pv.construir("lc-214-2025", regras={})
+    base227 = urn_norma("br:federal:lei.complementar", "2026-01-13", "227")
+    por = {d["artigo"]: d for d in prop["dispositivos"]}
+    alt = [a for a in por["482-A"]["alteracoes"] if a["ato"] == base227 + "!art174"]
+    checar(alt and all(a["tipo"] == "incluido" and a["conferida"]
+                       and a["ato_vigencia"] == {"data": "2026-01-14", "fundamento": base227 + "!art182"}
+                       and a["ato_efeitos"] == {"data": "2026-01-14",
+                                                "fundamento": base227 + "!art182_incIII"}
+                       for a in alt),
+           f"482-A: incluído pelo art. 174 da LC 227, conferido, com as datas do art. 182 dela "
+           f"(obteve {alt[:1]})")
+    isolada = [a for a in por["98"]["alteracoes"] if a["subdivisao"] is None]
+    checar(isolada and all(not a["conferida"] and a["resultado_se_aprovada"] is None
+                           for a in isolada),
+           "art. 98: a anotação isolada (do título inserido) não é conferida, nada a combinar")
+    ids = {(g["id"], g.get("regra")) for g in prop["pendencias_gerais"]}
+    checar(("regra_derivada_nao_aprovada", "texto-alterado-por-ato-posterior") in ids,
+           "a combinação aparece como regra derivada não aprovada")
+    atos = {a["slug"]: a for a in prop["atos_alteradores"]}
+    checar("retificacao_citada_no_rodape" in atos["lc-227-2026"]["pendencias_gerais"],
+           "e as pendências do ato alterador ficam à vista")
+
+
 @cenario("proposta: cláusula única, só vigência ('entra em vigor na data de sua publicação.')")
 def proposta_clausula_unica():
     """Forma medida na LC 235, art. 17: 'Esta Lei Complementar entra em vigor na data

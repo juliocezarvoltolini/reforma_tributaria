@@ -35,6 +35,25 @@ do artigo em trecho literal (vigência não é eficácia) e campos `revisao` vaz
   compilado (incluído, redação dada, revogado, vetado, promulgação de partes
   vetadas, vide) que mostram texto vindo de outro ato.
 
+## Texto alterado por ato posterior
+
+Cada dispositivo da proposta traz `alteracoes`, uma por anotação oficial ligada
+ao artigo da lei alteradora (`alterado_por` em normas/):
+
+- o que é literal, montado por código: `tipo` (incluido, redacao_dada,
+  revogado), `ato`, `conferida` (o texto do alterador confirma a ligação) e as
+  datas que a proposta DA LEI ALTERADORA dá ao artigo alterador
+  (`ato_vigencia`, `ato_efeitos`, com fundamento);
+- a combinação, que é leitura: `resultado_se_aprovada`, pela regra derivada
+  `texto-alterado-por-ato-posterior`. O texto incluído ou com redação dada vale da
+  data mais tardia entre a do ato e a que a norma alterada dá ao artigo; o
+  revogado deixa de valer quando o revogador produz efeitos. `proposta` só com a
+  regra aprovada; `motivo` quando não há o que combinar.
+
+`atos_alteradores` lista as leis alteradoras com as pendências gerais delas: as
+datas do texto que elas trouxeram dependem dessas pendências. Os artigos com
+texto de outro ato continuam fora da revisão por regra (`redacao_de_outro_ato`).
+
 ## Quem decide: regra, pessoa ou IA (PREMISSAS.md §3.4)
 
 ```

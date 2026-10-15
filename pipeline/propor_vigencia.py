@@ -63,6 +63,7 @@ from fatiar import (
     linhas_citadas,
     subdivisao_por_linha,
 )
+from alteracoes import conferir
 from regras_temporais import aprovada, carregar_regras, primeiro_dia_do_mes_subsequente
 
 DIR_PROPOSTAS = DIR_TEMPORAL / "propostas"
@@ -584,6 +585,54 @@ RE_REVOGAM_SE = re.compile(r"^Art\.\s*\d+\s*[ºo°]?\.?\s+Revogam-se\b", re.IGNO
 RE_RETIFICACAO = re.compile(r"\bretificad[oa]\b", re.IGNORECASE)
 
 
+# ---------------------------------------------------------------------------
+# Texto alterado por ato posterior (alterado_por)
+# ---------------------------------------------------------------------------
+
+# A combinação das datas do ato alterador com as da norma alterada é leitura:
+# regra derivada, só aplicada depois de aprovada (temporal/regras.yaml).
+REGRA_TEXTO_ALTERADO = "texto-alterado-por-ato-posterior"
+_TIPOS_ANOTACAO = (
+    (re.compile(r"^\(\s*Inclu[íi]d[oa]\b", re.IGNORECASE), "incluido"),
+    (re.compile(r"^\(\s*Reda[çc][ãa]o\s+dada\b", re.IGNORECASE), "redacao_dada"),
+    (re.compile(r"^\(\s*Revogad[oa]\b", re.IGNORECASE), "revogado"),
+)
+
+
+def tipo_da_anotacao(anotacao: str) -> str | None:
+    """'incluido', 'redacao_dada', 'revogado' ou None (Vide, Vetado...)."""
+    return next((tipo for regex, tipo in _TIPOS_ANOTACAO if regex.match(anotacao or "")), None)
+
+
+def combinar_alteracao(tipo: str, conferida: bool, ato_vig: str | None, ato_efe: str | None,
+                       vig_artigo: str | None, efe_artigo: str | None, regras: dict) -> dict:
+    """Datas de um trecho alterado por ato posterior, pela regra
+    'texto-alterado-por-ato-posterior': o texto incluído ou com redação dada vale a
+    partir da data mais tardia entre a do ato alterador e a que a norma alterada dá
+    ao artigo; o revogado deixa de valer quando o revogador produz efeitos.
+
+    `resultado_se_aprovada` sempre que há o que combinar; `proposta` só com a
+    regra aprovada.
+    """
+    motivo = None
+    if not conferida:
+        motivo = "ligação não confirmada no texto do ato alterador"
+    elif not ato_efe or (tipo != "revogado" and not ato_vig):
+        motivo = "datas do ato alterador não determinadas"
+    elif tipo != "revogado" and (not vig_artigo or not efe_artigo):
+        motivo = "datas do artigo alterado não determinadas"
+    if motivo:
+        return {"resultado_se_aprovada": None, "proposta": None, "motivo": motivo}
+    if tipo == "revogado":
+        resultado = {"vigencia_fim": ato_efe}
+    else:
+        resultado = {"vigencia_inicio": max(vig_artigo, ato_vig),
+                     "efeitos_inicio": max(efe_artigo, ato_efe)}
+    # Cópia, não o mesmo objeto: senão o YAML grava âncora.
+    proposta = dict(resultado) if aprovada(regras, REGRA_TEXTO_ALTERADO) else None
+    return {"resultado_se_aprovada": resultado, "proposta": proposta, "motivo": None}
+
+
 def subdivisao_existe(urn: str, subdivisoes: list[str]) -> bool:
     """A subdivisão que a cláusula nomeia existe no artigo? O caput sempre existe."""
     return urn.endswith("_par0") or urn in subdivisoes
@@ -802,9 +851,65 @@ def _pendencias_gerais(refs: dict, pub: dict, outros: list[dict] | None = None,
     return pendencias
 
 
-def construir(slug: str, regras: dict | None = None) -> dict:
+def _atos_alteradores(metas: dict, catalogo: dict, regras: dict) -> tuple[dict, list[dict]]:
+    """Para cada artigo alterador ligado em `alterado_por`: as datas que a proposta
+    da norma DELE lhe dá e o texto dele, para a conferência. E o resumo de cada
+    norma alteradora, com as pendências gerais dela."""
+    bases = {urn_norma(f["autoridade"], f["data"], f["numero"]): f["slug"]
+             for f in catalogo.get("fontes") or []}
+    slugs = set()
+    for meta in metas.values():
+        for a in meta.get("alterado_por") or []:
+            if a.get("ato") and tipo_da_anotacao(a.get("anotacao")):
+                slug_ato = bases.get(a["ato"].split("!")[0])
+                if slug_ato and arquivos_norma(slug_ato):
+                    slugs.add(slug_ato)
+    por_ato, resumo = {}, []
+    for slug_ato in sorted(slugs):
+        prop = construir(slug_ato, regras, _com_alteracoes=False)
+        textos = {}
+        for caminho in arquivos_norma(slug_ato):
+            meta_ato, corpo_ato = ler_frontmatter(caminho)
+            textos[meta_ato["urn"]] = (meta_ato, corpo_ato)
+        for d in prop["dispositivos"]:
+            vig = (d["vigencia"].get("proposta") or {}).get("data_candidata")
+            efe = (d["efeitos"].get("proposta") or {}).get("data_candidata")
+            por_ato[d["urn"]] = {
+                "vigencia": {"data": vig, "fundamento": d["vigencia"]["fundamento"]} if vig else None,
+                "efeitos": {"data": efe, "fundamento": d["efeitos"]["fundamento"]
+                            or d["vigencia"]["fundamento"]} if efe else None,
+                "texto": textos.get(d["urn"]),
+            }
+        resumo.append({"slug": slug_ato, "urn": prop["urn_norma"],
+                       "pendencias_gerais": [g["id"] for g in prop["pendencias_gerais"]]})
+    return por_ato, resumo
+
+
+def _alteracoes_do_dispositivo(meta: dict, numero: str, nome_norma: str, por_ato: dict,
+                               vig_artigo: str | None, efe_artigo: str | None,
+                               regras: dict) -> list[dict]:
+    saida = []
+    for a in meta.get("alterado_por") or []:
+        tipo = tipo_da_anotacao(a.get("anotacao"))
+        ato = por_ato.get(a.get("ato"))
+        if not tipo or ato is None:
+            continue
+        conferida = bool(ato["texto"]) and conferir(numero, nome_norma, *ato["texto"]) is not None
+        combinacao = combinar_alteracao(
+            tipo, conferida, (ato["vigencia"] or {}).get("data"),
+            (ato["efeitos"] or {}).get("data"), vig_artigo, efe_artigo, regras)
+        saida.append({"subdivisao": a.get("subdivisao"), "tipo": tipo, "anotacao": a["anotacao"],
+                      "ato": a["ato"], "conferida": conferida,
+                      "ato_vigencia": dict(ato["vigencia"]) if ato["vigencia"] else None,
+                      "ato_efeitos": dict(ato["efeitos"]) if ato["efeitos"] else None,
+                      **combinacao})
+    return saida
+
+
+def construir(slug: str, regras: dict | None = None, _com_alteracoes: bool = True) -> dict:
     """Monta a proposta (dicionário) sem gravar nada. `regras`: as regras derivadas
-    (temporal/regras.yaml, se não informadas)."""
+    (temporal/regras.yaml, se não informadas). `_com_alteracoes=False` é a chamada
+    interna para o ato alterador: só as datas dele, sem descer às alterações dele."""
     if regras is None:
         regras = carregar_regras()
     catalogo = yaml.safe_load(CATALOGO.read_text(encoding="utf-8"))
@@ -834,6 +939,10 @@ def construir(slug: str, regras: dict | None = None) -> dict:
 
     # A publicação que fatiar.py gravou: do DOU, se arquivado; senão, do rodapé.
     publicacao = metas[ordem[0]].get("publicacao") or {}
+
+    por_ato, atos_alteradores = (_atos_alteradores(metas, catalogo, regras) if _com_alteracoes
+                                 else ({}, []))
+    nome_norma = fonte["titulo"].split(",")[0].strip()
 
     candidatos = localizar_clausula(corpos)
     if len(candidatos) == 1:
@@ -963,6 +1072,9 @@ def construir(slug: str, regras: dict | None = None) -> dict:
         if any(t and t["tipo"] == "relativo_publicacao" and not aprovada(regras, t["regra"])
                for t in termos):
             pendencias.append("regra_derivada_nao_aprovada")
+        alteracoes = _alteracoes_do_dispositivo(
+            meta, n, nome_norma, por_ato, (inicio_vig or {}).get("data_candidata"),
+            (efeitos.get("proposta") or {}).get("data_candidata"), regras)
 
         dispositivos.append({
             "urn": meta["urn"],
@@ -987,6 +1099,10 @@ def construir(slug: str, regras: dict | None = None) -> dict:
             "texto_inserido": {"artigos": citados, "linhas_com_marcos": marcos["citado_com_marcos"]},
             # Anotações do compilado que mostram texto vindo de outro ato.
             "marcas_de_outro_ato": marcas,
+            # Cada trecho incluído, alterado ou revogado por ato posterior: o que é
+            # literal (ato, conferência, datas do ato) e a combinação pela regra
+            # 'texto-alterado-por-ato-posterior'.
+            "alteracoes": alteracoes,
             "pendencias": pendencias,
             "revisao": {
                 "decisao": None,  # aceitar | alterar | rejeitar (ver instrucoes_revisao)
@@ -1041,6 +1157,23 @@ def construir(slug: str, regras: dict | None = None) -> dict:
                          f"para {len(item['artigos'])} artigo(s). Até lá, sem data.",
         })
 
+    combinaveis = [d["artigo"] for d in dispositivos
+                   if any(a["resultado_se_aprovada"] for a in d["alteracoes"])]
+    if combinaveis and not aprovada(regras, REGRA_TEXTO_ALTERADO):
+        datas = sorted({v for d in dispositivos for a in d["alteracoes"]
+                        for v in (a["resultado_se_aprovada"] or {}).values()})
+        pendencias_gerais.append({
+            "id": "regra_derivada_nao_aprovada",
+            "regra": REGRA_TEXTO_ALTERADO,
+            "artigos": combinaveis,
+            "resultado_se_aprovada": datas,
+            "descricao": f"{len(combinaveis)} artigo(s) têm trecho incluído, alterado ou "
+                         "revogado por ato posterior, com a ligação conferida e as datas do "
+                         f"ato determinadas. Combiná-las é a regra '{REGRA_TEXTO_ALTERADO}', "
+                         "não aprovada em temporal/regras.yaml (ver `alteracoes` de cada "
+                         "dispositivo). Até lá, esses artigos ficam pendentes.",
+        })
+
     return {
         "norma": slug,
         "urn_norma": base,
@@ -1057,6 +1190,9 @@ def construir(slug: str, regras: dict | None = None) -> dict:
         "referencias": refs,
         "clausula_de_vigencia": {k: v for k, v in clausula.items() if k != "mapa"},
         "pendencias_gerais": pendencias_gerais,
+        # As normas que alteraram esta, com as pendências gerais delas: as datas do
+        # texto que elas trouxeram dependem dessas pendências.
+        "atos_alteradores": atos_alteradores,
         "decisoes_necessarias": _decisoes(dispositivos),
         "resumo": {
             "dispositivos": len(dispositivos),

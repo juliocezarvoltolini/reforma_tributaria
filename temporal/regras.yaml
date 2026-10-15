@@ -63,3 +63,24 @@ regras:
     aprovada: true
     aprovada_por: Júlio Voltolini
     aprovada_em: '2026-10-15'
+
+  texto-alterado-por-ato-posterior:
+    versao: 1
+    texto_coberto: >-
+      trecho de um artigo com anotação oficial "(Incluído pela ...)", "(Redação dada
+      pela ...)" ou "(Revogado pela ...)" ligada ao artigo da lei alteradora
+      (alterado_por), com a ligação conferida no texto do alterador e as datas do
+      alterador determinadas pela cláusula de vigência da lei alteradora
+    leitura: >-
+      o texto incluído ou com redação dada vale a partir da data mais tardia entre
+      a do ato alterador e a que a norma alterada dá ao artigo — vigência e efeitos,
+      cada um com o seu par; o texto revogado deixa de valer quando o dispositivo
+      revogador produz efeitos.
+    exemplo: >-
+      LC 214, art. 482-A, incluído pelo art. 174 da LC 227: a LC 227 entra em vigor
+      na publicação (art. 182, caput) e o art. 174 produz efeitos a partir dela
+      (art. 182, III); se a LC 214 dá ao artigo efeitos em 1º/01/2026 e a LC 227 foi
+      publicada depois, o trecho incluído vale da data da LC 227
+    aprovada: false
+    aprovada_por: null
+    aprovada_em: null

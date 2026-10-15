@@ -96,6 +96,7 @@ pendencias_gerais:
   descricao: O rodapé do texto compilado cita publicação em 2026-01-15, que a página do DOU arquivada não confirma. Pode ser republicação de parte do ato; arquivar essa edição do DOU antes de usar a data.
 - id: retificacao_citada_no_rodape
   descricao: 'O rodapé do compilado cita retificação (Este texto não substitui o publicado no DOU de 14.1.2026, republicado no DOU de 15.1.2026 e retificado em 23.1.2026.), que não está arquivada. Uma retificação pode mudar texto e datas: arquivar a página do DOU dela antes de decidir. Até lá, nada desta norma é decidido por regra.'
+atos_alteradores: []
 decisoes_necessarias:
 - id: norma_alterada_nao_ingerida
   pergunta: Os artigos 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178 inserem texto em outra norma (Constituição e/ou ADCT), que não está ingerida. A vigência do artigo desta norma é a da cláusula; quando o texto inserido produz efeitos depende do próprio texto inserido. Ingerir a norma alterada, ou registrar a pendência em /lacunas/?
@@ -149,6 +150,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -221,6 +223,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -278,6 +281,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -338,6 +342,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -396,6 +401,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato:
   - (VETADO)
+  alteracoes: []
   pendencias:
   - redacao_de_outro_ato
   revisao:
@@ -453,6 +459,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -509,6 +516,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -569,6 +577,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -634,6 +643,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -691,6 +701,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -751,6 +762,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -808,6 +820,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -864,6 +877,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -920,6 +934,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -976,6 +991,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1036,6 +1052,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -1093,6 +1110,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1149,6 +1167,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1205,6 +1224,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1261,6 +1281,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1317,6 +1338,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1373,6 +1395,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1429,6 +1452,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1485,6 +1509,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1541,6 +1566,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1597,6 +1623,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1653,6 +1680,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1709,6 +1737,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1765,6 +1794,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1821,6 +1851,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1877,6 +1908,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1933,6 +1965,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -1989,6 +2022,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2045,6 +2079,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2101,6 +2136,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2157,6 +2193,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2213,6 +2250,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2273,6 +2311,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -2330,6 +2369,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2386,6 +2426,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2442,6 +2483,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2498,6 +2540,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2554,6 +2597,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2610,6 +2654,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2666,6 +2711,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2722,6 +2768,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2794,6 +2841,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -2851,6 +2899,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2907,6 +2956,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -2963,6 +3013,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3047,6 +3098,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -3138,6 +3190,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - datas_por_subdivisao
   - marcos_proprios
@@ -3202,6 +3255,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -3259,6 +3313,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3315,6 +3370,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3371,6 +3427,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3427,6 +3484,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3483,6 +3541,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3539,6 +3598,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3603,6 +3663,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -3668,6 +3729,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -3741,6 +3803,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -3798,6 +3861,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3862,6 +3926,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -3919,6 +3984,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -3975,6 +4041,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -4035,6 +4102,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4096,6 +4164,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4153,6 +4222,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -4213,6 +4283,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4274,6 +4345,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4331,6 +4403,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -4391,6 +4464,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4448,6 +4522,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -4512,6 +4587,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4574,6 +4650,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - datas_por_subdivisao
   revisao:
@@ -4631,6 +4708,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -4687,6 +4765,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -4751,6 +4830,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4816,6 +4896,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4877,6 +4958,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -4934,6 +5016,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -4990,6 +5073,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5046,6 +5130,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5102,6 +5187,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5158,6 +5244,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5214,6 +5301,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5270,6 +5358,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5326,6 +5415,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5382,6 +5472,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5438,6 +5529,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5494,6 +5586,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5550,6 +5643,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5606,6 +5700,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5662,6 +5757,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5718,6 +5814,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5774,6 +5871,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5830,6 +5928,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5886,6 +5985,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -5950,6 +6050,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6007,6 +6108,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6063,6 +6165,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6119,6 +6222,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6179,6 +6283,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6236,6 +6341,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6296,6 +6402,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6353,6 +6460,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6409,6 +6517,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6481,6 +6590,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6550,6 +6660,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6607,6 +6718,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6667,6 +6779,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6724,6 +6837,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -6785,6 +6899,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6869,6 +6984,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -6944,6 +7060,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   - evento_relativo
@@ -7035,6 +7152,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7101,6 +7219,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7162,6 +7281,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7228,6 +7348,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7285,6 +7406,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -7345,6 +7467,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7406,6 +7529,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7467,6 +7591,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7528,6 +7653,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7589,6 +7715,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7650,6 +7777,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7711,6 +7839,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7807,6 +7936,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   - evento_relativo
@@ -7869,6 +7999,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -7926,6 +8057,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -8007,6 +8139,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8070,6 +8203,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8155,6 +8289,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8212,6 +8347,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -8272,6 +8408,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8337,6 +8474,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8394,6 +8532,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -8463,6 +8602,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8525,6 +8665,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8587,6 +8728,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8649,6 +8791,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8716,6 +8859,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8790,6 +8934,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8852,6 +8997,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -8909,6 +9055,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -8965,6 +9112,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9021,6 +9169,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9077,6 +9226,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9133,6 +9283,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9189,6 +9340,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9245,6 +9397,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9301,6 +9454,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9357,6 +9511,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9417,6 +9572,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -9474,6 +9630,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9530,6 +9687,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9586,6 +9744,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9642,6 +9801,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9698,6 +9858,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9754,6 +9915,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9810,6 +9972,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9866,6 +10029,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9922,6 +10086,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -9985,6 +10150,7 @@ dispositivos:
   marcas_de_outro_ato:
   - (Revogado)
   - (VETADO)
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   - redacao_de_outro_ato
@@ -10045,6 +10211,7 @@ dispositivos:
     - '5'
     linhas_com_marcos: 1
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10103,6 +10270,7 @@ dispositivos:
     - '13'
     linhas_com_marcos: 1
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10165,6 +10333,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato:
   - (revogado)
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   - redacao_de_outro_ato
@@ -10227,6 +10396,7 @@ dispositivos:
     - 38-B
     linhas_com_marcos: 1
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10286,6 +10456,7 @@ dispositivos:
     - '7'
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10344,6 +10515,7 @@ dispositivos:
     - '3'
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10403,6 +10575,7 @@ dispositivos:
     - 79-B
     linhas_com_marcos: 1
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10469,6 +10642,7 @@ dispositivos:
     - '37'
     linhas_com_marcos: 7
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10655,6 +10829,7 @@ dispositivos:
   - '(Vigência: 1º/1/2030 até 31/12/2030)'
   - '(Vigência: 1º/1/2031 até 31/12/2031)'
   - '(Vigência: 1º/1/2032 até 31/12/2032)'
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   - redacao_de_outro_ato
@@ -10714,6 +10889,7 @@ dispositivos:
     - '81'
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10773,6 +10949,7 @@ dispositivos:
     - '32'
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10832,6 +11009,7 @@ dispositivos:
     - '9'
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10890,6 +11068,7 @@ dispositivos:
     - '2'
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -10947,6 +11126,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias: []
   revisao:
     decisao: null
@@ -11007,6 +11187,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   revisao:
@@ -11074,6 +11255,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   - revogacao_expressa
@@ -11143,6 +11325,7 @@ dispositivos:
     artigos: []
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
+  alteracoes: []
   pendencias:
   - marcos_proprios
   - evento_relativo

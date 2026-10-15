@@ -341,8 +341,13 @@ cláusula de vigência da LC 227 (art. 182), que espera:
    art. 181 o revoga no inciso da LC 214), 0 não confirmadas e 4 isoladas não
    confirmadas (arts. 98, 341, 470 e 471: a anotação do título inserido que
    caiu no artigo anterior, ver item 4 das decisões em aberto);
-3. usar `alterado_por` na proposta: o texto incluído ou alterado pela LC 227
-   tem a vigência e os efeitos que o art. 182 dela dá ao art. 174 (e ao 181).
+3. ~~usar `alterado_por` na proposta~~ — feito: a proposta da LC 214 mostra,
+   por anotação, o ato, a conferência e as datas do ato (art. 182 da LC 227), e a
+   combinação pela regra `texto-alterado-por-ato-posterior` (não aprovada): 770
+   combináveis em 126 artigos, com resultado 14/01/2026 ou 1º/01/2027;
+4. aprovar (ou não) a regra `texto-alterado-por-ato-posterior` e levar a
+   combinação à revisão por regra, como exceções por subdivisão. Só decide com
+   a publicação da LC 227 fechada (republicação e retificação arquivadas).
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
   proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três
