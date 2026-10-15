@@ -109,7 +109,9 @@ def origem_das_datas(meta: dict) -> list[str]:
     if por.startswith("regra:"):
         quem = f"fixados por regra ({por.removeprefix('regra:')}), sem leitura humana,"
     elif por.startswith("ia:"):
-        quem = (f"propostos por IA ({por.removeprefix('ia:')}) — NAO equivale a revisao humana —")
+        ids = ", ".join(meta.get("interpretacoes_ia") or []) or "?"
+        quem = (f"propostos por IA ({por.removeprefix('ia:')}; interpretacoes: {ids}, ver "
+                "temporal/ia.yaml) — NAO equivale a revisao humana —")
     else:
         quem = f"revisados por {por}"
     linhas = [f"{' e '.join(eixos)} {quem} em {meta.get('revisado_em')}"]

@@ -44,7 +44,9 @@ import sys
 
 import yaml
 
-from comum import DIR_TEMPORAL, arquivos_norma, gravar_texto, hoje, ler_frontmatter
+import ia as ia_mod
+from comum import DIR_TEMPORAL, arquivos_norma, gravar_texto, hoje, ler_frontmatter, urn_norma
+from fatiar import CATALOGO
 from regras_temporais import REGRA_LITERAL, aprovada, carregar_regras
 
 EIXOS = ["vigencia", "efeitos"]
@@ -60,8 +62,9 @@ DEPENDEM_DA_PUBLICACAO = {"evento", "relativo"}
 
 
 def e_humana(revisao: dict) -> bool:
+    """Decisão humana: nem de regra nem de IA (que são refeitas a cada execução)."""
     return (revisao.get("decisao") is not None
-            and not str(revisao.get("revisado_por") or "").startswith("regra:"))
+            and not str(revisao.get("revisado_por") or "").startswith(("regra:", "ia:")))
 
 
 def _bloqueios_gerais(proposta: dict) -> tuple[bool, bool, set[str]]:
@@ -177,12 +180,15 @@ def _sem_fundamento(excecao: dict) -> dict:
     return {k: v for k, v in excecao.items() if k != "fundamento"}
 
 
-def _excecoes_de_alteracoes(entrada: dict) -> list[dict] | None:
+def _excecoes_de_alteracoes(entrada: dict, regras: dict) -> list[dict] | None:
     """Uma exceção por trecho alterado; o do caput em `_par0`. None se algum trecho
-    não tem proposta ou tem duas leituras diferentes."""
+    não tem proposta ou tem duas leituras diferentes. Com a regra aprovada só no
+    contexto da IA, a proposta é o `resultado_se_aprovada`."""
     artigo, por_urn = entrada["urn"], {}
+    aprovada_aqui = aprovada(regras, REGRA_TEXTO_ALTERADO)
     for alteracao in entrada.get("alteracoes") or []:
-        proposta = alteracao.get("proposta")
+        proposta = alteracao.get("proposta") or (
+            alteracao.get("resultado_se_aprovada") if aprovada_aqui else None)
         if not proposta or not alteracao.get("subdivisao"):
             return None
         urn = alteracao["subdivisao"] if alteracao["subdivisao"] != artigo else f"{artigo}_par0"
@@ -211,7 +217,7 @@ def _decidir_texto_alterado(entrada: dict, forma: str | None, regras: dict,
         return None
     sem = dict(entrada, pendencias=sorted(pendencias - {"redacao_de_outro_ato"}))
     escopo, usadas = _decidir(sem, forma, regras, publicacao_em_aberto)
-    excecoes_alteracao = _excecoes_de_alteracoes(entrada)
+    excecoes_alteracao = _excecoes_de_alteracoes(entrada, regras)
     if escopo != EIXOS or excecoes_alteracao is None:
         return None
     vig, efe = entrada["vigencia"], entrada["efeitos"]
@@ -255,71 +261,124 @@ def _igual_a_aplicada(entrada: dict, escopo: list[str], por: str, meta: dict | N
     return True
 
 
+def _tentar(entrada: dict, forma: str | None, regras: dict, gerais: list[dict],
+            atos: list[dict]) -> tuple[list[str] | None, list[str], dict | None]:
+    """(escopo, regras derivadas usadas, campos de 'alterar' ou None) num contexto."""
+    tudo, publicacao_em_aberto, trazidos = _bloqueios_gerais({"pendencias_gerais": gerais})
+    if tudo or entrada.get("artigo") in trazidos:
+        return None, [], None
+    alterar = _decidir_texto_alterado(entrada, forma, regras, publicacao_em_aberto, atos)
+    if alterar:
+        return list(EIXOS), alterar.pop("_usadas"), alterar
+    escopo, usadas = _decidir(entrada, forma, regras, publicacao_em_aberto)
+    return escopo, usadas, None
+
+
+# Aprovação que só vale dentro do contexto da IA: a regra continua NÃO aprovada
+# para as decisões de regra (PREMISSAS.md §3.4).
+_APROVADA_PELA_IA = {"aprovada": True, "aprovada_por": "ia", "aprovada_em": "ia"}
+
+
+def _contexto_ia(ia: dict, regras: dict, gerais: list[dict], atos: list[dict]):
+    """(regras, pendências gerais, atos) com o que as interpretações de IA resolvem,
+    e os ids delas por uso: 'norma', 'atos', e {regra: id}."""
+    resolve = ia.get("resolve_pendencias") or {}
+    gerais_ia = [g for g in gerais if g.get("id") not in resolve]
+    ids_norma = sorted({resolve[g["id"]] for g in gerais if g.get("id") in resolve})
+    regras_ia = {**regras, **{nome: _APROVADA_PELA_IA for nome in (ia.get("regras") or {})
+                              if not aprovada(regras, nome)}}
+    atos_ia, ids_atos = [], set()
+    for ato in atos:
+        resolvidas = (ia.get("atos") or {}).get(ato.get("urn"), {})
+        ids_atos |= {resolvidas[p] for p in ato.get("pendencias_gerais") or [] if p in resolvidas}
+        atos_ia.append(dict(ato, pendencias_gerais=[p for p in ato.get("pendencias_gerais") or []
+                                                    if p not in resolvidas]))
+    regras_por_id = {nome: id_ for nome, id_ in (ia.get("regras") or {}).items()
+                     if not aprovada(regras, nome)}
+    return regras_ia, gerais_ia, atos_ia, ids_norma, sorted(ids_atos), regras_por_id
+
+
 def decidir_por_regra(proposta: dict, regras: dict, data: str,
-                      aplicadas: dict[str, dict] | None = None) -> tuple[dict, dict]:
-    """(proposta com as decisões de regra, resumo). Não altera a original.
+                      aplicadas: dict[str, dict] | None = None,
+                      ia: dict | None = None) -> tuple[dict, dict]:
+    """(proposta com as decisões de regra — e de IA —, resumo). Não altera a original.
 
     `aplicadas`: {urn: front-matter de normas/}. Decisão igual à já aplicada
     mantém o `revisado_em` de lá, mesmo com a proposta regenerada.
+
+    `ia`: contexto das interpretações de IA (ia.contexto). Só onde a regra não
+    decide nada, a mesma decisão é tentada com o que as interpretações resolvem; o
+    resultado sai com `revisado_por: ia:<modelo>` e `interpretacoes_ia`.
     """
     nova = copy.deepcopy(proposta)
     forma = (nova.get("resumo") or {}).get("forma_da_clausula")
-    tudo, publicacao_em_aberto, trazidos = _bloqueios_gerais(nova)
+    gerais = nova.get("pendencias_gerais") or []
     atos = nova.get("atos_alteradores") or []
-    resumo = {"vigencia_e_efeitos": 0, "so_vigencia": 0, "so_efeitos": 0, "nada": 0, "humanas": 0}
+    if ia:
+        regras_ia, gerais_ia, atos_ia, ids_norma, ids_atos, regras_por_id = _contexto_ia(
+            ia, regras, gerais, atos)
+    resumo = {"vigencia_e_efeitos": 0, "so_vigencia": 0, "so_efeitos": 0, "nada": 0,
+              "humanas": 0, "por_ia": 0}
     for entrada in nova.get("dispositivos") or []:
         revisao = entrada.setdefault("revisao", {})
         if e_humana(revisao):
             resumo["humanas"] += 1
             continue
-        alterar = None
-        if tudo or entrada.get("artigo") in trazidos:
-            escopo, usadas = None, []
-        else:
-            alterar = _decidir_texto_alterado(entrada, forma, regras, publicacao_em_aberto, atos)
-            if alterar:
-                escopo, usadas = list(EIXOS), alterar.pop("_usadas")
-            else:
-                escopo, usadas = _decidir(entrada, forma, regras, publicacao_em_aberto)
+        escopo, usadas, alterar = _tentar(copy.deepcopy(entrada), forma, regras, gerais, atos)
+        por_ia, ids = False, []
+        if escopo is None and ia:
+            escopo, usadas, alterar = _tentar(copy.deepcopy(entrada), forma, regras_ia, gerais_ia,
+                                              atos_ia)
+            ids = sorted(set(ids_norma + (ids_atos if alterar else [])
+                             + [regras_por_id[r] for r in usadas if r in regras_por_id]))
+            if escopo is not None and not ids:
+                escopo, usadas, alterar = None, [], None  # nada da IA foi usado
+            por_ia = escopo is not None
+
         anterior = copy.deepcopy(revisao)
         for chave in ("decisao", "escopo", "revisado_por", "revisado_em", "observacao"):
             revisao[chave] = None
+        revisao.pop("interpretacoes_ia", None)
         if alterar or anterior.get("decisao") == "alterar":
             revisao.update(copy.deepcopy(VAZIO_ALTERAR))
         if escopo is None:
             resumo["nada"] += 1
             continue
-        por = "regra:" + REGRA_LITERAL + "".join(f"+{r}" for r in sorted(set(usadas)))
+
+        if por_ia:
+            por = f"ia:{ia['modelo']}"
+            origem = ("proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; "
+                      f"interpretações: {', '.join(ids)}: ")
+        else:
+            por = "regra:" + REGRA_LITERAL + "".join(f"+{r}" for r in sorted(set(usadas)))
+            origem = "decidido por regra (PREMISSAS.md §3.4): "
         if alterar:
             revisao.update(decisao="alterar", escopo=escopo, revisado_por=por, **alterar,
-                           observacao="decidido por regra (PREMISSAS.md §3.4): vigência e "
-                                      "efeitos pela norma alterada; os trechos incluídos, "
-                                      "alterados ou revogados por ato posterior como exceção")
-            mesma = (anterior.get("decisao") == "alterar" and anterior.get("revisado_por") == por
-                     and all(anterior.get(c) == revisao[c] for c in VAZIO_ALTERAR))
-            meta = (aplicadas or {}).get(entrada.get("urn"))
-            if mesma:
-                revisao["revisado_em"] = anterior.get("revisado_em")
-            elif _igual_a_aplicada_alterar(revisao, meta):
-                revisao["revisado_em"] = str(meta.get("revisado_em"))
-            else:
-                revisao["revisado_em"] = data
-            resumo["vigencia_e_efeitos"] += 1
-            continue
-        revisao.update(
-            decisao="aceitar", escopo=escopo, revisado_por=por,
-            observacao="decidido por regra (PREMISSAS.md §3.4): " + OBSERVACAO[tuple(escopo)],
-        )
-        mesma = (anterior.get("decisao") == "aceitar" and anterior.get("escopo") == escopo
-                 and anterior.get("revisado_por") == por)
+                           observacao=origem + "vigência e efeitos pela norma alterada; os "
+                                      "trechos incluídos, alterados ou revogados por ato "
+                                      "posterior como exceção")
+        else:
+            revisao.update(decisao="aceitar", escopo=escopo, revisado_por=por,
+                           observacao=origem + OBSERVACAO[tuple(escopo)])
+        if por_ia:
+            revisao["interpretacoes_ia"] = ids
+
+        campos = ("decisao", "escopo", "revisado_por", "interpretacoes_ia") + (
+            tuple(VAZIO_ALTERAR) if alterar else ())
+        mesma = all(anterior.get(c) == revisao.get(c) for c in campos)
         meta = (aplicadas or {}).get(entrada.get("urn"))
+        if meta is not None and meta.get("interpretacoes_ia") != revisao.get("interpretacoes_ia"):
+            meta = None
         if mesma:
             revisao["revisado_em"] = anterior.get("revisado_em")
-        elif _igual_a_aplicada(entrada, escopo, por, meta):
+        elif alterar and _igual_a_aplicada_alterar(revisao, meta):
+            revisao["revisado_em"] = str(meta.get("revisado_em"))
+        elif not alterar and _igual_a_aplicada(entrada, escopo, por, meta):
             revisao["revisado_em"] = str(meta.get("revisado_em"))
         else:
             revisao["revisado_em"] = data
         resumo[CHAVE_RESUMO[tuple(escopo)]] += 1
+        resumo["por_ia"] += por_ia
     return nova, resumo
 
 
@@ -337,12 +396,27 @@ def main() -> int:
     for arquivo in arquivos_norma(args.slug):
         meta, _ = ler_frontmatter(arquivo)
         aplicadas[meta["urn"]] = meta
-    nova, resumo = decidir_por_regra(proposta, carregar_regras(), hoje(), aplicadas)
+    # Interpretações de IA (temporal/ia.yaml): todas verificadas antes de usar.
+    interpretacoes = ia_mod.carregar_interpretacoes()
+    problemas = [p for i in interpretacoes["por_id"].values()
+                 for p in ia_mod.problemas_da_interpretacao(i)]
+    if problemas:
+        for p in problemas:
+            print(f"ERRO temporal/ia.yaml: {p}", file=sys.stderr)
+        return 2
+    contexto = None
+    if interpretacoes["por_id"]:
+        catalogo = yaml.safe_load(CATALOGO.read_text(encoding="utf-8"))
+        bases = {urn_norma(f["autoridade"], f["data"], f["numero"]): f["slug"]
+                 for f in catalogo.get("fontes") or []}
+        contexto = ia_mod.contexto(interpretacoes, args.slug, bases)
+    nova, resumo = decidir_por_regra(proposta, carregar_regras(), hoje(), aplicadas, contexto)
     gravar_texto(caminho, yaml.safe_dump(nova, allow_unicode=True, sort_keys=False,
                                          default_flow_style=False, width=1000))
     print(f"[{args.slug}] decisoes por regra: vigencia e efeitos {resumo['vigencia_e_efeitos']}, "
           f"so vigencia {resumo['so_vigencia']}, so efeitos {resumo['so_efeitos']}, "
-          f"sem decisao {resumo['nada']}; humanas preservadas {resumo['humanas']}")
+          f"sem decisao {resumo['nada']}; humanas preservadas {resumo['humanas']}; "
+          f"das decididas, por IA: {resumo['por_ia']}")
     print(f"  aplique com: python pipeline/fatiar.py --slug {args.slug}")
     return 0
 

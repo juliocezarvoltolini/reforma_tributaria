@@ -99,6 +99,24 @@ Decisão humana prevalece e nunca é tocada pela regra. Registro feito por IA le
 `revisado_por: ia:<modelo>` e aparece na consulta como não equivalente a revisão
 humana.
 
+## Nível C: interpretação proposta por IA (`ia.yaml`)
+
+Onde nem a regra literal nem uma regra aprovada decidem, a IA pode propor uma
+interpretação (PREMISSAS.md §3.4). Cada uma fica em [`ia.yaml`](ia.yaml) com
+`leitura` (o raciocínio) e `citacoes` ({fonte, trecho} de normas/ ou fontes/), e
+diz o que resolve: pendências gerais de uma norma (`resolve_pendencias`) ou uma
+regra derivada (`regra`) — que passa a valer SÓ nas decisões de IA.
+
+`revisar_por_regra.py` tenta primeiro a regra; só onde ela não decide nada,
+refaz a mesma decisão com o que as interpretações resolvem. A decisão sai com
+`revisado_por: ia:<modelo>` e `interpretacoes_ia: [ids]`, que vão ao
+front-matter. Travas:
+
+- toda citação é conferida no arquivo citado (texto literal, espaços
+  normalizados): uma que falhe impede o `revisar_por_regra.py` e o fatiamento;
+- decisão humana nunca é tocada, e a de regra continua sendo de regra;
+- a consulta mostra a decisão como "NÃO equivale a revisão humana", com os ids.
+
 ## Formas de cláusula reconhecidas
 
 | Forma | Exemplo real | O que os incisos dão |

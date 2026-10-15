@@ -331,6 +331,20 @@ para `Lcp214.htm#art493a` concordam, e isso fica em aviso. As duas leis têm
 `remissoes: so_escopo_afirmado` no catálogo: são leis de alteração, e "art. N"
 sem qualificador nelas é, quase sempre, da norma alterada.
 
+**Nível C aplicado em 2026-10-15** (autorizado pelo usuário, que declarou não
+poder aprovar as regras derivadas). Duas interpretações de IA em
+`temporal/ia.yaml`, com 13 citações literais conferidas:
+- `lc227-republicacao-e-retificacao`: a republicação (só um item vetado do art.
+  174) e a retificação (um título no art. 172) não mudam a publicação de
+  14/01/2026 dos artigos da LC 227;
+- `texto-alterado-pela-lc-227`: a regra `texto-alterado-por-ato-posterior`,
+  aplicada só nas decisões de IA.
+Resultado: 280 decisões de IA — 178 na LC 227 (177 com vigência e efeitos, o
+art. 52 só com vigência) e 102 na LC 214 (`alterar`, com os trechos da LC 227
+como exceção) —, além das 465 de regra, que não mudaram. Pendentes: 104 de
+802. As decisões de IA aparecem na consulta como "NÃO equivale a revisão
+humana"; uma decisão humana, quando houver, prevalece.
+
 **Republicação e retificação da LC 227, lidas em 2026-10-15** (atos no
 Planalto, `fontes/lc-227-2026/texto_republicado.doc` e `texto_retificado.doc`;
 o DOU recusa acesso deste ambiente):

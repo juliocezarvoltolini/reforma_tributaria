@@ -1545,7 +1545,7 @@ def revisao_por_regra():
            "publicação só pelo rodapé (sem DOU): nada por regra")
     checar(rev["9"] == humano["revisao"], "decisão humana nunca é tocada")
     checar(resumo == {"vigencia_e_efeitos": 1, "so_vigencia": 3, "so_efeitos": 0, "nada": 1,
-                      "humanas": 1},
+                      "humanas": 1, "por_ia": 0},
            f"resumo da execução (obteve {resumo})")
 
     ec = _entrada_lc("3", "1930-01-01")
@@ -1944,8 +1944,9 @@ def revisao_por_regra_texto_alterado():
     e["alteracoes_cobrem_as_marcas"] = False
     bloqueios.append((rodar(e)[0], "anotação não coberta por alteração"))
     e = copy.deepcopy(base)
-    e["alteracoes"][0]["proposta"] = None
-    bloqueios.append((rodar(e)[0], "alteração sem proposta"))
+    e["alteracoes"][0].update(proposta=None, resultado_se_aprovada=None,
+                              motivo="datas do ato alterador não determinadas")
+    bloqueios.append((rodar(e)[0], "alteração sem dados para combinar"))
     bloqueios.append((rodar(copy.deepcopy(base), pendencias_ato=["retificacao"])[0],
                       "lei alteradora com pendência geral"))
     e = copy.deepcopy(base)
@@ -1961,6 +1962,155 @@ def revisao_por_regra_texto_alterado():
     bloqueios.append((rodar(e)[0], "a cláusula e a alteração falam do mesmo trecho"))
     for rev, msg in bloqueios:
         checar(rev["decisao"] is None, f"{msg}: nada por regra")
+
+
+@cenario("nível C: interpretação de IA só vale com citação literal verificada")
+def ia_citacoes():
+    """Quebra: aceitar interpretação de IA sem citação, com trecho que não está no
+    texto citado, ou com fonte inexistente (PREMISSAS.md §3.4)."""
+    import tempfile
+
+    import ia as IA
+
+    with tempfile.TemporaryDirectory() as tmp:
+        raiz = Path(tmp)
+        (raiz / "normas" / "x").mkdir(parents=True)
+        (raiz / "normas" / "x" / "art-0001.md").write_text(
+            "---\nurn: u\n---\n\nArt. 1º Esta Lei entra   em vigor\nna data de sua publicação.\n",
+            encoding="utf-8")
+        (raiz / "fontes" / "x").mkdir(parents=True)
+        (raiz / "fontes" / "x" / "p.html").write_text(
+            "<html><body><p>Publicado em: 02/01/1900 | Edição: 1</p></body></html>",
+            encoding="utf-8")
+        ok = lambda f, t: IA.verificar_citacao({"fonte": f, "trecho": t}, raiz)  # noqa: E731
+        checar(ok("normas/x/art-0001.md", "entra em vigor na data de sua publicação")
+               and ok("fontes/x/p.html", "Publicado em: 02/01/1900"),
+               "trecho literal (espaços normalizados) no corpo do dispositivo e no original")
+        (raiz / "interpretacoes").mkdir()
+        (raiz / "interpretacoes" / "nota.md").write_text("Esta Lei entra em vigor", encoding="utf-8")
+        checar(not ok("normas/x/art-0001.md", "entra em vigor em 2030")
+               and not ok("normas/x/nao-existe.md", "Art. 1º")
+               and not ok("../fora.md", "x")
+               and not ok("interpretacoes/nota.md", "Esta Lei entra em vigor"),
+               "trecho ausente, fonte inexistente ou fora de normas/ e fontes/ (mesmo que "
+               "contenha o trecho): não verifica")
+        interp = {"id": "i1", "leitura": "lida", "resolve_pendencias": ["retificacao"],
+                  "norma": "x",
+                  "citacoes": [{"fonte": "normas/x/art-0001.md", "trecho": "Esta Lei entra"}]}
+        checar(IA.problemas_da_interpretacao(interp, raiz) == [], "interpretação citada: ok")
+        sem = {**interp, "citacoes": []}
+        falsa = {**interp, "citacoes": [{"fonte": "normas/x/art-0001.md", "trecho": "inventado"}]}
+        checar(IA.problemas_da_interpretacao(sem, raiz) and IA.problemas_da_interpretacao(falsa, raiz),
+               "sem citação, ou com citação que o texto não tem: problema")
+        interps = {"modelo": "modelo-x", "por_id": {"i1": interp, "i2": falsa}}
+        rev = {"decisao": "aceitar", "revisado_por": "ia:modelo-x", "interpretacoes_ia": ["i1"]}
+        checar(IA.problemas_de_ia(rev, interps, raiz) == [], "decisão de IA com interpretação válida")
+        checar(IA.problemas_de_ia({**rev, "interpretacoes_ia": []}, interps, raiz)
+               and IA.problemas_de_ia({**rev, "interpretacoes_ia": ["i9"]}, interps, raiz)
+               and IA.problemas_de_ia({**rev, "interpretacoes_ia": ["i2"]}, interps, raiz)
+               and IA.problemas_de_ia({**rev, "revisado_por": "ia:outro"}, interps, raiz),
+               "sem interpretação, id desconhecido, citação falsa ou outro modelo: problema")
+        checar(IA.problemas_de_ia({"decisao": "aceitar", "revisado_por": "Revisora"}, interps, raiz)
+               == [], "decisão humana não passa por aqui")
+
+
+@cenario("nível C: a IA decide só o que a regra não decide, e diz que é IA")
+def ia_decisoes():
+    """Quebra: decisão de IA tomando o lugar de decisão de regra ou humana; ser
+    tratada como humana (e travar a regeneração); ou sair sem dizer de que
+    interpretação veio."""
+    import revisar_por_regra as RR
+
+    humano = _entrada_lc("9", "1930-01-01")
+    humano["revisao"] = {"decisao": "rejeitar", "revisado_por": "Revisora", "revisado_em": "1900-01-05"}
+    prop = _proposta_para_regra("efeitos_por_inciso",
+                                [_entrada_lc("1", "1930-01-01"), _entrada_lc("2", "1930-01-01"), humano])
+    prop["pendencias_gerais"] = [{"id": "retificacao", "artigos": ["2"]}]
+    sem_ia, _ = RR.decidir_por_regra(prop, {}, "1900-02-01")
+    checar(all(d["revisao"]["decisao"] is None for d in sem_ia["dispositivos"][:2]),
+           "pendência geral desconhecida da regra: nada por regra")
+    ctx = {"modelo": "modelo-x", "resolve_pendencias": {"retificacao": "i1"}, "regras": {},
+           "atos": {}}
+    com_ia, resumo = RR.decidir_por_regra(prop, {}, "1900-02-01", ia=ctx)
+    rev = {d["artigo"]: d["revisao"] for d in com_ia["dispositivos"]}
+    checar(rev["1"]["decisao"] == "aceitar" and rev["1"]["revisado_por"] == "ia:modelo-x"
+           and rev["1"]["interpretacoes_ia"] == ["i1"] and rev["1"]["escopo"] == ["vigencia", "efeitos"],
+           f"com a interpretação, a IA decide e registra de onde veio (obteve {rev['1']})")
+    checar(rev["9"] == humano["revisao"], "decisão humana intocada")
+    checar(not RR.e_humana(rev["1"]), "decisão de IA não é humana")
+
+    # Texto alterado por ato posterior: a IA aplica a combinação (resultado_se_aprovada)
+    # e fecha a pendência da lei alteradora — as duas interpretações ficam registradas.
+    art = urn_dispositivo(URN_EC, "1")
+    ato = URN_999 + "!art7"
+    alterado = _entrada_lc("1", "1926-01-01", pendencias=["redacao_de_outro_ato"])
+    alterado["alteracoes"] = [{
+        "subdivisao": art + "_par2", "tipo": "incluido", "anotacao": "(Incluído pela ...)",
+        "ato": ato, "conferida": True,
+        "ato_vigencia": {"data": "1926-01-14", "fundamento": URN_999 + "!art9"},
+        "ato_efeitos": {"data": "1926-01-14", "fundamento": URN_999 + "!art9_incIII"},
+        "resultado_se_aprovada": {"vigencia_inicio": "1926-01-14", "efeitos_inicio": "1926-01-14"},
+        "proposta": None, "motivo": None}]
+    alterado["alteracoes_cobrem_as_marcas"] = True
+    prop_alt = _proposta_para_regra("efeitos_por_inciso", [alterado])
+    prop_alt["atos_alteradores"] = [{"slug": "lc-999", "urn": URN_999,
+                                     "pendencias_gerais": ["retificacao"]}]
+    ctx_alt = {"modelo": "modelo-x", "resolve_pendencias": {},
+               "regras": {"texto-alterado-por-ato-posterior": "i2"},
+               "atos": {URN_999: {"retificacao": "i1"}}}
+    sem, _ = RR.decidir_por_regra(prop_alt, {}, "1900-02-01")
+    com, _ = RR.decidir_por_regra(prop_alt, {}, "1900-02-01", ia=ctx_alt)
+    r = com["dispositivos"][0]["revisao"]
+    checar(sem["dispositivos"][0]["revisao"]["decisao"] is None
+           and r["decisao"] == "alterar" and r["revisado_por"] == "ia:modelo-x"
+           and r["interpretacoes_ia"] == ["i1", "i2"]
+           and r["excecoes_subdivisao"][0]["urn"] == art + "_par2",
+           f"texto alterado: só com a IA, e com as duas interpretações registradas (obteve {r})")
+
+    literal = _proposta_para_regra("efeitos_por_inciso", [_entrada_lc("1", "1930-01-01")])
+    so_regra, _ = RR.decidir_por_regra(literal, {}, "1900-02-01", ia=ctx)
+    checar(so_regra["dispositivos"][0]["revisao"]["revisado_por"] == "regra:clausula-literal/v1",
+           "o que a regra decide continua sendo de regra")
+
+    import tempfile
+
+    import yaml
+
+    with tempfile.TemporaryDirectory() as tmp:
+        alvo = Path(tmp) / "p.yaml"
+        alvo.write_text(yaml.safe_dump({"dispositivos": [{"revisao": rev["1"]}]}), encoding="utf-8")
+        checar(_pv().gravar_proposta(alvo, {"dispositivos": []}) is True,
+               "decisão de IA não impede regenerar a proposta (é refeita)")
+
+    # Aplicação: a revisão temporal verifica a interpretação e grava de onde veio.
+    with tempfile.TemporaryDirectory() as tmp:
+        raiz = Path(tmp)
+        (raiz / "normas" / "x").mkdir(parents=True)
+        (raiz / "normas" / "x" / "art-0001.md").write_text("---\nurn: u\n---\n\nTexto citado.\n",
+                                                           encoding="utf-8")
+        boa = {"id": "i1", "leitura": "l", "norma": "x", "resolve_pendencias": ["retificacao"],
+               "citacoes": [{"fonte": "normas/x/art-0001.md", "trecho": "Texto citado."}]}
+        interps = {"modelo": "modelo-x", "por_id": {"i1": boa}}
+        entradas = [d for d in com_ia["dispositivos"] if d["artigo"] == "1"]
+        caminho = raiz / "p.yaml"
+        caminho.write_text(yaml.safe_dump({"fonte_sha256": SHA_FICT, "dispositivos": entradas},
+                                          allow_unicode=True), encoding="utf-8")
+        revs, erros = _rt().carregar_revisoes(caminho, SHA_FICT, {e["urn"] for e in entradas},
+                                              regras={}, interpretacoes=interps, raiz=raiz)
+        checar(not erros and revs, f"interpretação verificada: aplica (erros: {erros})")
+        meta = _rt().aplicar_revisao(
+            {"urn": entradas[0]["urn"], "extracao": "automatica", "revisao_temporal_pendente": True},
+            next(iter(revs.values())))
+        checar(meta["revisado_por"] == "ia:modelo-x" and meta["interpretacoes_ia"] == ["i1"],
+               "o front-matter diz que é IA e de que interpretação")
+        sem = {**meta, "interpretacoes_ia": None}
+        checar(any("interpreta" in e for e in _rt().problemas_no_dispositivo(sem)[0]),
+               "front-matter de IA sem interpretacoes_ia: erro na validação")
+        falsa = {"modelo": "modelo-x", "por_id": {"i1": {**boa, "citacoes": [
+            {"fonte": "normas/x/art-0001.md", "trecho": "outro texto"}]}}}
+        revs, erros = _rt().carregar_revisoes(caminho, SHA_FICT, {e["urn"] for e in entradas},
+                                              regras={}, interpretacoes=falsa, raiz=raiz)
+        checar(not revs and erros, "citação que o texto não tem: erro, nada aplicado")
 
 
 @cenario("proposta: termo relativo à publicação só vira data com a regra aprovada")

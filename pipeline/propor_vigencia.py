@@ -1245,7 +1245,8 @@ def gravar_proposta(caminho: Path, proposta: dict) -> bool:
     if caminho.exists():
         existente = yaml.safe_load(caminho.read_text(encoding="utf-8")) or {}
         if any((d.get("revisao") or {}).get("decisao") is not None
-               and not str((d.get("revisao") or {}).get("revisado_por") or "").startswith("regra:")
+               and not str((d.get("revisao") or {}).get("revisado_por") or "").startswith(
+                   ("regra:", "ia:"))
                for d in existente.get("dispositivos") or []):
             return False
     caminho.parent.mkdir(parents=True, exist_ok=True)

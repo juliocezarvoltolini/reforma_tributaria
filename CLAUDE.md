@@ -82,7 +82,8 @@ Antes de usar essas datas:
   revisado. Diga isso na resposta.
 - `revisado_por` diz quem decidiu: um nome (pessoa), `regra:...` (leitura
   literal da cláusula, por código — PREMISSAS.md §3.4) ou `ia:...` (proposta de
-  IA, **não** equivale a revisão humana: diga isso na resposta).
+  IA, **não** equivale a revisão humana: diga isso na resposta, com os ids de
+  `interpretacoes_ia`, cuja leitura e citações estão em `temporal/ia.yaml`).
 - `precisao: {campo: ano}` — o texto diz só o ano ("em 2027"). Se a data de
   referência cai nesse ano, o estado é **incerto**: diga que o dia não está no
   texto.

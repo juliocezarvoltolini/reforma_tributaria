@@ -172,7 +172,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -181,10 +181,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art2
   artigo: '2'
   vigencia:
@@ -247,7 +251,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -256,10 +260,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art3
   artigo: '3'
   vigencia:
@@ -305,7 +313,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -314,10 +322,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art4
   artigo: '4'
   vigencia:
@@ -368,7 +380,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -377,10 +389,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art5
   artigo: '5'
   vigencia:
@@ -486,7 +502,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -495,10 +511,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art7
   artigo: '7'
   vigencia:
@@ -544,7 +564,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -553,10 +573,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art8
   artigo: '8'
   vigencia:
@@ -607,7 +631,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -616,10 +640,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art9
   artigo: '9'
   vigencia:
@@ -674,7 +702,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -683,10 +711,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art10
   artigo: '10'
   vigencia:
@@ -732,7 +764,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -741,10 +773,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art11
   artigo: '11'
   vigencia:
@@ -795,7 +831,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -804,10 +840,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art12
   artigo: '12'
   vigencia:
@@ -853,7 +893,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -862,10 +902,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art13
   artigo: '13'
   vigencia:
@@ -911,7 +955,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -920,10 +964,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art14
   artigo: '14'
   vigencia:
@@ -969,7 +1017,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -978,10 +1026,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art15
   artigo: '15'
   vigencia:
@@ -1027,7 +1079,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1036,10 +1088,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art16
   artigo: '16'
   vigencia:
@@ -1090,7 +1146,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1099,10 +1155,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art17
   artigo: '17'
   vigencia:
@@ -1148,7 +1208,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1157,10 +1217,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art18
   artigo: '18'
   vigencia:
@@ -1206,7 +1270,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1215,10 +1279,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art19
   artigo: '19'
   vigencia:
@@ -1264,7 +1332,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1273,10 +1341,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art20
   artigo: '20'
   vigencia:
@@ -1322,7 +1394,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1331,10 +1403,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art21
   artigo: '21'
   vigencia:
@@ -1380,7 +1456,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1389,10 +1465,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art22
   artigo: '22'
   vigencia:
@@ -1438,7 +1518,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1447,10 +1527,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art23
   artigo: '23'
   vigencia:
@@ -1496,7 +1580,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1505,10 +1589,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art24
   artigo: '24'
   vigencia:
@@ -1554,7 +1642,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1563,10 +1651,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art25
   artigo: '25'
   vigencia:
@@ -1612,7 +1704,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1621,10 +1713,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art26
   artigo: '26'
   vigencia:
@@ -1670,7 +1766,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1679,10 +1775,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art27
   artigo: '27'
   vigencia:
@@ -1728,7 +1828,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1737,10 +1837,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art28
   artigo: '28'
   vigencia:
@@ -1786,7 +1890,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1795,10 +1899,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art29
   artigo: '29'
   vigencia:
@@ -1844,7 +1952,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1853,10 +1961,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art30
   artigo: '30'
   vigencia:
@@ -1902,7 +2014,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1911,10 +2023,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art31
   artigo: '31'
   vigencia:
@@ -1960,7 +2076,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -1969,10 +2085,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art32
   artigo: '32'
   vigencia:
@@ -2018,7 +2138,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2027,10 +2147,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art33
   artigo: '33'
   vigencia:
@@ -2076,7 +2200,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2085,10 +2209,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art34
   artigo: '34'
   vigencia:
@@ -2134,7 +2262,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2143,10 +2271,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art35
   artigo: '35'
   vigencia:
@@ -2192,7 +2324,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2201,10 +2333,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art36
   artigo: '36'
   vigencia:
@@ -2250,7 +2386,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2259,10 +2395,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art37
   artigo: '37'
   vigencia:
@@ -2308,7 +2448,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2317,10 +2457,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art38
   artigo: '38'
   vigencia:
@@ -2371,7 +2515,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2380,10 +2524,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art39
   artigo: '39'
   vigencia:
@@ -2429,7 +2577,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2438,10 +2586,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art40
   artigo: '40'
   vigencia:
@@ -2487,7 +2639,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2496,10 +2648,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art41
   artigo: '41'
   vigencia:
@@ -2545,7 +2701,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2554,10 +2710,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art42
   artigo: '42'
   vigencia:
@@ -2603,7 +2763,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2612,10 +2772,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art43
   artigo: '43'
   vigencia:
@@ -2661,7 +2825,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2670,10 +2834,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art44
   artigo: '44'
   vigencia:
@@ -2719,7 +2887,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2728,10 +2896,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art45
   artigo: '45'
   vigencia:
@@ -2777,7 +2949,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2786,10 +2958,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art46
   artigo: '46'
   vigencia:
@@ -2835,7 +3011,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2844,10 +3020,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art47
   artigo: '47'
   vigencia:
@@ -2910,7 +3090,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2919,10 +3099,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art48
   artigo: '48'
   vigencia:
@@ -2968,7 +3152,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -2977,10 +3161,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art49
   artigo: '49'
   vigencia:
@@ -3026,7 +3214,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3035,10 +3223,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art50
   artigo: '50'
   vigencia:
@@ -3084,7 +3276,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3093,10 +3285,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art51
   artigo: '51'
   vigencia:
@@ -3171,7 +3367,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3180,10 +3376,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art52
   artigo: '52'
   vigencia:
@@ -3265,7 +3465,7 @@ dispositivos:
   - datas_por_subdivisao
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3274,10 +3474,13 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art53
   artigo: '53'
   vigencia:
@@ -3330,7 +3533,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3339,10 +3542,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art54
   artigo: '54'
   vigencia:
@@ -3388,7 +3595,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3397,10 +3604,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art55
   artigo: '55'
   vigencia:
@@ -3446,7 +3657,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3455,10 +3666,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art56
   artigo: '56'
   vigencia:
@@ -3504,7 +3719,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3513,10 +3728,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art57
   artigo: '57'
   vigencia:
@@ -3562,7 +3781,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3571,10 +3790,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art58
   artigo: '58'
   vigencia:
@@ -3620,7 +3843,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3629,10 +3852,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art59
   artigo: '59'
   vigencia:
@@ -3678,7 +3905,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3687,10 +3914,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art60
   artigo: '60'
   vigencia:
@@ -3745,7 +3976,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3754,10 +3985,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art61
   artigo: '61'
   vigencia:
@@ -3812,7 +4047,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3821,10 +4056,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art62
   artigo: '62'
   vigencia:
@@ -3887,7 +4126,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3896,10 +4135,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art63
   artigo: '63'
   vigencia:
@@ -3945,7 +4188,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -3954,10 +4197,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art64
   artigo: '64'
   vigencia:
@@ -4012,7 +4259,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4021,10 +4268,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art65
   artigo: '65'
   vigencia:
@@ -4070,7 +4321,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4079,10 +4330,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art66
   artigo: '66'
   vigencia:
@@ -4128,7 +4383,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4137,10 +4392,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art67
   artigo: '67'
   vigencia:
@@ -4191,7 +4450,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4200,10 +4459,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art68
   artigo: '68'
   vigencia:
@@ -4254,7 +4517,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4263,10 +4526,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art69
   artigo: '69'
   vigencia:
@@ -4312,7 +4579,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4321,10 +4588,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art70
   artigo: '70'
   vigencia:
@@ -4375,7 +4646,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4384,10 +4655,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art71
   artigo: '71'
   vigencia:
@@ -4438,7 +4713,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4447,10 +4722,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art72
   artigo: '72'
   vigencia:
@@ -4496,7 +4775,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4505,10 +4784,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art73
   artigo: '73'
   vigencia:
@@ -4559,7 +4842,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4568,10 +4851,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art74
   artigo: '74'
   vigencia:
@@ -4617,7 +4904,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4626,10 +4913,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art75
   artigo: '75'
   vigencia:
@@ -4684,7 +4975,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4693,10 +4984,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art76
   artigo: '76'
   vigencia:
@@ -4748,7 +5043,7 @@ dispositivos:
   pendencias:
   - datas_por_subdivisao
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4757,10 +5052,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art77
   artigo: '77'
   vigencia:
@@ -4806,7 +5105,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4815,10 +5114,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art78
   artigo: '78'
   vigencia:
@@ -4864,7 +5167,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4873,10 +5176,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art79
   artigo: '79'
   vigencia:
@@ -4931,7 +5238,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -4940,10 +5247,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art80
   artigo: '80'
   vigencia:
@@ -4998,7 +5309,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5007,10 +5318,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art81
   artigo: '81'
   vigencia:
@@ -5061,7 +5376,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5070,10 +5385,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art82
   artigo: '82'
   vigencia:
@@ -5119,7 +5438,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5128,10 +5447,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art83
   artigo: '83'
   vigencia:
@@ -5177,7 +5500,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5186,10 +5509,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art84
   artigo: '84'
   vigencia:
@@ -5235,7 +5562,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5244,10 +5571,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art85
   artigo: '85'
   vigencia:
@@ -5293,7 +5624,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5302,10 +5633,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art86
   artigo: '86'
   vigencia:
@@ -5351,7 +5686,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5360,10 +5695,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art87
   artigo: '87'
   vigencia:
@@ -5409,7 +5748,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5418,10 +5757,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art88
   artigo: '88'
   vigencia:
@@ -5467,7 +5810,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5476,10 +5819,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art89
   artigo: '89'
   vigencia:
@@ -5525,7 +5872,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5534,10 +5881,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art90
   artigo: '90'
   vigencia:
@@ -5583,7 +5934,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5592,10 +5943,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art91
   artigo: '91'
   vigencia:
@@ -5641,7 +5996,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5650,10 +6005,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art92
   artigo: '92'
   vigencia:
@@ -5699,7 +6058,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5708,10 +6067,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art93
   artigo: '93'
   vigencia:
@@ -5757,7 +6120,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5766,10 +6129,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art94
   artigo: '94'
   vigencia:
@@ -5815,7 +6182,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5824,10 +6191,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art95
   artigo: '95'
   vigencia:
@@ -5873,7 +6244,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5882,10 +6253,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art96
   artigo: '96'
   vigencia:
@@ -5931,7 +6306,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5940,10 +6315,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art97
   artigo: '97'
   vigencia:
@@ -5989,7 +6368,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -5998,10 +6377,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art98
   artigo: '98'
   vigencia:
@@ -6047,7 +6430,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6056,10 +6439,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art99
   artigo: '99'
   vigencia:
@@ -6105,7 +6492,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6114,10 +6501,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art100
   artigo: '100'
   vigencia:
@@ -6172,7 +6563,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6181,10 +6572,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art101
   artigo: '101'
   vigencia:
@@ -6230,7 +6625,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6239,10 +6634,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art102
   artigo: '102'
   vigencia:
@@ -6288,7 +6687,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6297,10 +6696,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art103
   artigo: '103'
   vigencia:
@@ -6346,7 +6749,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6355,10 +6758,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art104
   artigo: '104'
   vigencia:
@@ -6409,7 +6816,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6418,10 +6825,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art105
   artigo: '105'
   vigencia:
@@ -6467,7 +6878,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6476,10 +6887,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art106
   artigo: '106'
   vigencia:
@@ -6530,7 +6945,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6539,10 +6954,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art107
   artigo: '107'
   vigencia:
@@ -6588,7 +7007,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6597,10 +7016,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art108
   artigo: '108'
   vigencia:
@@ -6646,7 +7069,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6655,10 +7078,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art109
   artigo: '109'
   vigencia:
@@ -6721,7 +7148,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6730,10 +7157,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art110
   artigo: '110'
   vigencia:
@@ -6792,7 +7223,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6801,10 +7232,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art111
   artigo: '111'
   vigencia:
@@ -6850,7 +7285,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6859,10 +7294,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art112
   artigo: '112'
   vigencia:
@@ -6913,7 +7352,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6922,10 +7361,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art113
   artigo: '113'
   vigencia:
@@ -6971,7 +7414,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -6980,10 +7423,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art114
   artigo: '114'
   vigencia:
@@ -7035,7 +7482,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7044,10 +7491,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art115
   artigo: '115'
   vigencia:
@@ -7121,7 +7572,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7130,10 +7581,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art116
   artigo: '116'
   vigencia:
@@ -7199,7 +7654,7 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7208,10 +7663,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art117
   artigo: '117'
   vigencia:
@@ -7291,7 +7750,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7300,10 +7759,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art118
   artigo: '118'
   vigencia:
@@ -7359,7 +7822,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7368,10 +7831,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art119
   artigo: '119'
   vigencia:
@@ -7422,7 +7889,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7431,10 +7898,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art120
   artigo: '120'
   vigencia:
@@ -7490,7 +7961,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7499,10 +7970,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art121
   artigo: '121'
   vigencia:
@@ -7548,7 +8023,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7557,10 +8032,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art122
   artigo: '122'
   vigencia:
@@ -7611,7 +8090,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7620,10 +8099,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art123
   artigo: '123'
   vigencia:
@@ -7674,7 +8157,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7683,10 +8166,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art124
   artigo: '124'
   vigencia:
@@ -7737,7 +8224,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7746,10 +8233,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art125
   artigo: '125'
   vigencia:
@@ -7800,7 +8291,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7809,10 +8300,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art126
   artigo: '126'
   vigencia:
@@ -7863,7 +8358,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7872,10 +8367,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art127
   artigo: '127'
   vigencia:
@@ -7926,7 +8425,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7935,10 +8434,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art128
   artigo: '128'
   vigencia:
@@ -7989,7 +8492,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -7998,10 +8501,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art129
   artigo: '129'
   vigencia:
@@ -8088,7 +8595,7 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8097,10 +8604,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art130
   artigo: '130'
   vigencia:
@@ -8151,7 +8662,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8160,10 +8671,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art131
   artigo: '131'
   vigencia:
@@ -8209,7 +8724,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8218,10 +8733,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art132
   artigo: '132'
   vigencia:
@@ -8293,7 +8812,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8302,10 +8821,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art133
   artigo: '133'
   vigencia:
@@ -8358,7 +8881,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8367,10 +8890,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art134
   artigo: '134'
   vigencia:
@@ -8445,7 +8972,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8454,10 +8981,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art135
   artigo: '135'
   vigencia:
@@ -8503,7 +9034,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8512,10 +9043,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art136
   artigo: '136'
   vigencia:
@@ -8566,7 +9101,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8575,10 +9110,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art137
   artigo: '137'
   vigencia:
@@ -8633,7 +9172,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8642,10 +9181,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art138
   artigo: '138'
   vigencia:
@@ -8691,7 +9234,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8700,10 +9243,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art139
   artigo: '139'
   vigencia:
@@ -8763,7 +9310,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8772,10 +9319,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art140
   artigo: '140'
   vigencia:
@@ -8827,7 +9378,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8836,10 +9387,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art141
   artigo: '141'
   vigencia:
@@ -8891,7 +9446,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8900,10 +9455,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art142
   artigo: '142'
   vigencia:
@@ -8955,7 +9514,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -8964,10 +9523,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art143
   artigo: '143'
   vigencia:
@@ -9024,7 +9587,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9033,10 +9596,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art144
   artigo: '144'
   vigencia:
@@ -9100,7 +9667,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9109,10 +9676,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art145
   artigo: '145'
   vigencia:
@@ -9164,7 +9735,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9173,10 +9744,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art146
   artigo: '146'
   vigencia:
@@ -9222,7 +9797,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9231,10 +9806,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art147
   artigo: '147'
   vigencia:
@@ -9280,7 +9859,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9289,10 +9868,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art148
   artigo: '148'
   vigencia:
@@ -9338,7 +9921,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9347,10 +9930,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art149
   artigo: '149'
   vigencia:
@@ -9396,7 +9983,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9405,10 +9992,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art150
   artigo: '150'
   vigencia:
@@ -9454,7 +10045,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9463,10 +10054,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art151
   artigo: '151'
   vigencia:
@@ -9512,7 +10107,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9521,10 +10116,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art152
   artigo: '152'
   vigencia:
@@ -9570,7 +10169,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9579,10 +10178,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art153
   artigo: '153'
   vigencia:
@@ -9628,7 +10231,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9637,10 +10240,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art154
   artigo: '154'
   vigencia:
@@ -9686,7 +10293,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9695,10 +10302,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art155
   artigo: '155'
   vigencia:
@@ -9749,7 +10360,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9758,10 +10369,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art156
   artigo: '156'
   vigencia:
@@ -9807,7 +10422,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9816,10 +10431,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art157
   artigo: '157'
   vigencia:
@@ -9865,7 +10484,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9874,10 +10493,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art158
   artigo: '158'
   vigencia:
@@ -9923,7 +10546,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9932,10 +10555,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art159
   artigo: '159'
   vigencia:
@@ -9981,7 +10608,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -9990,10 +10617,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art160
   artigo: '160'
   vigencia:
@@ -10039,7 +10670,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10048,10 +10679,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art161
   artigo: '161'
   vigencia:
@@ -10097,7 +10732,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10106,10 +10741,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art162
   artigo: '162'
   vigencia:
@@ -10155,7 +10794,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10164,10 +10803,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art163
   artigo: '163'
   vigencia:
@@ -10213,7 +10856,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10222,10 +10865,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art164
   artigo: '164'
   vigencia:
@@ -10271,7 +10918,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10280,10 +10927,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art165
   artigo: '165'
   vigencia:
@@ -10399,7 +11050,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10408,10 +11059,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art167
   artigo: '167'
   vigencia:
@@ -10459,7 +11114,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10468,10 +11123,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art168
   artigo: '168'
   vigencia:
@@ -10587,7 +11246,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10596,10 +11255,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art170
   artigo: '170'
   vigencia:
@@ -10648,7 +11311,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10657,10 +11320,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art171
   artigo: '171'
   vigencia:
@@ -10708,7 +11375,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10717,10 +11384,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art172
   artigo: '172'
   vigencia:
@@ -10769,7 +11440,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10778,10 +11449,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art173
   artigo: '173'
   vigencia:
@@ -10837,7 +11512,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -10846,10 +11521,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
   artigo: '174'
   vigencia:
@@ -11086,7 +11765,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11095,10 +11774,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art176
   artigo: '176'
   vigencia:
@@ -11147,7 +11830,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11156,10 +11839,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art177
   artigo: '177'
   vigencia:
@@ -11208,7 +11895,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11217,10 +11904,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art178
   artigo: '178'
   vigencia:
@@ -11268,7 +11959,7 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11277,10 +11968,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art179
   artigo: '179'
   vigencia:
@@ -11326,7 +12021,7 @@ dispositivos:
   alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11335,10 +12030,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art180
   artigo: '180'
   vigencia:
@@ -11389,7 +12088,7 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11398,10 +12097,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art181
   artigo: '181'
   vigencia:
@@ -11459,7 +12162,7 @@ dispositivos:
   - marcos_proprios
   - revogacao_expressa
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11468,10 +12171,14 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao
 - urn: urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
   artigo: '182'
   vigencia:
@@ -11530,7 +12237,7 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: null
+    decisao: aceitar
     vigencia_inicio: null
     vigencia_fim: null
     efeitos_inicio: null
@@ -11539,7 +12246,11 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: lc227-republicacao-e-retificacao: vigência e efeitos'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - lc227-republicacao-e-retificacao

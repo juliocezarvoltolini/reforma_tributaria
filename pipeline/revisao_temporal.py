@@ -35,6 +35,7 @@ from pathlib import Path
 
 import yaml
 
+import ia
 from regras_temporais import carregar_regras, problemas_de_regra
 
 CAMPOS_DATA = ("vigencia_inicio", "vigencia_fim", "efeitos_inicio", "efeitos_fim")
@@ -55,7 +56,7 @@ ORDEM_CAMPOS = (
     "fonte", "ingerido_em", "remete_a", "remete_a_externo", "subdivisoes",
     "anotacoes_oficiais", "conceitos_definidos", "dispositivos_citados",
     "altera", "alterado_por", "extracao", "eixos_revisados", "revisao_temporal_pendente",
-    "revisado_por", "revisado_em",
+    "revisado_por", "revisado_em", "interpretacoes_ia",
 )
 
 
@@ -184,6 +185,8 @@ def problemas_no_dispositivo(meta: dict) -> tuple[list[str], list[str]]:
                          "quando vigência e efeitos foram revisados")
         if not meta.get("revisado_por"):
             erros.append("extracao revisada sem revisado_por")
+        if str(meta.get("revisado_por") or "").startswith("ia:") and not meta.get("interpretacoes_ia"):
+            erros.append("decisão de IA sem interpretacoes_ia: não se sabe de que interpretação veio")
         if _iso(meta.get("revisado_em")) is None:
             erros.append("extracao revisada sem revisado_em (AAAA-MM-DD)")
         fund = meta.get("fundamento_temporal") or {}
@@ -296,11 +299,13 @@ def _revisao_de(entrada: dict) -> tuple[dict | None, list[str]]:
         "fundamento_temporal": fundamentos,
         "revisado_por": rev["revisado_por"],
         "revisado_em": _iso(rev["revisado_em"]),
+        "interpretacoes_ia": list(rev.get("interpretacoes_ia") or []) or None,
     }, []
 
 
 def carregar_revisoes(
-    caminho: Path, sha256_fonte: str, urns: set[str], regras: dict | None = None
+    caminho: Path, sha256_fonte: str, urns: set[str], regras: dict | None = None,
+    interpretacoes: dict | None = None, raiz: Path | None = None,
 ) -> tuple[dict[str, dict], list[str]]:
     """{urn: revisão aplicável} e os erros que impedem aplicar.
 
@@ -312,6 +317,8 @@ def carregar_revisoes(
     """
     if regras is None:
         regras = carregar_regras()
+    if interpretacoes is None:
+        interpretacoes = ia.carregar_interpretacoes()
     if not caminho.exists():
         return {}, []
     dados = yaml.safe_load(caminho.read_text(encoding="utf-8")) or {}
@@ -336,6 +343,9 @@ def carregar_revisoes(
         revisao, problemas = _revisao_de(entrada)
         problemas = problemas_de_regra((entrada.get("revisao") or {}).get("revisado_por"),
                                        regras) + problemas
+        # Decisão de IA: interpretação existente e com citações que o texto contém.
+        problemas += ia.problemas_de_ia(entrada.get("revisao") or {}, interpretacoes,
+                                        *([raiz] if raiz else []))
         if problemas:
             erros.append(f"{urn}: " + "; ".join(problemas))
         elif revisao is not None:
@@ -374,6 +384,11 @@ def aplicar_revisao(meta: dict, revisao: dict) -> dict:
     novo["revisao_temporal_pendente"] = set(eixos) != set(EIXOS)
     novo["revisado_por"] = revisao["revisado_por"]
     novo["revisado_em"] = revisao["revisado_em"]
+    # Decisão de IA: de que interpretação veio (temporal/ia.yaml).
+    if revisao.get("interpretacoes_ia"):
+        novo["interpretacoes_ia"] = list(revisao["interpretacoes_ia"])
+    else:
+        novo.pop("interpretacoes_ia", None)
     return ordenar_meta(novo)
 
 

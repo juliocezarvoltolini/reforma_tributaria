@@ -1,0 +1,74 @@
+# Interpretações propostas por IA (PREMISSAS.md §3.4, nível C).
+#
+# NÃO equivalem a revisão humana. Cada decisão tomada a partir delas leva
+# `revisado_por: ia:<modelo>` e `interpretacoes_ia: [ids]`, e a consulta mostra
+# isso. Cada interpretação só vale com citação literal: o pipeline confere cada
+# trecho no arquivo citado (normas/ ou fontes/) antes de aplicar qualquer decisão.
+# Uma decisão humana, quando houver, prevalece sobre a da IA.
+#
+# Autorizadas pelo usuário em 2026-10-15 ("Sim, implemente e aplique o nível C"),
+# depois de ele declarar que não pode aprovar as regras derivadas abaixo.
+modelo: claude-opus-5-5
+interpretacoes:
+  - id: lc227-republicacao-e-retificacao
+    norma: lc-227-2026
+    registrado_em: '2026-10-15'
+    resolve_pendencias:
+      - republicacao_de_artigos
+      - retificacao
+      - rodape_cita_publicacao_nao_confirmada
+    leitura: >-
+      A LC 227 foi publicada no DOU de 14/01/2026 (página arquivada). A
+      republicação é declarada "parcial" e o único trecho republicado é um item
+      vetado ("I - (VETADO);") que o art. 174 insere na LC 214 — não há texto
+      normativo nele. A retificação ("onde se lê ... leia-se") só acrescenta o
+      título "PARTE QUINTA" ao texto que o art. 172 insere na Lei nº 1.079/1950.
+      Lidos assim, nenhum dos dois atos traz texto da LC 227 que passe a valer em
+      outra data: a publicação que vale para "entra em vigor na data de sua
+      publicação" (art. 182) e para "a partir da sua publicação" (art. 182, III) é
+      a de 14/01/2026, para todos os artigos, inclusive o 172 e o 174.
+    citacoes:
+      - fonte: fontes/lc-227-2026/texto_publicado.html
+        trecho: "Publicado em: 14/01/2026 | Edição: 9 | Seção: 1 | Página: 1"
+      - fonte: normas/lc-227-2026/art-0182.md
+        trecho: "Esta Lei Complementar entra em vigor na data de sua publicação, produzindo efeitos:"
+      - fonte: normas/lc-227-2026/art-0182.md
+        trecho: "III - a partir da sua publicação, em relação aos demais dispositivos."
+      - fonte: fontes/lc-227-2026/texto_republicado.doc
+        trecho: >-
+          Republicação parcial da Lei Complementar nº 227, de 13 de janeiro de
+          2026, publicada na Edição nº 9, do Diário Oficial da União de 14 de
+          janeiro de 2026, Seção 1, página 1, por ter constado inexatidão material.
+      - fonte: fontes/lc-227-2026/texto_republicado.doc
+        trecho: "I - (VETADO);"
+      - fonte: normas/lc-227-2026/art-0174.md
+        trecho: "A Lei Complementar nº 214, de 16 de janeiro de 2025, passa a vigorar com as seguintes alterações:"
+      - fonte: fontes/lc-227-2026/texto_retificado.doc
+        trecho: "Art. 172. A Lei nº 1.079, de 10 de abril de 1950, passa a vigorar acrescida da seguinte Parte Quinta:"
+      - fonte: fontes/lc-227-2026/texto_retificado.doc
+        trecho: "PARTE QUINTA"
+
+  - id: texto-alterado-pela-lc-227
+    regra: texto-alterado-por-ato-posterior
+    registrado_em: '2026-10-15'
+    leitura: >-
+      O art. 174 da LC 227 dá nova redação e inclui texto na LC 214, e o art. 181
+      revoga dispositivos dela. O art. 182 da LC 227 diz que ela entra em vigor na
+      publicação e que os demais dispositivos — entre eles o 174 e o 181 —
+      produzem efeitos a partir da publicação. O texto que o art. 174 inclui ou
+      altera não existia antes disso; e a LC 214, no art. 544, dá a cada artigo
+      dela uma data de efeitos. Lidas juntas: o trecho incluído ou com redação dada
+      vale a partir da mais tardia das duas datas (vigência e efeitos, cada um com
+      o seu par); o trecho revogado pelo art. 181 deixa de valer quando o art. 181
+      produz efeitos.
+    citacoes:
+      - fonte: normas/lc-227-2026/art-0174.md
+        trecho: "A Lei Complementar nº 214, de 16 de janeiro de 2025, passa a vigorar com as seguintes alterações:"
+      - fonte: normas/lc-227-2026/art-0181.md
+        trecho: "V - os seguintes dispositivos da Lei Complementar nº 214, de 16 de janeiro de 2025:"
+      - fonte: normas/lc-227-2026/art-0182.md
+        trecho: "Esta Lei Complementar entra em vigor na data de sua publicação, produzindo efeitos:"
+      - fonte: normas/lc-227-2026/art-0182.md
+        trecho: "III - a partir da sua publicação, em relação aos demais dispositivos."
+      - fonte: normas/lc-214-2025/art-0544.md
+        trecho: "Esta Lei Complementar entra em vigor na data de sua publicação, produzindo efeitos:"

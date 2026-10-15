@@ -107,6 +107,7 @@ extracao: "automatica"            # automatica | revisada
 eixos_revisados: [vigencia]       #     só com revisada: quais eixos foram decididos
 revisao_temporal_pendente: true   # false só com os dois eixos revisados
 revisado_por: null                #     pessoa | regra:<nome>/<versão>[+<derivada>] | ia:<modelo>
+interpretacoes_ia: [...]          #     só com ia:<modelo>: ids em temporal/ia.yaml
 revisado_em: null
 ---
 
