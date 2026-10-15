@@ -97,20 +97,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art2
   artigo: '2'
   vigencia:
@@ -169,20 +174,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art3
   artigo: '3'
   vigencia:
@@ -232,20 +242,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art4
   artigo: '4'
   vigencia:
@@ -304,20 +319,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5
   artigo: '5'
   vigencia:
@@ -390,20 +410,25 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art6
   artigo: '6'
   vigencia:
@@ -451,20 +476,25 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7
   artigo: '7'
   vigencia:
@@ -546,20 +576,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art8
   artigo: '8'
   vigencia:
@@ -609,20 +644,25 @@ dispositivos:
     caput_vetado: false
   pendencias: []
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art9
   artigo: '9'
   vigencia:
@@ -672,20 +712,25 @@ dispositivos:
     caput_vetado: false
   pendencias: []
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art10
   artigo: '10'
   vigencia:
@@ -735,20 +780,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art11
   artigo: '11'
   vigencia:
@@ -795,20 +845,25 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art12
   artigo: '12'
   vigencia:
@@ -855,20 +910,25 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art13
   artigo: '13'
   vigencia:
@@ -915,20 +975,25 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art14
   artigo: '14'
   vigencia:
@@ -979,20 +1044,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art15
   artigo: '15'
   vigencia:
@@ -1042,20 +1112,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art16
   artigo: '16'
   vigencia:
@@ -1105,20 +1180,25 @@ dispositivos:
     caput_vetado: false
   pendencias: []
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
   artigo: '17'
   vigencia:
@@ -1170,17 +1250,22 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2026-08-28'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2026-08-28'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
+    revisado_por: ia:claude-opus-5-5
     revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos

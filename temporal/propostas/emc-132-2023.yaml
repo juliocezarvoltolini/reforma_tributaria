@@ -175,20 +175,25 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art2
   artigo: '2'
   vigencia:
@@ -252,20 +257,25 @@ dispositivos:
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art3
   artigo: '3'
   vigencia:
@@ -319,20 +329,27 @@ dispositivos:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2027-01-01'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2027-01-01'
     efeitos_fim: null
-    precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    precisao:
+      vigencia_inicio: ano
+      efeitos_inicio: ano
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incI
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incI
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1+ano-primeiro-dia
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art4
   artigo: '4'
   vigencia:
@@ -387,20 +404,27 @@ dispositivos:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2033-01-01'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2033-01-01'
     efeitos_fim: null
-    precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    precisao:
+      vigencia_inicio: ano
+      efeitos_inicio: ano
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1+ano-primeiro-dia
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art5
   artigo: '5'
   vigencia:
@@ -1163,20 +1187,25 @@ dispositivos:
   pendencias:
   - marcos_proprios
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art14
   artigo: '14'
   vigencia:
@@ -1226,20 +1255,25 @@ dispositivos:
     caput_vetado: false
   pendencias: []
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art15
   artigo: '15'
   vigencia:
@@ -1289,20 +1323,25 @@ dispositivos:
     caput_vetado: false
   pendencias: []
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art16
   artigo: '16'
   vigencia:
@@ -1417,20 +1456,25 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art18
   artigo: '18'
   vigencia:
@@ -1492,20 +1536,25 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art19
   artigo: '19'
   vigencia:
@@ -1870,17 +1919,22 @@ dispositivos:
   - marcos_proprios
   - evento_relativo
   revisao:
-    decisao: aceitar
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2023-12-21'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2023-12-21'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
+    fundamento_vigencia:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
+    fundamento_efeitos:
+    - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art23_incIII
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-14'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-15'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: efeitos-na-vigencia-sem-clausula-de-efeitos: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - efeitos-na-vigencia-sem-clausula-de-efeitos

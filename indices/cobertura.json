@@ -3,7 +3,7 @@
   "normas": {
     "emc-132-2023": {
       "dispositivos": 23,
-      "revisao_temporal_pendente": 23
+      "revisao_temporal_pendente": 13
     },
     "lc-214-2025": {
       "dispositivos": 580,
@@ -15,7 +15,7 @@
     },
     "lc-235-2026": {
       "dispositivos": 17,
-      "revisao_temporal_pendente": 17
+      "revisao_temporal_pendente": 0
     }
   },
   "total_dispositivos": 802

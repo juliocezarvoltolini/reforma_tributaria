@@ -14,6 +14,9 @@ e o trecho literal) e o que ela resolve:
                       IA; a regra continua não aprovada para as decisões de regra;
   trata: vetado       item "(VETADO)" não tem texto e não muda as datas do resto
                       do artigo (nunca se o caput é vetado).
+  trata: efeitos_da_vigencia
+                      sem cláusula de efeitos, o dispositivo produz efeitos desde a
+                      vigência (datas no texto são conteúdo).
 
 `revisar_por_regra.py` só usa a IA onde a regra não decidiu nada, e grava
 `revisado_por: ia:<modelo>` com `interpretacoes_ia: [ids]`. A revisão temporal
@@ -134,6 +137,8 @@ def contexto(interpretacoes: dict, slug: str, bases: dict[str, str]) -> dict:
             ctx["regras"][interp["regra"]] = id_
         if interp.get("trata") == "vetado":
             ctx["vetado"] = id_
+        if interp.get("trata") == "efeitos_da_vigencia":
+            ctx["efeitos_da_vigencia"] = id_
         norma = interp.get("norma")
         for pendencia in interp.get("resolve_pendencias") or []:
             if norma == slug:

@@ -29,7 +29,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -165,7 +165,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -199,7 +199,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -233,7 +233,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -301,7 +301,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -335,7 +335,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -403,7 +403,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -539,7 +539,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
@@ -547,10 +547,11 @@
     "data_ato": "2023-12-20",
     "dispositivo": "art. 3",
     "efeitos_fim": null,
-    "efeitos_inicio": "2023-12-21",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "emc-132-2023",
     "precisao": {
+      "efeitos_inicio": "ano",
       "vigencia_inicio": "ano"
     },
     "publicacao": {
@@ -575,7 +576,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2027-01-01"
   },
@@ -583,10 +584,11 @@
     "data_ato": "2023-12-20",
     "dispositivo": "art. 4",
     "efeitos_fim": null,
-    "efeitos_inicio": "2023-12-21",
+    "efeitos_inicio": "2033-01-01",
     "excecoes_subdivisao": [],
     "norma": "emc-132-2023",
     "precisao": {
+      "efeitos_inicio": "ano",
       "vigencia_inicio": "ano"
     },
     "publicacao": {
@@ -611,7 +613,7 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2033-01-01"
   },
@@ -48382,7 +48384,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48416,7 +48418,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48450,7 +48452,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48484,7 +48486,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48518,7 +48520,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48552,7 +48554,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48586,7 +48588,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48620,7 +48622,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48654,7 +48656,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48688,7 +48690,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48722,7 +48724,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48756,7 +48758,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48790,7 +48792,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48824,7 +48826,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48858,7 +48860,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48892,7 +48894,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   },
@@ -48926,7 +48928,7 @@
         "Publicado em: 28/08/2026 | Edição: 163 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2026-08-28"
   }

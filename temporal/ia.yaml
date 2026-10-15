@@ -92,3 +92,27 @@ interpretacoes:
         trecho: "§ 5º (VETADO). (Incluído pela Lei Complementar nº 227, de 2026)"
       - fonte: normas/lc-214-2025/art-0334.md
         trecho: "Art. 334. (VETADO)."
+
+  - id: efeitos-na-vigencia-sem-clausula-de-efeitos
+    trata: efeitos_da_vigencia
+    registrado_em: '2026-10-15'
+    leitura: >-
+      A cláusula da EC 132 (art. 23) e a da LC 235 (art. 17) dizem quando cada
+      dispositivo "entra em vigor" e nada dizem sobre quando produz efeitos — ao
+      contrário da LC 214 e da LC 227, que dizem "produzindo efeitos". Sem
+      cláusula de efeitos, o dispositivo produz efeitos desde a vigência. Datas e
+      prazos no próprio texto — valores por exercício ("I - em 2029, a R$
+      8.000.000.000,00"), períodos de aplicação ("no exercício de 2026"), prazos
+      para agir — são conteúdo do dispositivo e não mudam o início dos efeitos.
+      A leitura não vale para artigo que fixa o próprio tempo (cláusula temporal
+      própria), que depende de lei futura, que tem datas por subdivisão ou que
+      revoga com data (aí a data é o próprio efeito do artigo).
+    citacoes:
+      - fonte: normas/emc-132-2023/art-0023.md
+        trecho: "Esta Emenda Constitucional entra em vigor:"
+      - fonte: normas/lc-235-2026/art-0017.md
+        trecho: "Esta Lei Complementar entra em vigor na data de sua publicação."
+      - fonte: normas/emc-132-2023/art-0013.md
+        trecho: "I - em 2029, a R$ 8.000.000.000,00 (oito bilhões de reais);"
+      - fonte: normas/lc-235-2026/art-0001.md
+        trecho: "Em caráter extraordinário, no exercício de 2026"

@@ -336,6 +336,17 @@ para `Lcp214.htm#art493a` concordam, e isso fica em aviso. As duas leis têm
 `remissoes: so_escopo_afirmado` no catálogo: são leis de alteração, e "art. N"
 sem qualificador nelas é, quase sempre, da norma alterada.
 
+**Efeitos sem cláusula de efeitos (nível C, 2026-10-15).** Quarta
+interpretação de IA, `efeitos-na-vigencia-sem-clausula-de-efeitos`: a EC 132
+(art. 23) e a LC 235 (art. 17) só dizem quando cada dispositivo "entra em
+vigor"; sem cláusula de efeitos, os efeitos começam na vigência, e datas no
+texto (valores por exercício, prazos, períodos de aplicação) são conteúdo. Não
+vale com cláusula temporal própria, dependência de lei futura, datas por
+subdivisão ou revogação datada (EC 132, art. 22: a data é o efeito). 27
+decisões de IA: 10 artigos da EC 132 e os 17 da LC 235. Essas 27 tinham só a
+vigência, por regra, e passam a ser registradas como IA, porque a decisão é uma
+só. Pendentes: 56 de 802.
+
 **Item vetado (nível C, 2026-10-15).** Terceira interpretação de IA,
 `item-vetado-sem-texto`: item "(VETADO)" não tem texto e não muda as datas do
 resto do artigo. Não vale para caput vetado (LC 214, arts. 334, 494, 495 e 536:

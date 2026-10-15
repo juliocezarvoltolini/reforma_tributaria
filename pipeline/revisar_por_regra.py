@@ -298,6 +298,29 @@ def _contexto_ia(ia: dict, regras: dict, gerais: list[dict], atos: list[dict]):
     return regras_ia, gerais_ia, atos_ia, ids_norma, sorted(ids_atos), regras_por_id
 
 
+# Formas cuja cláusula só dá a vigência (EC 132, LC 235): dos efeitos ela não diz.
+FORMAS_SO_VIGENCIA = {"vigencia_por_inciso", "vigencia_unica"}
+# Onde a leitura "sem cláusula de efeitos, efeitos na vigência" não vale: o texto
+# do artigo fixa o próprio tempo, depende de lei futura, tem data por subdivisão
+# ou revoga com data (a data É o efeito do artigo).
+FORA_DE_EFEITOS_DA_VIGENCIA = BLOQUEIAM_ARTIGO | {
+    "depende_de_lei_futura", "condicao_regulamentacao", "datas_por_subdivisao",
+    "revogacao_expressa", "alcance_alterado_pela_redacao_posterior"}
+
+
+def _alterar_efeitos_da_vigencia(entrada: dict) -> dict:
+    """Decisão 'alterar' com os efeitos na data da vigência, com a mesma precisão e
+    o mesmo fundamento (a cláusula de vigência)."""
+    vig = entrada["vigencia"]
+    data = vig["proposta"]["data_candidata"]
+    precisao = ({"vigencia_inicio": "ano", "efeitos_inicio": "ano"}
+                if vig["proposta"].get("precisao") == "ano" else {})
+    return {"vigencia_inicio": data, "vigencia_fim": None, "efeitos_inicio": data,
+            "efeitos_fim": None, "precisao": precisao,
+            "fundamento_vigencia": [vig["fundamento"]], "fundamento_efeitos": [vig["fundamento"]],
+            "excecoes_subdivisao": []}
+
+
 def _sem_vetado(entrada: dict) -> dict | None:
     """A entrada lida com a interpretação de item vetado (sem texto, não muda as
     datas do resto do artigo), ou None se ela não se aplica: caput vetado, ou
@@ -348,7 +371,12 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str,
             continue
         escopo, usadas, alterar = _tentar(copy.deepcopy(entrada), forma, regras, gerais, atos)
         por_ia, ids = False, []
-        if escopo is None and ia:
+        if (ia and ia.get("efeitos_da_vigencia") and escopo == ["vigencia"] and not alterar
+                and forma in FORMAS_SO_VIGENCIA
+                and not set(entrada.get("pendencias") or []) & FORA_DE_EFEITOS_DA_VIGENCIA):
+            escopo, alterar = list(EIXOS), _alterar_efeitos_da_vigencia(entrada)
+            por_ia, ids = True, [ia["efeitos_da_vigencia"]]
+        elif escopo is None and ia:
             alvo, ids_vetado = entrada, []
             if ia.get("vetado") and (sem_vetado := _sem_vetado(entrada)) is not None:
                 alvo, ids_vetado = sem_vetado, [ia["vetado"]]

@@ -2217,6 +2217,50 @@ def ia_vetado():
            f"VETADO + incluído: o item vetado (par1) não vira exceção (obteve {r})")
 
 
+@cenario("nível C: sem cláusula de efeitos, os efeitos começam na vigência")
+def ia_efeitos_da_vigencia():
+    """Quebra: dar efeitos por essa leitura a artigo com cláusula própria, com
+    dependência de lei futura ou com revogação datada; perder a precisão de ano;
+    ou decidir sem a interpretação."""
+    import copy
+
+    import revisar_por_regra as RR
+
+    regras = {"ano-primeiro-dia": {"aprovada": True, "aprovada_por": "F", "aprovada_em": "1900-01-01"}}
+    e = _entrada_lc("3", None, pendencias=["texto_inserido_em_outra_norma", "marcos_proprios"])
+    e["vigencia"].update(inciso="I", fundamento=urn_dispositivo(URN_EC, "23", inciso="I"),
+                         proposta={"tipo": "ano", "ano": 1930, "data_candidata": "1930-01-01",
+                                   "precisao": "ano"})
+    e["efeitos"].update(inciso=None, fundamento=None, proposta=None)
+    ctx = {"modelo": "modelo-x", "resolve_pendencias": {}, "regras": {}, "atos": {},
+           "efeitos_da_vigencia": "ie"}
+
+    def rodar(entrada, ia=ctx, forma="vigencia_por_inciso"):
+        novo, _ = RR.decidir_por_regra(_proposta_para_regra(forma, [entrada]), regras,
+                                       "1900-02-01", ia=ia)
+        return novo["dispositivos"][0]["revisao"]
+
+    r = rodar(copy.deepcopy(e))
+    checar(r["decisao"] == "alterar" and r["revisado_por"] == "ia:modelo-x"
+           and r["interpretacoes_ia"] == ["ie"]
+           and r["vigencia_inicio"] == r["efeitos_inicio"] == "1930-01-01"
+           and r["precisao"] == {"vigencia_inicio": "ano", "efeitos_inicio": "ano"}
+           and r["fundamento_efeitos"] == [urn_dispositivo(URN_EC, "23", inciso="I")],
+           f"efeitos na vigência, com a precisão de ano e o fundamento da cláusula (obteve {r})")
+    checar(rodar(copy.deepcopy(e), ia=None)["escopo"] == ["vigencia"],
+           "sem a interpretação: só a vigência, por regra")
+    for pendencia in ("clausula_temporal_propria", "depende_de_lei_futura",
+                      "condicao_regulamentacao", "revogacao_expressa", "datas_por_subdivisao"):
+        x = copy.deepcopy(e)
+        x["pendencias"].append(pendencia)
+        r = rodar(x)
+        checar(r["escopo"] != ["vigencia", "efeitos"] and "ie" not in (r.get("interpretacoes_ia") or []),
+               f"{pendencia}: a leitura não se aplica")
+    r = rodar(copy.deepcopy(e), forma="efeitos_por_inciso")
+    checar("ie" not in (r.get("interpretacoes_ia") or []),
+           "forma com cláusula de efeitos: fora desta leitura")
+
+
 @cenario("proposta: termo relativo à publicação só vira data com a regra aprovada")
 def proposta_termo_relativo():
     """Quebra: converter 'quarto mês subsequente' em data sem a regra aprovada, ou
