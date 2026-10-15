@@ -1128,6 +1128,11 @@ def construir(slug: str, regras: dict | None = None, _com_alteracoes: bool = Tru
             # literal (ato, conferência, datas do ato) e a combinação pela regra
             # 'texto-alterado-por-ato-posterior'.
             "alteracoes": alteracoes,
+            # Toda anotação oficial do corpo é uma alteração ligada? Um "(VETADO)"
+            # sem link ou um "(Vide ADI...)" deixa a conta diferente: o artigo não
+            # é decidido por regra.
+            "alteracoes_cobrem_as_marcas": bool(alteracoes) and len(alteracoes) == sum(
+                len(RE_ANOTACAO.findall(linha)) for linha in corpo),
             "pendencias": pendencias,
             "revisao": {
                 "decisao": None,  # aceitar | alterar | rejeitar (ver instrucoes_revisao)

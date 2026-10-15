@@ -357,9 +357,13 @@ cláusula de vigência da LC 227 (art. 182), que espera:
    por anotação, o ato, a conferência e as datas do ato (art. 182 da LC 227), e a
    combinação pela regra `texto-alterado-por-ato-posterior` (não aprovada): 770
    combináveis em 126 artigos, com resultado 14/01/2026 ou 1º/01/2027;
-4. aprovar (ou não) a regra `texto-alterado-por-ato-posterior` e levar a
-   combinação à revisão por regra, como exceções por subdivisão. Só decide com
-   a publicação da LC 227 fechada (republicação e retificação arquivadas).
+4. ~~levar a combinação à revisão por regra~~ — feito: `revisar_por_regra.py`
+   decide esses artigos como `alterar`, com exceções por subdivisão. Espera duas
+   coisas: a aprovação da regra `texto-alterado-por-ato-posterior` e a LC 227 sem
+   pendência geral (a republicação toca o art. 174, a retificação o 172). Em
+   simulação, com as duas, a LC 214 passaria de 419 para 521 artigos com
+   vigência e efeitos decididos (102 com os trechos da LC 227 como exceção), e as
+   531 decisões passam pela revisão temporal sem erro.
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
   proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três

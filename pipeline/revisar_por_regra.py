@@ -156,6 +156,88 @@ CHAVE_RESUMO = {("vigencia", "efeitos"): "vigencia_e_efeitos", ("vigencia",): "s
                 ("efeitos",): "so_efeitos"}
 
 
+REGRA_TEXTO_ALTERADO = "texto-alterado-por-ato-posterior"
+# Campos de uma decisão 'alterar' e o valor que têm quando não há decisão.
+VAZIO_ALTERAR = {"vigencia_inicio": None, "vigencia_fim": None, "efeitos_inicio": None,
+                 "efeitos_fim": None, "precisao": {}, "fundamento_vigencia": [],
+                 "fundamento_efeitos": [], "excecoes_subdivisao": []}
+
+
+def _atos_fechados(entrada: dict, atos: list[dict]) -> bool:
+    """Toda lei alteradora das alterações do artigo está na base e sem pendência
+    geral (republicação, retificação... em aberto)?"""
+    for alteracao in entrada.get("alteracoes") or []:
+        norma = next((x for x in atos if alteracao["ato"].startswith(x["urn"] + "!")), None)
+        if norma is None or set(norma.get("pendencias_gerais") or []) - {"regra_derivada_nao_aprovada"}:
+            return False
+    return True
+
+
+def _sem_fundamento(excecao: dict) -> dict:
+    return {k: v for k, v in excecao.items() if k != "fundamento"}
+
+
+def _excecoes_de_alteracoes(entrada: dict) -> list[dict] | None:
+    """Uma exceção por trecho alterado; o do caput em `_par0`. None se algum trecho
+    não tem proposta ou tem duas leituras diferentes."""
+    artigo, por_urn = entrada["urn"], {}
+    for alteracao in entrada.get("alteracoes") or []:
+        proposta = alteracao.get("proposta")
+        if not proposta or not alteracao.get("subdivisao"):
+            return None
+        urn = alteracao["subdivisao"] if alteracao["subdivisao"] != artigo else f"{artigo}_par0"
+        fundamento = list(dict.fromkeys(x for x in (
+            alteracao["ato"], (alteracao.get("ato_vigencia") or {}).get("fundamento"),
+            (alteracao.get("ato_efeitos") or {}).get("fundamento")) if x))
+        novo = {"urn": urn, **proposta, "fundamento": fundamento}
+        if urn not in por_urn:
+            por_urn[urn] = novo
+            continue
+        if _sem_fundamento(por_urn[urn]) != _sem_fundamento(novo):
+            return None
+        por_urn[urn]["fundamento"] = list(dict.fromkeys(por_urn[urn]["fundamento"] + fundamento))
+    return list(por_urn.values())
+
+
+def _decidir_texto_alterado(entrada: dict, forma: str | None, regras: dict,
+                            publicacao_em_aberto: bool, atos: list[dict]) -> dict | None:
+    """Decisão 'alterar' para artigo com texto de outro ato: as datas do artigo pela
+    norma alterada, cada trecho alterado como exceção (regra
+    'texto-alterado-por-ato-posterior'). None se qualquer trava não passa."""
+    pendencias = set(entrada.get("pendencias") or [])
+    if ("redacao_de_outro_ato" not in pendencias or not aprovada(regras, REGRA_TEXTO_ALTERADO)
+            or not entrada.get("alteracoes") or not entrada.get("alteracoes_cobrem_as_marcas")
+            or not _atos_fechados(entrada, atos)):
+        return None
+    sem = dict(entrada, pendencias=sorted(pendencias - {"redacao_de_outro_ato"}))
+    escopo, usadas = _decidir(sem, forma, regras, publicacao_em_aberto)
+    excecoes_alteracao = _excecoes_de_alteracoes(entrada)
+    if escopo != EIXOS or excecoes_alteracao is None:
+        return None
+    vig, efe = entrada["vigencia"], entrada["efeitos"]
+    excecoes_clausula = [dict(x) for x in efe.get("excecoes") or []]
+    if {x["urn"] for x in excecoes_clausula} & {x["urn"] for x in excecoes_alteracao}:
+        return None  # a cláusula e a alteração dizem coisas sobre o mesmo trecho
+    precisao = {campo: "ano" for campo, lado in (("vigencia_inicio", vig), ("efeitos_inicio", efe))
+                if (lado.get("proposta") or {}).get("precisao") == "ano"}
+    return {"vigencia_inicio": vig["proposta"]["data_candidata"], "vigencia_fim": None,
+            "efeitos_inicio": efe["proposta"]["data_candidata"], "efeitos_fim": None,
+            "precisao": precisao, "fundamento_vigencia": [vig["fundamento"]],
+            "fundamento_efeitos": [efe.get("fundamento") or vig["fundamento"]],
+            "excecoes_subdivisao": excecoes_clausula + excecoes_alteracao,
+            "_usadas": usadas + [REGRA_TEXTO_ALTERADO]}
+
+
+def _igual_a_aplicada_alterar(revisao: dict, meta: dict | None) -> bool:
+    if not meta or meta.get("extracao") != "revisada":
+        return False
+    if meta.get("revisado_por") != revisao["revisado_por"]:
+        return False
+    return ((meta.get("eixos_revisados") or EIXOS) == EIXOS
+            and all(str(meta.get(c)) == str(revisao[c]) for c in ("vigencia_inicio", "efeitos_inicio"))
+            and (meta.get("excecoes_subdivisao") or []) == revisao["excecoes_subdivisao"])
+
+
 def _igual_a_aplicada(entrada: dict, escopo: list[str], por: str, meta: dict | None) -> bool:
     """A decisão é a mesma que normas/ já tem aplicada? (mesma regra, mesmos eixos,
     mesmas datas). É a memória de `revisado_em` quando a proposta foi regenerada."""
@@ -183,23 +265,47 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str,
     nova = copy.deepcopy(proposta)
     forma = (nova.get("resumo") or {}).get("forma_da_clausula")
     tudo, publicacao_em_aberto, trazidos = _bloqueios_gerais(nova)
+    atos = nova.get("atos_alteradores") or []
     resumo = {"vigencia_e_efeitos": 0, "so_vigencia": 0, "so_efeitos": 0, "nada": 0, "humanas": 0}
     for entrada in nova.get("dispositivos") or []:
         revisao = entrada.setdefault("revisao", {})
         if e_humana(revisao):
             resumo["humanas"] += 1
             continue
+        alterar = None
         if tudo or entrada.get("artigo") in trazidos:
             escopo, usadas = None, []
         else:
-            escopo, usadas = _decidir(entrada, forma, regras, publicacao_em_aberto)
-        anterior = dict(revisao)
+            alterar = _decidir_texto_alterado(entrada, forma, regras, publicacao_em_aberto, atos)
+            if alterar:
+                escopo, usadas = list(EIXOS), alterar.pop("_usadas")
+            else:
+                escopo, usadas = _decidir(entrada, forma, regras, publicacao_em_aberto)
+        anterior = copy.deepcopy(revisao)
         for chave in ("decisao", "escopo", "revisado_por", "revisado_em", "observacao"):
             revisao[chave] = None
+        if alterar or anterior.get("decisao") == "alterar":
+            revisao.update(copy.deepcopy(VAZIO_ALTERAR))
         if escopo is None:
             resumo["nada"] += 1
             continue
         por = "regra:" + REGRA_LITERAL + "".join(f"+{r}" for r in sorted(set(usadas)))
+        if alterar:
+            revisao.update(decisao="alterar", escopo=escopo, revisado_por=por, **alterar,
+                           observacao="decidido por regra (PREMISSAS.md §3.4): vigência e "
+                                      "efeitos pela norma alterada; os trechos incluídos, "
+                                      "alterados ou revogados por ato posterior como exceção")
+            mesma = (anterior.get("decisao") == "alterar" and anterior.get("revisado_por") == por
+                     and all(anterior.get(c) == revisao[c] for c in VAZIO_ALTERAR))
+            meta = (aplicadas or {}).get(entrada.get("urn"))
+            if mesma:
+                revisao["revisado_em"] = anterior.get("revisado_em")
+            elif _igual_a_aplicada_alterar(revisao, meta):
+                revisao["revisado_em"] = str(meta.get("revisado_em"))
+            else:
+                revisao["revisado_em"] = data
+            resumo["vigencia_e_efeitos"] += 1
+            continue
         revisao.update(
             decisao="aceitar", escopo=escopo, revisado_por=por,
             observacao="decidido por regra (PREMISSAS.md §3.4): " + OBSERVACAO[tuple(escopo)],

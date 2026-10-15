@@ -166,6 +166,7 @@ dispositivos:
     linhas_com_marcos: 12
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -237,6 +238,7 @@ dispositivos:
     linhas_com_marcos: 48
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - texto_inserido_em_outra_norma
   revisao:
@@ -297,6 +299,7 @@ dispositivos:
     linhas_com_marcos: 2
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
@@ -359,6 +362,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
@@ -416,6 +420,7 @@ dispositivos:
   marcas_de_outro_ato:
   - (Revogado)
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - ano_sem_dia
   - texto_inserido_em_outra_norma
@@ -482,6 +487,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - condicao_regulamentacao
@@ -561,6 +567,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
@@ -619,6 +626,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
@@ -710,6 +718,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
@@ -775,6 +784,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
@@ -835,6 +845,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - ano_sem_dia
   - marcos_proprios
@@ -962,6 +973,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
@@ -1082,6 +1094,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   revisao:
@@ -1140,6 +1153,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1197,6 +1211,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias: []
   revisao:
     decisao: aceitar
@@ -1253,6 +1268,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - condicao_regulamentacao
@@ -1311,6 +1327,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - evento_relativo
@@ -1380,6 +1397,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - evento_relativo
@@ -1475,6 +1493,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
@@ -1535,6 +1554,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - condicao_regulamentacao
@@ -1595,6 +1615,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - depende_de_lei_futura
@@ -1658,6 +1679,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - revogacao_expressa
@@ -1728,6 +1750,7 @@ dispositivos:
     linhas_com_marcos: 0
   marcas_de_outro_ato: []
   alteracoes: []
+  alteracoes_cobrem_as_marcas: false
   pendencias:
   - marcos_proprios
   - evento_relativo

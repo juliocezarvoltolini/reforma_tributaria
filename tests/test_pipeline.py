@@ -1711,6 +1711,9 @@ def proposta_texto_alterado():
                        for a in alt),
            f"482-A: incluído pelo art. 174 da LC 227, conferido, com as datas do art. 182 dela "
            f"(obteve {alt[:1]})")
+    checar(por["482-A"]["alteracoes_cobrem_as_marcas"] is True
+           and por["26"]["alteracoes_cobrem_as_marcas"] is False,
+           "482-A: toda anotação é alteração ligada; 26: há VETADO e promulgação, que não são")
     isolada = [a for a in por["98"]["alteracoes"] if a["subdivisao"] is None]
     checar(isolada and all(not a["conferida"] and a["resultado_se_aprovada"] is None
                            for a in isolada),
@@ -1879,6 +1882,85 @@ def revisao_regra_revogada():
     inventada = {**rev, "revisado_por": "regra:inventada/v1"}
     revs, erros = _carregar([_entrada("3", inventada)], regras=aprov)
     checar(not revs and len(erros) == 1, "regra que o código não tem: erro")
+
+
+@cenario("revisão por regra: texto alterado por ato posterior vira exceção por subdivisão")
+def revisao_por_regra_texto_alterado():
+    """Quebra: decidir artigo com texto de outro ato sem a regra aprovada, com
+    anotação não coberta (VETADO, isolada...), com a lei alteradora em aberto, ou
+    com duas leituras para o mesmo trecho; ou gravar uma decisão que a revisão
+    temporal depois rejeita."""
+    import copy
+
+    import revisar_por_regra as RR
+
+    aprov = {"aprovada": True, "aprovada_por": "F", "aprovada_em": "1900-01-01"}
+    regras = {"texto-alterado-por-ato-posterior": aprov}
+    art = urn_dispositivo(URN_EC, "1")
+    ato = URN_999 + "!art7"
+
+    def alt(sub, tipo, proposta):
+        return {"subdivisao": sub, "tipo": tipo, "anotacao": "(Incluído pela ...)", "ato": ato,
+                "conferida": True,
+                "ato_vigencia": {"data": "1926-01-14", "fundamento": URN_999 + "!art9"},
+                "ato_efeitos": {"data": "1926-01-14", "fundamento": URN_999 + "!art9_incIII"},
+                "resultado_se_aprovada": proposta, "proposta": proposta, "motivo": None}
+
+    incluido = {"vigencia_inicio": "1926-01-14", "efeitos_inicio": "1926-01-14"}
+    base = _entrada_lc("1", "1926-01-01", pendencias=["redacao_de_outro_ato"])
+    base["alteracoes"] = [alt(art + "_par2", "incluido", incluido),
+                          alt(art + "_par3", "revogado", {"vigencia_fim": "1926-01-14"}),
+                          alt(art, "redacao_dada", incluido)]
+    base["alteracoes_cobrem_as_marcas"] = True
+
+    def rodar(entrada, regras=regras, pendencias_ato=()):
+        prop = _proposta_para_regra("efeitos_por_inciso", [entrada])
+        prop["atos_alteradores"] = [{"slug": "lc-999", "urn": URN_999,
+                                     "pendencias_gerais": list(pendencias_ato)}]
+        novo, _ = RR.decidir_por_regra(prop, regras, "1900-02-01")
+        return novo["dispositivos"][0]["revisao"], novo
+
+    r, novo = rodar(copy.deepcopy(base))
+    fund = [ato, URN_999 + "!art9", URN_999 + "!art9_incIII"]
+    checar(r["decisao"] == "alterar" and r["escopo"] == ["vigencia", "efeitos"]
+           and r["vigencia_inicio"] == "1900-01-02" and r["efeitos_inicio"] == "1926-01-01"
+           and r["revisado_por"] == "regra:clausula-literal/v1+texto-alterado-por-ato-posterior",
+           f"o artigo com as datas da norma alterada (obteve {r})")
+    checar(r["excecoes_subdivisao"] == [
+        {"urn": art + "_par2", **incluido, "fundamento": fund},
+        {"urn": art + "_par3", "vigencia_fim": "1926-01-14", "fundamento": fund},
+        {"urn": art + "_par0", **incluido, "fundamento": fund}],
+        f"cada trecho alterado como exceção; o do caput em _par0 (obteve {r['excecoes_subdivisao']})")
+    revs, erros = _carregar(novo["dispositivos"], regras=regras)
+    checar(not erros and revs, f"a decisão é aceita pela revisão temporal (erros: {erros})")
+    de_novo, _ = RR.decidir_por_regra(novo, regras, "1900-03-01")
+    checar(de_novo["dispositivos"][0]["revisao"]["revisado_em"] == "1900-02-01",
+           "reexecutar sem mudança não altera revisado_em da decisão 'alterar'")
+
+    bloqueios = []
+    e = copy.deepcopy(base)
+    bloqueios.append((rodar(e, regras={})[0], "regra não aprovada"))
+    e = copy.deepcopy(base)
+    e["alteracoes_cobrem_as_marcas"] = False
+    bloqueios.append((rodar(e)[0], "anotação não coberta por alteração"))
+    e = copy.deepcopy(base)
+    e["alteracoes"][0]["proposta"] = None
+    bloqueios.append((rodar(e)[0], "alteração sem proposta"))
+    bloqueios.append((rodar(copy.deepcopy(base), pendencias_ato=["retificacao"])[0],
+                      "lei alteradora com pendência geral"))
+    e = copy.deepcopy(base)
+    e["pendencias"].append("clausula_temporal_propria")
+    bloqueios.append((rodar(e)[0], "outro bloqueio do artigo"))
+    e = copy.deepcopy(base)
+    e["alteracoes"].append(alt(art + "_par2", "revogado", {"vigencia_fim": "1926-01-14"}))
+    bloqueios.append((rodar(e)[0], "duas leituras para o mesmo trecho"))
+    e = copy.deepcopy(base)
+    e["efeitos"]["excecoes"] = [{"urn": art + "_par2", "efeitos_inicio": "1927-01-01",
+                                 "fundamento": [urn_dispositivo(URN_EC, "90", inciso="III")]}]
+    e["efeitos"]["termos_das_excecoes"] = ["data"]
+    bloqueios.append((rodar(e)[0], "a cláusula e a alteração falam do mesmo trecho"))
+    for rev, msg in bloqueios:
+        checar(rev["decisao"] is None, f"{msg}: nada por regra")
 
 
 @cenario("proposta: termo relativo à publicação só vira data com a regra aprovada")

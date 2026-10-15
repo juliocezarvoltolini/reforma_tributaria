@@ -51,8 +51,17 @@ ao artigo da lei alteradora (`alterado_por` em normas/):
   regra aprovada; `motivo` quando não há o que combinar.
 
 `atos_alteradores` lista as leis alteradoras com as pendências gerais delas: as
-datas do texto que elas trouxeram dependem dessas pendências. Os artigos com
-texto de outro ato continuam fora da revisão por regra (`redacao_de_outro_ato`).
+datas do texto que elas trouxeram dependem dessas pendências.
+
+`revisar_por_regra.py` decide um artigo com texto de outro ato
+(`redacao_de_outro_ato`) só com TODAS as travas: a regra
+`texto-alterado-por-ato-posterior` aprovada; `alteracoes_cobrem_as_marcas` (toda
+anotação oficial do corpo é alteração ligada, conferida e com proposta — VETADO,
+Vide ou anotação isolada impedem); nenhuma pendência geral na lei alteradora; o
+artigo decidível nos dois eixos sem esse bloqueio; e uma leitura só por trecho
+(nem duas alterações diferentes, nem cláusula e alteração no mesmo trecho). A
+decisão é `alterar`: as datas do artigo pela norma alterada e cada trecho
+alterado como exceção (o do caput em `_par0`).
 
 ## Quem decide: regra, pessoa ou IA (PREMISSAS.md §3.4)
 
