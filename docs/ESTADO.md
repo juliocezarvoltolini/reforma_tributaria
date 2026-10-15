@@ -322,7 +322,7 @@ página do DOU de cada uma; números, datas e URLs informados pelo usuário):
 
 | Norma | Artigos | Publicação no DOU | Decidido por regra | Pendente |
 |---|---|---|---|---|
-| LC 227 | 182 próprios, 159 citados | 14/01/2026, Ed. 9, Seção 1, p. 1 | nada | o rodapé cita republicação (15/01/2026) e retificação (23/01/2026) não arquivadas; os incisos do art. 182 ainda não são lidos |
+| LC 227 | 182 próprios, 159 citados | 14/01/2026, Ed. 9, Seção 1, p. 1 | nada | o rodapé cita republicação (15/01/2026) e retificação (23/01/2026) não arquivadas. O art. 182 já é lido: 181 artigos no inciso III (a partir da publicação), o art. 169 no I (1º/01/2027), a alínea c do inciso II do art. 76 no I, e os §§ 4º e 5º do art. 52 no II, sem data (termo de evento) |
 | LC 235 | 17 próprios, 5 citados | 28/08/2026, Ed. 163, Seção 1, p. 1 | vigência dos 17 (art. 17, cláusula única) | efeitos: a cláusula não diz |
 
 Na LC 227, o cabeçalho "Art. 493-A." (texto inserido na LC 214) vem sem a aspa
@@ -334,8 +334,7 @@ sem qualificador nelas é, quase sempre, da norma alterada.
 **Próximo bloco:** os 146 artigos da LC 214 com texto de outro ato dependem da
 cláusula de vigência da LC 227 (art. 182), que espera:
 1. arquivar a republicação (DOU de 15/01/2026) e a retificação (23/01/2026);
-2. ler os incisos do art. 182;
-3. ligar cada anotação "(Incluído pela Lei Complementar nº 227...)" da LC 214
+2. ligar cada anotação "(Incluído pela Lei Complementar nº 227...)" da LC 214
    ao artigo da LC 227 que fez a alteração.
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da

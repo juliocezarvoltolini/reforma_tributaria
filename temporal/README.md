@@ -79,10 +79,19 @@ humana.
 | `efeitos_por_inciso` | LC 214, art. 544: "entra em vigor na data de sua publicação, produzindo efeitos: I - ..." | os efeitos; a vigência de todos vem do caput |
 | `vigencia_unica` | LC 235, art. 17: "entra em vigor na data de sua publicação." | não há incisos: a vigência de todos vem do caput, e a cláusula nada diz dos efeitos (como na forma da EC, só propostos para leitura) |
 
-A LC 227 (art. 182) tem a forma `efeitos_por_inciso`, mas os incisos ainda não
-são lidos: o I dá o alcance em alíneas ("em relação: a) à alínea “c” do inciso II
-do art. 76; b) ao art. 169"), o II tem termo de evento ("a partir da data da
-eleição do Presidente do CGIBS...") e o III diz "a partir da sua publicação".
+A LC 227 (art. 182) tem a forma `efeitos_por_inciso`, com três variações que
+o leitor reconhece:
+- alcance nas alíneas do inciso ("em relação: a) à alínea “c” do inciso II do
+  art. 76; b) ao art. 169"); qualquer alínea fora do padrão invalida o alcance;
+- subdivisão nomeada de trás para a frente ("aos §§ 4º e 5º do art. 52 desta Lei
+  Complementar"). Só "desta Lei..." é aceito depois do artigo, e o inciso do
+  caput não leva `par0` (como em `subdivisoes`: `art76_incII_ali-c`);
+- "a partir da sua publicação".
+
+O termo de evento do inciso II ("a partir da data da eleição do Presidente do
+CGIBS...") não é data: os §§ 4º e 5º do art. 52 ficam sem data, e com eles os
+efeitos do artigo. Subdivisão que a cláusula nomeia e o artigo não tem (fora de
+`subdivisoes`) também tira a data dos efeitos, com o motivo.
 
 O alcance de cada inciso é lido por inteiro — artigos, intervalos ("480 a 484"),
 `caput`, `§ 3º`, `§§ 1º e 5º`, `exceto os §§ 1º e 5º`, "demais dispositivos" — e

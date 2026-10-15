@@ -1447,6 +1447,85 @@ def revisao_por_regra():
            "a data adotada mudou: é outra decisão, revisado_em novo")
 
 
+# Estrutura medida na LC 227, art. 182: alcance em alíneas ("em relação:"),
+# subdivisão nomeada de trás para a frente ("à alínea “c” do inciso II do art. 76"),
+# termo de evento e "a partir da sua publicação". Conteúdo fictício.
+CL_ALINEAS = [
+    "Art. 90. Esta Lei Complementar fictícia entra em vigor na data de sua publicação, "
+    "produzindo efeitos:",
+    "I - a partir de 1º de janeiro de 2030, em relação:",
+    "a) à alínea “c” do inciso II do art. 6º;",
+    "b) ao art. 7º;",
+    "II - a partir da data da eleição de alguém, prevista no art. 1º da Lei fictícia nº 2, "
+    "em relação aos §§ 4º e 5º do art. 5º desta Lei Complementar; e",
+    "III - a partir da sua publicação, em relação aos demais dispositivos.",
+]
+EXISTENTES_ALINEAS = ["1", "2", "3", "4", "5", "6", "7", "90"]
+
+
+@cenario("proposta: alcance em alíneas e subdivisão nomeada de trás para a frente")
+def proposta_clausula_alineas():
+    """Quebra: perder o alcance que vem nas alíneas (e com ele 'demais
+    dispositivos'), ler 'alínea “c” do inciso II do art. 6º' como o art. 6º
+    inteiro, ou dar data ao termo de evento."""
+    pv = _pv()
+    u = lambda n, sub=None: urn_dispositivo(URN_BASE, n) + (f"_{sub}" if sub else "")  # noqa: E731
+    r = pv.interpretar_clausula(CL_ALINEAS, URN_BASE, "90", EXISTENTES_ALINEAS)
+    checar(r["forma"] == "efeitos_por_inciso", "forma da LC")
+    checar([(i["rotulo"], i["interpretado"], i["alcance_interpretado"]) for i in r["incisos"]]
+           == [("I", True, True), ("II", False, True), ("III", True, True)],
+           f"I com alcance nas alíneas; II com termo de evento, alcance lido; III lido "
+           f"(obteve {[(i['rotulo'], i['interpretado'], i['alcance_interpretado']) for i in r['incisos']]})")
+    checar(r["incisos"][2]["termo"] == {"tipo": "publicacao"},
+           "'a partir da sua publicação' é a publicação")
+    m = r["mapa"]
+    checar(m["7"]["inciso"] == "I" and m["7"]["termo"] == {"tipo": "data", "data": "2030-01-01"},
+           "art. 7º, alínea b: inteiro no inciso I")
+    checar(m["6"]["inciso"] == "III"
+           and [(e["urn"], e["inciso"]) for e in m["6"]["excecoes"]] == [(u("6", "incII_ali-c"), "I")],
+           f"art. 6º: o resto em 'demais'; a alínea c do inciso II do caput no I "
+           f"(obteve {[(e['urn'], e['inciso']) for e in m['6']['excecoes']]})")
+    checar([(e["urn"], e["inciso"], e["termo"]) for e in m["5"]["excecoes"]]
+           == [(u("5", "par4"), "II", None), (u("5", "par5"), "II", None)],
+           "§§ 4º e 5º do art. 5º no inciso II, sem data (termo de evento)")
+    checar(m["1"]["inciso"] == "III" and m["1"]["termo"] == {"tipo": "publicacao"}
+           and m["1"]["motivo"] is None, "os demais: a partir da publicação")
+
+    subs = [u("6", "incII"), u("6", "incII_ali-c")]
+    checar(pv.subdivisao_existe(u("6", "incII_ali-c"), subs)
+           and pv.subdivisao_existe(u("6", "par0"), [])
+           and not pv.subdivisao_existe(u("6", "incII_ali-d"), subs),
+           "subdivisão nomeada tem de existir no artigo (o caput sempre existe)")
+
+    pub = {"datas": ["1900-01-02"], "fonte": "dou"}
+    clausula_exc = [{"urn": u("6", "incII_ali-c"), "termo": {"tipo": "data", "data": "1930-01-01"},
+                     "fundamento": u("90") + "_incI"},
+                    {"urn": u("6", "incII_ali-d"), "termo": {"tipo": "data", "data": "1930-01-01"},
+                     "fundamento": u("90") + "_incI"}]
+    exc, tipos, sem_data, inexistentes = pv.excecoes_de_efeitos(clausula_exc, subs, pub, {})
+    checar([e["urn"] for e in exc] == [u("6", "incII_ali-c")] and tipos == ["data"]
+           and inexistentes == ["art6_incII_ali-d"] and sem_data == [],
+           f"exceção para subdivisão inexistente não entra, e é apontada (obteve {inexistentes})")
+    checar(pv.ler_item_preposicionado("à alínea “c” do art. 6º") is None,
+           "alínea sem o inciso a que pertence: não é lida")
+    proposta = {"tipo": "data", "data_candidata": "1930-01-01"}
+    inicio, motivo = pv.efeitos_apos_excecoes(proposta, None, [], ["art6_incII_ali-d"])
+    checar(inicio is None and "art6_incII_ali-d" in motivo,
+           "subdivisão inexistente: os efeitos do artigo ficam sem data, com o motivo")
+    checar(pv.efeitos_apos_excecoes(proposta, None, [], []) == (proposta, None),
+           "todas as exceções lidas e existentes: a proposta fica")
+
+    sobra = CL_ALINEAS[:3] + ["b) ao Anexo I;"] + CL_ALINEAS[4:]
+    r = pv.interpretar_clausula(sobra, URN_BASE, "90", EXISTENTES_ALINEAS)
+    checar(r["incisos"][0]["alcance_interpretado"] is False and m["1"]["inciso"] == "III"
+           and pv.interpretar_clausula(sobra, URN_BASE, "90", EXISTENTES_ALINEAS)["mapa"]["1"]["inciso"] is None,
+           "uma alínea fora do padrão: o alcance do inciso não é lido, e 'demais' não se resolve")
+    externo = pv._ler_inciso("II - em 2030, em relação aos §§ 4º e 5º do art. 52 da Lei nº 1, "
+                             "de 1900.", URN_BASE, "90")
+    checar(externo["alcance"] is None,
+           "subdivisão de artigo de OUTRA norma no alcance: não interpretado")
+
+
 @cenario("proposta: cláusula única, só vigência ('entra em vigor na data de sua publicação.')")
 def proposta_clausula_unica():
     """Forma medida na LC 235, art. 17: 'Esta Lei Complementar entra em vigor na data
@@ -1472,6 +1551,26 @@ def proposta_clausula_unica():
     novo, _ = RR.decidir_por_regra(_proposta_para_regra("vigencia_unica", [e]), {}, "1900-02-01")
     checar(novo["dispositivos"][0]["revisao"]["escopo"] == ["vigencia"],
            "cláusula única: a regra decide só a vigência")
+
+    if (RAIZ / "normas" / "lc-227-2026").exists():
+        # Contrato com o art. 182 real da LC 227, lido em normas/lc-227-2026/art-0182.md.
+        prop = pv.construir("lc-227-2026", regras={})
+        base = urn_norma("br:federal:lei.complementar", "2026-01-13", "227")
+        por = {d["artigo"]: d["efeitos"] for d in prop["dispositivos"]}
+        checar(prop["clausula_de_vigencia"]["urn"] == urn_dispositivo(base, "182")
+               and por["169"]["inciso"] == "I"
+               and por["169"]["proposta"]["data_candidata"] == "2027-01-01",
+               "LC 227: art. 169 no inciso I, 1º/01/2027")
+        checar(por["76"]["inciso"] == "III" and [(e["urn"], e["efeitos_inicio"])
+                                                 for e in por["76"]["excecoes"]]
+               == [(urn_dispositivo(base, "76") + "_incII_ali-c", "2027-01-01")],
+               f"LC 227: art. 76 nos demais, a alínea c do inciso II em 1º/01/2027 "
+               f"(obteve {por['76']['excecoes']})")
+        checar(por["52"]["proposta"] is None and por["52"]["motivo"],
+               "LC 227: art. 52, §§ 4º e 5º com termo de evento: efeitos sem data, com motivo")
+        checar(por["1"]["inciso"] == "III"
+               and por["1"]["proposta"]["data_candidata"] == "2026-01-14",
+               "LC 227: os demais a partir da publicação no DOU, 14/01/2026")
 
     if not (RAIZ / "normas" / "lc-235-2026").exists():
         print("  pulado (real): normas/lc-235-2026 ausente")

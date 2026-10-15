@@ -41,6 +41,7 @@ clausula_de_vigencia:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incI
     rotulo: I
     texto: I - a partir do primeiro dia do quarto mês subsequente ao da sua publicação, em relação aos arts. 537 a 540;
+    alineas: []
     interpretado: true
     alcance_interpretado: true
     termo:
@@ -64,6 +65,7 @@ clausula_de_vigencia:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incII
     rotulo: II
     texto: II - a partir de 1º de janeiro de 2025, em relação aos arts. 35, 58, caput, 60, § 3º, 62, 266, 317, 403, 480 a 484, 516 e 541;
+    alineas: []
     interpretado: true
     alcance_interpretado: true
     termo:
@@ -134,6 +136,7 @@ clausula_de_vigencia:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
     rotulo: III
     texto: III - a partir de 1º de janeiro de 2027, em relação aos arts. 168 a 171, 309 a 315, 444, 450, exceto os §§ 1º e 5º, 461, 462, 467, 499, 500, 502, 504 a 507, 509 a 515, 517, 519 a 534 e 542; (Redação dada pela Lei Complementar nº 227, de 2026)
+    alineas: []
     interpretado: true
     alcance_interpretado: true
     termo:
@@ -266,6 +269,7 @@ clausula_de_vigencia:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIV
     rotulo: IV
     texto: IV - a partir de 1º de janeiro de 2029, em relação aos arts. 446, 447, 449, 450, §§ 1º e 5º, 464, 465 e 474;
+    alineas: []
     interpretado: true
     alcance_interpretado: true
     termo:
@@ -315,6 +319,7 @@ clausula_de_vigencia:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incV
     rotulo: V
     texto: V - a partir de 1º de janeiro de 2033, em relação aos arts. 518 e 543; e
+    alineas: []
     interpretado: true
     alcance_interpretado: true
     termo:
@@ -337,6 +342,7 @@ clausula_de_vigencia:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     rotulo: VI
     texto: VI - a partir de 1º de janeiro de 2026, em relação aos demais dispositivos.
+    alineas: []
     interpretado: true
     alcance_interpretado: true
     termo:
@@ -349,6 +355,7 @@ clausula_de_vigencia:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
     rotulo: III
     texto: III - a partir de 1º de janeiro de 2027, em relação aos arts. 450, exceto os §§ 1º e 5º, 461, 467, 499, 500, 502, 504 a 507, 509 a 515, 517, 519 a 534 e 542;
+    alineas: []
     interpretado: true
     alcance_interpretado: true
     termo:

@@ -92,7 +92,10 @@ RE_CAPUT_UNICA = re.compile(
 RE_INCISO = re.compile(r"^([IVXLC]+)\s*[-–]\s*(.+)$")
 # Termo e alcance são lidos separadamente: um termo fora do padrão não impede
 # saber quais artigos o inciso nomeia.
-RE_DIVISAO_ALCANCE = re.compile(r",\s*(?=em\s+rela[çc][ãa]o\s+a)", re.IGNORECASE)
+RE_DIVISAO_ALCANCE = re.compile(r",\s*(?=em\s+rela[çc][ãa]o\s*(?:a|:))", re.IGNORECASE)
+# LC 227, art. 182, I: "..., em relação:" e o alcance nas alíneas seguintes.
+RE_ALCANCE_NAS_ALINEAS = re.compile(r"^em\s+rela[çc][ãa]o\s*:$", re.IGNORECASE)
+RE_ALINEA = re.compile(r"^([a-z])\)\s*(.+)$")
 
 _MESES_TERMO = ("janeiro|fevereiro|mar[çc]o|abril|maio|junho|julho|agosto|setembro|outubro|"
                 "novembro|dezembro")
@@ -100,7 +103,9 @@ RE_TERMO_DATA = re.compile(
     rf"^(?:em|a\s+partir\s+de)\s+(\d{{1,2}})\s*[ºo°]?\s+de\s+({_MESES_TERMO})\s+de\s+"
     rf"((?:19|20)\d{{2}})$", re.IGNORECASE)
 RE_TERMO_ANO = re.compile(r"^(?:em|a\s+partir\s+de)\s+((?:19|20)\d{2})$", re.IGNORECASE)
-RE_TERMO_PUBLICACAO = re.compile(r"^na\s+data\s+de\s+sua\s+publica[çc][ãa]o$", re.IGNORECASE)
+# "na data de sua publicação" (EC 132) e "a partir da sua publicação" (LC 227).
+RE_TERMO_PUBLICACAO = re.compile(
+    r"^(?:na\s+data\s+de|a\s+partir\s+d[ae])\s+sua\s+publica[çc][ãa]o$", re.IGNORECASE)
 # "a partir do primeiro dia do quarto mês subsequente ao da sua publicação" (LC 214,
 # art. 544, I). O texto é lido aqui; a data só sai pela regra derivada
 # 'primeiro-dia-do-mes-subsequente', depois de aprovada (PREMISSAS.md §3.4).
@@ -171,6 +176,46 @@ def ler_alcance(lista: str) -> list[dict] | None:
         pos = s.end()
 
 
+# Item de alcance com preposição, subdivisões de trás para a frente (LC 227, art.
+# 182): "ao art. 169", "à alínea “c” do inciso II do art. 76", "aos §§ 4º e 5º do
+# art. 52 desta Lei Complementar". Só "desta Lei..." é aceito depois do artigo:
+# qualquer outro qualificador ("da Lei nº ...") é outra norma, e não é lido.
+_DESTA = r"(?:\s+desta\s+(?:Lei(?:\s+Complementar)?|Emenda\s+Constitucional))?"
+RE_PREP_ARTIGOS = re.compile(rf"^(?:ao|aos)\s+arts?\.\s*(.+?){_DESTA}$", re.IGNORECASE)
+RE_PREP_SUBDIVISAO = re.compile(
+    r"^(?:à|ao|aos|às)\s+"
+    r"(?:al[íi]nea\s+[“\"]?(?P<ali>[a-z])[”\"]?\s+do\s+)?"
+    r"(?:inciso\s+(?P<inc>[IVXLC]+)\s+do\s+)?"
+    r"(?:(?:§§\s*(?P<p1>\d+)\s*[ºo°]?\s+e\s+(?P<p2>\d+)\s*[ºo°]?|§\s*(?P<p>\d+)\s*[ºo°]?|"
+    r"par[áa]grafo\s+(?P<pu>[úu]nico))\s+do\s+)?"
+    rf"art\.\s*(?P<art>\d+)\s*[ºo°]?(?P<suf>-[A-Z])?{_DESTA}$",
+    re.IGNORECASE)
+
+
+def ler_item_preposicionado(texto: str) -> list[dict] | None:
+    """Itens de alcance de 'ao art. N' ou 'à <subdivisão> do art. N'. None se não casa."""
+    texto = texto.strip()
+    m = RE_PREP_SUBDIVISAO.match(texto)
+    if m and (m["ali"] or m["inc"] or m["p1"] or m["p"] or m["pu"]):
+        if m["ali"] and not m["inc"]:
+            return None  # alínea sem inciso: não é como o texto real nomeia
+        if m["p1"]:
+            pars = [f"par{m['p1']}", f"par{m['p2']}"]
+        elif m["p"] or m["pu"]:
+            pars = [f"par{m['p'] or 'U'}"]
+        else:
+            pars = [None]  # inciso do caput: sem 'par0' (como em `subdivisoes`)
+        cauda = (f"inc{m['inc'].upper()}" if m["inc"] else "") + \
+                (f"_ali-{m['ali'].lower()}" if m["ali"] else "")
+        subs = ["_".join(x for x in (p, cauda) if x) for p in pars]
+        return [{"artigos": [m["art"] + (m["suf"] or "").upper()], "intervalo": None,
+                 "somente": subs, "exceto": None}]
+    m = RE_PREP_ARTIGOS.match(texto)
+    if m:
+        return ler_alcance(m.group(1))
+    return None
+
+
 def _ler_termo(texto: str) -> dict | None:
     texto = texto.strip()
     if m := RE_TERMO_DATA.match(texto):
@@ -186,14 +231,19 @@ def _ler_termo(texto: str) -> dict | None:
     return None
 
 
-def _ler_inciso(linha: str, urn_base: str, artigo: str) -> dict | None:
+def _sem_fecho(texto: str) -> str:
+    """'; e' ao fim liga ao seguinte; ';' e '.' encerram."""
+    return re.sub(r"\s*;\s*e\s*$", "", texto).rstrip(" ;.")
+
+
+def _ler_inciso(linha: str, urn_base: str, artigo: str,
+                alineas: list[str] | None = None) -> dict | None:
     texto = RE_ANOTACAO.sub("", linha).strip()
     m = RE_INCISO.match(texto)
     if not m:
         return None
     rotulo, corpo = m.group(1), m.group(2)
-    # "; e" ao fim liga o inciso ao seguinte; ";" e "." encerram.
-    corpo = re.sub(r"\s*;\s*e\s*$", "", corpo).rstrip(" ;.")
+    corpo = _sem_fecho(corpo) if not corpo.rstrip().endswith(":") else corpo.rstrip()
     partes = RE_DIVISAO_ALCANCE.split(corpo, maxsplit=1)
     termo = _ler_termo(partes[0])
     alcance = None
@@ -202,6 +252,22 @@ def _ler_inciso(linha: str, urn_base: str, artigo: str) -> dict | None:
             alcance = {"tipo": "demais"}
         elif am := RE_ALCANCE_ARTIGOS.match(partes[1]):
             itens = ler_alcance(am.group(1))
+            if itens is not None:
+                alcance = {"tipo": "artigos", "itens": itens}
+        elif RE_ALCANCE_NAS_ALINEAS.match(partes[1]):
+            # Cada alínea é um item; qualquer uma fora do padrão invalida o alcance.
+            itens = []
+            for alinea in alineas or []:
+                am = RE_ALINEA.match(RE_ANOTACAO.sub("", alinea).strip())
+                lido = ler_item_preposicionado(_sem_fecho(am.group(2))) if am else None
+                if lido is None:
+                    itens = None
+                    break
+                itens += lido
+            if itens:
+                alcance = {"tipo": "artigos", "itens": itens}
+        elif pm := re.match(r"^em\s+rela[çc][ãa]o\s+(.+)$", partes[1], re.IGNORECASE):
+            itens = ler_item_preposicionado(pm.group(1))
             if itens is not None:
                 alcance = {"tipo": "artigos", "itens": itens}
     motivos = []
@@ -217,6 +283,7 @@ def _ler_inciso(linha: str, urn_base: str, artigo: str) -> dict | None:
         "urn": urn_dispositivo(urn_base, artigo, inciso=rotulo),
         "rotulo": rotulo,
         "texto": linha,
+        "alineas": list(alineas or []),
         "interpretado": termo is not None and alcance is not None,
         "alcance_interpretado": alcance is not None,
         "termo": termo,
@@ -258,15 +325,23 @@ def interpretar_clausula(
     else:
         forma, vigencia = None, None
 
-    incisos, anteriores = [], {}
+    # Cada inciso com as alíneas que vêm logo depois dele.
+    grupos: list[tuple[str, list[str]]] = []
     for linha in linhas[1:]:
+        if RE_ALINEA.match(RE_ANOTACAO.sub("", linha).strip()) and grupos:
+            grupos[-1][1].append(linha)
+        else:
+            grupos.append((linha, []))
+
+    incisos, anteriores = [], {}
+    for linha, alineas in grupos:
         if linha.startswith("~~"):
             # Redação anterior, riscada: só serve para ver o que a nova mudou.
-            antigo = _ler_inciso(linha.strip("~").strip(), urn_base, artigo)
+            antigo = _ler_inciso(linha.strip("~").strip(), urn_base, artigo, alineas)
             if antigo:
                 anteriores[antigo["rotulo"]] = antigo
             continue
-        inciso = _ler_inciso(linha, urn_base, artigo)
+        inciso = _ler_inciso(linha, urn_base, artigo, alineas)
         if inciso:
             incisos.append(inciso)
 
@@ -288,7 +363,8 @@ def interpretar_clausula(
             alterados |= _nomeados(atual) ^ _nomeados(antigo)
 
     def excecao(sub: str, n: str, inc: dict) -> dict:
-        return {"subdivisao": sub, "urn": urn_dispositivo(urn_base, n, paragrafo=sub[3:]),
+        # `sub` é o caminho da subdivisão dentro do artigo ("par3", "incII_ali-c").
+        return {"subdivisao": sub, "urn": f"{urn_dispositivo(urn_base, n)}_{sub}",
                 "inciso": inc["rotulo"], "termo": inc["termo"], "fundamento": inc["urn"]}
 
     def resolver(n: str) -> tuple[dict | None, list[dict], str | None]:
@@ -506,6 +582,53 @@ def artigos_de_outros_atos(linhas: list[str]) -> list[dict]:
 RE_REVOGAM_SE = re.compile(r"^Art\.\s*\d+\s*[ºo°]?\.?\s+Revogam-se\b", re.IGNORECASE)
 # "... republicado no DOU de 15.1.2026 e retificado em 23.1.2026" (LC 227)
 RE_RETIFICACAO = re.compile(r"\bretificad[oa]\b", re.IGNORECASE)
+
+
+def subdivisao_existe(urn: str, subdivisoes: list[str]) -> bool:
+    """A subdivisão que a cláusula nomeia existe no artigo? O caput sempre existe."""
+    return urn.endswith("_par0") or urn in subdivisoes
+
+
+def excecoes_de_efeitos(
+    excecoes_clausula: list[dict], subdivisoes: list[str], publicacao: dict, regras: dict
+) -> tuple[list[dict], list[str], list[str], list[str]]:
+    """Exceções por subdivisão no formato que revisao_temporal.py aceita.
+
+    Devolve (exceções, tipo do termo de cada uma, subdivisões sem data,
+    subdivisões que o artigo não tem). As duas últimas tiram a data dos efeitos.
+    """
+    excecoes, tipos, sem_data, inexistentes = [], [], [], []
+    for e in excecoes_clausula:
+        rotulo = e["urn"].split("!")[-1]
+        if not subdivisao_existe(e["urn"], subdivisoes):
+            inexistentes.append(rotulo)
+            continue
+        cand = _inicio_proposto(e["termo"], publicacao, regras) if e["termo"] else None
+        if not cand or not cand["data_candidata"]:
+            sem_data.append(rotulo)
+            continue
+        exc = {"urn": e["urn"], "efeitos_inicio": cand["data_candidata"],
+               "fundamento": [e["fundamento"]]}
+        if cand["precisao"] == "ano":
+            exc["precisao"] = {"efeitos_inicio": "ano"}
+        excecoes.append(exc)
+        tipos.append(cand["tipo"])
+    return excecoes, tipos, sem_data, inexistentes
+
+
+def efeitos_apos_excecoes(inicio: dict | None, motivo: str | None, sem_data: list[str],
+                          inexistentes: list[str]) -> tuple[dict | None, str | None]:
+    """A proposta de efeitos do artigo só vale se todas as exceções que a cláusula
+    estabelece têm data e existem no artigo: aceitar a proposta é aceitá-las."""
+    if sem_data:
+        inicio = None
+        motivo = (f"exceção sem data ({', '.join(sem_data)}): o termo do inciso que "
+                  "a alcança não foi interpretado ou depende de regra não aprovada")
+    if inexistentes:
+        inicio = None
+        motivo = (f"a cláusula nomeia subdivisão que o artigo não tem "
+                  f"({', '.join(inexistentes)}): conferir a leitura antes de decidir")
+    return inicio, motivo
 
 
 def _inicio_proposto(termo: dict, pub: dict, regras: dict | None = None) -> dict:
@@ -761,24 +884,11 @@ def construir(slug: str, regras: dict | None = None) -> dict:
             # Os efeitos vêm do inciso, com as exceções por subdivisão que ele
             # estabelece, no formato que revisao_temporal.py aceita.
             inicio_efe = _inicio_proposto(m["termo"], publicacao, regras) if m["termo"] else None
-            excecoes, termos_excecoes, sem_data = [], [], []
-            for e in m["excecoes"]:
-                cand = _inicio_proposto(e["termo"], publicacao, regras) if e["termo"] else None
-                if not cand or not cand["data_candidata"]:
-                    sem_data.append(e["urn"].split("!")[-1])
-                    continue
-                exc = {"urn": e["urn"], "efeitos_inicio": cand["data_candidata"],
-                       "fundamento": [e["fundamento"]]}
-                if cand["precisao"] == "ano":
-                    exc["precisao"] = {"efeitos_inicio": "ano"}
-                excecoes.append(exc)
-                termos_excecoes.append(cand["tipo"])
-                termos.append(e["termo"])
-            motivo_efe = m["motivo"]
-            if sem_data:
-                inicio_efe = None
-                motivo_efe = (f"exceção sem data ({', '.join(sem_data)}): o termo do inciso que "
-                              "a alcança não foi interpretado ou depende de regra não aprovada")
+            excecoes, termos_excecoes, sem_data, inexistentes = excecoes_de_efeitos(
+                m["excecoes"], list(meta.get("subdivisoes") or []), publicacao, regras)
+            termos += [e["termo"] for e in m["excecoes"] if e["termo"]]
+            inicio_efe, motivo_efe = efeitos_apos_excecoes(inicio_efe, m["motivo"], sem_data,
+                                                           inexistentes)
             efeitos = {"inciso": m["inciso"], "fundamento": m["fundamento"],
                        "natureza": "derivado" if m["inciso"] else None, "proposta": inicio_efe,
                        "excecoes": excecoes,
