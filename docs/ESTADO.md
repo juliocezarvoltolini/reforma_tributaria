@@ -317,9 +317,26 @@ com a PREMISSAS.md §3.4:
   XXIII a Lei Complementar nº 214..."), nenhum artigo; a publicação dos artigos
   continua 16/01/2025.
 
-**Próximo bloco:** os 146 artigos com texto de outro ato dependem da cláusula de
-vigência das normas que os alteraram — LC 227/2026, sobretudo — que não estão
-ingeridas.
+**LC 227/2026 e LC 235/2026 ingeridas em 2026-10-15** (compilado do Planalto e
+página do DOU de cada uma; números, datas e URLs informados pelo usuário):
+
+| Norma | Artigos | Publicação no DOU | Decidido por regra | Pendente |
+|---|---|---|---|---|
+| LC 227 | 182 próprios, 159 citados | 14/01/2026, Ed. 9, Seção 1, p. 1 | nada | o rodapé cita republicação (15/01/2026) e retificação (23/01/2026) não arquivadas; os incisos do art. 182 ainda não são lidos |
+| LC 235 | 17 próprios, 5 citados | 28/08/2026, Ed. 163, Seção 1, p. 1 | vigência dos 17 (art. 17, cláusula única) | efeitos: a cláusula não diz |
+
+Na LC 227, o cabeçalho "Art. 493-A." (texto inserido na LC 214) vem sem a aspa
+de abertura no compilado. É lido como citado porque o `<blockquote>` e o link
+para `Lcp214.htm#art493a` concordam, e isso fica em aviso. As duas leis têm
+`remissoes: so_escopo_afirmado` no catálogo: são leis de alteração, e "art. N"
+sem qualificador nelas é, quase sempre, da norma alterada.
+
+**Próximo bloco:** os 146 artigos da LC 214 com texto de outro ato dependem da
+cláusula de vigência da LC 227 (art. 182), que espera:
+1. arquivar a republicação (DOU de 15/01/2026) e a retificação (23/01/2026);
+2. ler os incisos do art. 182;
+3. ligar cada anotação "(Incluído pela Lei Complementar nº 227...)" da LC 214
+   ao artigo da LC 227 que fez a alteração.
 
 - **O modelo e a aplicação estão prontos.** A revisão é preenchida no YAML da
   proposta e aplicada por `fatiar.py` (ver `temporal/README.md`), com três

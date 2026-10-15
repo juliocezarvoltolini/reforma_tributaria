@@ -547,6 +547,46 @@ def blockquote_cruzado():
            "e a discordância com o <blockquote> ausente é contada")
 
 
+@cenario("aspa de abertura ausente: <blockquote> e link para a norma alterada concordam")
+def abertura_implicita():
+    """Markup medido na LC 227 (compilado do Planalto): dentro do <blockquote>, o
+    cabeçalho '<a href="Lcp214.htm#art493a">Art. 493-A.</a> É instituída...' vem
+    SEM a aspa de abertura, e o '”' que fecha o trecho está no fim do § 15.
+    Quebra: ler o 493-A como artigo próprio (a escrita aborta por ordem) ou, pior,
+    reclassificar com UM sinal só."""
+    def html(link: bool, bq: bool, alvo: str = "Lfict.htm#art7a") -> bytes:
+        cab = f'<a href="{alvo}">Art. 7º-A.</a>' if link else "Art. 7º-A."
+        abre, fecha = ("<blockquote>", "</blockquote>") if bq else ("", "")
+        return (
+            "<html><body><p>Art. 1º A Lei fictícia passa a vigorar com as seguintes "
+            f"alterações:</p>{abre}"
+            '<p>“<a href="Lfict.htm#art5">Art. 5º</a> Texto citado.” (NR)</p>'
+            f"<p>{cab} Texto inserido, sem a aspa de abertura.</p>"
+            "<p>§ 1º Parágrafo inserido.”</p>"
+            f"{fecha}<p>Art. 2º Esta Lei entra em vigor na data de sua publicação.</p>"
+            "</body></html>"
+        ).encode("utf-8")
+
+    artigos, avisos, stats = F.fatiar(F.html_para_linhas(html(link=True, bq=True)))
+    checar([a["numero"] for a in artigos] == ["1", "2"],
+           f"7-A é citado: os dois sinais concordam (obteve {[a['numero'] for a in artigos]})")
+    checar(artigos[0]["citados"] == ["5", "7-A"], "e fica com o artigo que o insere")
+    checar(stats["aspas_fechamento_sem_abertura"] == 0 and stats["discordancia_blockquote"] == 0,
+           "o '”' do § 1º fecha o bloco aberto: nada órfão, nada discordante")
+    checar(any("7-A" in a and "abertura" in a for a in avisos),
+           f"a correção é reportada, não silenciosa (avisos: {avisos})")
+
+    for link, bq in ((False, True), (True, False)):
+        artigos, avisos, _ = F.fatiar(F.html_para_linhas(html(link=link, bq=bq)))
+        checar("7-A" in [a["numero"] for a in artigos]
+               and any(a.startswith("ERRO") for a in avisos),
+               f"um sinal só (link={link}, blockquote={bq}): nada é reclassificado, e a "
+               "ordem acusa o erro")
+    artigos, _, _ = F.fatiar(F.html_para_linhas(html(link=True, bq=True, alvo="#art7a")))
+    checar("7-A" in [a["numero"] for a in artigos],
+           "link para âncora do MESMO arquivo não é sinal de outra norma")
+
+
 # ---------------------------------------------------------------------------
 # Escopo da remissão — operam sobre texto, sem depender do HTML
 # ---------------------------------------------------------------------------
@@ -629,6 +669,9 @@ def remissao_em_emenda():
            "norma do tipo emenda.constitucional exige escopo afirmado")
     checar(not F.exige_escopo_interno({"tipo": "lei.complementar"}),
            "lei complementar mantém o padrão")
+    checar(F.exige_escopo_interno({"tipo": "lei.complementar",
+                                   "remissoes": "so_escopo_afirmado"}),
+           "lei de alteração marcada no catálogo: só o escopo afirmado resolve")
 
 
 @cenario("corpo de um dispositivo: quais linhas são texto de outra norma")
@@ -1404,6 +1447,45 @@ def revisao_por_regra():
            "a data adotada mudou: é outra decisão, revisado_em novo")
 
 
+@cenario("proposta: cláusula única, só vigência ('entra em vigor na data de sua publicação.')")
+def proposta_clausula_unica():
+    """Forma medida na LC 235, art. 17: 'Esta Lei Complementar entra em vigor na data
+    de sua publicação.', sem incisos. Quebra: deixar todos os artigos indeterminados,
+    ou tratar a cláusula como se dissesse quando produzem efeitos — ela não diz."""
+    pv = _pv()
+    r = pv.interpretar_clausula(["Art. 9º Esta Lei fictícia entra em vigor na data de sua "
+                                 "publicação."], URN_BASE, "9", EXISTENTES_FICT)
+    checar(r["forma"] == "vigencia_unica"
+           and r["vigencia"] == {"termo": {"tipo": "publicacao"},
+                                 "fundamento": urn_dispositivo(URN_BASE, "9")},
+           f"forma reconhecida, vigência de todos no caput (obteve {r['forma']})")
+    checar(all(m["motivo"] is None and m["inciso"] is None for m in r["mapa"].values()),
+           "nenhum artigo indeterminado")
+    com_inciso = pv.interpretar_clausula(
+        ["Art. 9º Esta Lei fictícia entra em vigor na data de sua publicação.",
+         "I - em 2030, em relação aos arts. 3º e 5º."], URN_BASE, "9", EXISTENTES_FICT)
+    checar(com_inciso["forma"] is None, "caput fechado em ponto seguido de inciso: não é a forma")
+
+    import revisar_por_regra as RR
+    e = _entrada_lc("3", "1930-01-01")
+    e["efeitos"].update(inciso=None)
+    novo, _ = RR.decidir_por_regra(_proposta_para_regra("vigencia_unica", [e]), {}, "1900-02-01")
+    checar(novo["dispositivos"][0]["revisao"]["escopo"] == ["vigencia"],
+           "cláusula única: a regra decide só a vigência")
+
+    if not (RAIZ / "normas" / "lc-235-2026").exists():
+        print("  pulado (real): normas/lc-235-2026 ausente")
+        return
+    prop = pv.construir("lc-235-2026", regras={})
+    base = urn_norma("br:federal:lei.complementar", "2026-08-27", "235")
+    checar(prop["clausula_de_vigencia"]["urn"] == urn_dispositivo(base, "17")
+           and prop["clausula_de_vigencia"]["forma"] == "vigencia_unica",
+           "LC 235: cláusula no art. 17, forma única")
+    checar(all(d["vigencia"]["proposta"]["data_candidata"] == "2026-08-28"
+               for d in prop["dispositivos"]),
+           "LC 235: vigência de todos na publicação no DOU, 28/08/2026")
+
+
 @cenario("revisão por regra: ponto aberto bloqueia")
 def revisao_por_regra_bloqueios():
     """Quebra: decidir por regra um artigo cuja redação veio de outro ato, que fixa
@@ -2106,6 +2188,32 @@ def dou_republicacao_confirmada():
     com_artigo = F.publicacao_de(refs, dou, [{**rep, "artigos": ["5"]}])
     checar(ids(com_artigo, {"republicacao-sem-artigo": aprov}) == {"republicacao_de_artigos"},
            "republicação que traz artigo: a regra não se aplica")
+
+
+@cenario("rodapé que cita retificação: pendência, não silêncio")
+def rodape_retificacao():
+    """Rodapé medido na LC 227: 'Este texto não substitui o publicado no DOU de
+    14.1.2026, republicado no DOU de 15.1.2026 e retificado em 23.1.2026.' A data
+    da retificação não vem como 'DOU de'. Quebra: ignorá-la — uma retificação pode
+    mudar o texto e as datas, e a regra decidiria sobre um texto não confirmado."""
+    trecho = ("Este texto não substitui o publicado no DOU de 2.1.1900, republicado no DOU "
+              "de 3.1.1900 e retificado em 9.1.1900.")
+    refs = {"publicacao_dou": {"valores": ["1900-01-02", "1900-01-03"], "trechos": [trecho]},
+            "rodapes_adicionais": []}
+    dou = F.publicacao_dou((FIXTURES / "dou-materia.html").read_bytes())
+    pub = F.publicacao_de(refs, dou)
+    ids = {p["id"] for p in _pv()._pendencias_gerais(refs, pub, [], {})}
+    checar("retificacao_citada_no_rodape" in ids,
+           f"retificação citada no rodapé vira pendência geral (obteve {sorted(ids)})")
+    meta = {"urn": urn_dispositivo(URN_EC, "1"), "publicacao": pub,
+            "extracao": "automatica", "revisao_temporal_pendente": True}
+    _, avisos = _rt().problemas_no_dispositivo(meta)
+    checar(any("retifica" in a for a in avisos), f"e aviso na validação (avisos: {avisos})")
+    sem = {**refs, "publicacao_dou": {"valores": ["1900-01-02"],
+                                      "trechos": ["... publicado no DOU de 2.1.1900"]}}
+    checar("retificacao_citada_no_rodape" not in
+           {p["id"] for p in _pv()._pendencias_gerais(sem, F.publicacao_de(sem, dou), [], {})},
+           "rodapé sem retificação: nada")
 
 
 @cenario("normas/ reais: data do ato e publicação (pulado se ausentes)")

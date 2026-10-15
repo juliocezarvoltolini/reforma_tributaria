@@ -1,0 +1,1066 @@
+norma: lc-235-2026
+urn_norma: urn:lex:br:federal:lei.complementar:2026-08-27;235
+titulo: Lei Complementar nº 235, de 27 de agosto de 2026
+gerado_por: pipeline/propor_vigencia.py
+status: proposta
+aviso: 'PROPOSTA MECÂNICA, NÃO APLICADA. Nada em /normas/ foi alterado. Cada dispositivo exige decisão humana em `revisao`. O script só interpreta padrões exatos; o resto está marcado como não interpretado. Vigência não é eficácia: os marcos próprios de cada artigo estão em `marcos_proprios`, em trecho literal.'
+fonte_sha256: 67061ca3bf35de12d41367bbc4b3a12d9a0c1ccefe789bdff5744b23a91e3eef
+instrucoes_revisao: 'Primeiro rode pipeline/revisar_por_regra.py: ele decide o que a cláusula diz literalmente (revisado_por: regra:...) e deixa o resto em branco. Em cada dispositivo sem decisão, preencha `revisao`. escopo: [vigencia], [efeitos] ou os dois (padrão) diz quais eixos a decisão cobre; o eixo de fora continua provisório. decisao: aceitar adota as propostas dos eixos do escopo, e só vale se cada um tiver proposta com data. decisao: alterar exige, para os eixos do escopo, vigencia_inicio/efeitos_inicio e fundamento_vigencia/fundamento_efeitos (listas de URN); opcionais: vigencia_fim, efeitos_fim, precisao ({campo: ano}, com a data em AAAA-01-01) e excecoes_subdivisao (urn de § ou inciso do próprio artigo, as datas que diferem e fundamento). decisao: rejeitar mantém o dispositivo pendente. Toda decisão exige revisado_por e revisado_em; a decisão humana prevalece e nunca é refeita por regra. Depois, rode pipeline/fatiar.py: é ele que aplica a revisão a normas/. Se o original mudar
+  (sha256), a revisão deixa de ser aplicada e precisa ser refeita.'
+referencias:
+  data_do_ato:
+    valor: '2026-08-27'
+    fontes:
+    - origem: titulo
+      valor: '2026-08-27'
+      trecho: LEI COMPLEMENTAR Nº 235, DE 27 DE AGOSTO DE 2026
+    - origem: assinatura
+      valor: '2026-08-27'
+      trecho: Brasília, 27 de agosto de 2026; 205º da Independência e 138º da República.
+    concordam: true
+  publicacao_dou:
+    valores:
+    - '2026-08-28'
+    trechos:
+    - Este texto não substitui o publicado no DOU de 28.8.2026
+  rodapes_adicionais: []
+clausula_de_vigencia:
+  urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+  caput: Art. 17. Esta Lei Complementar entra em vigor na data de sua publicação.
+  forma: vigencia_unica
+  vigencia:
+    termo:
+      tipo: publicacao
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+  incisos: []
+  redacoes_anteriores: []
+  artigos_inexistentes: []
+pendencias_gerais: []
+decisoes_necessarias:
+- id: norma_alterada_nao_ingerida
+  pergunta: Os artigos 6, 11, 12, 13 inserem texto em outra norma (Constituição e/ou ADCT), que não está ingerida. A vigência do artigo desta norma é a da cláusula; quando o texto inserido produz efeitos depende do próprio texto inserido. Ingerir a norma alterada, ou registrar a pendência em /lacunas/?
+resumo:
+  dispositivos: 17
+  forma_da_clausula: vigencia_unica
+  por_inciso:
+    caput: 17
+  com_marcos_proprios: 10
+  com_texto_inserido_em_outra_norma: 4
+dispositivos:
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art1
+  artigo: '1'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art1
+    tipos:
+    - ano
+    trecho: Art. 1º Em caráter extraordinário, no exercício de 2026, não se aplica o disposto no art. 14-A da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal), no art. 5º da Lei Complementar nº 224, de 26 de dezembro de 2025, e nos arts. 29 e 140 a 149 da Lei nº 15.321, de 31 de dezembro de 2025 (Lei de Diretrizes Orçamentárias de 2026), aos atos previstos nesta Lei Complementar e nas proposições legislativas que venham a instituir benefícios tributários referentes à Política Nacional de Minerais Críticos e Estratégicos e ao Programa de Desenvolvimento da Indústria de Fertilizantes, bem como à realização da Copa do Mundo Feminina da Fédération Internationale de Football Association (FIFA 2027) na República Federativa do Brasil.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art2
+  artigo: '2'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art2
+    tipos:
+    - ano
+    trecho: Art. 2º Em caráter extraordinário, no exercício financeiro de 2026, as renúncias de receita decorrentes de atos do Poder Executivo federal que tenham como objetivo mitigar os impactos econômicos causados pelo choque no mercado internacional de energia decorrentes do conflito no Oriente Médio poderão ser compensadas por meio do aumento extraordinário de receita da União, direta ou indiretamente decorrente do referido choque, hipótese em que será considerado atendido o disposto no art. 14 da Lei Complementar nº 101, de 4 de maio de 2000 (Lei de Responsabilidade Fiscal).
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art2_par7
+    tipos:
+    - ano
+    - data_explicita
+    trecho: § 7º Em caráter extraordinário, o Poder Executivo federal concederá subvenção aos produtores e às cooperativas de produtores de etanol hidratado, limitada ao valor total de R$ 1.200.000.000,00 (um bilhão e duzentos milhões de reais), com o objetivo de assegurar a manutenção da diferenciação competitiva de que trata o § 3º durante a vigência da subvenção concedida à gasolina A no período de 25 de maio de 2026 a 11 de agosto de 2026.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art2_par8
+    tipos:
+    - prazo_relativo
+    trecho: § 8º A subvenção concedida aos produtores ou cooperativas de produtores de etanol deverá levar em consideração a produção de etanol hidratado efetivamente comercializada no período, nos termos de regulamento, que também definirá as formas de habilitação, as regras e os procedimentos de operacionalização, a apuração e a verificação dos valores, os prazos e a sistemática de pagamento das subvenções econômicas ao etanol hidratado previstas neste artigo.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art3
+  artigo: '3'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art3
+    tipos:
+    - ano
+    trecho: Art. 3º Para fins do disposto nesta Lei Complementar, considera-se aumento extraordinário de receita da União o montante da receita primária, apurado com base em projeções, que não tenha sido estimado na lei orçamentária anual de 2026 e que não esteja comprometido com medidas de renúncia já adotadas.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art4
+  artigo: '4'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art4
+    tipos:
+    - prazo_relativo
+    trecho: Art. 4º Na hipótese de implementação de políticas de subvenção ou de ressarcimento a agentes econômicos do setor de combustíveis, é assegurado ao agente econômico participante o direito ao recebimento integral dos valores devidos no prazo máximo de 30 (trinta) dias, contado da apresentação da respectiva comprovação.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art4_par1
+    tipos:
+    - a_partir_de_ate
+    - prazo_relativo
+    trecho: § 1º O não atendimento do prazo previsto no caput deste artigo enseja o pagamento dos valores com acréscimo de juros equivalentes à taxa Selic, incidente a partir do primeiro dia após o fim do referido prazo.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art4_par2
+    tipos:
+    - prazo_relativo
+    trecho: § 2º O inadimplemento do valor devido no prazo previsto no caput deste artigo assegura ao agente econômico o reconhecimento do correspondente crédito perante a União, passível de utilização econômica na forma de regulamentação, inclusive mediante compensação, abatimento ou liquidação de obrigações.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5
+  artigo: '5'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5
+    tipos:
+    - evento_publicacao
+    trecho: Art. 5º As pessoas jurídicas produtoras de etanol poderão utilizar os saldos credores da Contribuição para o PIS/Pasep e da Cofins, apurados até a data de publicação desta Lei Complementar, na forma do art. 3º da Lei nº 10.637, de 30 de dezembro de 2002, do art. 3º da Lei nº 10.833, de 29 de dezembro de 2003, e do art. 8º da Lei nº 10.925, de 23 de julho de 2004, para compensação com débitos próprios, vencidos ou vincendos, relativos a tributos e contribuições administrados pela Secretaria Especial da Receita Federal do Brasil.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5_par1
+    tipos:
+    - ano
+    trecho: § 1º O saldo credor compensável na forma deste artigo está limitado ao montante global de R$ 750.000.000,00 (setecentos e cinquenta milhões de reais) no ano de 2026.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5_par3
+    tipos:
+    - prazo_relativo
+    trecho: § 3º A Secretaria Especial da Receita Federal do Brasil terá o prazo de 15 (quinze) dias corridos, contado da publicação desta Lei Complementar, para regulamentar os procedimentos e prazos.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5_par6
+    tipos:
+    - ano
+    trecho: § 6º Caso o valor dos créditos apresentados por todas as produtoras de etanol seja superior ao valor previsto no § 1º deste artigo, a Secretaria Especial da Receita Federal do Brasil repartirá a totalidade do valor previsto de forma proporcional ao percentual de produção de etanol hidratado, no ano-calendário de 2025, de cada contribuinte habilitado, conforme dados fornecidos pela Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP).
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5_par7
+    tipos:
+    - ano
+    - a_partir_de_ate
+    - prazo_relativo
+    trecho: § 7º A partir do ano de 2027, os créditos apurados na forma do caput deste artigo, que sejam atualmente objeto de limitação de ressarcimento, serão passíveis de compensação com débitos da Contribuição Social sobre Bens e Serviços, na forma do inciso III do art. 378 da Lei Complementar nº 214, de 16 de janeiro de 2025, mantida a fluência do prazo para a sua utilização.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art5_par9
+    tipos:
+    - ano
+    trecho: § 9º Na hipótese de não ser possível a apresentação das compensações no ano de 2026, o contribuinte poderá compensar com débitos próprios, vencidos ou vincendos, relativos a tributos e contribuições administrados pela Secretaria Especial da Receita Federal do Brasil no ano de 2027.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  - evento_relativo
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art6
+  artigo: '6'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '82'
+    - '174'
+    linhas_com_marcos: 1
+  marcas_de_outro_ato: []
+  pendencias:
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7
+  artigo: '7'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7
+    tipos:
+    - ano
+    - data_explicita
+    - a_partir_de_ate
+    trecho: Art. 7º É a União autorizada a conceder crédito fiscal a projetos destinados à produção, no território nacional, de fertilizantes e suas matérias-primas, de origem sintética, mineral e orgânica, bem como de remineralizadores, bioinsumos e biofertilizantes, até 31 de dezembro de 2031, nos termos de regulamento, com a finalidade de contribuir para a ampliação da oferta e para a estabilidade de preços.
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7_par1
+    tipos:
+    - ano
+    trecho: '§ 1º Entre os exercícios de 2027 e 2031, os créditos fiscais de que trata o caput deste artigo serão limitados aos seguintes valores globais para cada ano-calendário:'
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7_par1_incI
+    tipos:
+    - ano
+    trecho: 'I - 2027: R$ 1.000.000.000,00 (um bilhão de reais);'
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7_par1_incII
+    tipos:
+    - ano
+    trecho: 'II - 2028: R$ 1.000.000.000,00 (um bilhão de reais);'
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7_par1_incIII
+    tipos:
+    - ano
+    trecho: 'III - 2029: R$ 1.000.000.000,00 (um bilhão de reais);'
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7_par1_incIV
+    tipos:
+    - ano
+    trecho: 'IV - 2030: R$ 1.000.000.000,00 (um bilhão de reais); e'
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7_par1_incV
+    tipos:
+    - ano
+    trecho: 'V - 2031: R$ 1.000.000.000,00 (um bilhão de reais).'
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art7_par5
+    tipos:
+    - ano
+    - data_explicita
+    - a_partir_de_ate
+    trecho: § 5º Observado o disposto no § 4º, os valores de créditos fiscais nos limites de que trata o § 1º deste artigo que não forem utilizados no respectivo ano-calendário poderão ser utilizados nos anos seguintes, até 31 de dezembro de 2031.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art8
+  artigo: '8'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    excecoes: []
+    motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios: []
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias: []
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art9
+  artigo: '9'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    excecoes: []
+    motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios: []
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias: []
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art10
+  artigo: '10'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art10
+    tipos:
+    - ano
+    trecho: Art. 10. Fica afastada, nos exercícios de 2027 a 2031, a incidência do Adicional ao Frete para a Renovação da Marinha Mercante (AFRMM), de que trata a Lei nº 10.893, de 13 de julho de 2004, sobre as mercadorias destinadas a projetos aprovados no âmbito do programa de desenvolvimento da indústria de fertilizantes e suas matérias-primas, de origem sintética, mineral e orgânica, bem como de remineralizadores, de bioinsumos e de biofertilizantes, nos termos de ato do Poder Executivo.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art11
+  artigo: '11'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '4'
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art12
+  artigo: '12'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '1'
+    linhas_com_marcos: 2
+  marcas_de_outro_ato: []
+  pendencias:
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art13
+  artigo: '13'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo insere texto em outra norma, ainda não ingerida'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios: []
+  texto_inserido:
+    artigos:
+    - '6'
+    linhas_com_marcos: 1
+  marcas_de_outro_ato: []
+  pendencias:
+  - texto_inserido_em_outra_norma
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art14
+  artigo: '14'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art14
+    tipos:
+    - ano
+    - a_partir_de_ate
+    trecho: 'Art. 14. A partir do exercício de 2026, em caso de projeção de déficit primário do governo central no Relatório de Avaliação de Receitas e Despesas Primárias (RARDP) que anteceder o envio do projeto de lei orçamentária anual, ficam vedadas, a partir do exercício subsequente, até a apuração de superávit primário anual:'
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art15
+  artigo: '15'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art15
+    tipos:
+    - ano
+    trecho: Art. 15. A exigência prevista no inciso VIII do art. 94 da Lei nº 15.321, de 31 de dezembro de 2025 (Lei de Diretrizes Orçamentárias de 2026), relativa à apresentação de declaração de funcionamento contínuo nos últimos 3 (três) anos, não se aplica a recursos destinados a hospitais inteligentes de alta complexidade financiados por meio de operação de crédito externo.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art16
+  artigo: '16'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    excecoes: []
+    motivo: 'nenhum marco temporal detectado pelos padrões do script (isto NÃO garante que não exista): LER O TEXTO antes de aceitar que os efeitos acompanham a vigência'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios: []
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias: []
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia
+- urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+  artigo: '17'
+  vigencia:
+    inciso: null
+    fundamento: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    natureza: derivado
+    proposta:
+      tipo: evento
+      evento: publicacao
+      data_candidata: '2026-08-28'
+      precisao: dia
+      nota: publicação no DOU, lida da página do ato arquivada (edição 163, seção 1, página 1)
+    motivo: null
+    ressalva: null
+  efeitos:
+    inciso: null
+    fundamento: null
+    natureza: null
+    proposta: null
+    excecoes: []
+    motivo: 'os efeitos não decorrem só da cláusula de vigência: o dispositivo tem marco(s) temporal(is) ou dependência de lei futura no próprio texto (ver `marcos_proprios`)'
+    ressalva: null
+  atual_no_pipeline:
+    data_ato: '2026-08-27'
+    publicacao:
+      datas:
+      - '2026-08-28'
+      fonte: dou
+    vigencia_inicio: '2026-08-28'
+    efeitos_inicio: '2026-08-28'
+  marcos_proprios:
+  - urn: urn:lex:br:federal:lei.complementar:2026-08-27;235!art17
+    tipos:
+    - evento_publicacao
+    - entrada_em_vigor
+    trecho: Art. 17. Esta Lei Complementar entra em vigor na data de sua publicação.
+  texto_inserido:
+    artigos: []
+    linhas_com_marcos: 0
+  marcas_de_outro_ato: []
+  pendencias:
+  - marcos_proprios
+  - evento_relativo
+  revisao:
+    decisao: aceitar
+    vigencia_inicio: null
+    vigencia_fim: null
+    efeitos_inicio: null
+    efeitos_fim: null
+    precisao: {}
+    fundamento_vigencia: []
+    fundamento_efeitos: []
+    excecoes_subdivisao: []
+    revisado_por: regra:clausula-literal/v1
+    revisado_em: '2026-10-15'
+    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    escopo:
+    - vigencia

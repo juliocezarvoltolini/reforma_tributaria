@@ -83,6 +83,11 @@ RE_CAPUT_EFEITOS = re.compile(
     r"\bentra(?:r[áa])?\s+em\s+vigor\s+na\s+data\s+de\s+sua\s+publica[çc][ãa]o\s*,\s*"
     r"produzindo\s+efeitos\s*:", re.IGNORECASE)
 RE_CAPUT_VIGENCIA = re.compile(r"\bentra(?:r[áa])?\s+em\s+vigor\s*:", re.IGNORECASE)
+#   LC 235:  "Esta Lei Complementar entra em vigor na data de sua publicação." — sem
+#            incisos; dá a vigência de todos e nada diz dos efeitos.
+RE_CAPUT_UNICA = re.compile(
+    r"\bentra(?:r[áa])?\s+em\s+vigor\s+na\s+data\s+de\s+sua\s+publica[çc][ãa]o\s*\.\s*$",
+    re.IGNORECASE)
 
 RE_INCISO = re.compile(r"^([IVXLC]+)\s*[-–]\s*(.+)$")
 # Termo e alcance são lidos separadamente: um termo fora do padrão não impede
@@ -240,6 +245,16 @@ def interpretar_clausula(
         vigencia = {"termo": {"tipo": "publicacao"}, "fundamento": urn_dispositivo(urn_base, artigo)}
     elif RE_CAPUT_VIGENCIA.search(caput):
         forma, vigencia = "vigencia_por_inciso", None
+    elif RE_CAPUT_UNICA.search(RE_ANOTACAO.sub("", caput).strip()) and len(linhas) == 1:
+        # Cláusula única: a vigência de todos vem do caput; nenhum inciso.
+        forma = "vigencia_unica"
+        vigencia = {"termo": {"tipo": "publicacao"}, "fundamento": urn_dispositivo(urn_base, artigo)}
+        return {"urn": urn_dispositivo(urn_base, artigo), "caput": caput, "forma": forma,
+                "vigencia": vigencia, "incisos": [], "redacoes_anteriores": [],
+                "mapa": {n: {"inciso": None, "termo": None, "fundamento": None, "excecoes": [],
+                             "motivo": None, "ressalva": None,
+                             "alterado_pela_redacao_posterior": False} for n in existentes},
+                "artigos_inexistentes": []}
     else:
         forma, vigencia = None, None
 
@@ -489,6 +504,8 @@ def artigos_de_outros_atos(linhas: list[str]) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 RE_REVOGAM_SE = re.compile(r"^Art\.\s*\d+\s*[ºo°]?\.?\s+Revogam-se\b", re.IGNORECASE)
+# "... republicado no DOU de 15.1.2026 e retificado em 23.1.2026" (LC 227)
+RE_RETIFICACAO = re.compile(r"\bretificad[oa]\b", re.IGNORECASE)
 
 
 def _inicio_proposto(termo: dict, pub: dict, regras: dict | None = None) -> dict:
@@ -633,6 +650,17 @@ def _pendencias_gerais(refs: dict, pub: dict, outros: list[dict] | None = None,
             "descricao": "O original não informa a publicação no DOU. As propostas que "
                          "dependem dela ficam sem data candidata.",
         })
+    retificacoes = [t for t in (refs.get("publicacao_dou") or {}).get("trechos") or []
+                    if RE_RETIFICACAO.search(t)]
+    if retificacoes:
+        pendencias.append({
+            "id": "retificacao_citada_no_rodape",
+            "descricao": "O rodapé do compilado cita retificação "
+                         f"({'; '.join(retificacoes)}), que não está arquivada. Uma "
+                         "retificação pode mudar texto e datas: arquivar a página do DOU "
+                         "dela antes de decidir. Até lá, nada desta norma é decidido por "
+                         "regra.",
+        })
     for extra in refs.get("rodapes_adicionais") or []:
         artigos = artigos_por_assinatura.get(extra["assinatura"])
         pendencias.append({
@@ -717,8 +745,8 @@ def construir(slug: str, regras: dict | None = None) -> dict:
         citados = list(meta.get("dispositivos_citados") or [])
         pendencias = []
 
-        # Vigência: na forma da LC, do caput para todos; na da EC, do inciso.
-        if forma == "efeitos_por_inciso":
+        # Vigência: na forma da LC e na única, do caput para todos; na da EC, do inciso.
+        if forma in ("efeitos_por_inciso", "vigencia_unica"):
             vig_termo, vig_fundamento, vig_inciso, vig_motivo, vig_ressalva = (
                 clausula["vigencia"]["termo"], clausula["vigencia"]["fundamento"], None, None, None)
         else:
@@ -871,7 +899,8 @@ def construir(slug: str, regras: dict | None = None) -> dict:
     por_inciso: dict[str, int] = {}
     for d in dispositivos:
         lado = d["efeitos"] if forma == "efeitos_por_inciso" else d["vigencia"]
-        k = lado["inciso"] or "indeterminado"
+        k = lado["inciso"] or ("caput" if forma == "vigencia_unica" and lado["proposta"]
+                               else "indeterminado")
         por_inciso[k] = por_inciso.get(k, 0) + 1
 
     pendencias_gerais = _pendencias_gerais(refs, publicacao, outros, regras)

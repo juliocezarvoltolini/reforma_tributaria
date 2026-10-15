@@ -30,6 +30,7 @@ consulta que o estado dentro daquele ano é incerto.
 from __future__ import annotations
 
 import datetime as _dt
+import re
 from pathlib import Path
 
 import yaml
@@ -163,6 +164,10 @@ def problemas_no_dispositivo(meta: dict) -> tuple[list[str], list[str]]:
             if pub.get("fonte") == "dou" and sem_confirmacao:
                 avisos.append("o rodapé do compilado cita publicação não confirmada no DOU: "
                               + ", ".join(d for d in sem_confirmacao if d))
+            trechos = list(pub.get("trechos") or []) + list(
+                (pub.get("rodape_compilado") or {}).get("trechos") or [])
+            if any(re.search(r"\bretificad[oa]\b", t or "", re.IGNORECASE) for t in trechos):
+                avisos.append("o rodapé do compilado cita retificação, não arquivada")
 
     erros += _problemas_precisao(meta.get("precisao"), meta)
     for exc in meta.get("excecoes_subdivisao") or []:

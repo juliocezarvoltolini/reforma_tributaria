@@ -77,6 +77,12 @@ humana.
 |---|---|---|
 | `vigencia_por_inciso` | EC 132, art. 23: "entra em vigor: I - em 2027, em relação aos arts. 3º e 11" | a vigência; os efeitos só são propostos iguais a ela quando o artigo não tem marco próprio |
 | `efeitos_por_inciso` | LC 214, art. 544: "entra em vigor na data de sua publicação, produzindo efeitos: I - ..." | os efeitos; a vigência de todos vem do caput |
+| `vigencia_unica` | LC 235, art. 17: "entra em vigor na data de sua publicação." | não há incisos: a vigência de todos vem do caput, e a cláusula nada diz dos efeitos (como na forma da EC, só propostos para leitura) |
+
+A LC 227 (art. 182) tem a forma `efeitos_por_inciso`, mas os incisos ainda não
+são lidos: o I dá o alcance em alíneas ("em relação: a) à alínea “c” do inciso II
+do art. 76; b) ao art. 169"), o II tem termo de evento ("a partir da data da
+eleição do Presidente do CGIBS...") e o III diz "a partir da sua publicação".
 
 O alcance de cada inciso é lido por inteiro — artigos, intervalos ("480 a 484"),
 `caput`, `§ 3º`, `§§ 1º e 5º`, `exceto os §§ 1º e 5º`, "demais dispositivos" — e

@@ -6800,5 +6800,1903 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art29"
     ],
     "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art1": {
+    "citado_por": [],
+    "dispositivo": "art. 1",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art10": {
+    "citado_por": [],
+    "dispositivo": "art. 10",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art100": {
+    "citado_por": [],
+    "dispositivo": "art. 100",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art101": {
+    "citado_por": [],
+    "dispositivo": "art. 101",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art102": {
+    "citado_por": [],
+    "dispositivo": "art. 102",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art103": {
+    "citado_por": [],
+    "dispositivo": "art. 103",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art103",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art118",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art119",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art120",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art122",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art123",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art124",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art125",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art126",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art127",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art128"
+    ],
+    "dispositivo": "art. 104",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art105": {
+    "citado_por": [],
+    "dispositivo": "art. 105",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112"
+    ],
+    "dispositivo": "art. 106",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112_par2",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art113",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 123",
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art105",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art111",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112"
+    ],
+    "dispositivo": "art. 107",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art103",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art109",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art113",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art117"
+    ],
+    "dispositivo": "art. 108",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art109": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art110",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art111",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art114"
+    ],
+    "dispositivo": "art. 109",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art11": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art12"
+    ],
+    "dispositivo": "art. 11",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2_par1",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art47",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art110": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art117"
+    ],
+    "dispositivo": "art. 110",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art109"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art111": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art118",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art119",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art120"
+    ],
+    "dispositivo": "art. 111",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art109",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art113"
+    ],
+    "dispositivo": "art. 112",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art109",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art113": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106"
+    ],
+    "dispositivo": "art. 113",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art114": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art115"
+    ],
+    "dispositivo": "art. 114",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art109",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art115"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art115": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art114",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art116",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art117",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art120",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121"
+    ],
+    "dispositivo": "art. 115",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art114"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 123"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art116": {
+    "citado_por": [],
+    "dispositivo": "art. 116",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art115"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 101"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art117": {
+    "citado_por": [],
+    "dispositivo": "art. 117",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art110",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art115"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art118": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art128"
+    ],
+    "dispositivo": "art. 118",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4_par2",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art111",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art128",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art119": {
+    "citado_por": [],
+    "dispositivo": "art. 119",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4_par2",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art111",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art12": {
+    "citado_por": [],
+    "dispositivo": "art. 12",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art11"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art120": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121"
+    ],
+    "dispositivo": "art. 120",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4_par2",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art111",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art115",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art122",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art123",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art124",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art125",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art126",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art127"
+    ],
+    "dispositivo": "art. 121",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art120",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art115"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art122": {
+    "citado_por": [],
+    "dispositivo": "art. 122",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art123": {
+    "citado_por": [],
+    "dispositivo": "art. 123",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art124": {
+    "citado_por": [],
+    "dispositivo": "art. 124",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art125": {
+    "citado_por": [],
+    "dispositivo": "art. 125",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art126": {
+    "citado_por": [],
+    "dispositivo": "art. 126",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art127": {
+    "citado_por": [],
+    "dispositivo": "art. 127",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art121",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art128": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art118"
+    ],
+    "dispositivo": "art. 128",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art118_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art118",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art104"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art129": {
+    "citado_por": [],
+    "dispositivo": "art. 129",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Emenda Constitucional nº 132"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art13": {
+    "citado_por": [],
+    "dispositivo": "art. 13",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art130": {
+    "citado_por": [],
+    "dispositivo": "art. 130",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art131": {
+    "citado_por": [],
+    "dispositivo": "art. 131",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art132": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art133",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art134"
+    ],
+    "dispositivo": "art. 132",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art134"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art133": {
+    "citado_por": [],
+    "dispositivo": "art. 133",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art132"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art134": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art132"
+    ],
+    "dispositivo": "art. 134",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art132"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 87"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art135": {
+    "citado_por": [],
+    "dispositivo": "art. 135",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art136": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137"
+    ],
+    "dispositivo": "art. 136",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 87"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art136",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art141",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
+    "dispositivo": "art. 137",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art136"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 87"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art138": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art139",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art140"
+    ],
+    "dispositivo": "art. 138",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art139": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art140"
+    ],
+    "dispositivo": "art. 139",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art138"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art14": {
+    "citado_por": [],
+    "dispositivo": "art. 14",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art140": {
+    "citado_por": [],
+    "dispositivo": "art. 140",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art138",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art139"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art141": {
+    "citado_por": [],
+    "dispositivo": "art. 141",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art142": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art143",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art144",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art145"
+    ],
+    "dispositivo": "art. 142",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art143": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art144"
+    ],
+    "dispositivo": "art. 143",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art142"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art144": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art145"
+    ],
+    "dispositivo": "art. 144",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art142",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art143"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art145": {
+    "citado_por": [],
+    "dispositivo": "art. 145",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art144",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art142"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 123"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art146": {
+    "citado_por": [],
+    "dispositivo": "art. 146",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art147": {
+    "citado_por": [],
+    "dispositivo": "art. 147",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 14.754"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art148": {
+    "citado_por": [],
+    "dispositivo": "art. 148",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art149": {
+    "citado_por": [],
+    "dispositivo": "art. 149",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 5.172"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art15": {
+    "citado_por": [],
+    "dispositivo": "art. 15",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art150": {
+    "citado_por": [],
+    "dispositivo": "art. 150",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Decreto nº 56.435",
+      "Decreto nº 61.078"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art151": {
+    "citado_por": [],
+    "dispositivo": "art. 151",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art152": {
+    "citado_por": [],
+    "dispositivo": "art. 152",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art153": {
+    "citado_por": [],
+    "dispositivo": "art. 153",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art154": {
+    "citado_por": [],
+    "dispositivo": "art. 154",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art155": {
+    "citado_por": [],
+    "dispositivo": "art. 155",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art156": {
+    "citado_por": [],
+    "dispositivo": "art. 156",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art157": {
+    "citado_por": [],
+    "dispositivo": "art. 157",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art158": {
+    "citado_por": [],
+    "dispositivo": "art. 158",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 9.250"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art159": {
+    "citado_por": [],
+    "dispositivo": "art. 159",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 9.250"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art16": {
+    "citado_por": [],
+    "dispositivo": "art. 16",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art9_par2",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art9"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art160": {
+    "citado_por": [],
+    "dispositivo": "art. 160",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art161": {
+    "citado_por": [],
+    "dispositivo": "art. 161",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art162": {
+    "citado_por": [],
+    "dispositivo": "art. 162",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art163": {
+    "citado_por": [],
+    "dispositivo": "art. 163",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art164": {
+    "citado_por": [],
+    "dispositivo": "art. 164",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art165": {
+    "citado_por": [],
+    "dispositivo": "art. 165",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 5.172"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art166": {
+    "citado_por": [],
+    "dispositivo": "art. 166",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 63"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art167": {
+    "citado_por": [],
+    "dispositivo": "art. 167",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 87"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art168": {
+    "citado_por": [],
+    "dispositivo": "art. 168",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 123"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art169": {
+    "citado_por": [],
+    "dispositivo": "art. 169",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 123"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art17": {
+    "citado_por": [],
+    "dispositivo": "art. 17",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art170": {
+    "citado_por": [],
+    "dispositivo": "art. 170",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 141"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art171": {
+    "citado_por": [],
+    "dispositivo": "art. 171",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 14.113"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art172": {
+    "citado_por": [],
+    "dispositivo": "art. 172",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 1.079"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art173": {
+    "citado_por": [],
+    "dispositivo": "art. 173",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Decreto nº 70.235"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174": {
+    "citado_por": [],
+    "dispositivo": "art. 174",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214",
+      "Lei nº 5.172",
+      "Lei nº 8.668",
+      "Lei nº 14.948",
+      "Lei Complementar nº 187",
+      "Emenda Constitucional nº 132",
+      "Lei Complementar nº 105",
+      "Lei Complementar nº 123",
+      "Lei nº 4.591",
+      "Lei nº 10.931",
+      "Lei nº 6.766",
+      "Lei nº 11.107"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art175": {
+    "citado_por": [],
+    "dispositivo": "art. 175",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 9.430",
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art176": {
+    "citado_por": [],
+    "dispositivo": "art. 176",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 37"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art177": {
+    "citado_por": [],
+    "dispositivo": "art. 177",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 10.893"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art178": {
+    "citado_por": [],
+    "dispositivo": "art. 178",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 192",
+      "Lei Complementar nº 24"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art179": {
+    "citado_por": [],
+    "dispositivo": "art. 179",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214",
+      "Lei Complementar nº 101"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art18": {
+    "citado_por": [],
+    "dispositivo": "art. 18",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art180": {
+    "citado_por": [],
+    "dispositivo": "art. 180",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181": {
+    "citado_por": [],
+    "dispositivo": "art. 181",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 5.172",
+      "Lei nº 10.833",
+      "Lei Complementar nº 123",
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182": {
+    "citado_por": [],
+    "dispositivo": "art. 182",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art19": {
+    "citado_por": [],
+    "dispositivo": "art. 19",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art11",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art27",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art38",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art53"
+    ],
+    "dispositivo": "art. 2",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art5_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art5"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214",
+      "Emenda Constitucional nº 132"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art20": {
+    "citado_por": [],
+    "dispositivo": "art. 20",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art27"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art21": {
+    "citado_por": [],
+    "dispositivo": "art. 21",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art22": {
+    "citado_por": [],
+    "dispositivo": "art. 22",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 5.452"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art23": {
+    "citado_por": [],
+    "dispositivo": "art. 23",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art24": {
+    "citado_por": [],
+    "dispositivo": "art. 24",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art25": {
+    "citado_por": [],
+    "dispositivo": "art. 25",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art26": {
+    "citado_por": [],
+    "dispositivo": "art. 26",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art27": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art20"
+    ],
+    "dispositivo": "art. 27",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2_par1",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art28": {
+    "citado_por": [],
+    "dispositivo": "art. 28",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art29": {
+    "citado_por": [],
+    "dispositivo": "art. 29",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art3": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art6"
+    ],
+    "dispositivo": "art. 3",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art30": {
+    "citado_por": [],
+    "dispositivo": "art. 30",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art31": {
+    "citado_por": [],
+    "dispositivo": "art. 31",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art32": {
+    "citado_por": [],
+    "dispositivo": "art. 32",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art33": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art38"
+    ],
+    "dispositivo": "art. 33",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art34": {
+    "citado_por": [],
+    "dispositivo": "art. 34",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art35": {
+    "citado_por": [],
+    "dispositivo": "art. 35",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art36": {
+    "citado_por": [],
+    "dispositivo": "art. 36",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art37": {
+    "citado_por": [],
+    "dispositivo": "art. 37",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art38": {
+    "citado_por": [],
+    "dispositivo": "art. 38",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2_par4",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2_par1",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art33",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art39": {
+    "citado_por": [],
+    "dispositivo": "art. 39",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art118",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art119",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art120"
+    ],
+    "dispositivo": "art. 4",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art40": {
+    "citado_por": [],
+    "dispositivo": "art. 40",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art41": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52"
+    ],
+    "dispositivo": "art. 41",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 101"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art42": {
+    "citado_por": [],
+    "dispositivo": "art. 42",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 101",
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art43": {
+    "citado_por": [],
+    "dispositivo": "art. 43",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art44": {
+    "citado_por": [],
+    "dispositivo": "art. 44",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art45": {
+    "citado_por": [],
+    "dispositivo": "art. 45",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 4.320",
+      "Lei Complementar nº 101"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art46": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art47",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art48"
+    ],
+    "dispositivo": "art. 46",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art48"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art47": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art11",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art48",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art51",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52"
+    ],
+    "dispositivo": "art. 47",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art46"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art48": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art46"
+    ],
+    "dispositivo": "art. 48",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art47",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art46"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art49": {
+    "citado_por": [],
+    "dispositivo": "art. 49",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art5": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
+    "dispositivo": "art. 5",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 123"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art50": {
+    "citado_por": [],
+    "dispositivo": "art. 50",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art51": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52"
+    ],
+    "dispositivo": "art. 51",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art47"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182"
+    ],
+    "dispositivo": "art. 52",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art47",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art51",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art41"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214",
+      "Emenda Constitucional nº 132"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art53": {
+    "citado_por": [],
+    "dispositivo": "art. 53",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2_par1",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art54": {
+    "citado_por": [],
+    "dispositivo": "art. 54",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art55": {
+    "citado_por": [],
+    "dispositivo": "art. 55",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art56": {
+    "citado_por": [],
+    "dispositivo": "art. 56",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art57": {
+    "citado_por": [],
+    "dispositivo": "art. 57",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art58": {
+    "citado_por": [],
+    "dispositivo": "art. 58",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art59": {
+    "citado_por": [],
+    "dispositivo": "art. 59",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art6": {
+    "citado_por": [],
+    "dispositivo": "art. 6",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art3"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 123"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art60": {
+    "citado_por": [],
+    "dispositivo": "art. 60",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art61": {
+    "citado_por": [],
+    "dispositivo": "art. 61",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art62": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art64"
+    ],
+    "dispositivo": "art. 62",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art63": {
+    "citado_por": [],
+    "dispositivo": "art. 63",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art64": {
+    "citado_por": [],
+    "dispositivo": "art. 64",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art62_par4",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art62"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art65": {
+    "citado_por": [],
+    "dispositivo": "art. 65",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art66": {
+    "citado_por": [],
+    "dispositivo": "art. 66",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art67": {
+    "citado_por": [],
+    "dispositivo": "art. 67",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art68": {
+    "citado_por": [],
+    "dispositivo": "art. 68",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art69": {
+    "citado_por": [],
+    "dispositivo": "art. 69",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art7": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art9"
+    ],
+    "dispositivo": "art. 7",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 12.813"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art70": {
+    "citado_por": [],
+    "dispositivo": "art. 70",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art71": {
+    "citado_por": [],
+    "dispositivo": "art. 71",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art72": {
+    "citado_por": [],
+    "dispositivo": "art. 72",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art73": {
+    "citado_por": [],
+    "dispositivo": "art. 73",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art74": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art77",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81"
+    ],
+    "dispositivo": "art. 74",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81_par1",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81"
+    ],
+    "remete_a_externo": [
+      "Lei nº 13.105",
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art75": {
+    "citado_por": [],
+    "dispositivo": "art. 75",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art76": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art77",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art79"
+    ],
+    "dispositivo": "art. 76",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art79"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 123",
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art77": {
+    "citado_por": [],
+    "dispositivo": "art. 77",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art74",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art76"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art78": {
+    "citado_por": [],
+    "dispositivo": "art. 78",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art79": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art76"
+    ],
+    "dispositivo": "art. 79",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art76"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art8": {
+    "citado_por": [],
+    "dispositivo": "art. 8",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art80": {
+    "citado_por": [],
+    "dispositivo": "art. 80",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art74",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art82",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art85"
+    ],
+    "dispositivo": "art. 81",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art74",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art84"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art82": {
+    "citado_por": [],
+    "dispositivo": "art. 82",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art83": {
+    "citado_por": [],
+    "dispositivo": "art. 83",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art84": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81"
+    ],
+    "dispositivo": "art. 84",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art85": {
+    "citado_por": [],
+    "dispositivo": "art. 85",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art86": {
+    "citado_por": [],
+    "dispositivo": "art. 86",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art87": {
+    "citado_por": [],
+    "dispositivo": "art. 87",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art88": {
+    "citado_por": [],
+    "dispositivo": "art. 88",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art89": {
+    "citado_por": [],
+    "dispositivo": "art. 89",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art9": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art16"
+    ],
+    "dispositivo": "art. 9",
+    "norma": "lc-227-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art7_par3",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art7"
+    ],
+    "remete_a_externo": [
+      "Lei Complementar nº 64",
+      "Lei nº 2.848",
+      "Lei nº 8.429"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art90": {
+    "citado_por": [],
+    "dispositivo": "art. 90",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art91": {
+    "citado_por": [],
+    "dispositivo": "art. 91",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art92": {
+    "citado_por": [],
+    "dispositivo": "art. 92",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art93": {
+    "citado_por": [],
+    "dispositivo": "art. 93",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art94": {
+    "citado_por": [],
+    "dispositivo": "art. 94",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art95": {
+    "citado_por": [],
+    "dispositivo": "art. 95",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art96": {
+    "citado_por": [],
+    "dispositivo": "art. 96",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art97": {
+    "citado_por": [],
+    "dispositivo": "art. 97",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art98": {
+    "citado_por": [],
+    "dispositivo": "art. 98",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-01-13;227!art99": {
+    "citado_por": [],
+    "dispositivo": "art. 99",
+    "norma": "lc-227-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art1": {
+    "citado_por": [],
+    "dispositivo": "art. 1",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 101",
+      "Lei Complementar nº 224",
+      "Lei nº 15.321"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art10": {
+    "citado_por": [],
+    "dispositivo": "art. 10",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 10.893"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art11": {
+    "citado_por": [],
+    "dispositivo": "art. 11",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 224",
+      "Lei nº 9.532"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art12": {
+    "citado_por": [],
+    "dispositivo": "art. 12",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 221",
+      "Lei nº 15.321",
+      "Lei Complementar nº 200"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art13": {
+    "citado_por": [],
+    "dispositivo": "art. 13",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 15.164",
+      "Lei Complementar nº 200"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art14": {
+    "citado_por": [],
+    "dispositivo": "art. 14",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 200",
+      "Lei Complementar nº 101",
+      "Lei nº 12.351"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art15": {
+    "citado_por": [],
+    "dispositivo": "art. 15",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 15.321"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art16": {
+    "citado_por": [],
+    "dispositivo": "art. 16",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art17": {
+    "citado_por": [],
+    "dispositivo": "art. 17",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art2": {
+    "citado_por": [],
+    "dispositivo": "art. 2",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 101"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art3": {
+    "citado_por": [],
+    "dispositivo": "art. 3",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 12.351"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art4": {
+    "citado_por": [],
+    "dispositivo": "art. 4",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art5": {
+    "citado_por": [],
+    "dispositivo": "art. 5",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei nº 10.637",
+      "Lei nº 10.833",
+      "Lei nº 10.925",
+      "Lei nº 9.430",
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art6": {
+    "citado_por": [],
+    "dispositivo": "art. 6",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": [
+      "Lei Complementar nº 214"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art7": {
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-08-27;235!art8",
+      "urn:lex:br:federal:lei.complementar:2026-08-27;235!art9"
+    ],
+    "dispositivo": "art. 7",
+    "norma": "lc-235-2026",
+    "remete_a": [],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art8": {
+    "citado_por": [],
+    "dispositivo": "art. 8",
+    "norma": "lc-235-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-08-27;235!art7"
+    ],
+    "remete_a_externo": []
+  },
+  "urn:lex:br:federal:lei.complementar:2026-08-27;235!art9": {
+    "citado_por": [],
+    "dispositivo": "art. 9",
+    "norma": "lc-235-2026",
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2026-08-27;235!art7"
+    ],
+    "remete_a_externo": []
   }
 }

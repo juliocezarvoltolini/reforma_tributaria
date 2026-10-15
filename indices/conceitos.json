@@ -5,6 +5,12 @@
   "alienação": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art254"
   ],
+  "aumento extraordinário de receita da união": [
+    "urn:lex:br:federal:lei.complementar:2026-08-27;235!art3"
+  ],
+  "autoridade fiscal": [
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4"
+  ],
   "bem móvel usado": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art171"
   ],
@@ -16,6 +22,9 @@
   ],
   "como domicílio principal do adquirente": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
+  ],
+  "como ibs extinto relativo": [
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106"
   ],
   "como saf": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art292"
@@ -42,11 +51,20 @@
   "fornecimento de produto florestal inclusive": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art137"
   ],
+  "impedido": [
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art66"
+  ],
   "in natura": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art137"
   ],
   "indenizações correspondentes": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art235"
+  ],
+  "interposto ex lege": [
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art77"
+  ],
+  "intimado": [
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art64"
   ],
   "local da entrega ou disponibilização do bem ao destinatário": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
@@ -77,7 +95,9 @@
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art28",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art412",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
-    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art67"
+    "urn:lex:br:federal:lei.complementar:2025-01-16;214!art67",
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art151",
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art151"
   ],
   "pessoa jurídica inclusive": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art164"
@@ -97,6 +117,9 @@
   ],
   "reincidência específica": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-G"
+  ],
+  "saldo credor": [
+    "urn:lex:br:federal:lei.complementar:2026-01-13;227!art132"
   ],
   "saldo devedor do ibs, para cada percentual de incentivo,": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art450"

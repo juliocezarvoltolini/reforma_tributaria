@@ -77,6 +77,58 @@
       "tipo_documento": "texto_republicado",
       "titulo": "Lei Complementar nº 214, de 16 de janeiro de 2025",
       "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?jornal=515&pagina=1&data=23/01/2025"
+    },
+    "lc-227-2026/texto_compilado": {
+      "acesso": "2026-10-15",
+      "arquivo": "fontes/lc-227-2026/texto_compilado.html",
+      "bytes": 1334008,
+      "content_type": "text/html",
+      "id": "lcp-227-2026",
+      "obtencao": "download",
+      "sha256": "2951c162bb1bcac9b44fe7d5bc61a1f3d8cb773de2cdf5f1edcb8a60196a71ba",
+      "slug": "lc-227-2026",
+      "tipo_documento": "texto_compilado",
+      "titulo": "Lei Complementar nº 227, de 13 de janeiro de 2026",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm"
+    },
+    "lc-227-2026/texto_publicado": {
+      "acesso": "2026-10-15",
+      "arquivo": "fontes/lc-227-2026/texto_publicado.html",
+      "bytes": 644249,
+      "content_type": "text/html;charset=UTF-8",
+      "id": "lcp-227-2026",
+      "obtencao": "download",
+      "sha256": "e4dd06f2d4e82e44900f0a06a2a95760deb80ea5f417a1222644f22195189b37",
+      "slug": "lc-227-2026",
+      "tipo_documento": "texto_publicado",
+      "titulo": "Lei Complementar nº 227, de 13 de janeiro de 2026",
+      "url": "https://www.in.gov.br/web/dou/-/lei-complementar-n-227-de-13-de-janeiro-de-2026-681157850"
+    },
+    "lc-235-2026/texto_compilado": {
+      "acesso": "2026-10-15",
+      "arquivo": "fontes/lc-235-2026/texto_compilado.html",
+      "bytes": 56099,
+      "content_type": "text/html",
+      "id": "lcp-235-2026",
+      "obtencao": "download",
+      "sha256": "67061ca3bf35de12d41367bbc4b3a12d9a0c1ccefe789bdff5744b23a91e3eef",
+      "slug": "lc-235-2026",
+      "tipo_documento": "texto_compilado",
+      "titulo": "Lei Complementar nº 235, de 27 de agosto de 2026",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp235.htm"
+    },
+    "lc-235-2026/texto_publicado": {
+      "acesso": "2026-10-15",
+      "arquivo": "fontes/lc-235-2026/texto_publicado.html",
+      "bytes": 109887,
+      "content_type": "text/html;charset=UTF-8",
+      "id": "lcp-235-2026",
+      "obtencao": "download",
+      "sha256": "2d838c247c8258e355d22e13ff6abcb6fcf46ac7c4021566f5e1015c131c9e87",
+      "slug": "lc-235-2026",
+      "tipo_documento": "texto_publicado",
+      "titulo": "Lei Complementar nº 235, de 27 de agosto de 2026",
+      "url": "https://www.in.gov.br/web/dou/-/lei-complementar-n-235-de-27-de-agosto-de-2026-728568253"
     }
   }
 }

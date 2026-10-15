@@ -78,12 +78,16 @@ class Linha(NamedTuple):
                 Descartar o riscado a deixaria solta no corpo do artigo, que
                 passaria a parecer revogado por inteiro.
     blockquote  o parágrafo está dentro de <blockquote>? None = não se sabe.
+    link_externo  o primeiro texto do parágrafo está num link para OUTRO arquivo
+                (`<a href="Lcp214.htm#art493a">Art. 493-A.</a>`): o arquivo. É
+                como o Planalto liga o cabeçalho citado à norma alterada.
     """
 
     completa: str
     vigente: str
     marcada: str
     blockquote: bool | None = None
+    link_externo: str | None = None
 
 
 def _normalizar(texto: str) -> str:
@@ -131,6 +135,9 @@ class _Extrator(HTMLParser):
         self._blockquote = 0
         self._segmentos: list[tuple[str, bool]] = []
         self._bq_na_linha = False
+        self._href_externo: str | None = None  # arquivo do <a href> aberto, se outro
+        self._texto_na_linha = False
+        self._link_na_linha: str | None = None
 
     def handle_starttag(self, tag, attrs):
         if tag in _IGNORAR:
@@ -142,6 +149,9 @@ class _Extrator(HTMLParser):
             self._fechar_linha()
         if tag == "blockquote":
             self._blockquote += 1
+        if tag == "a":
+            arquivo = (dict(attrs).get("href") or "").split("#", 1)[0].strip()
+            self._href_externo = arquivo or None
         if tag not in _VAZIAS:
             self._pilha.append((tag, _riscado(tag, attrs)))
 
@@ -156,6 +166,8 @@ class _Extrator(HTMLParser):
             self._fechar_linha()
         if tag == "blockquote" and self._blockquote:
             self._blockquote -= 1
+        if tag == "a":
+            self._href_externo = None
         if tag in _CELULA:
             self._segmentos.append((" ", False))
         # HTML do Word deixa tags sem fechar: fecha tudo que estava aberto dentro
@@ -173,16 +185,20 @@ class _Extrator(HTMLParser):
             return
         if not self._segmentos:
             self._bq_na_linha = self._blockquote > 0
+        if not self._texto_na_linha and dados.strip():
+            self._texto_na_linha = True
+            self._link_na_linha = self._href_externo
         self._segmentos.append((dados, any(r for _, r in self._pilha)))
 
     def _fechar_linha(self) -> None:
         segmentos, self._segmentos = self._segmentos, []
+        link, self._link_na_linha, self._texto_na_linha = self._link_na_linha, None, False
         completa = _normalizar("".join(t for t, _ in segmentos))
         if not completa:
             return
         vigente = _normalizar("".join(t for t, r in segmentos if not r))
         self.linhas.append(
-            Linha(completa, vigente, _normalizar(_marcar(segmentos)), self._bq_na_linha)
+            Linha(completa, vigente, _normalizar(_marcar(segmentos)), self._bq_na_linha, link)
         )
 
     def concluir(self) -> list[Linha]:
@@ -372,6 +388,11 @@ class _Aspas:
             return False
         return texto[0] in ABRE_ASPAS or (texto[0] == ASPA_RETA and self.paridade == 0)
 
+    def abrir_implicito(self) -> None:
+        """Abre um bloco cuja aspa de abertura falta na fonte. Só por decisão de
+        `fatiar`, com dois sinais independentes (ver `abertura_implicita`)."""
+        self.profundidade += 1
+
     def consumir(self, texto: str) -> None:
         for c in texto:
             if c in ABRE_ASPAS:
@@ -485,9 +506,12 @@ def exige_escopo_interno(fonte: dict) -> bool:
 
     Nas leis, o padrão continua "interno salvo qualificador externo". Essa é uma
     decisão de política em aberto (ver docs/ESTADO.md): mais de metade das
-    menções na LC 214 não têm qualificador algum.
+    menções na LC 214 não têm qualificador algum. A exceção é a lei de
+    ALTERAÇÃO, marcada no catálogo com `remissoes: so_escopo_afirmado`: como na
+    emenda, "art. N" sem qualificador é, quase sempre, da lei que ela altera.
     """
-    return fonte.get("tipo") == "emenda.constitucional"
+    return (fonte.get("tipo") == "emenda.constitucional"
+            or fonte.get("remissoes") == "so_escopo_afirmado")
 
 
 def extrair_remissoes(
@@ -701,6 +725,7 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
     aspas = _Aspas()
     citados_orfaos = 0
     discordantes: list[str] = []
+    implicitas: list[str] = []
     stats = {
         "aspas_fechamento_sem_abertura": 0,
         "aspas_abertura_dentro_de_bloco": 0,
@@ -726,6 +751,16 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
         dentro_antes = aspas.dentro
         abre = aspas.abre_bloco(completa)
         dentro = dentro_antes or abre
+        # Aspa de abertura ausente na fonte (LC 227: "Art. 493-A. É instituída..."
+        # sem o “, com o ” no fim do § 15). Só se reclassifica com DOIS sinais
+        # independentes: o portal põe o parágrafo em <blockquote> e liga o
+        # cabeçalho ao artigo de outra norma. O bloco abre antes de contar as aspas
+        # da linha, para que um ” na mesma linha o feche. Reportado em aviso.
+        if (not dentro and linha.blockquote and linha.link_externo
+                and (mi := RE_ARTIGO.match(completa.lstrip(ABRE_ASPAS + ASPA_RETA + "' ")))):
+            aspas.abrir_implicito()
+            dentro = True
+            implicitas.append(normalizar_artigo(mi.group(1), mi.group(2)))
         aspas.consumir(completa)
 
         # Só encerra fora de bloco citado: as leis que esta norma altera também
@@ -782,6 +817,13 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
 
     stats["aspas_fechamento_sem_abertura"] = aspas.fechamentos_sem_abertura
     stats["aspas_estado_final"] = aspas.residuo
+    stats["aspas_abertura_implicita"] = len(implicitas)
+    if implicitas:
+        avisos.append(
+            f"{len(implicitas)} cabecalho(s) sem a aspa de abertura na fonte, lido(s) como "
+            "citado(s) porque <blockquote> e o link para o artigo de outra norma concordam: "
+            + ", ".join(implicitas[:10])
+        )
 
     if not artigos:
         avisos.append(

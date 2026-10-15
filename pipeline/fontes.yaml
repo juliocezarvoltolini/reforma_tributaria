@@ -72,6 +72,52 @@ fontes:
       derrubados precisam de marcação própria em /eventos/ — o texto
       compilado nem sempre reflete a derrubada de imediato.
 
+  # ---------------------------------------------------------------- nível 2
+  # Leis que alteram a LC 214. Número, data e URLs informados pelo usuário em
+  # 2026-10-15; as anotações do compilado da LC 214 citam "Lei Complementar nº
+  # 227, de 2026" e "nº 235, de 2026". `remissoes: so_escopo_afirmado`: lei de
+  # alteração, como a emenda — "art. N" sem qualificador é, quase sempre, da
+  # norma alterada (ver fatiar.exige_escopo_interno).
+  - id: lcp-227-2026
+    titulo: "Lei Complementar nº 227, de 13 de janeiro de 2026"
+    slug: lc-227-2026
+    tipo: lei.complementar
+    numero: "227"
+    data: "2026-01-13"
+    autoridade: "br:federal:lei.complementar"
+    prioridade: 2
+    remissoes: so_escopo_afirmado
+    urls:
+      - tipo: texto_compilado
+        url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp227.htm"
+        url_verificada: false
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-227-de-13-de-janeiro-de-2026-681157850"
+        url_verificada: false
+    observacao: >-
+      Altera a LC 214/2025: a maior parte das anotações "(Incluído pela...)" e
+      "(Redação dada pela...)" do compilado da LC 214 é dela. A vigência do
+      texto que ela incluiu ou alterou sai da cláusula de vigência DELA.
+
+  - id: lcp-235-2026
+    titulo: "Lei Complementar nº 235, de 27 de agosto de 2026"
+    slug: lc-235-2026
+    tipo: lei.complementar
+    numero: "235"
+    data: "2026-08-27"
+    autoridade: "br:federal:lei.complementar"
+    prioridade: 2
+    remissoes: so_escopo_afirmado
+    urls:
+      - tipo: texto_compilado
+        url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp235.htm"
+        url_verificada: false
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/web/dou/-/lei-complementar-n-235-de-27-de-agosto-de-2026-728568253"
+        url_verificada: false
+    observacao: >-
+      Altera a LC 214/2025 (4 anotações no compilado da LC 214).
+
 # ---------------------------------------------------------------------------
 # A INGERIR — pendente de identificação da URL oficial.
 #
