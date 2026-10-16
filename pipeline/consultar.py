@@ -2,7 +2,8 @@
 
 Busca textual crua ignora vigência e devolve dispositivo que ainda não vale.
 Este script aplica o filtro temporal ANTES de retornar (PREMISSAS.md §3.2) e
-mostra as remissões a seguir antes de concluir (CLAUDE.md, passo 3).
+mostra as remissões a seguir antes de concluir (CLAUDE.md, passo 3) e, na
+remissão a lei futura, a regulamentação localizada ou a lacuna (passo 5).
 
 Uso:
     python3 pipeline/consultar.py --data 2027-01-01 --termo "credito"
@@ -122,7 +123,49 @@ def origem_das_datas(meta: dict) -> list[str]:
     return linhas
 
 
-def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None) -> None:
+def _autoria(registro: dict, feito: str = "proposta") -> str:
+    autor = str(registro.get("autor") or "")
+    if autor.startswith("ia:"):
+        return f"{feito} por IA ({autor.removeprefix('ia:')}) — NAO equivale a revisao humana"
+    return f"{feito} por {autor}"
+
+
+def ligacoes_a_lei_futura(meta: dict, registros: dict, indice: dict,
+                          referencia: _dt.date) -> list[str]:
+    """Remissão a lei futura deste dispositivo: a regulamentação localizada, com o
+    estado de cada regulador na data, ou a lacuna; e, no regulador, a remissão que
+    ele regula. Calar isso faria o leitor concluir 'não regulamentado'."""
+    from regulamentacao import urn_do_artigo
+
+    def do_artigo(citacoes: list[dict]) -> list[dict]:
+        return [c for c in citacoes or [] if urn_do_artigo(str(c.get("urn"))) == meta["urn"]]
+
+    linhas = []
+    for rel, reg, _ in registros["regulamentacoes"]:
+        proprias = do_artigo(reg.get("remissoes"))
+        if proprias:
+            linhas.append(f"REMISSAO A LEI FUTURA — regulamentacao localizada ({rel}; "
+                          f"{_autoria(reg)}; confianca: {reg.get('confianca')}):")
+            for remissao in proprias:
+                linhas.append(f"  {remissao['urn'].split('!')[-1]} regulada por:")
+            for regulador in reg.get("regulado_por") or []:
+                alvo = indice.get(urn_do_artigo(str(regulador.get("urn"))))
+                estado = ROTULO.get(status_em(alvo[0], referencia), "?") if alvo else "fora da base"
+                linhas.append(f"    - {regulador.get('urn')} — em {referencia}: {estado}")
+        if do_artigo(reg.get("regulado_por")):
+            urns = ", ".join(str(r.get("urn")) for r in reg.get("remissoes") or [])
+            linhas.append(f"regulamenta remissao a lei futura de: {urns} ({rel}; {_autoria(reg)}; "
+                          f"confianca: {reg.get('confianca')})")
+    for rel, lac, _ in registros["lacunas"]:
+        for remissao in do_artigo(lac.get("remissoes")):
+            linhas.append(f"LACUNA ({rel}): {remissao['urn'].split('!')[-1]} — Nao localizado nas "
+                          f"fontes indexadas (pesquisado em {', '.join(lac.get('pesquisado_em') or [])}; "
+                          f"{_autoria(lac, 'busca feita')}, {lac.get('data')})")
+    return linhas
+
+
+def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None,
+             ligacoes: list[str] = ()) -> None:
     estado = status_em(meta, referencia)
     print(f"\n{'=' * 72}")
     print(f"{meta['norma']} — {meta['dispositivo']}")
@@ -156,6 +199,10 @@ def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None) -
         print(f"\n  SEGUIR ANTES DE CONCLUIR ({len(remissoes)} remissao/oes):")
         for alvo in remissoes:
             print(f"    - {alvo}")
+    if ligacoes:
+        print()
+        for linha in ligacoes:
+            print(f"  {linha}")
 
     print()
     print(trecho if trecho else corpo)
@@ -190,6 +237,17 @@ def main() -> int:
         return 1
 
     indice = {m["urn"]: (m, c) for m, c in itens}
+    from regulamentacao import carregar_registros
+
+    try:
+        registros = carregar_registros()
+    except ValueError as exc:
+        registros = {"regulamentacoes": [], "lacunas": []}
+        print(f"AVISO: registros de /interpretacoes/ ou /lacunas/ ilegiveis ({exc}). A consulta "
+              "NAO mostra a regulamentacao das remissoes a lei futura.", file=sys.stderr)
+
+    def ligacoes(meta: dict) -> list[str]:
+        return ligacoes_a_lei_futura(meta, registros, indice, referencia)
     resultados: list[tuple[dict, str, str | None]] = []
 
     if args.urn:
@@ -220,13 +278,13 @@ def main() -> int:
         return 1
 
     for meta, corpo, trecho in resultados:
-        imprimir(meta, corpo, referencia, trecho)
+        imprimir(meta, corpo, referencia, trecho, ligacoes(meta))
         if args.seguir:
             for alvo in meta.get("remete_a") or []:
                 if alvo in indice:
                     m2, c2 = indice[alvo]
                     print(f"\n  --- remissao a partir de {meta['dispositivo']} ---")
-                    imprimir(m2, c2, referencia, None)
+                    imprimir(m2, c2, referencia, None, ligacoes(m2))
 
     print(f"\n{'=' * 72}")
     print(f"{len(resultados)} dispositivo(s). Data de referencia: {referencia}.")

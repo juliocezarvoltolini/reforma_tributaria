@@ -206,7 +206,16 @@ def validar_hashes() -> None:
             )
 
 
-def validar_interpretacoes() -> None:
+def urns_fora_da_base(urns: list, metas: list[dict]) -> list:
+    """As URNs que não são artigo, subdivisão listada nem caput (`_par0`) de um
+    dispositivo de normas/."""
+    existentes = {m["urn"] for m in metas} | {s for m in metas for s in m.get("subdivisoes") or []}
+    return [u for u in urns
+            if u not in existentes and not (str(u).endswith("_par0")
+                                             and str(u).removesuffix("_par0") in existentes)]
+
+
+def validar_interpretacoes(metas: list[dict]) -> None:
     if not DIR_INTERPRETACOES.exists():
         return
     for caminho in sorted(DIR_INTERPRETACOES.rglob("*.md")):
@@ -223,10 +232,28 @@ def validar_interpretacoes() -> None:
         if not (meta.get("fundamenta_se_em") or []):
             erro(f"{rel(caminho)}: interpretacao sem citacao de dispositivo "
                  "(fundamenta_se_em vazio) — PREMISSAS.md §4.1")
+        for urn in urns_fora_da_base(meta.get("fundamenta_se_em") or [], metas):
+            erro(f"{rel(caminho)}: fundamenta_se_em cita dispositivo fora de normas/: {urn}")
         if not meta.get("autor"):
             erro(f"{rel(caminho)}: interpretacao sem autor")
         if meta.get("confianca") not in {"literal", "derivado", "controverso", "pendente"}:
             erro(f"{rel(caminho)}: grau de confianca invalido: {meta.get('confianca')!r}")
+
+
+def validar_lei_futura(metas: list[dict], corpos: dict[str, str]) -> None:
+    """Regulamentação localizada (/interpretacoes/, tipo regulamentacao) e lacunas
+    (/lacunas/) das remissões a lei futura: cada trecho no texto atual da
+    subdivisão citada; a lacuna, buscada em todas as normas indexadas."""
+    from regulamentacao import carregar_registros, problemas_de_registros
+
+    try:
+        registros = carregar_registros()
+    except ValueError as exc:
+        erro(str(exc))
+        return
+    indice = {m["urn"]: (m, corpos.get(m["urn"], "")) for m in metas}
+    for msg in problemas_de_registros(registros, indice):
+        erro(msg)
 
 
 def validar_revisoes_temporais(metas: list[dict]) -> None:
@@ -361,7 +388,8 @@ def main() -> int:
     metas = validar_dispositivos(corpos)
     validar_remissoes(metas)
     validar_hashes()
-    validar_interpretacoes()
+    validar_interpretacoes(metas)
+    validar_lei_futura(metas, corpos)
     validar_revisoes_temporais(metas)
     relatar_pendencias(metas)
     relatar_alteracoes(metas, corpos)

@@ -188,8 +188,8 @@ execução: um passo separado seria desfeito pela próxima reingestão. Ver
 | `/normas/` | 1+2 | não (só pipeline) | dispositivos fatiados |
 | `/eventos/` | 2 | sim | alterações, revogações, divergências de texto |
 | `/temporal/` | 2 | sim | cronograma da transição, parâmetros por exercício |
-| `/lacunas/` | 2 | sim | pendências de regulamentação |
-| `/interpretacoes/` | 3 | sim | análise, com citação obrigatória |
+| `/lacunas/` | 2 | sim | remissões a lei futura cuja regulamentação não foi localizada nas normas indexadas (`situacao: nao_localizado`, com onde e o que se buscou) |
+| `/interpretacoes/` | 3 | sim | análise, com citação obrigatória; `regulamentacao/` liga cada remissão a lei futura ao dispositivo que a regula |
 | `/indices/` | derivado | **não** | regenerável via `pipeline/indexar.py` |
 
 ## Índices derivados

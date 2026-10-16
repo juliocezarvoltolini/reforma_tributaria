@@ -3220,6 +3220,206 @@ def manifest_portavel():
     )
 
 
+# ---------------------------------------------------------------------------
+# Remissões a lei futura: regulamentação localizada e lacuna
+# ---------------------------------------------------------------------------
+
+_EC_BASE = "urn:lex:br:federal:emenda.constitucional:1900-01-01;1"
+_LC_BASE = "urn:lex:br:federal:lei.complementar:1900-06-01;2"
+
+
+def _indice_regulamentacao() -> dict:
+    """Uma emenda que remete a lei complementar e uma lei complementar que a regula,
+    com texto inventado. O § 2º da emenda tem redação superada (riscada)."""
+    ec = {"urn": f"{_EC_BASE}!art3", "norma": "Emenda Constitucional nº 1, de 1º de janeiro de 1900",
+          "norma_slug": "ec-1", "dispositivo": "art. 3",
+          "subdivisoes": [f"{_EC_BASE}!art3_par1", f"{_EC_BASE}!art3_par2"],
+          "vigencia_inicio": "1900-01-01", "efeitos_inicio": "1900-01-01"}
+    corpo_ec = ("\nArt. 3º Fica criado o programa de teste.\n"
+                "§ 1º Lei complementar definirá os itens do programa de teste.\n"
+                "~~§ 2º Lei complementar fixará o prazo do programa.~~\n"
+                "§ 2º O prazo do programa será de um ano. (Redação dada pela Emenda Constitucional nº 9, de 1901)\n")
+    lc = {"urn": f"{_LC_BASE}!art7", "norma": "Lei Complementar nº 2, de 1º de junho de 1900",
+          "norma_slug": "lc-2", "dispositivo": "art. 7", "subdivisoes": [f"{_LC_BASE}!art7_par1"],
+          "vigencia_inicio": "1900-06-01", "efeitos_inicio": "1901-01-01"}
+    corpo_lc = ("\nArt. 7º Os itens do programa de teste, criado nos termos do art. 3º da Emenda "
+                "Constitucional nº 1, de 1º de janeiro de 1900, são os do anexo.\n"
+                "§ 1º Os itens serão revistos a cada ano.\n")
+    lc30 = {"urn": f"{_LC_BASE}!art8", "norma": "Lei Complementar nº 2, de 1º de junho de 1900",
+            "norma_slug": "lc-2", "dispositivo": "art. 8", "subdivisoes": [],
+            "vigencia_inicio": "1900-06-01", "efeitos_inicio": "1900-06-01"}
+    corpo_lc30 = "\nArt. 8º O disposto no art. 30 da Emenda Constitucional nº 1 não se altera.\n"
+    outra = {"urn": f"{_LC_BASE}!art9", "norma": "Lei Complementar nº 2, de 1º de junho de 1900",
+             "norma_slug": "lc-2", "dispositivo": "art. 9", "subdivisoes": [],
+             "vigencia_inicio": "1900-06-01", "efeitos_inicio": "1900-06-01"}
+    corpo_outra = ("\nArt. 9º Os itens do programa de teste seguem a lista elaborada nos termos do "
+                   "art. 3º da Lei nº 5, de 1º de março de 1900.\n")
+    return {ec["urn"]: (ec, corpo_ec), lc["urn"]: (lc, corpo_lc), lc30["urn"]: (lc30, corpo_lc30),
+            outra["urn"]: (outra, corpo_outra)}
+
+
+def _regulamentacao_valida() -> dict:
+    return {
+        "camada": 3, "tipo": "regulamentacao", "titulo": "Itens do programa de teste",
+        "autor": "ia:modelo-x", "data": "1902-01-01", "confianca": "literal",
+        "remissoes": [{"urn": f"{_EC_BASE}!art3_par1",
+                       "trecho": "Lei complementar definirá os itens do programa de teste"}],
+        "regulado_por": [{"urn": f"{_LC_BASE}!art7",
+                          "trecho": "criado nos termos do art. 3º da Emenda Constitucional nº 1"}],
+        "fundamenta_se_em": [f"{_EC_BASE}!art3_par1", f"{_LC_BASE}!art7"],
+    }
+
+
+def _lacuna_valida() -> dict:
+    return {
+        "camada": 2, "tipo": "lacuna", "titulo": "Prazo do programa",
+        "autor": "ia:modelo-x", "data": "1902-01-01", "situacao": "nao_localizado",
+        "remissoes": [{"urn": f"{_EC_BASE}!art3_par1",
+                       "trecho": "Lei complementar definirá os itens"}],
+        "pesquisado_em": ["lc-2"], "termos_buscados": ["itens do programa"],
+    }
+
+
+@cenario("remissão a lei futura: o trecho está no texto atual da subdivisão citada")
+def regulamentacao_texto_atual():
+    """Quebra: aceitar trecho de redação superada (riscada), trecho de outra
+    subdivisão do mesmo artigo, ou subdivisão que o artigo não tem."""
+    import regulamentacao as RG
+
+    indice = _indice_regulamentacao()
+    meta, corpo = indice[f"{_EC_BASE}!art3"]
+    par1 = RG.texto_atual(meta, corpo, f"{_EC_BASE}!art3_par1")
+    par2 = RG.texto_atual(meta, corpo, f"{_EC_BASE}!art3_par2")
+    artigo = RG.texto_atual(meta, corpo, f"{_EC_BASE}!art3")
+    checar("definirá os itens" in par1 and "Fica criado" not in par1,
+           f"§ 1º: só o texto do § 1º (obteve {par1!r})")
+    checar("fixará o prazo" not in par2 and "será de um ano" in par2,
+           f"§ 2º: a redação atual, sem a riscada (obteve {par2!r})")
+    checar("Fica criado" in artigo and "definirá os itens" in artigo and "fixará" not in artigo,
+           "o artigo: todo o texto atual")
+    checar(RG.texto_atual(meta, corpo, f"{_EC_BASE}!art3_par9") is None,
+           "subdivisão que o artigo não tem: None")
+    cit = lambda urn, t: RG.problemas_do_trecho({"urn": urn, "trecho": t}, indice)  # noqa: E731
+    checar(cit(f"{_EC_BASE}!art3_par1", "Lei complementar  definirá\nos itens") == [],
+           "trecho literal, com espaços normalizados: ok")
+    checar(cit(f"{_EC_BASE}!art3_par2", "Lei complementar fixará o prazo") != [],
+           "trecho só na redação riscada: problema")
+    checar(cit(f"{_EC_BASE}!art3_par1", "Fica criado o programa") != [],
+           "trecho de outra subdivisão: problema")
+    checar(cit(f"{_EC_BASE}!art4", "Art. 4º") != [] and cit(f"{_EC_BASE}!art3_par1", "") != [],
+           "dispositivo fora da base, ou trecho vazio: problema")
+
+
+@cenario("remissão a lei futura: regulamentação localizada só com os dois lados citados")
+def regulamentacao_registro():
+    """Quebra: registrar a ligação sem o trecho de um dos lados; rotular `literal`
+    a ligação que o dispositivo regulador não declara; `derivado` sem raciocínio;
+    ou fundamentar em menos dispositivos do que os citados."""
+    import regulamentacao as RG
+
+    indice = _indice_regulamentacao()
+    reg = _regulamentacao_valida()
+    p = lambda r, corpo="": RG.problemas_de_regulamentacao(r, corpo, indice)  # noqa: E731
+    checar(p(reg) == [], f"registro válido: sem problema (obteve {p(reg)})")
+    derivado = {**reg, "confianca": "derivado"}
+    checar(p({**derivado, "regulado_por": [], "fundamenta_se_em": [f"{_EC_BASE}!art3_par1"]},
+             "Raciocínio.") != []
+           and p({**derivado, "remissoes": [], "fundamenta_se_em": [f"{_LC_BASE}!art7"]},
+                 "Raciocínio.") != [],
+           "sem dispositivo regulador, ou sem a remissão: problema")
+    falso = {**reg, "regulado_por": [{"urn": f"{_LC_BASE}!art7", "trecho": "inventado"}]}
+    checar(p(falso) != [], "trecho que o regulador não tem: problema")
+    sem_citar = {**reg, "regulado_por": [{"urn": f"{_LC_BASE}!art7_par1",
+                                          "trecho": "Os itens serão revistos a cada ano"}],
+                 "fundamenta_se_em": [f"{_EC_BASE}!art3_par1", f"{_LC_BASE}!art7_par1"]}
+    checar(p(sem_citar) != [] and p({**sem_citar, "confianca": "derivado"}, "Raciocínio.") == [],
+           "literal sem o regulador citar o artigo que remete: problema; derivado com raciocínio: ok")
+    checar(p({**sem_citar, "confianca": "derivado"}, "  \n") != [],
+           "derivado sem raciocínio no corpo: problema")
+    trinta = {**reg, "regulado_por": [{"urn": f"{_LC_BASE}!art8",
+                                       "trecho": "art. 30 da Emenda Constitucional nº 1"}],
+              "fundamenta_se_em": [f"{_EC_BASE}!art3_par1", f"{_LC_BASE}!art8"]}
+    checar(p(trinta) != [], "'art. 30' não é citação do art. 3º: literal recusado")
+    outra = {**reg, "regulado_por": [{"urn": f"{_LC_BASE}!art9",
+                                      "trecho": "nos termos do art. 3º da Lei nº 5"}],
+             "fundamenta_se_em": [f"{_EC_BASE}!art3_par1", f"{_LC_BASE}!art9"]}
+    checar(p(outra) != [],
+           "'art. 3º' de OUTRA norma não é citação do art. 3º da emenda: literal recusado")
+    checar(p({**reg, "fundamenta_se_em": [f"{_EC_BASE}!art3_par1"]}) != [],
+           "fundamenta_se_em sem um dos dispositivos citados: problema")
+    checar(p({**reg, "confianca": "pendente"}, "Raciocínio.") != [] and p({**reg, "autor": ""}) != [],
+           "confiança 'pendente' (isso é lacuna) ou sem autor: problema")
+
+
+@cenario("lacuna: 'não localizado' só com busca em todas as normas indexadas")
+def lacuna_registro():
+    """Quebra: lacuna que afirma mais do que a busca ('não regulamentado'), sem os
+    termos buscados, ou que fica valendo depois de ingerida uma norma que não foi
+    pesquisada — a base responderia 'não localizado' com a regulamentação dentro."""
+    import regulamentacao as RG
+
+    indice = _indice_regulamentacao()
+    lac = _lacuna_valida()
+    p = lambda r: RG.problemas_de_lacuna(r, "", indice)  # noqa: E731
+    checar(p(lac) == [], f"lacuna válida: sem problema (obteve {p(lac)})")
+    checar(p({**lac, "pesquisado_em": []}) != [],
+           "norma indexada (lc-2) fora de pesquisado_em: busca desatualizada, problema")
+    checar(p({**lac, "situacao": "nao_regulamentado"}) != [] and p({**lac, "termos_buscados": []}) != [],
+           "situação além de 'nao_localizado', ou sem termos buscados: problema")
+    ctx = {**lac, "contexto": [{"urn": f"{_LC_BASE}!art7_par1", "trecho": "inventado"}]}
+    checar(p(ctx) != [], "contexto com trecho que o dispositivo não tem: problema")
+    reg = _regulamentacao_valida()
+    checar(RG.conflitos([("r.md", reg, "")], [("l.md", lac, "")]) != [],
+           "a mesma remissão regulada e em lacuna: problema")
+    checar(RG.conflitos([("r.md", reg, "")], []) == [], "sem lacuna: sem conflito")
+
+
+@cenario("consulta: remissão a lei futura mostra o regulador com o estado na data, ou a lacuna")
+def regulamentacao_na_consulta():
+    """Quebra: a consulta do dispositivo que remete a lei futura calar a ligação
+    (o leitor concluiria 'não regulamentado'), mostrá-la sem o estado do regulador
+    na data consultada, ou sem dizer que foi proposta por IA."""
+    import datetime as dt
+
+    import consultar as C
+
+    indice = _indice_regulamentacao()
+    registros = {"regulamentacoes": [("interpretacoes/r.md", _regulamentacao_valida(), "")],
+                 "lacunas": [("lacunas/l.md", {**_lacuna_valida(), "remissoes": [
+                     {"urn": f"{_EC_BASE}!art3_par2", "trecho": "x"}]}, "")]}
+    ec, lc = indice[f"{_EC_BASE}!art3"][0], indice[f"{_LC_BASE}!art7"][0]
+    linhas = "\n".join(C.ligacoes_a_lei_futura(ec, registros, indice, dt.date(1900, 7, 1)))
+    checar("art3_par1" in linhas and f"{_LC_BASE}!art7" in linhas
+           and "AINDA NAO produz efeitos" in linhas,
+           "remissão -> regulador, com o estado do regulador na data (vigente sem efeitos)")
+    checar("NAO equivale a revisao humana" in linhas and "literal" in linhas,
+           "diz que é proposta de IA e a confiança")
+    checar("art3_par2" in linhas and "Nao localizado nas fontes indexadas" in linhas
+           and "lc-2" in linhas, "lacuna: 'não localizado', com onde se buscou")
+    reverso = "\n".join(C.ligacoes_a_lei_futura(lc, registros, indice, dt.date(1900, 7, 1)))
+    checar("art3_par1" in reverso and "regulamenta" in reverso,
+           "no regulador: a remissão que ele regula")
+    sem = C.ligacoes_a_lei_futura(indice[f"{_LC_BASE}!art8"][0], registros, indice,
+                                  dt.date(1900, 7, 1))
+    checar(sem == [], "dispositivo sem ligação: nada")
+
+
+@cenario("interpretação: fundamenta_se_em só com dispositivos que existem na base")
+def interpretacao_urn_existe():
+    """Quebra: interpretação que cita URN fora de normas/ — a citação obrigatória
+    (PREMISSAS.md §4.1) não ancora em nada, e a CI passava."""
+    import validar as V
+
+    metas = [{"urn": f"{_EC_BASE}!art3", "subdivisoes": [f"{_EC_BASE}!art3_par1"]}]
+    checar(V.urns_fora_da_base([f"{_EC_BASE}!art3", f"{_EC_BASE}!art3_par1",
+                                f"{_EC_BASE}!art3_par0"], metas) == [],
+           "artigo, subdivisão listada e caput (par0): existem")
+    fora = V.urns_fora_da_base([f"{_EC_BASE}!art3_par7", f"{_EC_BASE}!art4", f"{_EC_BASE}!art4_par0",
+                                "art. 3"], metas)
+    checar(fora == [f"{_EC_BASE}!art3_par7", f"{_EC_BASE}!art4", f"{_EC_BASE}!art4_par0", "art. 3"],
+           f"subdivisão que o artigo não tem, artigo fora da base, texto solto (obteve {fora})")
+
+
 @cenario("portabilidade de saída")
 def portabilidade():
     """Regressão: no Windows a saída redirecionada usa a codepage local (cp1252) e

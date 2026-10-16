@@ -95,11 +95,23 @@ Verifique também `status`: `vigente`, `vigente_sem_efeitos`, `sem_efeitos`,
 `futuro`, `revogado`, `pendente_regulamentacao`. É o estado na data de
 ingestão; para a data de referência, use `consultar.py`.
 
-### 5. Consulte as lacunas
+### 5. Remissão a lei futura: regulamentação ou lacuna
 
-Se o ponto está registrado em `/lacunas/`, a resposta é que **não há
-regulamentação**, indicando o dispositivo que a exige. Isso é uma resposta
-completa, não uma falha.
+"Lei complementar definirá...", "Até que lei disponha..." — o dispositivo não
+diz se a lei veio. `consultar.py` mostra, no dispositivo que remete:
+
+- **regulamentação localizada** (`/interpretacoes/regulamentacao/`, camada 3):
+  o dispositivo regulador, com o estado dele **na data de referência**. Siga
+  para ele antes de responder. A ligação é interpretação: diga a confiança
+  (`literal` só quando o regulador cita o artigo que remete) e, se o autor é
+  `ia:...`, que não equivale a revisão humana.
+- **lacuna** (`/lacunas/`): a resposta é **"Não localizado nas fontes
+  indexadas"** — não "não regulamentado" —, indicando o dispositivo que exige o
+  regulamento e em que normas se buscou. Isso é uma resposta completa, não uma
+  falha.
+
+Sem nenhum dos dois, a remissão não foi examinada: não presuma nem que há, nem
+que não há regulamentação.
 
 ### 6. Cite sempre
 
