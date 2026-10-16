@@ -366,6 +366,19 @@ revogação gravada só no caput (`_par0`), e incisos e parágrafo apareciam em
 vigor. A decisão agora dá `vigencia_fim` ao artigo inteiro quando todo o texto
 está riscado (`texto_todo_riscado` na proposta).
 
+**Remissões das LCs a lei e ato federais futuros (2026-10-16).** Cinco lacunas
+em `/lacunas/`, "não localizado nas fontes indexadas", com o contexto literal de
+cada uma: alíquotas do IBS e da CBS por lei específica de cada ente (LC 214, art.
+14 — com a alíquota de referência na falta dela, e as alíquotas fixas de 2026 a
+2028 dos arts. 343, 344, 346 e 347 como contexto); alíquotas de referência e
+ajustes por resolução do Senado (arts. 18 e 19); alíquotas do Imposto Seletivo em
+lei ordinária (arts. 419, 421, 422, 434 e 436); reabilitação urbana em lei
+ordinária federal (art. 163); percentuais de devolução maiores por lei do ente
+(art. 118, § 1º). Ficam de fora, de propósito: remissões a lei estadual,
+distrital ou municipal (fora do escopo, §11) e a regulamento ou ato infralegal
+("na forma do regulamento", "ato conjunto"), que são centenas e pedem outro
+tratamento.
+
 **Datas dos anexos (nível C, 2026-10-16).** Sexta interpretação de IA,
 `anexo-segue-o-artigo-que-o-cita`: a cláusula (art. 544) fala da lei e dos
 artigos, nenhum inciso nomeia anexo; o anexo vale e produz efeitos com a
