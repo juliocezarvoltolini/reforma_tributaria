@@ -13,7 +13,10 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art212",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art233"
+    ],
     "dispositivo": "art. 10",
     "norma": "emc-132-2023",
     "remete_a": [],
@@ -29,7 +32,13 @@
     ]
   },
   "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art384",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art385",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art393",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art404",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art405"
+    ],
     "dispositivo": "art. 12",
     "norma": "emc-132-2023",
     "remete_a": [
@@ -54,7 +63,9 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art14": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52"
+    ],
     "dispositivo": "art. 14",
     "norma": "emc-132-2023",
     "remete_a": [],
@@ -195,14 +206,18 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art8": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art125"
+    ],
     "dispositivo": "art. 8",
     "norma": "emc-132-2023",
     "remete_a": [],
     "remete_a_externo": []
   },
   "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art413"
+    ],
     "dispositivo": "art. 9",
     "norma": "emc-132-2023",
     "remete_a": [],
@@ -453,9 +468,7 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art259",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art381",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art387",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art485",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art485"
     ],
     "dispositivo": "art. 1",
     "norma": "lc-214-2025",
@@ -465,7 +478,6 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art28",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art82"
     ],
@@ -571,9 +583,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art109": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 109",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -591,7 +601,9 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art59",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art68",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art80"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art80",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 11",
     "norma": "lc-214-2025",
@@ -603,9 +615,7 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art110": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 110",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -734,7 +744,6 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art415",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art440",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art469",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art6",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64"
     ],
@@ -799,6 +808,7 @@
     "dispositivo": "art. 125",
     "norma": "lc-214-2025",
     "remete_a": [
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art8",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art126",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx1"
     ],
@@ -859,8 +869,6 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art13": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art256",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art7"
     ],
     "dispositivo": "art. 13",
@@ -980,9 +988,7 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art126",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art16",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art19",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art347",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art347"
     ],
     "dispositivo": "art. 14",
     "norma": "lc-214-2025",
@@ -1071,9 +1077,7 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art147": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 147",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -1092,7 +1096,8 @@
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art152",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art153",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art420"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art420",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 149",
     "norma": "lc-214-2025",
@@ -1145,8 +1150,7 @@
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art155",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art367",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art420",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art420"
     ],
     "dispositivo": "art. 153",
     "norma": "lc-214-2025",
@@ -1219,8 +1223,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art16": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art517",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art517"
     ],
     "dispositivo": "art. 16",
     "norma": "lc-214-2025",
@@ -1281,7 +1284,8 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art166",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art167",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art168",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
     ],
     "dispositivo": "art. 164",
     "norma": "lc-214-2025",
@@ -1342,7 +1346,8 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art169": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art110",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
     ],
     "dispositivo": "art. 169",
     "norma": "lc-214-2025",
@@ -1353,23 +1358,25 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art17": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 17",
     "norma": "lc-214-2025",
     "remete_a": [],
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art170": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
+    ],
     "dispositivo": "art. 170",
     "norma": "lc-214-2025",
     "remete_a": [],
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art171": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
+    ],
     "dispositivo": "art. 171",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -1381,7 +1388,8 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art179",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art344",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art347",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art348"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art348",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art179"
     ],
     "dispositivo": "art. 172",
     "norma": "lc-214-2025",
@@ -1463,9 +1471,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art18": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art14",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art14"
     ],
     "dispositivo": "art. 18",
     "norma": "lc-214-2025",
@@ -1602,8 +1608,7 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art19": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art20",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art366",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art366"
     ],
     "dispositivo": "art. 19",
     "norma": "lc-214-2025",
@@ -1726,9 +1731,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art2": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 2",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -1736,7 +1739,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art20": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art33"
     ],
     "dispositivo": "art. 20",
     "norma": "lc-214-2025",
@@ -1755,7 +1758,9 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art201": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
+    ],
     "dispositivo": "art. 201",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -1839,8 +1844,6 @@
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art22",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art95"
     ],
@@ -1874,8 +1877,10 @@
     "dispositivo": "art. 212",
     "norma": "lc-214-2025",
     "remete_a": [
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10_par1",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art189_par2",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par6",
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art189",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art233"
     ],
@@ -1928,7 +1933,9 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art217": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
+    ],
     "dispositivo": "art. 217",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -1987,11 +1994,10 @@
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art23",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art32",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art95",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art96"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art96",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 22",
     "norma": "lc-214-2025",
@@ -2098,8 +2104,6 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art23": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art21",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art95"
     ],
     "dispositivo": "art. 23",
@@ -2142,13 +2146,16 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art233": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art189",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art212"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art212",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 233",
     "norma": "lc-214-2025",
     "remete_a": [
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10_par1",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art189_par2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art189"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art189",
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10"
     ],
     "remete_a_externo": [
       "Emenda Constitucional nº 132",
@@ -2215,8 +2222,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art24": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art249",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art249"
     ],
     "dispositivo": "art. 24",
     "norma": "lc-214-2025",
@@ -2305,9 +2311,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art25": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 25",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -2448,7 +2452,7 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art183",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 26",
     "norma": "lc-214-2025",
@@ -2575,8 +2579,7 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art46",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art47",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art50",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art53",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art53"
     ],
     "dispositivo": "art. 27",
     "norma": "lc-214-2025",
@@ -2601,7 +2604,8 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art188",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art197",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art272",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art6"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art6",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
     ],
     "dispositivo": "art. 271",
     "norma": "lc-214-2025",
@@ -2676,9 +2680,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art28": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 28",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -2796,7 +2798,8 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art82",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art90",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art93",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art99"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art99",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
     ],
     "dispositivo": "art. 29",
     "norma": "lc-214-2025",
@@ -2905,8 +2908,7 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art3": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art380",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art381",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art381"
     ],
     "dispositivo": "art. 3",
     "norma": "lc-214-2025",
@@ -2916,9 +2918,7 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art30": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 30",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -3019,8 +3019,7 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art27",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art433",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art47",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art48",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art48"
     ],
     "dispositivo": "art. 31",
     "norma": "lc-214-2025",
@@ -3134,7 +3133,6 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art33",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art36",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-D",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art61"
     ],
     "dispositivo": "art. 32",
@@ -3250,7 +3248,12 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-G": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art74",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art75",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art76",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art79"
+    ],
     "dispositivo": "art. 323-G",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -3346,7 +3349,9 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art325": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
     "dispositivo": "art. 325",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -3357,7 +3362,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art326": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art327"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art327",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4"
     ],
     "dispositivo": "art. 326",
     "norma": "lc-214-2025",
@@ -3399,7 +3405,7 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art33": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art31",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 33",
     "norma": "lc-214-2025",
@@ -3412,7 +3418,9 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art330": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art66"
+    ],
     "dispositivo": "art. 330",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -3429,7 +3437,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art332": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art59"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art59",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art64"
     ],
     "dispositivo": "art. 332",
     "norma": "lc-214-2025",
@@ -3499,9 +3508,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art34": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 34",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -3717,7 +3724,8 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art350",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art353",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art368",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art369"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art369",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
     ],
     "dispositivo": "art. 349",
     "norma": "lc-214-2025",
@@ -3741,7 +3749,8 @@
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art349",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art367",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art370"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art370",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 350",
     "norma": "lc-214-2025",
@@ -3864,8 +3873,7 @@
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art218-A",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art27",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art48",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art48"
     ],
     "dispositivo": "art. 36",
     "norma": "lc-214-2025",
@@ -4087,7 +4095,8 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art378": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art379",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art380"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art380",
+      "urn:lex:br:federal:lei.complementar:2026-08-27;235!art5"
     ],
     "dispositivo": "art. 378",
     "norma": "lc-214-2025",
@@ -4106,9 +4115,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art38": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 38",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -4188,7 +4195,9 @@
     ],
     "dispositivo": "art. 384",
     "norma": "lc-214-2025",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12"
+    ],
     "remete_a_externo": [
       "Emenda Constitucional nº 132",
       "Lei Complementar nº 227",
@@ -4200,7 +4209,8 @@
     "dispositivo": "art. 385",
     "norma": "lc-214-2025",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art384"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art384",
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12"
     ],
     "remete_a_externo": [
       "Lei nº 5.172",
@@ -4314,6 +4324,7 @@
     "remete_a": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art395_par1",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art384",
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art395"
     ],
     "remete_a_externo": [
@@ -4401,8 +4412,7 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art4": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art412",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art485",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art485"
     ],
     "dispositivo": "art. 4",
     "norma": "lc-214-2025",
@@ -4413,8 +4423,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art40": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art39",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art39"
     ],
     "dispositivo": "art. 40",
     "norma": "lc-214-2025",
@@ -4461,6 +4470,8 @@
     "dispositivo": "art. 404",
     "norma": "lc-214-2025",
     "remete_a": [
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12_par1",
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art9"
     ],
     "remete_a_externo": [
@@ -4473,6 +4484,7 @@
     "dispositivo": "art. 405",
     "norma": "lc-214-2025",
     "remete_a": [
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art392"
     ],
     "remete_a_externo": [
@@ -4533,9 +4545,7 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art166",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art39",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art47",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art47"
     ],
     "dispositivo": "art. 41",
     "norma": "lc-214-2025",
@@ -4580,7 +4590,10 @@
     ],
     "dispositivo": "art. 413",
     "norma": "lc-214-2025",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9_par1",
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art9"
+    ],
     "remete_a_externo": [
       "Emenda Constitucional nº 132"
     ]
@@ -4648,9 +4661,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art42": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 42",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -4932,7 +4943,8 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art444": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art452",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art456"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art456",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108"
     ],
     "dispositivo": "art. 444",
     "norma": "lc-214-2025",
@@ -5309,7 +5321,6 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art466",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art467",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art48",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art78",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art79"
@@ -5366,7 +5377,9 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
+    ],
     "dispositivo": "art. 471-C",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -5471,7 +5484,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art475": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art476"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art476",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art2"
     ],
     "dispositivo": "art. 475",
     "norma": "lc-214-2025",
@@ -5547,7 +5561,9 @@
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art481": {
     "citado_por": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art482-A",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art483"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art483",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art180",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 481",
     "norma": "lc-214-2025",
@@ -5559,7 +5575,9 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art482": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
+    ],
     "dispositivo": "art. 482",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -5584,7 +5602,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art483": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art484"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art484",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182"
     ],
     "dispositivo": "art. 483",
     "norma": "lc-214-2025",
@@ -5598,7 +5617,9 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art484": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art483"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art483",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art42",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52"
     ],
     "dispositivo": "art. 484",
     "norma": "lc-214-2025",
@@ -5689,7 +5710,6 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art49": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art79"
     ],
     "dispositivo": "art. 49",
@@ -5796,7 +5816,6 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art232",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art416",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art6"
     ],
     "dispositivo": "art. 5",
@@ -5919,7 +5938,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art51": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106"
     ],
     "dispositivo": "art. 51",
     "norma": "lc-214-2025",
@@ -5994,7 +6013,9 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art517": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
+    ],
     "dispositivo": "art. 517",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -6036,9 +6057,7 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art52": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 52",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -6246,7 +6265,6 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art54": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art55"
     ],
     "dispositivo": "art. 54",
@@ -6273,86 +6291,12 @@
     ]
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542": {
-    "citado_por": [],
+    "citado_por": [
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
+    ],
     "dispositivo": "art. 542",
     "norma": "lc-214-2025",
-    "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art14_par2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art110_par4",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art23_par4",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art18-A_par3",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art4_par2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10_par1",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art1_par2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art12_par1",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art30_par8",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art30_par2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art41_par7",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art69_par2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art23_incI",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art6_incII",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art1",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art9",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art66",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art2",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art3",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art5",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art8",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art12",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art4",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art20",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art23",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art42",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art81",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art14",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art7",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art32",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art47",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art25",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art31",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art49",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art52",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art55",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art57",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art91",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art22",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art27",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art34",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art36",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art40",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art13",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art17",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art30",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art16",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art28",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art41",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art62",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art109",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art110",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art18-A",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art19",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art18",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art38",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art21",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art6",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art24",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art33",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art12-A",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art54",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art16-A",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art51",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art47-A",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art76",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art56",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art69",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art97",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art147",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art153"
-    ],
+    "remete_a": [],
     "remete_a_externo": [
       "Lei Complementar nº 7",
       "Lei Complementar nº 17",
@@ -6431,24 +6375,7 @@
     "citado_por": [],
     "dispositivo": "art. 543",
     "norma": "lc-214-2025",
-    "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art18-A_par3",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art23_par5",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art41_par5",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art65_par4",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art1",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art14",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art13",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art18",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art18-A",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art21",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art21-B",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art22",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art23",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art41",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art65"
-    ],
+    "remete_a": [],
     "remete_a_externo": [
       "lei nº 406",
       "Lei Complementar nº 24",
@@ -6476,8 +6403,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art55": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art272",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art272"
     ],
     "dispositivo": "art. 55",
     "norma": "lc-214-2025",
@@ -6487,9 +6413,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art56": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 56",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -6506,7 +6430,7 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art461",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art47",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art5",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 57",
     "norma": "lc-214-2025",
@@ -6546,8 +6470,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art6": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art490",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art490"
     ],
     "dispositivo": "art. 6",
     "norma": "lc-214-2025",
@@ -6588,9 +6511,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art62": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 62",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -6608,7 +6529,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 64",
     "norma": "lc-214-2025",
@@ -6628,8 +6549,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art65": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art434",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art543"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art434"
     ],
     "dispositivo": "art. 65",
     "norma": "lc-214-2025",
@@ -6640,8 +6560,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art66": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art434",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art434"
     ],
     "dispositivo": "art. 66",
     "norma": "lc-214-2025",
@@ -6671,7 +6590,6 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art69": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64"
     ],
     "dispositivo": "art. 69",
@@ -6684,7 +6602,6 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art7": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art7-A"
     ],
     "dispositivo": "art. 7",
@@ -6764,9 +6681,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art76": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 76",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -6808,7 +6723,6 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art8": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art79"
     ],
     "dispositivo": "art. 8",
@@ -6818,7 +6732,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art80": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art81-A"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art81-A",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181"
     ],
     "dispositivo": "art. 80",
     "norma": "lc-214-2025",
@@ -6834,7 +6749,6 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art81": {
     "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art81-A"
     ],
     "dispositivo": "art. 81",
@@ -6946,8 +6860,7 @@
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art156",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art24",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art404",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art51",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art51"
     ],
     "dispositivo": "art. 9",
     "norma": "lc-214-2025",
@@ -6967,9 +6880,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art91": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 91",
     "norma": "lc-214-2025",
     "remete_a": [],
@@ -7025,9 +6936,7 @@
     "remete_a_externo": []
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art97": {
-    "citado_por": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
-    ],
+    "citado_por": [],
     "dispositivo": "art. 97",
     "norma": "lc-214-2025",
     "remete_a": [
@@ -7163,7 +7072,9 @@
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112_par2",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art113",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art108",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art51",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art112"
     ],
     "remete_a_externo": [
@@ -7199,7 +7110,15 @@
     "dispositivo": "art. 108",
     "norma": "lc-227-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art29_par2",
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art107",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art29",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art164",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art169",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art170",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art171",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art271",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art444"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -7992,7 +7911,9 @@
     "citado_por": [],
     "dispositivo": "art. 179",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art172"
+    ],
     "remete_a_externo": [
       "Lei Complementar nº 214",
       "Lei Complementar nº 101"
@@ -8009,7 +7930,9 @@
     "citado_por": [],
     "dispositivo": "art. 180",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art481"
+    ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
     ]
@@ -8018,7 +7941,31 @@
     "citado_por": [],
     "dispositivo": "art. 181",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11_par8",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26_par7",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art33_par5",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64_par7",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art149_par3",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art350_par3",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542_incXXXVI",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art517",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art22",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art26",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art33",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art57",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art80",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art149",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art201",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art217",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art233",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art350",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art481",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art482",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art542"
+    ],
     "remete_a_externo": [
       "Lei nº 5.172",
       "Lei nº 10.833",
@@ -8031,6 +7978,8 @@
     "dispositivo": "art. 182",
     "norma": "lc-227-2026",
     "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art483_par1",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art483",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art52"
     ],
     "remete_a_externo": [
@@ -8054,9 +8003,14 @@
     "dispositivo": "art. 2",
     "norma": "lc-227-2026",
     "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art349_par3",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art5_par3",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art325",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art475",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art349",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art137",
-      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art5"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art5",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art471-C"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214",
@@ -8178,7 +8132,10 @@
     ],
     "dispositivo": "art. 33",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art20_par2",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art20"
+    ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
     ]
@@ -8238,7 +8195,9 @@
     ],
     "dispositivo": "art. 4",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art326"
+    ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
     ]
@@ -8265,7 +8224,9 @@
     "citado_por": [],
     "dispositivo": "art. 42",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art484"
+    ],
     "remete_a_externo": [
       "Lei Complementar nº 101",
       "Lei Complementar nº 214"
@@ -8376,8 +8337,10 @@
     "dispositivo": "art. 52",
     "norma": "lc-227-2026",
     "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art484",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art47",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art51",
+      "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art14",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art41"
     ],
     "remete_a_externo": [
@@ -8486,7 +8449,8 @@
     "norma": "lc-227-2026",
     "remete_a": [
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art62_par4",
-      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art62"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art62",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art332"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -8503,7 +8467,9 @@
     "citado_por": [],
     "dispositivo": "art. 66",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art330"
+    ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
     ]
@@ -8577,7 +8543,8 @@
     "norma": "lc-227-2026",
     "remete_a": [
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81_par1",
-      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art81",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-G"
     ],
     "remete_a_externo": [
       "Lei nº 13.105",
@@ -8588,7 +8555,9 @@
     "citado_por": [],
     "dispositivo": "art. 75",
     "norma": "lc-227-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-G"
+    ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
     ]
@@ -8601,6 +8570,7 @@
     "dispositivo": "art. 76",
     "norma": "lc-227-2026",
     "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-G",
       "urn:lex:br:federal:lei.complementar:2026-01-13;227!art79"
     ],
     "remete_a_externo": [
@@ -8632,7 +8602,8 @@
     "dispositivo": "art. 79",
     "norma": "lc-227-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art76"
+      "urn:lex:br:federal:lei.complementar:2026-01-13;227!art76",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art323-G"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -8928,7 +8899,10 @@
     "citado_por": [],
     "dispositivo": "art. 5",
     "norma": "lc-235-2026",
-    "remete_a": [],
+    "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art378_incIII",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art378"
+    ],
     "remete_a_externo": [
       "Lei nº 10.637",
       "Lei nº 10.833",

@@ -122,7 +122,12 @@ fonte:                            # (*)
 ingerido_em: "2026-08-11"         # (*) tempo de conhecimento (bitemporal)
 
 # --- relações ---
-remete_a: ["urn:...!art9", "urn:...!art57_par2"]
+remete_a: ["urn:...!art9", "urn:...!art57_par2"]   # desta norma e de outra da base
+#   "art. 8º da Emenda Constitucional nº 132, de 20 de dezembro de 2023" resolve na
+#   EC 132 se ela está no catálogo (tipo e número) e a data dita é a dela; vale o
+#   PRIMEIRO qualificador depois da menção. Sob "os seguintes dispositivos da Lei
+#   nº ...:" (ou "IX - da Lei nº ...:"), os itens são daquela lei: resolvem nela se
+#   está na base, e nunca nesta.
 altera: []
 alterado_por:                     # anotação oficial ligada ao artigo que fez a alteração
   - anotacao: "(Incluído pela Lei Complementar nº 227, de 2026)"

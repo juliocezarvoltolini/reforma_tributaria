@@ -564,14 +564,81 @@ def exige_escopo_interno(fonte: dict) -> bool:
             or fonte.get("remissoes") == "so_escopo_afirmado")
 
 
+# Norma nomeada: "da Emenda Constitucional nº 132, de 20 de dezembro de 2023". O
+# tipo e o número dizem qual; a data, quando dita, tem de ser a da norma.
+_NORMA = (r"d[ao]s?\s+(Lei\s+Complementar|Emenda\s+Constitucional|Lei|Decreto|"
+          r"Medida\s+Provis[óo]ria)\s+n[ºo°.]*\s*(\d[\d.]*(?:-\d+)?)"
+          r"(?:,\s*de\s+(?:(\d{1,2})\s*[ºo°]?\s+de\s+([a-zçã]+)\s+de\s+)?(\d{4}))?")
+RE_NORMA_NOMEADA = re.compile(_NORMA, re.IGNORECASE)
+# Cabeçalho de enumeração: "IX - os seguintes dispositivos da Lei nº 9.715, de 25 de
+# novembro de 1998:", ou só "XXXIII - da Lei nº 11.116, de 18 de maio de 2005:".
+# Os itens abaixo dele são daquela lei, não desta.
+RE_CABECALHO_DE_ENUMERACAO = re.compile(
+    r"(?:\bos\s+seguintes\s+dispositivos\s+|^\s*(?:[IVXLC]+\s*[-–]\s*|[a-z]\)\s*)?)"
+    + _NORMA + r"[^:]*:\s*$", re.IGNORECASE)
+RE_ITEM_NUMERADO = re.compile(r"^\d+\.\s")
+
+
+def _chave_da_norma(m: re.Match, grupo: int = 1) -> tuple[tuple[str, str], str | None, str | None]:
+    """((tipo, número), data ISO se dita, ano se dito) de uma norma nomeada."""
+    nome, numero, dia, mes, ano = m.group(grupo, grupo + 1, grupo + 2, grupo + 3, grupo + 4)
+    tipo = _sem_acento(re.sub(r"\s+", " ", nome)).lower().replace(" ", ".")
+    data = _iso(dia, mes, ano) if dia and mes and ano else None
+    return (tipo, numero.replace(".", "")), data, ano
+
+
+def _base_da_norma(nomeada, normas: dict | None) -> str | None:
+    """URN da norma nomeada, se está na base e a data dita confere."""
+    chave, data, ano = nomeada
+    if not normas or chave not in normas:
+        return None
+    base, data_da_norma = normas[chave]
+    if (data and data != data_da_norma) or (ano and not data_da_norma.startswith(ano)):
+        return None
+    return base
+
+
+def _nivel_da_linha(linha: str) -> int | None:
+    """0 caput ou parágrafo; 1 inciso; 2 alínea; 3 item; None continuação."""
+    if RE_ARTIGO.match(linha) or RE_PARAGRAFO.match(linha) or RE_PAR_UNICO.match(linha):
+        return 0
+    if RE_INCISO.match(linha):
+        return 1
+    if RE_ALINEA.match(linha):
+        return 2
+    if RE_ITEM_NUMERADO.match(linha):
+        return 3
+    return None
+
+
+def _blocos_de_enumeracao(texto: str) -> list[tuple[int, int, tuple]]:
+    """(início, fim, norma nomeada) do trecho subordinado a cada cabeçalho
+    'os seguintes dispositivos da <norma>:' — até a próxima linha de mesmo nível
+    ou acima."""
+    blocos, aberto, inicio = [], None, 0
+    for linha in texto.split("\n"):
+        fim = inicio + len(linha)
+        nivel = _nivel_da_linha(linha.strip())
+        if aberto and nivel is not None and nivel <= aberto[0]:
+            blocos.append((aberto[1], inicio, aberto[2]))
+            aberto = None
+        if (m := RE_CABECALHO_DE_ENUMERACAO.search(linha)) and nivel is not None:
+            aberto = (nivel, fim, _chave_da_norma(m))
+        inicio = fim + 1
+    if aberto:
+        blocos.append((aberto[1], len(texto), aberto[2]))
+    return blocos
+
+
 def extrair_remissoes(
     texto: str,
     urn_base: str,
     artigo_atual: str,
     exigir_escopo_interno: bool = False,
+    normas: dict | None = None,
 ) -> list[str]:
-    """Remissões INTERNAS resolvidas em URN. É o índice de maior retorno: um
-    artigo lido isoladamente frequentemente diz o oposto do aplicável.
+    """Remissões resolvidas em URN. É o índice de maior retorno: um artigo lido
+    isoladamente frequentemente diz o oposto do aplicável.
 
     Recebe apenas o texto próprio do artigo — nunca o texto citado de outra
     norma que ele altere, cujas remissões pertencem àquela norma.
@@ -579,26 +646,51 @@ def extrair_remissoes(
     Com `exigir_escopo_interno`, só resolve a remissão que afirma "desta Emenda"
     e semelhantes; a sem qualificador fica sem ponteiro. Ponteiro ausente falha
     seguro; ponteiro errado leva ao dispositivo equivocado.
+
+    `normas`: {(tipo, número): (URN, data do ato)} das normas da base. A remissão
+    que nomeia uma delas ("art. 8º da Emenda Constitucional nº 132") resolve na
+    norma nomeada, se a data dita for a dela. Na enumeração sob "os seguintes
+    dispositivos da <norma>:", os itens são daquela norma: resolvem nela se está
+    na base; senão, não resolvem — nunca nesta.
     """
     achados: list[str] = []
     consumido = texto
+    blocos = _blocos_de_enumeracao(texto)
 
     for tipo, regex in RE_REMISSOES:
         for m in regex.finditer(consumido):
-            if remissao_externa(consumido, m.end()):
+            bloco = next((b[2] for b in blocos if b[0] <= m.start() < b[1]), None)
+            if escopo_interno_afirmado(consumido, m.end()):
+                base = urn_base
+            elif remissao_externa(consumido, m.end()):
+                # A norma é a do PRIMEIRO qualificador ("art. 5º da Constituição e da
+                # Lei Complementar nº 214": o art. 5º é da Constituição). O trecho não
+                # corta no ponto, que "nº 9.430" tem.
+                trecho = re.split(r"[;:\n]|\bart", consumido[m.end():m.end() + 120], maxsplit=1,
+                                  flags=re.IGNORECASE)[0]
+                qualificador = RE_ESCOPO_EXTERNO.search(trecho)
+                nomeada = RE_NORMA_NOMEADA.match(trecho, qualificador.start()) if qualificador else None
+                base = _base_da_norma(_chave_da_norma(nomeada), normas) if nomeada else None
+                if base is None:
+                    continue
+            elif bloco is not None:
+                base = _base_da_norma(bloco, normas)
+                if base is None:
+                    continue
+            elif exigir_escopo_interno:
                 continue
-            if exigir_escopo_interno and not escopo_interno_afirmado(consumido, m.end()):
-                continue
+            else:
+                base = urn_base
             if tipo == "par":
                 alvo = urn_dispositivo(
-                    urn_base, normalizar_artigo(m.group(2), m.group(3)), paragrafo=m.group(1)
+                    base, normalizar_artigo(m.group(2), m.group(3)), paragrafo=m.group(1)
                 )
             elif tipo == "inc":
                 alvo = urn_dispositivo(
-                    urn_base, normalizar_artigo(m.group(2), m.group(3)), inciso=m.group(1)
+                    base, normalizar_artigo(m.group(2), m.group(3)), inciso=m.group(1)
                 )
             else:
-                alvo = urn_dispositivo(urn_base, normalizar_artigo(m.group(1), m.group(2)))
+                alvo = urn_dispositivo(base, normalizar_artigo(m.group(1), m.group(2)))
             if alvo not in achados:
                 achados.append(alvo)
 
@@ -1076,7 +1168,7 @@ def publicacao_de(refs: dict, dou: dict | None = None,
 
 def montar_meta(
     artigo: dict, fonte: dict, registro: dict, base: str, publicacao: dict,
-    exigir_escopo: bool, mapa_links: dict[str, str] | None = None,
+    exigir_escopo: bool, mapa_links: dict[str, str] | None = None, normas: dict | None = None,
 ) -> tuple[dict, str]:
     """(front-matter, corpo) de um artigo, ainda sem revisão temporal."""
     # Corpo do arquivo: tudo que o portal mostra, o riscado entre ~~ ~~.
@@ -1121,7 +1213,7 @@ def montar_meta(
         },
         "ingerido_em": hoje(),
         # Artigos e anexos desta norma ("Anexo I desta Lei Complementar").
-        "remete_a": (extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo)
+        "remete_a": (extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo, normas)
                      + extrair_remissoes_a_anexos(corpo_proprio, base, exigir_escopo)),
         "remete_a_externo": extrair_externas(vigente),
         # Subdivisões do próprio artigo; as do texto citado pertencem à
@@ -1254,7 +1346,10 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     exigir_escopo = exige_escopo_interno(fonte)
     catalogo = yaml.safe_load(CATALOGO.read_text(encoding="utf-8"))
     mapa_links = mapa_de_links(catalogo)
-    gerados = [montar_meta(a, fonte, registro, base, publicacao, exigir_escopo, mapa_links)
+    # Normas da base, para resolver a remissão que nomeia uma delas.
+    normas = {(f["tipo"], str(f["numero"])): (urn_norma(f["autoridade"], f["data"], f["numero"]), f["data"])
+              for f in catalogo.get("fontes") or []}
+    gerados = [montar_meta(a, fonte, registro, base, publicacao, exigir_escopo, mapa_links, normas)
                for a in artigos]
     gerados_anexos = [montar_meta_anexo(a, fonte, registro, base, publicacao, exigir_escopo,
                                         mapa_links) for a in anexos_lidos]

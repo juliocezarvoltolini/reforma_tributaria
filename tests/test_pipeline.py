@@ -3758,6 +3758,31 @@ def validar_ia_no_dispositivo():
            "decisão de regra: não passa por aqui")
 
 
+@cenario("normas/ reais: remissões entre normas (pulado se ausentes)")
+def remissoes_entre_normas_reais():
+    """Contrato com os compilados (lidos nos HTML): LC 214, art. 125, cita o "art. 8º
+    da Emenda Constitucional nº 132"; o art. 542 revoga dispositivos de OUTRAS leis
+    em listas "os seguintes dispositivos da Lei nº ..."; LC 227, art. 181, V, revoga
+    "os seguintes dispositivos da Lei Complementar nº 214", entre eles "o art. 217"."""
+    pastas = [RAIZ / "normas" / s for s in ("emc-132-2023", "lc-214-2025", "lc-227-2026")]
+    if not all(p.exists() for p in pastas):
+        print("  pulado: normas ausentes")
+        return
+    from comum import ler_frontmatter
+
+    ec = urn_norma("br:federal:emenda.constitucional", "2023-12-20", "132")
+    lc214 = urn_norma("br:federal:lei.complementar", "2025-01-16", "214")
+    m125, _ = ler_frontmatter(pastas[1] / "art-0125.md")
+    m542, _ = ler_frontmatter(pastas[1] / "art-0542.md")
+    m181, _ = ler_frontmatter(pastas[2] / "art-0181.md")
+    checar(f"{ec}!art8" in m125["remete_a"], f"LC 214, art. 125 -> EC 132, art. 8º (obteve {m125['remete_a']})")
+    proprias = [u for u in m542["remete_a"] if u.startswith(lc214 + "!")]
+    checar(proprias == [], f"art. 542: nenhuma remissão à própria LC 214 tirada das listas de "
+                           f"outras leis (obteve {proprias[:5]})")
+    checar(f"{lc214}!art217" in m181["remete_a"],
+           f"LC 227, art. 181 -> LC 214, art. 217 (obteve {m181['remete_a'][:6]})")
+
+
 @cenario("normas/ reais: anexos da LC 214 (pulado se a LC 214 não está ingerida)")
 def anexos_reais():
     """Contrato com o compilado da LC 214 (lido no HTML): 23 anexos com âncora
@@ -3966,6 +3991,67 @@ def anexos_revogado():
                           {ato: (meta_ato, corpo_ato)}, ctx) is None,
            "revogador que não confirma, fora da base, provisório, sem a leitura da regra, ou "
            "anexo todo riscado sem anotação ligada: nada")
+
+
+@cenario("remissão a outra norma da base: nomeada, resolve na norma dela")
+def remissao_a_norma_nomeada():
+    """Quebra: deixar como texto ('Emenda Constitucional nº 999') a remissão que
+    nomeia uma norma que está na base — a consulta não a segue; resolver quando a
+    data dita não é a da norma (outro ato com o mesmo número); ou resolver norma
+    que não está na base."""
+    normas = {("emenda.constitucional", "999"): (URN_EC, "1900-01-01")}
+    ec = lambda *a, **k: urn_dispositivo(URN_EC, *a, **k)  # noqa: E731
+    r = lambda t, exigir=False: extrair_remissoes(t, URN_BASE, "1", exigir, normas)  # noqa: E731
+    checar(r("criada nos termos do art. 8º da Emenda Constitucional nº 999, de 1º de janeiro de 1900.")
+           == [ec("8")], "art. 8º da EC 999, com a data dela: o art. 8º da EC")
+    checar(r("o art. 8º da Emenda Constitucional nº 999, de 2 de janeiro de 1900.") == []
+           and r("o art. 8º da Emenda Constitucional nº 999, de 1901.") == [],
+           "data (ou ano) que não é a da norma da base: não resolve")
+    checar(r("o art. 8º da Emenda Constitucional nº 998.") == []
+           and r("o art. 3º da Lei nº 9.999, de 1900.") == [],
+           "norma fora da base: não resolve, como antes")
+    checar(r("nos termos do art. 8º da Emenda Constitucional nº 999.", exigir=True) == [ec("8")],
+           "a norma nomeada é escopo afirmado: resolve mesmo onde se exige")
+    checar(r("o art. 5º da Constituição Federal e da Emenda Constitucional nº 999.") == [],
+           "a norma do artigo é a do PRIMEIRO qualificador (a Constituição), não a nomeada depois")
+    par = r("calculadas nos termos do inciso II do § 1º do art. 10 da Emenda Constitucional nº 999.")
+    checar(par == [ec("10", paragrafo="1"), ec("10")], f"§ do artigo da outra norma (obteve {par})")
+
+
+@cenario("remissão: enumeração sob 'os seguintes dispositivos da Lei X:' é da Lei X")
+def remissao_em_enumeracao():
+    """Quebra: ler como DESTA lei os artigos que a lista de revogação enumera sob
+    'os seguintes dispositivos da Lei nº ...:' (LC 214, art. 542: 'a) o art. 1º'
+    sob a LC 70 apontava para o art. 1º da LC 214 — ponteiro errado que a
+    validação não vê, porque o alvo existe)."""
+    normas = {("emenda.constitucional", "999"): (URN_EC, "1900-01-01")}
+    texto = ("Art. 9º Ficam revogados:\n\n"
+             "I - os seguintes dispositivos da Lei nº 5.555, de 1º de janeiro de 1890:\n\n"
+             "a) o art. 2º;\n\n"
+             "b) o § 1º do art. 3º; e\n\n"
+             "c) o art. 87-B, na redação dada pelo art. 517 da Emenda Constitucional nº 999;\n\n"
+             "II - os seguintes dispositivos da Emenda Constitucional nº 999, de 1º de janeiro de 1900:\n\n"
+             "a) do art. 4º:\n\n"
+             "1. o inciso I do caput; e\n\n"
+             "III - o art. 5º, sem qualificador.")
+    rem = extrair_remissoes(texto, URN_BASE, "9", False, normas)
+    esperado = {urn_dispositivo(URN_EC, "517"), urn_dispositivo(URN_EC, "4"), urn_dispositivo(URN_BASE, "5")}
+    checar(set(rem) == esperado and len(rem) == 3,
+           f"sob a Lei 5.555 (fora da base): nada; o art. 517 nomeado; sob a EC 999: o art. 4º "
+           f"dela; depois do bloco, o art. 5º desta (obteve {rem})")
+    sem_normas = extrair_remissoes(texto, URN_BASE, "9", False)
+    checar(sem_normas == [urn_dispositivo(URN_BASE, "5")],
+           f"sem normas da base informadas: só o art. 5º desta (obteve {sem_normas})")
+    exigido = extrair_remissoes(texto, URN_BASE, "9", True, normas)
+    checar(urn_dispositivo(URN_EC, "4") in exigido and urn_dispositivo(URN_BASE, "5") not in exigido,
+           "o cabeçalho afirma o escopo: resolve mesmo onde se exige; o art. 5º sem qualificador, não")
+    solto = ("Art. 9º Texto:\n\nda Lei nº 5.557, de 1890:\n\nI - o art. 7º.")
+    checar(extrair_remissoes(solto, URN_BASE, "9", False, normas) == [urn_dispositivo(URN_BASE, "7")],
+           "linha sem rótulo com cara de cabeçalho não abre enumeração (o nível dela é incerto)")
+    curto = ("Art. 9º Ficam revogados:\n\nIV - da Lei nº 5.556, de 18 de maio de 1890:\n\n"
+             "a) arts. 3º a 9º; e\n\nb) o art. 16;\n\nV - o art. 6º desta Lei Complementar.")
+    checar(extrair_remissoes(curto, URN_BASE, "9", False, normas) == [urn_dispositivo(URN_BASE, "6")],
+           "cabeçalho curto 'IV - da Lei nº ...:' também abre a enumeração daquela lei")
 
 
 @cenario("portabilidade de saída")

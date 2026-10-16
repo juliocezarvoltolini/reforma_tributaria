@@ -259,11 +259,13 @@ escolhido. Estão aqui para serem revistas.
    portanto com sobreposição: 975 sem qualificador, 600 afirmadas internas, 211
    externas). A taxa de 1% de órfãs diz que o padrão acerta quase
    sempre, mas **não mede o ponteiro errado que por acaso existe** (ex.: `art. 16`
-   de outra lei resolvido para o `art. 16` da LC). As 10 órfãs restantes se
-   concentram nos arts. 26, 542 e 543, onde o qualificador ("os seguintes
-   dispositivos da Lei nº …") vem **antes** de uma enumeração. Aplicar a regra
-   literal à LC derrubaria a maioria das remissões; é decisão de precisão x
-   cobertura.
+   de outra lei resolvido para o `art. 16` da LC). Aplicar a regra literal à LC
+   derrubaria a maioria das remissões; é decisão de precisão x cobertura.
+   **Corrigido em 2026-10-16 o caso das enumerações:** sob "os seguintes
+   dispositivos da Lei nº …:" (e "IX - da Lei nº …:"), os itens são daquela lei.
+   Eram 91 ponteiros errados nos arts. 542 e 543 da LC 214 ("a) o art. 1º" sob a
+   LC 70 apontava para o art. 1º da LC 214), invisíveis à validação porque o alvo
+   existe. Órfãs: de 10 para 2 (art. 26).
 3. ~~**Anexos e assinatura ficam fora de `/normas/`.**~~ — resolvido em
    2026-10-16 para os anexos: os 23 anexos da LC 214 estão em
    `normas/lc-214-2025/anexo-NN.md` (modelo em `docs/MODELO-DADOS.md`). A
@@ -365,6 +367,15 @@ Esse aviso achou um erro de ontem: o art. 217 da LC 214, todo riscado com
 revogação gravada só no caput (`_par0`), e incisos e parágrafo apareciam em
 vigor. A decisão agora dá `vigencia_fim` ao artigo inteiro quando todo o texto
 está riscado (`texto_todo_riscado` na proposta).
+
+**Remissões entre normas da base (2026-10-16).** A remissão que nomeia uma
+norma do catálogo ("art. 8º da Emenda Constitucional nº 132, de 20 de dezembro
+de 2023"; "o art. 217" sob "os seguintes dispositivos da Lei Complementar nº
+214") resolve na URN dela, e entra em `remete_a` e no `citado_por` do índice: a
+consulta segue da LC 214 para a EC 132 e da LC 227 para a LC 214. 69 ligações
+novas. Vale o primeiro qualificador depois da menção, e a data dita tem de ser a
+da norma: "Emenda Constitucional nº 132, de 23 de dezembro de 2023" (LC 214, arts.
+392 e 395) fica sem ponteiro, de propósito.
 
 **Remissões das LCs a lei e ato federais futuros (2026-10-16).** Cinco lacunas
 em `/lacunas/`, "não localizado nas fontes indexadas", com o contexto literal de
