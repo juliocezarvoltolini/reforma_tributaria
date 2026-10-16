@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -98,10 +99,58 @@ def extensao_de(url: str, content_type: str) -> str:
     return "html"
 
 
-def registrar_deriva(chave: str, antigo: str, novo: str, url: str) -> Path:
-    """Grava um evento de deriva de texto oficial para revisão humana."""
+LIMITE_DIFERENCAS = 40  # linhas da comparação no evento; o resto, só contado
+
+# O portal do Planalto injeta, a cada requisição, um script anti-robô com token
+# novo (`<script id="f5_cspm">...</script>`): o hash do arquivo muda a cada
+# download sem que nada do texto mude (medido nas quatro normas em 2026-10-16).
+# A deriva é avaliada sem ele; o hash arquivado continua o dos bytes brutos.
+RE_SCRIPT_DO_PORTAL = re.compile(rb'<script id="f5_cspm">.*?</script>', re.DOTALL)
+
+
+def sem_ruido_do_portal(dados: bytes) -> bytes:
+    return RE_SCRIPT_DO_PORTAL.sub(b"", dados)
+
+
+def comparar_texto(antigo: bytes, novo: bytes, ext: str) -> str:
+    """Seção do evento com a comparação do TEXTO extraído (com o riscado marcado):
+    separa mudança de marcação (scripts, estilos, contadores do portal) de
+    mudança de texto."""
+    import difflib
+
+    if ext != "html":
+        return f"Comparação de texto não disponível para .{ext}: compare os arquivos.\n"
+    from fatiar import html_para_linhas
+
+    a = [linha.marcada for linha in html_para_linhas(antigo)]
+    b = [linha.marcada for linha in html_para_linhas(novo)]
+    diferencas = [d for d in difflib.unified_diff(a, b, lineterm="", n=0)
+                  if not d.startswith(("---", "+++", "@@"))]
+    if not diferencas:
+        return ("Texto extraído idêntico: a mudança é só de marcação (scripts, estilos, "
+                "comentários). Nenhum dispositivo muda.\n")
+    so_antigo = sum(d.startswith("-") for d in diferencas)
+    so_novo = sum(d.startswith("+") for d in diferencas)
+    mostradas = "\n".join(f"{d[0]} {d[1:]}" for d in diferencas[:LIMITE_DIFERENCAS])
+    resto = (f"\n... e mais {len(diferencas) - LIMITE_DIFERENCAS} linha(s)"
+             if len(diferencas) > LIMITE_DIFERENCAS else "")
+    return (f"Texto extraído (com o riscado marcado): {so_antigo} linha(s) só no arquivado, "
+            f"{so_novo} só no novo.\n\n```diff\n{mostradas}{resto}\n```\n")
+
+
+def registrar_deriva(chave: str, antigo: str, novo: str, url: str,
+                     quarentena: Path | None = None, comparacao: str = "") -> Path:
+    """Grava um evento de deriva de texto oficial para revisão humana, com o
+    original novo em quarentena e a comparação do texto."""
     DIR_EVENTOS.mkdir(parents=True, exist_ok=True)
     destino = DIR_EVENTOS / f"deriva-{chave.replace('/', '-')}-{hoje()}.md"
+    anexo = ""
+    if quarentena is not None:
+        anexo = (
+            "\n## Comparação\n\n"
+            f"Original novo em quarentena: `{quarentena.relative_to(DIR_FONTES.parent).as_posix()}` "
+            "(fora do git e do manifest).\n\n" + comparacao
+        )
     gravar_texto(
         destino,
         "---\n"
@@ -117,7 +166,7 @@ def registrar_deriva(chave: str, antigo: str, novo: str, url: str) -> Path:
         "Revisar o que mudou e por quê (consolidação editorial, alteração\n"
         "legislativa, correção de erro material) antes de homologar. Após a\n"
         "análise, reingerir com `--aceitar-deriva` e registrar a conclusão\n"
-        "aqui, alterando `status`.\n",
+        "aqui, alterando `status`.\n" + anexo,
     )
     return destino
 
@@ -139,8 +188,29 @@ def gravar(
     digest = sha256_bytes(dados)
     anterior = manifest["documentos"].get(chave)
 
+    if anterior and anterior["sha256"] == digest:
+        # Igual ao arquivado: nada muda — nem o acesso, que vai a todos os
+        # dispositivos da norma no fatiamento.
+        print(f"     inalterado desde {anterior.get('acesso')}  sha256={digest[:16]}...")
+        return 0
+    arquivado = DIR_FONTES.parent / anterior["arquivo"] if anterior else None
+    if (anterior and arquivado.exists()
+            and sem_ruido_do_portal(arquivado.read_bytes()) == sem_ruido_do_portal(dados)):
+        print(f"     inalterado desde {anterior.get('acesso')} (só o script anti-robô do portal "
+              "mudou)")
+        return 0
+
     if anterior and anterior["sha256"] != digest and not aceitar_deriva:
-        caminho_evento = registrar_deriva(chave, anterior["sha256"], digest, url)
+        # Os bytes novos ficam em quarentena, para se ver o que mudou.
+        ext = extensao_de(url, content_type)
+        quarentena = DIR_FONTES / "_quarentena" / f"{slug}-{entrada['tipo']}-{digest[:12]}.{ext}"
+        quarentena.parent.mkdir(parents=True, exist_ok=True)
+        quarentena.write_bytes(dados)
+        arquivado = DIR_FONTES.parent / anterior["arquivo"]
+        comparacao = (comparar_texto(arquivado.read_bytes(), dados, ext) if arquivado.exists()
+                      else "Arquivado ausente: comparação impossível.\n")
+        caminho_evento = registrar_deriva(chave, anterior["sha256"], digest, url, quarentena,
+                                          comparacao)
         print(
             f"     DERIVA DETECTADA em {chave}\n"
             f"     anterior: {anterior['sha256'][:16]}...\n"

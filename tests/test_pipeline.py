@@ -3124,6 +3124,66 @@ def baixar_extensao():
            "PDF e HTML como antes")
 
 
+@cenario("download: deriva guarda o original novo em quarentena e compara o texto")
+def baixar_deriva():
+    """Quebra: descartar os bytes novos ao detectar deriva (ninguém consegue ver o
+    que mudou); sobrescrever o arquivado; ou regravar o manifest — e mudar a data
+    de acesso de todos os dispositivos — quando o download é igual ao arquivado."""
+    import tempfile
+
+    import baixar as B
+
+    with tempfile.TemporaryDirectory() as tmp:
+        raiz = Path(tmp)
+        antes = (B.DIR_FONTES, B.DIR_EVENTOS)
+        B.DIR_FONTES, B.DIR_EVENTOS = raiz / "fontes", raiz / "eventos"
+        try:
+            velho = "<html><body><p>Art. 1º Texto antigo.</p><p>Art. 2º Igual.</p></body></html>".encode("cp1252")
+            manifest = {"documentos": {}}
+
+            def gravar(slug, dados):
+                fonte = {"id": slug, "slug": slug, "titulo": slug}
+                entrada = {"tipo": "texto_compilado", "url": f"https://x/{slug}.htm"}
+                return B.gravar(fonte, entrada, dados, manifest, False, "text/html", "download")
+
+            checar(gravar("lc-1", velho) == 0 and gravar("lc-2", velho) == 0, "primeira vez: grava")
+            manifest["documentos"]["lc-1/texto_compilado"]["acesso"] = "1900-01-01"
+            registro = dict(manifest["documentos"]["lc-1/texto_compilado"])
+            checar(gravar("lc-1", velho) == 0 and manifest["documentos"]["lc-1/texto_compilado"] == registro,
+                   "igual ao arquivado: manifest intacto (o acesso não muda)")
+
+            r = gravar("lc-1", velho.replace(b"antigo", b"novo"))
+            evento = next((raiz / "eventos").glob("deriva-lc-1-*.md")).read_text(encoding="utf-8")
+            quarentena = sorted((raiz / "fontes" / "_quarentena").glob("lc-1-*"))
+            checar(r == 1 and (raiz / "fontes" / "lc-1" / "texto_compilado.html").read_bytes() == velho,
+                   "deriva: o arquivado não muda")
+            checar(len(quarentena) == 1 and quarentena[0].read_bytes() == velho.replace(b"antigo", b"novo")
+                   and quarentena[0].name in evento,
+                   "o original novo fica em quarentena, citado no evento")
+            checar("- Art. 1º Texto antigo." in evento and "+ Art. 1º Texto novo." in evento
+                   and "Art. 2º Igual." not in evento,
+                   f"o evento mostra só as linhas de texto que mudaram (obteve {evento[-300:]!r})")
+
+            gravar("lc-2", velho.replace(b"<body>", b"<body><!-- contador 123 -->"))
+            evento2 = next((raiz / "eventos").glob("deriva-lc-2-*.md")).read_text(encoding="utf-8")
+            checar("Texto extraído idêntico" in evento2,
+                   "mudança só de marcação: o evento diz que o texto extraído é idêntico")
+
+            # O portal injeta a cada requisição um script anti-robô com token novo
+            # (medido nas quatro normas em 2026-10-16): não é deriva.
+            com_token = lambda t: velho.replace(  # noqa: E731
+                b"</html>", b'</html><script id="f5_cspm">(function(){var f5_cspm={f5_p:\'' + t + b"'}})()</script>")
+            gravar("lc-3", com_token(b"AAAA"))
+            manifest["documentos"]["lc-3/texto_compilado"]["acesso"] = "1900-01-01"
+            registro3 = dict(manifest["documentos"]["lc-3/texto_compilado"])
+            checar(gravar("lc-3", com_token(b"BBBB")) == 0
+                   and not list((raiz / "eventos").glob("deriva-lc-3-*.md"))
+                   and manifest["documentos"]["lc-3/texto_compilado"] == registro3,
+                   "só o token do script anti-robô mudou: inalterado, sem evento, manifest intacto")
+        finally:
+            B.DIR_FONTES, B.DIR_EVENTOS = antes
+
+
 @cenario("rodapé que cita retificação: pendência, não silêncio")
 def rodape_retificacao():
     """Rodapé medido na LC 227: 'Este texto não substitui o publicado no DOU de

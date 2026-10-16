@@ -42,14 +42,14 @@ fast-forward.
   gratuito e ilimitado, então não é cota nem plano. Verificar em
   Settings → Actions → General. Enquanto isso, o hook de pre-commit cobre a
   verificação (`git config core.hooksPath .githooks`).
-- **Deriva do HTML do Planalto, não revisada.** O `baixar.py` detectou que o
-  portal serviu, num segundo download, um HTML diferente do arquivado (EC 132:
-  arquivado `f8d721…`, visto depois `cb2740…`; a LC 214 também). Os eventos
-  estão em `eventos/` **no checkout principal, ainda não commitados**. Tudo
-  neste documento foi medido sobre o arquivo registrado no manifest. Se o texto
-  novo for homologado (`--aceitar-deriva`), refaça `fatiar.py --todas
-  --relatorio` e compare com os números do §5: a marcação pode ter mudado.
-
+- ~~**Deriva do HTML do Planalto, não revisada.**~~ — encerrada em 2026-10-16.
+  Os compilados das quatro normas, baixados de novo, só diferem do arquivado no
+  script anti-robô que o portal injeta a cada requisição (`<script
+  id="f5_cspm">`, token novo a cada download): sem ele, idênticos byte a byte.
+  A base está atual. O `baixar.py` agora compara sem esse script, guarda os bytes
+  novos em quarentena (`fontes/_quarentena/`, fora do git) quando há deriva de
+  verdade, e escreve no evento a comparação do texto extraído. Os seis eventos
+  estão em `eventos/`, encerrados com a conclusão.
 ---
 
 ## 3. O que funciona

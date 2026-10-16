@@ -3,3 +3,6 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+
+# Originais novos retidos por deriva (pipeline/baixar.py): evidência local, fora do manifest
+fontes/_quarentena/
