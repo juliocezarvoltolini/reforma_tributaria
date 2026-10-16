@@ -3,7 +3,7 @@ camada: 2
 tipo: lacuna
 titulo: EC 132, art. 6º, II e III — entrega dos recursos do Imposto Seletivo (art. 159, I e II, da Constituição)
 autor: ia:claude-opus-5-5
-data: '2026-10-15'
+data: '2026-10-16'
 situacao: nao_localizado
 remissoes:
 - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art6_incII
@@ -43,4 +43,5 @@ condições dessa entrega. A LC 214/2025, art. 477, trata de outra coisa: a
 **compensação** pela União de eventual redução dos valores entregues
 (`urn:lex:br:federal:lei.complementar:2025-01-16;214!art477` — literal; ver o registro do art. 7º da EC).
 
-Busca por IA (claude-opus-5-5) em 2026-10-15, sem revisão humana.
+Busca por IA (claude-opus-5-5) em 2026-10-15, refeita em 2026-10-16 com os anexos
+da LC 214 já na base, sem resultado; sem revisão humana.
