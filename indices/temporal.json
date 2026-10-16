@@ -794,7 +794,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo I",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -835,7 +835,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -843,7 +843,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo X",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -884,7 +884,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -892,7 +892,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XI",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -933,7 +933,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -941,7 +941,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -982,7 +982,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -990,7 +990,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XIII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1031,7 +1031,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1039,7 +1039,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XIV",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1080,15 +1080,15 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
-    "vigencia_fim": null,
+    "revisao_temporal_pendente": false,
+    "vigencia_fim": "2026-01-14",
     "vigencia_inicio": "2025-01-16"
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx15": {
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XV",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1129,7 +1129,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1137,7 +1137,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XVI",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1178,7 +1178,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1186,7 +1186,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XVII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1227,7 +1227,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1235,7 +1235,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XVIII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1276,7 +1276,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1284,7 +1284,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XIX",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1325,7 +1325,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1333,7 +1333,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo II",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1374,7 +1374,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1382,7 +1382,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XX",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1423,7 +1423,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1431,7 +1431,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XXI",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1472,7 +1472,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1480,7 +1480,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XXII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1521,7 +1521,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1529,7 +1529,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo XXIII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1570,7 +1570,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1578,7 +1578,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo III",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1619,7 +1619,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1627,7 +1627,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo IV",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1668,7 +1668,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1676,7 +1676,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo V",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1717,7 +1717,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1725,7 +1725,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo VI",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1766,7 +1766,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1774,7 +1774,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo VII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1815,7 +1815,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1823,7 +1823,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo VIII",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1864,7 +1864,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -1872,7 +1872,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "anexo IX",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -1913,7 +1913,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },

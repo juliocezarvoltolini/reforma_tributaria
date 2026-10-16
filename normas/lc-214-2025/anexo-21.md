@@ -41,9 +41,14 @@ publicacao:
     - XXIII
 vigencia_inicio: '2025-01-16'
 vigencia_fim: null
-efeitos_inicio: '2025-01-16'
+efeitos_inicio: '2027-01-01'
 efeitos_fim: null
-status: vigente
+fundamento_temporal:
+  vigencia:
+  - urn:lex:br:federal:lei.complementar:2025-01-16;214!art519
+  efeitos:
+  - urn:lex:br:federal:lei.complementar:2025-01-16;214!art519
+status: vigente_sem_efeitos
 fonte:
   url: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm
   tipo: texto_compilado
@@ -90,10 +95,15 @@ alterado_por:
   subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!anx21
   link: Lcp227.htm#art174
   ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-extracao: automatica
-revisao_temporal_pendente: true
-revisado_por: null
-revisado_em: null
+extracao: revisada
+eixos_revisados:
+- vigencia
+- efeitos
+revisao_temporal_pendente: false
+revisado_por: ia:claude-opus-5-5
+revisado_em: '2026-10-16'
+interpretacoes_ia:
+- anexo-segue-o-artigo-que-o-cita
 ---
 
 ANEXO XXI Produção de efeitos

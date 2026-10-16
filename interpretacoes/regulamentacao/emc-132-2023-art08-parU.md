@@ -43,6 +43,6 @@ ao Anexo I.
 
 ## Não coberto
 
-- As datas do Anexo I são provisórias: os anexos entraram na base em 2026-10-16
-  e ainda não têm revisão temporal.
+- As datas do Anexo I vêm de outra leitura de IA (`anexo-segue-o-artigo-que-o-cita`,
+  temporal/ia.yaml): as do art. 125. Ver o próprio anexo na consulta.
 - Proposta de IA (claude-opus-5-5), sem revisão humana. A ligação diz que o dispositivo regulador trata da matéria remetida; quando ele produz efeitos é dado do próprio dispositivo — `pipeline/consultar.py` mostra o estado na data de referência.

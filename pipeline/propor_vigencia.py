@@ -637,10 +637,12 @@ RE_RISCADO = re.compile(r"~~.*?~~")
 
 
 def texto_todo_riscado(corpo: list[str]) -> bool:
-    """Todo o texto do artigo está riscado no compilado, salvo as anotações?"""
+    """Todo o texto do dispositivo está riscado no compilado, salvo as anotações? O
+    " | " entre as células de um anexo é marcação da base, não texto."""
     if not any("~~" in linha for linha in corpo):
         return False
-    return not any(RE_ANOTACAO.sub("", RE_RISCADO.sub("", linha)).strip() for linha in corpo)
+    return not any(RE_ANOTACAO.sub("", RE_RISCADO.sub("", linha)).replace("|", "").strip()
+                   for linha in corpo)
 
 
 RE_VETADO = re.compile(r"\(\s*VETAD[OA]\s*\)", re.IGNORECASE)

@@ -117,6 +117,13 @@ front-matter. Travas:
 - decisão humana nunca é tocada, e a de regra continua sendo de regra;
 - a consulta mostra a decisão como "NÃO equivale a revisão humana", com os ids.
 
+**Anexos** (`trata: anexos`, `pipeline/temporal_anexos.py`): não passam pelas
+propostas. O `fatiar.py` decide cada anexo depois de aplicar as datas dos
+artigos: as da primeira menção a ele no texto próprio da lei, e o fim pelo
+revogador quando o anexo está todo riscado com "(Revogado pela ...)" conferido.
+Sem tudo decidido, o anexo fica provisório. O `validar.py` confere a
+interpretação de toda decisão de IA gravada em `normas/`, anexo ou artigo.
+
 ## Formas de cláusula reconhecidas
 
 | Forma | Exemplo real | O que os incisos dão |

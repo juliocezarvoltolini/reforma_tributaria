@@ -21,6 +21,9 @@ e o trecho literal) e o que ela resolve:
                       nos `dispositivos` listados, "entra em vigor"/"produz efeitos"
                       no próprio texto é conteúdo (refere-se a outra coisa), não
                       cláusula do tempo do dispositivo.
+  trata: anexos       o anexo vale e produz efeitos com a primeira menção a ele no
+                      texto próprio da lei (temporal_anexos.py); decidido em
+                      fatiar.py, depois das datas dos artigos.
 
 `revisar_por_regra.py` só usa a IA onde a regra não decidiu nada, e grava
 `revisado_por: ia:<modelo>` com `interpretacoes_ia: [ids]`. A revisão temporal
@@ -147,6 +150,8 @@ def contexto(interpretacoes: dict, slug: str, bases: dict[str, str]) -> dict:
             ctx["vetado"] = id_
         if interp.get("trata") == "efeitos_da_vigencia":
             ctx["efeitos_da_vigencia"] = id_
+        if interp.get("trata") == "anexos":
+            ctx["anexos"] = id_
         if interp.get("trata") == "mencao_temporal_e_conteudo":
             for urn in interp.get("dispositivos") or []:
                 ctx.setdefault("conteudo", {})[urn] = id_

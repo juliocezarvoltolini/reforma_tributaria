@@ -2159,12 +2159,14 @@ def ia_contexto():
         "r": {"id": "r", "regra": "texto-alterado-por-ato-posterior"},
         "v": {"id": "v", "trata": "vetado"},
         "e": {"id": "e", "trata": "efeitos_da_vigencia"},
-        "c": {"id": "c", "trata": "mencao_temporal_e_conteudo", "dispositivos": [urn_a + "!art3"]}}}
+        "c": {"id": "c", "trata": "mencao_temporal_e_conteudo", "dispositivos": [urn_a + "!art3"]},
+        "x": {"id": "x", "trata": "anexos"}}}
     ctx = IA.contexto(interps, "a", {urn_a: "a", urn_b: "b"})
     checar(ctx == {"modelo": "m", "resolve_pendencias": {"retificacao": "p"},
                    "regras": {"texto-alterado-por-ato-posterior": "r"},
                    "atos": {urn_b: {"republicacao_de_artigos": "q"}},
-                   "vetado": "v", "efeitos_da_vigencia": "e", "conteudo": {urn_a + "!art3": "c"}},
+                   "vetado": "v", "efeitos_da_vigencia": "e", "conteudo": {urn_a + "!art3": "c"},
+                   "anexos": "x"},
            f"cada tipo no lugar certo (obteve {ctx})")
     checar(IA.problemas_da_interpretacao(
         {"id": "c", "leitura": "l", "trata": "mencao_temporal_e_conteudo", "dispositivos": [],
@@ -3737,6 +3739,25 @@ def consulta_texto_riscado():
            "já revogado pelas datas na data consultada: sem aviso redundante")
 
 
+@cenario("validação: decisão de IA gravada no dispositivo só com interpretação válida")
+def validar_ia_no_dispositivo():
+    """Quebra: anexo (que não passa pelas propostas) com `revisado_por: ia:...`
+    citando interpretação que não está em temporal/ia.yaml, ou de outro modelo, e
+    a validação não acusar."""
+    import validar as V
+
+    interps = {"modelo": "m", "por_id": {"ok": {"id": "ok", "leitura": "l", "trata": "anexos",
+                                                "citacoes": [{"fonte": "normas/lc-214-2025/art-0001.md",
+                                                              "trecho": "Art. 1º"}]}}}
+    meta = {"revisado_por": "ia:m", "interpretacoes_ia": ["ok"]}
+    checar(V.problemas_de_ia_da_meta(meta, interps) == [], "interpretação registrada e citada: ok")
+    checar(V.problemas_de_ia_da_meta({**meta, "interpretacoes_ia": ["sumiu"]}, interps) != []
+           and V.problemas_de_ia_da_meta({**meta, "revisado_por": "ia:outro"}, interps) != [],
+           "id fora de temporal/ia.yaml, ou modelo diferente: problema")
+    checar(V.problemas_de_ia_da_meta({"revisado_por": "regra:clausula-literal/v1"}, interps) == [],
+           "decisão de regra: não passa por aqui")
+
+
 @cenario("normas/ reais: anexos da LC 214 (pulado se a LC 214 não está ingerida)")
 def anexos_reais():
     """Contrato com o compilado da LC 214 (lido no HTML): 23 anexos com âncora
@@ -3779,11 +3800,172 @@ def anexos_reais():
     linhas1 = [ln for ln in metas[1][1].splitlines() if ln.strip()]
     checar(linhas1[3].startswith("ITEM | ") and linhas1[4].startswith("1 | "),
            "Anexo I: cabeçalho da tabela e primeira linha, células separadas")
+    decididos = [n for n, (m, _) in metas.items()
+                 if m.get("extracao") == "revisada" and not m["revisao_temporal_pendente"]
+                 and m.get("revisado_por") == "ia:claude-opus-5-5"
+                 and "anexo-segue-o-artigo-que-o-cita" in (m.get("interpretacoes_ia") or [])]
+    checar(decididos == list(range(1, 24)),
+           f"todos os anexos decididos pela leitura de IA (obteve {decididos})")
+    datas = {n: (m["vigencia_inicio"], m["efeitos_inicio"], m.get("vigencia_fim"))
+             for n, (m, _) in metas.items()}
+    checar(datas[1] == ("2025-01-16", "2026-01-01", None)
+           and datas[18] == ("2025-01-16", "2027-01-01", None)
+           and datas[14] == ("2025-01-16", "2026-01-01", "2026-01-14"),
+           f"I: as datas do art. 125; XVIII: as do art. 519 (inciso III); XIV: revogado pela "
+           f"LC 227 (obteve I {datas.get(1)}, XVIII {datas.get(18)}, XIV {datas.get(14)})")
     m125, _ = ler_frontmatter(pasta / "art-0125.md")
     m520, _ = ler_frontmatter(pasta / "art-0520.md")
     checar(f"{base}!anx1" in m125["remete_a"]
            and f"{base}!anx23" in m520["remete_a"] and f"{base}!anx7" not in m520["remete_a"],
            "art. 125 -> Anexo I; art. 520 -> XXIII, não VII")
+
+
+# ---------------------------------------------------------------------------
+# Revisão temporal dos anexos (nível C, `trata: anexos`)
+# ---------------------------------------------------------------------------
+
+def _artigo_decidido(numero: str, corpo: str, vig: str, efe: str, **extra) -> tuple[dict, str]:
+    meta = {"urn": urn_dispositivo(URN_BASE, numero), "dispositivo": f"art. {numero}",
+            "norma": "Lei Complementar nº 999, de 1º de janeiro de 1900",
+            "vigencia_inicio": vig, "vigencia_fim": None, "efeitos_inicio": efe, "efeitos_fim": None,
+            "extracao": "revisada", "eixos_revisados": ["vigencia", "efeitos"],
+            "revisao_temporal_pendente": False, "revisado_por": "regra:clausula-literal/v1",
+            "revisado_em": "1900-03-01",
+            "fundamento_temporal": {"vigencia": [URN_BASE + "!art90"], "efeitos": [URN_BASE + "!art90_incII"]}}
+    meta.update(extra)
+    return meta, corpo
+
+
+def _artigos_que_citam_anexos() -> list[tuple[dict, str]]:
+    return [
+        _artigo_decidido("1", "\nArt. 1º Ficam reduzidas as alíquotas dos produtos do Anexo I desta Lei "
+                              "Complementar, e só as do Anexo I.\n", "1900-01-02", "1901-01-01"),
+        _artigo_decidido("2", "\n~~Art. 2º Antigo: produtos do Anexo II desta Lei Complementar.~~\n\n"
+                              "Art. 2º Novo: produtos do Anexo III desta Lei Complementar. "
+                              "(Redação dada pela Lei Complementar nº 998, de 1901)\n",
+                         "1900-01-02", "1901-01-01",
+                         excecoes_subdivisao=[{"urn": urn_dispositivo(URN_BASE, "2") + "_par0",
+                                               "vigencia_inicio": "1902-01-01",
+                                               "efeitos_inicio": "1902-01-01",
+                                               "fundamento": [URN_999 + "!art7"]}]),
+        _artigo_decidido("3", "\nArt. 3º A Lei nº 5, de 1900, passa a vigorar com:\n\n"
+                              "“Art. 9º Ver o Anexo I desta Lei.” (NR)\n", "1900-01-02", "1901-01-01"),
+        _artigo_decidido("4", "\nArt. 4º Regra geral.\n\n§ 1º Sem anexo.\n\n"
+                              "§ 2º Também os produtos do Anexo I desta Lei Complementar. "
+                              "(Incluído pela Lei Complementar nº 998, de 1901)\n\n"
+                              "Os do Anexo I, ainda no § 2º.\n",
+                         "1900-01-02", "1901-01-01",
+                         subdivisoes=[urn_dispositivo(URN_BASE, "4") + "_par1",
+                                      urn_dispositivo(URN_BASE, "4") + "_par2"],
+                         excecoes_subdivisao=[{"urn": urn_dispositivo(URN_BASE, "4") + "_par2",
+                                               "vigencia_inicio": "1902-01-01",
+                                               "efeitos_inicio": "1902-01-01",
+                                               "fundamento": [URN_999 + "!art7"]}]),
+    ]
+
+
+@cenario("anexos (tempo): menções no texto próprio, atual ou superado; o citado não conta")
+def anexos_mencoes():
+    """Quebra: contar menção do texto que a lei insere em OUTRA lei (é dela); perder
+    a menção da redação superada (riscada); ou não saber em que subdivisão está."""
+    import temporal_anexos as TA
+
+    artigos = _artigos_que_citam_anexos()
+    m = lambda n: [(x["artigo"]["urn"].split("!")[1], x["subdivisao"].split("!")[1], x["riscada"])  # noqa: E731
+                   for x in TA.mencoes(f"{URN_BASE}!anx{n}", artigos, URN_BASE, False)]
+    checar(m(1) == [("art1", "art1", False), ("art4", "art4_par2", False)],
+           f"Anexo I: arts. 1º e 4º, § 2º; não o do texto citado no art. 3º (obteve {m(1)})")
+    checar(m(2) == [("art2", "art2", True)] and m(3) == [("art2", "art2", False)],
+           f"Anexo II só na redação riscada; III na atual (obteve {m(2)}, {m(3)})")
+
+
+@cenario("anexos (tempo): a primeira menção dá as datas; tudo decidido, ou nada")
+def anexos_decisao():
+    """Quebra: datar o anexo por um artigo ainda provisório; ignorar a data própria
+    da subdivisão que o menciona; tomar a mais tardia (o anexo já vale com o
+    primeiro dispositivo que o usa); ou decidir sem a interpretação registrada."""
+    import copy
+
+    import temporal_anexos as TA
+
+    artigos = _artigos_que_citam_anexos()
+    ctx = {"modelo": "m", "anexos": "anx-id", "regras": {}, "atos": {}}
+    um = {"urn": f"{URN_BASE}!anx1", "alterado_por": []}
+    d = TA.decidir(um, "ANEXO I\n\nITEM | DESCRIÇÃO", artigos, URN_BASE, False, {}, ctx)
+    art1 = urn_dispositivo(URN_BASE, "1")
+    checar(d is not None and d["vigencia_inicio"] == "1900-01-02" and d["efeitos_inicio"] == "1901-01-01"
+           and d["vigencia_fim"] is None and d["revisado_por"] == "ia:m"
+           and d["interpretacoes_ia"] == ["anx-id"]
+           and d["fundamento_temporal"] == {"vigencia": [art1], "efeitos": [art1]}
+           and d["revisado_em"] == "1900-03-01",
+           f"Anexo I: as datas do art. 1º, não as do § 2º do art. 4º (obteve {d})")
+    tarde = TA.decidir(um, "ANEXO I", artigos, URN_BASE, False, {},
+                       {**ctx, "registrado_em": {"anx-id": "1900-04-01"}})
+    checar(tarde["revisado_em"] == "1900-04-01",
+           f"interpretação registrada depois das datas dos artigos: decidido nessa data "
+           f"(obteve {tarde['revisado_em']})")
+    tres = TA.decidir({"urn": f"{URN_BASE}!anx3", "alterado_por": []}, "ANEXO III", artigos, URN_BASE,
+                      False, {}, ctx)
+    checar(tres is not None and tres["vigencia_inicio"] == "1902-01-01",
+           f"Anexo III: só na redação nova do caput, com as datas da exceção _par0 (obteve {tres})")
+    pendente = copy.deepcopy(artigos)
+    pendente[0][0].update(revisao_temporal_pendente=True, eixos_revisados=["vigencia"])
+    checar(TA.decidir(um, "ANEXO I", pendente, URN_BASE, False, {}, ctx) is None,
+           "um artigo que o menciona com eixo provisório: nada")
+    ano = copy.deepcopy(artigos)
+    ano[0][0]["precisao"] = {"efeitos_inicio": "ano"}
+    checar(TA.decidir(um, "ANEXO I", ano, URN_BASE, False, {}, ctx) is None,
+           "data com precisão de ano: nada")
+    revogado = copy.deepcopy(artigos)
+    revogado[0][0]["vigencia_fim"] = "1905-01-01"
+    checar(TA.decidir(um, "ANEXO I", revogado, URN_BASE, False, {}, ctx) is None,
+           "artigo que o menciona já com fim de vigência: nada")
+    checar(TA.decidir(um, "ANEXO I", artigos, URN_BASE, False, {}, {**ctx, "anexos": None}) is None
+           and TA.decidir({"urn": f"{URN_BASE}!anx7", "alterado_por": []}, "ANEXO VII", artigos,
+                          URN_BASE, False, {}, ctx) is None,
+           "sem a interpretação registrada, ou anexo que ninguém menciona: nada")
+
+
+@cenario("anexos (tempo): anexo revogado tem fim de vigência pelo revogador conferido")
+def anexos_revogado():
+    """Quebra: um anexo todo riscado com '(Revogado pela ...)' ficar vigente; ou
+    receber o fim de um ato que não confirma a revogação, ou ainda sem datas."""
+    import temporal_anexos as TA
+
+    artigos = _artigos_que_citam_anexos()
+    ctx = {"modelo": "m", "anexos": "anx-id",
+           "regras": {"texto-alterado-por-ato-posterior": "alt-id"},
+           "atos": {URN_999: {"retificacao": "ret-id"}}}
+    ato = URN_999 + "!art9"
+    revogacao = {"anotacao": "(Revogado pela Lei Complementar nº 998, de 1901)",
+                 "subdivisao": f"{URN_BASE}!anx2", "link": "Lcp998.htm#art9", "ato": ato}
+    dois = {"urn": f"{URN_BASE}!anx2", "norma": "Lei Complementar nº 999, de 1º de janeiro de 1900",
+            "alterado_por": [revogacao]}
+    corpo = ("~~ANEXO II~~\n\n(Revogado pela Lei Complementar nº 998, de 1901)\n\n"
+             "~~ITEM~~ | ~~DESCRIÇÃO~~")
+    meta_ato = {"urn": ato, "vigencia_inicio": "1903-01-01", "efeitos_inicio": "1903-02-01",
+                "extracao": "revisada", "revisao_temporal_pendente": False, "revisado_em": "1903-03-01",
+                "fundamento_temporal": {"vigencia": [URN_999 + "!art10"],
+                                        "efeitos": [URN_999 + "!art10_incI"]}}
+    corpo_ato = ("Art. 9º Ficam revogados:\n\nI - da Lei Complementar nº 999, de 1º de janeiro de "
+                 "1900:\n\na) o Anexo II.")
+    d = TA.decidir(dois, corpo, artigos, URN_BASE, False, {ato: (meta_ato, corpo_ato)}, ctx)
+    checar(d is not None and d["vigencia_inicio"] == "1900-01-02" and d["vigencia_fim"] == "1903-02-01"
+           and ato in d["fundamento_temporal"]["vigencia"]
+           and d["interpretacoes_ia"] == ["alt-id", "anx-id", "ret-id"]
+           and d["revisado_em"] == "1903-03-01",
+           f"Anexo II: menção superada dá o início; o revogador, o fim (obteve {d})")
+    nao_confirma = ("Art. 9º Ficam revogados:\n\nI - da Lei Complementar nº 7, de 1901:\n\na) o Anexo II.")
+    checar(TA.decidir(dois, corpo, artigos, URN_BASE, False, {ato: (meta_ato, nao_confirma)}, ctx) is None
+           and TA.decidir(dois, corpo, artigos, URN_BASE, False, {}, ctx) is None
+           and TA.decidir(dois, corpo, artigos, URN_BASE, False,
+                          {ato: ({**meta_ato, "revisao_temporal_pendente": True}, corpo_ato)}, ctx) is None
+           and TA.decidir(dois, corpo, artigos, URN_BASE, False, {ato: (meta_ato, corpo_ato)},
+                          {**ctx, "regras": {}}) is None
+           and TA.decidir({**dois, "alterado_por": []}, corpo, artigos, URN_BASE, False,
+                          {ato: (meta_ato, corpo_ato)}, ctx) is None,
+           "revogador que não confirma, fora da base, provisório, sem a leitura da regra, ou "
+           "anexo todo riscado sem anotação ligada: nada")
 
 
 @cenario("portabilidade de saída")

@@ -42,6 +42,7 @@ import datetime as _dt
 from alteracoes import alteracoes_do_artigo, mapa_de_links  # noqa: E402
 from anexos import extrair_remissoes_a_anexos, fatiar_anexos, montar_meta_anexo  # noqa: E402
 from anexos import nome_arquivo as nome_arquivo_anexo  # noqa: E402
+from temporal_anexos import aplicar_aos_anexos  # noqa: E402
 from revisao_temporal import aplicar_revisao, carregar_revisoes, ordenar_meta
 
 CATALOGO = Path(__file__).resolve().parent / "fontes.yaml"
@@ -1251,7 +1252,8 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
 
     base = urn_norma(fonte["autoridade"], fonte["data"], fonte["numero"])
     exigir_escopo = exige_escopo_interno(fonte)
-    mapa_links = mapa_de_links(yaml.safe_load(CATALOGO.read_text(encoding="utf-8")))
+    catalogo = yaml.safe_load(CATALOGO.read_text(encoding="utf-8"))
+    mapa_links = mapa_de_links(catalogo)
     gerados = [montar_meta(a, fonte, registro, base, publicacao, exigir_escopo, mapa_links)
                for a in artigos]
     gerados_anexos = [montar_meta_anexo(a, fonte, registro, base, publicacao, exigir_escopo,
@@ -1334,14 +1336,20 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
 
     referencia = _dt.date.today()
     pendentes = 0
+    aplicados = []
     for (meta, corpo), artigo in zip(gerados, artigos):
         if meta["urn"] in revisoes:
             meta = aplicar_revisao(meta, revisoes[meta["urn"]])
             meta["status"] = status_em(meta, referencia)
         pendentes += bool(meta["revisao_temporal_pendente"])
+        aplicados.append((meta, corpo))
         escrever_frontmatter(destino_dir / f"{nome_arquivo(artigo['numero'])}.md", meta, corpo)
-    # Anexos: sem revisão temporal ainda — datas provisórias, como as do artigo
-    # que nunca foi revisado.
+    # Anexos: datas pela leitura de IA (temporal_anexos.py), a partir das datas já
+    # decididas dos artigos que os mencionam; sem decisão, ficam provisórias.
+    gerados_anexos, avisos_tempo = aplicar_aos_anexos(gerados_anexos, aplicados, base, exigir_escopo,
+                                                       slug, catalogo)
+    for aviso in avisos_tempo:
+        print(f"[{slug}] AVISO (anexos): {aviso}", file=sys.stderr)
     for (meta, corpo), anexo in zip(gerados_anexos, anexos_lidos):
         pendentes += bool(meta["revisao_temporal_pendente"])
         escrever_frontmatter(destino_dir / f"{nome_arquivo_anexo(anexo['numero'])}.md", meta, corpo)
@@ -1352,7 +1360,9 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     print(f"[{slug}] {citados} artigo(s) de outras normas tratados como texto "
           "alterado, nao como dispositivo proprio")
     if gerados_anexos:
-        print(f"[{slug}] {len(gerados_anexos)} anexo(s) escritos (anexo-NN.md), sem revisao "
+        decididos = sum(not m["revisao_temporal_pendente"] for m, _ in gerados_anexos)
+        print(f"[{slug}] {len(gerados_anexos)} anexo(s) escritos (anexo-NN.md), {decididos} com "
+              f"datas pela leitura de IA; {len(gerados_anexos) - decididos} sem revisao "
               "temporal: datas provisorias")
     _imprimir_estatisticas(stats, prefixo=f"[{slug}] ")
     print(f"[{slug}] publicacao: {publicacao['datas'] or 'nao localizada'} "

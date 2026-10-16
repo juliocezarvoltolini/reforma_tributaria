@@ -160,3 +160,36 @@ interpretacoes:
         trecho: "Os contratos vigentes na entrada em vigor desta Lei Complementar"
       - fonte: normas/lc-214-2025/art-0517.md
         trecho: "A faculdade a que se refere o § 9º produzirá efeitos a partir da data do início de atividade"
+
+  - id: anexo-segue-o-artigo-que-o-cita
+    registrado_em: '2026-10-16'
+    trata: anexos
+    leitura: >-
+      A cláusula de vigência da LC 214 (art. 544) diz quando "Esta Lei
+      Complementar" entra em vigor e, inciso a inciso, em relação a que ARTIGOS
+      produz efeitos; nenhum inciso nomeia anexo. O anexo é a lista que um artigo
+      aplica ("relacionados no Anexo I desta Lei Complementar"; "com a redação dos
+      Anexos XVIII a XXII desta Lei Complementar"). Lido assim, o anexo passa a
+      valer e a produzir efeitos com a primeira menção a ele no texto próprio da
+      lei: as datas do artigo que o menciona, ou as da subdivisão com datas
+      próprias que contém a menção; menção em redação superada (riscada) conta com
+      as datas do artigo, que são as da redação original. Texto que a lei insere em
+      outra lei (entre aspas) não conta. Só se decide quando todo artigo que
+      menciona o anexo já tem os dois eixos decididos, sem precisão de ano. O
+      anexo todo riscado com "(Revogado pela ...)" deixa de valer quando o
+      revogador produz efeitos, pela leitura já registrada da regra
+      texto-alterado-por-ato-posterior. As datas que o anexo traz no próprio
+      texto ("(Vigência: 1º/1/2027 a 31/12/2028)", nos anexos da LC 123 que os
+      Anexos XVIII a XXIII reproduzem) são conteúdo: dizem quando cada tabela se
+      aplica, não quando o anexo vale.
+    citacoes:
+      - fonte: normas/lc-214-2025/art-0544.md
+        trecho: "Esta Lei Complementar entra em vigor na data de sua publicação, produzindo efeitos:"
+      - fonte: normas/lc-214-2025/art-0544.md
+        trecho: "VI - a partir de 1º de janeiro de 2026, em relação aos demais dispositivos."
+      - fonte: normas/lc-214-2025/art-0125.md
+        trecho: "relacionados no Anexo I desta Lei Complementar"
+      - fonte: normas/lc-214-2025/art-0519.md
+        trecho: "passam a vigorar com a redação dos Anexos XVIII a XXII desta Lei Complementar"
+      - fonte: normas/lc-214-2025/art-0520.md
+        trecho: "acrescida do Anexo VII constante do Anexo XXIII desta Lei Complementar"

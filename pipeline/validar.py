@@ -52,8 +52,21 @@ def rel(caminho: Path) -> str:
 
 # ---------------------------------------------------------------------------
 
+def problemas_de_ia_da_meta(meta: dict, interpretacoes: dict) -> list[str]:
+    """A decisão de IA gravada no dispositivo cita interpretações que existem em
+    temporal/ia.yaml, do mesmo modelo, com citação conferida? (Os anexos não passam
+    pelas propostas; os artigos, sim, e passam também aqui.)"""
+    import ia as ia_mod
+
+    return ia_mod.problemas_de_ia({"revisado_por": meta.get("revisado_por"),
+                                   "interpretacoes_ia": meta.get("interpretacoes_ia")}, interpretacoes)
+
+
 def validar_dispositivos(corpos: dict[str, str] | None = None) -> list[dict]:
     """Valida cada dispositivo. `corpos`, se dado, recebe {urn: corpo}."""
+    import ia as ia_mod
+
+    interpretacoes = ia_mod.carregar_interpretacoes()
     metas: list[dict] = []
     por_urn: dict[str, list[str]] = defaultdict(list)
     # O mesmo aviso em centenas de dispositivos da mesma norma vira uma linha só:
@@ -102,7 +115,7 @@ def validar_dispositivos(corpos: dict[str, str] | None = None) -> list[dict]:
         # data do ato x publicação, precisão de ano, exceções por subdivisão e
         # coerência de um dispositivo marcado como revisado
         erros_t, avisos_t = problemas_no_dispositivo(meta)
-        for msg in erros_t:
+        for msg in erros_t + problemas_de_ia_da_meta(meta, interpretacoes):
             erro(f"{rel(caminho)}: {msg}")
         for msg in avisos_t:
             avisos_temporais[msg].append(rel(caminho))

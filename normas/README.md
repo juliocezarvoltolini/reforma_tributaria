@@ -31,7 +31,8 @@ no corpo do artigo que promove a alteração e está listado em
 **Anexos:** um arquivo por anexo da norma, `<slug>/anexo-NN.md` (URN `...!anxN`).
 Cada linha da tabela é uma linha do corpo, com as células separadas por ` | `.
 O anexo que reproduz o anexo de outra lei traz `texto_de_outra_norma`. As datas
-dos anexos ainda são provisórias (sem revisão temporal).
+dos anexos vêm da leitura de IA `anexo-segue-o-artigo-que-o-cita`
+(`temporal/ia.yaml`): as da primeira menção a ele nos artigos.
 
 **Não está aqui:** assinatura, rodapé e o ato que às vezes segue os anexos no
 mesmo compilado (LC 214: promulgação de partes vetadas). Permanecem em

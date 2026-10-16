@@ -41,8 +41,13 @@ publicacao:
     - XXIII
 vigencia_inicio: '2025-01-16'
 vigencia_fim: null
-efeitos_inicio: '2025-01-16'
+efeitos_inicio: '2026-01-01'
 efeitos_fim: null
+fundamento_temporal:
+  vigencia:
+  - urn:lex:br:federal:lei.complementar:2025-01-16;214!art136
+  efeitos:
+  - urn:lex:br:federal:lei.complementar:2025-01-16;214!art136
 status: vigente
 fonte:
   url: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm
@@ -59,10 +64,15 @@ dispositivos_citados: []
 texto_de_outra_norma: null
 altera: []
 alterado_por: []
-extracao: automatica
-revisao_temporal_pendente: true
-revisado_por: null
-revisado_em: null
+extracao: revisada
+eixos_revisados:
+- vigencia
+- efeitos
+revisao_temporal_pendente: false
+revisado_por: ia:claude-opus-5-5
+revisado_em: '2026-10-16'
+interpretacoes_ia:
+- anexo-segue-o-artigo-que-o-cita
 ---
 
 ANEXO VIII

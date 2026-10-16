@@ -268,7 +268,7 @@ escolhido. Estão aqui para serem revistas.
    2026-10-16 para os anexos: os 23 anexos da LC 214 estão em
    `normas/lc-214-2025/anexo-NN.md` (modelo em `docs/MODELO-DADOS.md`). A
    assinatura e o ato seguinte (promulgação de partes vetadas) continuam fora.
-   Os anexos ainda não têm revisão temporal: datas provisórias.
+   Datas dos anexos: leitura de IA (ver abaixo, 2026-10-16).
 4. **`anotacoes_oficiais` é uma lista plana por artigo.** `(Revogado …)` de um §
    aparece na lista do artigo. Quem lê deve ir ao corpo, onde a anotação está
    colada ao trecho riscado. ~~As anotações `(Incluído pela …)` que seguem um
@@ -358,14 +358,24 @@ em texto citado de outra lei e não resolvem); o corpo de nenhum artigo mudou. A
 conferência das anotações no texto do alterador entende anexo: as 10 anotações
 dos anexos XIV, XX e XXI conferem nos arts. 174 e 181 da LC 227. A consulta
 avisa quando o texto do dispositivo está todo riscado e as datas ainda dizem
-"vigente" (é o caso do Anexo XIV, sem revisão temporal).
+"vigente".
 
 Esse aviso achou um erro de ontem: o art. 217 da LC 214, todo riscado com
 "(Revogado pela Lei Complementar nº 227, de 2026)" na linha do caput, tinha a
 revogação gravada só no caput (`_par0`), e incisos e parágrafo apareciam em
 vigor. A decisão agora dá `vigencia_fim` ao artigo inteiro quando todo o texto
-está riscado (`texto_todo_riscado` na proposta). Pendentes: 73 de 825
-dispositivos (os 50 artigos de antes e os 23 anexos).
+está riscado (`texto_todo_riscado` na proposta).
+
+**Datas dos anexos (nível C, 2026-10-16).** Sexta interpretação de IA,
+`anexo-segue-o-artigo-que-o-cita`: a cláusula (art. 544) fala da lei e dos
+artigos, nenhum inciso nomeia anexo; o anexo vale e produz efeitos com a
+primeira menção a ele no texto próprio da lei (as datas do artigo, ou as da
+subdivisão com datas próprias; menção em redação riscada, com as do artigo). Os
+23 decididos: I a XVII com efeitos em 1º/01/2026 (os artigos que os citam estão
+no inciso VI), XVIII a XXIII em 1º/01/2027 (arts. 519 e 520, inciso III); o XIV,
+citado só nas redações superadas do art. 146, revogado em 2026-01-14 pelo art.
+181 da LC 227. As datas "(Vigência: ...)" dentro dos anexos da LC 123 são
+conteúdo. Pendentes: 50 de 825 dispositivos, os mesmos artigos de antes.
 
 **Remissões a lei futura: regulamentação ligada, lacuna só onde nada se
 localizou (2026-10-15).** Registrar as remissões da EC 132 como "não

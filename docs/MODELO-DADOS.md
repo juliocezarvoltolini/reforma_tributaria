@@ -58,8 +58,14 @@ desta Lei Complementar") são dispositivos próprios:
 - `remete_a` dos artigos e dos anexos inclui os anexos desta norma, com a mesma
   política de escopo das remissões a artigo; "o Anexo VII constante do Anexo
   XXIII" é de outra lei e não resolve;
-- **sem revisão temporal ainda**: datas provisórias, `revisao_temporal_pendente:
-  true`. `propor_vigencia.py` e `revisar_por_regra.py` trabalham só com artigos.
+- **datas pela leitura de IA** `anexo-segue-o-artigo-que-o-cita`
+  (`temporal/ia.yaml`, `pipeline/temporal_anexos.py`): o anexo vale e produz
+  efeitos com a primeira menção a ele no texto próprio da lei (as datas do
+  artigo, ou da subdivisão com datas próprias; redação riscada conta com as do
+  artigo); anexo revogado tem `vigencia_fim` pelo revogador. Decidido no
+  `fatiar.py`, depois das datas dos artigos, com `revisado_por: ia:<modelo>`;
+  sem tudo decidido, fica provisório. `propor_vigencia.py` e
+  `revisar_por_regra.py` trabalham só com artigos.
 
 Quem lê a base inteira usa `comum.arquivos_dispositivos()` (artigos e anexos);
 `comum.arquivos_norma()` continua sendo só artigos.
