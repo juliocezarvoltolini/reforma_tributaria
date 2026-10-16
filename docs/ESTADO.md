@@ -3,7 +3,7 @@
 Documento de trabalho. Registra o que está pronto, o que está aberto e o que já
 foi tentado sem sucesso. Atualize ao fechar cada frente.
 
-**Última atualização:** 2026-10-14
+**Última atualização:** 2026-10-16
 
 ---
 
@@ -24,15 +24,14 @@ para quem chega agora: cada item custou uma rodada de ingestão real.
 
 | Item | Situação |
 |---|---|
-| `main` | `6aa41f5` — PRs #1 a #3 mergeados |
-| Branch de trabalho | `claude/using-superpowers-wn348h` |
-| PR aberto | #4 |
+| `main` | `9305fc0` (2026-10-16) — PRs #1 a #4 mergeados; depois do #4, nível C (IA), títulos de estrutura e remissões a lei futura, por fast-forward |
+| Branch de trabalho | `claude/nivel-c-vetado-e-544`, criada a partir da `main` |
+| PR aberto | nenhum |
 
-Continue nessa branch — o push atualiza o PR #4. Não abra PR novo. O histórico
-do PR #4 tem, em ordem: portabilidade Windows e acesso aos portais; perda de
-dados em norma que altera outra; remissão resolvida para o dispositivo errado;
-janela de escopo; e, desta frente, a correção do fatiamento sobre o HTML real
-(código e testes) seguida da reingestão (dados).
+O PR #4 foi mergeado (squash, `616ebb7`); a branch dele,
+`claude/using-superpowers-wn348h`, ficou para trás e **não deve** receber
+trabalho novo. Trabalhe numa branch a partir da `main`; push só a pedido, sempre
+fast-forward.
 
 ### Pendências administrativas
 
@@ -503,9 +502,6 @@ cláusula de vigência da LC 227 (art. 182), que espera:
 
 ## 11. Fora de escopo agora
 
-- Propostas de interpretação por IA (o terceiro caminho da PREMISSAS.md §3.4),
-  com citação literal verificada mecanicamente e `revisado_por: ia:<modelo>`. O
-  que a regra não decide continua pendente até lá, ou até uma decisão humana.
 - Busca vetorial. O filtro temporal é determinístico e vem antes da busca;
   embedding ignora tempo.
 - Jurisprudência e legislação estadual ou municipal.
