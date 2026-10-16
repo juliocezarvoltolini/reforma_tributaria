@@ -346,14 +346,26 @@ entrará em vigor com o início da produção de efeitos do ajuste"), cláusula
 própria com termo de evento sem data. Mais 8 decisões de IA; pendentes: 50 de
 802.
 
-**Lacunas: o registro direto seria falso.** As remissões a lei futura da EC 132
-(arts. 6, 7, 8, 9, 12, 16, 19, 20) apontam, em vários casos, para leis que estão
-na base: "a lei complementar que instituir o imposto de que trata o art. 156-A
-e a contribuição de que trata o art. 195, V" é a LC 214; o ITCMD do art. 16
-está na ementa da LC 227. Registrá-las como "não regulamentado" afirmaria algo
-falso. O caminho é ligar cada remissão ao dispositivo regulamentador nas normas
-ingeridas e só registrar lacuna onde nada for localizado ("não localizado nas
-fontes indexadas").
+**Remissões a lei futura: regulamentação ligada, lacuna só onde nada se
+localizou (2026-10-15).** Registrar as remissões da EC 132 como "não
+regulamentado" seria falso: várias apontam para leis que estão na base. Cada
+uma foi ligada ao dispositivo que a regula, em
+`/interpretacoes/regulamentacao/` (19 registros, por IA, com o trecho literal
+dos dois lados verificado contra o texto atual da subdivisão): 2 `literal` (o
+regulador cita o artigo da EC — art. 8º, parágrafo único -> LC 214, art. 125;
+art. 12, § 6º -> LC 214, art. 384) e 17 `derivado`, com o raciocínio. Ficaram
+3 lacunas em `/lacunas/`, como "não localizado nas fontes indexadas": art. 6º,
+II e III (entrega dos recursos do Imposto Seletivo pelo art. 159, I e II);
+art. 9º, § 10 (regime de transição para a alíquota padrão — a LC 214, art. 475,
+§ 8º, só prevê projeto que o proponha); art. 20 (contribuição para o Pasep do
+servidor público). `consultar.py` mostra a ligação no dispositivo que remete,
+com o estado do regulador na data, e no regulador; `validar.py` recusa trecho
+que o texto atual não tem, `literal` que o regulador não declara, a mesma
+remissão regulada e em lacuna, e lacuna cuja busca não passou por todas as
+normas indexadas (ingerir uma norma nova obriga a refazer a busca).
+Interpretações passam a ter a URN de `fundamenta_se_em` conferida contra
+`/normas/`. Não examinadas: as remissões das LCs a regulamento e a atos
+infralegais.
 
 **Efeitos sem cláusula de efeitos (nível C, 2026-10-15).** Quarta
 interpretação de IA, `efeitos-na-vigencia-sem-clausula-de-efeitos`: a EC 132
