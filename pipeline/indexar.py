@@ -17,7 +17,7 @@ import yaml
 from comum import (
     DIR_INDICES,
     RAIZ,
-    arquivos_norma,
+    arquivos_dispositivos,
     gravar_texto,
     ler_frontmatter,
 )
@@ -36,7 +36,7 @@ def gravar(nome: str, dados) -> None:
 
 def main() -> int:
     dispositivos: list[tuple[Path, dict]] = []
-    for caminho in arquivos_norma():
+    for caminho in arquivos_dispositivos():
         meta, _ = ler_frontmatter(caminho)
         dispositivos.append((caminho, meta))
 
@@ -114,9 +114,11 @@ def main() -> int:
     # -- cobertura: impede presumir o que não está ingerido ------------------
     por_norma = defaultdict(int)
     pendentes = defaultdict(int)
+    anexos = defaultdict(int)
     for _, meta in dispositivos:
         slug = meta.get("norma_slug", "?")
         por_norma[slug] += 1
+        anexos[slug] += "!anx" in meta["urn"]
         if meta.get("revisao_temporal_pendente"):
             pendentes[slug] += 1
 
@@ -131,6 +133,8 @@ def main() -> int:
             "normas": {
                 slug: {
                     "dispositivos": total,
+                    # Dos dispositivos, quantos são anexos (anexo-NN.md).
+                    "anexos": anexos.get(slug, 0),
                     "revisao_temporal_pendente": pendentes.get(slug, 0),
                 }
                 for slug, total in sorted(por_norma.items())

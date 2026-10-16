@@ -41,6 +41,29 @@ tokens corta no meio de um inciso e produz citação falsa.
 Caminho: `normas/<slug-da-norma>/art-NNNN.md` (NNNN com zero à esquerda, para
 ordenação lexicográfica correta).
 
+### Anexos: um arquivo por anexo
+
+Os anexos da norma (tabelas a que os artigos remetem: "relacionados no Anexo I
+desta Lei Complementar") são dispositivos próprios:
+
+- caminho `normas/<slug>/anexo-NN.md`; URN `...!anxN` (N em arábicos; convenção
+  deste repositório, não conferida contra a especificação LexML);
+  `dispositivo: "anexo I"`; `titulo` com o título do anexo;
+- corpo: um parágrafo por linha fora de tabela e uma linha por LINHA DA TABELA,
+  com as células separadas por ` | ` (o caractere não ocorre nos compilados);
+  riscado entre `~~ ~~`, como nos artigos;
+- `texto_de_outra_norma: {norma, anexo}` quando o anexo reproduz o anexo de
+  outra lei (LC 214, Anexos XVIII a XXIII: anexos da LC 123). As remissões dele
+  não são resolvidas nesta norma;
+- `remete_a` dos artigos e dos anexos inclui os anexos desta norma, com a mesma
+  política de escopo das remissões a artigo; "o Anexo VII constante do Anexo
+  XXIII" é de outra lei e não resolve;
+- **sem revisão temporal ainda**: datas provisórias, `revisao_temporal_pendente:
+  true`. `propor_vigencia.py` e `revisar_por_regra.py` trabalham só com artigos.
+
+Quem lê a base inteira usa `comum.arquivos_dispositivos()` (artigos e anexos);
+`comum.arquivos_norma()` continua sendo só artigos.
+
 ## Front-matter
 
 Campos obrigatórios marcados com **(*)**.

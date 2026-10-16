@@ -49,6 +49,186 @@
       "(Revogado)"
     ]
   },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx11": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(VETADO)",
+      "(VETADO)",
+      "(VETADO)",
+      "(VETADO)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx12": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(incluídos os aparelhos de exploração funcional e os de verificação de parâmetros fisiológicos)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx14": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Revogado pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181",
+        "link": "Lcp227.htm#art181",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx14"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Revogado pela Lei Complementar nº 227, de 2026)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx18": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Vigência: 1º/1/2027 a 31/12/2028)",
+      "(Vigência: 1º/1/2029)",
+      "(Vigência: 1º/1/2029 até 31/12/2029)",
+      "(Vigência: 1º/1/2030 até 31/12/2030)",
+      "(Vigência: 1º/1/2031 até 31/12/2031)",
+      "(Vigência: 1º/1/2032 até 31/12/2032)",
+      "(Vigência: 1º/1/2033)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx19": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Vigência: 1º/1/2027 a 31/12/2028)",
+      "(Vigência: 1º/1/2029)",
+      "(Vigência: 1º/1/2029 até 31/12/2029)",
+      "(Vigência: 1º/1/2030 até 31/12/2030)",
+      "(Vigência: 1º/1/2031 até 31/12/2031)",
+      "(Vigência: 1º/1/2032 até 31/12/2032)",
+      "(Vigência: 1º/1/2033)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx20": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx20"
+      },
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx20"
+      },
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx20"
+      },
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx20"
+      },
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx20"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Vigência: 1º/1/2027 a 31/12/2028)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2029)",
+      "(Vigência: 1º/1/2029 até 31/12/2029)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2030 até 31/12/2030)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2031 até 31/12/2031)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2032 até 31/12/2032)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2033)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx21": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx21"
+      },
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx21"
+      },
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx21"
+      },
+      {
+        "anotacao": "(Redação dada pela Lei Complementar nº 227, de 2026)",
+        "ato": "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+        "link": "Lcp227.htm#art174",
+        "subdivisao": "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx21"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Vigência: 1º/1/2027 a 31/12/2028)",
+      "(Vigência: 1º/1/2029)",
+      "(Vigência: 1º/1/2029 até 31/12/2029)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2030 até 31/12/2030)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2031 até 31/12/2031)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2032 até 31/12/2032)",
+      "(Redação dada pela Lei Complementar nº 227, de 2026)",
+      "(Vigência: 1º/1/2033)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx22": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Vigência: 1º/1/2027 a 31/12/2028)",
+      "(Vigência: 1º/1/2029)",
+      "(Vigência: 1º/1/2029 até 31/12/2029)",
+      "(Vigência: 1º/1/2030 até 31/12/2030)",
+      "(Vigência: 1º/1/2031 até 31/12/2031)",
+      "(Vigência: 1º/1/2032 até 31/12/2032)",
+      "(Vigência: 1º/1/2033)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx23": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Vigência: 1º/1/2027 a 31/12/2028)",
+      "(Vigência: 1º/1/2029 até 31/12/2029)",
+      "(Vigência: 1º/1/2030 até 31/12/2030)",
+      "(Vigência: 1º/1/2031 até 31/12/2031)",
+      "(Vigência: 1º/1/2032 até 31/12/2032)",
+      "(Vigência: 1º/1/2033)"
+    ]
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx4": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(incluídos os fios absorvíveis esterilizados para cirurgia ou odontologia)"
+    ]
+  },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10": {
     "altera": [],
     "alterado_por": [

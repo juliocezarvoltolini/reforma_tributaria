@@ -727,6 +727,43 @@ def validar_alteracoes():
            f"sem ato, e a isolada não confirmada contada à parte (obteve {r})")
 
 
+@cenario("alteração de anexo conferida no texto do alterador")
+def validar_alteracoes_de_anexo():
+    """Quebra: a conferência procurar número de ARTIGO num anexo e acusar como
+    não confirmada a revogação "o Anexo XIV" ou a nova redação "“ANEXO XX" — ou,
+    ao contrário, dar por confirmado um anexo que o alterador não menciona."""
+    import validar as V
+
+    base, nome = URN_BASE, "Lei Complementar nº 214, de 1º de janeiro de 1900"
+
+    def anexo(n):
+        return ({"urn": f"{base}!anx{n}", "norma": nome, "alterado_por": [
+            {"anotacao": "(...)", "subdivisao": f"{base}!anx{n}", "link": "x", "ato": URN_999 + "!art181"},
+            {"anotacao": "(...)", "subdivisao": f"{base}!anx{n}", "link": "x", "ato": URN_999 + "!art174"}]},
+            "ANEXO ...")
+
+    art181 = ({"urn": URN_999 + "!art181", "dispositivos_citados": []},
+              "Art. 181. Ficam revogados os seguintes dispositivos:\n\n"
+              f"I - da {nome}:\n\na) o art. 3º; e\n\nb) o Anexo XIV.\n\n"
+              "II - da Lei Complementar nº 7, de 1º de janeiro de 1901:\n\na) o Anexo XV.")
+    art174 = ({"urn": URN_999 + "!art174", "dispositivos_citados": ["3"]},
+              f"Art. 174. A {nome}, passa a vigorar com as seguintes alterações:\n\n"
+              "“Art. 3º ...........\n\n“ANEXO XX\n\n(Lei Complementar nº 7, de 1901)\n\n‘ANEXO III")
+    r = V.conferir_alteracoes([anexo(14), anexo(20), anexo(15), anexo(3), art181, art174])
+    nao = sorted(x.split("!art")[1] for x in r["nao_confirmadas"])
+    checar(r["confirmadas"] == 2 and nao == ["174", "174", "174", "181", "181", "181"],
+           f"XIV revogado pelo 181 e XX com nova redação no 174: confirmados; o XV é de outra "
+           f"lei e o 'ANEXO III' entre aspas simples é anexo de outra lei: não (obteve {r})")
+    art175 = ({"urn": URN_999 + "!art175", "dispositivos_citados": []},
+              "Art. 175. A Lei Complementar nº 7, de 1º de janeiro de 1901, passa a vigorar "
+              "com as seguintes alterações:\n\n“ANEXO XX")
+    vinte = ({"urn": f"{base}!anx20", "norma": nome, "alterado_por": [
+        {"anotacao": "(...)", "subdivisao": f"{base}!anx20", "link": "x", "ato": URN_999 + "!art175"}]},
+        "ANEXO ...")
+    checar(V.conferir_alteracoes([vinte, art175])["confirmadas"] == 0,
+           "o alterador dá redação a um 'ANEXO XX' de OUTRA lei: não confirma")
+
+
 @cenario("normas/ reais: LC 214 ligada às leis que a alteraram (pulado se ausentes)")
 def alteracoes_reais():
     """Contrato com o compilado da LC 214: anotações do art. 26 e do art. 482-A
@@ -1541,6 +1578,65 @@ def _entrada_lc(artigo: str, efeitos_data: str | None, **extra) -> dict:
         else:
             e[chave] = valor
     return e
+
+
+@cenario("revisão por regra: artigo todo riscado e '(Revogado ...)' tem fim de vigência, não exceção do caput")
+def revisao_artigo_revogado_inteiro():
+    """Quebra: a revogação do artigo INTEIRO (texto todo riscado no compilado, a
+    anotação na linha do caput) virar exceção só do caput (`_par0`): incisos e
+    parágrafos, também revogados, continuariam vigentes (LC 214, art. 217)."""
+    import revisar_por_regra as RR
+
+    regras = {"texto-alterado-por-ato-posterior": {"aprovada": True, "aprovada_por": "F",
+                                                   "aprovada_em": "1900-01-01"}}
+    art, ato = urn_dispositivo(URN_EC, "1"), URN_999 + "!art7"
+    revogacao = {"subdivisao": art, "tipo": "revogado", "anotacao": "(Revogado pela ...)",
+                 "ato": ato, "conferida": True,
+                 "ato_vigencia": {"data": "1926-01-14", "fundamento": URN_999 + "!art9"},
+                 "ato_efeitos": {"data": "1926-01-14", "fundamento": URN_999 + "!art9_incIII"},
+                 "resultado_se_aprovada": {"vigencia_fim": "1926-01-14"},
+                 "proposta": {"vigencia_fim": "1926-01-14"}, "motivo": None}
+
+    def rodar(todo_riscado, alteracao=revogacao, aplicadas=None):
+        e = _entrada_lc("1", "1926-01-01", pendencias=["redacao_de_outro_ato"],
+                        alteracoes=[dict(alteracao)], alteracoes_cobrem_as_marcas=True,
+                        texto_todo_riscado=todo_riscado)
+        prop = _proposta_para_regra("efeitos_por_inciso", [e])
+        prop["atos_alteradores"] = [{"slug": "lc-999", "urn": URN_999, "pendencias_gerais": []}]
+        novo, _ = RR.decidir_por_regra(prop, regras, "1900-02-01", aplicadas)
+        return novo["dispositivos"][0]["revisao"], novo
+
+    r, novo = rodar(True)
+    checar(r["decisao"] == "alterar" and r["vigencia_fim"] == "1926-01-14"
+           and r["excecoes_subdivisao"] == [] and ato in r["fundamento_vigencia"],
+           f"todo riscado: o artigo tem vigencia_fim, fundada no ato revogador (obteve {r})")
+    revs, erros = _carregar(novo["dispositivos"], regras=regras)
+    checar(not erros and revs, f"a decisão é aceita pela revisão temporal (erros: {erros})")
+    r, _ = rodar(False)
+    checar(r["vigencia_fim"] is None and [x["urn"] for x in r["excecoes_subdivisao"]] == [art + "_par0"],
+           f"só o caput riscado: continua exceção do caput (obteve {r})")
+    dada = {**revogacao, "tipo": "redacao_dada", "anotacao": "(Redação dada pela ...)",
+            "resultado_se_aprovada": {"vigencia_inicio": "1926-01-14", "efeitos_inicio": "1926-01-14"},
+            "proposta": {"vigencia_inicio": "1926-01-14", "efeitos_inicio": "1926-01-14"}}
+    r, _ = rodar(True, dada)
+    checar(r["vigencia_fim"] is None and [x["urn"] for x in r["excecoes_subdivisao"]] == [art + "_par0"],
+           f"só a REVOGAÇÃO vira fim do artigo; redação dada no caput fica no caput (obteve {r})")
+    aplicada = {"extracao": "revisada", "revisado_por": "regra:clausula-literal/v1+texto-alterado-por-ato-posterior",
+                "eixos_revisados": ["vigencia", "efeitos"], "vigencia_inicio": "1900-01-02",
+                "efeitos_inicio": "1926-01-01", "efeitos_fim": None, "excecoes_subdivisao": [],
+                "revisado_em": "1900-01-15"}
+    r, _ = rodar(True, aplicadas={art: {**aplicada, "vigencia_fim": "1926-01-14"}})
+    checar(r["revisado_em"] == "1900-01-15", f"a mesma decisão já aplicada: guarda a data (obteve {r['revisado_em']})")
+    r, _ = rodar(True, aplicadas={art: {**aplicada, "vigencia_fim": None}})
+    checar(r["revisado_em"] == "1900-02-01",
+           f"aplicada sem o fim de vigência: é decisão nova, data nova (obteve {r['revisado_em']})")
+    import propor_vigencia as PV
+
+    checar(PV.texto_todo_riscado(["~~Art. 1º Texto.~~ (Revogado pela Lei nº 1)", "~~I - inciso;~~"])
+           and not PV.texto_todo_riscado(["~~Art. 1º Texto.~~ (Revogado pela Lei nº 1)", "I - vivo;"])
+           and not PV.texto_todo_riscado(["Art. 1º Texto."])
+           and not PV.texto_todo_riscado(["(Vide Lei nº 1)"]) and not PV.texto_todo_riscado([]),
+           "texto_todo_riscado: tudo riscado salvo anotações")
 
 
 @cenario("revisão por regra: o que é literal decide; o resto fica pendente")
@@ -3418,6 +3514,276 @@ def interpretacao_urn_existe():
                                 "art. 3"], metas)
     checar(fora == [f"{_EC_BASE}!art3_par7", f"{_EC_BASE}!art4", f"{_EC_BASE}!art4_par0", "art. 3"],
            f"subdivisão que o artigo não tem, artigo fora da base, texto solto (obteve {fora})")
+
+
+# ---------------------------------------------------------------------------
+# Anexos
+# ---------------------------------------------------------------------------
+
+def _anexos_fixture():
+    import anexos as AX
+
+    linhas = F.html_para_linhas(fixture("planalto-lc-anexos.html"))
+    _, _, stats = F.fatiar(linhas)
+    anexos, avisos = AX.fatiar_anexos(linhas[stats["linha_do_fim"]:])
+    return linhas, stats, anexos, avisos
+
+
+@cenario("extração: célula de tabela vira linha própria, com posição e âncoras")
+def extracao_celulas():
+    """Quebra: perder a linha da tabela (cada <td> tem o seu <p>, e a linha da
+    tabela some no texto corrido); juntar duas células sem <p> numa linha só; ou
+    perder a âncora <a name="anexoN"> que identifica o anexo."""
+    linhas = F.html_para_linhas(fixture("planalto-lc-anexos.html"))
+    por_texto: dict = {}
+    for ln in linhas:  # a primeira ocorrência: "ANEXO I" e "ITEM" se repetem adiante
+        por_texto.setdefault(ln.completa, ln)
+    checar(por_texto["ANEXO I"].ancoras == ("anexo1",) and por_texto["ANEXO I"].celula is None,
+           "cabeçalho do anexo: fora de tabela, com a âncora anexo1")
+    checar(por_texto["ITEM"].celula == (1, 1, 1)
+           and por_texto["DESCRIÇÃO DO PRODUTO"].celula == (1, 1, 2)
+           and por_texto["a) 0000.00.02; b) 0000.00.03"].celula == (1, 3, 2),
+           "célula: (tabela, linha, coluna); o segundo parágrafo fica na mesma célula")
+    checar(por_texto.get("3") is not None and por_texto["3"].celula == (1, 4, 1)
+           and por_texto["Produto fictício gama do código 0000.00.04 da NCM/SH"].celula == (1, 4, 2),
+           "células sem <p>: uma linha por célula, não as duas juntas")
+    faixas = [(ln.ancoras, ln.celula) for ln in linhas if ln.completa == "Faixas"]
+    checar(faixas == [((), (3, 1, 1)), (("anexo3-anexo1-faixas",), (4, 1, 1))],
+           f"âncora dentro de célula, só na quarta tabela (obteve {faixas})")
+    checar(por_texto["Art. 1º Ficam reduzidas a zero as alíquotas sobre os produtos fictícios "
+                     "relacionados no Anexo I desta Lei Complementar."].celula is None,
+           "parágrafo de artigo: fora de tabela")
+    depois = [(ln.completa, ln.celula) for ln in
+              F.html_para_linhas(b"<table><tr><td>a</table>depois")]
+    checar(depois == [("a", (1, 1, 1)), ("depois", None)],
+           f"texto logo depois de </table> não emenda na última célula, mesmo com <td> e <tr> "
+           f"sem fechar, como o HTML do Word deixa (obteve {depois})")
+
+
+@cenario("anexos: um por anexo da lei; cabeçalho interno e ato seguinte não abrem anexo")
+def anexos_fatiamento():
+    """Quebra: tomar o 'ANEXO I' interno (anexo da outra lei, dentro do Anexo III)
+    por anexo da própria lei; levar para o último anexo o ato que vem depois
+    (promulgação de partes vetadas); ou perder a linha da tabela."""
+    linhas, stats, anexos, avisos = _anexos_fixture()
+    checar(linhas[stats["linha_do_fim"]].completa.startswith("Brasília, 1º de janeiro de 1900"),
+           "linha_do_fim: a assinatura da lei")
+    checar(sem_erro(avisos) and [a["numero"] for a in anexos] == [1, 2, 3]
+           and [a["romano"] for a in anexos] == ["I", "II", "III"],
+           f"três anexos, I a III (obteve {[a.get('romano') for a in anexos]}, {avisos})")
+    um = anexos[0]
+    checar(um["linhas"] == [
+        "ANEXO I",
+        "PRODUTOS FICTÍCIOS SUBMETIDOS À REDUÇÃO A ZERO",
+        "(EXCLUSIVE OS PRODUTOS FICTÍCIOS RELACIONADOS NO ANEXO III)",
+        "ITEM | DESCRIÇÃO DO PRODUTO",
+        "1 | Produto fictício alfa do código 0000.00.01 da NCM/SH",
+        "2 | Produtos fictícios beta dos seguintes códigos da NCM/SH: a) 0000.00.02; b) 0000.00.03",
+        "3 | Produto fictício gama do código 0000.00.04 da NCM/SH",
+    ], f"Anexo I: uma linha por linha da tabela, células separadas por ' | ' (obteve {um['linhas']})")
+    tres = anexos[2]
+    checar("ANEXO I" in tres["linhas"] and tres["linhas"][-1] == "1ª Faixa | 1,50% | 2,50%",
+           f"Anexo III: o 'ANEXO I' interno fica dentro; termina na última linha da tabela "
+           f"(obteve {tres['linhas'][-3:]})")
+    checar(not any("Presidência" in ln or "Brasília" in ln or "Art. 2º" in ln
+                   for a in anexos for ln in a["linhas"]),
+           "o ato seguinte (promulgação) não entra em anexo nenhum")
+
+
+@cenario("anexos: anexo revogado e anexo com texto de outra lei")
+def anexos_revogado_e_outra_lei():
+    """Quebra: perder o riscado do anexo revogado (pareceria em vigor), a
+    anotação que o revoga, ou não marcar que o Anexo III traz o texto de anexo de
+    OUTRA lei (as remissões e datas nele são daquela lei)."""
+    import anexos as AX
+
+    _, _, anexos, _ = _anexos_fixture()
+    dois, tres = anexos[1], anexos[2]
+    checar(dois["linhas"][:2] == ["~~ANEXO II~~", "(Revogado pela Lei Complementar nº 998, de 1901)"]
+           and dois["linhas"][-1] == "~~1~~ | ~~PRODUTO FICTÍCIO DELTA~~",
+           f"Anexo II: riscado preservado, anotação sem riscar (obteve {dois['linhas']})")
+    checar(AX.texto_de_outra_norma(dois) is None
+           and AX.texto_de_outra_norma(tres) == {
+               "norma": "Lei Complementar nº 997, de 1º de janeiro de 1899", "anexo": "ANEXO I"},
+           f"só o Anexo III traz texto de outra lei (obteve {AX.texto_de_outra_norma(tres)})")
+
+    def linha(texto, link=None):
+        return F.Linha(texto, texto, texto, link_externo=link)
+
+    sem_link, _ = AX.fatiar_anexos([linha("ANEXO I"), linha("(Lei Complementar nº 5, de 1900)"),
+                                    linha("ANEXO I"), linha("x")])
+    sem_cabecalho, _ = AX.fatiar_anexos([linha("ANEXO I"),
+                                         linha("(Lei Complementar nº 5, de 1900)", "Lcp5.htm"),
+                                         linha("TÍTULO"), linha("x")])
+    checar(AX.texto_de_outra_norma(sem_link[0]) is None
+           and AX.texto_de_outra_norma(sem_cabecalho[0]) is None,
+           "um sinal só não basta: sem link para a outra lei, ou sem o cabeçalho do anexo dela")
+    checar(AX.titulo(anexos[0]) == "PRODUTOS FICTÍCIOS SUBMETIDOS À REDUÇÃO A ZERO (EXCLUSIVE OS "
+                                   "PRODUTOS FICTÍCIOS RELACIONADOS NO ANEXO III)"
+           and AX.titulo(dois) == "PRODUTOS FICTÍCIOS REVOGADOS"
+           and AX.titulo(tres) == "Partilha fictícia - Comércio (Vigência: 1º/1/1901 a 31/12/1902)",
+           f"título: a primeira linha depois do cabeçalho e os parênteses que a seguem "
+           f"(obteve {[AX.titulo(a) for a in anexos]})")
+
+
+@cenario("anexos: a sequência é a da própria lei; âncora que discorda aborta")
+def anexos_sequencia():
+    """Quebra: aceitar anexo fora de ordem (um anexo perdido faria o seguinte ser
+    lido como texto do anterior) ou cabeçalho cuja âncora diz outro número."""
+    import anexos as AX
+
+    def linha(texto, ancoras=()):
+        return F.Linha(texto, texto, texto, ancoras=ancoras)
+
+    ok, av = AX.fatiar_anexos([linha("ANEXO I", ("anexo1",)), linha("texto"),
+                               linha("ANEXO II", ("anexo2",)), linha("texto")])
+    checar(sem_erro(av) and [a["numero"] for a in ok] == [1, 2], "sequência com âncoras: ok")
+    _, av = AX.fatiar_anexos([linha("ANEXO I", ("anexo1",)), linha("ANEXO III", ("anexo3",))])
+    checar(com_erro(av), "âncora anexo3 depois do anexo1 (falta o II): ERRO")
+    _, av = AX.fatiar_anexos([linha("ANEXO I", ("anexo2",))])
+    checar(com_erro(av), "cabeçalho 'ANEXO I' com âncora anexo2: ERRO")
+    sem_ancora, av = AX.fatiar_anexos([linha("ANEXO I"), linha("x"), linha("ANEXO II"), linha("y")])
+    checar(sem_erro(av) and [a["numero"] for a in sem_ancora] == [1, 2],
+           "sem âncoras, a sequência decide")
+
+
+@cenario("remissão a anexo: 'desta Lei' e sem qualificador resolvem; anexo de outra lei não")
+def remissao_a_anexo():
+    """Quebra: resolver para anexo DESTA lei o anexo de outra ('Anexo I da Lei
+    Complementar nº 123', 'Anexo VII constante do Anexo XXIII'), perder faixas
+    ('Anexos XVIII a XXII') e pares ('Anexos IV e XII')."""
+    import anexos as AX
+
+    b = URN_BASE
+    r = lambda t, exigir=False: [u.split("!")[1] for u in AX.extrair_remissoes_a_anexos(t, b, exigir)]  # noqa: E731
+    checar(r("relacionados no Anexo I desta Lei Complementar, com a especificação") == ["anx1"],
+           "'Anexo I desta Lei Complementar'")
+    checar(r("previstos nos Anexos IV e XII desta Lei Complementar") == ["anx4", "anx12"],
+           "par 'Anexos IV e XII'")
+    checar(r("na forma dos Anexos XVIII a XXII desta Lei Complementar.") ==
+           ["anx18", "anx19", "anx20", "anx21", "anx22"], "faixa 'Anexos XVIII a XXII'")
+    checar(r("os Anexos I a V da Lei Complementar nº 123, de 14 de dezembro de 2006") == [],
+           "anexos de outra lei: nada")
+    checar(r("o Anexo VII constante do Anexo XXIII desta Lei Complementar") == ["anx23"],
+           "'Anexo VII constante do Anexo XXIII': só o XXIII é desta lei")
+    checar(r("relacionados no Anexo VI, tão somente para inclusão") == ["anx6"]
+           and r("relacionados no Anexo VI, tão somente para inclusão", exigir=True) == [],
+           "sem qualificador: desta lei, salvo onde se exige escopo afirmado")
+    checar(r("OS PRODUTOS RELACIONADOS NO ANEXO XV)") == ["anx15"], "em maiúsculas, no título de anexo")
+
+
+@cenario("anexos: metadados e corpo do arquivo")
+def anexos_meta():
+    """Quebra: anexo sem URN própria, com datas que parecem revisadas, com as
+    remissões do texto de outra lei, ou sem o link da anotação que o alterou."""
+    import anexos as AX
+
+    _, _, anexos, _ = _anexos_fixture()
+    fonte = {"titulo": "Lei Complementar nº 999, de 1º de janeiro de 1900", "slug": "lc-999-1900",
+             "data": "1900-01-01"}
+    registro = {"url": "u", "tipo_documento": "html", "acesso": "1900-01-02", "sha256": "0" * 64}
+    publicacao = {"datas": ["1900-01-02"], "fonte": "dou"}
+    meta1, corpo1 = AX.montar_meta_anexo(anexos[0], fonte, registro, URN_BASE, publicacao, False, {})
+    checar(meta1["urn"] == f"{URN_BASE}!anx1" and meta1["dispositivo"] == "anexo I"
+           and meta1["camada"] == 1 and meta1["revisao_temporal_pendente"] is True
+           and meta1["vigencia_inicio"] == "1900-01-02",
+           f"URN !anx1, 'anexo I', camada 1, datas provisórias (obteve {meta1['urn']})")
+    checar(meta1["remete_a"] == [f"{URN_BASE}!anx3"] and corpo1.split("\n\n")[3] == "ITEM | DESCRIÇÃO DO PRODUTO",
+           "remete ao Anexo III; corpo com as linhas da tabela")
+    meta2, _ = AX.montar_meta_anexo(anexos[1], fonte, registro, URN_BASE, publicacao, False, {})
+    checar(meta2["anotacoes_oficiais"] == ["(Revogado pela Lei Complementar nº 998, de 1901)"]
+           and [a["link"] for a in meta2["alterado_por"]] == ["Lcp998.htm#art9"],
+           f"anotação e link do ato que revogou (obteve {meta2['alterado_por']})")
+    meta3, _ = AX.montar_meta_anexo(anexos[2], fonte, registro, URN_BASE, publicacao, False, {})
+    checar(meta3["texto_de_outra_norma"]["anexo"] == "ANEXO I" and meta3["remete_a"] == [],
+           "Anexo III: texto de outra lei, sem remissões resolvidas nesta")
+    checar([a["link"] for a in meta3["alterado_por"]] == ["Lcp998.htm#art7"],
+           f"alterado_por: só a anotação de alteração — não o 'Produção de efeitos' (cláusula "
+           f"de vigência) nem o link da lei citada "
+           f"(obteve {[a['link'] for a in meta3['alterado_por']]})")
+    proprio, _ = AX.fatiar_anexos([F.Linha(t, t, t) for t in (
+        "ANEXO I", "TÍTULO", "Os itens deste Anexo I e os do Anexo II.")])
+    meta_p, _ = AX.montar_meta_anexo(proprio[0], fonte, registro, URN_BASE, publicacao, False, {})
+    checar(meta_p["remete_a"] == [f"{URN_BASE}!anx2"], "o anexo não remete a si mesmo")
+    checar(AX.nome_arquivo(1) == "anexo-01" and AX.nome_arquivo(23) == "anexo-23",
+           "arquivo anexo-NN")
+    checar(f"{URN_BASE}!anx3" in [u for u in F.montar_meta(
+        {"numero": "2", "linhas": ["x"], "linhas_vigentes": ["x"], "citados": [], "hierarquia": [],
+         "linhas_proprias": ["Art. 2º O Anexo I constante do Anexo III desta Lei Complementar."]},
+        fonte, registro, URN_BASE, publicacao, False)[0]["remete_a"]],
+           "artigo: remissão ao anexo entra em remete_a")
+
+
+@cenario("consulta: texto todo riscado no compilado vira aviso, se a data não o resolve")
+def consulta_texto_riscado():
+    """Quebra: a consulta dizer 'vigente' (datas provisórias) de um dispositivo
+    cujo texto o compilado mostra inteiramente riscado, com '(Revogado pela ...)',
+    sem avisar; ou avisar também do que tem texto em vigor."""
+    import datetime as dt
+
+    import consultar as C
+
+    meta = {"vigencia_inicio": "1900-01-01", "efeitos_inicio": "1900-01-01"}
+    revogado = ("~~ANEXO II~~\n\n(Revogado pela Lei Complementar nº 998, de 1901)\n\n"
+                "~~ITEM~~ | ~~DESCRIÇÃO~~\n\n~~1~~ | ~~PRODUTO~~")
+    aviso = C.aviso_de_texto_riscado(meta, revogado, dt.date(1902, 1, 1))
+    checar(aviso is not None and "(Revogado pela Lei Complementar nº 998, de 1901)" in aviso,
+           f"tudo riscado, com a anotação: aviso que a cita (obteve {aviso!r})")
+    vivo = "~~Art. 1º Texto antigo.~~\n\nArt. 1º Texto novo. (Redação dada pela Lei nº 1)"
+    checar(C.aviso_de_texto_riscado(meta, vivo, dt.date(1902, 1, 1)) is None,
+           "com texto em vigor: sem aviso")
+    fim = {**meta, "vigencia_fim": "1901-06-01"}
+    checar(C.aviso_de_texto_riscado(fim, revogado, dt.date(1902, 1, 1)) is None,
+           "já revogado pelas datas na data consultada: sem aviso redundante")
+
+
+@cenario("normas/ reais: anexos da LC 214 (pulado se a LC 214 não está ingerida)")
+def anexos_reais():
+    """Contrato com o compilado da LC 214 (lido no HTML): 23 anexos com âncora
+    anexo1..anexo23; o XIV riscado, com "(Revogado pela ...)" ligado ao art. 181
+    da LC 227; os XVIII a XXIII reproduzem anexos da LC 123; o art. 125 remete ao
+    Anexo I, e o art. 520 ao XXIII (o Anexo VII que ele cita é da LC 123)."""
+    pasta = RAIZ / "normas" / "lc-214-2025"
+    if not pasta.exists():
+        print("  pulado: normas/lc-214-2025 ausente")
+        return
+    from comum import ler_frontmatter
+
+    base = urn_norma("br:federal:lei.complementar", "2025-01-16", "214")
+    arquivos = sorted(pasta.glob("anexo-*.md"))
+    checar([a.stem for a in arquivos] == [f"anexo-{n:02d}" for n in range(1, 24)],
+           f"23 arquivos anexo-01..anexo-23 (obteve {len(arquivos)})")
+    if len(arquivos) != 23:
+        return
+    from comum import arquivos_dispositivos, arquivos_norma
+
+    checar(set(arquivos) <= set(arquivos_dispositivos("lc-214-2025"))
+           and not any(p.name.startswith("anexo-") for p in arquivos_norma("lc-214-2025")),
+           "arquivos_dispositivos inclui os anexos; arquivos_norma, só artigos")
+    import json
+
+    cobertura = json.loads((RAIZ / "indices" / "cobertura.json").read_text(encoding="utf-8"))
+    checar(cobertura["normas"]["lc-214-2025"].get("anexos") == 23,
+           f"cobertura.json conta os anexos (obteve {cobertura['normas']['lc-214-2025']})")
+    metas = {n: ler_frontmatter(a) for n, a in enumerate(arquivos, 1)}
+    checar(all(m["urn"] == f"{base}!anx{n}" for n, (m, _) in metas.items()), "URN !anxN")
+    meta14, corpo14 = metas[14]
+    art181 = urn_norma("br:federal:lei.complementar", "2026-01-13", "227") + "!art181"
+    checar(corpo14.lstrip().startswith("~~ANEXO XIV~~")
+           and [a["ato"] for a in meta14["alterado_por"]] == [art181],
+           f"XIV: riscado, revogação ligada ao art. 181 da LC 227 (obteve {meta14['alterado_por']})")
+    outra = {n for n, (m, _) in metas.items() if m.get("texto_de_outra_norma")}
+    checar(outra == set(range(18, 24)) and all(
+        metas[n][0]["texto_de_outra_norma"]["norma"].startswith("Lei Complementar nº 123,")
+        for n in outra), f"XVIII a XXIII reproduzem anexos da LC 123 (obteve {sorted(outra)})")
+    linhas1 = [ln for ln in metas[1][1].splitlines() if ln.strip()]
+    checar(linhas1[3].startswith("ITEM | ") and linhas1[4].startswith("1 | "),
+           "Anexo I: cabeçalho da tabela e primeira linha, células separadas")
+    m125, _ = ler_frontmatter(pasta / "art-0125.md")
+    m520, _ = ler_frontmatter(pasta / "art-0520.md")
+    checar(f"{base}!anx1" in m125["remete_a"]
+           and f"{base}!anx23" in m520["remete_a"] and f"{base}!anx7" not in m520["remete_a"],
+           "art. 125 -> Anexo I; art. 520 -> XXIII, não VII")
 
 
 @cenario("portabilidade de saída")

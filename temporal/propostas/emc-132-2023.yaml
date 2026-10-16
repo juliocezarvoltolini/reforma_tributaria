@@ -168,6 +168,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -250,6 +251,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -321,6 +323,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -396,6 +399,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -466,6 +470,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 1
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -538,6 +543,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -623,6 +629,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -687,6 +694,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -784,6 +792,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -855,6 +864,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -909,8 +919,8 @@ dispositivos:
       datas:
       - '2023-12-21'
       fonte: dou
-    vigencia_inicio: '2023-12-21'
-    efeitos_inicio: '2023-12-21'
+    vigencia_inicio: '2027-01-01'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art11
     tipos:
@@ -924,6 +934,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1066,6 +1077,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1192,6 +1204,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1261,6 +1274,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1329,6 +1343,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1396,6 +1411,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1460,6 +1476,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1540,6 +1557,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1646,6 +1664,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1712,6 +1731,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1778,6 +1798,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1850,6 +1871,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1926,6 +1948,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []

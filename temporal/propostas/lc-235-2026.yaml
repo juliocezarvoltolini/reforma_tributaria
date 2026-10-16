@@ -90,6 +90,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -167,6 +168,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -235,6 +237,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -312,6 +315,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -402,6 +406,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -469,6 +474,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -569,6 +575,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -638,6 +645,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -706,6 +714,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -773,6 +782,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -838,6 +848,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -903,6 +914,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -968,6 +980,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1037,6 +1050,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1105,6 +1119,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1174,6 +1189,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []
@@ -1242,6 +1258,7 @@ dispositivos:
   alteracoes: []
   alteracoes_cobrem_as_marcas: false
   marcas_ocorrencias: 0
+  texto_todo_riscado: false
   vetados:
     ocorrencias: 0
     subdivisoes: []

@@ -633,6 +633,16 @@ def combinar_alteracao(tipo: str, conferida: bool, ato_vig: str | None, ato_efe:
     return {"resultado_se_aprovada": resultado, "proposta": proposta, "motivo": None}
 
 
+RE_RISCADO = re.compile(r"~~.*?~~")
+
+
+def texto_todo_riscado(corpo: list[str]) -> bool:
+    """Todo o texto do artigo está riscado no compilado, salvo as anotações?"""
+    if not any("~~" in linha for linha in corpo):
+        return False
+    return not any(RE_ANOTACAO.sub("", RE_RISCADO.sub("", linha)).strip() for linha in corpo)
+
+
 RE_VETADO = re.compile(r"\(\s*VETAD[OA]\s*\)", re.IGNORECASE)
 
 
@@ -1153,6 +1163,9 @@ def construir(slug: str, regras: dict | None = None, _com_alteracoes: bool = Tru
                 len(RE_ANOTACAO.findall(linha)) for linha in corpo),
             # Contagens para a leitura dos itens vetados (nível C, temporal/ia.yaml).
             "marcas_ocorrencias": sum(len(RE_ANOTACAO.findall(linha)) for linha in corpo),
+            # Todo o texto riscado: o "(Revogado ...)" da linha do caput revoga o
+            # artigo inteiro, não só o caput.
+            "texto_todo_riscado": texto_todo_riscado(corpo),
             "vetados": vetados_do_artigo(corpo, base, n),
             "pendencias": pendencias,
             "revisao": {

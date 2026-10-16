@@ -28,6 +28,11 @@ O texto de **outra norma** que este artigo altera (entre aspas no original) fica
 no corpo do artigo que promove a alteração e está listado em
 `dispositivos_citados`. Não é dispositivo desta norma.
 
-**Não está aqui:** assinatura, rodapé e anexos que seguem o último artigo. Eles
-permanecem em `/fontes/` (o `fatiar.py --relatorio` informa quantas linhas e
-quantos anexos ficaram de fora).
+**Anexos:** um arquivo por anexo da norma, `<slug>/anexo-NN.md` (URN `...!anxN`).
+Cada linha da tabela é uma linha do corpo, com as células separadas por ` | `.
+O anexo que reproduz o anexo de outra lei traz `texto_de_outra_norma`. As datas
+dos anexos ainda são provisórias (sem revisão temporal).
+
+**Não está aqui:** assinatura, rodapé e o ato que às vezes segue os anexos no
+mesmo compilado (LC 214: promulgação de partes vetadas). Permanecem em
+`/fontes/`.

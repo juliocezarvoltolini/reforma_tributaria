@@ -144,11 +144,26 @@ def escrever_frontmatter(caminho: Path, meta: dict, corpo: str) -> None:
 
 
 def arquivos_norma(slug: str | None = None):
-    """Itera sobre os dispositivos de /normas/ (opcionalmente de uma norma)."""
+    """Itera sobre os ARTIGOS de /normas/ (opcionalmente de uma norma). A revisão
+    temporal (propor_vigencia, revisar_por_regra) trabalha só com artigos."""
     alvo = DIR_NORMAS / slug if slug else DIR_NORMAS
     if not alvo.exists():
         return
     yield from sorted(alvo.rglob("art-*.md"))
+
+
+def arquivos_anexos(slug: str | None = None):
+    """Itera sobre os anexos de /normas/ (`anexo-NN.md`)."""
+    alvo = DIR_NORMAS / slug if slug else DIR_NORMAS
+    if not alvo.exists():
+        return
+    yield from sorted(alvo.rglob("anexo-*.md"))
+
+
+def arquivos_dispositivos(slug: str | None = None):
+    """Artigos e anexos: o que a consulta, os índices e a validação enxergam."""
+    yield from arquivos_norma(slug)
+    yield from arquivos_anexos(slug)
 
 
 # ---------------------------------------------------------------------------

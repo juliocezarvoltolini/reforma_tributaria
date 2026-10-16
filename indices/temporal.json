@@ -790,6 +790,1133 @@
     "vigencia_fim": null,
     "vigencia_inicio": "2023-12-21"
   },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx1": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo I",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx10": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo X",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx11": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XI",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx12": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx13": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XIII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx14": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XIV",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx15": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XV",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx16": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XVI",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx17": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XVII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx18": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XVIII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx19": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XIX",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx2": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo II",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx20": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XX",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx21": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XXI",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx22": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XXII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx23": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo XXIII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx3": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo III",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx4": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo IV",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx5": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo V",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx6": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo VI",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx7": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo VII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx8": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo VIII",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
+  "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx9": {
+    "data_ato": "2025-01-16",
+    "dispositivo": "anexo IX",
+    "efeitos_fim": null,
+    "efeitos_inicio": "2025-01-16",
+    "excecoes_subdivisao": [],
+    "norma": "lc-214-2025",
+    "precisao": {},
+    "publicacao": {
+      "datas": [
+        "2025-01-16"
+      ],
+      "dou": {
+        "edicao": "11-B",
+        "pagina": "1",
+        "secao": "1 - Extra B"
+      },
+      "fonte": "dou",
+      "republicacoes": [
+        {
+          "anexos": [
+            "XXIII"
+          ],
+          "artigos": [],
+          "codigo_autenticidade": "05152025012300001",
+          "data": "2025-01-23",
+          "edicao": "16",
+          "nota": "(*) Republicação do Anexo XXIII a Lei Complementar nº 214, de 16 de janeiro de 2025, por ter sido constada inexatidão material, quanto ao original, na Edição Extra do Diário Oficial da União de 16 de janeiro de 2025, Edição: 11-B - Seção: 1 - Extra B, página 64.",
+          "pagina": 1,
+          "trecho": "Ano CLXIII Nº 16 Brasília - DF, quinta-feira, 23 de janeiro de 2025"
+        }
+      ],
+      "rodape_compilado": {
+        "datas": [
+          "2025-01-16",
+          "2025-01-23"
+        ],
+        "trechos": [
+          "Este texto não substitui o publicado no DOU de 16.1.2025 - Edição extra e republicado no DOU de 23.1.2025"
+        ]
+      },
+      "trechos": [
+        "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
+      ]
+    },
+    "revisao_temporal_pendente": true,
+    "vigencia_fim": null,
+    "vigencia_inicio": "2025-01-16"
+  },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art1": {
     "data_ato": "2025-01-16",
     "dispositivo": "art. 1",
@@ -7860,17 +8987,7 @@
     "dispositivo": "art. 217",
     "efeitos_fim": null,
     "efeitos_inicio": "2026-01-01",
-    "excecoes_subdivisao": [
-      {
-        "fundamento": [
-          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art181",
-          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182",
-          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII"
-        ],
-        "urn": "urn:lex:br:federal:lei.complementar:2025-01-16;214!art217_par0",
-        "vigencia_fim": "2026-01-14"
-      }
-    ],
+    "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
     "publicacao": {
@@ -7911,7 +9028,7 @@
       ]
     },
     "revisao_temporal_pendente": false,
-    "vigencia_fim": null,
+    "vigencia_fim": "2026-01-14",
     "vigencia_inicio": "2025-01-16"
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!art218": {

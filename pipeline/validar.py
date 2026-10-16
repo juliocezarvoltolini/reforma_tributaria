@@ -25,13 +25,13 @@ from comum import (
     MARCA_NAO_VERIFICADO,
     DIR_TEMPORAL,
     STATUS_VALIDOS,
-    arquivos_norma,
+    arquivos_dispositivos,
     caminho_fonte,
     ler_frontmatter,
     para_data,
     sha256_arquivo,
 )
-from alteracoes import conferir
+from alteracoes import conferir, conferir_anexo
 from revisao_temporal import carregar_revisoes, problemas_no_dispositivo, revisoes_nao_aplicadas
 
 erros: list[str] = []
@@ -60,7 +60,7 @@ def validar_dispositivos(corpos: dict[str, str] | None = None) -> list[dict]:
     # repetido, ele empurraria para fora da tela os avisos que importam.
     avisos_temporais: dict[str, list[str]] = defaultdict(list)
 
-    for caminho in arquivos_norma():
+    for caminho in arquivos_dispositivos():
         try:
             meta, corpo = ler_frontmatter(caminho)
         except ValueError as exc:
@@ -326,6 +326,7 @@ def relatar_pendencias(metas: list[dict]) -> None:
 
 
 RE_NUMERO_DA_URN = re.compile(r"!art([^_!]+)$")
+RE_NUMERO_DO_ANEXO = re.compile(r"!anx(\d+)$")
 
 
 def conferir_alteracoes(itens: list[tuple[dict, str]]) -> dict:
@@ -336,6 +337,7 @@ def conferir_alteracoes(itens: list[tuple[dict, str]]) -> dict:
          "isoladas_nao_confirmadas": []}
     for meta, _ in itens:
         m = RE_NUMERO_DA_URN.search(meta.get("urn") or "")
+        anx = RE_NUMERO_DO_ANEXO.search(meta.get("urn") or "")
         nome = (meta.get("norma") or "").split(",")[0].strip()
         for alteracao in meta.get("alterado_por") or []:
             if not alteracao.get("ato"):
@@ -345,6 +347,8 @@ def conferir_alteracoes(itens: list[tuple[dict, str]]) -> dict:
             if alvo is None:
                 r["alterador_ausente"].append(alteracao["ato"])
             elif m and conferir(m.group(1), nome, *alvo):
+                r["confirmadas"] += 1
+            elif anx and conferir_anexo(int(anx.group(1)), nome, alvo[1]):
                 r["confirmadas"] += 1
             elif alteracao.get("isolada"):
                 # Anotação sozinha na linha: pode ser de um título inserido que

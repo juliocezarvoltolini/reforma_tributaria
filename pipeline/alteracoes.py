@@ -89,6 +89,38 @@ def _artigos_mencionados(texto: str) -> set[str]:
             for n, s in RE_NUMERO.findall(grupo)}
 
 
+# "o Anexo XIV" numa lista de revogação; "“ANEXO XX" abrindo o texto citado. O
+# cabeçalho entre aspas SIMPLES é de anexo de outra lei citado dentro dele.
+RE_ANEXO_MENCIONADO = re.compile(r"\bAnexos?\s+([IVXLC]+)\b")
+RE_ANEXO_CITADO = re.compile(r"^[“\"]?ANEXO\s+([IVXLC]+)\b")
+
+
+def conferir_anexo(numero: int, nome_norma: str, alvo_corpo: str) -> str | None:
+    """O artigo alterador confirma que alterou o anexo `numero` da norma `nome_norma`?
+
+    'citacao': o caput nomeia a norma e o texto citado abre o anexo ("“ANEXO XX").
+    'lista_de_revogacao': artigo de revogação, e "o Anexo XIV" está no inciso que
+    nomeia a norma. None: não confirma."""
+    from anexos import romano_para_int
+
+    linhas = [linha for linha in alvo_corpo.splitlines() if linha.strip()]
+    if not linhas:
+        return None
+    if _nomeia(linhas[0], nome_norma) and any(
+            (m := RE_ANEXO_CITADO.match(linha)) and romano_para_int(m.group(1)) == numero
+            for linha in linhas[1:]):
+        return "citacao"
+    if RE_REVOGACAO.match(linhas[0]):
+        da_norma = False
+        for linha in linhas[1:]:
+            if RE_INCISO.match(linha):
+                da_norma = _nomeia(linha, nome_norma)
+            if da_norma and any(romano_para_int(m.group(1)) == numero
+                                for m in RE_ANEXO_MENCIONADO.finditer(linha)):
+                return "lista_de_revogacao"
+    return None
+
+
 def conferir(numero: str, nome_norma: str, alvo_meta: dict, alvo_corpo: str) -> str | None:
     """O artigo alterador confirma que alterou o art. `numero` da norma `nome_norma`?
 

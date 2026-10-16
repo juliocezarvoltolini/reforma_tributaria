@@ -17,7 +17,7 @@ import re
 import sys
 import unicodedata
 
-from comum import arquivos_norma, ler_frontmatter, para_data, status_em
+from comum import arquivos_dispositivos, ler_frontmatter, para_data, status_em
 
 ROTULO = {
     "vigente": "vigente e produzindo efeitos",
@@ -88,7 +88,7 @@ def normalizar(texto: str) -> str:
 
 def carregar() -> list[tuple[dict, str]]:
     itens = []
-    for caminho in arquivos_norma():
+    for caminho in arquivos_dispositivos():
         try:
             itens.append(ler_frontmatter(caminho))
         except ValueError as exc:
@@ -121,6 +121,26 @@ def origem_das_datas(meta: dict) -> list[str]:
         linhas.append(f"{' e '.join(faltam)} PROVISORIOS: ainda nao revisados. Nao usar para "
                       "decisao sem revisar a fonte.")
     return linhas
+
+
+RE_RISCADO = re.compile(r"~~.*?~~")
+
+
+def aviso_de_texto_riscado(meta: dict, corpo: str, referencia: _dt.date) -> str | None:
+    """O compilado mostra TODO o texto do dispositivo riscado (superado ou revogado),
+    e as datas não dizem isso na data consultada: datas provisórias de um anexo ou
+    artigo revogado ainda não revisado dariam 'vigente'. Aviso, com as anotações."""
+    from fatiar import RE_ANOTACAO
+
+    if "~~" not in corpo or status_em(meta, referencia) in {"revogado", "sem_efeitos"}:
+        return None
+    sem_riscado = RE_RISCADO.sub("", corpo)
+    if RE_ANOTACAO.sub("", sem_riscado).replace("|", "").strip():
+        return None
+    anotacoes = "; ".join(m.group(0) for m in RE_ANOTACAO.finditer(sem_riscado))
+    return ("no compilado, TODO o texto deste dispositivo esta riscado (superado ou revogado)"
+            + (f": {anotacoes}" if anotacoes else "")
+            + " — o estado acima vem das datas e NAO reflete isso")
 
 
 def _autoria(registro: dict, feito: str = "proposta") -> str:
@@ -178,8 +198,12 @@ def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None,
         origem = {"dou": "DOU", "rodape_compilado": "rodape do compilado, NAO confirmada no DOU"}
         print(f"  ato: {meta.get('data_ato')}   publicacao: {', '.join(pub.get('datas') or []) or 'nao localizada'}"
               f" ({origem.get(pub.get('fonte'), '-')})")
+    if meta.get("titulo"):
+        print(f"  titulo: {meta['titulo']}")
     for aviso in incertezas(meta, referencia):
         print(f"  ATENCAO: {aviso}")
+    if riscado := aviso_de_texto_riscado(meta, corpo, referencia):
+        print(f"  ATENCAO: {riscado}")
     for urn, estado_exc in excecoes_na_data(meta, referencia):
         print(f"  subdivisao com datas proprias: {urn.split('!')[-1]} — "
               f"{ROTULO.get(estado_exc, estado_exc)}")

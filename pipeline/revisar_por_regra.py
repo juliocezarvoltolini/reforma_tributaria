@@ -183,7 +183,10 @@ def _sem_fundamento(excecao: dict) -> dict:
 def _excecoes_de_alteracoes(entrada: dict, regras: dict) -> list[dict] | None:
     """Uma exceção por trecho alterado; o do caput em `_par0`. None se algum trecho
     não tem proposta ou tem duas leituras diferentes. Com a regra aprovada só no
-    contexto da IA, a proposta é o `resultado_se_aprovada`."""
+    contexto da IA, a proposta é o `resultado_se_aprovada`.
+
+    A revogação anotada na linha do caput de artigo com TODO o texto riscado é do
+    artigo inteiro: sai com a URN do próprio artigo, não `_par0`."""
     artigo, por_urn = entrada["urn"], {}
     aprovada_aqui = aprovada(regras, REGRA_TEXTO_ALTERADO)
     for alteracao in entrada.get("alteracoes") or []:
@@ -191,7 +194,12 @@ def _excecoes_de_alteracoes(entrada: dict, regras: dict) -> list[dict] | None:
             alteracao.get("resultado_se_aprovada") if aprovada_aqui else None)
         if not proposta or not alteracao.get("subdivisao"):
             return None
-        urn = alteracao["subdivisao"] if alteracao["subdivisao"] != artigo else f"{artigo}_par0"
+        if alteracao["subdivisao"] != artigo:
+            urn = alteracao["subdivisao"]
+        elif alteracao.get("tipo") == "revogado" and entrada.get("texto_todo_riscado"):
+            urn = artigo
+        else:
+            urn = f"{artigo}_par0"
         fundamento = list(dict.fromkeys(x for x in (
             alteracao["ato"], (alteracao.get("ato_vigencia") or {}).get("fundamento"),
             (alteracao.get("ato_efeitos") or {}).get("fundamento")) if x))
@@ -220,15 +228,20 @@ def _decidir_texto_alterado(entrada: dict, forma: str | None, regras: dict,
     excecoes_alteracao = _excecoes_de_alteracoes(entrada, regras)
     if escopo != EIXOS or excecoes_alteracao is None:
         return None
+    fim = next((x for x in excecoes_alteracao if x["urn"] == entrada["urn"]), {})
+    excecoes_alteracao = [x for x in excecoes_alteracao if x["urn"] != entrada["urn"]]
     vig, efe = entrada["vigencia"], entrada["efeitos"]
     excecoes_clausula = [dict(x) for x in efe.get("excecoes") or []]
     if {x["urn"] for x in excecoes_clausula} & {x["urn"] for x in excecoes_alteracao}:
         return None  # a cláusula e a alteração dizem coisas sobre o mesmo trecho
     precisao = {campo: "ano" for campo, lado in (("vigencia_inicio", vig), ("efeitos_inicio", efe))
                 if (lado.get("proposta") or {}).get("precisao") == "ano"}
-    return {"vigencia_inicio": vig["proposta"]["data_candidata"], "vigencia_fim": None,
-            "efeitos_inicio": efe["proposta"]["data_candidata"], "efeitos_fim": None,
-            "precisao": precisao, "fundamento_vigencia": [vig["fundamento"]],
+    return {"vigencia_inicio": vig["proposta"]["data_candidata"],
+            "vigencia_fim": fim.get("vigencia_fim"),
+            "efeitos_inicio": efe["proposta"]["data_candidata"], "efeitos_fim": fim.get("efeitos_fim"),
+            "precisao": precisao,
+            # O fim do artigo revogado inteiro vem do ato revogador.
+            "fundamento_vigencia": [vig["fundamento"]] + (fim.get("fundamento") or []),
             "fundamento_efeitos": [efe.get("fundamento") or vig["fundamento"]],
             "excecoes_subdivisao": excecoes_clausula + excecoes_alteracao,
             "_usadas": usadas + [REGRA_TEXTO_ALTERADO]}
@@ -240,7 +253,8 @@ def _igual_a_aplicada_alterar(revisao: dict, meta: dict | None) -> bool:
     if meta.get("revisado_por") != revisao["revisado_por"]:
         return False
     return ((meta.get("eixos_revisados") or EIXOS) == EIXOS
-            and all(str(meta.get(c)) == str(revisao[c]) for c in ("vigencia_inicio", "efeitos_inicio"))
+            and all(str(meta.get(c)) == str(revisao[c])
+                    for c in ("vigencia_inicio", "vigencia_fim", "efeitos_inicio", "efeitos_fim"))
             and (meta.get("excecoes_subdivisao") or []) == revisao["excecoes_subdivisao"])
 
 

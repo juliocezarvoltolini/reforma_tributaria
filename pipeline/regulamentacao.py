@@ -27,7 +27,7 @@ import re
 import unicodedata
 from pathlib import Path
 
-from comum import DIR_INTERPRETACOES, DIR_LACUNAS, RAIZ, arquivos_norma, ler_frontmatter
+from comum import DIR_INTERPRETACOES, DIR_LACUNAS, RAIZ, arquivos_dispositivos, ler_frontmatter
 
 TIPO_REGULAMENTACAO = "regulamentacao"
 CONFIANCAS = {"literal", "derivado", "controverso"}
@@ -48,7 +48,7 @@ def urn_do_artigo(urn: str) -> str:
 def indice_de_normas() -> dict[str, tuple[dict, str]]:
     """{urn do artigo: (metadados, corpo)} de tudo que está em normas/."""
     indice = {}
-    for caminho in arquivos_norma():
+    for caminho in arquivos_dispositivos():
         meta, corpo = ler_frontmatter(caminho)
         indice[meta["urn"]] = (meta, corpo)
     return indice

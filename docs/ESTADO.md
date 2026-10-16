@@ -264,10 +264,11 @@ escolhido. Estão aqui para serem revistas.
    dispositivos da Lei nº …") vem **antes** de uma enumeração. Aplicar a regra
    literal à LC derrubaria a maioria das remissões; é decisão de precisão x
    cobertura.
-3. **Anexos e assinatura ficam fora de `/normas/`.** Antes ficavam colados ao
-   último artigo. Os anexos da LC são parte da lei e precisam de modelo próprio
-   (URN, arquivo, validação). Lembrete: a maior parte do texto riscado está
-   neles.
+3. ~~**Anexos e assinatura ficam fora de `/normas/`.**~~ — resolvido em
+   2026-10-16 para os anexos: os 23 anexos da LC 214 estão em
+   `normas/lc-214-2025/anexo-NN.md` (modelo em `docs/MODELO-DADOS.md`). A
+   assinatura e o ato seguinte (promulgação de partes vetadas) continuam fora.
+   Os anexos ainda não têm revisão temporal: datas provisórias.
 4. **`anotacoes_oficiais` é uma lista plana por artigo.** `(Revogado …)` de um §
    aparece na lista do artigo. Quem lê deve ir ao corpo, onde a anotação está
    colada ao trecho riscado. ~~As anotações `(Incluído pela …)` que seguem um
@@ -344,6 +345,27 @@ não ao tempo do dispositivo. Fica de fora o art. 19, II da LC 214 ("somente
 entrará em vigor com o início da produção de efeitos do ajuste"), cláusula
 própria com termo de evento sem data. Mais 8 decisões de IA; pendentes: 50 de
 802.
+
+**Anexos da LC 214 na base (2026-10-16).** Os 23 anexos saem do compilado já
+arquivado (sem download novo), um arquivo por anexo, cada linha da tabela uma
+linha do corpo (`pipeline/anexos.py`). A extração passou a registrar a posição
+de cada parágrafo na tabela e as âncoras `<a name>`: o cabeçalho de anexo da
+lei tem `anexoN`, e o "ANEXO I" de dentro do Anexo XVIII (o da LC 123) não
+abre anexo. O XIV está todo riscado, com a revogação ligada ao art. 181 da LC
+227, e os XVIII a XXIII trazem `texto_de_outra_norma` (LC 123). 24 artigos
+passaram a remeter aos anexos (`remete_a`; as menções dos arts. 517 e 531 estão
+em texto citado de outra lei e não resolvem); o corpo de nenhum artigo mudou. A
+conferência das anotações no texto do alterador entende anexo: as 10 anotações
+dos anexos XIV, XX e XXI conferem nos arts. 174 e 181 da LC 227. A consulta
+avisa quando o texto do dispositivo está todo riscado e as datas ainda dizem
+"vigente" (é o caso do Anexo XIV, sem revisão temporal).
+
+Esse aviso achou um erro de ontem: o art. 217 da LC 214, todo riscado com
+"(Revogado pela Lei Complementar nº 227, de 2026)" na linha do caput, tinha a
+revogação gravada só no caput (`_par0`), e incisos e parágrafo apareciam em
+vigor. A decisão agora dá `vigencia_fim` ao artigo inteiro quando todo o texto
+está riscado (`texto_todo_riscado` na proposta). Pendentes: 73 de 825
+dispositivos (os 50 artigos de antes e os 23 anexos).
 
 **Remissões a lei futura: regulamentação ligada, lacuna só onde nada se
 localizou (2026-10-15).** Registrar as remissões da EC 132 como "não

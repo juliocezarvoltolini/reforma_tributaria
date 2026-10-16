@@ -49,12 +49,12 @@ FONTES_PUBLICACAO = {"rodape_compilado", "dou"}
 # Ordem canônica do front-matter. Determinística, para que a mesma entrada dê
 # os mesmos bytes; campos opcionais só aparecem quando há o que dizer.
 ORDEM_CAMPOS = (
-    "urn", "norma", "norma_slug", "dispositivo", "camada", "hierarquia",
+    "urn", "norma", "norma_slug", "dispositivo", "titulo", "camada", "hierarquia",
     "data_ato", "publicacao",
     "vigencia_inicio", "vigencia_fim", "efeitos_inicio", "efeitos_fim",
     "precisao", "excecoes_subdivisao", "fundamento_temporal", "status",
     "fonte", "ingerido_em", "remete_a", "remete_a_externo", "subdivisoes",
-    "anotacoes_oficiais", "conceitos_definidos", "dispositivos_citados",
+    "anotacoes_oficiais", "conceitos_definidos", "dispositivos_citados", "texto_de_outra_norma",
     "altera", "alterado_por", "extracao", "eixos_revisados", "revisao_temporal_pendente",
     "revisado_por", "revisado_em", "interpretacoes_ia",
 )

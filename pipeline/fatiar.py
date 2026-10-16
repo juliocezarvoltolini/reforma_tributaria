@@ -40,6 +40,8 @@ from comum import (
 import datetime as _dt
 
 from alteracoes import alteracoes_do_artigo, mapa_de_links  # noqa: E402
+from anexos import extrair_remissoes_a_anexos, fatiar_anexos, montar_meta_anexo  # noqa: E402
+from anexos import nome_arquivo as nome_arquivo_anexo  # noqa: E402
 from revisao_temporal import aplicar_revisao, carregar_revisoes, ordenar_meta
 
 CATALOGO = Path(__file__).resolve().parent / "fontes.yaml"
@@ -85,6 +87,11 @@ class Linha(NamedTuple):
     links       (href, texto) de cada <a href> do parágrafo. A anotação
                 "(Incluído pela Lei Complementar nº 227, de 2026)" é um link para o
                 artigo da lei que fez a alteração (`Lcp227.htm#art174`).
+    celula      (tabela, linha, coluna) da célula onde o parágrafo está, contadas
+                a partir de 1 na ordem do documento; None fora de tabela. Cada
+                <td> do Word tem o seu <p>, e sem isto a linha da tabela some.
+    ancoras     os <a name> do parágrafo ("anexo1": o portal marca assim o
+                cabeçalho de cada anexo da lei).
     """
 
     completa: str
@@ -93,6 +100,8 @@ class Linha(NamedTuple):
     blockquote: bool | None = None
     link_externo: str | None = None
     links: tuple[tuple[str, str], ...] = ()
+    celula: tuple[int, int, int] | None = None
+    ancoras: tuple[str, ...] = ()
 
 
 def _normalizar(texto: str) -> str:
@@ -146,6 +155,10 @@ class _Extrator(HTMLParser):
         self._href: str | None = None  # <a href> aberto
         self._texto_href: list[str] = []
         self._links_na_linha: list[tuple[str, str]] = []
+        self._tabelas = 0  # quantas <table> já abriram
+        self._pilha_tabelas: list[list[int]] = []  # [tabela, linha, coluna] da aberta
+        self._celula_na_linha: tuple[int, int, int] | None = None
+        self._ancoras_na_linha: list[str] = []
 
     def handle_starttag(self, tag, attrs):
         if tag in _IGNORAR:
@@ -155,8 +168,19 @@ class _Extrator(HTMLParser):
             return
         if tag in _QUEBRA:
             self._fechar_linha()
+        if tag == "table":
+            self._tabelas += 1
+            self._pilha_tabelas.append([self._tabelas, 0, 0])
+        elif tag == "tr" and self._pilha_tabelas:
+            self._pilha_tabelas[-1][1:] = [self._pilha_tabelas[-1][1] + 1, 0]
+        elif tag in _CELULA and self._pilha_tabelas:
+            # Célula sem <p> não pode emendar no texto da anterior.
+            self._fechar_linha()
+            self._pilha_tabelas[-1][2] += 1
         if tag == "blockquote":
             self._blockquote += 1
+        if tag == "a" and (nome := (dict(attrs).get("name") or "").strip()):
+            self._ancoras_na_linha.append(nome)
         if tag == "a":
             href = (dict(attrs).get("href") or "").strip()
             arquivo = href.split("#", 1)[0].strip()
@@ -176,6 +200,9 @@ class _Extrator(HTMLParser):
             self._fechar_linha()
         if tag == "blockquote" and self._blockquote:
             self._blockquote -= 1
+        if tag == "table" and self._pilha_tabelas:
+            self._fechar_linha()
+            self._pilha_tabelas.pop()
         if tag == "a":
             self._href_externo = None
             texto = _normalizar("".join(self._texto_href))
@@ -202,6 +229,8 @@ class _Extrator(HTMLParser):
         if not self._texto_na_linha and dados.strip():
             self._texto_na_linha = True
             self._link_na_linha = self._href_externo
+            self._celula_na_linha = (tuple(self._pilha_tabelas[-1]) if self._pilha_tabelas
+                                     else None)
         if self._href:
             self._texto_href.append(dados)
         self._segmentos.append((dados, any(r for _, r in self._pilha)))
@@ -210,13 +239,15 @@ class _Extrator(HTMLParser):
         segmentos, self._segmentos = self._segmentos, []
         link, self._link_na_linha, self._texto_na_linha = self._link_na_linha, None, False
         links, self._links_na_linha = tuple(self._links_na_linha), []
+        celula, self._celula_na_linha = self._celula_na_linha, None
         completa = _normalizar("".join(t for t, _ in segmentos))
         if not completa:
-            return
+            return  # a âncora de parágrafo vazio fica para o próximo com texto
+        ancoras, self._ancoras_na_linha = tuple(self._ancoras_na_linha), []
         vigente = _normalizar("".join(t for t, r in segmentos if not r))
         self.linhas.append(
             Linha(completa, vigente, _normalizar(_marcar(segmentos)), self._bq_na_linha, link,
-                  links)
+                  links, celula, ancoras)
         )
 
     def concluir(self) -> list[Linha]:
@@ -758,6 +789,9 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
         "linhas_apos_o_fim": 0,
         "anexos_nao_incorporados": 0,
         "titulos_de_estrutura": 0,
+        # Índice da linha onde o texto da norma termina (assinatura ou primeiro
+        # anexo): daí em diante, anexos.py. None se o texto não termina.
+        "linha_do_fim": None,
     }
     fim_do_texto = False
     # Depois de uma etiqueta de estrutura ("CAPÍTULO II"), a linha seguinte é o
@@ -768,7 +802,7 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
     anotacoes_do_cabecalho: list[str] = []
     titulos_suspeitos: list[str] = []
 
-    for linha in linhas:
+    for indice, linha in enumerate(linhas):
         completa = linha.completa
         if fim_do_texto:
             stats["linhas_apos_o_fim"] += 1
@@ -797,6 +831,7 @@ def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
         # podem ter anexos.
         if atual is not None and not dentro and RE_FIM_DO_TEXTO.match(completa):
             fim_do_texto = True
+            stats["linha_do_fim"] = indice
             stats["linhas_apos_o_fim"] += 1
             if RE_ANEXO.match(completa):
                 stats["anexos_nao_incorporados"] += 1
@@ -962,8 +997,9 @@ def _imprimir_estatisticas(stats: dict, prefixo: str = "  ") -> None:
           f"saldo final={stats['aspas_estado_final']}")
     print(f"{prefixo}aspas x <blockquote>: {stats['discordancia_blockquote']} discordancia(s)")
     print(f"{prefixo}depois do fim do texto (assinatura, anexos): "
-          f"{stats['linhas_apos_o_fim']} linha(s), {stats['anexos_nao_incorporados']} anexo(s) "
-          "NAO incorporados a /normas/ — permanecem em fontes/")
+          f"{stats['linhas_apos_o_fim']} linha(s), {stats['anexos_nao_incorporados']} "
+          "cabecalho(s) 'ANEXO' (os da propria lei vao para anexo-NN.md; os demais sao "
+          "texto de outra lei dentro deles)")
 
 
 # Cabeçalho da página de um ato no portal da Imprensa Nacional (in.gov.br),
@@ -1083,7 +1119,9 @@ def montar_meta(
             "sha256": registro["sha256"],
         },
         "ingerido_em": hoje(),
-        "remete_a": extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo),
+        # Artigos e anexos desta norma ("Anexo I desta Lei Complementar").
+        "remete_a": (extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo)
+                     + extrair_remissoes_a_anexos(corpo_proprio, base, exigir_escopo)),
         "remete_a_externo": extrair_externas(vigente),
         # Subdivisões do próprio artigo; as do texto citado pertencem à
         # norma alterada.
@@ -1136,6 +1174,17 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
         # Escrever com números repetidos sobrescreveria arquivos silenciosamente.
         # Abortar preserva o dado e expõe o problema para correção.
         print(f"[{slug}] nada foi escrito — corrija o fatiamento antes de ingerir",
+              file=sys.stderr)
+        return 1
+
+    # Anexos: depois do fim do texto. Erro de sequência também aborta.
+    anexos_lidos, avisos_ax = (fatiar_anexos(linhas[stats["linha_do_fim"]:])
+                               if stats["linha_do_fim"] is not None else ([], []))
+    for aviso in avisos_ax:
+        print(f"[{slug}] {'ERRO' if aviso.startswith('ERRO') else 'AVISO'} (anexos): "
+              f"{aviso.removeprefix('ERRO ')}", file=sys.stderr)
+    if any(a.startswith("ERRO") for a in avisos_ax):
+        print(f"[{slug}] nada foi escrito — corrija o fatiamento dos anexos antes de ingerir",
               file=sys.stderr)
         return 1
 
@@ -1205,6 +1254,8 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     mapa_links = mapa_de_links(yaml.safe_load(CATALOGO.read_text(encoding="utf-8")))
     gerados = [montar_meta(a, fonte, registro, base, publicacao, exigir_escopo, mapa_links)
                for a in artigos]
+    gerados_anexos = [montar_meta_anexo(a, fonte, registro, base, publicacao, exigir_escopo,
+                                        mapa_links) for a in anexos_lidos]
 
     # Revisão temporal humana, se houver. Erro aqui aborta ANTES de apagar
     # qualquer arquivo: aplicar parte de uma revisão, ou descartá-la em silêncio,
@@ -1226,6 +1277,9 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
         print(f"  data do ato: {fonte['data']}   publicacao: {publicacao['datas'] or 'nao localizada'}"
               f" ({publicacao['fonte'] or '-'})")
         print(f"  revisoes temporais aplicaveis: {len(revisoes)}  (erros: {len(erros_rev)})")
+        de_outra = [m["dispositivo"] for m, _ in gerados_anexos if m["texto_de_outra_norma"]]
+        print(f"  anexos da propria lei: {len(gerados_anexos)}"
+              + (f"  (com texto de outra lei: {', '.join(de_outra)})" if de_outra else ""))
 
         # Lacunas na sequência própria. Um artigo que a norma tem mas que a
         # classificação mandou para "citado" aparece aqui — é o diagnóstico
@@ -1249,9 +1303,9 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
 
         # Remissões: quantas foram resolvidas e quantas apontam para artigo
         # que esta ingestão não produziu.
-        proprias = {m["urn"] for m, _ in gerados}
+        proprias = {m["urn"] for m, _ in gerados + gerados_anexos}
         total_rem = orfas_rem = 0
-        for meta, _ in gerados:
+        for meta, _ in gerados + gerados_anexos:
             for alvo in meta["remete_a"]:
                 total_rem += 1
                 artigo_alvo = alvo.split("!")[0] + "!" + alvo.split("!")[1].split("_")[0]
@@ -1271,7 +1325,7 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
     # antes produzia artigos espúrios deixa esses arquivos para trás, e a base
     # passa a conter dispositivos que a norma não tem.
     if destino_dir.exists():
-        antigos = list(destino_dir.glob("art-*.md"))
+        antigos = list(destino_dir.glob("art-*.md")) + list(destino_dir.glob("anexo-*.md"))
         for arquivo in antigos:
             arquivo.unlink()
         if antigos:
@@ -1286,12 +1340,20 @@ def processar_norma(fonte: dict, manifest: dict, relatorio: bool = False) -> int
             meta["status"] = status_em(meta, referencia)
         pendentes += bool(meta["revisao_temporal_pendente"])
         escrever_frontmatter(destino_dir / f"{nome_arquivo(artigo['numero'])}.md", meta, corpo)
+    # Anexos: sem revisão temporal ainda — datas provisórias, como as do artigo
+    # que nunca foi revisado.
+    for (meta, corpo), anexo in zip(gerados_anexos, anexos_lidos):
+        pendentes += bool(meta["revisao_temporal_pendente"])
+        escrever_frontmatter(destino_dir / f"{nome_arquivo_anexo(anexo['numero'])}.md", meta, corpo)
 
     print(f"[{slug}] {proprios} artigos proprios escritos em "
           f"{destino_dir.relative_to(DIR_NORMAS.parent)} "
           f"(faixa {artigos[0]['numero']}..{artigos[-1]['numero']})")
     print(f"[{slug}] {citados} artigo(s) de outras normas tratados como texto "
           "alterado, nao como dispositivo proprio")
+    if gerados_anexos:
+        print(f"[{slug}] {len(gerados_anexos)} anexo(s) escritos (anexo-NN.md), sem revisao "
+              "temporal: datas provisorias")
     _imprimir_estatisticas(stats, prefixo=f"[{slug}] ")
     print(f"[{slug}] publicacao: {publicacao['datas'] or 'nao localizada'} "
           f"({publicacao['fonte'] or '-'}); data do ato: {fonte['data']}")
