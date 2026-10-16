@@ -17,6 +17,10 @@ e o trecho literal) e o que ela resolve:
   trata: efeitos_da_vigencia
                       sem cláusula de efeitos, o dispositivo produz efeitos desde a
                       vigência (datas no texto são conteúdo).
+  trata: mencao_temporal_e_conteudo
+                      nos `dispositivos` listados, "entra em vigor"/"produz efeitos"
+                      no próprio texto é conteúdo (refere-se a outra coisa), não
+                      cláusula do tempo do dispositivo.
 
 `revisar_por_regra.py` só usa a IA onde a regra não decidiu nada, e grava
 `revisado_por: ia:<modelo>` com `interpretacoes_ia: [ids]`. A revisão temporal
@@ -99,6 +103,10 @@ def problemas_da_interpretacao(interp: dict, raiz: Path = RAIZ) -> list[str]:
         if not verificar_citacao(citacao, raiz):
             problemas.append(f"interpretação {interp.get('id')!r}: trecho não encontrado em "
                              f"{citacao.get('fonte')!r}: {str(citacao.get('trecho'))[:80]!r}")
+    if interp.get("trata") == "mencao_temporal_e_conteudo" and not all(
+            str(u).startswith("urn:lex:") for u in interp.get("dispositivos") or [None]):
+        problemas.append(f"interpretação {interp.get('id')!r}: lista de dispositivos (URN) vazia "
+                         "ou inválida")
     if not (interp.get("resolve_pendencias") or interp.get("regra") or interp.get("trata")):
         problemas.append(f"interpretação {interp.get('id')!r} não diz o que resolve")
     return problemas
@@ -139,6 +147,9 @@ def contexto(interpretacoes: dict, slug: str, bases: dict[str, str]) -> dict:
             ctx["vetado"] = id_
         if interp.get("trata") == "efeitos_da_vigencia":
             ctx["efeitos_da_vigencia"] = id_
+        if interp.get("trata") == "mencao_temporal_e_conteudo":
+            for urn in interp.get("dispositivos") or []:
+                ctx.setdefault("conteudo", {})[urn] = id_
         norma = interp.get("norma")
         for pendencia in interp.get("resolve_pendencias") or []:
             if norma == slug:

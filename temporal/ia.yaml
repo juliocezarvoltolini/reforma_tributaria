@@ -116,3 +116,47 @@ interpretacoes:
         trecho: "I - em 2029, a R$ 8.000.000.000,00 (oito bilhões de reais);"
       - fonte: normas/lc-235-2026/art-0001.md
         trecho: "Em caráter extraordinário, no exercício de 2026"
+
+  - id: mencao-a-vigencia-e-conteudo
+    trata: mencao_temporal_e_conteudo
+    registrado_em: '2026-10-15'
+    dispositivos:
+      - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art10
+      - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art11
+      - urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art21
+      - urn:lex:br:federal:lei.complementar:2025-01-16;214!art16
+      - urn:lex:br:federal:lei.complementar:2025-01-16;214!art126
+      - urn:lex:br:federal:lei.complementar:2025-01-16;214!art165
+      - urn:lex:br:federal:lei.complementar:2025-01-16;214!art373
+      - urn:lex:br:federal:lei.complementar:2025-01-16;214!art374
+      - urn:lex:br:federal:lei.complementar:2025-01-16;214!art517
+    leitura: >-
+      Nestes dispositivos, "entrada em vigor" ou "produzirá efeitos" no próprio
+      texto não fixa quando o dispositivo vale: refere-se a outra coisa, e é
+      conteúdo. EC 132, art. 10: prazo da carga tributária ("até o final do quinto
+      ano da entrada em vigor do regime"); art. 11: alcance de uma revogação sobre
+      certas contribuições; art. 21: contratos anteriores às leis instituidoras.
+      LC 214, art. 126, § 2º: regra para futuras alterações das listas; art. 165,
+      § 3º: o ano-calendário de referência; arts. 373 e 374: os contratos
+      alcançados; art. 517, § 11: o efeito de uma faculdade do contribuinte. O
+      art. 16 só estava marcado porque o art. 517, § 11 o cita. Fica de fora o
+      art. 19, II da LC 214 ("somente entrará em vigor com o início da produção de
+      efeitos do ajuste"), que é cláusula do tempo do próprio inciso, com termo de
+      evento sem data.
+    citacoes:
+      - fonte: normas/emc-132-2023/art-0010.md
+        trecho: "até o final do quinto ano da entrada em vigor do regime"
+      - fonte: normas/emc-132-2023/art-0011.md
+        trecho: "não produzirá efeitos sobre as contribuições incidentes sobre a receita ou o faturamento"
+      - fonte: normas/emc-132-2023/art-0021.md
+        trecho: "contratos firmados anteriormente à entrada em vigor das leis instituidoras dos tributos"
+      - fonte: normas/lc-214-2025/art-0126.md
+        trecho: "A alteração das operações com bens ou com serviços beneficiadas pelos regimes diferenciados de que trata este Capítulo"
+      - fonte: normas/lc-214-2025/art-0165.md
+        trecho: "no ano-calendário anterior àquele da entrada em vigor desta Lei Complementar"
+      - fonte: normas/lc-214-2025/art-0373.md
+        trecho: "Este Capítulo dispõe sobre os instrumentos de ajuste para os contratos firmados anteriormente à entrada em vigor desta Lei Complementar."
+      - fonte: normas/lc-214-2025/art-0374.md
+        trecho: "Os contratos vigentes na entrada em vigor desta Lei Complementar"
+      - fonte: normas/lc-214-2025/art-0517.md
+        trecho: "A faculdade a que se refere o § 9º produzirá efeitos a partir da data do início de atividade"

@@ -336,6 +336,25 @@ para `Lcp214.htm#art493a` concordam, e isso fica em aviso. As duas leis têm
 `remissoes: so_escopo_afirmado` no catálogo: são leis de alteração, e "art. N"
 sem qualificador nelas é, quase sempre, da norma alterada.
 
+**Menção a "entrada em vigor" que é conteúdo (nível C, 2026-10-15).** Quinta
+interpretação de IA, `mencao-a-vigencia-e-conteudo`, com a lista explícita dos
+dispositivos (EC 132: 10, 11, 21; LC 214: 16, 126, 165, 373, 374, 517): ali
+"entra em vigor" ou "produzirá efeitos" refere-se a outra coisa (prazo do
+regime, contratos, futuras alterações das listas, faculdade do contribuinte) e
+não ao tempo do dispositivo. Fica de fora o art. 19, II da LC 214 ("somente
+entrará em vigor com o início da produção de efeitos do ajuste"), cláusula
+própria com termo de evento sem data. Mais 8 decisões de IA; pendentes: 50 de
+802.
+
+**Lacunas: o registro direto seria falso.** As remissões a lei futura da EC 132
+(arts. 6, 7, 8, 9, 12, 16, 19, 20) apontam, em vários casos, para leis que estão
+na base: "a lei complementar que instituir o imposto de que trata o art. 156-A
+e a contribuição de que trata o art. 195, V" é a LC 214; o ITCMD do art. 16
+está na ementa da LC 227. Registrá-las como "não regulamentado" afirmaria algo
+falso. O caminho é ligar cada remissão ao dispositivo regulamentador nas normas
+ingeridas e só registrar lacuna onde nada for localizado ("não localizado nas
+fontes indexadas").
+
 **Efeitos sem cláusula de efeitos (nível C, 2026-10-15).** Quarta
 interpretação de IA, `efeitos-na-vigencia-sem-clausula-de-efeitos`: a EC 132
 (art. 23) e a LC 235 (art. 17) só dizem quando cada dispositivo "entra em

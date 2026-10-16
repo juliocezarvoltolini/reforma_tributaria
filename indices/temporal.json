@@ -71,10 +71,13 @@
     "data_ato": "2023-12-20",
     "dispositivo": "art. 11",
     "efeitos_fim": null,
-    "efeitos_inicio": "2023-12-21",
+    "efeitos_inicio": "2027-01-01",
     "excecoes_subdivisao": [],
     "norma": "emc-132-2023",
-    "precisao": {},
+    "precisao": {
+      "efeitos_inicio": "ano",
+      "vigencia_inicio": "ano"
+    },
     "publicacao": {
       "datas": [
         "2023-12-21"
@@ -97,9 +100,9 @@
         "Publicado em: 21/12/2023 | Edição: 242 | Seção: 1 | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
-    "vigencia_inicio": "2023-12-21"
+    "vigencia_inicio": "2027-01-01"
   },
   "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art12": {
     "data_ato": "2023-12-20",
@@ -2375,8 +2378,19 @@
     "data_ato": "2025-01-16",
     "dispositivo": "art. 126",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
-    "excecoes_subdivisao": [],
+    "efeitos_inicio": "2026-01-01",
+    "excecoes_subdivisao": [
+      {
+        "efeitos_inicio": "2026-01-14",
+        "fundamento": [
+          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182",
+          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII"
+        ],
+        "urn": "urn:lex:br:federal:lei.complementar:2025-01-16;214!art126_par6",
+        "vigencia_inicio": "2026-01-14"
+      }
+    ],
     "norma": "lc-214-2025",
     "precisao": {},
     "publicacao": {
@@ -2416,7 +2430,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -4351,8 +4365,19 @@
     "data_ato": "2025-01-16",
     "dispositivo": "art. 16",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
-    "excecoes_subdivisao": [],
+    "efeitos_inicio": "2026-01-01",
+    "excecoes_subdivisao": [
+      {
+        "efeitos_inicio": "2026-01-14",
+        "fundamento": [
+          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art174",
+          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182",
+          "urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII"
+        ],
+        "urn": "urn:lex:br:federal:lei.complementar:2025-01-16;214!art16_parU",
+        "vigencia_inicio": "2026-01-14"
+      }
+    ],
     "norma": "lc-214-2025",
     "precisao": {},
     "publicacao": {
@@ -4392,7 +4417,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -4645,7 +4670,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "art. 165",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -4686,7 +4711,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -20706,7 +20731,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "art. 373",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -20747,7 +20772,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },
@@ -20755,7 +20780,7 @@
     "data_ato": "2025-01-16",
     "dispositivo": "art. 374",
     "efeitos_fim": null,
-    "efeitos_inicio": "2025-01-16",
+    "efeitos_inicio": "2026-01-01",
     "excecoes_subdivisao": [],
     "norma": "lc-214-2025",
     "precisao": {},
@@ -20796,7 +20821,7 @@
         "Publicado em: 16/01/2025 | Edição: 11-B | Seção: 1 - Extra B | Página: 1"
       ]
     },
-    "revisao_temporal_pendente": true,
+    "revisao_temporal_pendente": false,
     "vigencia_fim": null,
     "vigencia_inicio": "2025-01-16"
   },

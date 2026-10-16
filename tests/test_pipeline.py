@@ -2050,6 +2050,32 @@ def ia_citacoes():
                == [], "decisão humana não passa por aqui")
 
 
+@cenario("nível C: o contexto da revisão reflete cada tipo de interpretação")
+def ia_contexto():
+    """Quebra: uma interpretação registrada no ia.yaml que não chega à revisão, ou
+    chega à norma errada."""
+    import ia as IA
+
+    urn_a, urn_b = "urn:lex:x:1900-01-01;1", "urn:lex:x:1900-01-02;2"
+    interps = {"modelo": "m", "por_id": {
+        "p": {"id": "p", "norma": "a", "resolve_pendencias": ["retificacao"]},
+        "q": {"id": "q", "norma": "b", "resolve_pendencias": ["republicacao_de_artigos"]},
+        "r": {"id": "r", "regra": "texto-alterado-por-ato-posterior"},
+        "v": {"id": "v", "trata": "vetado"},
+        "e": {"id": "e", "trata": "efeitos_da_vigencia"},
+        "c": {"id": "c", "trata": "mencao_temporal_e_conteudo", "dispositivos": [urn_a + "!art3"]}}}
+    ctx = IA.contexto(interps, "a", {urn_a: "a", urn_b: "b"})
+    checar(ctx == {"modelo": "m", "resolve_pendencias": {"retificacao": "p"},
+                   "regras": {"texto-alterado-por-ato-posterior": "r"},
+                   "atos": {urn_b: {"republicacao_de_artigos": "q"}},
+                   "vetado": "v", "efeitos_da_vigencia": "e", "conteudo": {urn_a + "!art3": "c"}},
+           f"cada tipo no lugar certo (obteve {ctx})")
+    checar(IA.problemas_da_interpretacao(
+        {"id": "c", "leitura": "l", "trata": "mencao_temporal_e_conteudo", "dispositivos": [],
+         "citacoes": [{"fonte": "normas/lc-214-2025/art-0001.md", "trecho": "Art. 1º"}]}),
+           "leitura de conteúdo sem lista de dispositivos: problema")
+
+
 @cenario("nível C: a IA decide só o que a regra não decide, e diz que é IA")
 def ia_decisoes():
     """Quebra: decisão de IA tomando o lugar de decisão de regra ou humana; ser
@@ -2259,6 +2285,41 @@ def ia_efeitos_da_vigencia():
     r = rodar(copy.deepcopy(e), forma="efeitos_por_inciso")
     checar("ie" not in (r.get("interpretacoes_ia") or []),
            "forma com cláusula de efeitos: fora desta leitura")
+
+
+@cenario("nível C: menção a 'entrada em vigor' que é conteúdo, só nos dispositivos listados")
+def ia_mencao_e_conteudo():
+    """Quebra: tirar a marca de cláusula própria de artigo que não está na lista da
+    interpretação; ou deixar de encadear com a leitura dos efeitos."""
+    import copy
+
+    import revisar_por_regra as RR
+
+    e = _entrada_lc("3", None, pendencias=["clausula_temporal_propria", "marcos_proprios"])
+    e["vigencia"].update(inciso="III", fundamento=urn_dispositivo(URN_EC, "23", inciso="III"))
+    e["efeitos"].update(inciso=None, fundamento=None, proposta=None)
+    ctx = {"modelo": "modelo-x", "resolve_pendencias": {}, "regras": {}, "atos": {},
+           "conteudo": {e["urn"]: "ic"}, "efeitos_da_vigencia": "ie"}
+
+    def rodar(entrada, ia=ctx):
+        novo, _ = RR.decidir_por_regra(_proposta_para_regra("vigencia_por_inciso", [entrada]),
+                                       {}, "1900-02-01", ia=ia)
+        return novo["dispositivos"][0]["revisao"]
+
+    checar(rodar(copy.deepcopy(e), ia=None)["decisao"] is None, "sem a leitura: nada")
+    r = rodar(copy.deepcopy(e))
+    checar(r["escopo"] == ["vigencia", "efeitos"] and r["revisado_por"] == "ia:modelo-x"
+           and r["interpretacoes_ia"] == ["ic", "ie"]
+           and r["vigencia_inicio"] == r["efeitos_inicio"] == "1900-01-02",
+           f"lida como conteúdo: vigência pela cláusula e efeitos na vigência (obteve {r})")
+    x = copy.deepcopy(e)
+    x["pendencias"].append("depende_de_lei_futura")
+    r = rodar(x)
+    checar(r["escopo"] == ["vigencia"] and r["interpretacoes_ia"] == ["ic"],
+           f"com dependência de lei futura: só a vigência (obteve {r})")
+    fora = copy.deepcopy(e)
+    fora["urn"] = urn_dispositivo(URN_EC, "4")
+    checar(rodar(fora)["decisao"] is None, "dispositivo fora da lista: a marca continua")
 
 
 @cenario("proposta: termo relativo à publicação só vira data com a regra aprovada")

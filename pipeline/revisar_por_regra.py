@@ -321,6 +321,27 @@ def _alterar_efeitos_da_vigencia(entrada: dict) -> dict:
             "excecoes_subdivisao": []}
 
 
+# Marcas que a leitura "menção a entrada em vigor é conteúdo" tira, só dos
+# dispositivos que a interpretação lista.
+MARCAS_DE_CLAUSULA_PROPRIA = {"clausula_temporal_propria", "alcancado_por_clausula_temporal"}
+
+
+def _leituras_ia(entrada: dict, ia: dict) -> tuple[dict, list[str]]:
+    """A entrada como as interpretações de IA a leem, e os ids das que mudaram algo:
+    'conteudo' (a menção a entrada em vigor ou a efeitos é conteúdo, nos
+    dispositivos listados) e 'vetado' (item vetado não tem texto)."""
+    alvo, ids = entrada, []
+    id_conteudo = (ia.get("conteudo") or {}).get(entrada.get("urn"))
+    if id_conteudo and set(entrada.get("pendencias") or []) & MARCAS_DE_CLAUSULA_PROPRIA:
+        alvo = copy.deepcopy(entrada)
+        alvo["pendencias"] = [p for p in alvo["pendencias"] if p not in MARCAS_DE_CLAUSULA_PROPRIA]
+        ids.append(id_conteudo)
+    if ia.get("vetado") and (sem_vetado := _sem_vetado(alvo)) is not None:
+        alvo = sem_vetado
+        ids.append(ia["vetado"])
+    return alvo, ids
+
+
 def _sem_vetado(entrada: dict) -> dict | None:
     """A entrada lida com a interpretação de item vetado (sem texto, não muda as
     datas do resto do artigo), ou None se ela não se aplica: caput vetado, ou
@@ -371,22 +392,21 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str,
             continue
         escopo, usadas, alterar = _tentar(copy.deepcopy(entrada), forma, regras, gerais, atos)
         por_ia, ids = False, []
-        if (ia and ia.get("efeitos_da_vigencia") and escopo == ["vigencia"] and not alterar
-                and forma in FORMAS_SO_VIGENCIA
-                and not set(entrada.get("pendencias") or []) & FORA_DE_EFEITOS_DA_VIGENCIA):
-            escopo, alterar = list(EIXOS), _alterar_efeitos_da_vigencia(entrada)
-            por_ia, ids = True, [ia["efeitos_da_vigencia"]]
-        elif escopo is None and ia:
-            alvo, ids_vetado = entrada, []
-            if ia.get("vetado") and (sem_vetado := _sem_vetado(entrada)) is not None:
-                alvo, ids_vetado = sem_vetado, [ia["vetado"]]
-            escopo, usadas, alterar = _tentar(copy.deepcopy(alvo), forma, regras_ia, gerais_ia,
-                                              atos_ia)
-            ids = sorted(set(ids_norma + (ids_atos if alterar else []) + ids_vetado
-                             + [regras_por_id[r] for r in usadas if r in regras_por_id]))
-            if escopo is not None and not ids:
-                escopo, usadas, alterar = None, [], None  # nada da IA foi usado
-            por_ia = escopo is not None
+        alvo = entrada
+        if ia:
+            alvo, ids_leituras = _leituras_ia(entrada, ia)
+            if escopo is None:
+                esc, us, alt = _tentar(copy.deepcopy(alvo), forma, regras_ia, gerais_ia, atos_ia)
+                ids_esc = sorted(set(ids_norma + (ids_atos if alt else []) + ids_leituras
+                                     + [regras_por_id[r] for r in us if r in regras_por_id]))
+                if esc is not None and ids_esc:  # só vale se alguma leitura da IA foi usada
+                    escopo, usadas, alterar, ids, por_ia = esc, us, alt, ids_esc, True
+            # Forma cuja cláusula só dá a vigência: a leitura dos efeitos completa.
+            if (ia.get("efeitos_da_vigencia") and escopo == ["vigencia"] and not alterar
+                    and forma in FORMAS_SO_VIGENCIA
+                    and not set(alvo.get("pendencias") or []) & FORA_DE_EFEITOS_DA_VIGENCIA):
+                escopo, alterar = list(EIXOS), _alterar_efeitos_da_vigencia(alvo)
+                ids, por_ia = sorted(set(ids + [ia["efeitos_da_vigencia"]])), True
 
         anterior = copy.deepcopy(revisao)
         for chave in ("decisao", "escopo", "revisado_por", "revisado_em", "observacao"):
