@@ -1170,6 +1170,12 @@ def proposta_clausula_efeitos():
            f"subdivisões com inciso próprio viram exceções (obteve {exc})")
     checar([n for n, m in r["mapa"].items() if m["alterado_pela_redacao_posterior"]] == ["2"],
            "o art. 2, que só a redação nova do III nomeia, é sinalizado")
+    checar(r["mapa"]["2"].get("redacao_anterior") == {
+        "inciso": "V", "termo": {"tipo": "data", "data": "2029-01-01"},
+        "fundamento": u("90", inciso="V"), "motivo": None}
+        and r["mapa"]["3"].get("redacao_anterior") is None,
+           f"pela redação anterior do III, o art. 2 caía em 'demais' (V); só ele traz isso "
+           f"(obteve {r['mapa']['2'].get('redacao_anterior')})")
 
     # Inteiro num inciso e em parte noutro, SEM 'exceto': qual prevalece no § 1º é
     # interpretação, não leitura.
@@ -1433,6 +1439,50 @@ def _carregar(entradas: list[dict], sha: str = SHA_FICT, urns: set | None = None
 
 
 REVISOR = {"revisado_por": "Revisora Fictícia", "revisado_em": "1900-02-01"}
+
+
+@cenario("revisão: intervalo controverso — leituras citadas, datas coerentes, aplicado e validado")
+def revisao_controverso():
+    """Quebra: aceitar intervalo controverso sem duas leituras com fundamento, com
+    fronteiras que não são as datas das leituras, ou com a data decidida fora dele;
+    ou perdê-lo ao aplicar (a consulta não saberia avisar)."""
+    rt = _rt()
+    art = urn_dispositivo(URN_EC, "1")
+    leituras = [{"descricao": "redação anterior", "efeitos_inicio": "1926-01-01",
+                 "fundamento": [urn_dispositivo(URN_EC, "90", inciso="V")]},
+                {"descricao": "redação atual", "efeitos_inicio": "1927-01-01",
+                 "fundamento": [urn_dispositivo(URN_EC, "90", inciso="III")]}]
+    controverso = [{"eixo": "efeitos", "inicio": "1926-01-01", "fim": "1927-01-01",
+                    "leituras": leituras}]
+
+    def entrada(ctrl, **rev):
+        e = _entrada_lc("1", "1927-01-01")
+        e["revisao"] = {"decisao": "aceitar", **REVISOR, "controverso": ctrl, **rev}
+        return e
+
+    revs, erros = _carregar([entrada(controverso)])
+    checar(not erros and revs[art]["controverso"] == controverso,
+           f"intervalo coerente: aceito e levado à revisão (erros: {erros})")
+    meta = rt.aplicar_revisao({"urn": art, "vigencia_inicio": None, "efeitos_inicio": None,
+                               "precisao": {}}, revs[art])
+    checar(meta.get("controverso") == controverso and rt.problemas_no_dispositivo(meta)[0] == [],
+           "aplicado ao dispositivo, e válido lá")
+    ruins = {
+        "uma leitura só": [{**controverso[0], "leituras": leituras[:1]}],
+        "leitura sem fundamento": [{**controverso[0], "leituras": [leituras[0], {**leituras[1], "fundamento": []}]}],
+        "fronteira que não é data de leitura": [{**controverso[0], "inicio": "1925-06-01"}],
+        "início depois do fim": [{**controverso[0], "inicio": "1927-01-01", "fim": "1926-01-01"}],
+        "eixo fora do escopo": [{**controverso[0], "eixo": "vigencia"}],
+    }
+    for nome, ctrl in ruins.items():
+        _, erros = _carregar([entrada(ctrl, escopo=["efeitos"]) if nome == "eixo fora do escopo"
+                              else entrada(ctrl)])
+        checar(bool(erros), f"{nome}: erro")
+    e = _entrada_lc("1", "1928-06-01")
+    e["revisao"] = {"decisao": "aceitar", **REVISOR, "controverso": controverso}
+    checar(bool(_carregar([e])[1]), "data decidida fora do intervalo: erro")
+    meta_ruim = {**meta, "controverso": [{**controverso[0], "leituras": leituras[:1]}]}
+    checar(rt.problemas_no_dispositivo(meta_ruim)[0] != [], "no dispositivo, o mesmo vale")
 
 
 @cenario("revisão: 'aceitar' adota a proposta, com precisão e fundamento")
@@ -2160,18 +2210,85 @@ def ia_contexto():
         "v": {"id": "v", "trata": "vetado"},
         "e": {"id": "e", "trata": "efeitos_da_vigencia"},
         "c": {"id": "c", "trata": "mencao_temporal_e_conteudo", "dispositivos": [urn_a + "!art3"]},
-        "x": {"id": "x", "trata": "anexos"}}}
+        "x": {"id": "x", "trata": "anexos"},
+        "y": {"id": "y", "trata": "alcance_alterado"}}}
     ctx = IA.contexto(interps, "a", {urn_a: "a", urn_b: "b"})
     checar(ctx == {"modelo": "m", "resolve_pendencias": {"retificacao": "p"},
                    "regras": {"texto-alterado-por-ato-posterior": "r"},
                    "atos": {urn_b: {"republicacao_de_artigos": "q"}},
                    "vetado": "v", "efeitos_da_vigencia": "e", "conteudo": {urn_a + "!art3": "c"},
-                   "anexos": "x"},
+                   "anexos": "x", "controverso": "y"},
            f"cada tipo no lugar certo (obteve {ctx})")
     checar(IA.problemas_da_interpretacao(
         {"id": "c", "leitura": "l", "trata": "mencao_temporal_e_conteudo", "dispositivos": [],
          "citacoes": [{"fonte": "normas/lc-214-2025/art-0001.md", "trecho": "Art. 1º"}]}),
            "leitura de conteúdo sem lista de dispositivos: problema")
+
+
+@cenario("nível C: alcance mudado pela redação posterior — efeitos onde as leituras concordam")
+def ia_alcance_alterado():
+    """Quebra: deixar os efeitos pendentes quando as duas redações da cláusula só
+    discordam num intervalo (escondendo o resto); gravar a data de uma leitura só,
+    sem marcar o intervalo controverso; ou decidir quando a data de concordância
+    não é a da proposta (a decisão 'aceitar' gravaria outra)."""
+    import revisar_por_regra as RR
+
+    def entrada(anterior_data):
+        e = _entrada_lc("1", "1927-01-01", pendencias=["alcance_alterado_pela_redacao_posterior"])
+        e["efeitos"]["redacao_anterior"] = {
+            "inciso": "V", "fundamento": urn_dispositivo(URN_EC, "90", inciso="V"), "motivo": None,
+            "proposta": {"tipo": "data", "data_candidata": anterior_data, "precisao": "dia"}}
+        return e
+
+    def rodar(e, ctx):
+        prop = _proposta_para_regra("efeitos_por_inciso", [e])
+        novo, _ = RR.decidir_por_regra(prop, {}, "1900-02-01", ia=ctx)
+        return novo["dispositivos"][0]["revisao"], novo
+
+    ctx = {"modelo": "m", "resolve_pendencias": {}, "regras": {}, "atos": {}, "controverso": "alc"}
+    r, novo = rodar(entrada("1926-01-01"), ctx)
+    checar(r["escopo"] == ["vigencia", "efeitos"] and r["revisado_por"] == "ia:m"
+           and r["interpretacoes_ia"] == ["alc"]
+           and r["controverso"] == [{"eixo": "efeitos", "inicio": "1926-01-01", "fim": "1927-01-01",
+                                     "leituras": [
+               {"descricao": "pela redação anterior da cláusula: inciso V", "efeitos_inicio": "1926-01-01",
+                "fundamento": [urn_dispositivo(URN_EC, "90", inciso="V")]},
+               {"descricao": "pela redação atual da cláusula: inciso II", "efeitos_inicio": "1927-01-01",
+                "fundamento": [urn_dispositivo(URN_EC, "90", inciso="II")]}]}],
+           f"efeitos a partir de 1927 (as duas concordam); 1926 controverso (obteve {r})")
+    aplicavel, erros = _rt()._revisao_de(novo["dispositivos"][0])
+    checar(not erros and aplicavel["controverso"] == r["controverso"]
+           and aplicavel["efeitos_inicio"] == "1927-01-01",
+           f"a decisão tem o formato que a revisão temporal aplica (erros: {erros})")
+    sem, _ = rodar(entrada("1926-01-01"), {**ctx, "controverso": None})
+    checar(sem["escopo"] == ["vigencia"] and not sem.get("controverso"),
+           "sem a interpretação registrada: só a vigência, como antes")
+    depois, _ = rodar(entrada("1928-01-01"), ctx)
+    checar(depois["escopo"] == ["vigencia"] and not depois.get("controverso"),
+           "redação anterior com data mais tardia que a atual: a concordância não é a proposta, nada")
+    ano = entrada("1926-01-01")
+    ano["efeitos"]["redacao_anterior"]["proposta"]["precisao"] = "ano"
+    checar(rodar(ano, ctx)[0]["escopo"] == ["vigencia"], "data só de ano numa leitura: nada")
+    bloqueado = entrada("1926-01-01")
+    bloqueado["efeitos"]["ressalva"] = "outro inciso pode nomear o artigo"
+    r_bloq = rodar(bloqueado, ctx)[0]
+    checar(r_bloq["escopo"] == ["vigencia"] and r_bloq["revisado_por"].startswith("regra:"),
+           f"efeitos ainda bloqueados por outro motivo: fica a vigência da regra, não vira IA "
+           f"(obteve {r_bloq['revisado_por']})")
+    import copy
+
+    outra = copy.deepcopy(novo)
+    outra["dispositivos"][0]["revisao"]["controverso"][0]["inicio"] = "1925-06-01"
+    outra["dispositivos"][0]["revisao"]["revisado_em"] = "1900-01-15"
+    de_novo, _ = RR.decidir_por_regra(outra, {}, "1900-03-01", ia=ctx)
+    checar(de_novo["dispositivos"][0]["revisao"]["revisado_em"] == "1900-03-01",
+           "intervalo diferente do registrado: é decisão nova, com data nova")
+    import propor_vigencia as PV
+
+    sem_data = PV.efeitos_pela_redacao_anterior(
+        {"inciso": "V", "termo": {"tipo": "data", "data": "1926-01-01"}, "fundamento": "u",
+         "motivo": "exceções por subdivisão na redação anterior"}, {"datas": ["1900-01-02"]}, {})
+    checar(sem_data["proposta"] is None, "redação anterior que não resolve o artigo: sem proposta")
 
 
 @cenario("nível C: a IA decide só o que a regra não decide, e diz que é IA")
@@ -2696,6 +2813,11 @@ def proposta_lc_real():
     checar("alcance_alterado_pela_redacao_posterior" in por["168"]["pendencias"]
            and "alcance_alterado_pela_redacao_posterior" not in por["461"]["pendencias"],
            "168 só está na redação nova do III; 461 está nas duas")
+    anterior = por["168"]["efeitos"].get("redacao_anterior") or {}
+    checar(anterior.get("inciso") == "VI" and anterior.get("fundamento") == u("544", inciso="VI")
+           and (anterior.get("proposta") or {}).get("data_candidata") == "2026-01-01"
+           and por["461"]["efeitos"].get("redacao_anterior") is None,
+           f"168 pela redação anterior: 'demais' (VI), 1º/01/2026 (obteve {anterior})")
     ids = {p["id"] for p in prop["pendencias_gerais"]}
     checar({"outro_ato_no_compilado", "republicacao_sem_artigo",
             "regra_derivada_nao_aprovada"} <= ids
@@ -3776,6 +3898,31 @@ def anexos_meta():
            "artigo: remissão ao anexo entra em remete_a")
 
 
+@cenario("consulta: dentro do intervalo controverso, o estado é CONTROVERSO, com as leituras")
+def consulta_controverso():
+    """Quebra: a consulta dar o estado das datas ('ainda não produz efeitos') sem
+    dizer que, naquela data, as leituras discordam — ou avisar fora do intervalo,
+    onde concordam."""
+    import datetime as dt
+
+    import consultar as C
+
+    v, iii = urn_dispositivo(URN_BASE, "90", inciso="V"), urn_dispositivo(URN_BASE, "90", inciso="III")
+    meta = {"vigencia_inicio": "1925-01-01", "efeitos_inicio": "1927-01-01", "controverso": [
+        {"eixo": "efeitos", "inicio": "1926-01-01", "fim": "1927-01-01", "leituras": [
+            {"descricao": "pela redação anterior da cláusula: inciso V", "efeitos_inicio": "1926-01-01",
+             "fundamento": [v]},
+            {"descricao": "pela redação atual da cláusula: inciso III", "efeitos_inicio": "1927-01-01",
+             "fundamento": [iii]}]}]}
+    dentro = "\n".join(C.controverso_na_data(meta, dt.date(1926, 6, 1)))
+    checar("CONTROVERSO" in dentro and "inciso V" in dentro and "inciso III" in dentro
+           and v in dentro and iii in dentro and "1926-01-01" in dentro and "1927-01-01" in dentro,
+           f"dentro: CONTROVERSO, cada leitura com a data e a URN (obteve {dentro!r})")
+    checar(C.controverso_na_data(meta, dt.date(1925, 12, 31)) == []
+           and C.controverso_na_data(meta, dt.date(1927, 1, 1)) == [],
+           "antes do início e a partir do fim (onde concordam): nada")
+
+
 @cenario("consulta: texto todo riscado no compilado vira aviso, se a data não o resolve")
 def consulta_texto_riscado():
     """Quebra: a consulta dizer 'vigente' (datas provisórias) de um dispositivo
@@ -3816,6 +3963,30 @@ def validar_ia_no_dispositivo():
            "id fora de temporal/ia.yaml, ou modelo diferente: problema")
     checar(V.problemas_de_ia_da_meta({"revisado_por": "regra:clausula-literal/v1"}, interps) == [],
            "decisão de regra: não passa por aqui")
+
+
+@cenario("normas/ reais: art. 544, III — os 13 artigos com 2026 controverso (pulado se ausente)")
+def controverso_544_real():
+    """Contrato com o compilado da LC 214 (lido no HTML): a redação da LC 227 do art.
+    544, III nomeia os arts. 168 a 171, 309 a 315, 444 e 462, que a redação
+    anterior não nomeava ('demais dispositivos', inciso VI)."""
+    pasta = RAIZ / "normas" / "lc-214-2025"
+    if not pasta.exists():
+        print("  pulado: normas/lc-214-2025 ausente")
+        return
+    from comum import ler_frontmatter
+
+    numeros = [168, 169, 170, 171, 309, 310, 311, 312, 313, 314, 315, 444, 462]
+    obtidos = {}
+    for n in numeros:
+        meta, _ = ler_frontmatter(pasta / f"art-{n:04d}.md")
+        ctrl = (meta.get("controverso") or [{}])[0]
+        obtidos[n] = (meta["efeitos_inicio"], meta["revisao_temporal_pendente"],
+                      ctrl.get("inicio"), ctrl.get("fim"),
+                      "alcance-da-clausula-mudado-pela-lc-227" in (meta.get("interpretacoes_ia") or []))
+    esperado = {n: ("2027-01-01", False, "2026-01-01", "2027-01-01", True) for n in numeros}
+    errados = {n: v for n, v in obtidos.items() if v != esperado[n]}
+    checar(not errados, f"efeitos em 2027, 2026 controverso, pela leitura de IA (diferentes: {errados})")
 
 
 @cenario("normas/ reais: remissões entre normas (pulado se ausentes)")

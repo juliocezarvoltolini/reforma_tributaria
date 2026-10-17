@@ -17460,6 +17460,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -17467,7 +17476,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art168_par4
     tipos:
@@ -17519,19 +17528,47 @@ dispositivos:
   - marcos_proprios
   - redacao_de_outro_ato
   revisao:
-    decisao: null
-    vigencia_inicio: null
+    decisao: alterar
+    vigencia_inicio: '2025-01-16'
     vigencia_fim: null
-    efeitos_inicio: null
+    efeitos_inicio: '2027-01-01'
     efeitos_fim: null
     precisao: {}
-    fundamento_vigencia: []
-    fundamento_efeitos: []
-    excecoes_subdivisao: []
-    revisado_por: null
-    revisado_em: null
-    observacao: null
-    escopo: null
+    fundamento_vigencia:
+    - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544
+    fundamento_efeitos:
+    - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
+    excecoes_subdivisao:
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art168_par6
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2027-01-01'
+      fundamento:
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227, lc227-republicacao-e-retificacao, texto-alterado-pela-lc-227: vigência e efeitos pela norma alterada; os trechos incluídos, alterados ou revogados por ato posterior como exceção'
+    escopo:
+    - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    - lc227-republicacao-e-retificacao
+    - texto-alterado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art169
   artigo: '169'
   vigencia:
@@ -17559,6 +17596,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -17566,7 +17612,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art169_par4
     tipos:
@@ -17601,11 +17647,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art170
   artigo: '170'
   vigencia:
@@ -17633,6 +17695,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -17640,7 +17711,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art170_par2_incI_ali-a
     tipos:
@@ -17688,11 +17759,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art171
   artigo: '171'
   vigencia:
@@ -17720,6 +17807,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -17727,7 +17823,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art171_par1_incI_ali-a
     tipos:
@@ -17778,11 +17874,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art172
   artigo: '172'
   vigencia:
@@ -29854,6 +29966,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -29861,7 +29982,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art309
     tipos:
@@ -29916,11 +30037,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art310
   artigo: '310'
   vigencia:
@@ -29948,6 +30085,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -29955,7 +30101,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -29981,11 +30127,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art311
   artigo: '311'
   vigencia:
@@ -30013,6 +30175,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -30020,7 +30191,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art311_par3
     tipos:
@@ -30052,11 +30223,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art312
   artigo: '312'
   vigencia:
@@ -30084,6 +30271,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -30091,7 +30287,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art312_incII
     tipos:
@@ -30143,11 +30339,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art313
   artigo: '313'
   vigencia:
@@ -30175,6 +30387,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -30182,7 +30403,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30208,11 +30429,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art314
   artigo: '314'
   vigencia:
@@ -30240,6 +30477,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -30247,7 +30493,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios: []
   texto_inserido:
     artigos: []
@@ -30273,11 +30519,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art315
   artigo: '315'
   vigencia:
@@ -30305,6 +30567,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -30312,7 +30583,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art315_par1_incII_ali-c
     tipos:
@@ -30355,11 +30626,27 @@ dispositivos:
     fundamento_vigencia: []
     fundamento_efeitos: []
     excecoes_subdivisao: []
-    revisado_por: regra:clausula-literal/v1
-    revisado_em: '2026-10-15'
-    observacao: 'decidido por regra (PREMISSAS.md §3.4): só a vigência; os efeitos ficam para leitura'
+    revisado_por: ia:claude-opus-5-5
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
+    interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art316
   artigo: '316'
   vigencia:
@@ -49098,6 +49385,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -49105,7 +49401,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art444_par4_incII
     tipos:
@@ -49140,12 +49436,27 @@ dispositivos:
     fundamento_efeitos: []
     excecoes_subdivisao: []
     revisado_por: ia:claude-opus-5-5
-    revisado_em: '2026-10-15'
-    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: item-vetado-sem-texto: só a vigência; os efeitos ficam para leitura'
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227, item-vetado-sem-texto: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
     interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
     - item-vetado-sem-texto
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art445
   artigo: '445'
   vigencia:
@@ -50589,6 +50900,15 @@ dispositivos:
     termos_das_excecoes: []
     motivo: null
     ressalva: null
+    redacao_anterior:
+      inciso: VI
+      fundamento: urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      proposta:
+        tipo: data
+        data_candidata: '2026-01-01'
+        precisao: dia
+        nota: data escrita no inciso
+      motivo: null
   atual_no_pipeline:
     data_ato: '2025-01-16'
     publicacao:
@@ -50596,7 +50916,7 @@ dispositivos:
       - '2025-01-16'
       fonte: dou
     vigencia_inicio: '2025-01-16'
-    efeitos_inicio: '2025-01-16'
+    efeitos_inicio: '2027-01-01'
   marcos_proprios:
   - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art462_par4_incII
     tipos:
@@ -50631,12 +50951,27 @@ dispositivos:
     fundamento_efeitos: []
     excecoes_subdivisao: []
     revisado_por: ia:claude-opus-5-5
-    revisado_em: '2026-10-15'
-    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: item-vetado-sem-texto: só a vigência; os efeitos ficam para leitura'
+    revisado_em: '2026-10-17'
+    observacao: 'proposto por IA (PREMISSAS.md §3.4) — NÃO equivale a revisão humana; interpretações: alcance-da-clausula-mudado-pela-lc-227, item-vetado-sem-texto: vigência e efeitos'
     escopo:
     - vigencia
+    - efeitos
     interpretacoes_ia:
+    - alcance-da-clausula-mudado-pela-lc-227
     - item-vetado-sem-texto
+    controverso:
+    - eixo: efeitos
+      inicio: '2026-01-01'
+      fim: '2027-01-01'
+      leituras:
+      - descricao: 'pela redação anterior da cláusula: inciso VI'
+        efeitos_inicio: '2026-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
+      - descricao: 'pela redação atual da cláusula: inciso III'
+        efeitos_inicio: '2027-01-01'
+        fundamento:
+        - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incIII
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art463
   artigo: '463'
   vigencia:

@@ -117,6 +117,13 @@ front-matter. Travas:
 - decisão humana nunca é tocada, e a de regra continua sendo de regra;
 - a consulta mostra a decisão como "NÃO equivale a revisão humana", com os ids.
 
+**Alcance mudado pela redação posterior da cláusula** (`trata: alcance_alterado`):
+o artigo que só a redação nova de um inciso alcança tem duas leituras dos efeitos
+(`efeitos.redacao_anterior` na proposta). A decisão grava os efeitos na data em
+que as duas concordam e o intervalo em que discordam como `controverso`, com as
+leituras; só decide quando essa data é a da redação atual. A consulta mostra
+CONTROVERSO dentro do intervalo.
+
 **Anexos** (`trata: anexos`, `pipeline/temporal_anexos.py`): não passam pelas
 propostas. O `fatiar.py` decide cada anexo depois de aplicar as datas dos
 artigos: as da primeira menção a ele no texto próprio da lei, e o fim pelo

@@ -107,6 +107,17 @@ excecoes_subdivisao:              #     subdivisões com datas próprias
   - urn: "urn:...!art12_par1"
     efeitos_inicio: "2029-01-01"  #     o que a exceção não diz herda do artigo
     fundamento: ["urn:...!art544_incIV"]
+controverso:                      #     intervalo em que as leituras discordam
+  - eixo: efeitos                 #     (ex.: o artigo que só a redação nova da
+    inicio: "2026-01-01"          #     cláusula alcança). [inicio, fim): da menor
+    fim: "2027-01-01"             #     à maior data das leituras; o eixo decidido
+    leituras:                     #     fica na data de concordância (aqui, fim).
+      - descricao: "pela redação anterior da cláusula: inciso VI"
+        efeitos_inicio: "2026-01-01"
+        fundamento: ["urn:...!art544_incVI"]
+      - descricao: "pela redação atual da cláusula: inciso III"
+        efeitos_inicio: "2027-01-01"
+        fundamento: ["urn:...!art544_incIII"]
 fundamento_temporal:              #     de onde vem cada data (só após revisão)
   vigencia: ["urn:...!art544"]
   efeitos: ["urn:...!art544_incIII"]

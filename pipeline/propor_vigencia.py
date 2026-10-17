@@ -346,17 +346,26 @@ def interpretar_clausula(
         if inciso:
             incisos.append(inciso)
 
-    alcance_desconhecido = [i["rotulo"] for i in incisos if not i["alcance_interpretado"]]
-    demais = [i for i in incisos if i["alcance_interpretado"] and i["alcance"]["tipo"] == "demais"]
-    nomeacoes: dict[str, list[tuple[dict, dict]]] = {}
-    intervalos: list[tuple[int, int, str]] = []
-    for inc in incisos:
-        for item in (inc["alcance"] or {}).get("itens") or []:
-            for a in item["artigos"]:
-                nomeacoes.setdefault(a, []).append((inc, item))
-            if item["intervalo"]:
-                intervalos.append((*item["intervalo"], inc["rotulo"]))
+    def indexar(incs: list[dict]) -> tuple:
+        """(incisos de alcance não interpretado, incisos 'demais', nomeações por
+        artigo, intervalos) — o que a resolução de cada artigo consulta."""
+        desconhecido = [i["rotulo"] for i in incs if not i["alcance_interpretado"]]
+        dem = [i for i in incs if i["alcance_interpretado"] and i["alcance"]["tipo"] == "demais"]
+        nomes: dict[str, list[tuple[dict, dict]]] = {}
+        faixas: list[tuple[int, int, str]] = []
+        for inc in incs:
+            for item in (inc["alcance"] or {}).get("itens") or []:
+                for a in item["artigos"]:
+                    nomes.setdefault(a, []).append((inc, item))
+                if item["intervalo"]:
+                    faixas.append((*item["intervalo"], inc["rotulo"]))
+        return desconhecido, dem, nomes, faixas
+
+    indexar_atual = indexar(incisos)
+    alcance_desconhecido, demais, nomeacoes, intervalos = indexar_atual
     inexistentes = [a for a in nomeacoes if a not in existentes]
+    # A cláusula como era antes: cada inciso alterado na sua redação riscada.
+    indexar_anterior = indexar([anteriores.get(i["rotulo"], i) for i in incisos])
     alterados = set()
     for rotulo, antigo in anteriores.items():
         atual = next((i for i in incisos if i["rotulo"] == rotulo), None)
@@ -368,8 +377,10 @@ def interpretar_clausula(
         return {"subdivisao": sub, "urn": f"{urn_dispositivo(urn_base, n)}_{sub}",
                 "inciso": inc["rotulo"], "termo": inc["termo"], "fundamento": inc["urn"]}
 
-    def resolver(n: str) -> tuple[dict | None, list[dict], str | None]:
-        """(inciso principal, exceções, motivo de indeterminação)."""
+    def resolver(n: str, indice: tuple | None = None) -> tuple[dict | None, list[dict], str | None]:
+        """(inciso principal, exceções, motivo de indeterminação). `indice`: o de
+        outro conjunto de incisos (a redação anterior); por padrão, o atual."""
+        alcance_desconhecido, demais, nomeacoes, intervalos = indice or indexar_atual
         if forma is None:
             return None, [], "caput fora das formas reconhecidas ('entra em vigor:' ou 'entra em " \
                              "vigor na data de sua publicação, produzindo efeitos:')"
@@ -429,6 +440,15 @@ def interpretar_clausula(
             if alcance_desconhecido and nomeacoes.get(n):
                 entrada["ressalva"] = (f"inciso(s) {', '.join(alcance_desconhecido)} não "
                                        "interpretado(s) podem também nomear este artigo")
+        if n in alterados:
+            # O mesmo artigo pela redação anterior da cláusula: a outra leitura,
+            # que a revisão precisa ver para saber se as duas concordam.
+            ant, exc_ant, motivo_ant = resolver(n, indexar_anterior)
+            entrada["redacao_anterior"] = {
+                "inciso": ant["rotulo"] if ant else None, "termo": ant["termo"] if ant else None,
+                "fundamento": ant["urn"] if ant else None,
+                "motivo": motivo_ant or ("exceções por subdivisão na redação anterior"
+                                         if exc_ant else None)}
         mapa[n] = entrada
 
     return {
@@ -631,6 +651,15 @@ def combinar_alteracao(tipo: str, conferida: bool, ato_vig: str | None, ato_efe:
     # Cópia, não o mesmo objeto: senão o YAML grava âncora.
     proposta = dict(resultado) if aprovada(regras, REGRA_TEXTO_ALTERADO) else None
     return {"resultado_se_aprovada": resultado, "proposta": proposta, "motivo": None}
+
+
+def efeitos_pela_redacao_anterior(anterior: dict, publicacao: dict, regras: dict | None) -> dict:
+    """A outra leitura: o artigo pela redação anterior da cláusula. Sem proposta
+    de data se a redação anterior não o resolve (motivo) ou não tem termo."""
+    return {"inciso": anterior["inciso"], "fundamento": anterior["fundamento"],
+            "proposta": (_inicio_proposto(anterior["termo"], publicacao, regras)
+                         if anterior["termo"] and not anterior["motivo"] else None),
+            "motivo": anterior["motivo"]}
 
 
 RE_RISCADO = re.compile(r"~~.*?~~")
@@ -1060,6 +1089,9 @@ def construir(slug: str, regras: dict | None = None, _com_alteracoes: bool = Tru
                        # a revisão por regra só aceita exceção cujo termo ela pode adotar.
                        "termos_das_excecoes": termos_excecoes,
                        "motivo": motivo_efe, "ressalva": m["ressalva"]}
+            if m.get("redacao_anterior"):
+                efeitos["redacao_anterior"] = efeitos_pela_redacao_anterior(
+                    m["redacao_anterior"], publicacao, regras)
             termos.append(m["termo"])
             if m["inciso"] is None:
                 pendencias.append("efeitos_nao_determinados")

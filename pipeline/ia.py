@@ -21,6 +21,10 @@ e o trecho literal) e o que ela resolve:
                       nos `dispositivos` listados, "entra em vigor"/"produz efeitos"
                       no próprio texto é conteúdo (refere-se a outra coisa), não
                       cláusula do tempo do dispositivo.
+  trata: alcance_alterado
+                      artigo que só a redação nova de um inciso da cláusula alcança:
+                      efeitos a partir de onde as duas redações concordam, e o
+                      intervalo em que discordam gravado como `controverso`.
   trata: anexos       o anexo vale e produz efeitos com a primeira menção a ele no
                       texto próprio da lei (temporal_anexos.py); decidido em
                       fatiar.py, depois das datas dos artigos.
@@ -152,6 +156,8 @@ def contexto(interpretacoes: dict, slug: str, bases: dict[str, str]) -> dict:
             ctx["efeitos_da_vigencia"] = id_
         if interp.get("trata") == "anexos":
             ctx["anexos"] = id_
+        if interp.get("trata") == "alcance_alterado":
+            ctx["controverso"] = id_
         if interp.get("trata") == "mencao_temporal_e_conteudo":
             for urn in interp.get("dispositivos") or []:
                 ctx.setdefault("conteudo", {})[urn] = id_

@@ -193,3 +193,30 @@ interpretacoes:
         trecho: "passam a vigorar com a redação dos Anexos XVIII a XXII desta Lei Complementar"
       - fonte: normas/lc-214-2025/art-0520.md
         trecho: "acrescida do Anexo VII constante do Anexo XXIII desta Lei Complementar"
+
+  - id: alcance-da-clausula-mudado-pela-lc-227
+    registrado_em: '2026-10-17'
+    trata: alcance_alterado
+    leitura: >-
+      O art. 544 da LC 214 diz, inciso a inciso, a partir de quando produzem
+      efeitos os artigos que cada um nomeia. A LC 227 deu nova redação ao inciso
+      III, que passou a nomear também os arts. 168 a 171, 309 a 315, 444 e 462;
+      pela redação original, que não os nomeava, eles caíam no inciso VI ("demais
+      dispositivos", efeitos a partir de 1º/01/2026). A LC 227 produz efeitos a
+      partir da sua publicação (art. 182, III), em 14/01/2026. As duas redações
+      concordam antes de 1º/01/2026 (sem efeitos) e a partir de 1º/01/2027 (com
+      efeitos); entre essas datas, discordam. Esta leitura NÃO escolhe entre elas:
+      grava os efeitos a partir de 1º/01/2027, onde concordam, e o intervalo em que
+      discordam como `controverso`, com as duas leituras e o fundamento de cada
+      uma. Só vale quando a data de concordância é a da redação atual.
+    citacoes:
+      - fonte: normas/lc-214-2025/art-0544.md
+        trecho: "III - a partir de 1º de janeiro de 2027, em relação aos arts. 450, exceto os §§ 1º e 5º, 461, 467"
+      - fonte: normas/lc-214-2025/art-0544.md
+        trecho: "III - a partir de 1º de janeiro de 2027, em relação aos arts. 168 a 171, 309 a 315, 444, 450"
+      - fonte: normas/lc-214-2025/art-0544.md
+        trecho: "VI - a partir de 1º de janeiro de 2026, em relação aos demais dispositivos."
+      - fonte: normas/lc-227-2026/art-0174.md
+        trecho: "III - a partir de 1º de janeiro de 2027, em relação aos arts. 168 a 171, 309 a 315, 444, 450"
+      - fonte: normas/lc-227-2026/art-0182.md
+        trecho: "III - a partir da sua publicação, em relação aos demais dispositivos."

@@ -353,7 +353,40 @@ def _leituras_ia(entrada: dict, ia: dict) -> tuple[dict, list[str]]:
     if ia.get("vetado") and (sem_vetado := _sem_vetado(alvo)) is not None:
         alvo = sem_vetado
         ids.append(ia["vetado"])
+    if ia.get("controverso") and (controverso := _controverso_do_alcance(alvo)) is not None:
+        alvo = copy.deepcopy(alvo)
+        alvo["pendencias"] = [p for p in alvo["pendencias"] if p != ALCANCE_ALTERADO]
+        alvo["_controverso"] = controverso
+        ids.append(ia["controverso"])
     return alvo, ids
+
+
+ALCANCE_ALTERADO = "alcance_alterado_pela_redacao_posterior"
+
+
+def _controverso_do_alcance(entrada: dict) -> list[dict] | None:
+    """O artigo que só a redação nova de um inciso da cláusula alcança tem duas
+    leituras dos efeitos: pela redação anterior e pela atual. Antes da data mais
+    cedo, as duas negam efeitos; a partir da mais tardia, as duas os dão; entre
+    elas, é controverso. Só se decide quando a data de concordância é a da
+    proposta (a redação atual dá a mais tardia), para que 'aceitar' a grave."""
+    if ALCANCE_ALTERADO not in (entrada.get("pendencias") or []):
+        return None
+    efeitos = entrada.get("efeitos") or {}
+    anterior = efeitos.get("redacao_anterior") or {}
+    atual_prop, anterior_prop = efeitos.get("proposta") or {}, anterior.get("proposta") or {}
+    if (not atual_prop.get("data_candidata") or not anterior_prop.get("data_candidata")
+            or "ano" in (atual_prop.get("precisao"), anterior_prop.get("precisao"))
+            or not efeitos.get("fundamento") or not anterior.get("fundamento")):
+        return None
+    atual, antes = atual_prop["data_candidata"], anterior_prop["data_candidata"]
+    if antes >= atual:
+        return None
+    return [{"eixo": "efeitos", "inicio": antes, "fim": atual, "leituras": [
+        {"descricao": f"pela redação anterior da cláusula: inciso {anterior['inciso']}",
+         "efeitos_inicio": antes, "fundamento": [anterior["fundamento"]]},
+        {"descricao": f"pela redação atual da cláusula: inciso {efeitos['inciso']}",
+         "efeitos_inicio": atual, "fundamento": [efeitos["fundamento"]]}]}]
 
 
 def _sem_vetado(entrada: dict) -> dict | None:
@@ -409,11 +442,15 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str,
         alvo = entrada
         if ia:
             alvo, ids_leituras = _leituras_ia(entrada, ia)
-            if escopo is None:
+            # Alcance controverso: a regra decidiu só a vigência; a leitura completa os
+            # efeitos, e a decisão passa a ser da IA (é uma só).
+            completar = bool(alvo.get("_controverso")) and escopo != list(EIXOS)
+            if escopo is None or completar:
                 esc, us, alt = _tentar(copy.deepcopy(alvo), forma, regras_ia, gerais_ia, atos_ia)
                 ids_esc = sorted(set(ids_norma + (ids_atos if alt else []) + ids_leituras
                                      + [regras_por_id[r] for r in us if r in regras_por_id]))
-                if esc is not None and ids_esc:  # só vale se alguma leitura da IA foi usada
+                # só vale se alguma leitura da IA foi usada e, ao completar, decide os dois
+                if esc is not None and ids_esc and (not completar or esc == list(EIXOS)):
                     escopo, usadas, alterar, ids, por_ia = esc, us, alt, ids_esc, True
             # Forma cuja cláusula só dá a vigência: a leitura dos efeitos completa.
             if (ia.get("efeitos_da_vigencia") and escopo == ["vigencia"] and not alterar
@@ -426,6 +463,7 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str,
         for chave in ("decisao", "escopo", "revisado_por", "revisado_em", "observacao"):
             revisao[chave] = None
         revisao.pop("interpretacoes_ia", None)
+        revisao.pop("controverso", None)
         if alterar or anterior.get("decisao") == "alterar":
             revisao.update(copy.deepcopy(VAZIO_ALTERAR))
         if escopo is None:
@@ -449,12 +487,15 @@ def decidir_por_regra(proposta: dict, regras: dict, data: str,
                            observacao=origem + OBSERVACAO[tuple(escopo)])
         if por_ia:
             revisao["interpretacoes_ia"] = ids
+        if por_ia and alvo.get("_controverso") and "efeitos" in escopo:
+            revisao["controverso"] = alvo["_controverso"]
 
-        campos = ("decisao", "escopo", "revisado_por", "interpretacoes_ia") + (
+        campos = ("decisao", "escopo", "revisado_por", "interpretacoes_ia", "controverso") + (
             tuple(VAZIO_ALTERAR) if alterar else ())
         mesma = all(anterior.get(c) == revisao.get(c) for c in campos)
         meta = (aplicadas or {}).get(entrada.get("urn"))
-        if meta is not None and meta.get("interpretacoes_ia") != revisao.get("interpretacoes_ia"):
+        if meta is not None and (meta.get("interpretacoes_ia") != revisao.get("interpretacoes_ia")
+                                 or meta.get("controverso") != revisao.get("controverso")):
             meta = None
         if mesma:
             revisao["revisado_em"] = anterior.get("revisado_em")

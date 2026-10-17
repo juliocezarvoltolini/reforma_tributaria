@@ -123,6 +123,23 @@ def origem_das_datas(meta: dict) -> list[str]:
     return linhas
 
 
+def controverso_na_data(meta: dict, referencia: _dt.date) -> list[str]:
+    """Linhas de aviso se a data cai num intervalo `controverso`: ali as leituras
+    discordam, e o estado calculado pelas datas não basta. Fora dele, nada."""
+    linhas = []
+    for item in meta.get("controverso") or []:
+        inicio, fim = para_data(item.get("inicio")), para_data(item.get("fim"))
+        if not inicio or not fim or not inicio <= referencia < fim:
+            continue
+        eixo, campo = item.get("eixo"), f"{item.get('eixo')}_inicio"
+        linhas.append(f"CONTROVERSO ({eixo}) de {item['inicio']} a {item['fim']} (exclusive): as "
+                      "leituras discordam nesta data; fora do intervalo, concordam:")
+        for leitura in item.get("leituras") or []:
+            linhas.append(f"  - {leitura.get('descricao')}: {eixo} a partir de {leitura.get(campo)} "
+                          f"({', '.join(leitura.get('fundamento') or [])})")
+    return linhas
+
+
 RE_RISCADO = re.compile(r"~~.*?~~")
 
 
@@ -190,7 +207,14 @@ def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None,
     print(f"\n{'=' * 72}")
     print(f"{meta['norma']} — {meta['dispositivo']}")
     print(f"URN: {meta['urn']}")
-    print(f"Estado em {referencia}: {ROTULO.get(estado, estado)}")
+    controverso = controverso_na_data(meta, referencia)
+    if controverso:
+        print(f"Estado em {referencia}: CONTROVERSO — pelas datas gravadas: "
+              f"{ROTULO.get(estado, estado)}; ver as leituras abaixo")
+        for linha in controverso:
+            print(f"  ATENCAO: {linha}" if linha.startswith("CONTROVERSO") else f"  {linha}")
+    else:
+        print(f"Estado em {referencia}: {ROTULO.get(estado, estado)}")
     print(f"  vigencia: {meta.get('vigencia_inicio')} -> {meta.get('vigencia_fim') or 'sem termo'}")
     print(f"  efeitos:  {meta.get('efeitos_inicio')} -> {meta.get('efeitos_fim') or 'sem termo'}")
     pub = meta.get("publicacao")

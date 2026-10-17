@@ -52,7 +52,7 @@ ORDEM_CAMPOS = (
     "urn", "norma", "norma_slug", "dispositivo", "titulo", "camada", "hierarquia",
     "data_ato", "publicacao",
     "vigencia_inicio", "vigencia_fim", "efeitos_inicio", "efeitos_fim",
-    "precisao", "excecoes_subdivisao", "fundamento_temporal", "status",
+    "precisao", "excecoes_subdivisao", "controverso", "fundamento_temporal", "status",
     "fonte", "ingerido_em", "remete_a", "remete_a_externo", "subdivisoes",
     "anotacoes_oficiais", "conceitos_definidos", "dispositivos_citados", "texto_de_outra_norma",
     "altera", "alterado_por", "extracao", "eixos_revisados", "revisao_temporal_pendente",
@@ -88,6 +88,43 @@ def _iso(valor) -> str | None:
 def _urns_validas(valor) -> bool:
     return (isinstance(valor, list) and bool(valor)
             and all(isinstance(u, str) and u.startswith("urn:lex:") for u in valor))
+
+
+def _problemas_controverso(lista, datas: dict, eixos: list[str]) -> list[str]:
+    """Intervalo em que as leituras de uma mudança de redação discordam: [inicio,
+    fim), da menor à maior data das leituras, cada uma com o fundamento dela; a
+    data decidida do eixo fica dentro dele (é a data em que as leituras passam a
+    concordar)."""
+    if not lista:
+        return []
+    if not isinstance(lista, list):
+        return ["controverso deve ser uma lista"]
+    problemas = []
+    for item in lista:
+        eixo = item.get("eixo") if isinstance(item, dict) else None
+        if eixo not in eixos:
+            problemas.append(f"controverso de eixo {eixo!r} fora dos eixos decididos")
+            continue
+        campo = f"{eixo}_inicio"
+        inicio, fim = _iso(item.get("inicio")), _iso(item.get("fim"))
+        leituras = item.get("leituras")
+        if not inicio or not fim or inicio >= fim:
+            problemas.append("controverso: inicio e fim em AAAA-MM-DD, inicio antes de fim")
+            continue
+        if not isinstance(leituras, list) or len(leituras) < 2:
+            problemas.append("controverso precisa de duas ou mais leituras")
+            continue
+        if not all(isinstance(lei, dict) and lei.get("descricao") and _iso(lei.get(campo))
+                   and _urns_validas(lei.get("fundamento")) for lei in leituras):
+            problemas.append(f"controverso: cada leitura com descricao, {campo} e fundamento (URNs)")
+            continue
+        datas_leituras = [_iso(lei[campo]) for lei in leituras]
+        if (inicio, fim) != (min(datas_leituras), max(datas_leituras)):
+            problemas.append("controverso: inicio e fim são a menor e a maior data das leituras")
+        decidida = _iso(datas.get(campo))
+        if decidida is None or not inicio <= decidida <= fim:
+            problemas.append(f"controverso: {campo} decidido fora do intervalo")
+    return problemas
 
 
 def _problemas_precisao(precisao, datas: dict) -> list[str]:
@@ -174,6 +211,8 @@ def problemas_no_dispositivo(meta: dict) -> tuple[list[str], list[str]]:
     erros += _problemas_precisao(meta.get("precisao"), meta)
     for exc in meta.get("excecoes_subdivisao") or []:
         erros += _problemas_excecao(exc, meta.get("urn", ""))
+    erros += _problemas_controverso(meta.get("controverso"), meta,
+                                    list(meta.get("eixos_revisados") or EIXOS))
 
     if meta.get("extracao") == "revisada":
         eixos = meta.get("eixos_revisados") or list(EIXOS)
@@ -291,11 +330,18 @@ def _revisao_de(entrada: dict) -> tuple[dict | None, list[str]]:
         if problemas:
             return None, problemas
 
+    # Intervalo em que as leituras de uma mudança de redação discordam.
+    controverso = rev.get("controverso") or []
+    problemas = _problemas_controverso(controverso, datas, eixos)
+    if problemas:
+        return None, problemas
+
     return {
         **datas,
         "eixos": eixos,
         "precisao": precisao,
         "excecoes_subdivisao": excecoes,
+        "controverso": controverso or None,
         "fundamento_temporal": fundamentos,
         "revisado_por": rev["revisado_por"],
         "revisado_em": _iso(rev["revisado_em"]),
@@ -378,6 +424,10 @@ def aplicar_revisao(meta: dict, revisao: dict) -> dict:
         novo["excecoes_subdivisao"] = revisao["excecoes_subdivisao"]
     elif set(eixos) == set(EIXOS):
         novo.pop("excecoes_subdivisao", None)
+    if revisao.get("controverso"):
+        novo["controverso"] = revisao["controverso"]
+    else:
+        novo.pop("controverso", None)
     novo["fundamento_temporal"] = revisao["fundamento_temporal"]
     novo["extracao"] = "revisada"
     novo["eixos_revisados"] = eixos

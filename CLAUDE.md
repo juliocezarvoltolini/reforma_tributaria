@@ -89,6 +89,11 @@ Antes de usar essas datas:
   texto.
 - `excecoes_subdivisao` — um § ou inciso tem datas próprias. O estado do artigo
   não vale para ele.
+- `controverso` — intervalo em que as leituras de uma mudança de redação
+  discordam (ex.: artigo que só a redação nova da cláusula alcança). Se a data de
+  referência cai nele, a resposta é `controverso`: apresente as leituras, cada
+  uma com a sua data e fundamento, sem escolher. Fora dele, as leituras
+  concordam e vale o estado das datas.
 - `data_ato` não é `publicacao`. "Na data de sua publicação" é a do DOU.
 
 Verifique também `status`: `vigente`, `vigente_sem_efeitos`, `sem_efeitos`,

@@ -440,6 +440,13 @@ o artigo inteiro sem texto fica sem datas), nem com promulgação de partes
 vetadas (art. 26); item vetado incluído pela lei alteradora não vira exceção.
 Mais 17 decisões de IA; pendentes: 89 de 802.
 
+**Controverso, agora modelado (2026-10-17).** Os 13 artigos abaixo têm efeitos
+a partir de 1º/01/2027 (onde as duas redações do inciso III concordam) e o ano de
+2026 gravado como `controverso`, com as duas leituras e o fundamento de cada uma
+(sétima interpretação de IA, `alcance-da-clausula-mudado-pela-lc-227`; registro
+em `interpretacoes/lc-214-2025-art544-incIII.md`). A consulta mostra
+CONTROVERSO para datas de 2026. Pendentes: 37 de 825.
+
 **Controverso, não decidido: LC 214, art. 544, III (redação dada pela LC
 227).** Os arts. 168–171, 309–315, 444 e 462 só estão na redação nova do inciso
 III (efeitos em 1º/01/2027). Pela redação anterior, os que já existiam caíam em
