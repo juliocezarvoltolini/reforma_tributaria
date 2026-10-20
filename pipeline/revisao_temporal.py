@@ -53,7 +53,7 @@ ORDEM_CAMPOS = (
     "data_ato", "publicacao",
     "vigencia_inicio", "vigencia_fim", "efeitos_inicio", "efeitos_fim",
     "precisao", "excecoes_subdivisao", "controverso", "fundamento_temporal", "status",
-    "fonte", "ingerido_em", "remete_a", "remete_a_externo", "subdivisoes",
+    "fonte", "ingerido_em", "remete_a", "remete_a_externo", "remete_a_ato", "subdivisoes",
     "anotacoes_oficiais", "conceitos_definidos", "dispositivos_citados", "texto_de_outra_norma",
     "altera", "alterado_por", "extracao", "eixos_revisados", "revisao_temporal_pendente",
     "revisado_por", "revisado_em", "interpretacoes_ia",

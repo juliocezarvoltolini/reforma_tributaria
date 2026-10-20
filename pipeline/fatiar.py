@@ -41,6 +41,7 @@ import datetime as _dt
 
 from alteracoes import alteracoes_do_artigo, mapa_de_links  # noqa: E402
 from anexos import extrair_remissoes_a_anexos, fatiar_anexos, montar_meta_anexo  # noqa: E402
+from infralegal import atos_infralegais  # noqa: E402
 from anexos import nome_arquivo as nome_arquivo_anexo  # noqa: E402
 from temporal_anexos import aplicar_aos_anexos  # noqa: E402
 from revisao_temporal import aplicar_revisao, carregar_revisoes, ordenar_meta
@@ -1216,6 +1217,8 @@ def montar_meta(
         "remete_a": (extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo, normas)
                      + extrair_remissoes_a_anexos(corpo_proprio, base, exigir_escopo)),
         "remete_a_externo": extrair_externas(vigente),
+        # Regulamento e atos infralegais que o texto manda editar: a base não os tem.
+        "remete_a_ato": atos_infralegais(artigo["linhas_proprias"], base, artigo["numero"]),
         # Subdivisões do próprio artigo; as do texto citado pertencem à
         # norma alterada.
         "subdivisoes": subdivisoes_de(artigo["linhas_proprias"], base, artigo["numero"]),

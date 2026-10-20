@@ -368,6 +368,21 @@ revogação gravada só no caput (`_par0`), e incisos e parágrafo apareciam em
 vigor. A decisão agora dá `vigencia_fim` ao artigo inteiro quando todo o texto
 está riscado (`texto_todo_riscado` na proposta).
 
+**Regulamento e atos infralegais (2026-10-17).** Detecção mecânica, sem
+interpretação (`pipeline/infralegal.py`): 240 menções em 157 dispositivos (LC 214:
+136; LC 227: 17; LC 235: 4) — regulamento 174, ato conjunto 55, ato do Poder
+Executivo 9, do Comitê Gestor 1, da RFB 1 —, cada uma em `remete_a_ato`, com a
+subdivisão e o trecho literal. A consulta avisa `ATO INFRALEGAL ... Nao
+localizado nas fontes indexadas`, e a validação confere tipo e trecho. Só o texto
+próprio em vigor conta (não o riscado nem o inserido em outra lei). Fora: lei
+estadual, distrital e municipal.
+
+**Os 11 artigos da EC 132 com só a vigência decidida ficam como estão
+(2026-10-17).** As ligações de regulamentação dizem qual dispositivo da LC regula
+a matéria, não quando a regra da EC deixa de valer; decidir os efeitos por elas
+misturaria normas sem base. Os efeitos começam com a publicação (art. 23, III);
+o que depende da lei futura é o conteúdo.
+
 **Remissões entre normas da base (2026-10-16).** A remissão que nomeia uma
 norma do catálogo ("art. 8º da Emenda Constitucional nº 132, de 20 de dezembro
 de 2023"; "o art. 217" sob "os seguintes dispositivos da Lei Complementar nº

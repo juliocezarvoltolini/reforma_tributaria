@@ -4285,6 +4285,96 @@ def remissao_em_enumeracao():
            "cabeçalho curto 'IV - da Lei nº ...:' também abre a enumeração daquela lei")
 
 
+@cenario("ato infralegal: regulamento e ato conjunto remetidos pelo texto, com o trecho literal")
+def atos_infralegais_detecao():
+    """Quebra: calar que o dispositivo remete a regulamento ou ato conjunto (a base
+    não os indexa: quem lê concluiria que a regra está completa); contar
+    'regulamentação' como regulamento; contar a menção em texto riscado ou no texto
+    que a lei insere em outra lei; ou perder a subdivisão onde ela está."""
+    import infralegal as IL
+
+    linhas = [
+        "Art. 9º A apuração será feita na forma do regulamento.",
+        "§ 1º Os percentuais serão divulgados por ato conjunto do Ministro de Estado da Fazenda "
+        "e do Comitê Gestor do IBS, nos termos do regulamento.",
+        "§ 2º A regulamentação desta Lei dispõe sobre o assunto.",
+        "§ 3º O Regulamento do IBS e da CBS detalhará o procedimento e o ato do Poder Executivo "
+        "da União fixará o prazo.",
+        "§ 4º Cabe a ato do Comitê Gestor do IBS listar os itens e ao ato da RFB, a forma.",
+        "§ 5º O autorregulamento do setor e o ato  conjunto de duas autoridades.",
+    ]
+    achados = [(a["tipo"], a["subdivisao"].split("!")[1], a["trecho"])
+               for a in IL.atos_infralegais(linhas, URN_BASE, "9")]
+    esperado = [
+        ("regulamento", "art9", "regulamento"),
+        ("ato_conjunto", "art9_par1", "ato conjunto"),
+        ("regulamento", "art9_par1", "regulamento"),
+        ("regulamento", "art9_par3", "Regulamento"),
+        ("ato_poder_executivo", "art9_par3", "ato do Poder Executivo"),
+        ("ato_comite_gestor", "art9_par4", "ato do Comitê Gestor"),
+        ("ato_rfb", "art9_par4", "ato da RFB"),
+        ("ato_conjunto", "art9_par5", "ato  conjunto"),
+    ]
+    checar(achados == esperado, f"cada tipo, na subdivisão, com o trecho (obteve {achados})")
+    checar(all(any(a["trecho"] in ln for ln in linhas) for a in IL.atos_infralegais(linhas, URN_BASE, "9")),
+           "o trecho é literal: está no texto do dispositivo")
+    repetido = IL.atos_infralegais(["Art. 1º Na forma do regulamento e, de novo, do regulamento."],
+                                   URN_BASE, "1")
+    checar(len(repetido) == 1, "o mesmo tipo repetido na mesma subdivisão: uma vez só")
+    checar(IL.atos_infralegais(["Art. 1º Texto sem remissão a ato."], URN_BASE, "1") == [],
+           "sem menção: nada")
+
+
+@cenario("ato infralegal: gravado no dispositivo, mostrado na consulta, conferido na validação")
+def atos_infralegais_registro():
+    """Quebra: gravar o campo sem o texto que o sustenta, ou deixar a consulta calada
+    sobre o ato que a base não tem."""
+    import datetime as dt
+
+    import consultar as C
+    import validar as V
+
+    artigo = {"numero": "9", "linhas": ["Art. 9º Na forma do regulamento.",
+                                        "~~§ 1º Antes, por ato conjunto.~~",
+                                        "“Art. 5º Texto citado, na forma do regulamento da outra lei.”"],
+              "linhas_vigentes": ["Art. 9º Na forma do regulamento."], "citados": [],
+              "hierarquia": [], "linhas_proprias": ["Art. 9º Na forma do regulamento."]}
+    fonte = {"titulo": "Lei Complementar nº 999, de 1º de janeiro de 1900", "slug": "lc-999-1900",
+             "data": "1900-01-01"}
+    registro = {"url": "u", "tipo_documento": "html", "acesso": "1900-01-02", "sha256": "0" * 64}
+    meta, corpo = F.montar_meta(artigo, fonte, registro, URN_BASE, {"datas": ["1900-01-02"], "fonte": "dou"},
+                                False)
+    checar(meta["remete_a_ato"] == [{"tipo": "regulamento", "subdivisao": f"{URN_BASE}!art9",
+                                     "trecho": "regulamento"}],
+           f"remete_a_ato no front-matter (obteve {meta.get('remete_a_ato')})")
+    linhas = C.atos_infralegais_na_consulta(meta)
+    checar(len(linhas) == 1 and "regulamento" in linhas[0] and "Nao localizado nas fontes indexadas" in linhas[0]
+           and "art9" in linhas[0], f"a consulta avisa (obteve {linhas})")
+    checar(C.atos_infralegais_na_consulta({"remete_a_ato": []}) == [], "sem ato: nada")
+    checar(V.problemas_de_atos_infralegais(meta, corpo) == [], "válido: o trecho está no corpo")
+    ruim = {**meta, "remete_a_ato": [{"tipo": "regulamento", "subdivisao": f"{URN_BASE}!art9",
+                                      "trecho": "inventado"}]}
+    inv = {**meta, "remete_a_ato": [{"tipo": "decreto", "subdivisao": f"{URN_BASE}!art9",
+                                     "trecho": "regulamento"}]}
+    checar(V.problemas_de_atos_infralegais(ruim, corpo) != [] and V.problemas_de_atos_infralegais(inv, corpo) != [],
+           "trecho que o corpo não tem, ou tipo desconhecido: erro")
+
+
+@cenario("normas/ reais: atos infralegais remetidos pela LC 214 (pulado se ausente)")
+def atos_infralegais_reais():
+    """Contrato com o texto da LC 214: o art. 168, § 4º, manda divulgar os percentuais
+    'por ato conjunto do Ministro de Estado da Fazenda e do Comitê Gestor do IBS'."""
+    pasta = RAIZ / "normas" / "lc-214-2025"
+    if not pasta.exists():
+        print("  pulado: normas/lc-214-2025 ausente")
+        return
+    from comum import ler_frontmatter
+
+    meta, _ = ler_frontmatter(pasta / "art-0168.md")
+    tipos = {(a["tipo"], a["subdivisao"].split("!")[1]) for a in meta.get("remete_a_ato") or []}
+    checar(("ato_conjunto", "art168_par4") in tipos, f"art. 168, § 4º: ato conjunto (obteve {sorted(tipos)})")
+
+
 @cenario("portabilidade de saída")
 def portabilidade():
     """Regressão: no Windows a saída redirecionada usa a codepage local (cp1252) e

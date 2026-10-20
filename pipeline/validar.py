@@ -115,7 +115,8 @@ def validar_dispositivos(corpos: dict[str, str] | None = None) -> list[dict]:
         # data do ato x publicação, precisão de ano, exceções por subdivisão e
         # coerência de um dispositivo marcado como revisado
         erros_t, avisos_t = problemas_no_dispositivo(meta)
-        for msg in erros_t + problemas_de_ia_da_meta(meta, interpretacoes):
+        for msg in erros_t + problemas_de_ia_da_meta(meta, interpretacoes) + problemas_de_atos_infralegais(
+                meta, corpo):
             erro(f"{rel(caminho)}: {msg}")
         for msg in avisos_t:
             avisos_temporais[msg].append(rel(caminho))
@@ -217,6 +218,19 @@ def validar_hashes() -> None:
                 f"manifest {chave}: sha256 diverge do arquivo em disco "
                 f"(declarado {registro['sha256'][:16]}..., real {atual[:16]}...)"
             )
+
+
+def problemas_de_atos_infralegais(meta: dict, corpo: str) -> list[str]:
+    """`remete_a_ato`: tipo conhecido e trecho que o corpo do dispositivo contém."""
+    from infralegal import TIPOS
+
+    problemas = []
+    for ato in meta.get("remete_a_ato") or []:
+        if ato.get("tipo") not in TIPOS:
+            problemas.append(f"remete_a_ato: tipo {ato.get('tipo')!r} desconhecido")
+        elif not ato.get("trecho") or ato["trecho"] not in corpo:
+            problemas.append(f"remete_a_ato: trecho {ato.get('trecho')!r} nao esta no corpo")
+    return problemas
 
 
 def urns_fora_da_base(urns: list, metas: list[dict]) -> list:

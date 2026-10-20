@@ -139,6 +139,11 @@ remete_a: ["urn:...!art9", "urn:...!art57_par2"]   # desta norma e de outra da b
 #   PRIMEIRO qualificador depois da menção. Sob "os seguintes dispositivos da Lei
 #   nº ...:" (ou "IX - da Lei nº ...:"), os itens são daquela lei: resolvem nela se
 #   está na base, e nunca nesta.
+remete_a_ato:                     # regulamento e atos infralegais que o texto manda editar
+  - tipo: "ato_conjunto"          #   regulamento|ato_conjunto|ato_poder_executivo|
+    subdivisao: "urn:...;214!art168_par4"   ato_comite_gestor|ato_rfb
+    trecho: "ato conjunto"        #   literal, está no corpo (a validação confere)
+#   A base não indexa nenhum ato infralegal: "Nao localizado nas fontes indexadas".
 altera: []
 alterado_por:                     # anotação oficial ligada ao artigo que fez a alteração
   - anotacao: "(Incluído pela Lei Complementar nº 227, de 2026)"

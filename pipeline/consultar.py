@@ -123,6 +123,19 @@ def origem_das_datas(meta: dict) -> list[str]:
     return linhas
 
 
+ROTULO_ATO = {"regulamento": "regulamento", "ato_conjunto": "ato conjunto",
+              "ato_poder_executivo": "ato do Poder Executivo", "ato_comite_gestor": "ato do Comite Gestor",
+              "ato_rfb": "ato da RFB"}
+
+
+def atos_infralegais_na_consulta(meta: dict) -> list[str]:
+    """Avisos de que o texto remete a regulamento ou ato infralegal: a base nao os
+    indexa, e o dispositivo sozinho nao diz a regra completa."""
+    return [f"ATO INFRALEGAL: {ROTULO_ATO.get(a['tipo'], a['tipo'])} em {a['subdivisao'].split('!')[-1]}"
+            " — Nao localizado nas fontes indexadas (a base nao indexa regulamento nem atos infralegais)"
+            for a in meta.get("remete_a_ato") or []]
+
+
 def controverso_na_data(meta: dict, referencia: _dt.date) -> list[str]:
     """Linhas de aviso se a data cai num intervalo `controverso`: ali as leituras
     discordam, e o estado calculado pelas datas não basta. Fora dele, nada."""
@@ -242,6 +255,8 @@ def imprimir(meta: dict, corpo: str, referencia: _dt.date, trecho: str | None,
         print(f"  contexto: {' > '.join(meta['hierarquia'])}")
     print(f"  fonte: {meta['fonte']['url']} (acesso {meta['fonte']['acesso']})")
 
+    for linha in atos_infralegais_na_consulta(meta):
+        print(f"  {linha}")
     remissoes = meta.get("remete_a") or []
     if remissoes:
         print(f"\n  SEGUIR ANTES DE CONCLUIR ({len(remissoes)} remissao/oes):")

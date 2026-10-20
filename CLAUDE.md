@@ -118,6 +118,12 @@ diz se a lei veio. `consultar.py` mostra, no dispositivo que remete:
 Sem nenhum dos dois, a remissão não foi examinada: não presuma nem que há, nem
 que não há regulamentação.
 
+**Regulamento e atos infralegais** ("na forma do regulamento", "ato conjunto do
+Comitê Gestor e da RFB"): `remete_a_ato` e a consulta (`ATO INFRALEGAL`) dizem
+onde o texto os manda editar. A base não indexa nenhum: a regra do dispositivo
+está **incompleta** sem o ato, e a resposta sobre o que ele fixa é "Não
+localizado nas fontes indexadas".
+
 ### 6. Cite sempre
 
 Toda afirmação carrega o dispositivo e a URN de origem:
