@@ -32,13 +32,16 @@ Ausência de qualquer um destes itens é **erro de build**, não pendência.
 | Tipo de norma | Canal oficial |
 |---|---|
 | Emenda Constitucional, Lei Complementar, Lei ordinária | `planalto.gov.br` (compilado) + `in.gov.br` (DOU, publicado) |
-| Decreto e atos federais | `in.gov.br` |
-| Instrução Normativa, Portaria, Ato Declaratório (RFB) | `normas.receita.fazenda.gov.br` |
-| Atos do Comitê Gestor do IBS | portal oficial do CGIBS |
+| Decreto e atos federais | `in.gov.br` (e o compilado em `planalto.gov.br`) |
+| Instrução Normativa, Portaria, Ato Declaratório (RFB) | `normas.receita.fazenda.gov.br` (texto pela API do Sijut2, `normasinternet2.receita.fazenda.gov.br/api/consulta-externa/`) |
+| Atos do Comitê Gestor do IBS | `www.cgibs.gov.br` |
 | Convênios e Ajustes SINIEF | `confaz.fazenda.gov.br` |
-| Notas Técnicas de documentos fiscais | Portal Nacional da NF-e |
+| Notas Técnicas de documentos fiscais | Portal Nacional da NF-e e os portais nacionais de cada documento: `cte.fazenda.gov.br`, `dfe-portal.svrs.rs.gov.br`, `mdfe-portal.sefaz.rs.gov.br`, `gov.br/nfse` |
 
-O catálogo operacional com as URLs canônicas está em `pipeline/fontes.yaml`.
+O catálogo operacional com as URLs canônicas está em `pipeline/fontes.yaml` (EC e
+LC, fatiadas em `/normas/`) e `pipeline/acervo.yaml` (os demais, arquivados e
+conferidos sem fatiamento). Os canais por tipo de ato são conferidos por código
+(`pipeline/acervo.py`, `CANAIS`).
 
 ### P1.3 — Fontes inadmissíveis
 

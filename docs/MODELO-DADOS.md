@@ -235,6 +235,7 @@ execução: um passo separado seria desfeito pela próxima reingestão. Ver
 | Diretório | Camada | Editável à mão | Conteúdo |
 |---|---|---|---|
 | `/fontes/` | 1 | não | originais imutáveis + `manifest.json` |
+| `/fontes/acervo/` | 1 | não (só `baixar.py --acervo`) | originais de decretos, atos da RFB e do CGIBS, Ajustes SINIEF e Notas Técnicas — catalogados em `pipeline/acervo.yaml`, conferidos, **sem fatiamento** |
 | `/normas/` | 1+2 | não (só pipeline) | dispositivos fatiados |
 | `/eventos/` | 2 | sim | alterações, revogações, divergências de texto |
 | `/temporal/` | 2 | sim | cronograma da transição, parâmetros por exercício |
@@ -254,6 +255,7 @@ Em ordem de retorno sobre o custo:
 | `alteracoes.json` | quem alterou ou revogou o quê, e quando |
 | `vocabulario.json` | mapa antigo → novo (PIS/COFINS → CBS, ICMS/ISS → IBS); as perguntas reais chegam no vocabulário antigo |
 | `cobertura.json` | o que está efetivamente ingerido — evita presumir cobertura inexistente |
+| `acervo.json` | cada ato do acervo: tipo, nível de prevalência, órgão, título, data, versão, URL, original e sha256 (ou o `bloqueio` do canal). Função de `pipeline/acervo.yaml` e do manifest |
 
 ## Sobre busca vetorial
 

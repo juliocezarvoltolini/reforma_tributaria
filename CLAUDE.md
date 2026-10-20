@@ -120,9 +120,21 @@ que não há regulamentação.
 
 **Regulamento e atos infralegais** ("na forma do regulamento", "ato conjunto do
 Comitê Gestor e da RFB"): `remete_a_ato` e a consulta (`ATO INFRALEGAL`) dizem
-onde o texto os manda editar. A base não indexa nenhum: a regra do dispositivo
-está **incompleta** sem o ato, e a resposta sobre o que ele fixa é "Não
-localizado nas fontes indexadas".
+onde o texto os manda editar. A base não liga o dispositivo ao ato: a regra do
+dispositivo está **incompleta** sem ele.
+
+**Acervo** (decretos, atos da RFB e do CGIBS, Ajustes SINIEF, Notas Técnicas):
+`python pipeline/consultar.py --acervo "termo"` lista os atos arquivados, com
+URL oficial, original em `fontes/acervo/` e sha256. Eles são **conferidos** (os
+trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
+
+- pode citar o ato e o que o original diz, com o id do acervo e a URL — e ler o
+  original arquivado, nunca a memória;
+- a base **não** trata a vigência nem os efeitos do ato, nem filtra pela data
+  de referência: diga isso na resposta e mostre a versão/data do documento;
+- ato fora do acervo continua "Não localizado nas fontes indexadas";
+- `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
+  `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.
 
 ### 6. Cite sempre
 

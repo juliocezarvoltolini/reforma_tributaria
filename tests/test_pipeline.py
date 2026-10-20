@@ -3302,6 +3302,21 @@ def baixar_deriva():
                    and not list((raiz / "eventos").glob("deriva-lc-3-*.md"))
                    and manifest["documentos"]["lc-3/texto_compilado"] == registro3,
                    "só o token do script anti-robô mudou: inalterado, sem evento, manifest intacto")
+
+            # O DOU (in.gov.br) muda, a cada acesso, o carimbo `t=` dos CSS, a ordem
+            # dos <link> e o `t=` dentro de scripts (medido em 2026-10-20 na página
+            # da Resolução nº 1/GCE/PCGIBS): não é deriva.
+            com_carimbo = lambda t, ordem: velho.replace(  # noqa: E731
+                b"<body>", b"<head>" + b"".join(b'<link href="/a%s.css?t=' % x + t + b'" rel="stylesheet" />'
+                                               for x in ordem)
+                + b"<script>var u='x.jsp?t=" + t + b"';</script></head><body>")
+            gravar("lc-4", com_carimbo(b"1788005024554", [b"1", b"2"]))
+            manifest["documentos"]["lc-4/texto_compilado"]["acesso"] = "1900-01-01"
+            registro4 = dict(manifest["documentos"]["lc-4/texto_compilado"])
+            checar(gravar("lc-4", com_carimbo(b"1790278829492", [b"2", b"1"])) == 0
+                   and not list((raiz / "eventos").glob("deriva-lc-4-*.md"))
+                   and manifest["documentos"]["lc-4/texto_compilado"] == registro4,
+                   "só <link> e <script> do portal mudaram: inalterado, sem evento")
         finally:
             B.DIR_FONTES, B.DIR_EVENTOS = antes
 
@@ -4373,6 +4388,296 @@ def atos_infralegais_reais():
     meta, _ = ler_frontmatter(pasta / "art-0168.md")
     tipos = {(a["tipo"], a["subdivisao"].split("!")[1]) for a in meta.get("remete_a_ato") or []}
     checar(("ato_conjunto", "art168_par4") in tipos, f"art. 168, § 4º: ato conjunto (obteve {sorted(tipos)})")
+
+
+def pdf_com_texto(*linhas: str) -> bytes:
+    """PDF mínimo (uma página, Helvetica) com as linhas dadas, para o extrator de
+    texto do acervo. Offsets do xref calculados de verdade. O conteúdo vai
+    comprimido (FlateDecode), como nos PDFs reais: o texto não aparece nos bytes
+    crus, e só um leitor de PDF o acha."""
+    import zlib
+
+    conteudo = zlib.compress(("BT /F1 10 Tf 20 800 Td 12 TL " + " ".join(
+        f"({ln}) Tj T*" for ln in linhas) + " ET").encode("latin-1"))
+    objetos = [
+        b"<< /Type /Catalog /Pages 2 0 R >>",
+        b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R "
+        b"/Resources << /Font << /F1 5 0 R >> >> >>",
+        f"<< /Length {len(conteudo)} /Filter /FlateDecode >>\nstream\n".encode("latin-1")
+        + conteudo + b"\nendstream",
+        b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>",
+    ]
+    saida = b"%PDF-1.4\n"
+    offsets = []
+    for i, obj in enumerate(objetos, 1):
+        offsets.append(len(saida))
+        saida += f"{i} 0 obj\n".encode("latin-1") + obj + b"\nendobj\n"
+    xref = len(saida)
+    saida += f"xref\n0 {len(objetos) + 1}\n0000000000 65535 f \n".encode("latin-1")
+    saida += "".join(f"{o:010d} 00000 n \n" for o in offsets).encode("latin-1")
+    saida += (f"trailer\n<< /Size {len(objetos) + 1} /Root 1 0 R >>\n"
+              f"startxref\n{xref}\n%%EOF\n").encode("latin-1")
+    return saida
+
+
+HTML_ATO_FICTICIO = ("<html><head><meta charset='utf-8'></head><body>"
+                     "<p>INSTRUÇÃO NORMATIVA FICTÍCIA Nº 9.999, DE 1º DE JANEIRO DE 1900</p>"
+                     "<p>Dispõe   sobre\n o teste do acervo.</p>"
+                     "<p>Art. 1º Texto inventado.</p></body></html>").encode("utf-8")
+
+
+def registro_acervo(**muda) -> dict:
+    reg = {"id": "in-ficticia-9999-1900", "tipo": "instrucao.normativa", "orgao": "RFB",
+           "titulo": "Instrução Normativa Fictícia nº 9.999, de 1º de janeiro de 1900",
+           "numero": "9.999", "data": "1900-01-01",
+           "url": "https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=1",
+           "conferir": ["INSTRUÇÃO NORMATIVA FICTÍCIA Nº 9.999", "Dispõe sobre o teste do acervo."]}
+    reg.update(muda)
+    return {k: v for k, v in reg.items() if v is not None}
+
+
+def manifest_acervo(reg: dict, dados: bytes, ext: str = "html") -> tuple[dict, dict]:
+    """(documentos do manifest, arquivos em memória) com o original do registro."""
+    arquivo = f"fontes/acervo/{reg['id']}.{ext}"
+    docs = {f"acervo/{reg['id']}": {"id": reg["id"], "slug": "acervo", "url": reg["url"],
+                                    "arquivo": arquivo, "sha256": "0" * 64}}
+    return docs, {arquivo: dados}
+
+
+@cenario("acervo: trechos declarados conferidos contra o original arquivado")
+def acervo_conferencia():
+    """Quebra: aceitar registro sem original arquivado; aceitar trecho que o arquivo
+    não contém (o registro diria o que a fonte não diz); comparar sem normalizar
+    espaço (o HTML quebra linhas no meio da ementa); ou aceitar registro cuja URL
+    diverge da que o manifest diz ter baixado."""
+    import acervo as A
+
+    reg = registro_acervo()
+    docs, arquivos = manifest_acervo(reg, HTML_ATO_FICTICIO)
+    ler = arquivos.__getitem__
+    checar(A.problemas_do_registro(reg, docs, ler) == [],
+           "trechos presentes (com espaço e quebra de linha diferentes): sem problema")
+
+    falso = registro_acervo(conferir=["Dispõe sobre outra coisa."])
+    probs = A.problemas_do_registro(falso, docs, ler)
+    checar(len(probs) == 1 and "Dispõe sobre outra coisa." in probs[0],
+           f"trecho ausente do original: erro que o nomeia (obteve {probs})")
+    checar(any("conferir" in p for p in A.problemas_do_registro(registro_acervo(conferir=[]), docs, ler)),
+           "sem nenhum trecho a conferir: erro")
+    checar(any("manifest" in p for p in A.problemas_do_registro(reg, {}, ler)),
+           "sem original no manifest: erro")
+    outra = registro_acervo(url="https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=2")
+    checar(any("url" in p.lower() for p in A.problemas_do_registro(outra, docs, ler)),
+           "URL do registro diferente da baixada: erro")
+    checar(any("numero" in p for p in A.problemas_do_registro(registro_acervo(numero="9.998"), docs, ler)),
+           "número que o original não contém: erro")
+
+
+@cenario("acervo: texto de PDF e caixa/acentuação idênticas exigidas, espaço não")
+def acervo_pdf():
+    """Quebra: não ler PDF (Notas Técnicas e Ajustes vêm em PDF); ou normalizar
+    demais — ignorar acento ou caixa deixaria passar trecho alterado."""
+    import acervo as A
+
+    pdf = pdf_com_texto("Nota Tecnica 1900.001", "Versao 1.00 - Leiaute de teste")
+    reg = registro_acervo(id="nt-ficticia-1900-001-v1-00", tipo="nota.tecnica", orgao="ENCAT",
+                          numero="1900.001", url="https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?x=1",
+                          # O segundo trecho atravessa a quebra de linha do PDF.
+                          conferir=["Nota Tecnica 1900.001", "1900.001 Versao 1.00 - Leiaute de teste"])
+    docs, arquivos = manifest_acervo(reg, pdf, "pdf")
+    checar(A.problemas_do_registro(reg, docs, arquivos.__getitem__) == [], "PDF: trechos lidos do texto")
+    caixa = dict(reg, conferir=["nota tecnica 1900.001"])
+    checar(A.problemas_do_registro(caixa, docs, arquivos.__getitem__) != [], "caixa diferente: erro")
+
+    # Artefatos do extrator medidos nos PDFs reais do CGIBS (2026-10-20): espaço
+    # no meio da palavra ("d o Comitê", "a provação") e ligadura tipográfica ("ﬁxação").
+    partido = pdf_com_texto("Publica a Proposta d o Comite e a a provacao")
+    reg2 = dict(reg, conferir=["Publica a Proposta do Comite e a aprovacao"], numero=None)
+    reg2 = {k: v for k, v in reg2.items() if v is not None}
+    docs2, arq2 = manifest_acervo(reg2, partido, "pdf")
+    checar(A.normalizar("d o Comitê ﬁxação") == A.normalizar("do Comitê fixação"),
+           "espaço partido e ligadura não contam")
+    checar(A.normalizar("do Comitê") != A.normalizar("do Comite"), "acento conta")
+    checar(A.problemas_do_registro(reg2, docs2, arq2.__getitem__) == [],
+           "PDF com palavra partida: trecho conferido")
+
+
+def zip_com(membros: dict[str, str]) -> bytes:
+    import io
+    import zipfile
+
+    saida = io.BytesIO()
+    with zipfile.ZipFile(saida, "w") as z:
+        for nome, conteudo in membros.items():
+            z.writestr(nome, conteudo)
+    return saida.getvalue()
+
+
+@cenario("acervo: formato pelos bytes, e texto de ZIP de schemas, planilha e JSON da RFB")
+def acervo_formatos():
+    """Medido nos levantamentos de 2026-10-20: o Portal NF-e serve PDF e ZIP como
+    application/octet-stream por exibirArquivo.aspx (sem extensão); o pacote de
+    schemas é ZIP de XSD; o leiaute da NFS-e é .xlsx; o texto dos atos da RFB vem de
+    uma API JSON com segmentos em HTML. Quebra: gravar PDF como .html (o texto não
+    seria lido); conferir só os nomes do ZIP (o grupo de IBS/CBS está DENTRO do XSD);
+    ou não tirar as tags do JSON."""
+    import acervo as A
+    import baixar as B
+
+    xlsx = zip_com({"[Content_Types].xml": "<Types/>", "xl/workbook.xml": "<workbook/>",
+                    "xl/sharedStrings.xml": "<sst><si><t>Grupo gIBSCBS fictício</t></si></sst>"})
+    esquemas = zip_com({"leiauteFicticio_v1.00.xsd":
+                        '<xs:schema><xs:element name="gIBSCBSFicticio"/></xs:schema>'})
+    url = "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=x"
+    checar(B.extensao_de(url, "application/octet-stream", b"%PDF-1.7\n...") == "pdf"
+           and B.extensao_de(url, "application/octet-stream", esquemas) == "zip"
+           and B.extensao_de(url, "application/pdf", esquemas) == "zip"
+           and B.extensao_de(url, "application/octet-stream", xlsx) == "xlsx"
+           and B.extensao_de("https://x/api/ato/1/visao/vigente", "application/json", b'{"a": 1}') == "json",
+           "formato pelos bytes, não pelo Content-Type nem pela URL")
+    checar("gIBSCBSFicticio" in A.texto_do_original(esquemas, "zip")
+           and "leiauteFicticio_v1.00.xsd" in A.texto_do_original(esquemas, "zip"),
+           "ZIP: nome e conteúdo dos XSD")
+    checar("GrupogIBSCBSfictício" in A.texto_do_original(xlsx, "xlsx"), "xlsx: textos das células")
+    # Pacote com ZIP dentro (medido no PL de eventos da NF-e NT 2026.004, 2026-10-20).
+    aninhado = zip_com({"leia-me.txt": "x"})
+    import io
+    import zipfile
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        z.writestr("Interno.zip", esquemas)
+    texto_aninhado = A.texto_do_original(buf.getvalue(), "zip")
+    checar("Interno.zip/leiauteFicticio_v1.00.xsd" in texto_aninhado and "gIBSCBSFicticio" in texto_aninhado
+           and aninhado, "ZIP dentro de ZIP: nomes com o caminho e conteúdo dos XSD")
+    rfb = '{"visaoAto": {"epigrafeCompleta": "Instrução Normativa Fictícia nº 1", ' \
+          '"segmentos": [{"texto": "<p>Dispõe <b>sobre</b> o teste.</p>"}], "idAto": 7}}'
+    texto = A.texto_do_original(rfb.encode("utf-8"), "json")
+    checar("InstruçãoNormativaFictícianº1" in texto and "Dispõesobreoteste." in texto
+           and "<b>" not in texto, f"JSON: textos, sem tags (obteve {texto!r})")
+
+
+@cenario("acervo: canal oficial por tipo (PREMISSAS.md §1.2), id e tipo conhecidos")
+def acervo_canal():
+    """Quebra: aceitar Nota Técnica de site de terceiro, Ajuste SINIEF fora do CONFAZ,
+    tipo inventado, ou dois registros com o mesmo id (o segundo sobrescreveria o
+    original do primeiro em fontes/acervo/)."""
+    import acervo as A
+
+    docs, arquivos = manifest_acervo(registro_acervo(), HTML_ATO_FICTICIO)
+    ler = arquivos.__getitem__
+    terceiro = registro_acervo(url="https://www.exemplo.com.br/in.html")
+    checar(any("canal" in p for p in A.problemas_do_registro(terceiro, docs, ler)),
+           "domínio fora dos canais do tipo: erro")
+    dou = registro_acervo(url="https://www.in.gov.br/web/dou/-/instrucao-normativa-1")
+    docs_dou, arq_dou = manifest_acervo(dou, HTML_ATO_FICTICIO)
+    checar(A.problemas_do_registro(dou, docs_dou, arq_dou.__getitem__) == [],
+           "ato da RFB pelo DOU (in.gov.br): canal admitido")
+    ajuste = registro_acervo(tipo="ajuste.sinief", url="https://normas.receita.fazenda.gov.br/x")
+    checar(any("canal" in p for p in A.problemas_do_registro(ajuste, docs, ler)),
+           "Ajuste SINIEF fora do CONFAZ e do DOU: erro")
+    checar(any("tipo" in p for p in A.problemas_do_registro(registro_acervo(tipo="parecer.de.blog"), docs, ler)),
+           "tipo desconhecido: erro")
+    checar(any("id" in p for p in A.problemas_do_registro(registro_acervo(id="IN 9999"), docs, ler)),
+           "id fora do formato: erro")
+    erros, _ = A.problemas_do_acervo([registro_acervo(), registro_acervo()], docs, ler)
+    checar(any("duplicado" in e for e in erros), "id duplicado: erro")
+    checar(A.NIVEIS["decreto"] < A.NIVEIS["instrucao.normativa"] < A.NIVEIS["nota.tecnica"]
+           and A.NIVEIS["ajuste.sinief"] == A.NIVEIS["nota.tecnica"],
+           "nível na ordem de prevalência: decreto, ato infralegal, Ajuste SINIEF / Nota Técnica")
+    checar(A.NIVEIS["comunicado"] > A.NIVEIS["nota.tecnica"],
+           "comunicado (orientação, não ato normativo) abaixo de todos")
+
+
+@cenario("acervo: bloqueio do canal oficial é pendência declarada, não original inventado")
+def acervo_bloqueio():
+    """Quebra: tratar como erro o ato que o canal oficial recusou servir (não há como
+    arquivá-lo — é pendência declarada, como em fontes.yaml); ou aceitar bloqueio E
+    original ao mesmo tempo, ou bloqueio sem motivo."""
+    import acervo as A
+
+    reg = registro_acervo(bloqueio="HTTP 403 em 2026-10-20 no canal oficial", conferir=[])
+    erros, avisos = A.problemas_do_acervo([reg], {}, {}.__getitem__)
+    checar(erros == [] and len(avisos) == 1 and "in-ficticia-9999-1900" in avisos[0],
+           f"bloqueado e sem original: só aviso (erros {erros})")
+    docs, arquivos = manifest_acervo(reg, HTML_ATO_FICTICIO)
+    erros, _ = A.problemas_do_acervo([reg], docs, arquivos.__getitem__)
+    checar(any("bloqueio" in e for e in erros), "bloqueado mas com original arquivado: erro (contraditório)")
+    erros, _ = A.problemas_do_acervo([registro_acervo(bloqueio="  ", conferir=[])], {}, {}.__getitem__)
+    checar(erros != [], "bloqueio sem motivo: erro")
+
+
+@cenario("acervo: download vai para fontes/acervo/<id>, com procedência no manifest")
+def acervo_download():
+    """Quebra: gravar o original do acervo em pasta de norma fatiada (o fatiamento
+    passaria a lê-lo), ou com chave que colide entre dois atos."""
+    import tempfile
+
+    import baixar as B
+
+    with tempfile.TemporaryDirectory() as tmp:
+        antes = B.DIR_FONTES
+        B.DIR_FONTES = Path(tmp) / "fontes"
+        try:
+            manifest = {"documentos": {}}
+            for reg in (registro_acervo(), registro_acervo(id="in-ficticia-9998-1900")):
+                fonte, entrada = B.fonte_e_entrada_do_acervo(reg)
+                B.gravar(fonte, entrada, HTML_ATO_FICTICIO, manifest, False, "text/html", "download")
+            docs = manifest["documentos"]
+            checar(sorted(docs) == ["acervo/in-ficticia-9998-1900", "acervo/in-ficticia-9999-1900"]
+                   and docs["acervo/in-ficticia-9999-1900"]["arquivo"].endswith("acervo/in-ficticia-9999-1900.html")
+                   and (B.DIR_FONTES / "acervo" / "in-ficticia-9999-1900.html").exists(),
+                   f"um original por id em fontes/acervo/ (obteve {sorted(docs)})")
+            checar(B.extensao_de("https://x/schemas.zip", "application/x-zip-compressed") == "zip",
+                   "pacote de schemas: .zip")
+        finally:
+            B.DIR_FONTES = antes
+
+
+@cenario("acervo: índice com cada ato, nível, original e hash")
+def acervo_indice():
+    """Quebra: índice que lista ato sem original como se arquivado, ou que perde o
+    hash (o índice é o que se confere)."""
+    import acervo as A
+
+    reg = registro_acervo()
+    docs, _ = manifest_acervo(reg, HTML_ATO_FICTICIO)
+    bloq = registro_acervo(id="in-ficticia-9998-1900", bloqueio="HTTP 403", conferir=[])
+    indice = A.indice([reg, bloq], docs)
+    por_id = {d["id"]: d for d in indice["atos"]}
+    checar(por_id["in-ficticia-9999-1900"]["sha256"] == "0" * 64
+           and por_id["in-ficticia-9999-1900"]["arquivo"] == "fontes/acervo/in-ficticia-9999-1900.html"
+           and por_id["in-ficticia-9999-1900"]["nivel"] == A.NIVEIS["instrucao.normativa"],
+           "arquivado: arquivo, sha256 e nível")
+    checar(por_id["in-ficticia-9998-1900"].get("sha256") is None
+           and por_id["in-ficticia-9998-1900"]["bloqueio"] == "HTTP 403",
+           "bloqueado: sem hash, com o motivo")
+    checar(indice["totais"] == {"arquivados": 1, "bloqueados": 1,
+                                "por_tipo": {"instrucao.normativa": 2}},
+           f"totais (obteve {indice['totais']})")
+
+
+@cenario("acervo: consulta por termo, com procedência e o aviso de que não há fatiamento")
+def acervo_consulta():
+    """Quebra: busca que ignora a ementa ou diferencia acento/caixa (quem consulta
+    digita 'instrucao'); resultado sem URL e hash (não seria conferível); ou sem
+    dizer que a vigência do ato não é tratada pela base."""
+    import consultar as C
+
+    indice = {"atos": [
+        {"id": "a", "tipo": "instrucao.normativa", "nivel": 5, "titulo": "Instrução Normativa Fictícia nº 1",
+         "ementa": "Dispõe sobre o leiaute de teste.", "url": "https://x/a", "arquivo": "fontes/acervo/a.html",
+         "sha256": "ab" * 32, "data": "1900-01-01"},
+        {"id": "b", "tipo": "nota.tecnica", "nivel": 6, "titulo": "Nota Técnica Fictícia", "url": "https://x/b",
+         "bloqueio": "HTTP 403"}]}
+    checar([a["id"] for a in C.buscar_no_acervo(indice, "instrucao normativa")] == ["a"],
+           "sem acento e sem caixa: acha pelo título")
+    checar([a["id"] for a in C.buscar_no_acervo(indice, "LEIAUTE DE TESTE")] == ["a"], "acha pela ementa")
+    checar([a["id"] for a in C.buscar_no_acervo(indice, "fictícia")] == ["a", "b"], "ordem do índice")
+    texto = "\n".join(C.linhas_do_acervo(indice["atos"][0]))
+    checar("https://x/a" in texto and "ab" * 8 in texto and "fontes/acervo/a.html" in texto
+           and "vigencia" in texto.lower(), f"procedência e aviso de vigência (obteve {texto!r})")
+    checar("HTTP 403" in "\n".join(C.linhas_do_acervo(indice["atos"][1])), "bloqueado: mostra o motivo")
 
 
 @cenario("portabilidade de saída")

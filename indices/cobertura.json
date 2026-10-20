@@ -1,4 +1,29 @@
 {
+  "acervo": {
+    "arquivados": 370,
+    "bloqueados": 0,
+    "por_tipo": {
+      "ajuste.sinief": 6,
+      "ato.conjunto": 6,
+      "ato.cotepe": 10,
+      "ato.declaratorio": 4,
+      "ato.tecnico.conjunto": 8,
+      "comunicado": 2,
+      "convenio": 1,
+      "decreto": 10,
+      "edital": 3,
+      "informe.tecnico": 20,
+      "instrucao.normativa": 6,
+      "leiaute": 11,
+      "nota": 3,
+      "nota.tecnica": 115,
+      "portaria": 45,
+      "recomendacao": 1,
+      "resolucao": 31,
+      "retificacao": 2,
+      "schema": 86
+    }
+  },
   "aviso": "Esta base cobre apenas o que esta listado aqui. Nao presuma que uma norma esta indexada porque ela existe no mundo.",
   "normas": {
     "emc-132-2023": {

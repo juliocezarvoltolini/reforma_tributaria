@@ -16,6 +16,7 @@ import yaml
 
 from comum import (
     DIR_INDICES,
+    MANIFEST,
     RAIZ,
     arquivos_dispositivos,
     gravar_texto,
@@ -126,9 +127,22 @@ def main() -> int:
     # de /normas/. Um timestamp aqui faria a CI de determinismo ("indices em
     # dia") acusar diff em todo dia posterior ao commit, sem mudança real.
     # Quando o índice foi gerado é o que o histórico do Git registra.
+    # -- acervo: atos arquivados e conferidos, sem fatiamento ----------------
+    # Função de pipeline/acervo.yaml e do manifest (não de /normas/): o que o
+    # acervo tem, com o original e o hash de cada ato.
+    import acervo
+
+    regs_acervo = acervo.carregar()
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
+    indice_acervo = acervo.indice(regs_acervo, manifest.get("documentos") or {})
+    gravar("acervo.json", indice_acervo)
+
     gravar(
         "cobertura.json",
         {
+            # Atos do acervo (decretos, infralegais, Ajustes SINIEF, Notas Técnicas):
+            # arquivados e conferidos, mas NÃO fatiados em dispositivos.
+            "acervo": indice_acervo["totais"],
             "total_dispositivos": len(dispositivos),
             "normas": {
                 slug: {

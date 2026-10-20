@@ -138,26 +138,18 @@ fontes:
 # Preencher consultando o canal oficial correspondente, promover para o bloco
 # `fontes:` acima e ingerir.
 # ---------------------------------------------------------------------------
-pendentes:
-  - descricao: "Lei Complementar decorrente do PLP 108/2024 — Comitê Gestor do IBS, processo administrativo e distribuição de receita"
-    canal: "planalto.gov.br + in.gov.br"
-    bloqueio: "número e data da LC a confirmar na fonte"
-
-  - descricao: "Atos normativos da RFB sobre CBS (Instruções Normativas, Atos Declaratórios)"
-    canal: "normas.receita.fazenda.gov.br"
-    bloqueio: "listagem a levantar; ingestão contínua"
-
-  - descricao: "Atos e regulamentos do Comitê Gestor do IBS"
-    canal: "portal oficial do CGIBS"
-    bloqueio: "URL do portal a confirmar"
-
-  - descricao: "Ajustes SINIEF relativos a IBS/CBS/IS em documentos fiscais"
-    canal: "confaz.fazenda.gov.br"
-    bloqueio: "listagem a levantar; ingestão contínua"
-
-  - descricao: "Notas Técnicas de documentos fiscais eletrônicos com leiaute de IBS/CBS/IS"
-    canal: "Portal Nacional da NF-e"
-    bloqueio: "identificar NTs aplicáveis e suas versões"
+#
+# Os cinco itens que estavam aqui foram resolvidos em 2026-10-20:
+#   - LC decorrente do PLP 108/2024: é a LC 227/2026, já ingerida acima. A API de
+#     dados abertos da Câmara (proposições/2438459) registra "Transformado na Lei
+#     Complementar 227/2026. DOU 14/01/2026".
+#   - Atos da RFB, atos e regulamentos do CGIBS, Ajustes SINIEF e Notas Técnicas:
+#     levantados nos canais oficiais e arquivados no ACERVO (pipeline/acervo.yaml,
+#     fontes/acervo/, indices/acervo.json) — com hash e trechos conferidos, mas sem
+#     fatiamento em /normas/. Ver docs/ESTADO.md, seção "Acervo".
+# O que segue em aberto (renovação contínua dos canais, atos não varridos) está
+# em docs/ESTADO.md, seção "Acervo".
+pendentes: []
 
 # ---------------------------------------------------------------------------
 # Domínios que precisam estar liberados na política de egresso para o pipeline

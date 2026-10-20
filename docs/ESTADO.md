@@ -583,5 +583,60 @@ cláusula de vigência da LC 227 (art. 182), que espera:
 - Busca vetorial. O filtro temporal é determinístico e vem antes da busca;
   embedding ignora tempo.
 - Jurisprudência e legislação estadual ou municipal.
-- Normas listadas em `pipeline/fontes.yaml` sob `pendentes:` — precisam de URL
-  oficial confirmada antes de entrar.
+- `pendentes:` de `pipeline/fontes.yaml` está vazio desde 2026-10-20 (ver §12).
+
+---
+
+## 12. Acervo — atos abaixo da LC, arquivados e conferidos (2026-10-20)
+
+Os cinco itens de `pendentes:` foram levantados nos canais oficiais em
+2026-10-20. A LC do PLP 108/2024 é a LC 227/2026 (API da Câmara, proposição
+2438459: "Transformado na Lei Complementar 227/2026"). O resto entrou no
+**acervo**: `pipeline/acervo.yaml` (catálogo), `fontes/acervo/` (originais, sha256
+no manifest sob `acervo/<id>`), `indices/acervo.json` (índice), consulta por
+`python pipeline/consultar.py --acervo "termo"`. Totais por tipo:
+`indices/cobertura.json`, chave `acervo`.
+
+**O que "conferido" quer dizer.** Cada registro traz `conferir`: trechos literais
+do original (cabeçalho, ementa, capa do PDF, membros do ZIP, o termo que
+justificou a inclusão). `validar.py` extrai o texto do arquivo arquivado (HTML,
+PDF, ZIP de XSD, xlsx, JSON da API da RFB) e exige cada trecho nele. Espaço é
+ignorado (o extrator de PDF parte palavras: "d o Comitê") e ligaduras são
+desfeitas; caixa, acento e pontuação, não — o compilado do Planalto escreve
+"Serviços – CBS" onde o DOU escreve "- CBS", e cada registro usa o do seu original.
+
+**O que o acervo NÃO é.** Não é fatiado em dispositivos, não tem vigência nem
+efeitos tratados, e não liga o dispositivo de lei ao ato que o regulamenta.
+`remete_a_ato` continua dizendo só *onde* a lei manda editar o ato.
+
+**Levantamento, por canal** (subagentes, só leitura; nada de memória — tudo o que
+entrou foi conferido pelo pipeline contra o original baixado):
+
+| Canal | Entrou | Ficou fora, de propósito |
+|---|---|---|
+| `www.cgibs.gov.br` + DOU | Resoluções 1–18/2026 (Res. 6 = regulamento do IBS; Res. 4 também consolidada), Portarias 1–11/2026, Portarias Conjuntas MF/CGIBS 7 e 14, Atos Conjuntos RFB/CGIBS 1–6 e a retificação do 1, Atos Técnicos Conjuntos 1–8, Res. nº 1/GCE/PCGIBS (2025), 2 comunicados | editais de chamamento, extrato de protocolo, ato do Comsefaz (não normativos ou não do CGIBS) |
+| Planalto + DOU | Decretos 12.955/2026 (Regulamento da CBS), 13.075 e 13.133/2026 (alteram o 12.955), 12.668 e 12.799/2025 — cada um compilado E publicado; Portarias MF 3.074, 3.089, 1.398, 2.622, MF/CGU 68, STN/MF 1.985 | correlatos que não regulamentam (Leis 15.270 e 15.504, LCs 224, 229 e 237, Decretos 12.808, 13.119 e 13.127), EC 137 (IPVA) |
+| Sijut2 (API) | 53 atos: INs RFB 2275, 2305, 2318, 2325, 2344, 2345; ADI RFB 3/2024 e 2/2026; ADEs; portarias RFB/MF/Cotec/Coana; resoluções CGSN, CGNFS-e, CGSIM, Enat, CTSI; editais de transação; notas — relevância anotada em `observacao` | Soluções de Consulta (40 + 1 interna); Portaria RFB 1507/2019 (antes da EC 132); Portaria RFB 716/2026 (sem os termos); duplicatas do que veio do CGIBS |
+| CONFAZ | Ajustes SINIEF 24/24 e 25/25 (e retificação), 37/25, 7/26, 39/26, 7/22 consolidado; Convênio ICMS 100/26; Atos COTEPE (GT75-IBS e afins) | Ajuste SINIEF 49/25 e alteradores (nota de crédito/débito: o texto não menciona IBS/CBS — ligar à reforma seria inferência) |
+| Portais DF-e | 232 arquivos: NT, Informes Técnicos, pacotes de schemas e planilhas de leiaute de NF-e/NFC-e, CT-e, BP-e, NF3e, NFCom, NFAg, NFGas, NF-e ABI, NFS-e e NFS-e Via, em todas as versões publicadas (NF-e NT 2025.002-RTC v1.00 a v1.52; CT-e NT 2025.001-RTC v1.00 a v1.14b...) | NTs sem os termos e não ratificadas por ATC (CNPJ alfanumérico, NT 2024.003), MOCs, tabelas xlsx do SVRS |
+
+**Em aberto:**
+
+- **Veto da LC 227** (VET 8/2026): sobrestando a pauta do Congresso desde
+  04/03/2026, sem deliberação (API do Senado, 2026-10-20). Não há partes vetadas
+  promulgadas. Se o veto cair, a promulgação é ato novo a ingerir em `fontes.yaml`.
+- **Decreto do IBS ou do IS**: nenhum localizado. A Portaria Conjunta MF/CGIBS 7
+  diz que o regulamento do IBS é a Resolução CGIBS 6/2026 (no acervo).
+- **Varredura incompleta por desenho do canal:** as listas de decretos do Planalto
+  (`_ato2023-2026/.../decreto/`) responderam 403, e a busca do DOU devolve pouco
+  por consulta; protocolos e acordos de cooperação do CONFAZ não foram varridos;
+  versões antigas de NTs que o SVRS não lista mais não estão em nenhum canal.
+- **Renovação:** `baixar.py --acervo` detecta mudança nos atos já catalogados
+  (deriva), mas não descobre ato novo. O levantamento por canal precisa ser
+  refeito periodicamente.
+- **Ruído de portal:** o DOU muda `<link>` e `<script>` a cada acesso; a
+  comparação de deriva os ignora (como o script anti-robô do Planalto). O
+  CONFAZ (Plone) também varia a moldura; se gerar deriva falsa, o evento mostra
+  "Texto extraído idêntico".
+- **Tamanho:** os originais do acervo somam ~230 MB em `fontes/acervo/`
+  (maior arquivo ~4,8 MB). É o custo de P1.1 (cópia arquivada de tudo).

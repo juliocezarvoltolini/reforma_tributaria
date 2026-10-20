@@ -12,12 +12,13 @@ Uso:
 from __future__ import annotations
 
 import argparse
+import json
 import datetime as _dt
 import re
 import sys
 import unicodedata
 
-from comum import arquivos_dispositivos, ler_frontmatter, para_data, status_em
+from comum import RAIZ, arquivos_dispositivos, ler_frontmatter, para_data, status_em
 
 ROTULO = {
     "vigente": "vigente e produzindo efeitos",
@@ -132,8 +133,33 @@ def atos_infralegais_na_consulta(meta: dict) -> list[str]:
     """Avisos de que o texto remete a regulamento ou ato infralegal: a base nao os
     indexa, e o dispositivo sozinho nao diz a regra completa."""
     return [f"ATO INFRALEGAL: {ROTULO_ATO.get(a['tipo'], a['tipo'])} em {a['subdivisao'].split('!')[-1]}"
-            " — Nao localizado nas fontes indexadas (a base nao indexa regulamento nem atos infralegais)"
+            " — Nao localizado nas fontes indexadas (a base nao liga o dispositivo ao ato; atos "
+            "arquivados, sem fatiamento: consultar.py --acervo)"
             for a in meta.get("remete_a_ato") or []]
+
+
+def buscar_no_acervo(indice: dict, termo: str) -> list[dict]:
+    """Atos do acervo (indices/acervo.json) cujo título, ementa, número ou órgão
+    contém o termo, sem acento nem caixa; na ordem do índice."""
+    alvo = normalizar(termo)
+    campos = ("titulo", "ementa", "numero", "orgao", "documento_fiscal", "id")
+    return [a for a in indice.get("atos") or []
+            if any(alvo in normalizar(str(a.get(c) or "")) for c in campos)]
+
+
+def linhas_do_acervo(ato: dict) -> list[str]:
+    linhas = [f"{ato.get('titulo')}  [{ato.get('tipo')}, nivel {ato.get('nivel')}]"]
+    for campo in ("orgao", "numero", "data", "versao", "documento_fiscal", "situacao", "ementa"):
+        if ato.get(campo):
+            linhas.append(f"  {campo}: {ato[campo]}")
+    linhas.append(f"  url: {ato.get('url')}")
+    if ato.get("bloqueio"):
+        linhas.append(f"  NAO ARQUIVADO — canal oficial recusou: {ato['bloqueio']}")
+    else:
+        linhas.append(f"  original: {ato.get('arquivo')}  sha256={ato.get('sha256')}  acesso={ato.get('acesso')}")
+    linhas.append("  ACERVO: ato arquivado e conferido, NAO fatiado — a base nao trata a vigencia "
+                  "nem os efeitos dele; leia o original e diga isso na resposta.")
+    return linhas
 
 
 def controverso_na_data(meta: dict, referencia: _dt.date) -> list[str]:
@@ -280,10 +306,24 @@ def main() -> int:
                     help="exibe tambem os dispositivos referidos por remissao")
     ap.add_argument("--incluir-nao-vigentes", action="store_true",
                     help="nao filtra por estado na data de referencia")
+    ap.add_argument("--acervo", metavar="TERMO",
+                    help="busca no acervo (decretos, atos infralegais, Ajustes SINIEF, Notas "
+                         "Tecnicas): arquivados e conferidos, sem fatiamento")
     args = ap.parse_args()
 
+    if args.acervo:
+        caminho = RAIZ / "indices" / "acervo.json"
+        indice_acervo = json.loads(caminho.read_text(encoding="utf-8")) if caminho.exists() else {}
+        achados = buscar_no_acervo(indice_acervo, args.acervo)
+        if not achados:
+            print("Nao localizado no acervo indexado.", file=sys.stderr)
+            return 1
+        for ato in achados:
+            print("\n".join(linhas_do_acervo(ato)) + "\n")
+        return 0
+
     if not args.termo and not args.urn:
-        ap.error("informe --termo ou --urn")
+        ap.error("informe --termo, --urn ou --acervo")
 
     if args.data:
         referencia = _dt.date.fromisoformat(args.data)

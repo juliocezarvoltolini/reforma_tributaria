@@ -220,6 +220,23 @@ def validar_hashes() -> None:
             )
 
 
+def validar_acervo() -> None:
+    """Acervo (pipeline/acervo.yaml): cada ato com original arquivado e os trechos
+    declarados em `conferir` presentes nele; canal recusado é aviso."""
+    import acervo
+
+    regs = acervo.carregar()
+    if not regs:
+        return
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
+    erros_acervo, avisos_acervo = acervo.problemas_do_acervo(
+        regs, manifest.get("documentos") or {}, lambda arquivo: caminho_fonte({"arquivo": arquivo}).read_bytes())
+    for msg in erros_acervo:
+        erro(msg)
+    for msg in avisos_acervo:
+        aviso(msg)
+
+
 def problemas_de_atos_infralegais(meta: dict, corpo: str) -> list[str]:
     """`remete_a_ato`: tipo conhecido e trecho que o corpo do dispositivo contém."""
     from infralegal import TIPOS
@@ -419,6 +436,7 @@ def main() -> int:
     metas = validar_dispositivos(corpos)
     validar_remissoes(metas)
     validar_hashes()
+    validar_acervo()
     validar_interpretacoes(metas)
     validar_lei_futura(metas, corpos)
     validar_revisoes_temporais(metas)

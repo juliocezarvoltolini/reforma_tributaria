@@ -8,6 +8,7 @@ Uso:
     python3 pipeline/baixar.py                 # baixa tudo que falta
     python3 pipeline/baixar.py --id lcp-214-2025
     python3 pipeline/baixar.py --aceitar-deriva  # homologa texto alterado
+    python3 pipeline/baixar.py --acervo          # atos de pipeline/acervo.yaml
 
     # Quando o portal recusa acesso por script (reset de conexão, 403):
     python3 pipeline/baixar.py --id lcp-214-2025 --de-arquivo ~/Downloads/lcp214.htm
@@ -90,13 +91,32 @@ def salvar_manifest(manifest: dict) -> None:
     )
 
 
-def extensao_de(url: str, content_type: str) -> str:
+def extensao_de(url: str, content_type: str, dados: bytes = b"") -> str:
+    # Os bytes decidem primeiro: o Portal NF-e serve PDF e ZIP como
+    # application/octet-stream por exibirArquivo.aspx (sem extensão), e um pacote
+    # de schemas chega como application/pdf (medido em 2026-10-20).
+    if dados.startswith(b"%PDF"):
+        return "pdf"
+    if dados.startswith(b"PK\x03\x04"):
+        return "xlsx" if b"xl/workbook.xml" in dados else "zip"
+    if "json" in content_type:
+        return "json"
     if url.lower().endswith(".pdf") or "pdf" in content_type:
         return "pdf"
     # Atos de republicação e retificação no Planalto (ccivil_03/.../ret/*.doc).
     if url.lower().endswith(".doc") or "msword" in content_type:
         return "doc"
+    # Pacote de schemas das Notas Técnicas (acervo).
+    if url.lower().endswith(".zip") or "zip" in content_type:
+        return "zip"
     return "html"
+
+
+def fonte_e_entrada_do_acervo(reg: dict) -> tuple[dict, dict]:
+    """O registro do acervo no formato de `gravar`: original em
+    fontes/acervo/<id>.<ext>, chave `acervo/<id>` no manifest."""
+    return ({"id": reg["id"], "slug": "acervo", "titulo": reg["titulo"]},
+            {"tipo": reg["id"], "url": reg["url"]})
 
 
 LIMITE_DIFERENCAS = 40  # linhas da comparação no evento; o resto, só contado
@@ -105,11 +125,18 @@ LIMITE_DIFERENCAS = 40  # linhas da comparação no evento; o resto, só contado
 # novo (`<script id="f5_cspm">...</script>`): o hash do arquivo muda a cada
 # download sem que nada do texto mude (medido nas quatro normas em 2026-10-16).
 # A deriva é avaliada sem ele; o hash arquivado continua o dos bytes brutos.
-RE_SCRIPT_DO_PORTAL = re.compile(rb'<script id="f5_cspm">.*?</script>', re.DOTALL)
+#
+# O DOU (in.gov.br) faz o mesmo de outro jeito: a cada acesso muda o carimbo
+# `t=` dos CSS, a ordem dos <link> e o `t=` dentro de scripts (medido em
+# 2026-10-20). Por isso todo <script> e todo <link> saem da comparação — nenhum
+# deles carrega texto normativo. Comentário e qualquer outra marcação continuam
+# contando como deriva.
+RE_SCRIPT_DO_PORTAL = re.compile(rb"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
+RE_LINK_DO_PORTAL = re.compile(rb"<link\b[^>]*>", re.IGNORECASE)
 
 
 def sem_ruido_do_portal(dados: bytes) -> bytes:
-    return RE_SCRIPT_DO_PORTAL.sub(b"", dados)
+    return RE_LINK_DO_PORTAL.sub(b"", RE_SCRIPT_DO_PORTAL.sub(b"", dados))
 
 
 def comparar_texto(antigo: bytes, novo: bytes, ext: str) -> str:
@@ -202,7 +229,7 @@ def gravar(
 
     if anterior and anterior["sha256"] != digest and not aceitar_deriva:
         # Os bytes novos ficam em quarentena, para se ver o que mudou.
-        ext = extensao_de(url, content_type)
+        ext = extensao_de(url, content_type, dados)
         quarentena = DIR_FONTES / "_quarentena" / f"{slug}-{entrada['tipo']}-{digest[:12]}.{ext}"
         quarentena.parent.mkdir(parents=True, exist_ok=True)
         quarentena.write_bytes(dados)
@@ -221,7 +248,7 @@ def gravar(
         )
         return 1
 
-    ext = extensao_de(url, content_type)
+    ext = extensao_de(url, content_type, dados)
     destino = DIR_FONTES / slug / f"{entrada['tipo']}.{ext}"
     destino.parent.mkdir(parents=True, exist_ok=True)
     destino.write_bytes(dados)
@@ -355,6 +382,30 @@ def ingerir_arquivo_local(
     return gravar(fonte, entrada, dados, manifest, aceitar_deriva, tipo, "manual")
 
 
+def baixar_acervo(so_id: str | None, manifest: dict, aceitar_deriva: bool) -> int:
+    """Baixa os atos do acervo. O que declara `bloqueio` (canal oficial recusou)
+    não é tentado: é pendência declarada."""
+    import acervo
+
+    regs = [r for r in acervo.carregar() if so_id is None or r["id"] == so_id]
+    if so_id and not regs:
+        print(f"ato '{so_id}' nao esta em pipeline/acervo.yaml", file=sys.stderr)
+        return 2
+    s = sessao()
+    falhas = 0
+    for reg in regs:
+        print(f"[acervo {reg['id']}] {reg['titulo']}")
+        if "bloqueio" in reg:
+            print(f"     bloqueio declarado: {reg['bloqueio']}")
+            continue
+        fonte, entrada = fonte_e_entrada_do_acervo(reg)
+        falhas += baixar_um(fonte, entrada, manifest, aceitar_deriva, s)
+    salvar_manifest(manifest)
+    if falhas:
+        print(f"\n{falhas} falha(s) no acervo.", file=sys.stderr)
+    return 1 if falhas else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--id", help="processar apenas esta fonte")
@@ -370,6 +421,11 @@ def main() -> int:
         "--de-arquivo quando a norma tem mais de um documento",
     )
     ap.add_argument(
+        "--acervo",
+        action="store_true",
+        help="baixa os atos de pipeline/acervo.yaml (com --id, só aquele) para fontes/acervo/",
+    )
+    ap.add_argument(
         "--aceitar-deriva",
         action="store_true",
         help="homologa mudanca no texto oficial e sobrescreve o arquivado",
@@ -382,6 +438,9 @@ def main() -> int:
     catalogo = carregar_catalogo()
     manifest = carregar_manifest()
     falhas = 0
+
+    if args.acervo:
+        return baixar_acervo(args.id, manifest, args.aceitar_deriva)
 
     fontes = catalogo.get("fontes") or []
     if args.id:
