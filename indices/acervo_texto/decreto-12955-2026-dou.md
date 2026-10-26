@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/decreto-n-12.955-de-29-de-abril-de-2026-702
 arquivo_original: fontes/acervo/decreto-12955-2026-dou.html
 sha256_original: d0752af5eb132edf72ea73e4569f39a256212ea7b909efabe33decb8dfbee5b0
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: e7153d94ef229c76f5a8f096810a1e03e91f1e37e3cfd20b56017dd269e2b809
 ---
 

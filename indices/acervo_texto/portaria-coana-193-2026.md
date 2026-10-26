@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/151
 arquivo_original: fontes/acervo/portaria-coana-193-2026.json
 sha256_original: 047ee594f7855df7094dfdeee7f0cdb668437181fca06af8beeda0268a419539
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: f6f20869ea125b310a1fd21534fed67736988570525096a9701fb66aec7a8e0a
 ---
 

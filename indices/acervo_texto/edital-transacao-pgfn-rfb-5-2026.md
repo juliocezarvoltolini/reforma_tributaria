@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/153
 arquivo_original: fontes/acervo/edital-transacao-pgfn-rfb-5-2026.json
 sha256_original: ad0489f146666fe3a46514b2978759211d13978f13360ec2c07478e5bc79394d
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 8ea0ec7d2dfd90736e25bd014f12b82c7c9f839e8a9487ed28ff91407cc02730
 ---
 

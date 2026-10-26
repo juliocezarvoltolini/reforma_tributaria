@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=q/1VUpuOu
 arquivo_original: fontes/acervo/nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a.pdf
 sha256_original: 42f6122f10dfd8877de57f17eb0f58ecc26b28f3a735dbd6da60b9e03e222dd8
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 6d2237d011f7aaffdbd55409bbda7bd7b4236294182ff5c05f451f64237b7db4
 ---

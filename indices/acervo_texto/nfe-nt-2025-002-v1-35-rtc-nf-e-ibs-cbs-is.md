@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=SA3Qh5Hty
 arquivo_original: fontes/acervo/nfe-nt-2025-002-v1-35-rtc-nf-e-ibs-cbs-is.pdf
 sha256_original: ce99aac12f51af5ebfaa46565f5bce1de90f852d079ce0f98a367e6badb108d7
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: e3365c82f4d2eb710c1dad55c244abe2b05c564390946e051576316ca3c493f6
 ---

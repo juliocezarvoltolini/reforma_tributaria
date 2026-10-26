@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/149
 arquivo_original: fontes/acervo/portaria-srrf08-1197-2026.json
 sha256_original: 6b77a508861e4801d1129d0550309c21a320dd6d570fa0a968320996877a5f72
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 16337188b27ad0921458f6f568141b5fb35aeb4a49f497d27f3c1c9672b9ec08
 ---
 

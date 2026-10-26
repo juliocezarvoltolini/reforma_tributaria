@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202609/08090150-minuta-ato-tecnico
 arquivo_original: fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-4-2026.pdf
 sha256_original: e48c6838542d6233aadaa47c696e86622a5eae231f5b63e2d6dfc780c96d4a44
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 7cdb6a59f1419bce48ecfa129392b208b814e84b1e0902aea02d0abdd5aee6fd
 ---

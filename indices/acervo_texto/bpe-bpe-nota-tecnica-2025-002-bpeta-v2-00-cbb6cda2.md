@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2.pdf
 sha256_original: cbb6cda211d91c017f42c40fd71302bfc20a2fbe3317a7967d8fb5f88198579e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 2dffd98ec657477f325f53965d8b2d1b0dc121682693fdabaa1e5593ff2037d9
 ---

@@ -6,7 +6,7 @@ url: https://www.in.gov.br/web/dou/-/retificacao-677962652
 arquivo_original: fontes/acervo/retificacao-ato-conjunto-rfb-cgibs-1-2025.html
 sha256_original: 04227680fad6df5f4235b5e377961100791bed2bf1bf429a4e29f0e9362636e2
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: c7fb3f13cff5e43dfee138ecb361439e81a0eb59b17a5b97a20c02fac9b21e3e
 ---
 

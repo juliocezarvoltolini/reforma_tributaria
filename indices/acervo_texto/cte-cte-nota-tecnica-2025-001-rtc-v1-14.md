@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=IkK9pe1XQ
 arquivo_original: fontes/acervo/cte-cte-nota-tecnica-2025-001-rtc-v1-14.pdf
 sha256_original: 58c01106df9f3335426a46a37c5d78f1034615c2d909b43545d6739e403c058f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: ff10521bc7ed17d2c6294c898a13c207101883a5c77e5082543b69a104aaeddc
 ---

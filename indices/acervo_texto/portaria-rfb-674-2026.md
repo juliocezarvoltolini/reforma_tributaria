@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/150
 arquivo_original: fontes/acervo/portaria-rfb-674-2026.json
 sha256_original: 0b83237769a4d65d1244172a0c5d4a210bfcb719d883f8713ed88765b6034f03
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: bffda27d5be472fc934567116390f41f64357787c1fdd7871a2b617d3fa4dcf2
 ---
 

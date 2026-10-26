@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JXMz63INn
 arquivo_original: fontes/acervo/nf3e-nf3e-nota-tecnica-2026-002-v1-01.pdf
 sha256_original: 34e1c2d1246a9edc5e9318e954b5d8a6dbaf44672fa1aa8f2f790fda5578cc49
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 1f53d571ed6e1110df2f834a05b1c7e58c29de157c733828cce2cdfc82b2b95c
 ---

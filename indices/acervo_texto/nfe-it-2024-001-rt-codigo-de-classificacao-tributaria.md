@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=XBgqrMtxP
 arquivo_original: fontes/acervo/nfe-it-2024-001-rt-codigo-de-classificacao-tributaria.pdf
 sha256_original: 0680d8961dcb0738b5ced6c45fb5673ccadf56a1c582cae8768a303b100260cc
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 594199e9713bd785f7971851407f6cc48a57eb6c3778fab9b466912a535d2bc6
 ---

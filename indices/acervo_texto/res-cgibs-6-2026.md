@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202604/30084927-res-cgibs-n-6-30-a
 arquivo_original: fontes/acervo/res-cgibs-6-2026.pdf
 sha256_original: 9ed7032ef9c25bbee51bdb5e90f60e1ad01a2bf56cb41a28221c3db7f61d419a
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: da20a7e72a7e1b06799fafec9be8538f3b02c8191fe620a74122170d4a00371e
 ---

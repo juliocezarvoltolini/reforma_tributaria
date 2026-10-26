@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=17/3gkpGz
 arquivo_original: fontes/acervo/nfe-nt-2026-001-v1-02a-paa-nfe.pdf
 sha256_original: e2f88827773df24363784994b927f9d736f36f970b83982816d02a9e379d0337
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 021190013dee9a7e289df3b6fb9b8907f1fa6e5a8bad5e2f56f27bee71cbd10d
 ---

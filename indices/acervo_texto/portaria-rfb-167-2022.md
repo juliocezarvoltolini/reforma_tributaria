@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/123
 arquivo_original: fontes/acervo/portaria-rfb-167-2022.json
 sha256_original: c18d1c8ec85b299570523cb5883b488a2e8ec3818b5ab216f5bf433f49799754
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: f82718bcfdf4618b1396e5c446ca0457ff53e55504a5c6f1f23acaf041361157
 ---
 

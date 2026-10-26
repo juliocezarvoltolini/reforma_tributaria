@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NF
 arquivo_original: fontes/acervo/nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-a961eaa8.pdf
 sha256_original: a961eaa89b137037e9c09f6de7ac0a780362996f0061b20d26d9c8e36a48223f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 9ef936ee7e7755acaee6520de2409008b61973d8f1721e51efe81c38191894d7
 ---

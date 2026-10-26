@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OJQR7LXdl
 arquivo_original: fontes/acervo/nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo.pdf
 sha256_original: 0151dbb5c3b3c2deba7f9f8b5a192fa821e55c16f8edb39ca2fc3c50ee63821d
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: d474cee5182741298d8b83fd29321b167e841d6fae32c0be97159517a90bb37c
 ---

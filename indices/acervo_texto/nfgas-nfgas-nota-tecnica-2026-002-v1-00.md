@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=W8WforivN
 arquivo_original: fontes/acervo/nfgas-nfgas-nota-tecnica-2026-002-v1-00.pdf
 sha256_original: 13d5602b50c822cc5ac5697cac34a2fb056a71baa473870c564a5c8238bde0b5
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: f149d48fa0fa660ceec77ae1f753cf54b7fe7fdcce06750a4eea8715a93695d8
 ---

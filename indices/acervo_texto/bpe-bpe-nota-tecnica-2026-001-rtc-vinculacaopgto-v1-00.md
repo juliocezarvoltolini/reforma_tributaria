@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=rhAtoWDD4
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00.pdf
 sha256_original: 2bdc14a968216823a2c527a2e7102e19248663cc158c659e879eb40b0add5a6e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 29462399271933fb727f803278de7e7e68726704ba25c36c469f100f20405468
 ---

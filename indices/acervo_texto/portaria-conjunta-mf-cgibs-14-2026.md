@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202610/07163240-sei-mgi-64901753-p
 arquivo_original: fontes/acervo/portaria-conjunta-mf-cgibs-14-2026.pdf
 sha256_original: e4d94eddb694e08f6cd81ddb66557d71dc5a89095e1b0bda8ee1648d593f1fb9
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: b79645b66b3e562a7a7272d385c18aad88f80d300f2606a9189276eae0035fdf
 ---

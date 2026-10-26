@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=+97zJVvur
 arquivo_original: fontes/acervo/nfe-it-2026-001-v-1-00-tabelas-de-meios-de-pagamento-para-vinculacao-com-o-split.pdf
 sha256_original: 3ac4d1155460d30f10e8ed30b03fce409ae17deee58f6a20183518b17a1c2580
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 1285c82f02ae392c898db2bb33f47c3293ab98e8a9f0687ba62e986842fac976
 ---

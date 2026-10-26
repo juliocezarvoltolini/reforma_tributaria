@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202606/08135751-portaria-cgibs-n-2
 arquivo_original: fontes/acervo/portaria-cgibs-2-2026.pdf
 sha256_original: 0f7c0d1ee2e1b8c1e265f4eaa7df4ac4c24e23b5a7424cb9d4e5149fb1fe1268
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: dac6c704acd565549e6689a698147e0b362c39301c57d1c3d5760b137d55653e
 ---

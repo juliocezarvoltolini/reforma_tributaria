@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/146
 arquivo_original: fontes/acervo/nota-tecnica-cocad-256-2025.json
 sha256_original: 5fc40d9d1c61c171c29328bd936013a09c35adb3c54054f2eb08823ee3a6af88
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 1e2176dd60d8b9bc4e638b3ab4cb805e9dfb70a53c7bb12cf5108bba036c8429
 ---
 

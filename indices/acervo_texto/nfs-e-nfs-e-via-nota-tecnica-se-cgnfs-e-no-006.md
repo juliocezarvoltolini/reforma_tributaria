@@ -7,7 +7,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-006-se
 arquivo_original: fontes/acervo/nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006.pdf
 sha256_original: c6b7fd8a47c15f59766d974c62edb5fc8c94f3dac4e8f9e26e16ddff6dcb944b
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 1cf0894f6aa3a500a284c1b91e12e34737b0f35404fc4607c49c40c0aa08c80d
 ---

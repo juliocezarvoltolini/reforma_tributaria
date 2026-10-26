@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/portaria-mf-n-2.622-de-11-de-setembro-de-20
 arquivo_original: fontes/acervo/portaria-mf-2622-2026.html
 sha256_original: 73eb66b7356100854fbe4f4f9db2ed391a6966d9f34b4f4c2f2993351000d59b
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 4b0ea24833f707ae7789ee9b7335b697ddf1f649011b00fc523e1ce320b53813
 ---
 

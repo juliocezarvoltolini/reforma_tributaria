@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/ajustes/2025/AJ037_25
 arquivo_original: fontes/acervo/ajuste-sinief-37-25.html
 sha256_original: bf54e1a145b88dba374d46401f849ed73a7d13866d3473b39aacc22dbabe0b83
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 7c8310c7ffb3836282351e2ce0a2b6968535b3bf2d82b4da45c989c35a3af0b5
 ---
 

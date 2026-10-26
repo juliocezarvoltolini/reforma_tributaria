@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202511/25155928-comunicado-oficial
 arquivo_original: fontes/acervo/comunicado-cgibs-1-2025.pdf
 sha256_original: 8b26564a52d511fe7d288ceb861042a748388ed4cc7ca77bf18a1a3add72bf98
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 8cce628235f576f8353fa0811cc0a5efd5edee1993e06f07375c7b9e62503519
 ---

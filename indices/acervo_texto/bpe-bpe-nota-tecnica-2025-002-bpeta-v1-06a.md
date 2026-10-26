@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=n8+dHOpbN
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a.pdf
 sha256_original: b9b1d38f80e7cb2c8bec06b1f376a6dc13bd66ff878efb0b6c436d0e82f39131
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: e0fa8430da4ddbf61f0dc8ec0908fc89b98c3ff7c4ff01b9bb64fcf6f1196977
 ---

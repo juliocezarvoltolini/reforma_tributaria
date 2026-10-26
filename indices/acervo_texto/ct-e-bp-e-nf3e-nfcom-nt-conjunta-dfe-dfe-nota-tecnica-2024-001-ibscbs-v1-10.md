@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OK31wgvsg
 arquivo_original: fontes/acervo/ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10.pdf
 sha256_original: 43bcdb9d4040978900a235ea1f7d9f04c5a62ce2c01ca469478a9e537554cf7c
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 8d7ec693addc7fe02c0770d5ecd401f434f15a8ec19948e09744b9c0630f87d2
 ---

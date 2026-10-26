@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/ato-conjunto-rfb/cgibs-n-2-de-27-de-maio-de
 arquivo_original: fontes/acervo/ato-conjunto-rfb-cgibs-2-2026.html
 sha256_original: 605177f941da9e8a8be39d03947b49cf81955f9660b7b3d2af0d02502286bb4f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 4d0acc4b9067d35cc1c8b0853611fad83e025d7092958d8a0f3863ccc1ecc1f7
 ---
 

@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=/DaakiRMG
 arquivo_original: fontes/acervo/nfe-nt-2026-001-v1-02-paa-nfe.pdf
 sha256_original: eaedc9a75833037e23297e2860c99b0f605c43d3fd7d7bc5ba77845a1d879cd4
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 6e79511904599cf97714ab028719703e2327251ef43c64f3b2fd71d7cceac71e
 ---

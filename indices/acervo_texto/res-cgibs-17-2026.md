@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202607/30184100-doc-20260730-wa003
 arquivo_original: fontes/acervo/res-cgibs-17-2026.pdf
 sha256_original: a5e4a36991f1151114908d24dcef8fed6c54c809dd10f4f5111f3602fbfe55ac
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 3c8c8fa1397315bbdb57afbf9627c3749f1ecd94c976beb747438d78ea31faef
 ---

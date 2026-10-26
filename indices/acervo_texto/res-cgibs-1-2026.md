@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202602/27102250-resoluc-a-o-csibs-
 arquivo_original: fontes/acervo/res-cgibs-1-2026.pdf
 sha256_original: b13861bdbb81fe2d30f1d2d0c0622e66c2f0b2e8a4daf00c102f47177c06cb03
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 0a51211398f71dadc4af138974f177fc7f4bf523bd3a4d2da4013b46b1442174
 ---

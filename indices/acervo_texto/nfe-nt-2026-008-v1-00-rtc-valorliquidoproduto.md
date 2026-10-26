@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=qAoMot6Vy
 arquivo_original: fontes/acervo/nfe-nt-2026-008-v1-00-rtc-valorliquidoproduto.pdf
 sha256_original: bc56e76ae5f3354f7ae636d87908840c5c685284f0f8f32bb29579f8124e44cd
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 87c6a871495415499c54fe4b23d877680d65f82eda8ea87562caeba7733468b2
 ---

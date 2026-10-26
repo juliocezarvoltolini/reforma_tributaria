@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202606/09172813-portaria-cgibs-n-3
 arquivo_original: fontes/acervo/portaria-cgibs-3-2026.pdf
 sha256_original: e51067effaf643fa4d6503e83d1a2501a0e7a8aa3f1d05d2644213ea8bdf0319
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 356f16f3de6faafd0ddb06e2efa16e4e66781bf2879c606facf6607be4ecd0e7
 ---

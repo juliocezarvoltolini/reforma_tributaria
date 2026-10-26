@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/152
 arquivo_original: fontes/acervo/portaria-srrf06-386-2026.json
 sha256_original: f142d6fcd01680fa45261cc9c36fa31c67ad4983ecbbdc4deb62d77c36b4d98c
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 5ca87a65bf908960f5e288a1801b393d15b88580b85480fabb0413bc295b6d2e
 ---
 

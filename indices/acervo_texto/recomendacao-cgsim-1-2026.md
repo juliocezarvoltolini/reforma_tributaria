@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/152
 arquivo_original: fontes/acervo/recomendacao-cgsim-1-2026.json
 sha256_original: 1ee251e7a83b19c929af554e5af0bfff89a100b0a56df767b864150fa1d74871
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 8a9ce484eee1473a9db61fac25d31898a80de3eff62ef5a9a02d15a370a75421
 ---
 

@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/150
 arquivo_original: fontes/acervo/portaria-srrf03-595-2026.json
 sha256_original: 6b57021a0f57a044b17ca651c5aa2f80088da235e29317628edae2d0995f0449
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: b07d213270a25dc0ca4f09f6b9fcaf002c1f977d390d24f456dd392fbf5e5090
 ---
 

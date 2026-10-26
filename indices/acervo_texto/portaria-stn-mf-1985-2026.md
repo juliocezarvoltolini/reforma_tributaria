@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/portaria-stn/mf-n-1.985-de-6-de-julho-de-20
 arquivo_original: fontes/acervo/portaria-stn-mf-1985-2026.html
 sha256_original: f56899c0910d785600707816f0d22d6c5c2fa68e0c545db49250fa496ca4ab09
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: cac7d53e6651c5f4ec461abbefbc625dce4ff8a1410f53e49dc30fa061765a63
 ---
 

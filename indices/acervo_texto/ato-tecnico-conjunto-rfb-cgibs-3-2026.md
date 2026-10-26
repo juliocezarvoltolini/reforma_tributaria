@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202609/04223716-ato-tecnico-conjun
 arquivo_original: fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-3-2026.pdf
 sha256_original: 6c7dcca5f8d8c28643b4f04ab1248af126ab3f71b6ce08c0d3e3f85f0432797e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 90e24fbe46fc4c4e7d60a057ab06b9a255b59a3504f801dc72b4d4233ba67ca6
 ---

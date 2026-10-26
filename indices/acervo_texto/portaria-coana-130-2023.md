@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/132
 arquivo_original: fontes/acervo/portaria-coana-130-2023.json
 sha256_original: de7e0dcf2248a72618c69d8971810e992c8486756f377c8fd869d26eacad39de
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 171647d757f41edac6ae1c71417db01bf399bbcd5280b723f2800793c43a5402
 ---
 

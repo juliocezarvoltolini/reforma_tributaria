@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/ajustes/2026/AJ007_26
 arquivo_original: fontes/acervo/ajuste-sinief-7-26.html
 sha256_original: 80be72d7ec6021e528b6dbdcbc777e6bcb4ee12c8b6d64c595c69780dbe9f4ff
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: d29b77f9d4ff54e24197fba3751d8cdbf1f4124b9bb45f27b3c55a29ba69a04a
 ---
 

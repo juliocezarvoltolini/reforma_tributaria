@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202609/15150334-resolucao-cgibs-am
 arquivo_original: fontes/acervo/res-cgibs-18-2026.pdf
 sha256_original: 6f4e132d2240ad37516f8cb111086a31cf4fb5f0a13dbf0011effdae0aafa655
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 0a1489c8decc07f04a4214ff973773275ed2554f55c707172b2e5c8f02c94ce0
 ---

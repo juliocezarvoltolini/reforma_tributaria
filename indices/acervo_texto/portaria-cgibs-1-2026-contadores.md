@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202601/30154242-portaria-cgibs-n-0
 arquivo_original: fontes/acervo/portaria-cgibs-1-2026-contadores.pdf
 sha256_original: 7617f2cda4977128015b2f4d1318eeb3fcaff71d9fbf33a62ad2ea1dee2794d4
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 08a31172f41c44296a4ec8cf1b10426b92975f3ec88ff32f27239859ff92841b
 ---

@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/atos/2026/ato-cotepe-icms-66-2
 arquivo_original: fontes/acervo/ato-cotepe-icms-66-26.html
 sha256_original: 043b5f51753481016889e52da065cae70a229bd26e8f570dd6bb6e50d530fd28
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 25eae3c658c3d5cc67a0cef1d1efa031d9c3aa39b8bb9c53f3bef422326c68dd
 ---
 

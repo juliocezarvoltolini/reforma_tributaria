@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/ajustes/2026/AJ039_26
 arquivo_original: fontes/acervo/ajuste-sinief-39-26.html
 sha256_original: 72396c5d2c5cffec6f7b7632b601fa143848cad28d2514546e12eb243552a296
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 50eade96b2a3c4a178da86294987bd655075c9cb06f02b67f98567a19b7af634
 ---
 

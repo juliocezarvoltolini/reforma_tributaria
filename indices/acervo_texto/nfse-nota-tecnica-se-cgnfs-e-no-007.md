@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-007-se
 arquivo_original: fontes/acervo/nfse-nota-tecnica-se-cgnfs-e-no-007.pdf
 sha256_original: 24e46b39fcf73d40b8241147b2c0607159893fd5934f16f63f3103343972cf05
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 84a7ef489a31fbb5673b610cf02fc3cf2f85c717e5e0dd7e88a1298d92068623
 ---

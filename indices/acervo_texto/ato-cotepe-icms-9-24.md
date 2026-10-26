@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/atos/2024-2/ac009_24
 arquivo_original: fontes/acervo/ato-cotepe-icms-9-24.html
 sha256_original: d08bcbf9cae04d986b45c7cc91f85387ef5340bcecdc7ad08c484ef1ecf864ec
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 1a5f4f3d107f7aadbaa1c7c48a23dfa515c3119b8dc3306d78e42e0d5d01c348
 ---
 

@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nota-tecn
 arquivo_original: fontes/acervo/nfse-nota-tecnica-se-cgnfs-e-no-002.pdf
 sha256_original: 725593f48bb8c33cec5213e59c5585c2e3c2dcd62eae4fdd70880fd8a476f550
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 43dc39bc52738112d683d4d24041dbc5a77ef166a03682e3b00978777f04ed1f
 ---

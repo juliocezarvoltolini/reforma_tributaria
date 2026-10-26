@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=4vMWSDJp7
 arquivo_original: fontes/acervo/nfe-it-2025-004-v-1-00-tabela-de-indice-de-mistura-de-biocombustivel.pdf
 sha256_original: e079f822e3aaee657cdc03fedc740925dbe24aad1c03dfe9216607c214fd54f8
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: c719e876c4efb7e9f10401ae808fe60c2da61d35ea4a5c8590bad5dc9ee5040c
 ---

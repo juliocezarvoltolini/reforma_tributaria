@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=GyPA/cEjr
 arquivo_original: fontes/acervo/nfe-it-2023-002-v2-10-tabela-cfop-descricao.pdf
 sha256_original: dd47206ec74040b391cf015ef1f1e55e158c0d3f8b339153667e64f379092b86
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: b01b562ce60647f6db5eacbc636f79b6bcdc9fc0739517d51f953a6400e72ebc
 ---

@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/147
 arquivo_original: fontes/acervo/resolucao-ctsi-rfb-7-2025.json
 sha256_original: ecab96ec7d6e2588981a20e91d50da8cb77ab1937214b364f664222488ea9b6f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 3309c8da9145f5d4f36fe2836450ad3420ad5352857657964195de055f2d28ca
 ---
 

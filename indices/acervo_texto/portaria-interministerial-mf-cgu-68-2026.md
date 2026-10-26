@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/portaria-interministerial-mf/cgu-n-68-de-7-
 arquivo_original: fontes/acervo/portaria-interministerial-mf-cgu-68-2026.html
 sha256_original: 384c81400814059c0d785edd3f1171013948e3821947de97b3d4310923550421
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: b96d2ec2aa3110ddd899e4c79461b6395a7ea8c7bb789d852ee644379c6a6c4a
 ---
 

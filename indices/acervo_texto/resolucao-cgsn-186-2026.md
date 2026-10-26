@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/150
 arquivo_original: fontes/acervo/resolucao-cgsn-186-2026.json
 sha256_original: 31dc79137f5e4d3f67289bd0cd05f7ef72992037bf28dde216fd1085f8453f1d
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: f313973affb8c07bc97762d1e92f65b1fc73449f8382cdf34abf752c49786b74
 ---
 

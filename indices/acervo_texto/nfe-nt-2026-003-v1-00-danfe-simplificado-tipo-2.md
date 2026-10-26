@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2YdaBTIql
 arquivo_original: fontes/acervo/nfe-nt-2026-003-v1-00-danfe-simplificado-tipo-2.pdf
 sha256_original: 2ef826027e0e8423ba9dc2f53ee7197f8bfdcc399a30459b72da977528600f13
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 9860b84ff6fee5e81180f93efc72f7f34fd4ce6ee5d416dffe1ba335fb1f8972
 ---

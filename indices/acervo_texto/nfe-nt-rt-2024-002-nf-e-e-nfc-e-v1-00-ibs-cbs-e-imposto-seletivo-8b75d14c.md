@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFCE/DownloadArquivoEstatico/?sistema=NFC
 arquivo_original: fontes/acervo/nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c.pdf
 sha256_original: 8b75d14cb397c3ad46139936da256efcb37ff2b93043a2d63ea6158a7a13ea3d
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 141a42545ae575c16b2e0a51d5800cd3dce149988f4ccb9dc3d6b1431f268684
 ---

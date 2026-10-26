@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/148
 arquivo_original: fontes/acervo/portaria-mf-3278-2025.json
 sha256_original: 4bb12284cee8c8024a3d2c92e453d6312a3f4c69882fe6afa760c3fa27778414
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 020e26fac66bac9b722b5df554f63cef447b98a9945d10a336b0d1135d6abb7f
 ---
 

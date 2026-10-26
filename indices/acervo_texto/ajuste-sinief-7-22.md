@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/ajustes/2022/AJ007_22
 arquivo_original: fontes/acervo/ajuste-sinief-7-22.html
 sha256_original: 0031acdcdb6aadf1d7cb7184256e44faf66a6e9241c916ba9a01f56ce52e598e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 53227fa66c2882f4038638138028ea2341b70a792ad03db7c389e6fc187f1930
 ---
 

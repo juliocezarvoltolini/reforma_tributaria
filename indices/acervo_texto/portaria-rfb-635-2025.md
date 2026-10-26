@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/148
 arquivo_original: fontes/acervo/portaria-rfb-635-2025.json
 sha256_original: b6c95b91f22cecb85b3aff376c509755684ef823e229782e25287cc81c36736c
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 953345c2b0abd836f19b0dc1419f4da806a419fa3d9ff8cb278eeb6c250e096a
 ---
 

@@ -6,7 +6,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/ajustes/2025/retificacao-ajust
 arquivo_original: fontes/acervo/retificacao-ajuste-sinief-25-25.html
 sha256_original: 1b401461457c4ac52daedec4fd4cbe199e1e80380b415817a412f1171a039047
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 7075ad2097f6af67562db5de532fe96edfa3455e5441756a229d51e65c1a1915
 ---
 

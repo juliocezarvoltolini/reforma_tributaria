@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202512/02192247-comunicado-conjunt
 arquivo_original: fontes/acervo/comunicado-conjunto-cgibs-rfb-1-2025.pdf
 sha256_original: ff74c120cbf10893e3eca126a47494950babad013afbf06a18fc030d1cc75a55
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 5fe23b53a9b147eb219c194c551092c55e047c78cee8b1a989e7ceedd4fea5fb
 ---

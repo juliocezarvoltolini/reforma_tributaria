@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202606/22083423-ato-conjunto-nro-3
 arquivo_original: fontes/acervo/ato-conjunto-rfb-cgibs-3-2026.pdf
 sha256_original: 7390981608c9d51051ce5165dd9696dde6ac93f9ad8b017c9fc88e69d30792b2
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 757b555740ea5aa4f58848f32cd39e8918783217c60b2ae18647c2cd3ed8d418
 ---

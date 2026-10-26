@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=sMeQcKKmG
 arquivo_original: fontes/acervo/cte-cte-nota-tecnica-2026-002-v1-00.pdf
 sha256_original: 3b3502e24a0d19fda67580fa9287369b7bae3ce7b17f77668a34f55448ca60e2
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 22001d3d1897b9b7c6a3a7a666a2a3f7bb803021ce156a3ffa9bfaeb534916b0
 ---

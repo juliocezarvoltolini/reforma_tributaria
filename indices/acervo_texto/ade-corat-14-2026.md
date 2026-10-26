@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/150
 arquivo_original: fontes/acervo/ade-corat-14-2026.json
 sha256_original: 44db47786b03db66177abe1bf902e1067f3f9685ac92b95e85e8a439a1379f27
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 71615129c8e04d2b4541af05915cc5575d139e2a4d7ebc89b518e8c2dd7d4b76
 ---
 

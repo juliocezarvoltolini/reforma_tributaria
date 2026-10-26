@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Fa+ynqmiR
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2026-004-v1-00.pdf
 sha256_original: b09cab695f26ef5e3823c5d39fc76a5ddc7edc3a6ec984fae938c744f99a0b39
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 24383d594b746fa2fb2a1db9a54a1f6b831c8edca475ad9e71eefd12b0383804
 ---

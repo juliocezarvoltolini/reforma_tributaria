@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=yoV266/AU
 arquivo_original: fontes/acervo/nfcom-nfcom-nota-tecnica-2026-002-v1-01a.pdf
 sha256_original: f5a8b0a622b7f4c533a2ad6fba67614aa84b0ce05cc7f5ffc3949ef16f1575c3
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 587f6e9915de49f0e624b6d7da3af9ecdc101962d0aa66a4233d53d7795b4396
 ---

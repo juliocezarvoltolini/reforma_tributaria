@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/ajustes/2025/AJ025_25
 arquivo_original: fontes/acervo/ajuste-sinief-25-25.html
 sha256_original: e2372164268b534a667187c6c8d5cacaf9d0fc3630cb2baa2fa344c2e9d91083
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: a3745449a2459a0407ef5b419d936e40c0cbd3b6248b6f54dd4f393f2a2bfe69
 ---
 

@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFA
 arquivo_original: fontes/acervo/nfag-nfag-nota-tecnica-2026-004-v1-00-f513fd04.pdf
 sha256_original: f513fd043a6a881f232029922ddd83f2e907a7214414c5126913d3910c232980
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: dda99eedd43d071eabda80e5591549a35de06fd06ef23a6baca1d030d6a2618e
 ---

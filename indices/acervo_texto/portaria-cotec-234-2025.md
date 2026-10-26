@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/144
 arquivo_original: fontes/acervo/portaria-cotec-234-2025.json
 sha256_original: 60f8be9dce5dbee1485381472b56c48f8ac4d36e2a2c4f81f14212639156cc61
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 4e52765f1ad5e1443b45b86e79e3c3319bb80995af32ddb214dee7395196512e
 ---
 

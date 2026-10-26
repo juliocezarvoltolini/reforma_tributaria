@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/149
 arquivo_original: fontes/acervo/portaria-rfb-656-2026.json
 sha256_original: c593892073f04b372a68e64d72a9bc2e45d64fc838a0adb97d2de3c543f2a596
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: b1bd1e9a9b8e898d3d6c937dec72afc8bbe9c3ffd6c43438bd184e167c780b3e
 ---
 

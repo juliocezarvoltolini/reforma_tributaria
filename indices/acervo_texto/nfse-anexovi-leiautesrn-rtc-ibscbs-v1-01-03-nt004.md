@@ -7,7 +7,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-rest
 arquivo_original: fontes/acervo/nfse-anexovi-leiautesrn-rtc-ibscbs-v1-01-03-nt004.xlsx
 sha256_original: c32c30a2aac3aaf8eb71a8baf512954aac70867d883343d202d1c1e9b4453651
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: d344fb9f0702f6e3f19c9a262d029ebe49c7dbb2486c1555fb146d4367db6ed9
 ---
 

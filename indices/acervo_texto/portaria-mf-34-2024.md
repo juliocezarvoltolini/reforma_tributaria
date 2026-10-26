@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/135
 arquivo_original: fontes/acervo/portaria-mf-34-2024.json
 sha256_original: a7cdabc9bcd4488c1767b450b1f224136e17bb686790aa893e5beeb55c688149
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 44a8c5eaea2a771ac7d2c060d3a69245f2056cb2c1a5059cf4ac9e211541fbc8
 ---
 

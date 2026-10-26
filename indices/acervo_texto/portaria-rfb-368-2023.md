@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/134
 arquivo_original: fontes/acervo/portaria-rfb-368-2023.json
 sha256_original: c54306643b79891de1c35d025890f7fc4118470298fb5125cbef701fc2d56caf
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: e98c02477ecf8be8982b1c5766b9afa840e9dccf37f0c30eb556f2e92fd22c1c
 ---
 

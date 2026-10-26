@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2zh6tdrFc
 arquivo_original: fontes/acervo/nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a.pdf
 sha256_original: 6b8204ce9111778333b068ba94d2911bf2f1af7c06bdcb0e0030c194db6edec9
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 71c8f3a415ae75a449adc05d9a4013afe6d85fe4e0884741d39b4570c844cd86
 ---

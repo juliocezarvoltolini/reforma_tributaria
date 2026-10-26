@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202610/01120218-nfse-e-nfsevia-atc
 arquivo_original: fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-7-2026.pdf
 sha256_original: 95f2427ac7f5dc81997a600850e6ac0fda4521006ccbafe70779f24f65c9ab57
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 377531290c689a39e752b9c981bbec28abeaad55dc4ee2e6ee07cd9243de332d
 ---

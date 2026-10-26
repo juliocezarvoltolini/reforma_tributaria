@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/140
 arquivo_original: fontes/acervo/portaria-mf-1577-2024.json
 sha256_original: 6f404d8661bf1042cbb89d289066657b37cc4cfc6ee6984f8c2d1e7ae9f00a2c
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: f5749f23b89844b5e03f9165343f92eee7cabc8ff0018b4893bed5c086b93872
 ---
 

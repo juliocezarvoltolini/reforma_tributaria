@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202607/31091735-20260730-16h30-ato
 arquivo_original: fontes/acervo/ato-conjunto-rfb-cgibs-4-2026.pdf
 sha256_original: 4a76f0afbf30655716d7488314f736dd17188c0ac7955720eb9ebf17cd771c0e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: f13d945830f62123770b5513ee1d17586264eda34cf12af1f553c7e8501e3468
 ---

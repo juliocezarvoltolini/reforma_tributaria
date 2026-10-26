@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/152
 arquivo_original: fontes/acervo/portaria-interministerial-mf-mpo-72-2026.json
 sha256_original: 282525534d050853a5963374f95ce61d07d83919d783eeea3f403b6e587fd552
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 181f90120f3b240c81f9746a2dacd11f311f8cb7bcba04dbccf0c4efee5349c0
 ---
 

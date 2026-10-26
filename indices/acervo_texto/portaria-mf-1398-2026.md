@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/portaria-mf-n-1.398-de-20-de-maio-de-2026-7
 arquivo_original: fontes/acervo/portaria-mf-1398-2026.html
 sha256_original: ed296de570517e582931e233573840e9516d595a6560f8fb0bd341d53184bfdb
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: cea755530c0871c910cfe0b16e56f9b714806bc7e88d9c1cfdabed47841c8c56
 ---
 

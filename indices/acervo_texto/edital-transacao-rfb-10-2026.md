@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/152
 arquivo_original: fontes/acervo/edital-transacao-rfb-10-2026.json
 sha256_original: 1870477999398145b6388c6af75db809e137455c8ef5c99fdd54450343c4cfc3
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: dfff5af813e7d766188eeeed7eb067eef8152b6d644d8e7e34e67338da21af24
 ---
 

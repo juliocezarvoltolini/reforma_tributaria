@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202606/29131357-portaria-cgibs-n-4
 arquivo_original: fontes/acervo/portaria-cgibs-4-2026.pdf
 sha256_original: 598ab07ffca0bf6af5b28baa7dda01ed87493417859e1a8f5d35f896f1b60c4f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 6cb8babe2e50f115657f7acc0ce75309fd1c47edad8184e633dd39996b7c0d8c
 ---

@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=3GwSI9R8J
 arquivo_original: fontes/acervo/nfag-nfag-nota-tecnica-2026-004-v1-00.pdf
 sha256_original: ffca3d7970a75a7586446aca08f476205eb1786a8945315f4fbaecda20c9bd53
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 2231368a3d5591b8cd475fea0a35c81fe4feb93e5092ea438667462b739b1af5
 ---

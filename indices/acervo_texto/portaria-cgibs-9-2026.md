@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202608/17191457-portaria-cgibs-n-9
 arquivo_original: fontes/acervo/portaria-cgibs-9-2026.pdf
 sha256_original: 6ad00babd7652736d79bbef088c30089a4d38d879f895930ae2ae165386f0adf
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 93f2f8f6c330304572a29db4ed3d4cda1778a685acd3528236bca718ca3ba25c
 ---

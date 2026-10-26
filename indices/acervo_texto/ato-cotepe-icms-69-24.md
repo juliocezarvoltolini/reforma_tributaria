@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/atos/2024-2/ac069_24
 arquivo_original: fontes/acervo/ato-cotepe-icms-69-24.html
 sha256_original: 1621292e0101037ba571d3c302907cbe87704fccbcd8e77df226289c8e325414
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 1321c7d73d533b10e96124d510693be406dcc6e787a24738c0e49269c168bec4
 ---
 

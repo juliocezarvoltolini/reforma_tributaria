@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/notas-tecnicas
 arquivo_original: fontes/acervo/nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00.pdf
 sha256_original: 18cd169f76f7f94975f031d7d14d39baa67c42714d2f031c2b62d791589af104
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 225b1a4b370bf80fb40fa19c3086ee2acfe04ab59a14af8acecad7167c81da9a
 ---

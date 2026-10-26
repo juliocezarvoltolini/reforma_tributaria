@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/decreto-n-12.668-de-13-de-outubro-de-2025-6
 arquivo_original: fontes/acervo/decreto-12668-2025-dou.html
 sha256_original: 5c04deaf50ffb8dd5b0d83d79bc293dd8c7ae9262ea787850ac1fa37e2e6d137
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: aaf0a155d8e2e5eb8279fb3b737bd32c0d9d81bf6565b80b37c1d4144d505da7
 ---
 

@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=p3diw3stE
 arquivo_original: fontes/acervo/nfe-it-2026-002-v-1-00-tabela-de-aliquotas-da-cbs.pdf
 sha256_original: 80a40a1a5fac20f0e798467eab4e5a3a68732211e5db850469a64bac75fd07ca
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 5cda4fa338d618653503871e38c45389b22e83b1dd1d0a9a3e0925fd8ce4bab9
 ---

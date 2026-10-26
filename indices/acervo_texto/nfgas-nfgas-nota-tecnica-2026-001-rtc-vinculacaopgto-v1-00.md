@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=uMPDzXnMs
 arquivo_original: fontes/acervo/nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00.pdf
 sha256_original: 2c8fadfcfda873a72e8f9ba0e4042603bdec089ae99162c51d811e8483178248
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 5de98f28a4dee189029134bd9b6b13d5a6ae54176333bfb81d2fcbc6a189fa69
 ---

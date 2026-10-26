@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202607/13154419-2026-07-10-portari
 arquivo_original: fontes/acervo/portaria-cgibs-6-2026.pdf
 sha256_original: cd6d89d4851262acdd99b74afcefad0530e110468d81f1afcd895219dfbd2351
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: d8f64c45e73a476b37356c2f42224bce4d0bd30be5e8a540c339fb94de030dd6
 ---

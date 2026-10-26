@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202607/31144942-resoluc-ao-cgibs-n
 arquivo_original: fontes/acervo/res-cgibs-14-2026.pdf
 sha256_original: 2f565482f262cf4c333a5818213b22175ad9519f94858b230fcfb0c92e542a3a
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: b85bb3ca9da6e312e17a6a2c43d6cf8daed1ac17a8d88b0635008e6158766212
 ---

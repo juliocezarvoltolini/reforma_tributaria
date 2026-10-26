@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-005-se
 arquivo_original: fontes/acervo/nfse-nota-tecnica-se-cgnfs-e-no-005.pdf
 sha256_original: c4edd43536dd69b370704532f64c1bdb2a754ac89dd5eb84b16ad9efb3d4d8fb
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 12547ea748f3a268def1a5b9176a83994fb7e1dd26d7e1ed9a137e7b627f1c69
 ---

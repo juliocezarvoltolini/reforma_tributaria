@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/135
 arquivo_original: fontes/acervo/resolucao-enat-1-2024.json
 sha256_original: 9c3db6a495dbc2345460cb449cb4678541d0773c88752d2e33f9de3aed96b302
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: c007d1df79f1b4f46c7adba6c8dcdfd176ae9efbf93a3e20dbfc2e3601111f09
 ---
 

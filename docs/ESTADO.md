@@ -635,9 +635,21 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
 - **Sem RAG/embedding**, por decisão (MODELO-DADOS, "Sobre busca vetorial"): a
   busca é lexical e devolve ato, versão e página — citável e conferível. Um
   índice vetorial só entraria como localizador, e isso seria mudar a decisão.
-- **Não conferido ainda:** as tabelas de campos dos PDFs das NTs contra o XSD da
-  mesma versão, e o cronograma de implantação por versão (está no texto, em
-  linguagem livre).
+- **Conferência NT × schema (2026-10-26):** `pipeline/conferencia_leiaute.py`,
+  gravada por `indexar.py` em `indices/conferencia_leiaute.{json,md}`. Lê as
+  linhas de tabela da NT (formato NF-e "324.35 UB35 vIBSUF ... E UB17 N 1-1 13v2"
+  e formato conjunto "7 pIBSUF E gIBSUF N 1-1 ..."), monta o caminho pelos pais da
+  própria tabela e procura no schema do mesmo documento fiscal. Primeira rodada:
+  55 NTs, 3.445 campos conferem, 8 com ocorrência divergente, 544 ausentes (NT
+  mais nova ou mais antiga que o pacote, ou grupo que o pacote não traz), 198 sem
+  correspondência (NT RT 2024.002 v1.00, de desenho anterior ao leiaute final).
+  Armadilha paga: tipo "-" na coluna fazia o leitor juntar a linha seguinte e
+  pegar a ocorrência dela — divergência falsa, corrigida com teste.
+- **Elemento de `xs:choice`** é marcado (`escolha: sim`) na tabela dos XSD: o
+  "1-1" dele só vale se a alternativa for a escolhida.
+- **Não conferido ainda:** tamanho e tipo dos campos (formatos diferentes na NT e
+  no XSD), regras de validação, e o cronograma de implantação por versão (está no
+  texto, em linguagem livre).
 
 **Em aberto:**
 

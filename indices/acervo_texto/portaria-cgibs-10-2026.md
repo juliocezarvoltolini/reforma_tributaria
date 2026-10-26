@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202608/28152155-minuta-portaria-cg
 arquivo_original: fontes/acervo/portaria-cgibs-10-2026.pdf
 sha256_original: 10ab0ad762e036490c3af86f19bcdca8208f5dacc5c7dbea12057fdc7c29770d
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: f6131464dad2c281858d88afb926a22f55ce473a21e175c00c5a287c34c68ed2
 ---

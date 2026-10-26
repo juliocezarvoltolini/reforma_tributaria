@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&
 arquivo_original: fontes/acervo/cte-cte-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-de3c0f85.pdf
 sha256_original: de3c0f85e4c55dd2c14b0e506fc96ab30e022c030bf9cc18cd2c646897787829
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 588bc59180d7976ddbbbef12f92d959c8d238cbb13e40b53a2ad891cc0dee9b1
 ---

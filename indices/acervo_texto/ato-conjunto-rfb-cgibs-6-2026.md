@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202608/28193542-ade-rfb-cgibs-n-6-
 arquivo_original: fontes/acervo/ato-conjunto-rfb-cgibs-6-2026.pdf
 sha256_original: ecb129d646f2b6170e5174d17dec0902f8901fc7afecd10b70bcb2e289ac652b
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 41e46683211387ca49b555b14665bb26d36339e44f360eb283d37593de281218
 ---

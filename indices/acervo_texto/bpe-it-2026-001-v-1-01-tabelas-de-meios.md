@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=vZg2QuZtV
 arquivo_original: fontes/acervo/bpe-it-2026-001-v-1-01-tabelas-de-meios.pdf
 sha256_original: 1e58913755c4e617f30619448909dd9ef82b0c772bcd44dc85774e77bcd28900
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 10d894b808c36ffd5da2b2f9730eb7b4663ccecf8441ff0bb0e57e5fc5bc393b
 ---

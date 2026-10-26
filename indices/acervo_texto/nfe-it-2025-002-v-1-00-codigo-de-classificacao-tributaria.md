@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ph9Q7hYZ0
 arquivo_original: fontes/acervo/nfe-it-2025-002-v-1-00-codigo-de-classificacao-tributaria.pdf
 sha256_original: b8dd0be148b356945854d81bf5cf56717bd8f70e9f7f89badd0396aa2a768cdf
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: c754842e6cbfaabdcc6d28c547ccdee23799bd4e8092bcaa88121007504dc75a
 ---

@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFA
 arquivo_original: fontes/acervo/nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-328a9fde.pdf
 sha256_original: 328a9fde6747c6ff03b12b719a65ca4051894d5ca2018f8cefcb809a39076556
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: af146f6b0d726eabe1cbca7349cc73a314f5992f9253a9aa0acdcc3eddaebc9c
 ---

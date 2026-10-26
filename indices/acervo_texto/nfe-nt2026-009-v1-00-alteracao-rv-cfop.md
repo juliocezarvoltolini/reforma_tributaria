@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ADlgg2xjM
 arquivo_original: fontes/acervo/nfe-nt2026-009-v1-00-alteracao-rv-cfop.pdf
 sha256_original: 50b7dec40bba8928b4d544feb4fdbd8c8bac16e37c99d926ddb2834cf246f15d
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: b77caa84fb2b2caa6bd6b51561d8f18352391c7e2b327b708d729239ffc880da
 ---

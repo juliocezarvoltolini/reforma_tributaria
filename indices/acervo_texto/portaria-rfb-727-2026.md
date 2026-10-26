@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/153
 arquivo_original: fontes/acervo/portaria-rfb-727-2026.json
 sha256_original: 941b47701d558a91e26a78e2908214b4dbcfa74ed7f9fcdc296614adbb4db8d4
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 886abf10c497f9fb874256a035fb1be2c440ee27a9a1f9205fb5203c100ad515
 ---
 

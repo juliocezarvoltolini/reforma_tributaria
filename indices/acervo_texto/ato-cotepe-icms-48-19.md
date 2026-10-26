@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/atos/2019/ato-cotepe-icms-48-1
 arquivo_original: fontes/acervo/ato-cotepe-icms-48-19.html
 sha256_original: d671703916d0fb2c0436d3e44b8b1cedfa7c6a74052575902f0771b80a846880
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 5a038d5c76fd85c71fbecf07be61f9b7c7f5d79ab0bef74ce2f4e30105162091
 ---
 

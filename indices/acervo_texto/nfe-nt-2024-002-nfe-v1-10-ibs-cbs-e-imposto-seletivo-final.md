@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=DaB0yzqdb
 arquivo_original: fontes/acervo/nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final.pdf
 sha256_original: 48b7b5de92482866d6898ee4842218c436f123af16e78869021aa48f91f15c89
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 84a8e12c51c0a9cc961aff9891f753c653de0d0df0c85b1d5c81b616706647c4
 ---

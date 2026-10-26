@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/decreto-n-12.799-de-26-de-dezembro-de-2025-
 arquivo_original: fontes/acervo/decreto-12799-2025-dou.html
 sha256_original: 79beb4ccb485caf927bea2c74d0fc5edd3ca145c0fb265e48415aec41f8d24ac
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: a5f878aca126d063afb1973c16bac981333158bdec569091595433b8d47940bd
 ---
 

@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/portaria-mf-n-3.074-de-9-de-outubro-de-2026
 arquivo_original: fontes/acervo/portaria-mf-3074-2026.html
 sha256_original: 66ad63f69a54d1129469ed1ee55175c3fc27bf78451e0bf8436a693a8215110e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 03191049b7d18009c4a1f3a6674cb603834ba9f648b37393088ea3d03509619c
 ---
 

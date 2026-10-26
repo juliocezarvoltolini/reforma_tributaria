@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/838
 arquivo_original: fontes/acervo/portaria-cotec-54-2017.json
 sha256_original: b12210fab26dc28f9543c462022b3653f09aa38d8449317b82e26352ea777cab
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: cb3a2e3e4aeac9964f78b3c6690040f848d91234e306462b7d86a6715012eb4d
 ---
 

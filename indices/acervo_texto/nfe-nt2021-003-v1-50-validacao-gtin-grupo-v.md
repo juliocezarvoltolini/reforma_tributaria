@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ENot2yWE7
 arquivo_original: fontes/acervo/nfe-nt2021-003-v1-50-validacao-gtin-grupo-v.pdf
 sha256_original: 28b7e26b1a515cdd8180084a71c6b8bf4eb6fa7745ecafba878fbeb75547b363
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 891bc8396009df15b93257a8e8b790df217cbff282bd1f3fecf6a92cf6250f34
 ---

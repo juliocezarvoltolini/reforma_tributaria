@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/145
 arquivo_original: fontes/acervo/resolucao-cgnfs-e-6-2025.json
 sha256_original: 4f39359789eb7f9e5cfb6d8e746287230a3824c002bec394a377ce5f738b391c
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 49718566b3e60b526c45867f12d0265d163fd1dccf3d2dfa6b4bde135b3faf72
 ---
 

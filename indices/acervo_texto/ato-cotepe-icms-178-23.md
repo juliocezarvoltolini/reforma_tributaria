@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/atos/2023-1/ato-cotepe-icms-17
 arquivo_original: fontes/acervo/ato-cotepe-icms-178-23.html
 sha256_original: 01c99eba8a9da169a117e92d8cdd61e5ab27455b5146fb6cd9495ad930b2e266
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: e91b426de92f18b41f09089e8414c0699a67fc6b47f986cf5f5247ba5a83c34e
 ---
 

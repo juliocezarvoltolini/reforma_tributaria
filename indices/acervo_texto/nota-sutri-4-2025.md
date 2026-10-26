@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/147
 arquivo_original: fontes/acervo/nota-sutri-4-2025.json
 sha256_original: b066a5b8388190739865698c704db4ff0d7218e404d87be3500ce081811146c9
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 6e7b24fe15aa50bbfccc0f41d1d9b3c346334480d4aea351c584b1b889f2b49a
 ---
 

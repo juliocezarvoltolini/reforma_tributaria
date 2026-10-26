@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/318
 arquivo_original: fontes/acervo/resolucao-cgsn-11-2007.json
 sha256_original: 1ed0d9cb5c0581a07f79723f66c975012e7c72ec3b9ec3c5e2f90824c9b44da9
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 8a5fe320bf6afd02c35f1f56248debb44ddce9bcd26963cf6a602562d9741cec
 ---
 

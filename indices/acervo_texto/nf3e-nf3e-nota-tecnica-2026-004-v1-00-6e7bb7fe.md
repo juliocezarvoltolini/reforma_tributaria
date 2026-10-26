@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NF3E/DownloadArquivoEstatico/?sistema=NF3
 arquivo_original: fontes/acervo/nf3e-nf3e-nota-tecnica-2026-004-v1-00-6e7bb7fe.pdf
 sha256_original: 6e7bb7fe3d91d8e0523fcfd055f948717fddc4e0ea569422d41c492e3bf5a25f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: edc2b2aafea059e60d4b82637d9e1a3662030df6e1befd335ca3eb91663853b0
 ---

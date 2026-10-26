@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=9qjN8INgS
 arquivo_original: fontes/acervo/cte-cte-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01.pdf
 sha256_original: 71db07c561730a96892c418abb5222f9b75a8410e155b0f26d0bb72a80f0323f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 2d370b76b05df36a776536ade57c7ad1f76e0914c57c83f3d732c6860d14d588
 ---

@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-rest
 arquivo_original: fontes/acervo/nfse-nota-tecnica-se-cgnfs-e-no-004.pdf
 sha256_original: 707524b2110a3af55a232110ead632abe14d745a60307f8dcc062ec220d4058f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 73ac34b2711627cd29f2e82cffb47da3584a25c1d72cc8f17601d5c71f429561
 ---

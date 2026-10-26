@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-97fca150.pdf
 sha256_original: 97fca1505aed85ff98056a914d40f98f75041e1839da4135d65a8df133de9202
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 31b0a68960e914e289855fb292b99c9472ef6d78a766cef8ca65236a61811dc2
 ---

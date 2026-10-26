@@ -7,7 +7,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexovi-l
 arquivo_original: fontes/acervo/nfse-anexovi-leiautesrn-rtc-ibscbs-v1-03-00-nt007.xlsx
 sha256_original: 5b053aada7434c2e25551911917f4d30cdaccd2ca312b1dd9a3cb4241b81b6de
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: a5f57cae435ae7dd547824539574f12244ff30ac7d3e5da0b0ac694d597c7efe
 ---
 

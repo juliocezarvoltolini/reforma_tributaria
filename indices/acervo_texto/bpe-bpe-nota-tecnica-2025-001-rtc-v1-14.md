@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ngSh95z03
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2025-001-rtc-v1-14.pdf
 sha256_original: 9a1744b9f5ff1354d0e1987b030c1baa262a7076299c9f5a837f0db3b330c191
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: f9cd3abb8457c3662fc1f7f1ae81d6c524e4388c0a434662992a6c7243a1f59d
 ---

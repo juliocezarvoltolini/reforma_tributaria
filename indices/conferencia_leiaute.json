@@ -1,0 +1,5928 @@
+{
+  "aviso": "Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os schemas (XSD) do mesmo documento fiscal. 'pacote' e o que mais confere, nao o oficialmente correspondente. Divergencia e informacao, nao erro: a NT pode ser mais nova ou mais antiga que o pacote.",
+  "notas_tecnicas": [
+    {
+      "contagem": {
+        "ausente_no_schema": 27,
+        "confere": 55
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-09",
+      "pacote": "bpe-pl-bpe-100b-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.09 - Publicada em 16/09/2025",
+      "versao": "1.09"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 34,
+        "confere": 54
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/indDoacao",
+          "campo": "indDoacao",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gEstornoCred",
+          "campo": "gEstornoCred",
+          "ocorrencia_nt": "0-1",
+          "pagina": 8,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gEstornoCred/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 8,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gEstornoCred/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 8,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gEstornoCred",
+          "campo": "gEstornoCred",
+          "ocorrencia_nt": "0-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-10",
+      "pacote": "bpe-pl-bpe-100b-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.10 - Publicada em 06/10/2025",
+      "versao": "1.10"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 29,
+        "confere": 45
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a",
+      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.12 - Publicada em 16/01/2026",
+      "versao": "1.12"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 29,
+        "confere": 45
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-13",
+      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.13 - Publicada em 26/01/2026",
+      "versao": "1.13"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 29,
+        "confere": 45
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a",
+      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.13a - Publicada em 05/02/2026",
+      "versao": "1.13a"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 29,
+        "confere": 45
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-14",
+      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.14 - Publicada em 07/04/2026",
+      "versao": "1.14"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 29,
+        "confere": 45
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a",
+      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.14a - Publicada em 07/04/2026",
+      "versao": "1.14a"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2026-002-v1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "titulo": "Nota_Tecnica BP-e 2026_002 -RTC_v1.00 - Publicada em 11/06/2026",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "BP-e",
+      "id": "bpe-bpe-nota-tecnica-2026-002-v1-01",
+      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica BP-e 2026.002 v.1.01 - Publicada em 04/08/2026",
+      "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 71,
+        "confere": 17
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gCredPres/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gCredPres/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gCredPres/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gCredPres/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gCredPres/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gCredPres/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gTotIBSCBS/vBCCIBS",
+          "campo": "vBCCIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS",
+          "campo": "gIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot",
+          "campo": "gIBSUFTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot",
+          "campo": "gIBSMunTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/vIBSTot",
+          "campo": "vIBSTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 10,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/BP-e/NF3e/NFCom (NT conjunta DFe)",
+      "id": "ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00",
+      "titulo": "DFe - Nota Técnica 2024.001 - IBS/CBS - Publicada em 01/08/24",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 62,
+        "confere": 27
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gTotIBSCBS/vBCCIBS",
+          "campo": "vBCCIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS",
+          "campo": "gIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot",
+          "campo": "gIBSUFTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSUFTot/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot",
+          "campo": "gIBSMunTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/gIBSMunTot/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gIBS/vIBSTot",
+          "campo": "vIBSTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIPA/gCBS/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/BP-e/NF3e/NFCom (NT conjunta DFe)",
+      "id": "ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "DFe - Nota Técnica 2024.001.v.1.10 - IBS/CBS - Publicada em 11/12/24",
+      "versao": "1.10"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 18,
+        "confere": 47
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gCBS/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-00",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.00 - Publicada em 28/03/2025",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 1,
+        "confere": 55
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gTribRegular/vTribRegICBS",
+          "campo": "vTribRegICBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-01",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.01 - Publicada em 14/04/2025",
+      "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 1,
+        "confere": 55
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gTribRegular/vTribRegICBS",
+          "campo": "vTribRegICBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-02",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.02 - Publicada em 12/05/2025",
+      "versao": "1.02"
+    },
+    {
+      "contagem": {
+        "confere": 56
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-03",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.03 - Publicada em 19/05/2025",
+      "versao": "1.03"
+    },
+    {
+      "contagem": {
+        "confere": 56
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-04",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.04 - Publicada em 28/05/2025",
+      "versao": "1.04"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 1,
+        "confere": 62
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gTribCompraGov/vTribBSUF",
+          "campo": "vTribBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-05",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.05 - Publicada em 06/06/2025",
+      "versao": "1.05"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 1,
+        "confere": 62
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gTribCompraGov/vTribBSUF",
+          "campo": "vTribBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-05a",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.05a - Publicada em 16/06/2025",
+      "versao": "1.05a"
+    },
+    {
+      "contagem": {
+        "confere": 63
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-05b",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.05b - Publicada em 26/06/2025",
+      "versao": "1.05b"
+    },
+    {
+      "contagem": {
+        "confere": 63
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-06",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.06 - Publicada em 18/07/2025",
+      "versao": "1.06"
+    },
+    {
+      "contagem": {
+        "confere": 63
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-07",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.07 - Publicada em 24/07/2025",
+      "versao": "1.07"
+    },
+    {
+      "contagem": {
+        "confere": 63
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-08",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.08 - Publicada em 18/08/2025",
+      "versao": "1.08"
+    },
+    {
+      "contagem": {
+        "confere": 63
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-08a",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.08a - Publicada em 18/08/2025",
+      "versao": "1.08a"
+    },
+    {
+      "contagem": {
+        "confere": 63
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-09",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.09 - Publicada em 16/09/2025",
+      "versao": "1.09"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 4,
+        "confere": 62
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/indDoacao",
+          "campo": "indDoacao",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gEstornoCred",
+          "campo": "gEstornoCred",
+          "ocorrencia_nt": "0-1",
+          "pagina": 8,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gEstornoCred/vIBSEstCred",
+          "campo": "vIBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 8,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gEstornoCred/vCBSEstCred",
+          "campo": "vCBSEstCred",
+          "ocorrencia_nt": "1-1",
+          "pagina": 8,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-10",
+      "pacote": "cte-pl-cte-400-nt2025-001-rtc-1-09",
+      "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.10 - Publicada em 06/10/2025",
+      "versao": "1.10"
+    },
+    {
+      "contagem": {
+        "confere": 56
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-14",
+      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "titulo": "Nota Técnica CT-e - Nota_Técnica_2025_001 - RTC_v1.14 - Publicada em 07/04/2026",
+      "versao": "1.14"
+    },
+    {
+      "contagem": {
+        "confere": 56
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-14a",
+      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "titulo": "Nota Técnica CT-e - Nota_Técnica_2025_001 - RTC_v1.14a - Publicada em 07/04/2026",
+      "versao": "1.14a"
+    },
+    {
+      "contagem": {
+        "confere": 56
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-14b",
+      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "titulo": "Nota Técnica CT-e 2025.001 v.1.14b - Publicada em 30/04/2026",
+      "versao": "1.14b"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2026-002-v1-00",
+      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "titulo": "Nota_Tecnica CT-e 2026_002 -RTC_v1.00 - Publicada em 11/06/2026",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2026-002-v1-01",
+      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "titulo": "Nota Técnica CT-e 2026.002 v.1.01 - Publicada em 04/08/2026",
+      "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "confere": 18
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS/GTV-e",
+      "id": "cte-cte-nota-tecnica-2026-004-v1-00",
+      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "titulo": "Nota Técnica CT-e 2026.004 v.1.00 - Publicada em 01/10/2026",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 27,
+        "confere": 47
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "NF3e",
+      "id": "nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a",
+      "pacote": "nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica 2025.001 v.1.14a - Publicada em 12/03/2026",
+      "versao": "1.14a"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF3e",
+      "id": "nf3e-nf3e-nota-tecnica-2026-002-v1-01",
+      "pacote": "nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica 2026.002 v.1.01 - Publicada em 01/08/2026 - Publicada em 01/08/2026",
+      "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "NFAg",
+      "id": "nfag-nfag-nota-tecnica-2026-002-v1-00",
+      "pacote": "nfag-pl-nfag-nt2026-004-rtc-1-00-correcao",
+      "titulo": "Nota Técnica 2026.002 v.1.00 - Publicada em 10/06/2026",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 27,
+        "confere": 47
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gIBS/gIBSMun/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 6,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDif/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gDevTrib/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gCBS/gRed/pAliqEfet",
+          "campo": "pAliqEfet",
+          "ocorrencia_nt": "1-1",
+          "pagina": 7,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica 2025.001 v.1.14a - Publicada em 12/03/2026",
+      "versao": "1.14a"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nfcom-nota-tecnica-2026-002-v1-01a",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica 2026.002 v.1.01a - Publicada em 14/08/2026",
+      "versao": "1.01a"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 45,
+        "confere": 36,
+        "ocorrencia_diverge": 1
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "0-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 21,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gDeson/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 21,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gDeson/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 21,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gDeson/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gDeson/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gDeson/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBSMono/qBCMono",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/qBCMono",
+          "campo": "qBCMono",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 24,
+          "situacao": "ocorrencia_diverge"
+        },
+        {
+          "caminho_nt": "adRemIBSREten",
+          "campo": "adRemIBSREten",
+          "ocorrencia_nt": "1-1",
+          "pagina": 24,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "pCredPresIBS",
+          "campo": "pCredPresIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 24,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS",
+          "campo": "vCRedPresIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 24,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "pCredPresCBS",
+          "campo": "pCredPresCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 24,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "vCredPresCBS",
+          "campo": "vCredPresCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 24,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBSMono/vTotIBSMono",
+          "campo": "vTotIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 25,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBSMono/vTotCBSMono",
+          "campo": "vTotCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 25,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot",
+          "campo": "IBSCBSSelTot",
+          "ocorrencia_nt": "0-1",
+          "pagina": 25,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel",
+          "campo": "gSel",
+          "ocorrencia_nt": "0-1",
+          "pagina": 25,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vBCSel",
+          "campo": "vBCSel",
+          "ocorrencia_nt": "1-1",
+          "pagina": 25,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vImpSel",
+          "campo": "vImpSel",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/vBCIBSCBS",
+          "campo": "vBCIBSCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS",
+          "campo": "gIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot",
+          "campo": "gIBSUFTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot",
+          "campo": "gIBSMunTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vIBSTot",
+          "campo": "vIBSTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-4",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-4",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 26,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 27,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 27,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final",
+      "pacote": "nfe-pl-010b-nt2025-002-v1-00",
+      "titulo": "RT - Nota Técnica 2024.002 v.1.10 - IBS/CBS - Publicada em 06/12/2024",
+      "versao": "1.10"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 42,
+        "confere": 47,
+        "ocorrencia_diverge": 3
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/CST",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 11,
+          "situacao": "ocorrencia_diverge"
+        },
+        {
+          "caminho_nt": "IBSCBS/cClassTrib",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 11,
+          "situacao": "ocorrencia_diverge"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 11,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 12,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 12,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 12,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 12,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 12,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 12,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 12,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBSMono/qBCMono",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/qBCMono",
+          "campo": "qBCMono",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 14,
+          "situacao": "ocorrencia_diverge"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot",
+          "campo": "IBSCBSSelTot",
+          "ocorrencia_nt": "0-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel",
+          "campo": "gSel",
+          "ocorrencia_nt": "0-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vBCIS",
+          "campo": "vBCIS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vIS",
+          "campo": "vIS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/vBCIBSCBS",
+          "campo": "vBCIBSCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS",
+          "campo": "gIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot",
+          "campo": "gIBSUFTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot",
+          "campo": "gIBSMunTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vIBSTot",
+          "campo": "vIBSTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-4",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gCBS/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gCBS/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-4",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gCBS/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gCBS/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gCBS/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gMono",
+          "campo": "gMono",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gMono/vTotIBSMono",
+          "campo": "vTotIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gMono/vTotCBSMono",
+          "campo": "vTotCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gMono/vTotNF",
+          "campo": "vTotNF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-00-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010b-nt2025-002-v1-00",
+      "titulo": "Nota Técnica 2025.002.v.1.00 - Publicada em 28/03/2025",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 9,
+        "confere": 74
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 14,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSUF/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "IBSCBS/gIBSCBS/gIBSMun/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-01-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010b-nt2025-002-v1-00",
+      "titulo": "Nota Técnica 2025.002.v.1.01 - Publicada em 15/04/2025",
+      "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 9,
+        "confere": 88
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gTribRegular/pAliqEfetReg",
+          "campo": "pAliqEfetReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSUF/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gTribRegular",
+          "campo": "gTribRegular",
+          "ocorrencia_nt": "0-1",
+          "pagina": 16,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gTribRegular/CSTReg",
+          "campo": "CSTReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gTribRegular/cClassTribReg",
+          "campo": "cClassTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSMun/gTribRegular/vTribReg",
+          "campo": "vTribReg",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "ausente_no_schema"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-10-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010b-nt2025-002-v1-21",
+      "titulo": "Nota Técnica 2025.002.v.1.10 - Publicada em 09/06/2025",
+      "versao": "1.10"
+    },
+    {
+      "contagem": {
+        "confere": 92
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-20-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010b-nt2025-002-v1-21",
+      "titulo": "Nota Técnica 2025.002.v.1.20 - Publicada em 30/07/2025",
+      "versao": "1.20"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 10,
+        "confere": 102,
+        "ocorrencia_diverge": 2
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres",
+          "campo": "gIBSCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/cCredPres",
+          "campo": "cCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres",
+          "campo": "gCBSCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/cCredPres",
+          "campo": "cCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gCredPresIBSZFM",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM",
+          "campo": "gCredPresIBSZFM",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 22,
+          "situacao": "ocorrencia_diverge"
+        },
+        {
+          "caminho_nt": "gCredPresIBSZFM/vCredPresIBSZFM",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM/vCredPresIBSZFM",
+          "campo": "vCredPresIBSZFM",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 22,
+          "situacao": "ocorrencia_diverge"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-30-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.30 - Publicada em 03/10/2025",
+      "versao": "1.30"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 10,
+        "confere": 102,
+        "ocorrencia_diverge": 2
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres",
+          "campo": "gIBSCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/cCredPres",
+          "campo": "cCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gIBSCredPres/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres",
+          "campo": "gCBSCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/cCredPres",
+          "campo": "cCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gIBSCBS/gCBSCredPres/vCredPresCondSus",
+          "campo": "vCredPresCondSus",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "ausente_no_schema"
+        },
+        {
+          "caminho_nt": "gCredPresIBSZFM",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM",
+          "campo": "gCredPresIBSZFM",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 22,
+          "situacao": "ocorrencia_diverge"
+        },
+        {
+          "caminho_nt": "gCredPresIBSZFM/vCredPresIBSZFM",
+          "caminho_schema": "NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM/vCredPresIBSZFM",
+          "campo": "vCredPresIBSZFM",
+          "ocorrencia_nt": "0-1",
+          "ocorrencia_schema": "1-1",
+          "pagina": 22,
+          "situacao": "ocorrencia_diverge"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-31-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.31 - Publicada em 11/11/2025",
+      "versao": "1.31"
+    },
+    {
+      "contagem": {
+        "confere": 102
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-32-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.32 - Publicada em 25/11/2025",
+      "versao": "1.32"
+    },
+    {
+      "contagem": {
+        "confere": 102
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-33-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.33 - Publicada em 02/12/2025",
+      "versao": "1.33"
+    },
+    {
+      "contagem": {
+        "confere": 102
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-34-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.34 - Publicada em 04/12/2025",
+      "versao": "1.34"
+    },
+    {
+      "contagem": {
+        "confere": 102
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-35-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.35 - Publicada em 31/03/2026",
+      "versao": "1.35"
+    },
+    {
+      "contagem": {
+        "confere": 102
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-36-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.36 - Publicada em 30/04/2026",
+      "versao": "1.36"
+    },
+    {
+      "contagem": {
+        "confere": 102
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.40 - Publicada em 20/05/2026",
+      "versao": "1.40"
+    },
+    {
+      "contagem": {
+        "confere": 101
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.50 - Publicada em 03/06/2026",
+      "versao": "1.50"
+    },
+    {
+      "contagem": {
+        "confere": 101
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-51-rtc",
+      "pacote": "nfe-pl-010e-v1-02",
+      "titulo": "Nota Técnica 2025.002 v.1.51 - Publicada em 04/08/2026",
+      "versao": "1.51"
+    },
+    {
+      "contagem": {
+        "confere": 87
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010f-v1-04",
+      "titulo": "Nota Técnica 2025.002 v.1.52 - Publicada em 01/10/2026",
+      "versao": "1.52"
+    },
+    {
+      "contagem": {
+        "sem_correspondencia": 99
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel",
+          "campo": "IBSCBSSel",
+          "ocorrencia_nt": "0-1",
+          "pagina": 14,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS",
+          "campo": "gIBSCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gIBSUF",
+          "campo": "gIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP",
+          "campo": "vTribOP",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/vDif/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/vDif/vDevTrib/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gIBSMun",
+          "campo": "gIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP",
+          "campo": "vTribOP",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres/pDif/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/qBCMono",
+          "campo": "qBCMono",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS",
+          "campo": "adRemIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemCBS",
+          "campo": "adRemCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vIBSMono",
+          "campo": "vIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vCBSMono",
+          "campo": "vCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS/qBCMonoReten",
+          "campo": "qBCMonoReten",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS/adRemIBSREten",
+          "campo": "adRemIBSREten",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS/vIBSMonoReten",
+          "campo": "vIBSMonoReten",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "pCredPresIBS",
+          "campo": "pCredPresIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS",
+          "campo": "vCRedPresIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "pCredPresCBS",
+          "campo": "pCredPresCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCredPresCBS",
+          "campo": "vCredPresCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/pDifIBS",
+          "campo": "pDifIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/vIBSMonoDif",
+          "campo": "vIBSMonoDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/pDifCBS",
+          "campo": "pDifCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/vCBSMonoDif",
+          "campo": "vCBSMonoDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vTotIBSMono",
+          "campo": "vTotIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vTotCBSMono",
+          "campo": "vTotCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot",
+          "campo": "IBSCBSSelTot",
+          "ocorrencia_nt": "0-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel",
+          "campo": "gSel",
+          "ocorrencia_nt": "0-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vBCSel",
+          "campo": "vBCSel",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vImpSel",
+          "campo": "vImpSel",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/vBCIBSCBS",
+          "campo": "vBCIBSCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS",
+          "campo": "gIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot",
+          "campo": "gIBSUFTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot",
+          "campo": "gIBSMunTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vIBSTot",
+          "campo": "vIBSTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono",
+          "campo": "gMono",
+          "ocorrencia_nt": "0-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono/vTotIBSMono",
+          "campo": "vTotIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono/vTotCBSMono",
+          "campo": "vTotCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono/vTotNF",
+          "campo": "vTotNF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo",
+      "pacote": null,
+      "titulo": "RT Nota Técnica 2024.002 - IBS/CBS - Publicada em 01/08/2024",
+      "versao": "1.0"
+    },
+    {
+      "contagem": {
+        "sem_correspondencia": 99
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel",
+          "campo": "IBSCBSSel",
+          "ocorrencia_nt": "0-1",
+          "pagina": 14,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS",
+          "campo": "gIBSCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gIBSUF",
+          "campo": "gIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF",
+          "campo": "pIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP",
+          "campo": "vTribOP",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 15,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/vDif/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/pIBSUF/vTribOP/vCredPres/vDif/vDevTrib/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gIBSMun",
+          "campo": "gIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun",
+          "campo": "pIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP",
+          "campo": "vTribOP",
+          "ocorrencia_nt": "1-1",
+          "pagina": 16,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres",
+          "campo": "pCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/vCredPres",
+          "campo": "vCredPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres/pDif",
+          "campo": "pDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/vTribOP/pCredPres/pDif/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 17,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/pCBS",
+          "campo": "pCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/vTribOp",
+          "campo": "vTribOp",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gCredPres",
+          "campo": "gCredPres",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDif",
+          "campo": "gDif",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib",
+          "campo": "gDevTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/gRed",
+          "campo": "gRed",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq",
+          "campo": "pRedAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/gDeson",
+          "campo": "gDeson",
+          "ocorrencia_nt": "0-1",
+          "pagina": 18,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/CST",
+          "campo": "CST",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/cClassTrib",
+          "campo": "cClassTrib",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vBC",
+          "campo": "vBC",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/pAliq",
+          "campo": "pAliq",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/vBC/vIBSUF/pIBSMun/gDevTrib/pRedAliq/vDeson/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/qBCMono",
+          "campo": "qBCMono",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS",
+          "campo": "adRemIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemCBS",
+          "campo": "adRemCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vIBSMono",
+          "campo": "vIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vCBSMono",
+          "campo": "vCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS/qBCMonoReten",
+          "campo": "qBCMonoReten",
+          "ocorrencia_nt": "0-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS/adRemIBSREten",
+          "campo": "adRemIBSREten",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/adRemIBS/vIBSMonoReten",
+          "campo": "vIBSMonoReten",
+          "ocorrencia_nt": "1-1",
+          "pagina": 19,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "pCredPresIBS",
+          "campo": "pCredPresIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS",
+          "campo": "vCRedPresIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "pCredPresCBS",
+          "campo": "pCredPresCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCredPresCBS",
+          "campo": "vCredPresCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/pDifIBS",
+          "campo": "pDifIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/vIBSMonoDif",
+          "campo": "vIBSMonoDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/pDifCBS",
+          "campo": "pDifCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "vCRedPresIBS/vCBSMonoDif",
+          "campo": "vCBSMonoDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vTotIBSMono",
+          "campo": "vTotIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "gImpSel/cClassTrib/IBSCBSSel/gIBSCBS/gCBS/gDevTrib/pRedAliq/vDeson/vTotCBSMono",
+          "campo": "vTotCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 20,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot",
+          "campo": "IBSCBSSelTot",
+          "ocorrencia_nt": "0-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel",
+          "campo": "gSel",
+          "ocorrencia_nt": "0-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vBCSel",
+          "campo": "vBCSel",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gSel/vImpSel",
+          "campo": "vImpSel",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/vBCIBSCBS",
+          "campo": "vBCIBSCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS",
+          "campo": "gIBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot",
+          "campo": "gIBSUFTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSUFTot/vIBSUF",
+          "campo": "vIBSUF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot",
+          "campo": "gIBSMunTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vIBSMun",
+          "campo": "vIBSMun",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gIBSMunTot/vIBSTot",
+          "campo": "vIBSTot",
+          "ocorrencia_nt": "1-1",
+          "pagina": 21,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS",
+          "campo": "gCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vCresPres",
+          "campo": "vCresPres",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vDif",
+          "campo": "vDif",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vDevTrib",
+          "campo": "vDevTrib",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vDeson",
+          "campo": "vDeson",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gCBS/vCBS",
+          "campo": "vCBS",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono",
+          "campo": "gMono",
+          "ocorrencia_nt": "0-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono/vTotIBSMono",
+          "campo": "vTotIBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono/vTotCBSMono",
+          "campo": "vTotCBSMono",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        },
+        {
+          "caminho_nt": "IBSCBSSelTot/gIBS/gMono/vTotNF",
+          "campo": "vTotNF",
+          "ocorrencia_nt": "1-1",
+          "pagina": 22,
+          "situacao": "sem_correspondencia"
+        }
+      ],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c",
+      "pacote": null,
+      "titulo": "DFe Nota Técnica 2024.002 NFe, NFCe e imposto seletivo",
+      "versao": "1.0"
+    },
+    {
+      "contagem": {
+        "confere": 64
+      },
+      "divergencias": [],
+      "documento_fiscal": "NFGas",
+      "id": "nfgas-nfgas-nota-tecnica-2026-002-v1-00",
+      "pacote": "nfgas-pl-nfgas-nt2026-004-rtc-1-00",
+      "titulo": "Nota Técnica 2026.002 v.1.00 - Publicada em 10/06/2026",
+      "versao": "1.00"
+    }
+  ]
+}

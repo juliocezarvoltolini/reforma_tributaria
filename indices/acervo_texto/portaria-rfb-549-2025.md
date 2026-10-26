@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/144
 arquivo_original: fontes/acervo/portaria-rfb-549-2025.json
 sha256_original: f9ff795f932230d852bf8147b6ae6eb0b6f8fbc0a32e90c0e9d735dd1d647ae2
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 59ce3ac9351fd64db8beec0e044dc59f00ea573750e74bd670e15793dd9907e2
 ---
 

@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/141
 arquivo_original: fontes/acervo/adi-rfb-3-2024.json
 sha256_original: bbed79789008804eeb42755cc430263d7972adf2f968c156c043ad2c6c5935dc
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 754a223be63a11cd33e973f0df3e996742e2007e748385ca1a6f8c0f8a92a3f6
 ---
 

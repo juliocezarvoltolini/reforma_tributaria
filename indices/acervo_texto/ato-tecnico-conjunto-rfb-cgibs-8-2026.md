@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202610/01120217-nfe-nfc-cte-notas-
 arquivo_original: fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-8-2026.pdf
 sha256_original: 54138fabb3ff08d3c4cf22d4ac21af79cb005345ac323994081698a22a206d1e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 9ed9dc84a60ad3da91426b71cea56dc7de62d2c342d286be7ba22644f0724633
 ---

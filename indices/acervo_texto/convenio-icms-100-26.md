@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/convenios/2026/CV100_26
 arquivo_original: fontes/acervo/convenio-icms-100-26.html
 sha256_original: d3912df583f7ee223d94e2636b77a486a5c91ee1909791a0b1726c21df1df612
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: ee14d58089bafe4dec5e4d6ce1b765f96a4e66b436fa7cc7885ece5854a4c6dc
 ---
 

@@ -36,7 +36,7 @@ from comum import DIR_INDICES, MANIFEST, caminho_fonte, gravar_texto, sha256_byt
 
 DIR_TEXTO = DIR_INDICES / "acervo_texto"
 # Sobe a cada mudança no que o gerador produz: a validação acusa o texto antigo.
-VERSAO_GERADOR = 2
+VERSAO_GERADOR = 3
 XS = "{http://www.w3.org/2001/XMLSchema}"
 AVISO_PDF = ("Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas "
              "embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; "
@@ -101,21 +101,23 @@ def campos_do_leiaute(pacote: bytes) -> list[dict]:
     vistos: set[tuple[str, str]] = set()  # (XSD da raiz, caminho)
     alcancados: set[str] = set()  # tipos complexos que algum elemento usa
 
-    def _particulas(no: ET.Element, arquivo: str, pilha: tuple):
+    def _particulas(no: ET.Element, arquivo: str, pilha: tuple, escolha: bool = False):
+        """(elemento, XSD, dentro de xs:choice?) dos filhos de um tipo complexo."""
         for filho in no:
             if filho.tag == f"{XS}element":
-                yield filho, arquivo
+                yield filho, arquivo, escolha
             elif filho.tag in (f"{XS}sequence", f"{XS}choice", f"{XS}all"):
-                yield from _particulas(filho, arquivo, pilha)
+                yield from _particulas(filho, arquivo, pilha, escolha or filho.tag == f"{XS}choice")
             elif filho.tag in (f"{XS}complexContent", f"{XS}simpleContent"):
                 ext = filho.find(f"{XS}extension")
                 if ext is not None:
                     base = _local(ext.get("base"))
                     if base in complexos and base not in pilha:
-                        yield from _particulas(complexos[base][0], complexos[base][1], pilha + (base,))
-                    yield from _particulas(ext, arquivo, pilha)
+                        yield from _particulas(complexos[base][0], complexos[base][1], pilha + (base,), escolha)
+                    yield from _particulas(ext, arquivo, pilha, escolha)
 
-    def visitar(el: ET.Element, arquivo: str, caminho: str, incluir: bool, pilha: tuple, raiz: str) -> None:
+    def visitar(el: ET.Element, arquivo: str, caminho: str, incluir: bool, pilha: tuple, raiz: str,
+                escolha: bool = False) -> None:
         if el.get("ref"):
             ref = _local(el.get("ref"))
             if ref not in elementos:
@@ -150,10 +152,10 @@ def campos_do_leiaute(pacote: bytes) -> list[dict]:
                 "tamanho": rest.get("tamanho", ""), "enumeracao": rest.get("enumeracao", ""),
                 "padrao": rest.get("padrao", ""),
                 "descricao": " ".join((doc.text or "").split()) if doc is not None else "",
-                "arquivo": arquivo})
+                "arquivo": arquivo, "escolha": "sim" if escolha else ""})
         if complexo is not None and len(pilha) < 40:
-            for filho, arq in _particulas(complexo, arq_tipo, pilha + ((tipo,) if tipo else ())):
-                visitar(filho, arq, caminho, incluir, pilha + ((tipo,) if tipo else ()), raiz)
+            for filho, arq, em_escolha in _particulas(complexo, arq_tipo, pilha + ((tipo,) if tipo else ())):
+                visitar(filho, arq, caminho, incluir, pilha + ((tipo,) if tipo else ()), raiz, em_escolha)
 
     tipos_de_raiz = {_local(el.get("type")) for el, _ in raizes if el.get("type")}
     for el, arquivo in raizes:
@@ -165,8 +167,8 @@ def campos_do_leiaute(pacote: bytes) -> list[dict]:
     for nome, (complexo, arquivo) in list(complexos.items()):
         if elementos or nome in alcancados:
             continue
-        for filho, arq in _particulas(complexo, arquivo, (nome,)):
-            visitar(filho, arq, nome, _do_imposto(nome), (nome,), arquivo)
+        for filho, arq, em_escolha in _particulas(complexo, arquivo, (nome,)):
+            visitar(filho, arq, nome, _do_imposto(nome), (nome,), arquivo, em_escolha)
     return campos
 
 
@@ -193,7 +195,10 @@ def _corpo(dados: bytes, ext: str) -> tuple[str, str | None]:
         campos = campos_do_leiaute(dados)
         partes = ["## Arquivos do pacote\n\n" + "\n".join(f"- {n}" for n in nomes)]
         if campos:
-            colunas = ["caminho", "tipo", "ocorrencia", "tamanho", "enumeracao", "padrao", "descricao", "arquivo"]
+            # `escolha`: o elemento está num xs:choice — a ocorrência só vale se a
+            # alternativa for a escolhida. Última coluna, para não mudar as outras.
+            colunas = ["caminho", "tipo", "ocorrencia", "tamanho", "enumeracao", "padrao", "descricao", "arquivo",
+                       "escolha"]
             partes.append("## Campos de IBS, CBS e IS (lidos dos XSD)\n\n"
                           + tabela_markdown(colunas, [[c[k] for k in colunas] for c in campos]))
         else:

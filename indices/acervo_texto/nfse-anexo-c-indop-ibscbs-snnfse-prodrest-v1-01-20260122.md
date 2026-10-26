@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-rest
 arquivo_original: fontes/acervo/nfse-anexo-c-indop-ibscbs-snnfse-prodrest-v1-01-20260122.xlsx
 sha256_original: f13b08dc802e82c3c43d591d06575922095595a17c94e61bc4a37c41633a744b
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 2f9b4d1b081034d5c0e148cb01aa55e1ea176aff46701ae7b5b6feb5c289eaae
 ---
 

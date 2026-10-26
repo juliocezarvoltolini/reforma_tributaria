@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=k7zG06n5M
 arquivo_original: fontes/acervo/nfe-nt-2026-006-v1-00-rtc-vinculacaopagamento-2775.pdf
 sha256_original: 47a65abde315fed1e6a8c6085a67ca483935cb57877ae5715d365377a725e05d
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 7649e81ac48065a056e1378fdde1206040f71a8c4806114409aa75ed3864509b
 ---

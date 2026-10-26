@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NF3E/DownloadArquivoEstatico/?sistema=NF3
 arquivo_original: fontes/acervo/nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-381f1765.pdf
 sha256_original: 381f176593e4966f7ce04462c796ba59fb1517a92cc7da736b423e55875cb32c
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: d4383bac2d6c39dc4519dd39c34cd42065bee06279537c982f3cea99fdb3bb1d
 ---

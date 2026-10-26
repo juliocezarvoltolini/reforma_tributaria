@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=tfoysypOT
 arquivo_original: fontes/acervo/nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv.pdf
 sha256_original: d22fe9fabbc99c123c87133c9e149d57ecda0276f106f1f0374efb47372adc01
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: ffa45495490dce1cfc16d84c58cf520066d9d693cda56adc4ea901e542a0ccb0
 ---

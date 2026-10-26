@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NF
 arquivo_original: fontes/acervo/nfcom-nfcom-nota-tecnica-2026-004-v1-00-dd497ae7.pdf
 sha256_original: dd497ae77e9aef4a3acd1067302bb98f7d122e90cc3545184d430dd2ba048f10
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: dfb0c74f1f29747e7f4324d2e250ceba44f7b581363e48aa1351de22d9ea6b5c
 ---

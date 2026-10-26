@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/145
 arquivo_original: fontes/acervo/portaria-rfb-561-2025.json
 sha256_original: 31f55aa66e8f9eb19ce9039563132d80336e88dcfc935b0026a165b6692bdfc1
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 9822433d9a03823532faa481808c74ad0b9f6c47805915840b17d7c220164475
 ---
 

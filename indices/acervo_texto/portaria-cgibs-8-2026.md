@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202608/17191458-portaria-cgibs-n-8
 arquivo_original: fontes/acervo/portaria-cgibs-8-2026.pdf
 sha256_original: f71a4f4e7b8487d3c8d0b0ea8cc866719f871339bc1839fb2a7aa925796e5b29
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 4798f4b0946c2d2f29bf1a1453c6150661e8cad24bc504c34f294805bc8fd77d
 ---

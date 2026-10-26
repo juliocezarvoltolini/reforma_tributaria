@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=2KS/S+Igo
 arquivo_original: fontes/acervo/nfcom-nfcom-nota-tecnica-2026-004-v1-00.pdf
 sha256_original: e3dbe88e0e8ea653d21cd20cdbde2bf8b2d4c286e5f501bbc8c6ffd2c3a0f3dd
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: d60694479352b0702f23b1bd3a55d3f64743bf6d29ff5c3bd48d832c61686d9b
 ---

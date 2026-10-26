@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/152
 arquivo_original: fontes/acervo/nota-cosit-207-2026.json
 sha256_original: ce147d857bd55f4fde9568faa1d18d8266a165cb6c84b43cbafe971f6511c558
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 82a9cbae654de3377e4e0af2378014ebd46a3c9b6a1013b1cecdedcb5c6ec545
 ---
 

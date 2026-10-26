@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/resolucao-n-1/gce/pcgibs-de-27-de-fevereiro
 arquivo_original: fontes/acervo/res-pcgibs-1-2025.html
 sha256_original: dc60505b447c04170a50cf554639910538cec44345b0700dffb6b9f337d3f77b
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 7d881a748658c06142956d9e24a073d887652454e6d4db671cf16206b60fc2d7
 ---
 

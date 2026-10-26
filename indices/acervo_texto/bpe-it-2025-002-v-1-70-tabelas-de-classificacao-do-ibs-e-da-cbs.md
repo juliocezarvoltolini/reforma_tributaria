@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=h9o7idH+O
 arquivo_original: fontes/acervo/bpe-it-2025-002-v-1-70-tabelas-de-classificacao-do-ibs-e-da-cbs.pdf
 sha256_original: cbf61d15fce46101df9c17737a68fc577b058b3b81c0d9b78382f831ed56d83f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: efd49d31d917f640ff7cd037dc5c5d56a44477cbf6c921f47ab1182143ca4800
 ---

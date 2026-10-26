@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/atos/2025/ato-cotepe-icms-78-2
 arquivo_original: fontes/acervo/ato-cotepe-icms-78-25.html
 sha256_original: b991e90f7d774b3a97ae58b5f3c2e9e32f93851fc4a2a59b458fe6d705067c81
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: a0ea4f776f92fd1a1d7484ed7ed64536b6e798f53496246808fe322a7ada185d
 ---
 

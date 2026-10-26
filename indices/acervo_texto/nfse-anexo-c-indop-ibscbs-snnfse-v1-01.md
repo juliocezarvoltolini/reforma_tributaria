@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-
 arquivo_original: fontes/acervo/nfse-anexo-c-indop-ibscbs-snnfse-v1-01.xlsx
 sha256_original: f59f066c5c3584ac26cc07d9b23f9fb6713e4bc9212b5e37fededf9244f29d15
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 8883b57ac7b73e8fcd5386608108c5af0531bfa1f645d75c8fc1855233f30ebe
 ---
 

@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/portaria-mf-n-3.089-de-16-de-outubro-de-202
 arquivo_original: fontes/acervo/portaria-mf-3089-2026.html
 sha256_original: 47710bfde0d2750e08f7f3b0dcf04308365db2ad458721aa29b21689b13d8401
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 2ed7b9d8c4ed6a863c7f606bdaadc223ab5472a767ab19ef4829888cd3e80092
 ---
 

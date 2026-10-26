@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=gaJUpz+VG
 arquivo_original: fontes/acervo/nfe-it-2023-002-v2-00-tabela-cfop-indexcibscbs.pdf
 sha256_original: 3fb7cea64e826702a39104357f29a45f5c2e9c315783ab3a3038ada2fbbdc58e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: f01cca9a35cac3ec76682a450ead9f01a6d35958a9357a6aa2b5fe7f605a6589
 ---

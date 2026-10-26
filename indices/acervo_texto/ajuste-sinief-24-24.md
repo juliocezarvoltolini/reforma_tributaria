@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/ajustes/2024/AJ024_24
 arquivo_original: fontes/acervo/ajuste-sinief-24-24.html
 sha256_original: 84a722f7db063bc375421da31619dc7bde63813fd876d93076d46fcaa68840b4
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 6b0fa6dcff6b4a1761fc0d8d317d2dd34ecce717e8d85c1ea121f494c843b3ea
 ---
 

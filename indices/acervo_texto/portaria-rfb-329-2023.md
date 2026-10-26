@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/131
 arquivo_original: fontes/acervo/portaria-rfb-329-2023.json
 sha256_original: 0ea0c65c40ffd82172c6145e860c2e6f1cd93295c3c2c9796d2bc083d67b7162
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 918161c8cb092e4199ce20762075fbabe0784fdaab39d2f6acb4afeeaf898976
 ---
 

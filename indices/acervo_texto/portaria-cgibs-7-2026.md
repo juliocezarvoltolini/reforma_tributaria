@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202608/14171015-portaria-cgibs-n-7
 arquivo_original: fontes/acervo/portaria-cgibs-7-2026.pdf
 sha256_original: c8033a2e88d7f70169a0ab2baf6b5c42048fedf26c5a8623b587f0a0a866b5b6
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 53ee5441a6e935e015f464565e2000fabda5e26f23456204c21bf230de02b285
 ---

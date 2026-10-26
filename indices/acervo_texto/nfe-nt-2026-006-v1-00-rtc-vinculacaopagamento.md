@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&
 arquivo_original: fontes/acervo/nfe-nt-2026-006-v1-00-rtc-vinculacaopagamento.pdf
 sha256_original: 68c22dbc2661a8ef1c55a1e0eaa91174d9457a2546ff86562ebb4e0d1ceed2cb
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: e5120e2ee1d0f7c2284fc5be7293647add061ea45f142efbc9a4c12ea2a71281
 ---

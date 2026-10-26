@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202608/13065932-ato-conjunto-rfb-c
 arquivo_original: fontes/acervo/ato-conjunto-rfb-cgibs-5-2026.pdf
 sha256_original: 251f7a8d886b70f86448fb93db9aa9da8b08e92ccf7d0ce9abdd2aa511a1d82e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 8fb4d44b77a273b62f52ce0526f781a58e4616edc73287aed88c85acc8150223
 ---

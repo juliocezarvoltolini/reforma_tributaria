@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202610/01120219-dere-atc-rfb-sufis
 arquivo_original: fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-6-2026.pdf
 sha256_original: ebbedf68e66f1c2c460cba52c3113c48bbc89dcb631d6b312bc628d9c7619430
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 42b541522160a5dbe079b8d8578b74c8f15a9d89582cf0991e4da88b89da9d95
 ---

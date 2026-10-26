@@ -7,7 +7,7 @@ url: https://www.confaz.fazenda.gov.br/legislacao/atos/2025/ato-cotepe-icms-126-
 arquivo_original: fontes/acervo/ato-cotepe-icms-126-25.html
 sha256_original: 2bbf32fc801821358274c95f6831795882574da100b88b46abf6f276963d0d08
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 9d9cb4e39ab6f41956f4cd001e7ef6d7bed4fa5b3755aeb3e018878bc67fca33
 ---
 

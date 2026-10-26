@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/922
 arquivo_original: fontes/acervo/resolucao-cgsn-140-2018.json
 sha256_original: 49009c6217b95007d174759c801577f556ebc06b19f26dba2bf639d6e232576a
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: a9a597aadb63a6834db478338c492e3cb72068c2f53a32e7804df6791537cf99
 ---
 

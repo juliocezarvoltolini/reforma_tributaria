@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/notas-tecnicas
 arquivo_original: fontes/acervo/nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006-leiaute-da-nfs-e-via-versao-1-00.pdf
 sha256_original: 1a09fbc420958f519f5476eb773c5d5f7e87ff99cbace08a9f7ed7b18221aa2f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 22ebd4b1999c41b8007962ee0edb80c3706de350a001ddfcbb1ccc9d4bc88556
 ---

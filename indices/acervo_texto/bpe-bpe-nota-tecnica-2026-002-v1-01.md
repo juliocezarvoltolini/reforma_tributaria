@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Yh82ACQFs
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2026-002-v1-01.pdf
 sha256_original: 41a1ffbd52be79cbad4b687578162ca0918b0895ad74801f0d2fe6ae149925bc
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 644c822bb6a6f614d4c9c73083963addb5d4d5ee0a738bd39d8046b6c15b75af
 ---

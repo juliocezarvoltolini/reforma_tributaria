@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=MyOfjogTT
 arquivo_original: fontes/acervo/nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01.pdf
 sha256_original: 6cc50a512e8a8488ce6861a844054c267e25aa1be4fa714c91798eb8965dbffc
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: af146f6b0d726eabe1cbca7349cc73a314f5992f9253a9aa0acdcc3eddaebc9c
 ---

@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/149
 arquivo_original: fontes/acervo/adi-rfb-2-2026.json
 sha256_original: ed6d84762baae0709260f3874215c7ec53c235ead79e34edee165f92179d1807
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: ad3c2190d1c312bc3485f5f5b2c2f85f9a02abe87b6d31a6b36fb3c8a41a7743
 ---
 

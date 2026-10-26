@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/decreto-n-13.133-de-9-de-outubro-de-2026-73
 arquivo_original: fontes/acervo/decreto-13133-2026-dou.html
 sha256_original: d549d5cd9fd28abcad6910cfca07c5f51b410b85e90b393479cc734e52c3c3b0
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 37244cbb9bbf9a1f906d4c40df5e7b73f1de21ad44af2e63e4f6fbd4a5caf440
 ---
 

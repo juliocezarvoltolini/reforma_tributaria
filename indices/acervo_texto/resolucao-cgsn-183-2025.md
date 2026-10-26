@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/147
 arquivo_original: fontes/acervo/resolucao-cgsn-183-2025.json
 sha256_original: dcb0a6efe6f4a6d81fed8199042558935946b331bc45a1d69811161a5a0d05d2
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 888a0057f013da7da445e6142a5e02be0309aabe0c4c9a889cd72c0d1d21e4b0
 ---
 

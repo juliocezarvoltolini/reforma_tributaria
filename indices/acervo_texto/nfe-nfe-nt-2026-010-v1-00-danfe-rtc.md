@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ugn4MYF5P
 arquivo_original: fontes/acervo/nfe-nfe-nt-2026-010-v1-00-danfe-rtc.pdf
 sha256_original: eadc5246235f37a55f8140ddcf84595c8ce77f2d760f111f7b85ddf389b8f484
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: b5f52bf447207ce7b1efefa586b76ff3432202f9c4cf0e0cd9e2127a53974913
 ---

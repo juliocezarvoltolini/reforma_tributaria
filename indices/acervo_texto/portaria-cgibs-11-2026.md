@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202610/05150102-portaria-cgibs-n-1
 arquivo_original: fontes/acervo/portaria-cgibs-11-2026.pdf
 sha256_original: 4eba41b4c0a29ed6fb0f82296a94f923a828c5fff0129badb5d8aeff01e3569a
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 0fbc54cefef5401eb444c90026b1b885610334fc5f8e83d5bfd9af8d170a03b2
 ---

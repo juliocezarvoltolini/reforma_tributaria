@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=m8aACnFLK
 arquivo_original: fontes/acervo/nfe-nt-2026-002-v1-11-danfe-simpl-tp2-emi-offline-autoriz-alerta.pdf
 sha256_original: 72c033b2c7490710f61488a14d0bb3d7bb54e5345aa8d33d6ff2c270c228f046
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 46d7abfb449ed3758bdcdc713f11c72ec392f03b21f2a2400cad807e48a8736c
 ---

@@ -7,7 +7,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexovii-
 arquivo_original: fontes/acervo/nfse-anexovii-indop-ibscbs-v1-01-00.xlsx
 sha256_original: 9755cd6742b76286cce9f8710cd914b719552d7e3478f30f52a2c1f6cf5918b0
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 4ae9c96888b739750ca65a2913879cde531a633af2a819ddf63d1198c0ab6ed3
 ---
 

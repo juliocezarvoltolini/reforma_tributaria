@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&
 arquivo_original: fontes/acervo/nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26.pdf
 sha256_original: 20cede260b75464fe27dc675b396c28c72bb02af3cf39158d2fa85b0177c12e3
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: c1a75be99f9c71a968a12eb17b21d675d72a27b68a1dbacaf4ec2e4a04517fa2
 ---

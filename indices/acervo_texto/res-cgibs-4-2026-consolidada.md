@@ -7,7 +7,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202606/18141030-regimento-interno-
 arquivo_original: fontes/acervo/res-cgibs-4-2026-consolidada.pdf
 sha256_original: 56f7b210c06e115081f5f1d7268d12f3b28109156e783fcdf613ddf3ab1b87e0
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 7d6dde6bafac2498a165dea7ec18a4dd55d3e954ff82b3e6dcfbc6be68476a2f
 ---

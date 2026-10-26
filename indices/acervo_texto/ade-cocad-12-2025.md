@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/144
 arquivo_original: fontes/acervo/ade-cocad-12-2025.json
 sha256_original: c73f827c061f925c75531f7cf35f5f79d1e4c7229ed569c681bc547bcf6f0b63
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 8a23a6330af93621ee12f90bbd34b3e43349e3a31dd6be5633f0790d7c4eb6ee
 ---
 

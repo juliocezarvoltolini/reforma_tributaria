@@ -7,7 +7,7 @@ url: https://www.in.gov.br/web/dou/-/decreto-n-13.075-de-21-de-julho-de-2026-720
 arquivo_original: fontes/acervo/decreto-13075-2026-dou.html
 sha256_original: 9ac0d78b8c9724d361f70ddf1e002f6b0f517c32175f3262a1ca2532e9a6256a
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 3ed11163d71c0e721ef401708e8065d5049206e71c2db00c5f2821e2ae395e61
 ---
 

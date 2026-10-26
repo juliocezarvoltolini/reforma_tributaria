@@ -9,9 +9,9 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=R3nupHT9L
 arquivo_original: fontes/acervo/nfe-eventos-rtc-b28e7c2d.zip
 sha256_original: b28e7c2df33cd651c2126a079d072674133423111f95c0c4f5368f72da62729f
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: Tabela lida mecanicamente dos XSD do pacote (pipeline/acervo_texto.py).
-sha256_corpo: 8aa6c8090e0cf2c8756a1f7aa230f48dd22625562bf5a0f0c34265a5160f72e0
+sha256_corpo: e8c95a9ed008bba69b69436d455e628937850ccd0bab5b9b70b6da0c3abe0475
 ---
 
 ## Arquivos do pacote
@@ -37,31 +37,31 @@ sha256_corpo: 8aa6c8090e0cf2c8756a1f7aa230f48dd22625562bf5a0f0c34265a5160f72e0
 
 ## Campos de IBS, CBS e IS (lidos dos XSD)
 
-| caminho | tipo | ocorrencia | tamanho | enumeracao | padrao | descricao | arquivo |
-|---|---|---|---|---|---|---|---|
-| detEvento/gConsumo/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS correspondente à quantidade que não atendeu aos requisitos para a conversão em isenção | Eventos_RTC/e112120_v1.00 .xsd |
-| detEvento/gConsumo/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do CBS correspondente à quantidade que não atendeu aos requisitos para a conversão em isenção | Eventos_RTC/e112120_v1.00 .xsd |
-| detEvento/gPerecimento/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na Nota de Fornecimento correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento. | Eventos_RTC/e112130_v1.00.xsd |
-| detEvento/gPerecimento/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na Nota de Fornecimento correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento. | Eventos_RTC/e112130_v1.00.xsd |
-| detEvento/gPerecimento/gControleEstoque/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do crédito IBS referente às aquisições a ser estornado correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento | Eventos_RTC/e112130_v1.00.xsd |
-| detEvento/gPerecimento/gControleEstoque/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do crédito CBS referente às aquisições a ser estornado correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento | Eventos_RTC/e112130_v1.00.xsd |
-| detEvento/gItemNaoFornecido/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na nota de débito de pagamento antecipado correspondente à quantidade que não foi fornecida | Eventos_RTC/e112140_v1.00.xsd |
-| detEvento/gItemNaoFornecido/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na nota de débito de pagamento antecipado correspondente à quantidade que não foi fornecida. | Eventos_RTC/e112140_v1.00.xsd |
-| detEvento/gCredPres/gIBS | (grupo) | 0-1 |  |  |  |  | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gCredPres/gIBS/cCredPres | xs:string | 1-1 |  |  | [0-9]{2} | Usar tabela Cred Presumido, para o emitente da nota. | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gCredPres/gIBS/pCredPres | TDec_0302_04 | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gCredPres/gIBS/vCredPres | TDec1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gCredPres/gCBS | (grupo) | 0-1 |  |  |  |  | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gCredPres/gCBS/cCredPres | xs:string | 1-1 |  |  | [0-9]{2} | Usar tabela Cred Presumido, para o emitente da nota. | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gCredPres/gCBS/pCredPres | TDec_0302_04 | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gCredPres/gCBS/vCredPres | TDec1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |
-| detEvento/gConsumo/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211120_v1.00.xsd |
-| detEvento/gConsumo/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211120_v1.00.xsd |
-| detEvento/gPerecimento/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211124_v1.00.xsd |
-| detEvento/gPerecimento/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211124_v1.00.xsd |
-| detEvento/gImobilizacao/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS relativo à imobilização | Eventos_RTC/e211130_v1.00.xsd |
-| detEvento/gImobilizacao/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS relativo à imobilização | Eventos_RTC/e211130_v1.00.xsd |
-| detEvento/gConsumoComb/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS relativo ao consumo de combustível na nota de aquisição | Eventos_RTC/e211140_v1.00.xsd |
-| detEvento/gConsumoComb/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS relativo ao consumo de combustível na nota de aquisição | Eventos_RTC/e211140_v1.00.xsd |
-| detEvento/gCredito/vCredIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da solicitação de crédito a ser apropriado de IBS | Eventos_RTC/e211150_v1.00.xsd |
-| detEvento/gCredito/vCredCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da solicitação de crédito a ser apropriado de CBS | Eventos_RTC/e211150_v1.00.xsd |
+| caminho | tipo | ocorrencia | tamanho | enumeracao | padrao | descricao | arquivo | escolha |
+|---|---|---|---|---|---|---|---|---|
+| detEvento/gConsumo/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS correspondente à quantidade que não atendeu aos requisitos para a conversão em isenção | Eventos_RTC/e112120_v1.00 .xsd |  |
+| detEvento/gConsumo/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do CBS correspondente à quantidade que não atendeu aos requisitos para a conversão em isenção | Eventos_RTC/e112120_v1.00 .xsd |  |
+| detEvento/gPerecimento/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na Nota de Fornecimento correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento. | Eventos_RTC/e112130_v1.00.xsd |  |
+| detEvento/gPerecimento/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na Nota de Fornecimento correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento. | Eventos_RTC/e112130_v1.00.xsd |  |
+| detEvento/gPerecimento/gControleEstoque/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do crédito IBS referente às aquisições a ser estornado correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento | Eventos_RTC/e112130_v1.00.xsd |  |
+| detEvento/gPerecimento/gControleEstoque/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do crédito CBS referente às aquisições a ser estornado correspondente à quantidade que foi objeto de roubo, perda, furto ou perecimento | Eventos_RTC/e112130_v1.00.xsd |  |
+| detEvento/gItemNaoFornecido/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na nota de débito de pagamento antecipado correspondente à quantidade que não foi fornecida | Eventos_RTC/e112140_v1.00.xsd |  |
+| detEvento/gItemNaoFornecido/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na nota de débito de pagamento antecipado correspondente à quantidade que não foi fornecida. | Eventos_RTC/e112140_v1.00.xsd |  |
+| detEvento/gCredPres/gIBS | (grupo) | 0-1 |  |  |  |  | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gCredPres/gIBS/cCredPres | xs:string | 1-1 |  |  | [0-9]{2} | Usar tabela Cred Presumido, para o emitente da nota. | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gCredPres/gIBS/pCredPres | TDec_0302_04 | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gCredPres/gIBS/vCredPres | TDec1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gCredPres/gCBS | (grupo) | 0-1 |  |  |  |  | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gCredPres/gCBS/cCredPres | xs:string | 1-1 |  |  | [0-9]{2} | Usar tabela Cred Presumido, para o emitente da nota. | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gCredPres/gCBS/pCredPres | TDec_0302_04 | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gCredPres/gCBS/vCredPres | TDec1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido | Eventos_RTC/e211110_v1.00.xsd |  |
+| detEvento/gConsumo/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211120_v1.00.xsd |  |
+| detEvento/gConsumo/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211120_v1.00.xsd |  |
+| detEvento/gPerecimento/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211124_v1.00.xsd |  |
+| detEvento/gPerecimento/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS na nota de aquisição correspondente à quantidade destinada a uso e consumo pessoal | Eventos_RTC/e211124_v1.00.xsd |  |
+| detEvento/gImobilizacao/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS relativo à imobilização | Eventos_RTC/e211130_v1.00.xsd |  |
+| detEvento/gImobilizacao/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS relativo à imobilização | Eventos_RTC/e211130_v1.00.xsd |  |
+| detEvento/gConsumoComb/vIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS relativo ao consumo de combustível na nota de aquisição | Eventos_RTC/e211140_v1.00.xsd |  |
+| detEvento/gConsumoComb/vCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS relativo ao consumo de combustível na nota de aquisição | Eventos_RTC/e211140_v1.00.xsd |  |
+| detEvento/gCredito/vCredIBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da solicitação de crédito a ser apropriado de IBS | Eventos_RTC/e211150_v1.00.xsd |  |
+| detEvento/gCredito/vCredCBS | TDec_1302 | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da solicitação de crédito a ser apropriado de CBS | Eventos_RTC/e211150_v1.00.xsd |  |

@@ -8,7 +8,7 @@ url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexoviii
 arquivo_original: fontes/acervo/nfse-anexoviii-versao-1-00-00-correlacao-entre-item-de-serv-nbs-cclasstrib-e-cindop-anexov.xlsx
 sha256_original: 86c3e30fef9186472a4b4eabae79d471aaa62699497d200f478c7fa95ef326bf
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 83613ce6f01abf30d29e1317a7838e351579ea15bfabca66a2bf59cdecacf11b
 ---
 

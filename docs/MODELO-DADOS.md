@@ -257,6 +257,7 @@ Em ordem de retorno sobre o custo:
 | `cobertura.json` | o que está efetivamente ingerido — evita presumir cobertura inexistente |
 | `acervo.json` | cada ato do acervo: tipo, nível de prevalência, órgão, título, data, versão, URL, original e sha256 (ou o `bloqueio` do canal). Função de `pipeline/acervo.yaml` e do manifest |
 | `acervo_texto/<id>.md` | o texto de cada ato do acervo, derivado do original por `pipeline/acervo_texto.py`: PDF por página; pacote de schemas como **tabela dos campos de IBS/CBS/IS lida dos XSD**; planilha por aba. Front-matter com URL, sha256 do original e do corpo, e versão do gerador — `validar.py` confere por hash |
+| `conferencia_leiaute.json` / `.md` | cada NT com tabela de campos conferida contra os pacotes de schemas do mesmo documento fiscal: o pacote que mais confere e, por campo de IBS/CBS/IS, `confere`, `ocorrencia_diverge` ou `ausente_no_schema` (com a página da NT). Função do texto do acervo |
 
 ## Sobre busca vetorial
 

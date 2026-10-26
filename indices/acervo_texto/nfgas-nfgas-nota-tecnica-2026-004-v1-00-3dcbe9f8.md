@@ -9,7 +9,7 @@ url: https://dfe-portal.svrs.rs.gov.br/NFGAS/DownloadArquivoEstatico/?sistema=NF
 arquivo_original: fontes/acervo/nfgas-nfgas-nota-tecnica-2026-004-v1-00-3dcbe9f8.pdf
 sha256_original: 3dcbe9f82c850b118679c3fbdd50f8f2d70024306cacb87ab488cb643bf765f0
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 7603af86cce905558e6142ea4dfdb1f60f086cceb3430fa73d2eb0e9fd46899d
 ---

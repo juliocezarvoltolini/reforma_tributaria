@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OcZ+ICanF
 arquivo_original: fontes/acervo/cte-cte-nota-tecnica-2025-001-rtc-v1-08a.pdf
 sha256_original: e822beb19ca74038b2d8bfc96f16c7bdf0664261c4b22213e7c2fc0f4a61442e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 3388a3ededd36fffd403a9ddec534b4b0c809ffe0892ac9919e0efa3eb45f09a
 ---

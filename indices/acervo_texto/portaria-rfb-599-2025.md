@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/147
 arquivo_original: fontes/acervo/portaria-rfb-599-2025.json
 sha256_original: f47937143cba42dfbf84a6f6d3d08530d19d42f01f30a1629d55ed83c571dc45
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: dbbab5ac109ed5f1ca2ebb76df0c0973a0c97d0a770396a98dea1129abc01080
 ---
 

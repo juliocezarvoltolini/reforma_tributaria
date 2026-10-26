@@ -9,7 +9,7 @@ url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=FNsiMTXIn
 arquivo_original: fontes/acervo/bpe-bpe-nota-tecnica-2025-001-rtc-v1-09.pdf
 sha256_original: c094e399c27932ecedce5b69080318226a56e02553bd4650b2468a03b4131897
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: d0296547eaff76aae325fe0b6c9c2aee8f8e58ce022a58f097b9c7a61aa5a660
 ---

@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/142
 arquivo_original: fontes/acervo/portaria-rfb-501-2024.json
 sha256_original: 7cbc89f6963f17f821e64edc9120e32ec6f55b358e40791a7c5a99be0753cf0e
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 3f7f93a89224bd4345d0291d35540b63ca400cfb958f7d8f479864f488c50110
 ---
 

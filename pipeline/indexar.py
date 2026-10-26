@@ -137,6 +137,16 @@ def main() -> int:
     indice_acervo = acervo.indice(regs_acervo, manifest.get("documentos") or {})
     gravar("acervo.json", indice_acervo)
 
+    # -- conferência das tabelas de campos das NTs contra os schemas ---------
+    # Função do texto do acervo (indices/acervo_texto/), ver conferencia_leiaute.py.
+    import acervo_texto
+    import conferencia_leiaute
+
+    rel_leiaute = conferencia_leiaute.relatorio(regs_acervo, acervo_texto.carregar_textos())
+    gravar("conferencia_leiaute.json", rel_leiaute)
+    gravar_texto(DIR_INDICES / "conferencia_leiaute.md", conferencia_leiaute.resumo_markdown(rel_leiaute))
+    print("  indices/conferencia_leiaute.md")
+
     gravar(
         "cobertura.json",
         {

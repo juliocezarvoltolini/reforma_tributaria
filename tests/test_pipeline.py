@@ -4743,6 +4743,16 @@ def acervo_campos_do_leiaute():
               '<xs:element name="vIBS" type="xs:string"/></xs:sequence></xs:complexType></xs:schema>')
     so_tipos = {c["caminho"] for c in T.campos_do_leiaute(zip_com({"Ev/e1.xsd": evento}))}
     checar(so_tipos == {"TDetEventoFicticio/vIBS"}, f"tipo sem elemento raiz vira raiz (obteve {so_tipos})")
+    # Elemento dentro de xs:choice: "1-1" só vale se a alternativa for a escolhida
+    # (gCredPresIBSZFM na NF-e, medido em 2026-10-26). Quebra: perder essa marca.
+    escolha = ('<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="NF"><xs:complexType>'
+               '<xs:sequence><xs:element name="IBSCBS"><xs:complexType><xs:choice>'
+               '<xs:element name="gA" type="xs:string"/><xs:element name="gB" type="xs:string"/>'
+               '</xs:choice></xs:complexType></xs:element></xs:sequence></xs:complexType></xs:element></xs:schema>')
+    marcas = {c["caminho"]: c["escolha"] for c in T.campos_do_leiaute(zip_com({"e.xsd": escolha}))}
+    checar(marcas == {"NF/IBSCBS": "", "NF/IBSCBS/gA": "sim", "NF/IBSCBS/gB": "sim"},
+           f"elemento de xs:choice marcado (obteve {marcas})")
+
     # Cada XSD de evento declara um elemento de topo de MESMO nome (detEvento); e o
     # envelope (bpeProc, cteProc) contém o documento, que é raiz própria.
     det = lambda campo: ('<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="detEvento">'  # noqa: E731
@@ -4850,6 +4860,90 @@ def acervo_texto_busca():
     checar(achados == [{"id": "nt-x", "versao": "1.52", "pagina": 7,
                         "trecho": "Regra de validação do crédito presumido."}],
            f"ato, versão, página e linha (obteve {achados})")
+
+
+@cenario("conferência do leiaute: linhas de tabela da NT nos dois formatos, com a quebra de linha")
+def leiaute_linhas_da_nt():
+    """Formatos medidos em 2026-10-26: NF-e NT 2025.002 ("324.35 UB35 vIBSUF <descrição>
+    E UB17 N 1-1 13v2", às vezes quebrada em duas linhas) e a NT conjunta de CT-e, BP-e,
+    NF3e e NFCom ("7 pIBSUF E gIBSUF N 1-1 3,2/3,4 <descrição>"). Quebra: perder a
+    linha quebrada, ou tomar o pai pelo ID quando a tabela dá o nome."""
+    import conferencia_leiaute as L
+
+    nfe = ("## Página 9\n\n324.12 UB12 IBSCBS Grupo de informações do IBS e CBS G M01 1-1\n"
+           "324.17 UB17 gIBSUF Grupo de informações do IBS para a \nUF G UB15 1-1\n"
+           "324.15 UB15 gIBSCBS Grupo fictício G UB12 0-1\n"
+           "324.35 UB35 vIBSUF Valor do IBS de competência da UF E UB17 N 1-1 13v2\n"
+           "Texto corrido que cita vIBSUF sem ser tabela.\n")
+    linhas = L.linhas_de_tabela(nfe)
+    checar([(x["campo"], x["pai"], x["ocorrencia"], x["pagina"]) for x in linhas]
+           == [("IBSCBS", "M01", "1-1", 9), ("gIBSUF", "UB15", "1-1", 9), ("gIBSCBS", "UB12", "0-1", 9),
+               ("vIBSUF", "UB17", "1-1", 9)],
+           f"formato NF-e, com a linha quebrada (obteve {[(x['campo'], x['pai'], x['ocorrencia']) for x in linhas]})")
+    checar(L.caminho_na_nt(linhas, linhas[3]) == "IBSCBS/gIBSCBS/gIBSUF/vIBSUF",
+           "caminho subindo pelos IDs dos pais até onde a tabela vai")
+    # Medido na NT 2025.002 v1.52, p.18: tipo "-" e o tamanho "-" depois da ocorrência.
+    # Quebra: não reconhecer o "-", juntar com a linha seguinte e pegar o "1-1" dela.
+    traco = L.linhas_de_tabela("324.01 UB01 IS Informações do Imposto Seletivo G M01 - 0-1 -  \n"
+                               "324.02 UB02 CSTIS Código fictício E UB01 N 1-1 3\n")
+    # Tipo desconhecido ("X"): a linha não casa sozinha, mas já tem a ocorrência — não
+    # pode ser juntada à seguinte (pegaria o "1-1" dela); fica de fora.
+    estranha = L.linhas_de_tabela("324.01 UB01 IS Informações do Imposto Seletivo G M01 X 0-1 -  \n"
+                                  "324.02 UB02 CSTIS Código fictício E UB01 N 1-1 3\n")
+    checar([(x["campo"], x["ocorrencia"]) for x in estranha] == [("CSTIS", "1-1")],
+           f"linha com ocorrência própria não se junta (obteve {[(x['campo'], x['ocorrencia']) for x in estranha]})")
+    checar([(x["campo"], x["ocorrencia"]) for x in traco] == [("IS", "0-1"), ("CSTIS", "1-1")],
+           f"tipo '-' e linha que já tem ocorrência não se junta (obteve {[(x['campo'], x['ocorrencia']) for x in traco]})")
+    conjunta = "## Página 4\n\n6 gIBSUF G gIBSCBS 1-1 Grupo do IBS na UF\n7 pIBSUF E gIBSUF N 1-1 3,2/3,4 Alíquota\n"
+    l2 = L.linhas_de_tabela(conjunta)
+    checar([(x["campo"], x["pai"], x["ocorrencia"]) for x in l2] == [("gIBSUF", "gIBSCBS", "1-1"),
+                                                                       ("pIBSUF", "gIBSUF", "1-1")]
+           and L.caminho_na_nt(l2, l2[1]) == "gIBSCBS/gIBSUF/pIBSUF",
+           "formato conjunto: pai pelo nome")
+
+
+@cenario("conferência do leiaute: cada campo de IBS/CBS/IS da NT contra o schema do mesmo documento")
+def leiaute_conferencia():
+    """Quebra: dar 'confere' a campo que o schema não tem, ou com ocorrência diferente;
+    não dizer contra qual pacote se conferiu; ou conferir campo que não é de IBS/CBS/IS
+    (o schema do acervo só traz esses)."""
+    import conferencia_leiaute as L
+
+    nt = ("## Página 9\n\n324.12 UB12 IBSCBS Grupo G M01 0-1\n"
+          "324.35 UB35 vIBSUF Valor do IBS da UF E UB12 N 1-1 13v2\n"
+          "324.36 UB36 vCBSFicticio Valor fictício E UB99 N 0-1 13v2\n"
+          "324.37 UB37 pFicticio Percentual E UB12 N 1-1 3v2\n"
+          "100.01 B01 cUF Código da UF E A01 N 1-1 2\n")
+    tabela = lambda *linhas: ("## Campos de IBS, CBS e IS (lidos dos XSD)\n\n"  # noqa: E731
+                              "| caminho | tipo | ocorrencia | tamanho | enumeracao | padrao | descricao | arquivo |\n"
+                              "|---|---|---|---|---|---|---|---|\n" + "".join(f"| {c} | T | {o} |  |  |  |  | x.xsd |\n"
+                                                                             for c, o in linhas))
+    # O melhor pacote NÃO é o primeiro em ordem alfabética; e "xvCBSFicticio" não
+    # pode casar com "vCBSFicticio" (o sufixo do caminho é por elemento inteiro).
+    pacotes = {"pl-a-velho": tabela(("NF/IBSCBS", "0-1")),
+               "pl-b-novo": tabela(("NF/IBSCBS", "0-1"), ("NF/IBSCBS/vIBSUF", "1-1"), ("NF/IBSCBS/pFicticio", "0-1"),
+                                   ("NF/IBSCBS/xvCBSFicticio", "0-1"))}
+    r = L.conferir_nt(nt, pacotes)
+    por_campo = {d["campo"]: d for d in r["campos"]}
+    checar(r["pacote"] == "pl-b-novo", f"o pacote que mais confere, nomeado (obteve {r['pacote']})")
+    checar(por_campo["IBSCBS"]["situacao"] == "confere" and por_campo["vIBSUF"]["situacao"] == "confere",
+           "existe com a mesma ocorrência: confere")
+    checar(por_campo["vCBSFicticio"]["situacao"] == "ausente_no_schema",
+           "campo da NT que o schema não tem: ausente")
+    checar(por_campo["pFicticio"]["situacao"] == "ocorrencia_diverge"
+           and por_campo["pFicticio"]["ocorrencia_schema"] == "0-1"
+           and por_campo["pFicticio"]["pagina"] == 9,
+           "ocorrência diferente: diverge, com a do schema e a página da NT")
+    checar("cUF" not in por_campo, "campo fora de IBS/CBS/IS não é conferido")
+    checar(L.conferir_nt("Texto sem tabela.", pacotes)["campos"] == [], "NT sem tabela: nada a conferir")
+    nada = L.conferir_nt(nt, {"pl-a-velho": tabela(("NF/Outro", "1-1"))})
+    checar(nada["pacote"] is None and {c["situacao"] for c in nada["campos"]} == {"sem_correspondencia"},
+           f"nenhum pacote confere nada: nenhum é nomeado (obteve {nada['pacote']})")
+    checar(L._documentos({"documento_fiscal": "CT-e/BP-e/NF3e/NFCom (NT conjunta DFe)"})
+           == {"CT-e", "BP-e", "NF3e", "NFCom"}
+           and L._documentos({"documento_fiscal": "NF-e ABI"}) == {"NF-e ABI"}
+           and L._documentos({"documento_fiscal": "NFS-e (NFS-e Via)"}) == {"NFS-e"},
+           "documento fiscal por sigla: a NT conjunta casa com os pacotes de cada documento")
 
 
 @cenario("portabilidade de saída")

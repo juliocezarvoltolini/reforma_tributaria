@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=0rn5SbsoD
 arquivo_original: fontes/acervo/nfe-it-2025-004-v-1-20-tabela-de-indice.pdf
 sha256_original: fa274f1a09148a96ffc43266a58342f45c499061b1f37b3e011665b562531c29
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 23b4340342da12acc51cd445651b5727c044b981825537940335d98c81abe682
 ---

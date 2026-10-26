@@ -140,6 +140,12 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   enumeração, padrão, descrição): leia a tabela do **pacote de schemas** da versão
   em causa, lida dos XSD — não a tabela do PDF da NT, que pode ter colunas
   embaralhadas. Se os dois divergem, diga isso;
+- **NT × schema**: `indices/conferencia_leiaute.md` diz, por NT, contra qual
+  pacote ela foi conferida e quais campos de IBS/CBS/IS divergem (ocorrência) ou
+  faltam no schema, com a página da NT. O pacote nomeado é o que mais confere,
+  não o oficialmente correspondente; divergência é informação, não erro. Campo
+  com `escolha: sim` está num `xs:choice`: a ocorrência só vale se a alternativa
+  for a escolhida;
 - ato fora do acervo continua "Não localizado nas fontes indexadas";
 - `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
   `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.

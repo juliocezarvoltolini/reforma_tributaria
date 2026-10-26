@@ -6,7 +6,7 @@ url: https://www.cgibs.gov.br/upload/arquivos/202605/18155850-portaria-cgibs-n-1
 arquivo_original: fontes/acervo/portaria-cgibs-1-2026-eleicao.pdf
 sha256_original: 1c849eea55aa529eb2907390b5540d592bda623425f7b9e1acf5e43490debb78
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: f9d3482fe46e6144b575150f94851e6c950f98ca3b61fc1ebf97a0d9ba37438a
 ---

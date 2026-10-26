@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=jVEAeMhv8
 arquivo_original: fontes/acervo/nfe-nt2026-007-v1-00-emissao-de-nf-e-sem-ie-e-rv-lcc.pdf
 sha256_original: 559fcd7d1b495549099498ff5c1ba4165f65d4b5ad5b34dbe802869d4619d917
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 6c4b0ad9b4252eb69800653a910bc43b8f97a361789b7918c36e140b92734ff9
 ---

@@ -7,7 +7,7 @@ url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/146
 arquivo_original: fontes/acervo/portaria-rfb-572-2025.json
 sha256_original: bcdabd662bbbb391330c31f31f5426c3f4a990664a4e635e5de93f85cf499eaf
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 sha256_corpo: 42d0feecab8444eb3be2aa9dd3b7a7cfaca1d2d38ae5b6a001dd8900a1fe5016
 ---
 

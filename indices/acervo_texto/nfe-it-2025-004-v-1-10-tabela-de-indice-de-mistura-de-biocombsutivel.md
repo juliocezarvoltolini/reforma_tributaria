@@ -9,7 +9,7 @@ url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=q3/Dcwlx2
 arquivo_original: fontes/acervo/nfe-it-2025-004-v-1-10-tabela-de-indice-de-mistura-de-biocombsutivel.pdf
 sha256_original: e8ba4b9a75bff57fec768d8a52afb8ccd6b31f1d595541f7dced37757163e1c5
 gerado_por: pipeline/acervo_texto.py
-versao_gerador: 2
+versao_gerador: 3
 aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
 sha256_corpo: 1d8a85d3d829281522b718ed05c44d0b33612af9a1b875174248f1dc11521080
 ---
