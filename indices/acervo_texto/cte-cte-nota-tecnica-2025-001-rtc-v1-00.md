@@ -1,0 +1,947 @@
+---
+id: cte-cte-nota-tecnica-2025-001-rtc-v1-00
+titulo: Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.00 - Publicada em 28/03/2025
+tipo: nota.tecnica
+versao: '1.00'
+data: '2025-03-28'
+documento_fiscal: CT-e/CT-e OS/GTV-e
+url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=0Mw65eIXqTY=
+arquivo_original: fontes/acervo/cte-cte-nota-tecnica-2025-001-rtc-v1-00.pdf
+sha256_original: e7332e17aca073b0b52f952566c5216140884ab88ef1fbb0c255d02212b8e8b7
+gerado_por: pipeline/acervo_texto.py
+versao_gerador: 2
+aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
+sha256_corpo: cabf971acd2349af13bc362ea510e118dbe7db7e2cfb781d12c8064ae3ea9259
+---
+
+## Página 1
+
+Projeto Conhecimento de 
+Transporte Eletrônico 
+ 
+Nota Técnica 2025.001 – Reforma Tributária do Consumo 
+Versão 1.00 de 28 de março de 2025
+
+## Página 2
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 2 / 17 
+ 
+Sumário 
+ 
+Histórico de Alterações / Cronograma .................................................................................... 3 
+1 Introdução ....................................................................................................................... 4 
+2 Tipos básicos da tributação ............................................................................................. 4 
+3 Criação do grupo de compras governamentais no grupo ide ........................................... 4 
+4 Alteração do leiaute do imposto do CTe .......................................................................... 5 
+5 Código de Classificação Tributária do IBS/CBS .............................................................. 7 
+6 Validações dos campos do IBS e CBS ............................................................................ 8 
+7 Total Geral do Documento Fiscal Eletrônico ................................................................. 11 
+8 Alteração em Regra do CTe Simplificado ...................................................................... 11 
+9 Alterações no Layout do Modal Dutoviário .................................................................... 12 
+10 Criação do grupo de informações da Declaração de Conteúdo Eletrônica nos 
+documentos originários ........................................................................................................ 13 
+11 Exceção para Substituição sem exigência do evento de prestação em desacordo 
+para tomador Exterior ........................................................................................................... 14 
+12 Eliminar as opções de contingência SVC da GTVe no Leiaute (Schema) .................. 14 
+13 Nova regra para CTe OS de Transporte de Valores .................................................. 14 
+14 Preparação das expressões regulares do CTe para o futuro CNPJ Alfanumérico ..... 15 
+15 Ampliação do cStat de retorno para 4 dígitos ............................................................ 15 
+16 Anexo – Novos Grupos para Reforma Tributária ....................................................... 16 
+Conhecimento de Transporte Eletrônico– modelo 57 ........................................................ 16 
+Conhecimento de Transporte Eletrônico Simplificado – Modelo 57 ................................... 17 
+Conhecimento de Transporte Eletrônicos Outros Serviços – modelo 67 ........................... 17
+
+## Página 3
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 3 / 17 
+ 
+Histórico de Alterações / Cronograma  
+Versão Histórico de atualizações Implantação 
+Homologação 
+Implantação 
+Produção 
+1.00  Previsão das informações do IBS/CBS no CTe 
+ Alteração de regras do CTeOS Transporte Valores exigir UF e Mun 
+Fim 
+ Alteração das regras do CTe Simplificado para limitar em apenas 
+um fim de prestação 
+ Alteração no leiaute do Dutoviário 
+ Exceção para não exigir evento de prestação em desacordo na 
+substituição de tomador do EX 
+ Preparação das Expressões Regulares do CNPJ Alfa 
+ Eliminação da SVC para GTVe 
+ Inclusão da DCe nos documentos originários 
+ Ampliação do código de retorno das mensagens suportar até 4 
+dígitos (cStat) 
+ 
+07/2025 10/2025
+
+## Página 4
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 4 / 17 
+ 
+1 Introdução 
+Com a promulgação da Lei Complementar nº 214/2025, foi definida, na Seção V - Disposições Transitórias, 
+Art. 62 I, a obrigatoriedade de que os Estados, o Distrito Federal e os Municípios adaptem os sistemas 
+autorizadores de Documentos Fiscais Eletrônicos (DFe) vigentes para a utilização de leiaute padronizado, de 
+modo a permitir que os contribuintes informem os dados relativos ao Imposto sobre Bens e Serviços (IBS), à 
+Contribuição sobre Bens e Serviços (CBS) e ao Imposto Seletivo (IS). 
+ 
+Diante disso, esta Nota Técnica substitui e complementa, no âmbito do CTe, a DFe - Nota Técnica 2024.001 
+- IBS/CBS v1.10, mantendo a data de implantação em ambiente de produção para 31/10/2025, de modo a viabilizar 
+sua efetiva operacionalização a partir de 01/01/2026. 
+ 
+A NT modifica o leiaute dos DFe, inserindo os grupos e campos opcionais relacionados a tributação do IBS, CBS 
+e IS, em atendimento à legislação vigente. 
+ 
+Esclarecemos que esta NT poderá ser ajustada ao longo do seu processo de execução, uma vez que as discussões 
+envolvendo a implantação da Reforma Tributária ainda estão em curso. 
+Esta documentação descreve as alterações aplicadas aos Documentos: 
+ Conhecimento de Transporte Eletrônico (modelo 57); 
+ Conhecimento de Transporte Eletrônico para Outros Serviços (modelo 67); 
+ 
+2 Tipos básicos da tributação 
+Em busca de uma padronização entre os diversos documentos fiscais eletrônicos, esta NT introduz o arquivo 
+DFeTiposBasicos_v1.00.xsd ao conjunto dos arquivos que compõem do schema da DFe. 
+ 
+Este arquivo define de forma estruturada a previsão de campos a serem informados para o registro das 
+informações referentes a tributação do IBS e da CBS em um tipo complexo referenciado no leiaute padrão da DFe 
+conforme estrutura abaixo: 
+ 
+3 Criação do grupo de compras governamentais no grupo ide 
+#  Campo Ele Pai Tipo Ocor. Tam. Descrição/Observação 
+# gCompraGov G ide - 0-1 -  
+ tpCompraGov E Tipo de compra 
+governamental 
+N 1-1 1 1=União 
+2=Estados 
+3=Distrito Federal 
+4=Municípios 
+ pRedutor E Percentual de redução 
+de alíquota em compra 
+governamental 
+N 1-1 3v2-4 Conforme LC 214/25: TÍTULO II 
+DAS COMPRAS GOVERNAMENTAIS, Art. 472
+
+## Página 5
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 5 / 17 
+ 
+# Regra de Validação Aplic. cStat Efeito Mensagem 
+001 Se informado o grupo de informações de compra 
+governamental (grupo:ide\gCompraGov), o CTe de 
+compra governamental deve ter alíquota de outros entes 
+igual a zero. 
+Para compra da união (tag: tpCompraGov = 1): 
+ Alíquota do IBS da UF (tag: pUBSUF) deve 
+ser igual a zero. 
+ Alíquota do IBS do Município (tag: 
+pUBSMun) deve ser igual a zero. 
+Para compra estadual (tag: tpCompraGov = 2): 
+ Alíquota do IBS do Município (tag: 
+pUBSMun) deve ser igual a zero. 
+ Alíquota da CBS (tag: pCBS) deve ser igual 
+a zero. 
+Para compra do DF (tag: tpCompraGov = 3) 
+ Alíquota da CBS (tag: pCBS) deve ser igual 
+a zero. 
+Para compra municipal (tag: tpCompraGov = 4) 
+ Alíquota do IBS da UF (tag: pUBSUF) deve 
+ser igual a zero. 
+ Alíquota da CBS (tag: pCBS) deve ser igual 
+a zero. 
+Observação: Conforme LC 214/25: TÍTULO II - DAS 
+COMPRAS GOVERNAMENTAIS, Art. 473 
+Obrig. 370 Rej. Rejeição: CTe de compra governamental e alíquota 
+dos outros entes diferentes de zero. 
+ 
+4 Alteração do leiaute do imposto do CTe 
+Este grupo de informações facultativas deve ser adicionado ao final do grupo imposto do CTe, CTe Simplificado e 
+CTe OS. 
+#  Campo Ele Pai Tipo Ocor. Tam. Descrição/Observação 
+# IBSCBS G imposto - 0-1 - Grupo de informações da Tributação IBS/CBS 
+1 CST E IBSCBS N 1-1 3 Código da Situação Tributária do IBS/CBS 
+2 cClassTrib E IBSCBS N 1-1 6 Código da Classificação Tributária do IBS/CBS 
+3 gIBSCBS G IBSCBS - 0-1 - Grupo de informações específicas do IBS/CBS 
+4 vBC E gIBSCBS N 1-1 13,2 Valor da Base de cálculo comum a IBS/CBS 
+5 gIBSUF G gIBSCBS - 1-1 - Grupo de informações do IBS/CBS de competência 
+das Unidades Federadas 
+6 pIBSUF E gIBSUF N 1-1 3,2/3,4 Aliquota do IBS Estadual 
+7 Sequência XML - gIBSUF - 0-1 - - 
+8 vTribOp E gIBSUF N 1-1 13,2 Valor do Tributo Bruto na operação 
+9 gDif G gIBSUF - 0-1 - Grupo de campos do diferimento 
+10 pDif E gDif N 1-1 3,2/3,4 Percentual de diferimento 
+11 vDif E gDif N 1-1 13,2 Valor do diferimento 
+12 gDevTrib G gIBSUF - 0-1 - Grupo de informações da devolução de tributos 
+13 vDevTrib E gDevTrib N 1-1 13,2 Valor do tributo devolvido.  
+No fornecimento de energia elétrica, água, esgoto e 
+gás natural e em outras hipóteses definidas no 
+regulamento 
+14 gRed G gIBSUF - 0-1 - Grupo de informações da redução de aliquota
+
+## Página 6
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 6 / 17 
+ 
+15 pRedAliq E gRed N 1-1 3,2/3,4 Percentual da redução de aliquota 
+16 pAliqEfet E gRed N 1-1 3,2/3,4 Aliquota efetiva do IBS de competência das UF que 
+será aplicada a base de cálculo 
+17 gTribRegular G gIBSUF - 0-1 - Grupo de informações da Tributação Regular caso 
+não cumprida a condição resolutória/suspensiva. 
+Exemplo 1: Art. 442, §4. Operações com ZFM e ALC.  
+Exemplo 2: Operações com suspensão do tributo. 
+18 CSTReg E gTribRegular N 1-1 3 Código da Situação Tributária  
+Informado como seria o CST caso não cumprida a 
+condição resolutória/suspensiva 
+19 cClassTribReg E gTribRegular N 1-1 6 Código de Classificação Tributária  
+Informado como seria o cClassTrib caso não 
+cumprida a condição resolutória/suspensiva 
+20 pAliqEfetReg E gTribRegular N 1-1 3,2/3,4 Aliquota  
+Informado a aliquota caso não cumprida a condição 
+resolutória/suspensiva 
+21 vTribReg E gTribRegular N 1-1 13,2 Informado como seria o valor do Tributo caso não 
+cumprida a condição resolutória/suspensiva 
+22 vIBSUF E gIBSUF N 1-1 13,2 Valor do IBS de competência da UF 
+23 gIBSMun G gIBSCBS - 1-1 - Grupo de informações do IBS/CBS de competência 
+do municipio 
+24 pIBSMun E gIBSMun N 1-1 3,2/3,4 Aliquota do IBS Municipal 
+25 Sequência XML - gIBSMun - 0-1 - - 
+26 vTribOp E gIBSMun N 1-1 13,2 Valor do Tributo Bruto na operação 
+27 gDif G gIBSMun - 0-1 - Grupo de campos do diferimento 
+28 pDif E gDif N 1-1 3,2/3,4 Percentual de diferimento 
+29 vDif E gDif N 1-1 13,2 Valor do diferimento 
+30 gDevTrib G gIBSMun - 0-1 - Grupo de informações da devolução do tributo 
+31 vDevTrib E gDevTrib N 1-1 13,2 Valor do tributo devolvido.  
+No fornecimento de energia elétrica, água, esgoto e 
+gás natural e em outras hipóteses definidas no 
+regulamento 
+32 gRed G gIBSMun - 0-1 - Grupo de informações da redução de aliquota 
+33 pRedAliq E gRed N 1-1 3,2/3,4 Percentual da redução de aliquota 
+34 pAliqEfet E gRed N 1-1 3,2/3,4 Aliquota efetiva do IBS de competência das UF que 
+será aplicada a base de cálculo 
+35 gTribRegular G gIBSMun - 0-1 - Grupo de informações da Tributação Regular caso 
+não cumprida a condição resolutória/suspensiva. 
+Exemplo 1: Art. 442, §4. Operações com ZFM e ALC.  
+Exemplo 2: Operações com suspensão do tributo. 
+36 CSTReg E gTribRegular N 1-1 3 Código da Situação Tributária  
+Informado como seria o CST caso não cumprida a 
+condição resolutória/suspensiva 
+37 cClassTribReg E gTribRegular N 1-1 6 Código de Classificação Tributária  
+Informado como seria o cClassTrib caso não 
+cumprida a condição resolutória/suspensiva 
+38 pAliqEfetReg E gTribRegular N 1-1 3,2/3,4 Aliquota  
+Informado a aliquota caso não cumprida a condição 
+resolutória/suspensiva 
+39 vTribReg E gTribRegular N 1-1 13,2 Informado como seria o valor do Tributo caso não 
+cumprida a condição resolutória/suspensiva 
+40 vIBSMun E gIBSMun N 1-1 13,2 Valor do IBS de competência do município 
+41 gCBS G gIBSCBS - 1-1 - Grupo de informações da CBS 
+42 pCBS E gCBS N 1-1 3,2/3,4 Aliquota da CBS 
+43 Sequência XML - gCBS - 0-1 - - 
+44 vTribOp E gCBS N 1-1 13,2 Valor do Tributo Bruto na operação 
+45 gDif G gCBS - 0-1 - Grupo de campos do diferimento
+
+## Página 7
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 7 / 17 
+ 
+46 pDif E gDif N 1-1 3,2/3,4 Percentual de diferimento 
+47 vDif E gDif N 1-1 13,2 Valor do diferimento 
+48 gDevTrib G gCBS - 0-1 - Grupo de informações da devolução do tributo 
+49 vDevTrib E gDevTrib N 1-1 13,2 Valor da CBS devolvida.  
+No fornecimento de energia elétrica, água, esgoto e 
+gás natural e em outras hipóteses definidas no 
+regulamento 
+50 gRed G gCBS - 0-1 - Grupo de informações da redução de aliquota 
+51 pRedAliq E gRed N 1-1 3,2/3,4 Percentual da redução de aliquota 
+52 pAliqEfet E gRed N 1-1 3,2/3,4 Aliquota efetiva da CBS que será aplicada a base de 
+cálculo 
+53 gTribRegular G gCBS - 0-1 - Grupo de informações da Tributação Regular caso 
+não cumprida a condição resolutória/suspensiva. 
+Exemplo 1: Art. 442, §4. Operações com ZFM e ALC.  
+Exemplo 2: Operações com suspensão do tributo. 
+54 CSTReg E gTribRegular N 1-1 3 Código da Situação Tributária  
+Informado como seria o CST caso não cumprida a 
+condição resolutória/suspensiva 
+55 cClassTribReg E gTribRegular N 1-1 6 Código de Classificação Tributária  
+Informado como seria o cClassTrib caso não 
+cumprida a condição resolutória/suspensiva 
+56 pAliqEfetReg E gTribRegular N 1-1 3,2/3,4 Informado como seria o valor do Tributo caso não 
+cumprida a condição resolutória/suspensiva 
+57 vTribReg E gTribRegular N 1-1 13,2 Grupo de informações da Tributação Regular caso 
+não cumprida a condição resolutória/suspensiva. 
+Exemplo 1: Art. 442, §4. Operações com ZFM e ALC.  
+Exemplo 2: Operações com suspensão do tributo. 
+58 vCBS E gCBS N 1-1 13,2 Valor da CBS 
+59 gIBSCredPres G gIBSCBS - 0-1 - Grupo de Informações do Crédito Presumido, 
+quando aproveitado pelo emitente do documento.  
+60 cCredPres E gIBSCredPres N 1-1  Código do Crédito Presumido (ver Tabela) 
+ 
+61 pCredPres E gIBSCredPres N 1-1 3,2/3,4 Percentual  de crédito presumido 
+62 vCredPres CE gIBSCredPres N 1-1 13,2 Valor do crédito presumido 
+63 vCredPresCondSus CE gIBSCredPres N 1-1 13,2 Valor do Crédito Presumido Condição Suspensiva 
+Preencher apenas para cCredPres com indicacao 
+de Condição Suspensiva 
+64 gCBSCredPres G gIBSCBS - 0-1 - Grupo de Informações do Crédito Presumido, 
+quando aproveitado pelo emitente do documento.  
+65 cCredPres E gCBSCredPres N 1-1  Código do Crédito Presumido (ver Tabela) 
+66 pCredPres E gCBSCredPres N 1-1 3,2/3,4 Percentual  de crédito presumido 
+67 vCredPres CE gCBSCredPres N 1-1 13,2 Valor do crédito presumido 
+68 vCredPresCondSus CE gCBSCredPres N 1-1 13,2 Valor do Crédito Presumido Condição Suspensiva 
+Preencher apenas para cCredPres com indicacao 
+de Condição Suspensiva 
+ 
+5 Código de Classificação Tributária do IBS/CBS 
+O grupo de informações do IBS, CBS e IS associado aos itens do documento fiscal contém o Código de Situação 
+Tributária (CST) e Código de Classificação Tributária (cClassTrib) do IBS, CBS e IS. O Informe Técnico RT 
+2024.001 divulga a publicação da tabela com esta codificação, que está disponível no Portal Nacional da NF-e 
+(www.nfe.fazenda.gov.br), na aba “Documentos”, opção “Diversos” e no portal dos Documentos Fiscais Eletrônicos 
+(dfe-portal.svrs.rs.gov.br).
+
+## Página 8
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 8 / 17 
+ 
+Cada código “cClassTrib” corresponde a um dispositivo específico da Lei Complementar nº 214/2025, tornando 
+objetiva a informação prestada pelo contribuinte quanto à forma como interpreta a tributação do IBS e da CBS para 
+cada DFe. 
+ 
+A tabela também contém indicadores que vinculam de forma dinâmica códigos “CST-IBS/CBS” e “cClassTrib” com 
+as Regras de Validação descritas nesta NT, ou que contêm informações necessárias para a preparação das 
+apurações assistidas do IBS e da CBS, em atendimento ao disposto na legislação vigente.  
+ 
+Vale ressaltar que a tabela poderá sofrer alterações em virtude de aperfeiçoamentos, novidades introduzidas em 
+sede de Regulamento, ou para atender a necessidades relacionadas à apuração assistida do IBS e da CBS.  
+6 Validações dos campos do IBS e CBS 
+# Regra de Validação Aplic. cStat Efeito Mensagem 
+001 Se CST do IBS/CBS for informado, este deve existir na 
+tabela de Código de Situação Tributária (tag: 
+gTribIBSCBS/CST) 
+Obrig. 310 Rej. Rejeição: CST informado inexistente 
+002 Se cClassTrib for informado, este deve existir na tabela 
+de Classificação Tributária do IBS/CBS (tag: 
+gTribIBSCBS/cClassTrib) 
+Obrig. 311 Rej. Rejeição: Classificação Tributária informada 
+inexistente 
+003 Verificar se o CST informado é compatível com o 
+cClassTrib 
+Obrig. 312 Rej. Rejeição: Classificação Tributária incompatível com 
+o CST informado 
+004 Se o CST informado VEDAR preenchimento do grupo 
+de informações específicas do IBS/CBS, este grupo 
+NÂO DEVE estar informado (grupo: gIBSCBS) 
+Obrig 313 Rej. Rejeição: Grupo IBS/CBS não deve ser preenchido 
+para o CST informado 
+005 Se o CST informado EXIGIR preenchimento do grupo 
+de informações específicas do IBS/CBS, este grupo 
+DEVE estar informado (grupo: gIBSCBS) 
+Obrig 314 Rej. Rejeição: Grupo IBS/CBS deve ser preenchido para o 
+CST informado 
+006 Se informado grupo IBS de competência das Unidades 
+Federadas (gIBSUF): 
+O valor do IBS (vIBSUF) deverá ser resultante da Base 
+de Cálculo x Alíquota (vBC x pIBSUF) 
+Observação: Aceitar uma tolerância de 0,01 a mais ou 
+a menos 
+Observação 2: Em caso de preenchimento do grupo 
+de redução (gRed) a alíquota utilizada deverá ser a tag 
+Alíquota Efetiva (pAliqEfet) 
+Obrig. 315 Rej. Rejeição: Valor do IBS UF diferente de Base de 
+Cálculo x Alíquota 
+007 Se informado grupo IBS de competência das Unidades 
+Federadas (gIBSUF): 
+O valor do Tributo Bruto da Operação (vTribOp) deverá 
+ser resultante da Base de Cálculo x Alíquota vigente da 
+UF (ver tabela de alíquotas Estaduais) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais ou 
+a menos 
+Obrig; 316 Rej. Rejeição: Valor do Tributo Bruto da Operação 
+diferente da Base de Cálculo x Alíquota vigente da 
+UF 
+008 Se CST informado exigir informação de Diferimento 
+para o IBS Estadual, o grupo gDif deve estar informado 
+Obrig. 317 Rej. Rejeição: CST informado obriga informação de 
+diferimento Estadual 
+009 Se informado grupo do Diferimento (gIBSUF/gDif): 
+O valor do Diferimento (vDif) deverá ser resultante da 
+Base de Cálculo x Percentual do Diferimento (vBC x 
+pDif) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais ou 
+a menos 
+Obrig. 318 Rej. Rejeição: Valor do Diferimento da UF diferente de 
+Base de Cálculo x Percentual 
+010 Se CST informado exigir informação de Tributação 
+regular para o IBS Estadual, o grupo gTribRegular 
+deve estar informado 
+Obrig. 319 Rej. Rejeição: CST informado obriga informação da 
+tributação regular 
+011 Se informado grupo da tributação regular 
+(gIBSUF/gTribReg): 
+O CST Regular informado no grupo gTribReg deve 
+existir na tabela de Código de Situação Tributária 
+(gTribReg/CSTReg) 
+Obrig. 320 Rej. Rejeição: CST informado no grupo de tributação 
+regular inexistente
+
+## Página 9
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 9 / 17 
+ 
+012 Se informado grupo da tributação regular 
+(gIBSUF/gTribReg): 
+O cClassTrib regular for informado, este deve existir na 
+tabela de Classificação Tributária do IBS/CBS (tag: 
+gTribReg/cClassTribReg) 
+Obrig. 321 Rej. Rejeição: Classificação Tributária informada no 
+grupo de tributação regular inexistente 
+013 Se informado grupo da tributação regular 
+(gIBSUF/gTribReg): 
+O valor do tributo (vTribReg) deverá ser resultante da 
+Base de Cálculo do item x Alíquota Efetiva Regular 
+(vBC x pAliqEfetReg) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais ou 
+a menos  
+ 
+Obrig. 322 Rej. Rejeição: Valor da tributação regular da UF diferente 
+de Base de Cálculo x Alíquota Regular 
+014 Se informado grupo IBS de competência dos 
+Municípios (gIBSMun): 
+O valor do IBS (vIBSMun) deverá ser resultante da 
+Base de Cálculo x Alíquota (vBC x pIBSMun) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Observação 2: Em caso de preenchimento do grupo 
+de redução (gRed) a alíquota utilizada deverá ser a 
+tag Alíquota Efetiva (pAliqEfet) 
+Obrig. 323 Rej. Rejeição: Valor do IBS Municipal diferente de Base de 
+Cálculo x Alíquota 
+015 Se informado grupo IBS de competência dos 
+Municípios (gIBSMun): 
+O valor do Tributo Bruto da Operação (vTribOp) 
+deverá ser resultante da Base de Cálculo x Alíquota 
+vigente do Município (ver tabela de alíquotas 
+Municipais) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Obrig; 324 Rej. Rejeição: Valor do Tributo Bruto da Operação 
+diferente da Base de Cálculo x Alíquota vigente do 
+Município 
+016 Se CST informado exigir informação de Diferimento 
+para o IBS Municipal, o grupo gDif deve estar 
+informado 
+Obrig. 325 Rej. Rejeição: CST informado obriga informação de 
+diferimento Municipal 
+017 Se informado grupo do Diferimento (gIBSMun/gDif): 
+O valor do Diferimento (vDif) deverá ser resultante da 
+Base de Cálculo x Percentual do Diferimento (vBC x 
+pDif) 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Obrig. 326 Rej. Rejeição: Valor do Diferimento do Município diferente 
+de Base de Cálculo x Percentual 
+018 Se CST informado exigir informação de Tributação 
+regular para o IBS Municipal, o grupo gTribRegular 
+deve estar informado 
+Obrig. 327 Rej. Rejeição: CST informado obriga informação da 
+tributação regular 
+019 Se informado grupo da tributação regular 
+(gIBSMun/gTribReg): 
+O CST Regular informado no grupo gTribReg deve 
+existir na tabela de Código de Situação Tributária 
+(gTribReg/CSTReg) 
+Obrig. 328 Rej. Rejeição: CST informado no grupo de tributação 
+regular inexistente 
+ 
+020 Se informado grupo da tributação regular 
+(gIBSMun/gTribReg): 
+O cClassTrib regular for informado, este deve existir 
+na tabela de Classificação Tributária do IBS/CBS (tag: 
+gTribReg/cClassTribReg) 
+Obrig. 329 Rej. Rejeição: Classificação Tributária informada no grupo 
+de tributação regular inexistente 
+ 
+021 Se informado grupo da tributação regular 
+(gIBSMun/gTribReg): 
+O valor do tributo (vTribReg) deverá ser resultante da 
+Base de Cálculo do item x Alíquota Efetiva Regular 
+(vBC x pAliqEfetReg) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos  
+ 
+Obrig. 330 Rej. Rejeição: Valor da tributação regular do Município 
+diferente de Base de Cálculo x Alíquota Regular 
+022 Se informado grupo CBS (gCBS): 
+O valor do CBS (vCBS) deverá ser resultante da Base 
+de Cálculo x Alíquota (vBC x pCBS) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Observação 2: Em caso de preenchimento do grupo 
+de redução (gRed) a alíquota utilizada deverá ser a 
+tag Alíquota Efetiva (pAliqEfet) 
+Obrig. 331 Rej. Rejeição: Valor do CBS diferente de Base de Cálculo 
+x Alíquota
+
+## Página 10
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 10 / 17 
+ 
+023 Se informado grupo CBS (gCBS): 
+O valor do Tributo Bruto da Operação (vTribOp) 
+deverá ser resultante da Base de Cálculo x Alíquota 
+vigente da CBS  
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Obrig; 332 Rej. Rejeição: Valor do Tributo Bruto da Operação 
+diferente da Base de Cálculo x Alíquota vigente da 
+CBS 
+024 Se CST informado exigir informação de Diferimento 
+para o CBS, o grupo gDif deve estar informado 
+Obrig. 333 Rej. Rejeição: CST informado obriga informação de 
+diferimento do CBS 
+025 Se informado grupo do Diferimento (gCBS/gDif): 
+O valor do Diferimento (vDif) deverá ser resultante da 
+Base de Cálculo x Percentual do Diferimento (vBC x 
+pDif) 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Obrig. 334 Rej. Rejeição: Valor do Diferimento do CBS diferente de 
+Base de Cálculo x Percentual 
+026 Se CST informado exigir informação de tributação 
+regular para a CBS, o grupo gTribRegular deve estar 
+informado 
+Obrig. 335 Rej. Rejeição: CST informado obriga informação da 
+tributação regular para CBS 
+027 Se informado grupo da tributação regular da CBS 
+(gCBS/gTribRegular): 
+O CST informado no grupo gTribRegular deve existir 
+na tabela de Código de Situação Tributária 
+(gTribRegular/CST) 
+Obrig. 336 Rej. Rejeição: CST informado no grupo de tributação 
+regular inexistente 
+028 Se informado grupo da tributação regular da CBS 
+(gCBS/gTribRegular): 
+O cClassTrib for informado, este deve existir na tabela 
+de Classificação Tributária do IBS/CBS (tag: 
+gTribRegular/cClassTrib) 
+Obrig. 337 Rej. Rejeição: Classificação Tributária informada no grupo 
+de tributação regular inexistente 
+029 Se informado grupo da tributação regular da CBS 
+(gCBS/gTribRegular): 
+O valor da tributação regular (vTribReg) deverá ser 
+resultante da Base de Cálculo x Alíquota Efetiva 
+regular (vBC x pAliqEfetReg) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+ 
+Obrig. 338 Rej. Rejeição: Valor da tributação regular da CBS 
+diferente de Base de Cálculo x Alíquota Regular 
+030 Se CST informado exigir informação de Crédito 
+Presumido para o IBS, o grupo gIBSCredPres deve 
+estar informado 
+Obrig. 339 Rej. Rejeição: CST informado obriga informação de 
+crédito presumido para o IBS 
+031 Se informado grupo do crédito presumido 
+(gIBSCredPres): 
+O valor do cCredPres deve existir na tabela de 
+códigos de crédito presumido 
+Obrig. 340 Rej. Rejeição: Código de crédito presumido do IBS 
+inexistente 
+032 Se o cCredPres do IBS possuir indicação de Condição 
+Suspensiva e a tag vCredPresCondSus não estiver 
+informada 
+Obrig. 341 Rej. Rejeição: O valor do crédito presumido (condição 
+suspensiva) para o IBS deve ser informado 
+033 Se o cCredPres do IBS NÂO possuir indicação de 
+Condição Suspensiva e a tag vCredPres não estiver 
+informada 
+Obrig. 342 Rej. Rejeição: O valor do crédito presumido para o IBS 
+deve ser informado 
+034 Se informado grupo do crédito presumido 
+(gIBSCredPres) COM Condição Suspensiva: 
+O valor do Crédito Presumido Condição Suspensiva 
+(vCredPresCondSus) deverá ser resultante da Base 
+de Cálculo x Percentual do Crédito Presumido (vBC x 
+pCredPres) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais ou 
+a menos 
+Obrig. 343 Rej. Rejeição: Valor do Crédito Presumido Condição 
+Suspensiva de IBS diferente de Base de Cálculo x 
+Percentual 
+035 Se informado grupo do crédito presumido 
+(gIBSCredPres) SEM Condição Suspensiva: 
+O valor do Crédito Presumido (vCredPres) deverá ser 
+resultante da Base de Cálculo x Percentual do Crédito 
+Presumido (vBC x pCredPres) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais ou 
+a menos 
+Obrig. 344 Rej. Rejeição: Valor do Crédito Presumido de IBS 
+diferente de Base de Cálculo x Percentual 
+036 Se informado grupo do crédito presumido 
+(gCBSCredPres): 
+O valor do cCredPres deve existir na tabela de 
+códigos de crédito presumido 
+Obrig. 345 Rej. Rejeição: Código de crédito presumido da CBS 
+inexistente
+
+## Página 11
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 11 / 17 
+ 
+037 Se o cCredPres da CBS possuir indicação de 
+Condição Suspensiva e a tag vCredPresCondSus não 
+estiver informada 
+Obrig. 346 Rej. Rejeição: O valor do crédito presumido (condição 
+suspensiva) para a CBS deve ser informado 
+038 Se o cCredPres da CBS NÂO possuir indicação de 
+Condição Suspensiva e a tag vCredPres não estiver 
+informada 
+Obrig. 347 Rej. Rejeição: O valor do crédito presumido para a CBS 
+deve ser informado 
+039 Se informado grupo do crédito presumido 
+(gCBSCredPres) COM Condição Suspensiva: 
+O valor do Crédito Presumido Condição Suspensiva 
+(vCredPresCondSus) deverá ser resultante da Base 
+de Cálculo x Percentual do Crédito Presumido (vBC x 
+pCredPres) 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Obrig. 348 Rej. Rejeição: Valor do Crédito Presumido Condição 
+Suspensiva de CBS diferente de Base de Cálculo x 
+Percentual 
+040 Se informado grupo do crédito presumido 
+(gCBSCredPres) SEM Condição Suspensiva: 
+O valor do Crédito Presumido (vCredPres) deverá ser 
+resultante da Base de Cálculo x Percentual do Crédito 
+Presumido (vBC x pCredPres) 
+ 
+Observação: Aceitar uma tolerância de 0,01 a mais 
+ou a menos 
+Obrig. 349 Rej. Rejeição: Valor do Crédito Presumido de CBS 
+diferente de Base de Cálculo x Percentual 
+7 Total Geral do Documento Fiscal Eletrônico 
+Deverá ser criada a tag Valor Total do DFe (vTotDFe). 
+No CTe, CTe Simplificado, CTe OS essa tag aparecerá dentro do grupo imp, após o grupo IBSCBS. 
+ 
+#  Campo Ele Pai Tipo Ocor. Tam. Descrição/Observação 
+01 vTotDFe E imp E 0-1 13,2 Valor total do documento fiscal  
+vTPrest + total do IBS + total da CBS 
+ 
+# Regra de Validação Aplic. cStat Efeito Mensagem 
+01 O total geral do DFe deverá ser a soma do total 
+da prestação (vTPrest) + vTotIBS + vTotCBS 
+ 
+Exceção: Em 2026 não somar vTotIBS e 
+vTotCBS  
+Obrig. 369 Rej. Rejeição: Total do DFe inválido 
+ 
+8 Alteração em Regra do CTe Simplificado 
+G101a O município de fim de prestação em todos os itens do 
+CTe Simplificado (det:cMunFim) devem ser iguais  
+Obrig. 371 Rej. Rejeição: O CTe Simplificado deve ter a 
+prestação terminada em apenas um 
+município
+
+## Página 12
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 12 / 17 
+ 
+9 Alterações no Layout do Modal Dutoviário 
+Foram criados campos no schema específico do Modal Dutoviário. 
+ 
+  
+# Campo Nível Descrição Ele Tipo Ocorr. Tam Observações 
+1 duto 0 Informações do modal Dutoviário G  1 - 1   
+2 vTar 1 Valor da tarifa E C 0 - 1 9, 6 15 posições, sendo 9 inteiras e 6 
+casas decimais. 
+3 dIni 1 Data de Início da prestação do serviço E D 1 - 1 10  
+4 dFim 1 Data de Fim da prestação do serviço E D 1 - 1 10  
+5 classDuto 1 Classificação Dutoviário E N 0-1 1 Informar:  
+1 – Gasoduto;  
+2 – Mineroduto ou 
+3 - Oleoduto 
+6 tpContratacao 1 Tipo de contratação do serviço de 
+transporte (apenas para gasoduto) 
+E N 0-1 1 Informar:  
+0 – Ponto a ponto 
+1 – Capacidade de Entrada ou  
+2 – Capacidade de Saída 
+7 codPontoEntrada 1 Código do Ponto de Entrada E C 1-1 20  
+8 codPontoSaida 1 Código do Ponto de Saída E C 1-1 20  
+9 nContrato 1 Número do Contrato de Capacidade E C 0-1 20  
+ 
+# Regra de Validação Aplic. cStat Efeito Mensagem 
+001 Se informado classificação do dutoviário = Gasoduto 
+(tag: classDuto = 1), o tipo de contratação deve ser 
+informado (tag: tpContratacao) 
+Obrig. 378 Rej. Rejeição: Tipo de contratação deve ser informado 
+para tipo de dutoviário gasoduto 
+002 Se Tipo de contratação for ponto a ponto (tag: 
+tpContratacao=0), os campos do código dos pontos de 
+entrada e saída devem ser informados 
+Obrig. 379 Rej. Rejeição: Dutoviário com tipo de contratação ponto 
+a ponto deve informar Código dos pontos de entrada 
+e saída 
+003 Se Tipo de contratação for capacidade de entrada 
+(tag: tpContratacao=1), o campo do código do ponto 
+de entrada deve ser informado 
+Obrig. 380 Rej. Rejeição: Dutoviário com tipo de contratação 
+capacidade de entrada deve informar Código do ponto 
+de entrada  
+004 Se Tipo de contratação for capacidade de saída (tag: 
+tpContratacao=2), o campo do código do ponto de 
+saída deve ser informado 
+Obrig. 381 Rej. Rejeição: Dutoviário com tipo de contratação 
+capacidade de saída deve informar Código do ponto 
+de saída
+
+## Página 13
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 13 / 17 
+ 
+10 Criação do grupo de informações da Declaração de 
+Conteúdo Eletrônica nos documentos originários 
+  
+Validações dos Documentos Transportados 
+G045a Se Tipo do CTe= 0 (Normal) ou 3 (Substituição) e 
+informado grupo informação de documentos (infDoc): 
+Quantidade de documentos informados 
+(infNF/infNFe/infOutros/infDCe) não pode ultrapassar 
+2000 documentos 
+Obrig. 601 Rej. Rejeição: Quantidade de documentos 
+informados no remetente excede limite de 
+2000 
+G045b Se Tipo do CTe= 0 (Normal) ou 3 (Substituição) e 
+informados grupos de informações de documentos 
+(infDoc) e DCe (infDCe) 
+- Verificar se existe alguma chave de acesso de DCe 
+duplicada no CTe 
+Retornar a chave duplicada 
+Obrig. 373 Rej. Rejeição: DCe duplicada no CTe 
+[chDCe: 
+9999999999999999999999999999999999
+9999999999] 
+G045c Se Tipo do CTe= 0 (Normal) ou 3 (Substituição) e 
+informados grupos de informações de documentos 
+(infDoc) e DCe (infDCe), para cada uma das DCe´s 
+relacionadas: 
+- Validar chave de acesso  
+Retornar a primeira chave inválida e o motivo da 
+rejeição da Chave de Acesso: CNPJ / CPF zerado ou 
+inválido, Ano < 2025 ou maior que atual, Mês inválido (0 
+ou > 12), Modelo diferente de 99, Número zerado, Tipo 
+de emissão inválido, UF inválida ou DV inválido) 
+[chDCe: 
+99999999999999999999999999999999999999999999] 
+[Motivo: XXXXXXXXXXXX] 
+Obrig. 374 Rej. Rejeição: Chave de acesso da DCe 
+transportada inválida 
+G045d Se Tipo do CTe= 0 (Normal) ou 3 (Substituição) e 
+informados grupos de informações de documentos 
+(infDoc) e DCe (infDCe), para cada uma das DCe´s 
+relacionadas: 
+ - Acessar BD CHAVES DCE (Chave: UF, CNPJ/CPF 
+Emit, Modelo, Série, Nro): 
+            - A DCe deve existir 
+Retornar a primeira chave de acesso de DCe 
+inexistente. 
+Exceção: DCe em contingência fica dispensada dessa 
+validação (verificar tpEmis da chave de acesso da DCe)  
+Facult. 375 Rej. Rejeição: DCe inexistente na base de 
+dados da SEFAZ 
+G045e Se Tipo do CTe= 0 (Normal) ou 3 (Substituição) e 
+informados grupos de informações de documentos 
+(infDoc) e DCe (infDCe), para cada uma das DCe´s 
+relacionadas: 
+ - Acessar BD CHAVES DCE (Chave: UF, CNPJ/CPF 
+Emit, Modelo, Série, Nro): 
+            - A DCe não pode existir com diferença de chave 
+de acesso 
+Retornar a primeira chave de acesso de DCe com 
+situação inválida. 
+Facult. 376 Rej. Rejeição: DCe com diferença de Chave de 
+Acesso
+
+## Página 14
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 14 / 17 
+ 
+G045f Se Tipo do CTe= 0 (Normal) ou 3 (Substituição) e 
+informados grupos de informações de documentos 
+(infDoc) e DCe (infDCe), para cada uma das DCe´s 
+relacionadas: 
+ - Acessar BD CHAVES DCE (Chave: UF, CNPJ/CPF 
+Emit, Modelo, Série, Nro): 
+            - A DCe não pode estar cancelada 
+Retornar a primeira chave de acesso de DCe com 
+situação inválida. 
+Facult. 377 Rej. Rejeição: DCe não pode estar cancelada 
+ou denegada 
+ 
+As regras G45d, G45e e G45f dependem do ambiente de autorização do CTe possuir acesso a base de dados de 
+DCe. 
+11 Exceção para Substituição sem exigência do evento de 
+prestação em desacordo para tomador Exterior 
+A exigência do registro do tomador de prestação de serviço em desacordo para permitir a substituição de um CTe 
+se torna impeditiva quando o tomador for pessoa do exterior, uma vez que esta não tem meios para autorizar o 
+evento. 
+G084/ 
+H067 
+Se Tipo do CTe=3 (Substituição): 
+- O CTe substituído deve possuir evento de Prestação do 
+Serviço em Desacordo em situação autorizado. 
+ 
+Observação: Eventos de Cancelamento do Evento de 
+Prestação em desacordo anulam eventos de Prestação 
+em Descordo 
+Exceção: O evento não será exigido para CTe com 
+tomador do exterior 
+Obrig
+. 
+739 Rej. Rejeição: O CTe substituído deve possuir 
+evento de Prestação do Serviço em 
+Desacordo  
+12 Eliminar as opções de contingência SVC da GTVe no 
+Leiaute (Schema) 
+A GTVe já possui previsão de emissão offline, portanto não há necessidade do schema e do ambiente de 
+autorização suportar emissão em contingência SVC 
+Alteração: tag tpEmis aceita apenas os valores 1 – Normal e 2- Contingência offline  
+13 Nova regra para CTe OS de Transporte de Valores 
+Devido a apuração do imposto na reforma tributária ser em razão da UF e município de destino, o CTe OS de 
+Transporte de Valores deverá passar a exigir essas informações. 
+ 
+H020a Se tipo de serviço = Transporte de Valores 
+- UF de fim e Município de Fim da prestação devem estar 
+preenchidos 
+Obrig. 372 Rej. Rejeição: UF e Município de Fim da 
+prestação devem estar preenchidos para 
+Transporte de Valores
+
+## Página 15
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 15 / 17 
+ 
+14 Preparação das expressões regulares do CTe para o 
+futuro CNPJ Alfanumérico 
+As alterações serão feitas no arquivo de tipos gerais e aplicam-se automaticamente a todos campos do tipo CNPJ 
+e Chave de acesso em qualquer um dos schemas do projeto CTe, entretanto, até que seja publicada uma Nota 
+Técnica que modifica as validações desses campos, as letras não devem ser utilizadas. 
+ 
+A expressão regular que valida um campo do tipo CNPJ é: [0-9]{14} 
+Alteração: a Expressão regular do CNPJ passa a aceitar letras maiúsculas nas primeiras 12 posições:  
+[A-Z0-9]{12}[0-9]{2} 
+ 
+Expressão Regular Atual da Chave de Acesso é: [0-9]{44} 
+Alteração: a expressão regular passa a suportar letras maiúsculas nas 12 primeiras posições que correspondem 
+ao CNPJ dentro da chave de acesso: [0-9]{6}[A-Z0-9]{12}[0-9]{26} 
+15 Ampliação do cStat de retorno para 4 dígitos 
+A expressão regular que define a tag cStat dos schemas de retorno de todos os serviços passa a suportar até 
+códigos com 4 dígitos. 
+ 
+Nova expressão regular para o tipo TStat do arquivo Tipos Geral: [0-9]{3,4}
+
+## Página 16
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 16 / 17 
+ 
+16 Anexo – Novos Grupos para Reforma Tributária 
+Conhecimento de Transporte Eletrônico– modelo 57
+
+## Página 17
+
+Projeto 
+Conhecimento de Transporte Eletrônico - Reforma Tributária do Consumo 
+NT 2025.001 v1.00 
+ 
+ 
+Página 17 / 17 
+ 
+Conhecimento de Transporte Eletrônico Simplificado – Modelo 57 
+ 
+  
+Conhecimento de Transporte Eletrônicos Outros Serviços – modelo 67

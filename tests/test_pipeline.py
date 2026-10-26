@@ -4680,6 +4680,178 @@ def acervo_consulta():
     checar("HTTP 403" in "\n".join(C.linhas_do_acervo(indice["atos"][1])), "bloqueado: mostra o motivo")
 
 
+XSD_TIPOS_FICTICIO = """<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:simpleType name="TDec1302"><xs:restriction base="xs:string">
+  <xs:pattern value="0|0\\.[0-9]{2}|[1-9]{1}[0-9]{0,12}(\\.[0-9]{2})?"/></xs:restriction></xs:simpleType>
+ <xs:complexType name="TTribFicticio"><xs:sequence>
+  <xs:element name="CST"><xs:annotation><xs:documentation>Código de Situação Tributária fictício</xs:documentation></xs:annotation>
+   <xs:simpleType><xs:restriction base="xs:string"><xs:length value="3"/>
+    <xs:enumeration value="000"/><xs:enumeration value="010"/></xs:restriction></xs:simpleType></xs:element>
+  <xs:element name="gIBSUF" minOccurs="0"><xs:complexType><xs:sequence>
+   <xs:element name="vIBSUF" type="TDec1302"><xs:annotation><xs:documentation>Valor fictício do IBS da UF</xs:documentation></xs:annotation></xs:element>
+  </xs:sequence></xs:complexType></xs:element>
+ </xs:sequence></xs:complexType>
+</xs:schema>"""
+XSD_LEIAUTE_FICTICIO = """<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:include schemaLocation="tiposFicticios_v1.00.xsd"/>
+ <xs:element name="NFFicticia"><xs:complexType><xs:sequence>
+  <xs:element name="ISSQN" minOccurs="0"><xs:complexType><xs:sequence>
+   <xs:element name="vISSQN" type="TDec1302"/></xs:sequence></xs:complexType></xs:element>
+  <xs:element name="IS" minOccurs="0"><xs:complexType><xs:sequence>
+   <xs:element name="vIS" type="TDec1302"/></xs:sequence></xs:complexType></xs:element>
+  <xs:element name="IBSCBS" type="TTribFicticio" minOccurs="0" maxOccurs="unbounded">
+   <xs:annotation><xs:documentation>Grupo fictício de IBS e CBS</xs:documentation></xs:annotation></xs:element>
+  <xs:element name="cMunFGIBS" type="xs:string" minOccurs="0"/>
+ </xs:sequence></xs:complexType></xs:element>
+</xs:schema>"""
+
+
+@cenario("acervo (texto): campos de IBS/CBS/IS lidos dos XSD, com caminho, tipo, ocorrência e descrição")
+def acervo_campos_do_leiaute():
+    """Quebra: não resolver o tipo nomeado em outro XSD do pacote (o grupo IBSCBS
+    da NF-e é TTribNFe, de DFeTiposBasicos); perder a ocorrência, o tamanho, as
+    enumerações ou a documentação; incluir ISSQN (não é Imposto Seletivo); ou
+    perder o campo avulso fora do grupo (cMunFGIBS)."""
+    import acervo_texto as T
+
+    pacote = zip_com({"PL/tiposFicticios_v1.00.xsd": XSD_TIPOS_FICTICIO.encode("latin-1"),
+                      "PL/leiauteFicticio_v1.00.xsd": XSD_LEIAUTE_FICTICIO.encode("latin-1")})
+    campos = {c["caminho"]: c for c in T.campos_do_leiaute(pacote)}
+    checar(sorted(campos) == ["NFFicticia/IBSCBS", "NFFicticia/IBSCBS/CST", "NFFicticia/IBSCBS/gIBSUF",
+                              "NFFicticia/IBSCBS/gIBSUF/vIBSUF", "NFFicticia/IS", "NFFicticia/IS/vIS",
+                              "NFFicticia/cMunFGIBS"],
+           f"só os grupos e campos de IBS/CBS/IS, com o caminho (obteve {sorted(campos)})")
+    cst = campos["NFFicticia/IBSCBS/CST"]
+    checar(cst["ocorrencia"] == "1-1" and cst["tamanho"] == "3" and cst["enumeracao"] == "000, 010"
+           and cst["descricao"] == "Código de Situação Tributária fictício" and cst["tipo"] == "xs:string",
+           f"restrição local: tamanho, enumeração, documentação em ISO-8859-1 (obteve {cst})")
+    checar(campos["NFFicticia/IBSCBS"]["ocorrencia"] == "0-N"
+           and campos["NFFicticia/IBSCBS"]["tipo"] == "TTribFicticio"
+           and campos["NFFicticia/IBSCBS/gIBSUF/vIBSUF"]["tipo"] == "TDec1302"
+           and "[1-9]{1}[0-9]{0,12}" in campos["NFFicticia/IBSCBS/gIBSUF/vIBSUF"]["padrao"],
+           "tipo nomeado de outro XSD resolvido, com o padrão")
+    checar(campos["NFFicticia/IBSCBS"]["arquivo"] == "PL/leiauteFicticio_v1.00.xsd"
+           and campos["NFFicticia/IBSCBS/CST"]["arquivo"] == "PL/tiposFicticios_v1.00.xsd",
+           "arquivo de onde cada campo foi lido")
+
+    # Schemas de evento da NF-e (Eventos_RTC, medido em 2026-10-26): só tipos, sem
+    # elemento raiz; e pacote com os XSD dentro de um ZIP interno.
+    evento = ('<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:complexType name="TDetEventoFicticio">'
+              '<xs:sequence><xs:element name="descEvento" type="xs:string"/>'
+              '<xs:element name="vIBS" type="xs:string"/></xs:sequence></xs:complexType></xs:schema>')
+    so_tipos = {c["caminho"] for c in T.campos_do_leiaute(zip_com({"Ev/e1.xsd": evento}))}
+    checar(so_tipos == {"TDetEventoFicticio/vIBS"}, f"tipo sem elemento raiz vira raiz (obteve {so_tipos})")
+    # Cada XSD de evento declara um elemento de topo de MESMO nome (detEvento); e o
+    # envelope (bpeProc, cteProc) contém o documento, que é raiz própria.
+    det = lambda campo: ('<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="detEvento">'  # noqa: E731
+                         f'<xs:complexType><xs:sequence><xs:element name="{campo}" type="xs:string"/>'
+                         '</xs:sequence></xs:complexType></xs:element></xs:schema>')
+    dois = T.campos_do_leiaute(zip_com({"Ev/e1.xsd": det("descEvento"), "Ev/e2.xsd": det("vCBS"),
+                                        "Ev/e3.xsd": det("vIBS")}))
+    checar(sorted((c["arquivo"], c["caminho"]) for c in dois)
+           == [("Ev/e2.xsd", "detEvento/vCBS"), ("Ev/e3.xsd", "detEvento/vIBS")],
+           f"raízes de mesmo nome em arquivos distintos: todas lidas (obteve {dois})")
+    envelope = XSD_LEIAUTE_FICTICIO.replace(
+        '<xs:element name="NFFicticia"><xs:complexType>',
+        '<xs:element name="nfProc"><xs:complexType><xs:sequence><xs:element name="NFFicticia" type="TNFFicticia"/>'
+        '</xs:sequence></xs:complexType></xs:element><xs:element name="NFFicticia" type="TNFFicticia"/>'
+        '<xs:complexType name="TNFFicticia">').replace(
+        "</xs:sequence></xs:complexType></xs:element>\n</xs:schema>", "</xs:sequence></xs:complexType>\n</xs:schema>")
+    com_envelope = {c["caminho"] for c in T.campos_do_leiaute(zip_com({
+        "PL/tiposFicticios_v1.00.xsd": XSD_TIPOS_FICTICIO.encode("latin-1"),
+        "PL/leiauteFicticio_v1.00.xsd": envelope.encode("latin-1")}))}
+    checar("NFFicticia/IBSCBS/CST" in com_envelope and not any(c.startswith("nfProc") for c in com_envelope),
+           f"envelope não repete os campos do documento (obteve {sorted(com_envelope)})")
+    dentro = zip_com({"Interno.zip": zip_com({"Ev/e1.xsd": evento})})
+    checar({c["caminho"] for c in T.campos_do_leiaute(dentro)} == {"TDetEventoFicticio/vIBS"}
+           and T.campos_do_leiaute(dentro)[0]["arquivo"] == "Interno.zip/Ev/e1.xsd",
+           "XSD dentro de ZIP interno, com o caminho do arquivo")
+
+
+@cenario("acervo (texto): Markdown derivado, com página, procedência e hash conferidos")
+def acervo_texto_markdown():
+    """Quebra: texto sem marcação de página (a citação precisa da página); arquivo
+    sem o sha256 do original (não se saberia de qual versão veio); aceitar texto
+    editado à mão ou de original que mudou; ou faltar o texto de um ato do acervo."""
+    import acervo_texto as T
+
+    reg = registro_acervo(id="nt-ficticia-1900-001-v1-00", tipo="nota.tecnica", versao="1.00",
+                          url="https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?x=1")
+    pdf = pdf_com_texto("Pagina um da NT ficticia")
+    registro = {"arquivo": "fontes/acervo/nt-ficticia-1900-001-v1-00.pdf", "sha256": "ab" * 32}
+    md = T.markdown_do_ato(reg, registro, pdf)
+    checar("## Página 1" in md and "Pagina um da NT ficticia" in md and "sha256_original: " + "ab" * 32 in md
+           and "versao: '1.00'" in md and "sha256_corpo: " in md,
+           f"página, procedência e hashes (obteve {md[:400]!r})")
+    checar(T.problemas_do_texto(md, {"acervo/" + reg["id"]: registro}) == [], "íntegro: sem problema")
+    checar(any("editado" in p for p in T.problemas_do_texto(md.replace("um da", "dois da"),
+                                                             {"acervo/" + reg["id"]: registro})),
+           "corpo editado à mão: erro")
+    checar(any("original" in p for p in T.problemas_do_texto(md, {"acervo/" + reg["id"]:
+                                                                  dict(registro, sha256="cd" * 32)})),
+           "original mudou desde a extração: erro")
+    antigo = md.replace(f"versao_gerador: {T.VERSAO_GERADOR}", f"versao_gerador: {T.VERSAO_GERADOR - 1}")
+    checar(antigo != md and any("gerador" in p for p in T.problemas_do_texto(antigo, {"acervo/" + reg["id"]: registro})),
+           "texto de versão anterior do gerador: erro (regenere)")
+    pacote = zip_com({"PL/tiposFicticios_v1.00.xsd": XSD_TIPOS_FICTICIO.encode("latin-1"),
+                      "PL/leiauteFicticio_v1.00.xsd": XSD_LEIAUTE_FICTICIO.encode("latin-1")})
+    md_zip = T.markdown_do_ato(dict(reg, tipo="schema"), dict(registro, arquivo="fontes/acervo/x.zip"), pacote)
+    checar("| NFFicticia/IBSCBS/CST |" in md_zip and "000, 010" in md_zip,
+           "pacote de schemas: tabela dos campos de IBS/CBS/IS")
+
+
+@cenario("acervo (texto): \\r solto no original não vira falso 'editado à mão'")
+def acervo_texto_cr():
+    """Medido na Resolução CGSN 140/2018 (2026-10-26): o JSON da RFB traz \\r solto; ao
+    reler o .md, a leitura converte \\r em \\n e o hash do corpo deixava de conferir."""
+    import tempfile
+
+    import acervo_texto as T
+    from comum import gravar_texto
+
+    reg = registro_acervo(url="https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/1/visao/vigente")
+    registro = {"arquivo": "fontes/acervo/x.json", "sha256": "ab" * 32}
+    md = T.markdown_do_ato(reg, registro, '{"t": "linha um\\rlinha dois\\r\\nlinha tres"}'.encode("utf-8"))
+    with tempfile.TemporaryDirectory() as tmp:
+        caminho = Path(tmp) / "x.md"
+        gravar_texto(caminho, md)
+        relido = caminho.read_text(encoding="utf-8")
+    checar(T.problemas_do_texto(relido, {"acervo/" + reg["id"]: registro}) == [],
+           "gravado e relido: o hash do corpo confere")
+
+
+@cenario("acervo (texto): cada ato arquivado tem o seu texto, e só ele")
+def acervo_texto_camada():
+    """Quebra: ato do acervo sem texto (o LLM não o acharia na busca); texto de ato
+    que saiu do acervo; ou exigir texto de ato bloqueado (não há original)."""
+    import acervo_texto as T
+
+    reg = registro_acervo()
+    registro = {"arquivo": "fontes/acervo/in-ficticia-9999-1900.html", "sha256": "ab" * 32}
+    docs = {"acervo/" + reg["id"]: registro}
+    md = T.markdown_do_ato(reg, registro, HTML_ATO_FICTICIO)
+    bloq = registro_acervo(id="in-ficticia-9998-1900", bloqueio="HTTP 403", conferir=[])
+    checar(T.problemas_da_camada([reg, bloq], docs, {reg["id"]: md}) == [], "completo: sem problema")
+    checar(any("sem texto" in p for p in T.problemas_da_camada([reg], docs, {})), "ato sem texto: erro")
+    checar(any("fora do acervo" in p for p in T.problemas_da_camada([], docs, {reg["id"]: md})),
+           "texto de ato fora do acervo: erro")
+
+
+@cenario("acervo (texto): busca lexical devolve ato, versão e página")
+def acervo_texto_busca():
+    """Quebra: resultado sem a página (não seria citável) ou busca sensível a acento."""
+    import acervo_texto as T
+
+    md = ("---\nid: nt-x\nversao: '1.52'\n---\n\n## Página 1\n\nCapa.\n\n## Página 7\n\n"
+          "Regra de validação do crédito presumido.\n")
+    achados = T.buscar_no_texto({"nt-x": md}, "credito presumido")
+    checar(achados == [{"id": "nt-x", "versao": "1.52", "pagina": 7,
+                        "trecho": "Regra de validação do crédito presumido."}],
+           f"ato, versão, página e linha (obteve {achados})")
+
+
 @cenario("portabilidade de saída")
 def portabilidade():
     """Regressão: no Windows a saída redirecionada usa a codepage local (cp1252) e

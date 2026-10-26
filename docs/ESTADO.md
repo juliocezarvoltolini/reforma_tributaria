@@ -620,6 +620,25 @@ entrou foi conferido pelo pipeline contra o original baixado):
 | CONFAZ | Ajustes SINIEF 24/24 e 25/25 (e retificação), 37/25, 7/26, 39/26, 7/22 consolidado; Convênio ICMS 100/26; Atos COTEPE (GT75-IBS e afins) | Ajuste SINIEF 49/25 e alteradores (nota de crédito/débito: o texto não menciona IBS/CBS — ligar à reforma seria inferência) |
 | Portais DF-e | 232 arquivos: NT, Informes Técnicos, pacotes de schemas e planilhas de leiaute de NF-e/NFC-e, CT-e, BP-e, NF3e, NFCom, NFAg, NFGas, NF-e ABI, NFS-e e NFS-e Via, em todas as versões publicadas (NF-e NT 2025.002-RTC v1.00 a v1.52; CT-e NT 2025.001-RTC v1.00 a v1.14b...) | NTs sem os termos e não ratificadas por ATC (CNPJ alfanumérico, NT 2024.003), MOCs, tabelas xlsx do SVRS |
 
+**Camada de texto (2026-10-26).** `indices/acervo_texto/<id>.md`, um por ato,
+gerado por `python pipeline/acervo_texto.py` (~7 min para os 370; só reescreve o
+que mudou) e conferido por hash em `validar.py` (original atual, corpo intacto,
+versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
+
+- **Leiaute pelos XSD, não pelo PDF.** O pypdf embaralha colunas de tabela; o XSD
+  é a fonte sem ambiguidade. Entra toda subárvore cujo elemento ou tipo tenha
+  "IBS" ou "CBS" no nome, ou que se chame IS/gIS/ISTot (ISSQN e ISUF não são
+  Imposto Seletivo). Todo elemento de topo de todo XSD é raiz (os eventos repetem
+  `detEvento` em cada arquivo); o envelope (`bpeProc`, `cteProc`) não repete o
+  documento, que é raiz própria; pacote sem elemento de topo usa os tipos. Os 86
+  pacotes do acervo têm tabela.
+- **Sem RAG/embedding**, por decisão (MODELO-DADOS, "Sobre busca vetorial"): a
+  busca é lexical e devolve ato, versão e página — citável e conferível. Um
+  índice vetorial só entraria como localizador, e isso seria mudar a decisão.
+- **Não conferido ainda:** as tabelas de campos dos PDFs das NTs contra o XSD da
+  mesma versão, e o cronograma de implantação por versão (está no texto, em
+  linguagem livre).
+
 **Em aberto:**
 
 - **Veto da LC 227** (VET 8/2026): sobrestando a pauta do Congresso desde

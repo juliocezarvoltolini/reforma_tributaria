@@ -1,0 +1,109 @@
+---
+id: resolucao-cgsn-194-2026
+titulo: Resolução CGSN nº 194, de 25 de setembro de 2026
+tipo: resolucao
+data: '2026-09-25'
+url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/153801/visao/vigente
+arquivo_original: fontes/acervo/resolucao-cgsn-194-2026.json
+sha256_original: 038e3259963c9cf492e3dec1f4ddbff50cbf83ccabd3a94ea191b0f56fe82ef7
+gerado_por: pipeline/acervo_texto.py
+versao_gerador: 2
+sha256_corpo: d60a659f7658bf9f5ab6901b15b2064af879cc20eb665f5bdd22028c234bc670
+---
+
+Resol.
+Resolução
+194
+2026-09-25
+CGSN
+Comitê Gestor do Simples Nacional
+25 de setembro de 2026
+Resolução CGSN nº 194, de 25 de setembro de 2026
+Resolução CGSN nº 194, de 25/09/2026
+Resol. CGSN nº 194/2026
+Publicado(a) no DOU de 28/09/2026, seção 1-C, página 8
+2026-09-28
+2026-09-28
+1111
+vigente
+Altera a Resolução CGSN nº 186, de 9 de abril de 2026, que dispõe sobre os prazos e condições para o exercício de opção pelo Simples Nacional e, em relação aos optantes, pelo regime regular do IBS e da CBS no ano‑calendário de 2027, em conformidade com as disposições da Lei Complementar nº 123, de 14 de dezembro de 2006, e da Lei Complementar nº 214, de 16 de janeiro de 2025.
+O Comitê Gestor do Simples Nacional, no uso das atribuições que lhe conferem a Lei Complementar nº 123, de 14 de dezembro de 2006, o Decreto nº 6.038, de 7 de fevereiro de 2007, e o Regimento Interno aprovado pela Resolução CGSN nº 176, de 19 de junho de 2024, e tendo em vista o disposto no art. 2º, §6º, e art. 16 da Lei Complementar nº 123, de 14 de dezembro de 2006 e no art. 41, §3º e §4º, da Lei Complementar nº 214, de 16 de janeiro de 2025, resolve:
+Art. 1º A Resolução CGSN nº 186, de 9 de abril de 2026, passa a vigorar com as seguintes alterações:
+"Art. 1º Para o ano-calendário 2027, a opção pelo Regime Especial Unificado de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - Simples Nacional, a ser formalizada por meio do Portal do Simples Nacional na internet, deverá ser exercida no período do dia 01 de setembro de 2026 ao dia 15 de outubro de 2026 e produzirá efeitos a partir de 1º de janeiro de 2027. (Lei Complementar nº 123, de 14 de dezembro de 2006, art. 2º, §6º, e art. 16, caput)
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |Art. 1º Para o ano-calendário 2027, a opção p...| - Alteração]
+28/09/2026
+§ 1º A opção de que trata o caput: (Lei Complementar nº 123, de 2006, art. 2º, § 6º, e art. 16, caput)
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |§ 1º A opção de que trata o caput: (Lei Compl...| - Alteração]
+28/09/2026
+I - poderá ser cancelada pelo solicitante em caráter irretratável no período do dia 03 de novembro de 2026 ao dia 20 de dezembro de 2026; e
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |I - poderá ser cancelada pelo solicitante em ...| - Alteração]
+28/09/2026
+II - caso seja indeferida, as pendências impeditivas ao ingresso no Simples Nacional poderão ser regularizadas até o dia 30 de outubro de 2026.
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |II - caso seja indeferida, as pendências impe...| - Alteração]
+28/09/2026
+§ 2º Será dada ciência do termo de indeferimento expedido por autoridade fiscal integrante da estrutura administrativa do respectivo ente federado que decidiu pelo indeferimento à Microempresa ou à Empresa de Pequeno Porte no momento da solicitação da opção a que se refere o caput.
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |§ 2º Será dada ciência do termo de indeferime...| - Alteração]
+28/09/2026
+......................................................................................................................." (NR)
+"Art. 2º Para o período de janeiro a junho de 2027, a opção por apurar e recolher o Imposto sobre Bens e Serviços (IBS) e a Contribuição Social sobre Bens e Serviços (CBS) de acordo com o regime regular aplicável a esses tributos deverá ser exercida no Portal do Simples Nacional no período do dia 01 de setembro de 2026 ao dia 30 de outubro de 2026 e produzirá efeitos a partir de 1º de janeiro de 2027, hipótese em que as parcelas a eles relativas não serão devidas pelo regime do Simples Nacional. (Lei Complementar nº 214, de 16 de janeiro de 2025, art. 41, §§ 3º e 4º, e Lei Complementar nº 123, de 2006, art. 2º, §6º)
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |Art. 2º Para o período de janeiro a junho de ...| - Alteração]
+28/09/2026
+Parágrafo único: A opção de que trata o caput poderá ser cancelada pelo solicitante em caráter irretratável no período do dia 03 de novembro de 2026 ao dia 20 de dezembro de 2026." (NR)
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |Parágrafo único: A opção de que trata o caput...| - Alteração]
+28/09/2026
+"Art. 3º O disposto nos arts. 1º e 2º não se aplica às empresas em início de atividade que tenham realizado a inscrição no Cadastro Nacional da Pessoa Jurídica (CNPJ):
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |Art. 3º O disposto nos arts. 1º e 2º não se a...| - Alteração]
+28/09/2026
+I - no período compreendido entre o dia 16 de outubro e o dia 31 de dezembro de 2026, para fins da opção pelo Simples Nacional de que trata o art. 1º; e
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |I - no período compreendido entre o dia 16 de...| - Inclusão]
+28/09/2026
+II - no período compreendido entre o dia 31 de outubro e o dia 31 de dezembro de 2026, para fins de opção pela apuração e pelo recolhimento do IBS e da CBS de acordo com o regime regular aplicável a esses tributos, de que trata o art. 2º.
+150653
+[Resolução CGSN nº 186, de 09/04/2026 - |II - no período compreendido entre o dia 31 d...| - Inclusão]
+28/09/2026
+......................................................................................................................." (NR)
+Art. 2º Esta Resolução entra em vigor na data de sua publicação no Diário Oficial da União.
+ADRIANA GOMES RÊGO
+global
+Global
+ementa
+Ementa
+font-size
+10pt
+padding
+24pt 0 24pt 0
+padding
+24pt 0 24pt 0
+artigo
+Artigo
+text-indent
+63px
+fecho
+Fecho
+text-align
+center
+padding
+16px 0 0 0
+padding
+16px 0 0 0
+paragrafo
+Parágrafo
+text-indent
+63px
+inciso
+Inciso
+text-indent
+63px
+nao identificad
+Não Identificado
+text-indent
+63px

@@ -235,6 +235,12 @@ def validar_acervo() -> None:
         erro(msg)
     for msg in avisos_acervo:
         aviso(msg)
+    # Camada de texto (indices/acervo_texto/): conferida por hash, sem reextrair.
+    import acervo_texto
+
+    for msg in acervo_texto.problemas_da_camada(regs, manifest.get("documentos") or {},
+                                                acervo_texto.carregar_textos()):
+        erro(msg)
 
 
 def problemas_de_atos_infralegais(meta: dict, corpo: str) -> list[str]:

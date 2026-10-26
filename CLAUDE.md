@@ -132,6 +132,14 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   original arquivado, nunca a memória;
 - a base **não** trata a vigência nem os efeitos do ato, nem filtra pela data
   de referência: diga isso na resposta e mostre a versão/data do documento;
+- **conteúdo**: `python pipeline/consultar.py --acervo-texto "termo" [--acervo-id
+  prefixo]` busca no texto dos atos e devolve ato, versão e página; o texto
+  inteiro está em `indices/acervo_texto/<id>.md` (derivado do original, nunca
+  editar). Cite o ato, a versão e a página;
+- **leiaute** (campos de IBS/CBS/IS: caminho, tipo, ocorrência, tamanho,
+  enumeração, padrão, descrição): leia a tabela do **pacote de schemas** da versão
+  em causa, lida dos XSD — não a tabela do PDF da NT, que pode ter colunas
+  embaralhadas. Se os dois divergem, diga isso;
 - ato fora do acervo continua "Não localizado nas fontes indexadas";
 - `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
   `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.

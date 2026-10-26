@@ -1,0 +1,47 @@
+---
+id: portaria-cgibs-5-2026
+titulo: PORTARIA Nº 05/2026
+tipo: portaria
+url: https://www.cgibs.gov.br/upload/arquivos/202607/07125402-portaria-cgibs-n-5-de-2026-eleicao-e-posse-do-direx.pdf
+arquivo_original: fontes/acervo/portaria-cgibs-5-2026.pdf
+sha256_original: 49c9ce1b58b1947ea5a112b2acca6f21d59ebdaef988e1078bad04060284ff97
+gerado_por: pipeline/acervo_texto.py
+versao_gerador: 2
+aviso: 'Texto extraído do PDF (pypdf), página a página. Tabelas podem sair com as colunas embaralhadas: para campos do leiaute, use o texto do pacote de schemas da mesma versão; para o resto, confira no original.'
+sha256_corpo: 68a8e09636f092788967d5d7a236dca473a88f0848dabaf25b6c5fcf44161dea
+---
+
+## Página 1
+
+PORTARIA Nº 05/2026 
+Torna pública a eleição e posse do Diretor-Executivo do Comitê Gestor do Imposto 
+sobre Bens e Serviços – CGIBS. 
+ 
+O PRESIDENTE DO CONSELHO SUPERIOR DO COMITÊ GESTOR DO IMPOSTO SOBRE 
+BENS E SERVIÇOS – CGIBS, no uso das atribuições que lhe são conferidas pela Lei 
+Complementar nº 227, de 13 de janeiro de 2026, e 
+CONSIDERANDO que, nos termos do art. 28 da Lei Complementar nº 227, de 13 de 
+janeiro de 2026, o Diretor-Executivo do CGIBS é eleito pelo Conselho Superior do 
+Comitê Gestor; 
+CONSIDERANDO a realização da 2ª Reunião Ordinária do Conselho Superior do CGIBS, 
+em 10 de junho de 2026, na sede da Confederação Nacional de Municípios 
+(CNM), em Brasília/DF, na qual foi aprovada, por unanimidade dos conselheiros, 
+a eleição do Auditor Fiscal Miqueas Liborio de Jesus, da Receita Municipal de 
+Joinville/SC, para o cargo de Diretor-Executivo do CGIBS; 
+CONSIDERANDO o ato de posse do Diretor-Executivo eleito, realizado na mesma 
+reunião pelo Presidente do CGIBS, Flávio César Mendes de Oliveira, com a 
+participação dos Vice-Presidentes Luís Felipe Vidal Arellano e Sarah Tarsila 
+Araújo Andreozzi; 
+ 
+RESOLVE: 
+ 
+Art. 1º Fica tornada pública a eleição e o ato de posse, ocorridos no âmbito da 2ª 
+Reunião Ordinária do Conselho Superior do CGIBS, realizada em 10 de junho de 2026, 
+de MIQUEAS LIBORIO DE JESUS, para o cargo de Diretor-Executivo do Comitê Gestor 
+do Imposto Sobre Bens e Serviços – CGIBS, até 31 de março de 2027, nos termos do art. 
+22-A da Resolução CGIBS nº 4, de 8 de abril de 2026. 
+Art. 2º Esta Portaria entra em vigor na data de sua publicação. 
+ 
+ 
+FLÁVIO CÉSAR MENDES DE OLIVEIRA 
+Presidente do Comitê Gestor do IBS

@@ -1,0 +1,199 @@
+---
+id: nfe-pl-010d-v1-03
+titulo: Schemas XML NF-e/NFC-e - Pacote de Liberação 010d_v.1.03(ZIP) CNPJ Alfanumérico- NT 2026.004.v.1.01- (Publicado em 10/07/2026)
+tipo: schema
+versao: '1.01'
+data: '2026-07-10'
+documento_fiscal: NF-e/NFC-e
+url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=+pBOYTXBtbk=
+arquivo_original: fontes/acervo/nfe-pl-010d-v1-03.zip
+sha256_original: 45ceefe4dfbbfec93958283b650a2f1e1734784f4770d070b9907754de081d9b
+gerado_por: pipeline/acervo_texto.py
+versao_gerador: 2
+aviso: Tabela lida mecanicamente dos XSD do pacote (pipeline/acervo_texto.py).
+sha256_corpo: 59b269411bfe9d415f36c19772b6d65cc73127d02f6d8f7300f334e921634db1
+---
+
+## Arquivos do pacote
+
+- PL_010d_v1.03/
+- PL_010d_v1.03/CadConsultaCadastro/
+- PL_010d_v1.03/CadConsultaCadastro/consCad_v2.00.xsd
+- PL_010d_v1.03/CadConsultaCadastro/leiauteConsultaCadastro_v2.00.xsd
+- PL_010d_v1.03/CadConsultaCadastro/retConsCad_v2.00.xsd
+- PL_010d_v1.03/CadConsultaCadastro/tiposBasico_v1.03.xsd
+- PL_010d_v1.03/Evento/
+- PL_010d_v1.03/Evento/envEvento_v1.00.xsd
+- PL_010d_v1.03/Evento/leiauteEvento_v1.00.xsd
+- PL_010d_v1.03/Evento/procEventoNFe_v1.00.xsd
+- PL_010d_v1.03/Evento/retEnvEvento_v1.00.xsd
+- PL_010d_v1.03/Evento/tiposBasico_v1.03.xsd
+- PL_010d_v1.03/Evento/tiposBasico_v4.00.xsd
+- PL_010d_v1.03/Evento/xmldsig-core-schema_v1.01.xsd
+- PL_010d_v1.03/NFe/
+- PL_010d_v1.03/NFe/consSitNFe_v4.00.xsd
+- PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd
+- PL_010d_v1.03/NFe/leiauteConsSitNFe_v4.00.xsd
+- PL_010d_v1.03/NFe/leiauteInutNFe_v4.00.xsd
+- PL_010d_v1.03/NFe/leiauteNFe_v4.00.xsd
+- PL_010d_v1.03/NFe/nfe_v4.00.xsd
+- PL_010d_v1.03/NFe/procInutNFe_v4.00.xsd
+- PL_010d_v1.03/NFe/retConsReciNFe_v4.00.xsd
+- PL_010d_v1.03/NFe/retConsSitNFe_v4.00.xsd
+- PL_010d_v1.03/NFe/tiposBasico_v4.00.xsd
+- PL_010d_v1.03/NFe/xmldsig-core-schema_v1.01.xsd
+
+## Campos de IBS, CBS e IS (lidos dos XSD)
+
+| caminho | tipo | ocorrencia | tamanho | enumeracao | padrao | descricao | arquivo |
+|---|---|---|---|---|---|---|---|
+| NFe/infNFe/ide/cMunFGIBS | TCodMunIBGE | 0-1 |  |  | [0-9]{7} | Informar o município de ocorrência do fato gerador do fato gerador do IBS / CBS. Campo preenchido somente quando “indPres = 5 (Operação presencial, fora do estabelecimento) ”, e não tiver endereço do destinatário (Grupo: E05) ou local de entrega (Grupo: G01). | PL_010d_v1.03/NFe/leiauteNFe_v4.00.xsd |
+| NFe/infNFe/det/prod/tpCredPresIBSZFM | TTpCredPresIBSZFM | 0-1 |  | 0, 1, 2, 3, 4 |  | Classificação para subapuração do IBS na ZFM | PL_010d_v1.03/NFe/leiauteNFe_v4.00.xsd |
+| NFe/infNFe/det/imposto/IS | TIS | 0-1 |  |  |  | Grupo de informações do Imposto Seletivo | PL_010d_v1.03/NFe/leiauteNFe_v4.00.xsd |
+| NFe/infNFe/det/imposto/IS/CSTIS | TCST | 1-1 |  |  | \d{3} | Código Situação Tributária do Imposto Seletivo | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IS/cClassTribIS | TcClassTrib | 1-1 |  |  | \d{6} |  | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IS/vBCIS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do BC | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IS/pIS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota do Imposto Seletivo (percentual) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IS/pISEspec | TDec_0302_04RTC | 0-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota do Imposto Seletivo (por valor) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IS/uTrib | TStringRTC | 1-1 | 1-6 |  |  | Unidade de medida apropriada especificada em Lei Ordinaria para fins de apuração do Imposto Seletivo | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IS/qTrib | TDec_1104OpRTC | 1-1 |  |  | 0\.[1-9]{1}[0-9]{3}\|0\.[0-9]{3}[1-9]{1}\|0\.[0-9]{2}[1-9]{1}[0-9]{1}\|0\.[0-9]{1}[1-9]{1}[0-9]{2}\|[1-9]{1}[0-9]{0,10}(\.[0-9]{4})? | Quantidade com abse no campo uTrib informado | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IS/vIS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Imposto Seletivo calculado | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS | TTribNFe | 0-1 |  |  |  | Grupo de informações dos tributos IBS, CBS e Imposto Seletivo | PL_010d_v1.03/NFe/leiauteNFe_v4.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/CST | TCST | 1-1 |  |  | \d{3} | Código Situação Tributária do IBS/CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/cClassTrib | TcClassTrib | 1-1 |  |  | \d{6} |  | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/indDoacao | TIndDoacao | 0-1 |  | 1 |  | Indica se a operação é de doação | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS | TCIBS | 1-1 |  |  |  |  | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/vBC | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do BC | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF | (grupo) | 1-1 |  |  |  | Grupo de informações do IBS na UF | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/pIBSUF | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Aliquota do IBS de competência das UF (em percentual) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gDif | TDif | 0-1 |  |  |  | Grupo de campos do Diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gDif/pDif | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gDif/vDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gDevTrib | TDevTrib | 0-1 |  |  |  | Grupo de Informações da devolução de tributos | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gDevTrib/vDevTrib | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e gás natural e em outras hipóteses definidas no regulamento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gRed | TRed | 0-1 |  |  |  | Grupo de campos da redução de aliquota | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gRed/pRedAliq | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual de redução de aliquota do cClassTrib | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/gRed/pAliqEfet | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Aliquota Efetiva que será aplicada a Base de Calculo (em percentual) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSUF/vIBSUF | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS de competência das UF | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun | (grupo) | 1-1 |  |  |  | Grupo de Informações do IBS no Município | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/pIBSMun | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Aliquota do IBS Municipal (em percentual) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gDif | TDif | 0-1 |  |  |  | Grupo de campos do Diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gDif/pDif | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gDif/vDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gDevTrib | TDevTrib | 0-1 |  |  |  | Grupo de Informações da devolução de tributos | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gDevTrib/vDevTrib | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e gás natural e em outras hipóteses definidas no regulamento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gRed | TRed | 0-1 |  |  |  | Grupo de campos da redução de aliquota | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gRed/pRedAliq | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual de redução de aliquota do cClassTrib | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/gRed/pAliqEfet | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Aliquota Efetiva que será aplicada a Base de Calculo (em percentual) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gIBSMun/vIBSMun | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS Municipal | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/vIBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS | (grupo) | 1-1 |  |  |  | Grupo de Tributação da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/pCBS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Aliquota da CBS (em percentual) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gDif | TDif | 0-1 |  |  |  | Grupo de campos do Diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gDif/pDif | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gDif/vDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gDevTrib | TDevTrib | 0-1 |  |  |  | Grupo de Informações da devolução de tributos | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gDevTrib/vDevTrib | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do tributo devolvido. No fornecimento de energia elétrica, água, esgoto e gás natural e em outras hipóteses definidas no regulamento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gRed | TRed | 0-1 |  |  |  | Grupo de campos da redução de aliquota | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gRed/pRedAliq | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual de redução de aliquota do cClassTrib | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/gRed/pAliqEfet | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Aliquota Efetiva que será aplicada a Base de Calculo (em percentual) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gCBS/vCBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular | TTribRegular | 0-1 |  |  |  | Grupo de informações da Tributação Regular. Informar como seria a tributação caso não cumprida a condição resolutória/suspensiva. Exemplo 1: Art. 442, §4. Operações com ZFM e ALC. Exemplo 2: Operações com suspensão do tributo. | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/CSTReg | TCST | 1-1 |  |  | \d{3} | Código da Situação Tributária do IBS e CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/cClassTribReg | TcClassTrib | 1-1 |  |  | \d{6} | Informar qual seria o cClassTrib caso não cumprida a condição resolutória/suspensiva | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/pAliqEfetRegIBSUF | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota do IBS da UF | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/vTribRegIBSUF | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS da UF | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/pAliqEfetRegIBSMun | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota do IBS do Município | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/vTribRegIBSMun | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS do Município | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/pAliqEfetRegCBS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribRegular/vTribRegCBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribCompraGov | TTribCompraGov | 0-1 |  |  |  | Grupo de informações da composição do valor do IBS e da CBS em compras governamental | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribCompraGov/pAliqIBSUF | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? |  | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribCompraGov/vTribIBSUF | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor que seria devido a UF, sem aplicação do Art. 473. da LC 214/2025 | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribCompraGov/pAliqIBSMun | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? |  | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribCompraGov/vTribIBSMun | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor que seria devido ao município, sem aplicação do Art. 473. da LC 214/2025 | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribCompraGov/pAliqCBS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? |  | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/gTribCompraGov/vTribCBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor que seria devido a CBS, sem aplicação do Art. 473. da LC 214/2025 | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono | TMonofasia | 1-1 |  |  |  | Informar essa opção da Choice para Monofasia (CST 620) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoPadrao | (grupo) | 0-1 |  |  |  | Grupo de informações da Tributação Monofásica padrão | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoPadrao/qBCMono | TDec1104RTC | 1-1 |  |  | 0\|0\.[0-9]{4}\|[1-9]{1}[0-9]{0,10}(\.[0-9]{4})? | Quantidade tributada na monofasia | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoPadrao/adRemIBS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota ad rem do IBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoPadrao/adRemCBS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota ad rem da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoPadrao/vIBSMono | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS monofásico | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoPadrao/vCBSMono | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS monofásica | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoReten | (grupo) | 0-1 |  |  |  | Grupo de informações da Tributação Monofásica sujeita a retenção | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoReten/qBCMonoReten | TDec1104RTC | 1-1 |  |  | 0\|0\.[0-9]{4}\|[1-9]{1}[0-9]{0,10}(\.[0-9]{4})? | Quantidade tributada sujeita a retenção. | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoReten/adRemIBSReten | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota ad rem do IBS sujeito a retenção | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoReten/vIBSMonoReten | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS monofásico sujeito a retenção | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoReten/adRemCBSReten | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota ad rem da CBS sujeita a retenção | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoReten/vCBSMonoReten | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS monofásica sujeita a retenção | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoRet | (grupo) | 0-1 |  |  |  | Grupo de informações da Tributação Monofásica retida anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoRet/qBCMonoRet | TDec1104RTC | 1-1 |  |  | 0\|0\.[0-9]{4}\|[1-9]{1}[0-9]{0,10}(\.[0-9]{4})? | Quantidade tributada retida anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoRet/adRemIBSRet | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota ad rem do IBS retido anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoRet/vIBSMonoRet | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS retido anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoRet/adRemCBSRet | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Alíquota ad rem da CBS retida anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoRet/vCBSMonoRet | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS retida anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoDif | (grupo) | 0-1 |  |  |  | Grupo de informações do diferimento da Tributação Monofásica | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoDif/pDifIBS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do diferimento do imposto monofásico | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoDif/vIBSMonoDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS monofásico diferido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoDif/pDifCBS | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do diferimento do imposto monofásico | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoDif/vCBSMonoDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS monofásica diferida | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/vTotIBSMonoItem | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total de IBS monofásico do item | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/vTotCBSMonoItem | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total da CBS monofásica do item | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gTransfCred | TTransfCred | 1-1 |  |  |  | Informar essa opção da Choice para o CST 800 | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gTransfCred/vIBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS a ser transferido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gTransfCred/vCBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS a ser transferida | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gAjusteCompet | TAjusteCompet | 1-1 |  |  |  | Informar essa opção da Choice para o CST 811 | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gAjusteCompet/competApur | TCompetApur | 1-1 |  |  |  | Ano e mês referência do período de apuração (AAAA-MM) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gAjusteCompet/vIBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gAjusteCompet/vCBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gEstornoCred | TEstornoCred | 0-1 |  |  |  | Informado conforme indicador no cClassTrib | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gEstornoCred/vIBSEstCred | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS a ser estornado | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gEstornoCred/vCBSEstCred | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS a ser estornada | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper | TCredPresOper | 1-1 |  |  |  | Crédito Presumido da Operação. Informado conforme indicador no cClassTrib. | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/vBCCredPres | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da Base de Cálculo do Crédito Presumido da Operação | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/cCredPres | TcCredPres | 1-1 |  |  | \d{2} | Código de Classificação do Crédito Presumido do IBS e da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gIBSCredPres | TCredPres | 0-1 |  |  |  | Grupo de Informações do Crédito Presumido referente ao IBS, quando aproveitado pelo emitente do documento. | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gIBSCredPres/pCredPres | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do Crédito Presumido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gIBSCredPres/vCredPres | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gIBSCredPres/vCredPresCondSus | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido Condição Suspensiva, preencher apenas para cCredPres que possui indicação de Condição Suspensiva | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gCBSCredPres | TCredPres | 0-1 |  |  |  | Grupo de Informações do Crédito Presumido referente a CBS, quando aproveitado pelo emitente do documento. | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gCBSCredPres/pCredPres | TDec_0302_04RTC | 1-1 |  |  | 0\|0\.[0-9]{2,4}\|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})? | Percentual do Crédito Presumido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gCBSCredPres/vCredPres | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresOper/gCBSCredPres/vCredPresCondSus | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do Crédito Presumido Condição Suspensiva, preencher apenas para cCredPres que possui indicação de Condição Suspensiva | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM | TCredPresIBSZFM | 1-1 |  |  |  | Classificação de acordo com o art. 450, § 1º, da LC 214/25 para o cálculo do crédito presumido na ZFM. Informado conforme indicador no cClassTrib. | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM/competApur | TCompetApur | 1-1 |  |  |  | Ano e mês referência do período de apuração (AAAA-MM) | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM/tpCredPresIBSZFM | TTpCredPresIBSZFM | 1-1 |  | 0, 1, 2, 3, 4 |  | Classificação de acordo com o art. 450, § 1º, da LC 214/25 para o cálculo do crédito presumido na ZFM | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/det/imposto/IBSCBS/gCredPresIBSZFM/vCredPresIBSZFM | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do crédito presumido calculado sobre o saldo devedor apurado | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/ISTot | TISTot | 0-1 |  |  |  | Valores totais da NF com Imposto Seletivo | PL_010d_v1.03/NFe/leiauteNFe_v4.00.xsd |
+| NFe/infNFe/total/ISTot/vIS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor Total do Imposto Seletivo | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot | TIBSCBSMonoTot | 0-1 |  |  |  | Valores totais da NF com IBS / CBS | PL_010d_v1.03/NFe/leiauteNFe_v4.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/vBCIBSCBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total Base de Calculo | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS | (grupo) | 0-1 |  |  |  | Totalização do IBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSUF | (grupo) | 1-1 |  |  |  | Totalização do IBS de competência da UF | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSUF/vDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total do Diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSUF/vDevTrib | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total de devoluções de tributos | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSUF/vIBSUF | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total do IBS Estadual | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSMun | (grupo) | 1-1 |  |  |  | Totalização do IBS de competência Municipal | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSMun/vDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total do Diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSMun/vDevTrib | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total de devoluções de tributos | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/gIBSMun/vIBSMun | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total do IBS Municipal | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/vIBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total do IBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/vCredPres | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total do Crédito Presumido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gIBS/vCredPresCondSus | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total do Crédito Presumido Condição Suspensiva | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gCBS | (grupo) | 0-1 |  |  |  | Totalização da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gCBS/vDif | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total do Diferimento | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gCBS/vDevTrib | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total de devoluções de tributos | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gCBS/vCBS | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total da CBS | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gCBS/vCredPres | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total do Crédito Presumido | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gCBS/vCredPresCondSus | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Total do Crédito Presumido Condição Suspensiva | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gMono | (grupo) | 0-1 |  |  |  | Totais da Monofasia | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gMono/vIBSMono | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total do IBS monofásico | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gMono/vCBSMono | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total da CBS monofásica | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gMono/vIBSMonoReten | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total do IBS monofásico sujeito a retenção | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gMono/vCBSMonoReten | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total da CBS monofásica sujeita a retenção | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gMono/vIBSMonoRet | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor do IBS monofásico retido anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gMono/vCBSMonoRet | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor da CBS monofásica retida anteriormente | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gEstornoCred | (grupo) | 0-1 |  |  |  | Totalização do estorno de crédito | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gEstornoCred/vIBSEstCred | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total do IBS estornado | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |
+| NFe/infNFe/total/IBSCBSTot/gEstornoCred/vCBSEstCred | TDec1302RTC | 1-1 |  |  | 0\|0\.[0-9]{2}\|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})? | Valor total da CBS estornada | PL_010d_v1.03/NFe/DFeTiposBasicos_v1.00.xsd |

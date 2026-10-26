@@ -121,10 +121,20 @@ def normalizar(texto: str) -> str:
 
 
 def texto_do_original(dados: bytes, ext: str) -> str:
-    if ext == "pdf":
-        from pypdf import PdfReader
+    """Forma comparável do texto do original (ver `normalizar`)."""
+    return normalizar(texto_bruto(dados, ext))
 
-        return normalizar("\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(dados)).pages))
+
+def paginas_do_pdf(dados: bytes) -> list[str]:
+    from pypdf import PdfReader
+
+    return [p.extract_text() or "" for p in PdfReader(io.BytesIO(dados)).pages]
+
+
+def texto_bruto(dados: bytes, ext: str) -> str:
+    """Texto do original como o extrator o devolve, com quebras de linha."""
+    if ext == "pdf":
+        return "\n".join(paginas_do_pdf(dados))
     from fatiar import html_para_texto
 
     if ext in ("zip", "xlsx"):
@@ -145,7 +155,7 @@ def texto_do_original(dados: bytes, ext: str) -> str:
                         partes.append(re.sub(r"<[^>]+>", " ", conteudo) if ext == "xlsx" else conteudo)
 
         ler_zip(dados, "")
-        return normalizar("\n".join(partes))
+        return "\n".join(partes)
     if ext == "json":
         # Atos da RFB: a API do Sijut2 serve o texto em segmentos de HTML.
         import json
@@ -163,8 +173,8 @@ def texto_do_original(dados: bytes, ext: str) -> str:
                 textos.append(html_para_texto(obj.encode("utf-8")) if "<" in obj else obj)
 
         colher(json.loads(dados.decode("utf-8")))
-        return normalizar("\n".join(textos))
-    return normalizar(html_para_texto(dados))
+        return "\n".join(textos)
+    return html_para_texto(dados)
 
 
 def no_canal(tipo: str, url: str) -> bool:

@@ -309,7 +309,32 @@ def main() -> int:
     ap.add_argument("--acervo", metavar="TERMO",
                     help="busca no acervo (decretos, atos infralegais, Ajustes SINIEF, Notas "
                          "Tecnicas): arquivados e conferidos, sem fatiamento")
+    ap.add_argument("--acervo-texto", metavar="TERMO",
+                    help="busca no TEXTO dos atos do acervo (indices/acervo_texto/): devolve ato, "
+                         "versao e pagina")
+    ap.add_argument("--acervo-id", metavar="PREFIXO",
+                    help="com --acervo-texto: so os atos cujo id comeca assim (ex.: nfe-nt2025-002)")
     args = ap.parse_args()
+
+    if args.acervo_texto:
+        import acervo_texto
+
+        textos = {k: v for k, v in acervo_texto.carregar_textos().items()
+                  if not args.acervo_id or k.startswith(args.acervo_id)}
+        achados = acervo_texto.buscar_no_texto(textos, args.acervo_texto)
+        if not achados:
+            print("Nao localizado no texto do acervo indexado.", file=sys.stderr)
+            return 1
+        LIMITE = 60
+        for a in achados[:LIMITE]:
+            pagina = f" p.{a['pagina']}" if a["pagina"] else ""
+            print(f"{a['id']} (versao {a['versao']}){pagina}: {a['trecho'][:300]}")
+        if len(achados) > LIMITE:
+            print(f"... e mais {len(achados) - LIMITE} ocorrencia(s): refine o termo ou use --acervo-id")
+        print("\nACERVO: texto derivado do original (indices/acervo_texto/<id>.md); a base nao trata a "
+              "vigencia dos atos. Tabela de PDF pode ter colunas embaralhadas — campos do leiaute: "
+              "use o texto do pacote de schemas.")
+        return 0
 
     if args.acervo:
         caminho = RAIZ / "indices" / "acervo.json"
