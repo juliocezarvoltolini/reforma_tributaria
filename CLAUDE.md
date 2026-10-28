@@ -150,7 +150,11 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   as datas de teste e de produção de cada versão, lidas por script da tabela
   "Histórico de Alterações / Cronograma" — como a NT as escreve, com página. É o
   que o documento declara (não decisão normativa); linha não lida está em
-  `pendencias` e, para ela, a resposta é "Não localizado nas fontes indexadas";
+  `pendencias` e, para ela, a resposta é "Não localizado nas fontes indexadas".
+  Linha com `origem: ia:...` foi lida por IA pela posição no PDF
+  (`interpretacoes/cronograma_nt/`): diga que não equivale a revisão humana;
+  `resultado: ambigua` lista as datas da célula sem dizer a qual item cada uma
+  se aplica — apresente-as todas, sem escolher;
 - ato fora do acervo continua "Não localizado nas fontes indexadas";
 - `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
   `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.

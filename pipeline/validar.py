@@ -241,6 +241,14 @@ def validar_acervo() -> None:
     for msg in acervo_texto.problemas_da_camada(regs, manifest.get("documentos") or {},
                                                 acervo_texto.carregar_textos()):
         erro(msg)
+    # Leituras de pendências do cronograma das NTs: conferidas contra o PDF.
+    import cronograma_nt
+
+    rel = cronograma_nt.relatorio(regs, acervo_texto.carregar_textos())
+    _, erros_leitura = cronograma_nt.leituras_conferidas(rel, cronograma_nt.carregar_leituras(),
+                                                         cronograma_nt.obter_original)
+    for msg in erros_leitura:
+        erro(f"interpretacoes/cronograma_nt: {msg}")
 
 
 def problemas_de_atos_infralegais(meta: dict, corpo: str) -> list[str]:

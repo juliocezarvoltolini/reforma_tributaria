@@ -1,5 +1,5 @@
 {
-  "aviso": "Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / Cronograma' de cada NT: o que o documento declara, nao decisao normativa. teste/producao estao como a NT os escreve. Pendencias nao foram resolvidas.",
+  "aviso": "Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / Cronograma' de cada NT: o que o documento declara, nao decisao normativa. teste/producao estao como a NT os escreve. Linha com origem ia:... foi lida por IA a partir da posicao no PDF (interpretacoes/cronograma_nt/): nao equivale a revisao humana; resultado 'ambigua' lista as datas da celula sem dizer a qual item cada uma se aplica.",
   "notas_tecnicas": [
     {
       "documento_fiscal": "BP-e",
@@ -1233,7 +1233,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
+          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
@@ -1255,7 +1255,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -1277,7 +1277,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -1457,7 +1457,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "07/07/2025",
-          "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em",
+          "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
           "versao": "1.02"
         }
       ],
@@ -1488,7 +1488,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "07/07/2025",
-          "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em",
+          "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
           "versao": "1.03"
         }
       ],
@@ -1525,7 +1525,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "07/07/2025",
-          "trecho": "1.04  Ajustes em regras de validação e mensagens 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em",
+          "trecho": "1.04  Ajustes em regras de validação e mensagens 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
           "versao": "1.04"
         }
       ],
@@ -1568,7 +1568,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais no grupo IBSCBS Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em",
+          "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais no grupo IBSCBS Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
           "versao": "1.05"
         }
       ],
@@ -1625,7 +1625,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.05 a  Correção de datas no texto da introdução Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em",
+          "trecho": "1.05 a  Correção de datas no texto da introdução Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
           "versao": "1.05"
         }
       ],
@@ -1674,7 +1674,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.05b   Correção em nome de campos citados nas RVs Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em",
+          "trecho": "1.05b   Correção em nome de campos citados nas RVs Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
           "versao": "1.05b"
         }
       ],
@@ -1735,7 +1735,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em",
+          "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
           "versao": "1.06"
         }
       ],
@@ -2630,7 +2630,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
+          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
@@ -2652,7 +2652,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -2674,7 +2674,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -2922,7 +2922,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -2944,7 +2944,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -3045,7 +3045,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
+          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
@@ -3067,7 +3067,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -3089,7 +3089,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -3300,7 +3300,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -3322,7 +3322,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],
@@ -3408,15 +3408,21 @@
     {
       "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nfe-nt-2026-010-v1-00-danfe-rtc",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Coluna Teste com '-' (sem data); Produção: 01/12/2026. Colunas pela posição no PDF.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "01/12/2026",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-",
           "trecho": "1.00 Alteração do Leiaute do DANFE - 01/12/2026",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.010 v.1.00 - Publicada em 01/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ugn4MYF5PLg=",
       "versao": "1.00"
@@ -3424,21 +3430,33 @@
     {
       "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 01/09/2025. Produção escrita '31/10//2025' (barra duplicada no próprio documento; registrada como está — a leitura como 31/10/2025 é da IA).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
+          "producao": "31/10//2025",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "01/09/2025",
           "trecho": "1.00 Versão inicial com a previsão dos campos do imposto seletivo, IBS e CBS na NF-e e NFC-e.  01/09/2025 31/10//2025",
           "versao": "1.00"
         },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 01/09/2025. Produção escrita '31/10//2025' (barra duplicada no próprio documento; registrada como está — a leitura como 31/10/2025 é da IA).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
+          "producao": "31/10//2025",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "01/09/2025",
           "trecho": "1.10 Versão contemplando campos, eventos e regras de validação para apuração do IBS e da CBS 01/09/2025 31/10//2025",
           "versao": "1.10"
         }
       ],
+      "pendencias": [],
       "titulo": "RT - Nota Técnica 2024.002 v.1.10 - IBS/CBS - Publicada em 06/12/2024",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=DaB0yzqdbRU=",
       "versao": "1.10"
@@ -3521,16 +3539,17 @@
           "teste": "06/10/2025",
           "trecho": "1.10** Início da obrigatoriedade da informação dos novos tributos, conforme detalhamento do cronograma abaixo (RV UB12-10). 06/10/2025 05/01/2026",
           "versao": "1.10"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
           "pagina": 4,
-          "trecho": "1.10 Implantação dos eventos para utilização na apuração do IBS, CBS e IS. 04/08/2025 06/10/2025 * Implantação em homologação pode variar por UF neste período. ** As regras de validação serão aplicadas exclusivamente nos documentos fiscais que contenham o preenchimento dos campos referentes ao Imposto sobre Bens e Serviços (IBS), à Contribuição sobre Bens e Serviços (CBS) e ao Imposto Seletivo (IS). Isso significa que, se esses campos não estiverem preenchidos, as validações específicas para o IBS, CBS e IS não serão executadas. ** A validade jurídica das informações dos novos tributos se dará conforme os prazos estabelecidos na legislação, independentemente de já estarem preenchidos. Detalhamento do Cronograma Homologação Produção Julho/2025 Preenchimento dos campos IBS/CBS é facultativo. Se preenchidos, as RV serão aplicadas. Campos do IBS/CBS ainda não implantados. Caso informados, ocasionará erro de schema. Outubro/2025 Preenchimento dos campos IBS/CBS passa a ser obrigatório para as NF-e com data de emissão maior ou igual a 06/10/2025 e as RV serão aplicadas. Preenchimento dos campos IBS/CBS é facultativo. Se preenchidos, as RV serão aplicadas. Sem valor jurídico para os novos tributos. Janeiro/2026 Idem Homologação Outubro/2025. Preenchimento dos campos IBS/CBS passa a ser obrigatório para as NF-e com data de emissão maior ou igual a 05/01/2026 e as RV serão aplicadas. Com valor jurídico para os novos tributos a partir de 01/01/2026.",
+          "producao": "06/10/2025",
+          "rodape": "",
+          "teste": "04/08/2025",
+          "trecho": "1.10 Implantação dos eventos para utilização na apuração do IBS, CBS e IS. 04/08/2025 06/10/2025",
           "versao": "1.10"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002.v.1.10 - Publicada em 09/06/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=B7DBKw+UPbs=",
       "versao": "1.10"
@@ -3586,16 +3605,17 @@
           "teste": "25/08/2025",
           "trecho": "1.10 Implantação dos eventos para utilização na apuração do IBS, CBS e IS. 25/08/2025*** 06/10/2025",
           "versao": "1.10"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
           "pagina": 4,
-          "trecho": "1.20 Detalhamentos do cronograma, novas regras de validação e ajustes diversos. 08/09/2025 06/10/2025 * Implantação em homologação pode variar por UF neste período. ** As regras de validação serão aplicadas exclusivamente nos documentos fiscais que contenham o preenchimento dos campos referentes ao Imposto sobre Bens e Serviços (IBS), à Contribuição sobre Bens e Serviços (CBS) e ao Imposto Seletivo (IS). Isso significa que, se esses campos não estiverem preenchidos, as validações específicas para o IBS, CBS e IS não serão executadas. ** A validade jurídica das informações dos novos tributos se dará conforme os prazos estabelecidos na legislação, independentemente de já estarem preenchidos. *** O schema dos novos Eventos será disponibilizado até dia 11/08/2025.",
+          "producao": "06/10/2025",
+          "rodape": "",
+          "teste": "08/09/2025",
+          "trecho": "1.20 Detalhamentos do cronograma, novas regras de validação e ajustes diversos. 08/09/2025 06/10/2025",
           "versao": "1.20"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002.v.1.20 - Publicada em 30/07/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=YFz9is+R6tw=",
       "versao": "1.20"
@@ -3675,16 +3695,21 @@
           "teste": "Até 24/11/2025",
           "trecho": "1.30 Entrada das seguintes Regras de Validação: B10a-10, B10a-20, B10a-30, B10a-40, B10a-50, B25-110, B25-120, I05k-10, I05k-20, UB112-10, UB112-20, UB112-30, UB116-10, UB116-20, UB116-30, UB120-10, UB120-20, UB122-10, UB123-10, UB123-20, UB125-10, UB126-10, UB127-10, UB127-20, UB129-10, UB130-10, UB131-10, UB131-20, UB131-30, UB131-40, UB131-50, UB132-10, UB133-10, W59f-10, W59g-10 Até 24/11/2025 02/02/2026",
           "versao": "1.30"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): coluna Teste diz 'Implementação futura' (sem data); Produção: 05/01/2026. Colunas pela posição no PDF.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
-          "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura 05/01/2026 * Implantação em homologação pode variar por UF neste período. ** As regras de validação serão aplicadas exclusivamente nos documentos fiscais que contenham o preenchimento dos campos referentes ao Imposto sobre Bens e Serviços (IBS), à Contribuição sobre Bens e Serviços (CBS) e ao Imposto Seletivo (IS). Isso significa q ue, se esses campos não estiverem preenchidos, as validações específicas para o IBS, CBS e IS não serão executadas. ** A validade jurídica das informações dos novos tributos se dará conforme os prazos estabelecidos na legislação, independentemente de já estarem preenchidos.",
+          "producao": "05/01/2026",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
+          "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura 05/01/2026",
           "versao": "1.30"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.30 - Publicada em 03/10/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=6vT0rTNhFLY=",
       "versao": "1.30"
@@ -3772,16 +3797,21 @@
           "teste": "Até 14/11/2025",
           "trecho": "1.31 Correção nas regras de validação B25-80, B25-90, B25-100, Q01- 20, S01-20, UB56-10 e VC02-30. Inclusão de observação explicativa nas regras de validação  UB27- 10, UB46-10 e UB65-10, sem impacto nas validações. Até 14/11/2025 17/11/2025",
           "versao": "1.31"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): coluna Teste diz 'Implementação futura' (sem data); Produção: 05/01/2026. Colunas pela posição no PDF.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
+          "producao": "05/01/2026",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura 05/01/2026",
           "versao": "1.30"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.31 - Publicada em 11/11/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=xxtjiU7xjnk=",
       "versao": "1.31"
@@ -3869,16 +3899,21 @@
           "teste": "Até 01/12/2025",
           "trecho": "1.32 Correção nas regras de validação B25b-20, 3BA02-10, 3BA02-70 e NA01-20. Até 01/12/2025  04/12/2025",
           "versao": "1.32"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): coluna Teste diz 'Implementação futura' (sem data); Produção: 05/01/2026. Colunas pela posição no PDF.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
+          "producao": "05/01/2026",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura 05/01/2026",
           "versao": "1.30"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.32 - Publicada em 25/11/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8H1QDj2ADhQ=",
       "versao": "1.32"
@@ -3966,22 +4001,29 @@
           "teste": "Até 01/12/2025",
           "trecho": "1.32 Correção nas regras de validação B25b-20, 3BA02-10, 3BA02-70 e NA01-20. Até 01/12/2025  04/12/2025",
           "versao": "1.32"
-        }
-      ],
-      "pendencias": [
-        {
-          "motivo": "sem_data",
-          "pagina": 4,
-          "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
-          "versao": "1.30"
         },
         {
-          "motivo": "sem_data",
           "pagina": 5,
-          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64-",
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64- 15 e UB64-20). Alteração da data de início da aplicação da regra de validação UB12-10. Até 10/12/2025 Até 15/12/2025",
           "versao": "1.33"
+        },
+        {
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 4,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
+          "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
+          "versao": "1.30"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.33 - Publicada em 02/12/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AklZnck3o6I=",
       "versao": "1.33"
@@ -4069,22 +4111,37 @@
           "teste": "Até 01/12/2025",
           "trecho": "1.32 Correção nas regras de validação B25b-20, 3BA02-10, 3BA02-70 e NA01-20. Até 01/12/2025  04/12/2025",
           "versao": "1.32"
-        }
-      ],
-      "pendencias": [
-        {
-          "motivo": "sem_data",
-          "pagina": 4,
-          "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
-          "versao": "1.30"
         },
         {
-          "motivo": "sem_data",
           "pagina": 5,
-          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64-",
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64- 15 e UB64-20). Alteração da data de início da aplicação da regra de validação UB12-10. Até 10/12/2025 Até 15/12/2025",
           "versao": "1.33"
+        },
+        {
+          "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.34 Regras de validação desabilitadas: UB26-15, UB45-15 e UB64-15. Regras de validação alteradas: UB26-20, UB45-20, e UB64-20. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.34"
+        },
+        {
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 4,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
+          "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
+          "versao": "1.30"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.34 - Publicada em 04/12/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=IwLPdZ67F5M=",
       "versao": "1.34"
@@ -4172,22 +4229,49 @@
           "teste": "Até 01/12/2025",
           "trecho": "1.32 Correção nas regras de validação B25b-20, 3BA02-10, 3BA02-70 e NA01-20. Até 01/12/2025  04/12/2025",
           "versao": "1.32"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
           "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64- 15 e UB64-20). Alteração da data de início da aplicação da regra de validação UB12-10. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.33"
+        },
+        {
+          "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.34 Regras de validação desabilitadas: UB26-15, UB45-15 e UB64-15. Regras de validação alteradas: UB26-20, UB45-20, e UB64-20. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.34"
+        },
+        {
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 5,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
           "versao": "1.30"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Teste: 'Até 06/04/2026'; Produção: 'Não se aplica' (o documento diz que não há implantação em produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
-          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64-",
-          "versao": "1.33"
+          "producao": "Não se aplica",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 06/04/2026",
+          "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
+          "versao": "1.35"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.35 - Publicada em 31/03/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=SA3Qh5Htywo=",
       "versao": "1.35"
@@ -4275,22 +4359,57 @@
           "teste": "Até 01/12/2025",
           "trecho": "1.32 Correção nas regras de validação B25b-20, 3BA02-10, 3BA02-70 e NA01-20. Até 01/12/2025  04/12/2025",
           "versao": "1.32"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
           "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64- 15 e UB64-20). Alteração da data de início da aplicação da regra de validação UB12-10. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.33"
+        },
+        {
+          "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.34 Regras de validação desabilitadas: UB26-15, UB45-15 e UB64-15. Regras de validação alteradas: UB26-20, UB45-20, e UB64-20. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.34"
+        },
+        {
+          "pagina": 5,
+          "producao": "03/08/2026",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
+          "trecho": "1.36 Regras de validação incluídas: I08-141. Regras de validação alteradas: I08-140, I08-144, VC02-07, VC02-10, UB18-10, UB37-10, UB56-10, B25-80 Criação de novo tipo de nota de crédito: 06=Retorno por recusa parcial na entrega. Até 01/07/2026 03/08/2026",
+          "versao": "1.36"
+        },
+        {
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 5,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
           "versao": "1.30"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Teste: 'Até 06/04/2026'; Produção: 'Não se aplica' (o documento diz que não há implantação em produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
-          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64-",
-          "versao": "1.33"
+          "producao": "Não se aplica",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 06/04/2026",
+          "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
+          "versao": "1.35"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.36 - Publicada em 30/04/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=bBbBVKSai3U=",
       "versao": "1.36"
@@ -4378,22 +4497,73 @@
           "teste": "Até 01/12/2025",
           "trecho": "1.32 Correção nas regras de validação B25b-20, 3BA02-10, 3BA02-70 e NA01-20. Até 01/12/2025  04/12/2025",
           "versao": "1.32"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
           "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64- 15 e UB64-20). Alteração da data de início da aplicação da regra de validação UB12-10. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.33"
+        },
+        {
+          "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.34 Regras de validação desabilitadas: UB26-15, UB45-15 e UB64-15. Regras de validação alteradas: UB26-20, UB45-20, e UB64-20. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.34"
+        },
+        {
+          "pagina": 5,
+          "producao": "03/08/2026",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
+          "trecho": "1.36 Regras de validação incluídas: I08-141. Regras de validação alteradas: I08-140, I08-144, VC02-07, VC02-10, UB18-10, UB37-10, UB56-10, B25-80 Criação de novo tipo de nota de crédito: 06=Retorno por recusa parcial na entrega. Até 01/07/2026 03/08/2026",
+          "versao": "1.36"
+        },
+        {
+          "pagina": 5,
+          "producao": "03/08/2026",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
+          "trecho": "1.40 Criação do campo para o Código Indicador do Local da Operação de Fornecimento (cIndOp, B25d); Atualização de valores de tpEnteGov (BB02), tpOperGov (BB04) e criação do campo refDFeAnt (BB05); Criação do campo para Inscrição Suframa do Emitente (ISUFemit, C22); Atualização dos grupos de devolução de tributos (gDevTrib) - cashback; Criação do grupo gALCZFMCBS (UB66a); Validações por cClassTrib x tipo de nota de débito e crédito; Alteração da data de início da aplicação da regra de validação UB12-10. Ajuste no layout do Evento 211110; Eliminação do Evento 211120; Regras de validação incluídas: B25d-10, B25d-20, B25d-30, BB05- 10, BB05-20, BB05-30, BB05-40, BB05-50, BB05-60, BB05-70, BB05-80, BB05-90, BB05-100, BB05-110, BB05-120, BB05-130, BB05-140, BB05-150, BB05-160, BB05-170, BB05-180, BB05-190, BB05-200, C22-10, C22-20, UB14-60, UB14-70, UB14-80, UB24-10, UB43-10, UB56-20, UB62-10, UB62a-10, UB63-10, UB66a-10, UB66a-20, UB66c-10, UB66e-10, VC02-40, VC02-50, VC03-20; Regras de validação alteradas: B10a-30, BB02-10, E18-30, UB26- 20, UB45-20, UB56-10, UB64-20, UB82a-10, UB123-10, UB127- 10, UB133-10 , VB01-05, VB01-10, VB01-20, VC02-15, W07-10, UB12-10. Até 01/07/2026 03/08/2026",
+          "versao": "1.40"
+        },
+        {
+          "pagina": 5,
+          "producao": "01/09/2026",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
+          "trecho": "1.40 Na devolução, o referenciamento passa a ser realizado exclusivamente no grupo “DFeReferenciado” (regra de validação VC02-14) Até 01/07/2026 01/09/2026",
+          "versao": "1.40"
+        },
+        {
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 5,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
           "versao": "1.30"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Teste: 'Até 06/04/2026'; Produção: 'Não se aplica' (o documento diz que não há implantação em produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
-          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64-",
-          "versao": "1.33"
+          "producao": "Não se aplica",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 06/04/2026",
+          "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
+          "versao": "1.35"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.40 - Publicada em 20/05/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=lWEyoabukyw=",
       "versao": "1.40"
@@ -4521,28 +4691,41 @@
           "teste": "Até 01/07/2026",
           "trecho": "1.40 Na devolução, o referenciamento passa a ser realizado exclusivamente no grupo “DFeReferenciado” (regra de validação VC02-14) Até 01/07/2026 01/09/2026",
           "versao": "1.40"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "pagina": 6,
+          "producao": "03/11/2026",
+          "rodape": "",
+          "teste": "Até 01/09/2026",
+          "trecho": "1.50 Reformulação do layout da tributação monofásica de combustíveis e regras de validação Até 01/09/2026  03/11/2026",
+          "versao": "1.50"
+        },
+        {
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
           "versao": "1.30"
         },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 'Até 06/04/2026'; Produção: 'Não se aplica' (o documento diz que não há implantação em produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Não se aplica",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 06/04/2026",
           "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
           "versao": "1.35"
-        },
-        {
-          "motivo": "datas_demais",
-          "pagina": 6,
-          "trecho": "1.50 Reformulação do layout da tributação monofásica de combustíveis e regras de validação Até 01/09/2026  03/11/2026 * Implantação em homologação pode variar por UF neste período. ** As regras de validação serão aplicadas exclusivamente nos documentos fiscais que contenham o preenchimento dos campos referentes ao Imposto sobre Bens e Serviços (IBS), à Contribuição sobre Bens e Serviços (CBS) e ao Imposto Seletivo (IS). Isso significa q ue, se esses campos não estiverem preenchidos, as validações específicas para o IBS, CBS e IS não serão executadas. ** A validade jurídica das informações dos novos tributos se dará conforme os prazos estabelecidos na legislação, independentemente de já estarem preenchidos. *** O schema dos novos Eventos será disponibilizado até dia 11/08/2025.",
-          "versao": "1.50"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.50 - Publicada em 03/06/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=pD4YrecPV6s=",
       "versao": "1.50"
@@ -4678,34 +4861,53 @@
           "teste": "Até 01/09/2026",
           "trecho": "1.51 Alteração de regras de validação: UB13-30, UB13-40, UB18-10, UB22-20, UB26-20, UB37-10, UB40-10, UB45-20, UB56-20, UB59- 10, UB64-20; B25-80, I08-140, I08-144, UB13-20, UB13-40, UB22- 10, UB40-20, UB45-10, UB56-10, UB59-20, UB64-10, UB66a-20, UB82a-30, UB112-10, UB116-10, UB131-20, VC02-14, VC02-30. Até 01/09/2026 05/10/2026",
           "versao": "1.51"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "pagina": 6,
+          "producao": "03/08/2026",
+          "rodape": "",
+          "teste": "Até 03/08/2026",
+          "trecho": "1.51 Alteração do cronograma de implantação das regras de validação UB12-10 Até 03/08/2026 03/08/2026",
+          "versao": "1.51"
+        },
+        {
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
           "versao": "1.30"
         },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 'Até 06/04/2026'; Produção: 'Não se aplica' (o documento diz que não há implantação em produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Não se aplica",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 06/04/2026",
           "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
           "versao": "1.35"
         },
         {
-          "motivo": "datas_demais",
+          "etapa": null,
+          "leitura": "A célula de Produção traz duas datas, uma sob a outra: 01/09/2026 e 05/10/2025. A célula não diz a qual item cada uma se aplica. A descrição cita a regra VC02-14; a v1.52 desta NT diz que a produção da VC02-14 'mudou de 05/10/2026 para 03/11/2026' — 05/10/2025 aqui é anterior à própria versão (possível erro de digitação; não corrigido).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 6,
+          "producao": "01/09/2026 05/10/2025",
+          "resultado": "ambigua",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
           "trecho": "1.40 Na devolução, o referenciamento passa a ser realizado exclusivamente no grupo “DFeReferenciado” (regra de validação VC02-14) Até 01/07/2026 01/09/2026 05/10/2025",
           "versao": "1.40"
-        },
-        {
-          "motivo": "datas_demais",
-          "pagina": 6,
-          "trecho": "1.51 Alteração do cronograma de implantação das regras de validação UB12-10 Até 03/08/2026 03/08/2026 * Implantação em homologação pode variar por UF neste período. ** As regras de validação serão aplicadas exclusivamente nos documentos fiscais que contenham o preenchimento dos campos referentes ao Imposto sobre Bens e Serviços (IBS), à Contribuição sobre Bens e Serviços (CBS) e ao Imposto Seletivo (IS). Isso significa q ue, se esses campos não estiverem preenchidos, as validações específicas para o IBS, CBS e IS não serão executadas. ** A validade jurídica das informações dos novos tributos se dará conforme os prazos estabelecidos na legislação, independentemente de já estarem preenchidos. *** O schema dos novos Eventos será disponibilizado até dia 11/08/2025.",
-          "versao": "1.51"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.51 - Publicada em 04/08/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AKD/muSmiIY=",
       "versao": "1.51"
@@ -4857,34 +5059,57 @@
           "teste": "Até 05/10/2026",
           "trecho": "1.52 Correção na RV VC02-50 Até 05/10/2026 Até 03/11/2026",
           "versao": "1.52"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
           "versao": "1.30"
         },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 'Até 06/04/2026'; Produção: 'Não se aplica' (o documento diz que não há implantação em produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Não se aplica",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 06/04/2026",
           "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
           "versao": "1.35"
         },
         {
-          "motivo": "datas_demais",
+          "etapa": null,
+          "leitura": "A célula de Produção traz três datas, uma sob a outra: 01/09/2026, 05/10/2026 e 03/11/2026. A célula não diz a qual item cada uma se aplica; a linha 1.52 da mesma NT diz que a produção da VC02-14 'mudou de 05/10/2026 para 03/11/2026'. Sem decidir.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 6,
+          "producao": "01/09/2026 05/10/2026 03/11/2026",
+          "resultado": "ambigua",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
           "trecho": "1.40 Na devolução, o referenciamento passa a ser realizado exclusivamente no grupo “DFeReferenciado” (regra de validação VC02-14) Até 01/07/2026 01/09/2026 05/10/2026 03/11/2026",
           "versao": "1.40"
         },
         {
-          "motivo": "datas_demais",
+          "etapa": null,
+          "leitura": "Linha 1.52 da VC02-14: Teste '-' (sem data); Produção 03/11/2026. As outras datas da linha estão na descrição ('mudou de 05/10/2026 para 03/11/2026'), não nas colunas.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 6,
-          "trecho": "1.52 Alteração da data de implantação da VC02-14 em Produção, mudou de 05/10/2026 para 03/11/2026 - 03/11/2026 * Implantação em homologação pode variar por UF neste período. ** As regras de validação serão aplicadas exclusivamente nos documentos fiscais que contenham o preenchimento dos campos referentes ao Imposto sobre Bens e Serviços (IBS), à Contribuição sobre Bens e Serviços (CBS) e ao Imposto Seletivo (IS). Isso significa q ue, se esses campos não estiverem preenchidos, as validações específicas para o IBS, CBS e IS não serão executadas. ** A validade jurídica das informações dos novos tributos se dará conforme os prazos estabelecidos na legislação, independentemente de já estarem preenchidos. *** O schema dos novos Eventos será disponibilizado até dia 11/08/2025.",
+          "producao": "03/11/2026",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-",
+          "trecho": "1.52 Alteração da data de implantação da VC02-14 em Produção, mudou de 05/10/2026 para 03/11/2026 - 03/11/2026",
           "versao": "1.52"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v.1.52 - Publicada em 01/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HXPO8VLbh4o=",
       "versao": "1.52"
@@ -4892,15 +5117,17 @@
     {
       "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-2026-001-nf-e-v1-00-paa",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
-          "pagina": null,
-          "trecho": "",
-          "versao": null
+          "pagina": 3,
+          "producao": "03/08/2026",
+          "rodape": "",
+          "teste": "08/06/2026",
+          "trecho": "1.00  Versão  inicial  08/06/2026  03/08/2026 Página  3  /  18",
+          "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 v.1.00 - Publicada em 22/04/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=52e8psumXNc=",
       "versao": "1.00"
@@ -5000,22 +5227,33 @@
           "teste": "03/08/2026",
           "trecho": "1.02 Alteração da data de implantação em Produção. Ajuste na RV P09-10. Alteração do código de rejeição das RV ZG01-10, ZG02- 10, ZG02-30. 03/08/2026 05/10/2026",
           "versao": "1.02"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem '-x-': o documento não dá data para esta versão.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "-x-",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.02a Ajuste em documentação. -x- -x-",
           "versao": "1.02a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem '-x-': o documento não dá data para esta versão.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
-          "trecho": "1.02b Correção do código de rejeição das RV P14-10 e P14-",
+          "producao": "-x-",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
+          "trecho": "1.02b Correção do código de rejeição das RV P14-10 e P14- 20. -x- -x-",
           "versao": "1.02b"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 v.1.02b - Publicada em 31/07/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AlgHfV6gpAU=",
       "versao": "1.02b"
@@ -5189,16 +5427,21 @@
           "teste": "01/09/2026",
           "trecho": "1.10a - Alteração da regra BA10-20 01/09/2026 05/10/2026",
           "versao": "1.10a"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
+          "etapa": null,
+          "leitura": "Teste '-x-' (sem data); Produção 14/12/2026. A descrição cita a mudança 'de 05/10/2026 para 14/12/2026' das RV I08-180, BA02-35 e VC02-40; não é coluna.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "14/12/2026",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.11 - Alteração da data de implantação das RV I08-180, BA02-35, VC02-40 em Produção, de 05/10/2026 para 14/12/2026. -x- 14/12/2026",
           "versao": "1.11"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.002 v.1.11 - Publicada em 01/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=m8aACnFLK/Y=",
       "versao": "1.11"
@@ -5286,15 +5529,21 @@
     {
       "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 01/09/2025. Produção escrita '31/10//2025' (barra duplicada no próprio documento; registrada como está — a leitura como 31/10/2025 é da IA).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "31/10//2025",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "01/09/2025",
           "trecho": "1.00 Versão inicial com a previsão dos campos do Imposto Seletivo, IBS e CBS na NF-e e NFC-e.  01/09/2025 31/10//2025",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "RT Nota Técnica 2024.002 - IBS/CBS - Publicada em 01/08/2024",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OJQR7LXdlWA=",
       "versao": "1.0"
@@ -5302,15 +5551,21 @@
     {
       "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 01/09/2025. Produção escrita '31/10//2025' (barra duplicada no próprio documento; registrada como está — a leitura como 31/10/2025 é da IA).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "31/10//2025",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "01/09/2025",
           "trecho": "1.00 Versão inicial com a previsão dos campos do Imposto Seletivo, IBS e CBS na NF-e e NFC-e.  01/09/2025 31/10//2025",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "DFe Nota Técnica 2024.002 NFe, NFCe e imposto seletivo",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFCE/DownloadArquivoEstatico/?sistema=NFCE&tipoArquivo=3&nomeArquivo=NT-RT_2024.002%20-%20NF-e%20e%20NFC-e%20v1.00%20-%20IBS%2C%20CBS%20e%20Imposto%20Seletivo.pdf",
       "versao": "1.0"
@@ -5342,28 +5597,81 @@
           "teste": "01/07/2025",
           "trecho": "1.40 Implantação de novo grupo de validação de códigos GTIN – Grupo IV 01/07/2025 01/10/2025",
           "versao": "1.40"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
+          "etapa": "Etapa 1 desta NT (verifica GTIN existe no CCG, outros)",
+          "leitura": "Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 1.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "12/09/2022",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "04/07/2022",
           "trecho": "1.00 Implantação da etapa 1 desta NT (verifica GTIN existe no CCG, outros) 04/07/2022 12/09/2022 Implantação da etapa 2 desta NT (verifica NCM e CEST no CCG) 06/03/2023 12/06/2023",
           "versao": "1.00"
         },
         {
-          "motivo": "uma_data",
+          "etapa": "Etapa 2 desta NT",
+          "leitura": "Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 2 (verifica NCM e CEST no CCG).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "12/06/2023",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "06/03/2023",
+          "trecho": "1.00 Implantação da etapa 1 desta NT (verifica GTIN existe no CCG, outros) 04/07/2022 12/09/2022 Implantação da etapa 2 desta NT (verifica NCM e CEST no CCG) 06/03/2023 12/06/2023",
+          "versao": "1.00"
+        },
+        {
+          "etapa": null,
+          "leitura": "A linha da versão 1.10 diz '-x-' nas duas colunas.",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "-x-",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
           "versao": "1.10"
         },
         {
-          "motivo": "uma_data",
+          "etapa": "Etapa 1 desta NT (verifica GTIN existe no CCG, outros)",
+          "leitura": "Postergação: etapa 1 com Teste 'Até 25/07/2022' e Produção 'Sem alteração'.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Sem alteração",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 25/07/2022",
+          "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
+          "versao": "1.10"
+        },
+        {
+          "etapa": "Etapa 2 desta NT",
+          "leitura": "Postergação: etapa 2 sem alteração nas duas colunas.",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "Sem alteração",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Sem Alteração",
+          "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
+          "versao": "1.10"
+        },
+        {
+          "etapa": null,
+          "leitura": "Teste '-x-' (sem data); Produção 03/07/2023 (implantação em produção adiada por 30 dias, segundo a descrição).",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "03/07/2023",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.21 Adiada a implantação  em produção, por 30 dias, da verificação de  existência de novos GTIN relacionados a indústria de bebidas e refrigerantes, cimento, perfumaria, higiene pessoal e cosméticos, conforme descrito no Anexo I, Grupo II desta NT. -x- 03/07/2023",
           "versao": "1.21"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2021.003 - v.1.40 - Publicada em 26/02/2025",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=tfoysypOTPE=",
       "versao": "1.40"
@@ -5403,28 +5711,81 @@
           "teste": "01/04/2027",
           "trecho": "1.50 Implantação de novo grupo de validação de códigos GTIN – Grupo V 01/04/2027 01/09/2027",
           "versao": "1.50"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
+          "etapa": "Etapa 1 desta NT (verifica GTIN existe no CCG, outros)",
+          "leitura": "Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 1.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "12/09/2022",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "04/07/2022",
           "trecho": "1.00 Implantação da etapa 1 desta NT (verifica GTIN existe no CCG, outros) 04/07/2022 12/09/2022 Implantação da etapa 2 desta NT (verifica NCM e CEST no CCG) 06/03/2023 12/06/2023",
           "versao": "1.00"
         },
         {
-          "motivo": "uma_data",
+          "etapa": "Etapa 2 desta NT",
+          "leitura": "Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 2 (verifica NCM e CEST no CCG).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "12/06/2023",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "06/03/2023",
+          "trecho": "1.00 Implantação da etapa 1 desta NT (verifica GTIN existe no CCG, outros) 04/07/2022 12/09/2022 Implantação da etapa 2 desta NT (verifica NCM e CEST no CCG) 06/03/2023 12/06/2023",
+          "versao": "1.00"
+        },
+        {
+          "etapa": null,
+          "leitura": "A linha da versão 1.10 diz '-x-' nas duas colunas.",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "-x-",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
           "versao": "1.10"
         },
         {
-          "motivo": "uma_data",
+          "etapa": "Etapa 1 desta NT (verifica GTIN existe no CCG, outros)",
+          "leitura": "Postergação: etapa 1 com Teste 'Até 25/07/2022' e Produção 'Sem alteração'.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Sem alteração",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 25/07/2022",
+          "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
+          "versao": "1.10"
+        },
+        {
+          "etapa": "Etapa 2 desta NT",
+          "leitura": "Postergação: etapa 2 sem alteração nas duas colunas.",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "Sem alteração",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Sem Alteração",
+          "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
+          "versao": "1.10"
+        },
+        {
+          "etapa": null,
+          "leitura": "Teste '-x-' (sem data); Produção 03/07/2023 (implantação em produção adiada por 30 dias, segundo a descrição).",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "03/07/2023",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.21 Adiada a implantação em produção, por 30 dias, da verificação de existência de novos GTIN relacionados a indústria de bebidas e refrigerantes, cimento, perfumaria, higiene pessoal e cosméticos, conforme descrito no Anexo I, Grupo II desta NT. -x- 03/07/2023",
           "versao": "1.21"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2021.003 - v.1.50 - Publicada em 25/09/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ENot2yWE72Q=",
       "versao": "1.50"
@@ -5464,28 +5825,81 @@
           "teste": "01/04/2027",
           "trecho": "1.50 Implantação de novo grupo de validação de códigos GTIN – Grupo V 01/04/2027 01/09/2027",
           "versao": "1.50"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
+          "etapa": "Etapa 1 desta NT (verifica GTIN existe no CCG, outros)",
+          "leitura": "Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 1.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "12/09/2022",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "04/07/2022",
           "trecho": "1.00 Implantação da etapa 1 desta NT (verifica GTIN existe no CCG, outros) 04/07/2022 12/09/2022 Implantação da etapa 2 desta NT (verifica NCM e CEST no CCG) 06/03/2023 12/06/2023",
           "versao": "1.00"
         },
         {
-          "motivo": "uma_data",
+          "etapa": "Etapa 2 desta NT",
+          "leitura": "Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 2 (verifica NCM e CEST no CCG).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "12/06/2023",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "06/03/2023",
+          "trecho": "1.00 Implantação da etapa 1 desta NT (verifica GTIN existe no CCG, outros) 04/07/2022 12/09/2022 Implantação da etapa 2 desta NT (verifica NCM e CEST no CCG) 06/03/2023 12/06/2023",
+          "versao": "1.00"
+        },
+        {
+          "etapa": null,
+          "leitura": "A linha da versão 1.10 diz '-x-' nas duas colunas.",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "-x-",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
           "versao": "1.10"
         },
         {
-          "motivo": "uma_data",
+          "etapa": "Etapa 1 desta NT (verifica GTIN existe no CCG, outros)",
+          "leitura": "Postergação: etapa 1 com Teste 'Até 25/07/2022' e Produção 'Sem alteração'.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Sem alteração",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 25/07/2022",
+          "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
+          "versao": "1.10"
+        },
+        {
+          "etapa": "Etapa 2 desta NT",
+          "leitura": "Postergação: etapa 2 sem alteração nas duas colunas.",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "Sem alteração",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Sem Alteração",
+          "trecho": "1.10 Postergação da Validação da existência do GTIN no CCG, conforme o NCM -x- -x- Etapa 1 desta NT (verifica GTIN existe no CCG, outros) Até 25/07/2022 Sem alteração Etapa 2 desta NT (verifica NCM no CCG) Sem Alteração Sem alteração",
+          "versao": "1.10"
+        },
+        {
+          "etapa": null,
+          "leitura": "Teste '-x-' (sem data); Produção 03/07/2023 (implantação em produção adiada por 30 dias, segundo a descrição).",
+          "origem": "ia:claude-opus-5-5",
+          "pagina": 3,
+          "producao": "03/07/2023",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-x-",
           "trecho": "1.21 Adiada a implantação  em produção, por 30 dias, da verificação de  existência de novos GTIN relacionados a indústria de bebidas e refrigerantes, cimento, perfumaria, higiene pessoal e cosméticos, conforme descrito no Anexo I, Grupo II desta NT. -x- 03/07/2023",
           "versao": "1.21"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2021.003 v.1.50",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&tipoArquivo=3&nomeArquivo=NT2021.003_v1_50%20-%20Valida%C3%A7%C3%A3o%20GTIN%20Grupo%20V.pdf",
       "versao": "1.50"
@@ -5537,15 +5951,17 @@
     {
       "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt2026-009-v1-00-alteracao-rv-cfop",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.00 Alteração da regra de validação I08-140, ampliando a aceitação dos CFOP",
+          "producao": "Até 17/09/2026",
+          "rodape": "",
+          "teste": "Até 17/09/2026",
+          "trecho": "1.00 Alteração da regra de validação I08-140, ampliando a aceitação dos CFOP 1.949 e 2.949 para as situações previstas na regra. Até 17/09/2026 Até 17/09/2026",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.009 v.1.00 - Publicada em 09/09/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ADlgg2xjMZI=",
       "versao": "1.00"
@@ -5558,7 +5974,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
+          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
@@ -5580,7 +5996,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
         }
       ],

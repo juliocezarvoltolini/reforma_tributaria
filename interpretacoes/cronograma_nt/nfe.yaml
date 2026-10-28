@@ -1,0 +1,606 @@
+# Leituras das pendências do cronograma das NTs de NF-e (indices/cronograma_nt.json).
+# Camada 3: leitura por IA a partir da POSIÇÃO no PDF original — não equivale a revisão humana.
+# `alturas` (y na página) apontam a linha da tabela; validar.py extrai de novo o texto das colunas
+# Teste e Produção nessas alturas e exige que seja `teste`/`producao`. resultado 'ambigua': a
+# célula lista datas sem dizer a qual item cada uma se aplica — não decidido.
+leituras:
+- nt: nfe-nfe-nt-2026-010-v1-00-danfe-rtc
+  versao: '1.00'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 562
+  teste: '-'
+  producao: 01/12/2026
+  resultado: lida
+  leitura: 'Coluna Teste com ''-'' (sem data); Produção: 01/12/2026. Colunas pela posição no PDF.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final
+  versao: '1.00'
+  pagina: 4
+  motivo: uma_data
+  alturas:
+  - 453
+  teste: 01/09/2025
+  producao: 31/10//2025
+  resultado: lida
+  leitura: 'Teste: 01/09/2025. Produção escrita ''31/10//2025'' (barra duplicada no próprio documento; registrada
+    como está — a leitura como 31/10/2025 é da IA).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final
+  versao: '1.10'
+  pagina: 4
+  motivo: uma_data
+  alturas:
+  - 428
+  teste: 01/09/2025
+  producao: 31/10//2025
+  resultado: lida
+  leitura: 'Teste: 01/09/2025. Produção escrita ''31/10//2025'' (barra duplicada no próprio documento; registrada
+    como está — a leitura como 31/10/2025 é da IA).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo
+  versao: '1.00'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 506
+  teste: 01/09/2025
+  producao: 31/10//2025
+  resultado: lida
+  leitura: 'Teste: 01/09/2025. Produção escrita ''31/10//2025'' (barra duplicada no próprio documento; registrada
+    como está — a leitura como 31/10/2025 é da IA).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c
+  versao: '1.00'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 506
+  teste: 01/09/2025
+  producao: 31/10//2025
+  resultado: lida
+  leitura: 'Teste: 01/09/2025. Produção escrita ''31/10//2025'' (barra duplicada no próprio documento; registrada
+    como está — a leitura como 31/10/2025 é da IA).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-30-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 4
+  motivo: uma_data
+  alturas:
+  - 156
+  - 144
+  teste: Implementação futura
+  producao: 05/01/2026
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): coluna Teste diz ''Implementação futura'' (sem data);
+    Produção: 05/01/2026. Colunas pela posição no PDF.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-31-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 4
+  motivo: uma_data
+  alturas:
+  - 132
+  - 120
+  teste: Implementação futura
+  producao: 05/01/2026
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): coluna Teste diz ''Implementação futura'' (sem data);
+    Produção: 05/01/2026. Colunas pela posição no PDF.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-32-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 4
+  motivo: uma_data
+  alturas:
+  - 154
+  - 143
+  teste: Implementação futura
+  producao: 05/01/2026
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): coluna Teste diz ''Implementação futura'' (sem data);
+    Produção: 05/01/2026. Colunas pela posição no PDF.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-33-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 4
+  motivo: sem_data
+  alturas:
+  - 130
+  - 119
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-34-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 4
+  motivo: sem_data
+  alturas:
+  - 106
+  - 95
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-35-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 5
+  motivo: sem_data
+  alturas:
+  - 759
+  - 747
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-36-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 5
+  motivo: sem_data
+  alturas:
+  - 759
+  - 747
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final
+  versao: '1.30'
+  pagina: 5
+  motivo: sem_data
+  alturas:
+  - 735
+  - 724
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 5
+  motivo: sem_data
+  alturas:
+  - 712
+  - 701
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-51-rtc
+  versao: '1.30'
+  pagina: 5
+  motivo: sem_data
+  alturas:
+  - 678
+  - 666
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 5
+  motivo: sem_data
+  alturas:
+  - 654
+  - 642
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data. (Versões anteriores da NT davam 05/01/2026 em Produção.)'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-35-rtc-nf-e-ibs-cbs-is
+  versao: '1.35'
+  pagina: 5
+  motivo: uma_data
+  alturas:
+  - 525
+  teste: Até 06/04/2026
+  producao: Não se aplica
+  resultado: lida
+  leitura: 'Teste: ''Até 06/04/2026''; Produção: ''Não se aplica'' (o documento diz que não há implantação em produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-36-rtc-nf-e-ibs-cbs-is
+  versao: '1.35'
+  pagina: 5
+  motivo: uma_data
+  alturas:
+  - 525
+  teste: Até 06/04/2026
+  producao: Não se aplica
+  resultado: lida
+  leitura: 'Teste: ''Até 06/04/2026''; Produção: ''Não se aplica'' (o documento diz que não há implantação em produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final
+  versao: '1.35'
+  pagina: 5
+  motivo: uma_data
+  alturas:
+  - 502
+  teste: Até 06/04/2026
+  producao: Não se aplica
+  resultado: lida
+  leitura: 'Teste: ''Até 06/04/2026''; Produção: ''Não se aplica'' (o documento diz que não há implantação em produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is
+  versao: '1.35'
+  pagina: 5
+  motivo: uma_data
+  alturas:
+  - 479
+  teste: Até 06/04/2026
+  producao: Não se aplica
+  resultado: lida
+  leitura: 'Teste: ''Até 06/04/2026''; Produção: ''Não se aplica'' (o documento diz que não há implantação em produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-51-rtc
+  versao: '1.35'
+  pagina: 5
+  motivo: uma_data
+  alturas:
+  - 444
+  teste: Até 06/04/2026
+  producao: Não se aplica
+  resultado: lida
+  leitura: 'Teste: ''Até 06/04/2026''; Produção: ''Não se aplica'' (o documento diz que não há implantação em produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is
+  versao: '1.35'
+  pagina: 5
+  motivo: uma_data
+  alturas:
+  - 420
+  teste: Até 06/04/2026
+  producao: Não se aplica
+  resultado: lida
+  leitura: 'Teste: ''Até 06/04/2026''; Produção: ''Não se aplica'' (o documento diz que não há implantação em produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-51-rtc
+  versao: '1.40'
+  pagina: 6
+  motivo: datas_demais
+  alturas:
+  - 759
+  - 741
+  teste: Até 01/07/2026
+  producao: 01/09/2026 05/10/2025
+  resultado: ambigua
+  leitura: 'A célula de Produção traz duas datas, uma sob a outra: 01/09/2026 e 05/10/2025. A célula não diz a qual
+    item cada uma se aplica. A descrição cita a regra VC02-14; a v1.52 desta NT diz que a produção da VC02-14 ''mudou
+    de 05/10/2026 para 03/11/2026'' — 05/10/2025 aqui é anterior à própria versão (possível erro de digitação; não
+    corrigido).'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is
+  versao: '1.40'
+  pagina: 6
+  motivo: datas_demais
+  alturas:
+  - 735
+  - 718
+  - 700
+  teste: Até 01/07/2026
+  producao: 01/09/2026 05/10/2026 03/11/2026
+  resultado: ambigua
+  leitura: 'A célula de Produção traz três datas, uma sob a outra: 01/09/2026, 05/10/2026 e 03/11/2026. A célula
+    não diz a qual item cada uma se aplica; a linha 1.52 da mesma NT diz que a produção da VC02-14 ''mudou de 05/10/2026
+    para 03/11/2026''. Sem decidir.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is
+  versao: '1.52'
+  pagina: 6
+  motivo: datas_demais
+  alturas:
+  - 540
+  teste: '-'
+  producao: 03/11/2026
+  resultado: lida
+  leitura: 'Linha 1.52 da VC02-14: Teste ''-'' (sem data); Produção 03/11/2026. As outras datas da linha estão na
+    descrição (''mudou de 05/10/2026 para 03/11/2026''), não nas colunas.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2026-001-v1-02b-paa-nfe
+  versao: 1.02a
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 405
+  teste: -x-
+  producao: -x-
+  resultado: lida
+  leitura: 'As duas colunas dizem ''-x-'': o documento não dá data para esta versão.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2026-001-v1-02b-paa-nfe
+  versao: 1.02b
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 380
+  teste: -x-
+  producao: -x-
+  resultado: lida
+  leitura: 'As duas colunas dizem ''-x-'': o documento não dá data para esta versão.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt-2026-002-v1-11-danfe-simpl-tp2-emi-offline-autoriz-alerta
+  versao: '1.11'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 78
+  teste: -x-
+  producao: 14/12/2026
+  resultado: lida
+  leitura: Teste '-x-' (sem data); Produção 14/12/2026. A descrição cita a mudança 'de 05/10/2026 para 14/12/2026'
+    das RV I08-180, BA02-35 e VC02-40; não é coluna.
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 446
+  teste: 04/07/2022
+  producao: 12/09/2022
+  resultado: lida
+  leitura: Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 1.
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 1 desta NT (verifica GTIN existe no CCG, outros)
+- nt: nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 434
+  teste: 06/03/2023
+  producao: 12/06/2023
+  resultado: lida
+  leitura: Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 2 (verifica NCM e CEST no CCG).
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 2 desta NT
+- nt: nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 422
+  teste: -x-
+  producao: -x-
+  resultado: lida
+  leitura: A linha da versão 1.10 diz '-x-' nas duas colunas.
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 409
+  teste: Até 25/07/2022
+  producao: Sem alteração
+  resultado: lida
+  leitura: 'Postergação: etapa 1 com Teste ''Até 25/07/2022'' e Produção ''Sem alteração''.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 1 desta NT (verifica GTIN existe no CCG, outros)
+- nt: nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 397
+  teste: Sem Alteração
+  producao: Sem alteração
+  resultado: lida
+  leitura: 'Postergação: etapa 2 sem alteração nas duas colunas.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 2 desta NT
+- nt: nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv
+  versao: '1.21'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 371
+  teste: -x-
+  producao: 03/07/2023
+  resultado: lida
+  leitura: Teste '-x-' (sem data); Produção 03/07/2023 (implantação em produção adiada por 30 dias, segundo a descrição).
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 423
+  teste: 04/07/2022
+  producao: 12/09/2022
+  resultado: lida
+  leitura: Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 1.
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 1 desta NT (verifica GTIN existe no CCG, outros)
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 411
+  teste: 06/03/2023
+  producao: 12/06/2023
+  resultado: lida
+  leitura: Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 2 (verifica NCM e CEST no CCG).
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 2 desta NT
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 399
+  teste: -x-
+  producao: -x-
+  resultado: lida
+  leitura: A linha da versão 1.10 diz '-x-' nas duas colunas.
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 386
+  teste: Até 25/07/2022
+  producao: Sem alteração
+  resultado: lida
+  leitura: 'Postergação: etapa 1 com Teste ''Até 25/07/2022'' e Produção ''Sem alteração''.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 1 desta NT (verifica GTIN existe no CCG, outros)
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 374
+  teste: Sem Alteração
+  producao: Sem alteração
+  resultado: lida
+  leitura: 'Postergação: etapa 2 sem alteração nas duas colunas.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 2 desta NT
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v
+  versao: '1.21'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 348
+  teste: -x-
+  producao: 03/07/2023
+  resultado: lida
+  leitura: Teste '-x-' (sem data); Produção 03/07/2023 (implantação em produção adiada por 30 dias, segundo a descrição).
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 423
+  teste: 04/07/2022
+  producao: 12/09/2022
+  resultado: lida
+  leitura: Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 1.
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 1 desta NT (verifica GTIN existe no CCG, outros)
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 411
+  teste: 06/03/2023
+  producao: 12/06/2023
+  resultado: lida
+  leitura: Linha 1.00 com duas etapas, cada uma com as suas datas; esta é a etapa 2 (verifica NCM e CEST no CCG).
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 2 desta NT
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 399
+  teste: -x-
+  producao: -x-
+  resultado: lida
+  leitura: A linha da versão 1.10 diz '-x-' nas duas colunas.
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 386
+  teste: Até 25/07/2022
+  producao: Sem alteração
+  resultado: lida
+  leitura: 'Postergação: etapa 1 com Teste ''Até 25/07/2022'' e Produção ''Sem alteração''.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 1 desta NT (verifica GTIN existe no CCG, outros)
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26
+  versao: '1.10'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 374
+  teste: Sem Alteração
+  producao: Sem alteração
+  resultado: lida
+  leitura: 'Postergação: etapa 2 sem alteração nas duas colunas.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+  etapa: Etapa 2 desta NT
+- nt: nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26
+  versao: '1.21'
+  pagina: 3
+  motivo: uma_data
+  alturas:
+  - 348
+  teste: -x-
+  producao: 03/07/2023
+  resultado: lida
+  leitura: Teste '-x-' (sem data); Produção 03/07/2023 (implantação em produção adiada por 30 dias, segundo a descrição).
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'

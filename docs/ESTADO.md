@@ -656,6 +656,17 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   11 com datas demais, 12 NTs sem a tabela, quase todas de NFS-e). Armadilha
   paga: a tabela da CT-e continua na página seguinte; o leitor parava na quebra
   e perdia a versão 1.13 em silêncio.
+- **Pendências da NF-e resolvidas (2026-10-28, a pedido):** antes, três defeitos
+  do script corrigidos com teste — continuação de célula que começa por número
+  ("15 e UB64-20).") encerrava a tabela, o rodapé e o detalhamento colavam na
+  última linha, e o cabeçalho com espaços duplos não era achado. As 37 pendências
+  que sobraram foram lidas por IA (46 leituras, porque linhas com etapas viram
+  uma por etapa) em `interpretacoes/cronograma_nt/nfe.yaml`, cada uma apontando
+  as alturas da linha no PDF; `validar.py` extrai de novo, pela posição
+  (`pipeline/cronograma_pdf.py`), o texto das colunas Teste e Produção e exige o
+  registrado. 2 ficaram `ambigua` (linha 1.40 da NT 2025.002 v1.51 e v1.52: a
+  célula de Produção empilha 2 ou 3 datas sem dizer a qual item cada uma vale).
+  Demais documentos fiscais: pendências NÃO resolvidas (393).
 - **Não conferido ainda:** tamanho e tipo dos campos (formatos diferentes na NT e
   no XSD), regras de validação, e o cronograma de implantação por versão (está no
   texto, em linguagem livre).

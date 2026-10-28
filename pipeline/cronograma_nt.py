@@ -22,10 +22,14 @@ import re
 
 from acervo_texto import _separar
 
-RE_CABECALHO = re.compile(r"^Hist[óo]rico de Altera[çc][õo]es\s*/\s*Cronograma\s*$")
+RE_CABECALHO = re.compile(r"^Hist[óo]rico\s+de\s+Altera[çc][õo]es\s*/\s*Cronograma\s*$")
 # Versão de NT: dois dígitos depois do ponto ("1.09", "1.05a"); "2.1" é seção.
 RE_VERSAO = re.compile(r"^(?P<v>\d{1,2}\.\d{2}[a-z]?)(?P<ast>\*+)?(?=\s|$)")
-RE_NUMERADA = re.compile(r"^\d+(?:\.\d+)*\.?\s")
+# Fim da tabela: título de seção ("2.1 Seção", "1. Introdução"), linha de tabela de
+# campos ("324.35 UB35 ..."), rodapé ("* Implantação ...") ou o detalhamento abaixo.
+# Continuação de célula que começa por número ("15 e UB64-20).", "1.949 e 2.949")
+# NÃO encerra: o que segue o número é minúscula.
+RE_NUMERADA = re.compile(r"^(?:\d+(?:\.\d+)*\.?\s+[A-ZÀ-Ý][a-zà-ÿ]|\d+\.\d+\s+[A-Z]{1,3}\d|\*|Detalhamento\b)")
 _DATA = r"\d{2}/\d{2}/\d{4}|\d{2}/\d{4}"
 RE_ITEM = re.compile(rf"(?<![\d/])(?P<de>De\s+)?(?P<ate>At[ée]\s+)?(?P<d1>{_DATA})(?P<a1>\*+)?"
                      rf"(?:\s+at[ée]\s+(?P<d2>{_DATA})(?P<a2>\*+)?)?(?![\d/])")
@@ -101,6 +105,104 @@ def ler_cronograma(md: str) -> dict:
     return {"linhas": lidas, "pendencias": pendencias}
 
 
+# --------------------------------------------------- leituras de pendências
+# Pendência que o script não lê pode ser lida por pessoa ou por IA, em
+# interpretacoes/cronograma_nt/*.yaml (camada 3). A leitura aponta a linha da
+# tabela pela ALTURA na página do PDF, e a validação extrai de novo, do original,
+# o texto das colunas Teste e Produção naquelas alturas: tem de ser o registrado.
+# Leitura de IA não equivale a revisão humana (`origem` diz quem leu).
+
+DIR_LEITURAS = "cronograma_nt"
+RESULTADOS = ("lida", "ambigua")
+CAMPOS_LEITURA = ("nt", "versao", "pagina", "motivo", "alturas", "teste", "producao", "resultado",
+                  "leitura", "autor", "data")
+
+
+def carregar_leituras() -> list[dict]:
+    import yaml
+
+    from comum import DIR_INTERPRETACOES
+
+    leituras = []
+    for caminho in sorted((DIR_INTERPRETACOES / DIR_LEITURAS).glob("*.yaml")):
+        leituras += (yaml.safe_load(caminho.read_text(encoding="utf-8")) or {}).get("leituras") or []
+    return leituras
+
+
+def _pendencia(rel: dict, leitura: dict) -> dict | None:
+    for nt in rel["notas_tecnicas"]:
+        if nt["id"] != leitura.get("nt"):
+            continue
+        for p in nt["pendencias"]:
+            if (p.get("versao"), p.get("pagina"), p.get("motivo")) == (
+                    leitura.get("versao"), leitura.get("pagina"), leitura.get("motivo")):
+                return p
+    return None
+
+
+def problemas_da_leitura(leitura: dict, rel: dict, obter_original) -> list[str]:
+    """Erros de uma leitura: campos, pendência correspondente na saída do script, e o
+    texto de cada coluna no PDF, nas alturas dadas, igual ao registrado."""
+    import cronograma_pdf
+    from acervo import normalizar
+
+    rotulo = f"{leitura.get('nt')} v{leitura.get('versao')} p.{leitura.get('pagina')}"
+    probs = [f"{rotulo}: campo {c} ausente" for c in CAMPOS_LEITURA if leitura.get(c) in (None, [])
+             and c not in ("teste", "producao")]
+    if leitura.get("resultado") not in RESULTADOS:
+        probs.append(f"{rotulo}: resultado {leitura.get('resultado')!r} fora de {RESULTADOS}")
+    if _pendencia(rel, leitura) is None:
+        probs.append(f"{rotulo}: nenhuma pendência {leitura.get('motivo')!r} correspondente na saída do script")
+    if probs:
+        return probs
+    dados = obter_original(leitura["nt"])
+    for coluna in ("teste", "producao"):
+        no_pdf = cronograma_pdf.texto_nas_alturas(leitura["nt"], leitura["pagina"], leitura["alturas"], coluna,
+                                                  dados=dados)
+        if normalizar(no_pdf) != normalizar(str(leitura.get(coluna) or "")):
+            probs.append(f"{rotulo}: {coluna} registrado {leitura.get(coluna)!r}, no PDF {no_pdf!r}")
+    return probs
+
+
+def aplicar_leituras(rel: dict, leituras: list[dict]) -> dict:
+    """Cada pendência com leitura vira linha (com `origem`, `resultado`, `leitura`,
+    `etapa`); várias leituras da mesma pendência (etapas) viram várias linhas."""
+    por_chave: dict = {}
+    for lt in leituras:
+        por_chave.setdefault((lt["nt"], lt["versao"], lt["pagina"], lt["motivo"]), []).append(lt)
+    for nt in rel["notas_tecnicas"]:
+        restantes = []
+        for p in nt["pendencias"]:
+            lidas = por_chave.get((nt["id"], p.get("versao"), p.get("pagina"), p.get("motivo")))
+            if not lidas:
+                restantes.append(p)
+                continue
+            for lt in lidas:
+                nt["linhas"].append({"versao": p["versao"], "pagina": p["pagina"], "teste": lt.get("teste") or "",
+                                     "producao": lt.get("producao") or "", "rodape": "", "trecho": p["trecho"],
+                                     "origem": lt["autor"], "resultado": lt["resultado"],
+                                     "leitura": lt["leitura"], "etapa": lt.get("etapa")})
+        nt["pendencias"] = restantes
+    return rel
+
+
+def leituras_conferidas(rel: dict, leituras: list[dict], obter_original) -> tuple[list[dict], list[str]]:
+    """(leituras que passam na conferência, erros) — contra o relatório do SCRIPT."""
+    validas, erros = [], []
+    for lt in leituras:
+        probs = problemas_da_leitura(lt, rel, obter_original)
+        (erros.extend(probs) if probs else validas.append(lt))
+    return validas, erros
+
+
+def obter_original(rid: str) -> bytes:
+    import json
+
+    from comum import MANIFEST, caminho_fonte
+
+    return caminho_fonte(json.loads(MANIFEST.read_text(encoding="utf-8"))["documentos"][f"acervo/{rid}"]).read_bytes()
+
+
 def relatorio(regs: list[dict], textos: dict[str, str]) -> dict:
     nts = []
     for reg in sorted(regs, key=lambda r: r["id"]):
@@ -111,7 +213,9 @@ def relatorio(regs: list[dict], textos: dict[str, str]) -> dict:
                     "documento_fiscal": reg.get("documento_fiscal"), "url": reg.get("url"), **r})
     return {"aviso": ("Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / "
                       "Cronograma' de cada NT: o que o documento declara, nao decisao normativa. "
-                      "teste/producao estao como a NT os escreve. Pendencias nao foram resolvidas."),
+                      "teste/producao estao como a NT os escreve. Linha com origem ia:... foi lida por IA a partir da "
+                      "posicao no PDF (interpretacoes/cronograma_nt/): nao equivale a revisao humana; resultado "
+                      "'ambigua' lista as datas da celula sem dizer a qual item cada uma se aplica."),
             "notas_tecnicas": nts}
 
 
@@ -128,7 +232,9 @@ def resumo_markdown(rel: dict) -> str:
         if not n["linhas"]:
             continue
         linhas += ["", f"## {n['id']} (versão {n.get('versao') or '?'})", "",
-                   "| versão | teste | produção | rodapé | página |", "|---|---|---|---|---|"]
-        linhas += [f"| {x['versao']} | {x['teste']} | {x['producao']} | {x['rodape']} | {x['pagina']} |"
+                   "| versão | etapa | teste | produção | rodapé | página | origem | resultado |",
+                   "|---|---|---|---|---|---|---|---|"]
+        linhas += [f"| {x['versao']} | {x.get('etapa') or ''} | {x['teste']} | {x['producao']} | {x['rodape']} | "
+                   f"{x['pagina']} | {x.get('origem', 'regra:cronograma-nt/v1')} | {x.get('resultado', 'lida')} |"
                    for x in n["linhas"]]
     return "\n".join(linhas) + "\n"

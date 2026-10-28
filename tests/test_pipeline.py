@@ -5022,10 +5022,120 @@ def cronograma_nt():
                                                        for x in rc["linhas"]}
            and not {"2.1", "324.35"} & {x["versao"] for x in rc["linhas"] + rc["pendencias"]},
            f"continuação lida; seção e campo não são versão (obteve {[x['versao'] for x in rc['linhas']]})")
+    # Medido em 2026-10-28 nas NTs da NF-e: (a) continuação de célula que começa por
+    # número ("15 e UB64-20).", "1.949 e 2.949 para...") não encerra a tabela; (b) o
+    # rodapé ("* Implantação ...") e o detalhamento abaixo da tabela não se colam à
+    # última linha; (c) cabeçalho com espaços duplos ("Histórico  de  Alterações").
+    casos = ("---\nid: x\n---\n\n## Página 3\n\nHistórico  de  Alterações  /  Cronograma   \n"
+             "Versão Histórico de atualizações Implantação \nTeste \nImplantação \nProdução \n"
+             "1.33 Correção fictícia (regras UB64-\n15 e UB64-20). \nAté 10/12/1900 Até 15/12/1900 \n"
+             "1.40 Ajuste fictício dos CFOP \n1.949 e 2.949 para as situações. Até 17/09/1900 Até 17/09/1900\n"
+             "* Implantação fictícia pode variar até 11/08/1900.\nDetalhamento 01/01/1901 02/01/1901\n")
+    rcasos = C.ler_cronograma(casos)
+    checar({(x["versao"], x["teste"], x["producao"]) for x in rcasos["linhas"]}
+           == {("1.33", "Até 10/12/1900", "Até 15/12/1900"), ("1.40", "Até 17/09/1900", "Até 17/09/1900")}
+           and rcasos["pendencias"] == [],
+           f"continuação numerada, rodapé e cabeçalho com espaços (obteve {rcasos})")
     tres = C.ler_cronograma(CRONOGRAMA_FICTICIO.replace("1.13 Nenhuma data fictícia",
                                                         "1.13 Três datas 01/01/1900 02/01/1900 03/01/1900"))
     checar(("1.13", "datas_demais") in {(p["versao"], p["motivo"]) for p in tres["pendencias"]},
            "mais de duas datas: pendência")
+
+
+def pdf_posicionado(itens: list[tuple[int, int, str]]) -> bytes:
+    """PDF de uma página com cada texto (x, y, texto) na sua posição — para o leitor
+    de colunas do cronograma (cronograma_pdf)."""
+    import zlib
+
+    # Um bloco BT só, com Tm por texto, como os geradores reais: o pypdf informa a
+    # posição de cada trecho ao trocar a fonte (Tf), com a matriz do início do
+    # trecho — por isso o Tm vem antes; sem a troca de fonte, junta a linha toda.
+    conteudo = zlib.compress(("BT " + " ".join(f"1 0 0 1 {x} {y} Tm /F1 8 Tf ({t}) Tj" for x, y, t in itens)
+                              + " ET").encode("latin-1"))
+    objetos = [
+        b"<< /Type /Catalog /Pages 2 0 R >>",
+        b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R "
+        b"/Resources << /Font << /F1 5 0 R >> >> >>",
+        f"<< /Length {len(conteudo)} /Filter /FlateDecode >>\nstream\n".encode("latin-1") + conteudo + b"\nendstream",
+        b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>",
+    ]
+    saida, offsets = b"%PDF-1.4\n", []
+    for i, obj in enumerate(objetos, 1):
+        offsets.append(len(saida))
+        saida += f"{i} 0 obj\n".encode("latin-1") + obj + b"\nendobj\n"
+    xref = len(saida)
+    saida += f"xref\n0 {len(objetos) + 1}\n0000000000 65535 f \n".encode("latin-1")
+    saida += "".join(f"{o:010d} 00000 n \n" for o in offsets).encode("latin-1")
+    saida += (f"trailer\n<< /Size {len(objetos) + 1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n").encode("latin-1")
+    return saida
+
+
+# Medidas da NT 2025.002 v1.30 p.4, da v1.35 p.5 e da NT 2021.003 v1.40 p.3 (2026-10-28).
+TABELA_POSICIONADA = [
+    (409, 522, "Implantação"), (484, 522, "Implantação"), (422, 510, "Teste"), (489, 510, "Produção"),
+    (71, 150, "1.30"), (406, 156, "Implementação"), (487, 156, "05/01/2026"), (421, 144, "futura"),
+    (388, 120, "de"), (411, 120, "-x-"), (487, 120, "03/07/2023"),
+    (405, 100, "Até 06/04/202"), (458, 100, "6"), (487, 100, "Não se aplica"),
+    (495, 80, "0"), (500, 80, "1"), (504, 80, "/12/202"), (531, 80, "6"), (447, 80, "-"),
+    (130, 40, "Detalhamento"), (330, 30, "Homologação"), (420, 30, "Produção"),
+    # Negrito simulado: o mesmo texto impresso de novo 2 pontos abaixo (NT 2025.002 v1.51 p.6).
+    (487, 62, "05/10/2025"), (487, 60, "05/10/2025"),
+]
+
+
+@cenario("cronograma (PDF): texto de cada coluna pela posição, com fragmentos e células de duas linhas")
+def cronograma_colunas_pdf():
+    """Quebra: tomar os cabeçalhos do detalhamento abaixo da tabela; cortar a data que
+    passa do meio entre as colunas ("6" de 2026); pôr na coluna Teste a palavra da
+    descrição ao lado ("de"); separar os fragmentos de uma data; ou ler só a primeira
+    linha visual da célula ("Implementação" sem "futura")."""
+    import cronograma_pdf as P
+
+    pdf = pdf_posicionado(TABELA_POSICIONADA)
+    col = lambda ys, c: P.texto_nas_alturas("x", 1, ys, c, dados=pdf)  # noqa: E731
+    checar(col([156, 144], "teste") == "Implementação futura" and col([156, 144], "producao") == "05/01/2026",
+           f"célula de duas linhas (obteve {col([156, 144], 'teste')!r} / {col([156, 144], 'producao')!r})")
+    checar(col([100], "teste") == "Até 06/04/2026" and col([100], "producao") == "Não se aplica",
+           f"fim da data que passa do meio fica na coluna dela (obteve {col([100], 'teste')!r})")
+    checar(col([120], "teste") == "-x-" and col([120], "producao") == "03/07/2023",
+           f"palavra da descrição fora da coluna (obteve {col([120], 'teste')!r})")
+    checar(col([80], "producao") == "01/12/2026" and col([80], "teste") == "-",
+           f"fragmentos de data juntados (obteve {col([80], 'producao')!r})")
+    checar(col([62], "producao") == "05/10/2025", f"negrito simulado não duplica (obteve {col([62], 'producao')!r})")
+
+
+@cenario("cronograma (IA): leitura de pendência conferida pela posição no PDF")
+def cronograma_leitura_ia():
+    """Quebra: aceitar leitura sem pendência correspondente (o script já lê a linha);
+    aceitar valor que não está naquela coluna do PDF; ou a leitura não substituir a
+    pendência no relatório, ou perder a marca de autoria da IA."""
+    import cronograma_nt as C
+
+    pdf = pdf_posicionado(TABELA_POSICIONADA)
+    rel = {"notas_tecnicas": [{"id": "nt-x", "linhas": [], "pendencias": [
+        {"versao": "1.30", "pagina": 1, "motivo": "uma_data", "trecho": "1.30 ... Implementação futura 05/01/2026"},
+        {"versao": "1.31", "pagina": 1, "motivo": "sem_data", "trecho": "1.31 sem leitura"}]}]}
+    leitura = {"nt": "nt-x", "versao": "1.30", "pagina": 1, "motivo": "uma_data", "alturas": [156, 144],
+               "teste": "Implementação futura", "producao": "05/01/2026", "resultado": "lida",
+               "leitura": "Teste: 'Implementação futura'; Produção: 05/01/2026.",
+               "autor": "ia:claude-opus-5-5", "data": "2026-10-28"}
+    obter = lambda rid: pdf  # noqa: E731
+    checar(C.problemas_da_leitura(leitura, rel, obter) == [], "leitura conferida: sem problema")
+    trocada = dict(leitura, teste="05/01/2026", producao="Implementação futura")
+    checar(any("teste" in p for p in C.problemas_da_leitura(trocada, rel, obter)), "colunas trocadas: erro")
+    orfa = dict(leitura, versao="1.31")
+    checar(any("pendência" in p for p in C.problemas_da_leitura(orfa, rel, obter)), "sem pendência: erro")
+    checar(any("resultado" in p for p in C.problemas_da_leitura(dict(leitura, resultado="talvez"), rel, obter)),
+           "resultado fora de lida/ambigua: erro")
+    aplicado = C.aplicar_leituras(rel, [leitura])
+    nt = aplicado["notas_tecnicas"][0]
+    checar(nt["pendencias"] == [{"versao": "1.31", "pagina": 1, "motivo": "sem_data", "trecho": "1.31 sem leitura"}]
+           and nt["linhas"] == [{
+        "versao": "1.30", "pagina": 1, "teste": "Implementação futura", "producao": "05/01/2026",
+        "rodape": "", "trecho": "1.30 ... Implementação futura 05/01/2026", "origem": "ia:claude-opus-5-5",
+        "resultado": "lida", "leitura": "Teste: 'Implementação futura'; Produção: 05/01/2026.", "etapa": None}],
+           f"pendência vira linha com a origem da IA (obteve {nt})")
 
 
 @cenario("portabilidade de saída")
