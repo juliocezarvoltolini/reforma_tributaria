@@ -146,6 +146,11 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   não o oficialmente correspondente; divergência é informação, não erro. Campo
   com `escolha: sim` está num `xs:choice`: a ocorrência só vale se a alternativa
   for a escolhida;
+- **cronograma de implantação das NTs**: `indices/cronograma_nt.md` traz, por NT,
+  as datas de teste e de produção de cada versão, lidas por script da tabela
+  "Histórico de Alterações / Cronograma" — como a NT as escreve, com página. É o
+  que o documento declara (não decisão normativa); linha não lida está em
+  `pendencias` e, para ela, a resposta é "Não localizado nas fontes indexadas";
 - ato fora do acervo continua "Não localizado nas fontes indexadas";
 - `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
   `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.

@@ -4946,6 +4946,88 @@ def leiaute_conferencia():
            "documento fiscal por sigla: a NT conjunta casa com os pacotes de cada documento")
 
 
+CRONOGRAMA_FICTICIO = """---
+id: nt-ficticia
+versao: '1.20'
+---
+
+## Página 1
+
+Sumário
+Histórico de Alterações / Cronograma ........................ 3
+1. Introdução fictícia ........................ 4
+
+## Página 3
+
+Histórico de Alterações / Cronograma
+Versão Histórico de atualizações Implantação
+Teste
+Implantação
+Produção
+1.00 - Criação fictícia de campos 01/09/1900 03/11/1900
+1.01 Aplicação fictícia das regras 01/07/1900 01/1901
+1.10**
+Implantação fictícia de schema, conforme
+cronograma abaixo.
+De 07/07/1900
+até 28/07/1900*
+06/10/1900
+1.11 - Ajuste fictício.
+Até 05/10/1900 03/11/1900
+1.12 Só uma data fictícia 05/10/1900
+1.13 Nenhuma data fictícia
+
+## Página 4
+
+Texto seguinte.
+"""
+
+
+@cenario("cronograma das NTs: só o inequívoco é lido; o resto é pendência com motivo e página")
+def cronograma_nt():
+    """Formatos medidos em 2026-10-28 (NF-e NT 2025.002 v1.52 e NT 2026.007 v1.10):
+    linha que continua em várias linhas físicas, intervalo "De ... até ...", "Até ...",
+    mês/ano ("01/2026"), asterisco de rodapé. Quebra: tomar a linha do sumário como a
+    tabela; atribuir data única a uma coluna por palpite; perder a linha quebrada; ou
+    interpretar o asterisco."""
+    import cronograma_nt as C
+
+    r = C.ler_cronograma(CRONOGRAMA_FICTICIO)
+    lidas = {(x["versao"], x["teste"], x["producao"], x["pagina"]) for x in r["linhas"]}
+    checar(lidas == {("1.00", "01/09/1900", "03/11/1900", 3), ("1.01", "01/07/1900", "01/1901", 3),
+                     ("1.10", "De 07/07/1900 até 28/07/1900", "06/10/1900", 3),
+                     ("1.11", "Até 05/10/1900", "03/11/1900", 3)},
+           f"linhas inequívocas, com o texto da data como está (obteve {sorted(lidas)})")
+    por_versao = {x["versao"]: x for x in r["linhas"]}
+    checar(por_versao["1.10"]["rodape"] == "**; *" and por_versao["1.00"]["rodape"] == ""
+           and "28/07/1900*" in por_versao["1.10"]["trecho"],
+           "asterisco registrado, não interpretado; trecho literal")
+    motivos = {(p["versao"], p["motivo"]) for p in r["pendencias"]}
+    checar(motivos == {("1.12", "uma_data"), ("1.13", "sem_data")},
+           f"data única e linha sem data: pendência (obteve {sorted(motivos)})")
+    sem = C.ler_cronograma("---\nid: x\n---\n\n## Página 1\n\nTexto sem tabela.\n")
+    checar(sem["linhas"] == [] and [p["motivo"] for p in sem["pendencias"]] == ["tabela_nao_localizada"],
+           "NT sem a tabela: pendência")
+    # Tabela que continua na página seguinte, depois do cabeçalho repetido da página
+    # (CT-e NT 2025.001 v1.14b, p.3-4: a versão 1.13 com datas está na p.4). Quebra:
+    # parar na quebra de página e perder as linhas de lá em silêncio; ou ler título de
+    # seção ("2.1") ou linha de campo ("324.35") como versão.
+    continua = CRONOGRAMA_FICTICIO.replace(
+        "## Página 4\n\nTexto seguinte.\n",
+        "## Página 4\n\nProjeto fictício \nNT 1900.001 v1.14 \nPágina 4 / 21 \n"
+        "1.14 Continuação fictícia 01/12/1900 02/12/1900\n2.1 Seção fictícia 01/01/1901 02/01/1901\n"
+        "324.35 UB35 vIBSUF Campo fictício 01/01/1901 02/01/1901\n\n## Página 5\n\nOutro texto.\n")
+    rc = C.ler_cronograma(continua)
+    checar(("1.14", "01/12/1900", "02/12/1900", 4) in {(x["versao"], x["teste"], x["producao"], x["pagina"])
+                                                       for x in rc["linhas"]}
+           and not {"2.1", "324.35"} & {x["versao"] for x in rc["linhas"] + rc["pendencias"]},
+           f"continuação lida; seção e campo não são versão (obteve {[x['versao'] for x in rc['linhas']]})")
+    tres = C.ler_cronograma(CRONOGRAMA_FICTICIO.replace("1.13 Nenhuma data fictícia",
+                                                        "1.13 Três datas 01/01/1900 02/01/1900 03/01/1900"))
+    checar(("1.13", "datas_demais") in {(p["versao"], p["motivo"]) for p in tres["pendencias"]},
+           "mais de duas datas: pendência")
+
+
 @cenario("portabilidade de saída")
 def portabilidade():
     """Regressão: no Windows a saída redirecionada usa a codepage local (cp1252) e

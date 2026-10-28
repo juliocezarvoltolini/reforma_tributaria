@@ -647,6 +647,15 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   pegar a ocorrência dela — divergência falsa, corrigida com teste.
 - **Elemento de `xs:choice`** é marcado (`escolha: sim`) na tabela dos XSD: o
   "1-1" dele só vale se a alternativa for a escolhida.
+- **Cronograma das NTs (2026-10-28):** `pipeline/cronograma_nt.py`, gravado por
+  `indexar.py` em `indices/cronograma_nt.{json,md}`. Só o inequívoco é lido (linha
+  de versão com exatamente duas datas: teste e produção, como a NT as escreve);
+  o resto é pendência com motivo e página, sem palpite. Primeira rodada: 115 NTs,
+  249 linhas lidas em 76; 438 pendências (396 linhas sem data — a tabela da CT-e,
+  BP-e, NF3e e NFCom deixa a maioria das células vazias —, 19 com uma data só,
+  11 com datas demais, 12 NTs sem a tabela, quase todas de NFS-e). Armadilha
+  paga: a tabela da CT-e continua na página seguinte; o leitor parava na quebra
+  e perdia a versão 1.13 em silêncio.
 - **Não conferido ainda:** tamanho e tipo dos campos (formatos diferentes na NT e
   no XSD), regras de validação, e o cronograma de implantação por versão (está no
   texto, em linguagem livre).

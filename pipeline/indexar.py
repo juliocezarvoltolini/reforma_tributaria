@@ -147,6 +147,14 @@ def main() -> int:
     gravar_texto(DIR_INDICES / "conferencia_leiaute.md", conferencia_leiaute.resumo_markdown(rel_leiaute))
     print("  indices/conferencia_leiaute.md")
 
+    # -- cronograma de implantação das NTs (leitura por script) ---------------
+    import cronograma_nt
+
+    rel_cronograma = cronograma_nt.relatorio(regs_acervo, acervo_texto.carregar_textos())
+    gravar("cronograma_nt.json", rel_cronograma)
+    gravar_texto(DIR_INDICES / "cronograma_nt.md", cronograma_nt.resumo_markdown(rel_cronograma))
+    print("  indices/cronograma_nt.md")
+
     gravar(
         "cobertura.json",
         {
