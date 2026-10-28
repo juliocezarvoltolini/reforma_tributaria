@@ -4474,6 +4474,31 @@ def acervo_conferencia():
            "número que o original não contém: erro")
 
 
+@cenario("acervo: cache da conferência pelo sha256 do original e pelos trechos")
+def acervo_cache():
+    """Quebra: reaproveitar o resultado depois de o original ou os trechos mudarem (a
+    conferência passaria sem ter sido feita); ou não reaproveitar nada (a validação
+    reextrai 370 originais a cada commit — 5 minutos medidos em 2026-10-28)."""
+    import acervo as A
+
+    reg = registro_acervo()
+    docs, arquivos = manifest_acervo(reg, HTML_ATO_FICTICIO)
+    lidos = []
+
+    def ler(arq):
+        lidos.append(arq)
+        return arquivos[arq]
+
+    cache: dict = {}
+    checar(A.problemas_do_registro(reg, docs, ler, cache) == [] and len(lidos) == 1, "primeira vez: confere")
+    checar(A.problemas_do_registro(reg, docs, ler, cache) == [] and len(lidos) == 2,
+           "segunda vez: lê o original (para o hash), não reextrai")
+    falso = registro_acervo(conferir=["Dispõe sobre outra coisa."])
+    checar(A.problemas_do_registro(falso, docs, ler, cache) != [], "trecho novo: confere de novo e acusa")
+    arquivos[docs[f"acervo/{reg['id']}"]["arquivo"]] = HTML_ATO_FICTICIO.replace(b"teste do acervo", b"outro teste")
+    checar(A.problemas_do_registro(reg, docs, ler, cache) != [], "original mudou: confere de novo e acusa")
+
+
 @cenario("acervo: texto de PDF e caixa/acentuação idênticas exigidas, espaço não")
 def acervo_pdf():
     """Quebra: não ler PDF (Notas Técnicas e Ajustes vêm em PDF); ou normalizar

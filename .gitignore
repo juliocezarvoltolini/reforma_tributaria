@@ -6,3 +6,5 @@ venv/
 
 # Originais novos retidos por deriva (pipeline/baixar.py): evidência local, fora do manifest
 fontes/_quarentena/
+# Cache local da conferência do acervo (pipeline/validar.py)
+.cache/

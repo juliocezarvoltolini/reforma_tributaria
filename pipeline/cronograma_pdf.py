@@ -18,7 +18,22 @@ from comum import MANIFEST, caminho_fonte
 TOLERANCIA_Y = 2
 
 
+# Cache por (conteúdo do PDF, página): a conferência de cada leitura relê as mesmas
+# páginas várias vezes (colunas, faixas, página anterior). Chave pelo sha256, não
+# pela identidade do objeto: bytes iguais dão os mesmos trechos.
+_CACHE_ITENS: dict = {}
+
+
 def _itens(dados: bytes, pagina: int) -> list[tuple[int, int, str]]:
+    import hashlib
+
+    chave = (hashlib.sha256(dados).hexdigest(), pagina)
+    if chave not in _CACHE_ITENS:
+        _CACHE_ITENS[chave] = _extrair_itens(dados, pagina)
+    return _CACHE_ITENS[chave]
+
+
+def _extrair_itens(dados: bytes, pagina: int) -> list[tuple[int, int, str]]:
     from pypdf import PdfReader
 
     itens = []

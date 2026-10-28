@@ -19,6 +19,7 @@ nunca original obtido de terceiro (PREMISSAS.md §1.3).
 from __future__ import annotations
 
 import io
+import json
 import re
 import unicodedata
 import zipfile
@@ -28,7 +29,11 @@ from urllib.parse import urlparse
 
 import yaml
 
+from comum import sha256_bytes
+
 ARQUIVO = Path(__file__).resolve().parent / "acervo.yaml"
+# Sobe quando a conferência muda (extração, normalização): invalida o cache local.
+VERSAO_CONFERENCIA = 1
 
 # Ordem de prevalência (PREMISSAS.md §2.1), continuando a `prioridade` de
 # fontes.yaml (EC 1, LC 2): menor prevalece.
@@ -184,7 +189,7 @@ def no_canal(tipo: str, url: str) -> bool:
         for host, prefixo in CANAIS.get(tipo, ()))
 
 
-def problemas_do_registro(reg: dict, docs: dict, ler: Callable[[str], bytes]) -> list[str]:
+def problemas_do_registro(reg: dict, docs: dict, ler: Callable[[str], bytes], cache: dict | None = None) -> list[str]:
     """Erros de um registro do acervo (o bloqueio declarado é tratado em
     `problemas_do_acervo`)."""
     probs = []
@@ -213,20 +218,34 @@ def problemas_do_registro(reg: dict, docs: dict, ler: Callable[[str], bytes]) ->
     if registro.get("url") != reg.get("url"):
         probs.append(f"url diverge da baixada (manifest: {registro.get('url')})")
     try:
-        texto = texto_do_original(ler(registro["arquivo"]), Path(registro["arquivo"]).suffix[1:])
+        dados = ler(registro["arquivo"])
     except Exception as exc:  # original ilegível é erro do registro, não da validação
         probs.append(f"original ilegível ({registro['arquivo']}): {type(exc).__name__}: {exc}")
         return probs
-    for trecho in conferir:
-        if isinstance(trecho, str) and trecho.strip() and normalizar(trecho) not in texto:
-            probs.append(f"conferir: trecho ausente do original: {trecho!r}")
-    if reg.get("numero") and normalizar(str(reg["numero"])) not in texto:
-        probs.append(f"numero {reg['numero']!r} ausente do original")
-    return probs
+    # O resultado da conferência só depende dos bytes do original, dos trechos e da
+    # versão desta conferência: o cache reaproveita, e qualquer mudança refaz.
+    chave = json.dumps([VERSAO_CONFERENCIA, sha256_bytes(dados), Path(registro["arquivo"]).suffix,
+                        conferir, reg.get("numero")], ensure_ascii=False)
+    if cache is not None and chave in cache:
+        return probs + cache[chave]
+    achados = []
+    try:
+        texto = texto_do_original(dados, Path(registro["arquivo"]).suffix[1:])
+    except Exception as exc:
+        achados.append(f"original ilegível ({registro['arquivo']}): {type(exc).__name__}: {exc}")
+    else:
+        for trecho in conferir:
+            if isinstance(trecho, str) and trecho.strip() and normalizar(trecho) not in texto:
+                achados.append(f"conferir: trecho ausente do original: {trecho!r}")
+        if reg.get("numero") and normalizar(str(reg["numero"])) not in texto:
+            achados.append(f"numero {reg['numero']!r} ausente do original")
+    if cache is not None:
+        cache[chave] = achados
+    return probs + achados
 
 
-def problemas_do_acervo(regs: list[dict], docs: dict,
-                        ler: Callable[[str], bytes]) -> tuple[list[str], list[str]]:
+def problemas_do_acervo(regs: list[dict], docs: dict, ler: Callable[[str], bytes],
+                        cache: dict | None = None) -> tuple[list[str], list[str]]:
     erros, avisos = [], []
     vistos: set = set()
     for reg in regs:
@@ -234,7 +253,7 @@ def problemas_do_acervo(regs: list[dict], docs: dict,
         if rid in vistos:
             erros.append(f"acervo {rid}: id duplicado")
         vistos.add(rid)
-        erros += [f"acervo {rid}: {p}" for p in problemas_do_registro(reg, docs, ler)]
+        erros += [f"acervo {rid}: {p}" for p in problemas_do_registro(reg, docs, ler, cache)]
         if "bloqueio" in reg:
             if not str(reg["bloqueio"] or "").strip():
                 erros.append(f"acervo {rid}: bloqueio sem motivo")

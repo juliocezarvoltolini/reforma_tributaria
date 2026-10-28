@@ -698,5 +698,10 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   comparação de deriva os ignora (como o script anti-robô do Planalto). O
   CONFAZ (Plone) também varia a moldura; se gerar deriva falsa, o evento mostra
   "Texto extraído idêntico".
+- **Tempo de validação:** a conferência dos trechos reextrai o texto dos 370
+  originais (~5 min). `validar.py` guarda o RESULTADO em `.cache/acervo_conferencia.json`
+  (fora do git), com chave no sha256 do original, nos trechos e em
+  `acervo.VERSAO_CONFERENCIA`: qualquer mudança refaz a conferência. Com o cache,
+  ~17 s. Clone novo paga os 5 min uma vez.
 - **Tamanho:** os originais do acervo somam ~230 MB em `fontes/acervo/`
   (maior arquivo ~4,8 MB). É o custo de P1.1 (cópia arquivada de tudo).

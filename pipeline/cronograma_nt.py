@@ -18,6 +18,7 @@ indices/cronograma_nt.json e .md).
 """
 from __future__ import annotations
 
+import functools
 import re
 
 from acervo_texto import _separar
@@ -203,6 +204,7 @@ def leituras_conferidas(rel: dict, leituras: list[dict], obter_original) -> tupl
     return validas, erros
 
 
+@functools.lru_cache(maxsize=None)
 def obter_original(rid: str) -> bytes:
     import json
 

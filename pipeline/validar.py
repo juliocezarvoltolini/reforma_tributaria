@@ -229,8 +229,18 @@ def validar_acervo() -> None:
     if not regs:
         return
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
+    # Cache local (fora do git) do resultado da conferência, pelo sha256 do original e
+    # pelos trechos: sem ele, a validação reextrai os 370 originais a cada commit.
+    arquivo_cache = DIR_FONTES.parent / ".cache" / "acervo_conferencia.json"
+    try:
+        cache = json.loads(arquivo_cache.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        cache = {}
     erros_acervo, avisos_acervo = acervo.problemas_do_acervo(
-        regs, manifest.get("documentos") or {}, lambda arquivo: caminho_fonte({"arquivo": arquivo}).read_bytes())
+        regs, manifest.get("documentos") or {}, lambda arquivo: caminho_fonte({"arquivo": arquivo}).read_bytes(),
+        cache)
+    arquivo_cache.parent.mkdir(exist_ok=True)
+    arquivo_cache.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
     for msg in erros_acervo:
         erro(msg)
     for msg in avisos_acervo:
