@@ -5030,12 +5030,26 @@ def cronograma_nt():
              "Versão Histórico de atualizações Implantação \nTeste \nImplantação \nProdução \n"
              "1.33 Correção fictícia (regras UB64-\n15 e UB64-20). \nAté 10/12/1900 Até 15/12/1900 \n"
              "1.40 Ajuste fictício dos CFOP \n1.949 e 2.949 para as situações. Até 17/09/1900 Até 17/09/1900\n"
+             "Observação: No ambiente fictício as regras valem em 05 de janeiro de 1901.\n"
              "* Implantação fictícia pode variar até 11/08/1900.\nDetalhamento 01/01/1901 02/01/1901\n")
     rcasos = C.ler_cronograma(casos)
     checar({(x["versao"], x["teste"], x["producao"]) for x in rcasos["linhas"]}
            == {("1.33", "Até 10/12/1900", "Até 15/12/1900"), ("1.40", "Até 17/09/1900", "Até 17/09/1900")}
            and rcasos["pendencias"] == [],
            f"continuação numerada, rodapé e cabeçalho com espaços (obteve {rcasos})")
+    # Versão com a letra separada (CT-e NT 2025.001: "1.05 a  Correção de datas") é
+    # "1.05a"; "1.10 a partir de" continua "1.10". Quebra: duas pendências "1.05".
+    letra = C.ler_cronograma(CRONOGRAMA_FICTICIO.replace(
+        "1.13 Nenhuma data fictícia", "1.13 Nenhuma data fictícia\n1.13 a  Correção fictícia\n"
+                                      "1.14 a partir de nada fictício"))
+    checar([p["versao"] for p in letra["pendencias"]] == ["1.12", "1.13", "1.13a", "1.14"],
+           f"versão com letra separada (obteve {[p['versao'] for p in letra['pendencias']]})")
+    # Data por extenso (CT-e NT 2026.001 RTC vinculação de pagamento: "06 abril 2026").
+    extenso = C.ler_cronograma(CRONOGRAMA_FICTICIO.replace(
+        "1.13 Nenhuma data fictícia", "1.13 Criação fictícia 06 abril 1900 04 de maio de 1900"))
+    checar(("1.13", "06 abril 1900", "04 de maio de 1900") in {(x["versao"], x["teste"], x["producao"])
+                                                              for x in extenso["linhas"]},
+           f"data por extenso (obteve {[(x['versao'], x['teste'], x['producao']) for x in extenso['linhas']]})")
     tres = C.ler_cronograma(CRONOGRAMA_FICTICIO.replace("1.13 Nenhuma data fictícia",
                                                         "1.13 Três datas 01/01/1900 02/01/1900 03/01/1900"))
     checar(("1.13", "datas_demais") in {(p["versao"], p["motivo"]) for p in tres["pendencias"]},
@@ -5127,7 +5141,17 @@ def cronograma_leitura_ia():
     orfa = dict(leitura, versao="1.31")
     checar(any("pendência" in p for p in C.problemas_da_leitura(orfa, rel, obter)), "sem pendência: erro")
     checar(any("resultado" in p for p in C.problemas_da_leitura(dict(leitura, resultado="talvez"), rel, obter)),
-           "resultado fora de lida/ambigua: erro")
+           "resultado fora de lida/ambigua/sem_data: erro")
+    dupla = {"notas_tecnicas": [{"id": "nt-x", "linhas": [], "pendencias": [
+        dict(rel["notas_tecnicas"][0]["pendencias"][0]), dict(rel["notas_tecnicas"][0]["pendencias"][0])]}]}
+    checar(any("mais de uma" in p for p in C.problemas_da_leitura(leitura, dupla, obter)),
+           "chave que casa com duas pendências: erro")
+    # Célula vazia: faixa vertical da linha, sem texto nas duas colunas (CT-e NT 2025.001).
+    vazia = dict(leitura, alturas=None, faixa_y=[5, 25], teste="", producao="", resultado="sem_data",
+                 autor="regra:cronograma-celula-vazia/v1")
+    checar(C.problemas_da_leitura(vazia, rel, obter) == [], "faixa sem texto nas colunas: sem_data conferido")
+    checar(any("producao" in p for p in C.problemas_da_leitura(dict(vazia, faixa_y=[50, 70]), rel, obter)),
+           "faixa com data na coluna: sem_data recusado")
     aplicado = C.aplicar_leituras(rel, [leitura])
     nt = aplicado["notas_tecnicas"][0]
     checar(nt["pendencias"] == [{"versao": "1.31", "pagina": 1, "motivo": "sem_data", "trecho": "1.31 sem leitura"}]

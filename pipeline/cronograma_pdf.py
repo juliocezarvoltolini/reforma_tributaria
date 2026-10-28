@@ -90,6 +90,18 @@ def texto_nas_alturas(rid: str, pagina: int, ys: list[int], coluna: str, dados: 
     return " ".join(t for t in (texto_na_coluna(itens, y, cab[coluna]) for y in sorted(ys, reverse=True)) if t)
 
 
+def texto_na_faixa(rid: str, pagina: int, ymin: int, ymax: int, coluna: str, dados: bytes | None = None) -> str:
+    """Todo o texto da coluna entre as alturas ymin e ymax (a célula inteira). Para
+    afirmar que a célula está vazia, a faixa vai do rótulo da versão ao seguinte."""
+    dados = dados if dados is not None else _original(rid)
+    cab = faixas_da_tabela(dados, pagina)
+    if cab is None:
+        return ""
+    itens = _itens(dados, pagina)
+    ys = sorted({y for y, x, _ in itens if ymin <= y <= ymax and cab[coluna][0] <= x < cab[coluna][1]}, reverse=True)
+    return " ".join(t for t in (texto_na_coluna(itens, y, cab[coluna]) for y in ys) if t)
+
+
 def colunas_da_pagina(rid: str, pagina: int, dados: bytes | None = None):
     """{y: (rótulo de versão, texto Teste, texto Produção)} e as faixas."""
     dados = dados if dados is not None else _original(rid)

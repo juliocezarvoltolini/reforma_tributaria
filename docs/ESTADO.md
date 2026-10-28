@@ -666,7 +666,16 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   (`pipeline/cronograma_pdf.py`), o texto das colunas Teste e Produção e exige o
   registrado. 2 ficaram `ambigua` (linha 1.40 da NT 2025.002 v1.51 e v1.52: a
   célula de Produção empilha 2 ou 3 datas sem dizer a qual item cada uma vale).
-  Demais documentos fiscais: pendências NÃO resolvidas (393).
+- **Pendências da CT-e resolvidas (2026-10-28, a pedido):** mais quatro defeitos
+  do script corrigidos com teste — versão com letra separada ("1.05 a  Correção",
+  com o marcador U+F0B7) era lida como "1.05" e duplicava a chave; data por
+  extenso ("06 abril 2026") não era lida; a nota "Observação:" abaixo da tabela
+  colava na última linha; e a leitura de pendência recusa chave que casa com duas.
+  Das 147 restantes, 143 têm as colunas Teste e Produção VAZIAS em toda a faixa
+  da linha no PDF (`faixa_y`, do rótulo da versão ao seguinte): leitura por regra
+  (`regra:cronograma-celula-vazia/v1`, `resultado: sem_data`). 4 lidas por IA
+  ("Já implantado" nas duas colunas; "Implantada" / "Implementação futura").
+  Pendências restantes (BP-e, NF3e, NFCom, NFAg, NFGas, NFS-e): 231, NÃO resolvidas.
 - **Não conferido ainda:** tamanho e tipo dos campos (formatos diferentes na NT e
   no XSD), regras de validação, e o cronograma de implantação por versão (está no
   texto, em linguagem livre).

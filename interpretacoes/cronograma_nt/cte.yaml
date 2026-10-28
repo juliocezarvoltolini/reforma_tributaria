@@ -1,0 +1,1917 @@
+# Leituras das pendências do cronograma das NTs de CT-e (indices/cronograma_nt.json).
+# Camada 3. `autor: regra:cronograma-celula-vazia/v1`: as colunas Teste e Produção estão vazias em
+# toda a faixa vertical da linha (`faixa_y`, do rótulo da versão ao seguinte) — conferido no PDF.
+# `autor: ia:...`: leitura por IA, conferida pela posição no PDF; não equivale a revisão humana.
+leituras:
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 443
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-02
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 443
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-02
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 355
+  - 450
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-03
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 443
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-03
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 355
+  - 450
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-03
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 301
+  - 362
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-04
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 443
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-04
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 355
+  - 450
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-04
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 301
+  - 362
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-04
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 247
+  - 308
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 443
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 355
+  - 450
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 301
+  - 362
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 247
+  - 308
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 222
+  - 254
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05a
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 443
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05a
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 355
+  - 450
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05a
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 301
+  - 362
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05a
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 247
+  - 308
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05a
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 222
+  - 254
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 443
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 355
+  - 450
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 301
+  - 362
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 247
+  - 308
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 222
+  - 254
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 151
+  - 229
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 126
+  - 158
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 483
+  - 681
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 403
+  - 490
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 354
+  - 410
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 305
+  - 361
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 282
+  - 312
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 218
+  - 289
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 195
+  - 225
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-06
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 172
+  - 202
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 498
+  - 681
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 418
+  - 505
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 370
+  - 425
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 321
+  - 377
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 304
+  - 328
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 239
+  - 311
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 222
+  - 246
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 206
+  - 229
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 163
+  - 213
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 510
+  - 693
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 446
+  - 517
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 397
+  - 453
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 404
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 331
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 282
+  - 338
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 265
+  - 289
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 249
+  - 272
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 205
+  - 256
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 189
+  - 212
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 182
+  - 196
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 510
+  - 693
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 446
+  - 517
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 397
+  - 453
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 404
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 331
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 282
+  - 338
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 265
+  - 289
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 249
+  - 272
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 205
+  - 256
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 189
+  - 212
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 126
+  - 196
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 522
+  - 705
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 458
+  - 529
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 409
+  - 465
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 361
+  - 416
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 343
+  - 368
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 295
+  - 350
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 278
+  - 302
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 261
+  - 285
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 212
+  - 268
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 196
+  - 219
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 132
+  - 203
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-09
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 125
+  - 139
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 522
+  - 705
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 458
+  - 529
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 409
+  - 465
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 361
+  - 416
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 343
+  - 368
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 295
+  - 350
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 278
+  - 302
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 261
+  - 285
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 212
+  - 268
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 196
+  - 219
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 132
+  - 203
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 125
+  - 139
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.09'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 718
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 522
+  - 705
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 458
+  - 529
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 409
+  - 465
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 361
+  - 416
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 343
+  - 368
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 295
+  - 350
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 278
+  - 302
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 261
+  - 285
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 212
+  - 268
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 196
+  - 219
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 132
+  - 203
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 125
+  - 139
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.09'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 718
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.10'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 654
+  - 725
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.11a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 580
+  - 661
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 563
+  - 587
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 546
+  - 570
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As colunas Teste e Produção dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 522
+  - 705
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 458
+  - 529
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 409
+  - 465
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 361
+  - 416
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 343
+  - 368
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 295
+  - 350
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 278
+  - 302
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 261
+  - 285
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 212
+  - 268
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 196
+  - 219
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 132
+  - 203
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 125
+  - 139
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.09'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 718
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.10'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 654
+  - 725
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.11a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 580
+  - 661
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 563
+  - 587
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 546
+  - 570
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As colunas Teste e Produção dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.14'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 497
+  - 536
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 522
+  - 705
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 458
+  - 529
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 409
+  - 465
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 361
+  - 416
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 343
+  - 368
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 295
+  - 350
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 278
+  - 302
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 261
+  - 285
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 212
+  - 268
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 196
+  - 219
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 132
+  - 203
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 125
+  - 139
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.09'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 718
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.10'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 654
+  - 725
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: 1.11a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 580
+  - 661
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 563
+  - 587
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 546
+  - 570
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As colunas Teste e Produção dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-14b
+  versao: '1.14'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 497
+  - 536
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 600
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-de3c0f85
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 600
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-10-28'
+- nt: cte-cte-nota-tecnica-2026-002-v1-01
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 601
+  - 591
+  teste: Implantada
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Teste: ''Implantada'' (sem data); Produção: ''Implementação futura'' (em duas linhas visuais da célula).
+    A ''Observação'' abaixo da tabela diz que a NT tem 2 datas.'
+  autor: ia:claude-opus-5-5
+  data: '2026-10-28'

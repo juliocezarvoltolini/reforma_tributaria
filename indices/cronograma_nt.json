@@ -10,7 +10,7 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11 Até 28/07/2025 06/10/2025 Observação: No ambiente de produção, os campos ficam à disposição desde 06 de outubro, validados apenas se informados. As Regras de Validação serão aplicadas somente a partir de 05 de janeiro de 2026 de forma obrigatória. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados, e passam a ser exigidos a partir de 03 de novembro.",
+          "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11 Até 28/07/2025 06/10/2025",
           "versao": "1.09"
         }
       ],
@@ -55,7 +55,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -85,7 +85,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         }
       ],
       "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.09 - Publicada em 16/09/2025",
@@ -146,7 +146,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -176,7 +176,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -234,7 +234,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -264,7 +264,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -293,7 +293,7 @@
         {
           "motivo": "sem_data",
           "pagina": 4,
-          "trecho": "1.12a  Exclusão da observação da regra F70 Já implantado Já implantado Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
+          "trecho": "1.12a  Exclusão da observação da regra F70 Já implantado Já implantado",
           "versao": "1.12a"
         }
       ],
@@ -310,7 +310,7 @@
           "producao": "02/03/2026",
           "rodape": "",
           "teste": "03/02/2026",
-          "trecho": "1.13  Criação de regra específica para exigir vTotDFe quando informado IBSCBS 03/02/2026 02/03/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
+          "trecho": "1.13  Criação de regra específica para exigir vTotDFe quando informado IBSCBS 03/02/2026 02/03/2026",
           "versao": "1.13"
         }
       ],
@@ -355,7 +355,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -385,7 +385,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -437,8 +437,8 @@
           "producao": "02/03/2026",
           "rodape": "",
           "teste": "03/02/2026",
-          "trecho": "1.13 a  Criação da tag vTotDFe no evento excesso de bagagem 03/02/2026 02/03/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
-          "versao": "1.13"
+          "trecho": "1.13 a  Criação da tag vTotDFe no evento excesso de bagagem 03/02/2026 02/03/2026",
+          "versao": "1.13a"
         }
       ],
       "pendencias": [
@@ -482,7 +482,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -512,7 +512,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -571,7 +571,7 @@
           "rodape": "",
           "teste": "03/02/2026",
           "trecho": "1.13 a  Criação da tag vTotDFe no evento excesso de bagagem 03/02/2026 02/03/2026",
-          "versao": "1.13"
+          "versao": "1.13a"
         }
       ],
       "pendencias": [
@@ -615,7 +615,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -645,7 +645,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -692,7 +692,7 @@
         {
           "motivo": "uma_data",
           "pagina": 4,
-          "trecho": "1.14  Inclusão de campos do tipo de operação e DFe referenciado nas compras governamentais 06/04l/2026 04/05/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
+          "trecho": "1.14  Inclusão de campos do tipo de operação e DFe referenciado nas compras governamentais 06/04l/2026 04/05/2026",
           "versao": "1.14"
         }
       ],
@@ -710,15 +710,15 @@
           "rodape": "",
           "teste": "03/02/2026",
           "trecho": "1.13 a  Criação da tag vTotDFe no evento excesso de bagagem 03/02/2026 02/03/2026",
-          "versao": "1.13"
+          "versao": "1.13a"
         },
         {
           "pagina": 4,
           "producao": "04/05/2026",
           "rodape": "",
           "teste": "06/04/2026",
-          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
-          "versao": "1.14"
+          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026",
+          "versao": "1.14a"
         }
       ],
       "pendencias": [
@@ -762,7 +762,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -792,7 +792,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -902,13 +902,13 @@
           "motivo": "sem_data",
           "pagina": 5,
           "trecho": "1.04 a • Excluída observação da regra F70",
-          "versao": "1.04"
+          "versao": "1.04a"
         },
         {
           "motivo": "sem_data",
           "pagina": 5,
           "trecho": "1.04 b  • Correção na regra de redução de alíquota",
-          "versao": "1.04"
+          "versao": "1.04b"
         },
         {
           "motivo": "sem_data",
@@ -969,13 +969,13 @@
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 a  Excluída observação da regra F70",
-          "versao": "1.04"
+          "versao": "1.04a"
         },
         {
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 b   Correção na regra de redução de alíquota",
-          "versao": "1.04"
+          "versao": "1.04b"
         },
         {
           "motivo": "sem_data",
@@ -998,7 +998,7 @@
           "rodape": "",
           "teste": "06/04/2026",
           "trecho": "1.06 a  Ajustes nas mensagens de validação do compras gov 06/04/2026 04/05/2026",
-          "versao": "1.06"
+          "versao": "1.06a"
         }
       ],
       "pendencias": [
@@ -1036,13 +1036,13 @@
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 a  Excluída observação da regra F70",
-          "versao": "1.04"
+          "versao": "1.04a"
         },
         {
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 b   Correção na regra de redução de alíquota",
-          "versao": "1.04"
+          "versao": "1.04b"
         },
         {
           "motivo": "sem_data",
@@ -1100,13 +1100,13 @@
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 a  Excluída observação da regra F70",
-          "versao": "1.04"
+          "versao": "1.04a"
         },
         {
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 b   Correção na regra de redução de alíquota",
-          "versao": "1.04"
+          "versao": "1.04b"
         },
         {
           "motivo": "sem_data",
@@ -1124,7 +1124,7 @@
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.06 a  Ajustes nas mensagens de validação do compras gov",
-          "versao": "1.06"
+          "versao": "1.06a"
         },
         {
           "motivo": "sem_data",
@@ -1182,13 +1182,13 @@
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 a  Excluída observação da regra F70",
-          "versao": "1.04"
+          "versao": "1.04a"
         },
         {
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.04 b   Correção na regra de redução de alíquota",
-          "versao": "1.04"
+          "versao": "1.04b"
         },
         {
           "motivo": "sem_data",
@@ -1206,7 +1206,7 @@
           "motivo": "sem_data",
           "pagina": 6,
           "trecho": "1.06 a  Ajustes nas mensagens de validação do compras gov",
-          "versao": "1.06"
+          "versao": "1.06a"
         },
         {
           "motivo": "sem_data",
@@ -1228,15 +1228,17 @@
     {
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
           "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica BP-e - Nota_Técnica_2026_001 - RTC_v1.00 - Publicada em 05/02/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=rhAtoWDD4TM=",
       "versao": "1.00"
@@ -1244,19 +1246,22 @@
     {
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica BP-e - Nota_Técnica_2026_001 - RTC_v1.01 - Publicada em 02/03/2026",
@@ -1266,19 +1271,22 @@
     {
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-97fca150",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 - RTC Vinculação Pagamento v1.01",
@@ -1302,7 +1310,7 @@
           "producao": "31/08/2026",
           "rodape": "",
           "teste": "03/08/2026",
-          "trecho": "1.00  Campo da inscrição SUFRAMA do emitente para operações ALC  Atualização de regras de validação  Regras do CBS e CBS alíquota zero 03/08/2026 31/08/2026 Observação: Esta NT tem 2 datas, uma para a Regra de Preenchimento dos campos da RTC e outra para o restante das definições desta NT",
+          "trecho": "1.00  Campo da inscrição SUFRAMA do emitente para operações ALC  Atualização de regras de validação  Regras do CBS e CBS alíquota zero 03/08/2026 31/08/2026",
           "versao": "1.00"
         }
       ],
@@ -1336,7 +1344,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Alteração da data de exigência do preenchimento dos campos da RTC Implantada Implementação futura Observação: Esta NT tem 2 datas, uma para a Regra de Preenchimento dos campos da RTC e outra para o restante das definições desta NT",
+          "trecho": "1.01  Alteração da data de exigência do preenchimento dos campos da RTC Implantada Implementação futura",
           "versao": "1.01"
         }
       ],
@@ -1432,18 +1440,23 @@
           "producao": "10/2025",
           "rodape": "",
           "teste": "07/2025",
-          "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal 07/2025 10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em janeiro de 2026.",
+          "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal 07/2025 10/2025",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.01 - Publicada em 14/04/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ZMGqRN6FlQ4=",
       "versao": "1.01"
@@ -1457,24 +1470,35 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "07/07/2025",
-          "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
+          "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido 07/07/2025 06/10/2025",
           "versao": "1.02"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.02 - Publicada em 12/05/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=oFdSb/kYLk0=",
       "versao": "1.02"
@@ -1488,30 +1512,47 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "07/07/2025",
-          "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
+          "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos 07/07/2025 06/10/2025",
           "versao": "1.03"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.03 - Publicada em 19/05/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=glwZ7MaAO84=",
       "versao": "1.03"
@@ -1525,36 +1566,59 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "07/07/2025",
-          "trecho": "1.04  Ajustes em regras de validação e mensagens 07/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
+          "trecho": "1.04  Ajustes em regras de validação e mensagens 07/07/2025 06/10/2025",
           "versao": "1.04"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.04 - Publicada em 28/05/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=brFYGRWucXw=",
       "versao": "1.04"
@@ -1568,42 +1632,71 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais no grupo IBSCBS Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
+          "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais no grupo IBSCBS Até 28/07/2025 06/10/2025",
           "versao": "1.05"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.05 - Publicada em 06/06/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=yaGboY8+9HY=",
       "versao": "1.05"
@@ -1625,42 +1718,71 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.05 a  Correção de datas no texto da introdução Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
-          "versao": "1.05"
-        }
-      ],
-      "pendencias": [
+          "trecho": "1.05 a  Correção de datas no texto da introdução Até 28/07/2025 06/10/2025",
+          "versao": "1.05a"
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.05a - Publicada em 16/06/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=byB0EHEkAyM=",
       "versao": "1.05a"
@@ -1674,54 +1796,95 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.05b   Correção em nome de campos citados nas RVs Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
+          "trecho": "1.05b   Correção em nome de campos citados nas RVs Até 28/07/2025 06/10/2025",
           "versao": "1.05b"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais no grupo IBSCBS",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.05b - Publicada em 26/06/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=9CEvhoTOm4E=",
       "versao": "1.05b"
@@ -1735,60 +1898,107 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa Até 28/07/2025 06/10/2025 Observação: No ambiente de produção as Regras de Validação serão aplicadas somente em 05 de janeiro de 2026.",
+          "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa Até 28/07/2025 06/10/2025",
           "versao": "1.06"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos (cStat)",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais no grupo IBSCBS",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.06 - Publicada em 18/07/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=p0yMTGIn5W8=",
       "versao": "1.06"
@@ -1802,66 +2012,119 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema Até 28/07/2025 06/10/2025 Observação: No ambiente de produção, os campos ficam à disposição desde 06 de outubro, validados apenas se informados. As Regras de Validação serão aplicadas somente a partir de 05 de janeiro de 2026 de forma obrigatória. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados, e passam a ser exigidos a partir de 06 de outubro.",
+          "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema Até 28/07/2025 06/10/2025",
           "versao": "1.07"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação nos ambientes  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais no grupo IBSCBS",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.07 - Publicada em 24/07/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=xTWG5Hn3DJ8=",
       "versao": "1.07"
@@ -1869,75 +2132,141 @@
     {
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-08",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema",
           "versao": "1.07"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
-          "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044 Observação: No ambiente de produção, os campos ficam à disposição desde 06 de outubro, validados apenas se informados. As Regras de Validação serão aplicadas somente a partir de 05 de janeiro de 2026 de forma obrigatória. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados, e passam a ser exigidos a partir de 06 de outubro.",
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
+          "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044",
           "versao": "1.08"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.08 - Publicada em 18/08/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=/394C60N2FE=",
       "versao": "1.08"
@@ -1952,77 +2281,142 @@
           "rodape": "",
           "teste": "Até 28/07/2025",
           "trecho": "1.08 a  Ajuste na redação da regra de total geral do DFe Até 28/07/2025 06/10/2025",
-          "versao": "1.08"
-        }
-      ],
-      "pendencias": [
+          "versao": "1.08a"
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema",
           "versao": "1.07"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044",
           "versao": "1.08"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.08a - Publicada em 18/08/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OcZ+ICanFfY=",
       "versao": "1.08a"
@@ -2036,84 +2430,155 @@
           "producao": "06/10/2025",
           "rodape": "",
           "teste": "Até 28/07/2025",
-          "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11 Até 28/07/2025 06/10/2025 Observação: No ambiente de produção, os campos ficam à disposição desde 06 de outubro, validados apenas se informados. As Regras de Validação serão aplicadas somente a partir de 05 de janeiro de 2026 de forma obrigatória. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados, e passam a ser exigidos a partir de 03 de novembro.",
+          "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11 Até 28/07/2025 06/10/2025",
           "versao": "1.09"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema",
           "versao": "1.07"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044",
           "versao": "1.08"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08 a  Ajuste na redação da regra de total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.09 - Publicada em 16/09/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OCQrp92YCSk=",
       "versao": "1.09"
@@ -2127,90 +2592,167 @@
           "producao": "20/10/2025",
           "rodape": "",
           "teste": "Até 20/10/2025",
-          "trecho": "1.10  Exclusão do grupo de informações do crédito presumido por não se aplicar aos cClassTrib associados ao DFe  Criação do indicador de doação e do grupo de Estorno de crédito vinculado a um novo indicador na tabela cClassTrib para esta finalidade Até 20/10/2025 20/10/2025 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. As Regras de Validação serão aplicadas somente a partir de 05 de janeiro de 2026 de forma obrigatória. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados, e passam a ser exigidos a partir de 03 de novembro.",
+          "trecho": "1.10  Exclusão do grupo de informações do crédito presumido por não se aplicar aos cClassTrib associados ao DFe  Criação do indicador de doação e do grupo de Estorno de crédito vinculado a um novo indicador na tabela cClassTrib para esta finalidade Até 20/10/2025 20/10/2025",
           "versao": "1.10"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema",
           "versao": "1.07"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044",
           "versao": "1.08"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08 a  Ajuste na redação da regra de total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11",
           "versao": "1.09"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CTe - Nota_Técnica_2025_001 - RTC_v1.10 - Publicada em 06/10/2025",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=fR216JGyZYw=",
       "versao": "1.10"
@@ -2232,114 +2774,215 @@
           "producao": "04/05/2026",
           "rodape": "",
           "teste": "06/04/2026",
-          "trecho": "1.14  Inclusão de campos do tipo de operação e DFe referenciado nas compras governamentais 06/04/2026 04/05/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
+          "trecho": "1.14  Inclusão de campos do tipo de operação e DFe referenciado nas compras governamentais 06/04/2026 04/05/2026",
           "versao": "1.14"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema",
           "versao": "1.07"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044",
           "versao": "1.08"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08 a  Ajuste na redação da regra de total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11",
           "versao": "1.09"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.10  Exclusão do grupo de informações do crédito presumido por não se aplicar aos cClassTrib associados ao DFe  Criação do indicador de doação e do grupo de Estorno de crédito vinculado a um novo indicador na tabela cClassTrib para esta finalidade",
           "versao": "1.10"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.11a  Correção na regra de validação do CBS, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas.  Ajuste na explicação da regra de valor do tributo negativo",
           "versao": "1.11a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.12  Esclarecimento do preenchimento do vTotDFe",
           "versao": "1.12"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As colunas Teste e Produção dizem 'Já implantado': o documento não dá data, diz que já está implantado.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
+          "producao": "Já implantado",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Já implantado",
           "trecho": "1.12 a  Correção da validação da redução de alíquota Já implantado Já implantado",
-          "versao": "1.12"
+          "versao": "1.12a"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CT-e - Nota_Técnica_2025_001 - RTC_v1.14 - Publicada em 07/04/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=IkK9pe1XQsc=",
       "versao": "1.14"
@@ -2361,120 +3004,227 @@
           "producao": "04/05/2026",
           "rodape": "",
           "teste": "06/04/2026",
-          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
-          "versao": "1.14"
-        }
-      ],
-      "pendencias": [
+          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026",
+          "versao": "1.14a"
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema",
           "versao": "1.07"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044",
           "versao": "1.08"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08 a  Ajuste na redação da regra de total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11",
           "versao": "1.09"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.10  Exclusão do grupo de informações do crédito presumido por não se aplicar aos cClassTrib associados ao DFe  Criação do indicador de doação e do grupo de Estorno de crédito vinculado a um novo indicador na tabela cClassTrib para esta finalidade",
           "versao": "1.10"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.11a  Correção na regra de validação do CBS, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas.  Ajuste na explicação da regra de valor do tributo negativo",
           "versao": "1.11a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.12  Esclarecimento do preenchimento do vTotDFe",
           "versao": "1.12"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As colunas Teste e Produção dizem 'Já implantado': o documento não dá data, diz que já está implantado.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
+          "producao": "Já implantado",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Já implantado",
           "trecho": "1.12 a  Correção da validação da redução de alíquota Já implantado Já implantado",
-          "versao": "1.12"
+          "versao": "1.12a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.14  Inclusão de campos do tipo de operação e DFe referenciado nas compras governamentais",
           "versao": "1.14"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CT-e - Nota_Técnica_2025_001 - RTC_v1.14a - Publicada em 07/04/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=wZvIULdEsOs=",
       "versao": "1.14a"
@@ -2497,127 +3247,234 @@
           "rodape": "",
           "teste": "06/04/2026",
           "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026",
-          "versao": "1.14"
+          "versao": "1.14a"
         },
         {
           "pagina": 4,
           "producao": "Até 15/05/2026",
           "rodape": "",
           "teste": "04/05/2026",
-          "trecho": "1.14b  Novas regra de validação para o CTe Aquaviário de cabotagem 04/05/2026 Até 15/05/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
+          "trecho": "1.14b  Novas regra de validação para o CTe Aquaviário de cabotagem 04/05/2026 Até 15/05/2026",
           "versao": "1.14b"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS no CTe  Alteração de regras do CTeOS Transporte Valores exigir UF e Mun Fim  Alteração das regras do CTe Simplificado para limitar em apenas um fim de prestação  Alteração no leiaute do Dutoviário  Exceção para não exigir evento de prestação em desacordo na substituição de tomador do EX  Preparação das Expressões Regulares do CNPJ Alfa  Eliminação da SVC para GTVe  Inclusão da DCe nos documentos originários  Ampliação do código de retorno das mensagens suportar até 4 dígitos",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.01  Correções e orientações sobre aplicação das regras de validação  Renumeração das regras de rejeição  Ajuste no grupo de Tributação regular  Ajuste na regra do CTe Complementar para Multimodal",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.02  Ajustes nas regras do crédito presumido e tributação regular  Ajuste nas regras para Crédito Presumido Condição Suspensiva no grupo do crédito presumido",
           "versao": "1.02"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.03  Ajustes nas regras de compras governamentais, redução de alíquota e valores de IBS/CBS  Correção no schema dos eventos tipos básicos",
           "versao": "1.03"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.04  Ajustes em regras de validação e mensagens",
           "versao": "1.04"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05  Ajuste na regra de compras governamentais e exigência do grupo de tributação para SN  Novo grupo de informações da tributação para compras governamentais",
           "versao": "1.05"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.05b   Correção em nome de campos citados nas RVs",
           "versao": "1.05b"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.06  Novas regras de validação complementares  Inclusão do campo vIBS  Ajuste na expressão regular do qrcode prevendo o CNPJ Alfa",
           "versao": "1.06"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.07  Campo vIBS passa a ser obrigatório no schema",
           "versao": "1.07"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08  Alteração da regra de validação 004-a para verificar no cClassTrib sua aplicabilidade ao modelo de DFe  Correção na posição do campo vIBS no schema  Correção na obrigatoriedade das regras 038 e 044",
           "versao": "1.08"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.08 a  Ajuste na redação da regra de total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.09  Ajustes na regra do diferimento  Altera data de exigência do grupo IBSCBS em homologação para 03/11",
           "versao": "1.09"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.10  Exclusão do grupo de informações do crédito presumido por não se aplicar aos cClassTrib associados ao DFe  Criação do indicador de doação e do grupo de Estorno de crédito vinculado a um novo indicador na tabela cClassTrib para esta finalidade",
           "versao": "1.10"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.11a  Correção na regra de validação do CBS, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas.  Ajuste na explicação da regra de valor do tributo negativo",
           "versao": "1.11a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.12  Esclarecimento do preenchimento do vTotDFe",
           "versao": "1.12"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As colunas Teste e Produção dizem 'Já implantado': o documento não dá data, diz que já está implantado.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 4,
+          "producao": "Já implantado",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Já implantado",
           "trecho": "1.12 a  Correção da validação da redução de alíquota Já implantado Já implantado",
-          "versao": "1.12"
+          "versao": "1.12a"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 4,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.14  Inclusão de campos do tipo de operação e DFe referenciado nas compras governamentais",
           "versao": "1.14"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CT-e 2025.001 v.1.14b - Publicada em 30/04/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=k4vwqpRxU2M=",
       "versao": "1.14b"
@@ -2625,15 +3482,17 @@
     {
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
           "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CT-e - Nota_Técnica_2026_001 - RTC_v1.00 - Publicada em 05/02/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=fQDSado3Bsw=",
       "versao": "1.00"
@@ -2641,21 +3500,29 @@
     {
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
-          "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
           "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
+        },
+        {
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
+          "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
+          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
+          "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CT-e - Nota_Técnica_2026_001 - RTC_v1.01 - Publicada em 02/03/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=9qjN8INgSkA=",
       "versao": "1.01"
@@ -2663,21 +3530,29 @@
     {
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-de3c0f85",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
-          "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
           "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
+        },
+        {
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
+          "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
+          "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
+          "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 - RTC Vinculação Pagamento v1.01",
       "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_001_RTC_VinculacaoPgto_v1.01.pdf",
       "versao": "1.01"
@@ -2699,7 +3574,7 @@
           "producao": "31/08/2026",
           "rodape": "",
           "teste": "03/08/2026",
-          "trecho": "1.00  Campo da inscrição SUFRAMA do emitente para operações ALC  Atualização de regras de validação  Regras da CBS com alíquota zero  Antecipação de Pagamento 03/08/2026 31/08/2026 Observação: Esta NT tem 2 datas, uma para a Regra de Preenchimento dos campos da RTC e outra para o restante das definições desta NT",
+          "trecho": "1.00  Campo da inscrição SUFRAMA do emitente para operações ALC  Atualização de regras de validação  Regras da CBS com alíquota zero  Antecipação de Pagamento 03/08/2026 31/08/2026",
           "versao": "1.00"
         }
       ],
@@ -2727,16 +3602,21 @@
           "teste": "03/08/2026",
           "trecho": "1.00  Campo da inscrição SUFRAMA do emitente para operações ALC  Atualização de regras de validação  Regras da CBS com alíquota zero  Antecipação de Pagamento 03/08/2026 31/08/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Teste: 'Implantada' (sem data); Produção: 'Implementação futura' (em duas linhas visuais da célula). A 'Observação' abaixo da tabela diz que a NT tem 2 datas.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
-          "trecho": "1.01  Alteração da data de exigência do preenchimento dos campos da RTC Implantada Implementação futura Observação: Esta NT tem 2 datas, uma para a Regra de Preenchimento dos campos da RTC e outra para o restante das definições desta NT",
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implantada",
+          "trecho": "1.01  Alteração da data de exigência do preenchimento dos campos da RTC Implantada Implementação futura",
           "versao": "1.01"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica CT-e 2026.002 v.1.01 - Publicada em 04/08/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=nYNUxSrXYaU=",
       "versao": "1.01"
@@ -2784,8 +3664,8 @@
           "producao": "04/05/2026",
           "rodape": "",
           "teste": "06/04/2026",
-          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
-          "versao": "1.14"
+          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026",
+          "versao": "1.14a"
         }
       ],
       "pendencias": [
@@ -2829,7 +3709,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -2859,7 +3739,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção na redação da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -2889,7 +3769,7 @@
           "motivo": "sem_data",
           "pagina": 4,
           "trecho": "1.12 a  Esclarecimento do preenchimento do vTotDFe",
-          "versao": "1.12"
+          "versao": "1.12a"
         },
         {
           "motivo": "sem_data",
@@ -2911,19 +3791,22 @@
     {
       "documento_fiscal": "NF3e",
       "id": "nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 v.1.01 - Publicada em 02/03/2026 - Publicada em 02/03/2026",
@@ -2933,19 +3816,22 @@
     {
       "documento_fiscal": "NF3e",
       "id": "nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-381f1765",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 - RTC Vinculação Pagamento v1.01",
@@ -2977,7 +3863,7 @@
         {
           "motivo": "sem_data",
           "pagina": 3,
-          "trecho": "1.01  Alteração da data de exigência do preenchimento dos campos da RTC Implantada Implementação futura Observação: Esta NT tem 2 datas, uma para a Regra de Preenchimento dos campos da RTC e outra para o restante das definições desta NT.",
+          "trecho": "1.01  Alteração da data de exigência do preenchimento dos campos da RTC Implantada Implementação futura",
           "versao": "1.01"
         }
       ],
@@ -3040,15 +3926,17 @@
     {
       "documento_fiscal": "NFAg",
       "id": "nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
           "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 v.1.00 - Publicado em 04/02/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=f9R6A+5SmSE=",
       "versao": "1.00"
@@ -3056,19 +3944,22 @@
     {
       "documento_fiscal": "NFAg",
       "id": "nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 v.1.01 - Publicada em 02/03/2026",
@@ -3078,19 +3969,22 @@
     {
       "documento_fiscal": "NFAg",
       "id": "nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-328a9fde",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 - RTC Vinculação Pagamento v1.01",
@@ -3168,8 +4062,8 @@
           "producao": "04/05/2026",
           "rodape": "",
           "teste": "06/04/2026",
-          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026 Observação: No ambiente de produção, os campos ficam à disposição desde 20 de outubro, validados apenas se informados. No ambiente de homologação os campos da reforma tributária estarão à disposição desde julho, validados apenas se informados.",
-          "versao": "1.14"
+          "trecho": "1.14 a  Ajuste nas mensagens de validação das compras gov 06/04/2026 04/05/2026",
+          "versao": "1.14a"
         }
       ],
       "pendencias": [
@@ -3213,7 +4107,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.05 a  Correção de datas no texto da introdução",
-          "versao": "1.05"
+          "versao": "1.05a"
         },
         {
           "motivo": "sem_data",
@@ -3243,7 +4137,7 @@
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.08 a  Correção no texto da regra do total geral do DFe",
-          "versao": "1.08"
+          "versao": "1.08a"
         },
         {
           "motivo": "sem_data",
@@ -3273,7 +4167,7 @@
           "motivo": "sem_data",
           "pagina": 4,
           "trecho": "1.12 a  Correção na validação da redução de alíquota Já implantado Já implantado",
-          "versao": "1.12"
+          "versao": "1.12a"
         },
         {
           "motivo": "sem_data",
@@ -3289,19 +4183,22 @@
     {
       "documento_fiscal": "NFCom",
       "id": "nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 v.1.01 - Publicada em 02/03/2026",
@@ -3311,19 +4208,22 @@
     {
       "documento_fiscal": "NFCom",
       "id": "nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-a961eaa8",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 - RTC Vinculação Pagamento v1.01",
@@ -3361,7 +4261,7 @@
         {
           "motivo": "uma_data",
           "pagina": 3,
-          "trecho": "1.01a  Data de implementação da RV rejeição 261 para Jan/27 Implantada 04/01/2027 Observação: Esta NT tem 2 datas, uma para a Regra de Preenchimento dos campos da RTC e outra para o restante das definições desta NT.",
+          "trecho": "1.01a  Data de implementação da RV rejeição 261 para Jan/27 Implantada 04/01/2027",
           "versao": "1.01a"
         }
       ],
@@ -5969,15 +6869,17 @@
     {
       "documento_fiscal": "NFGas",
       "id": "nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "sem_data",
           "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe 06 abril 2026 04 maio 2026",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 v.1.00 - Publicada em 04/02/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=uMPDzXnMsk4=",
       "versao": "1.00"
@@ -5985,19 +6887,22 @@
     {
       "documento_fiscal": "NFGas",
       "id": "nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01",
-      "linhas": [],
+      "linhas": [
+        {
+          "pagina": 3,
+          "producao": "04 maio 2026",
+          "rodape": "",
+          "teste": "06 abril 2026",
+          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
+          "versao": "1.01"
+        }
+      ],
       "pendencias": [
         {
           "motivo": "sem_data",
           "pagina": 3,
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
-        },
-        {
-          "motivo": "sem_data",
-          "pagina": 3,
-          "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
-          "versao": "1.01"
         }
       ],
       "titulo": "Nota Técnica 2026.001 v.1.01 - Publicada em 02/03/2026",

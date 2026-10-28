@@ -24,13 +24,18 @@ from acervo_texto import _separar
 
 RE_CABECALHO = re.compile(r"^Hist[óo]rico\s+de\s+Altera[çc][õo]es\s*/\s*Cronograma\s*$")
 # Versão de NT: dois dígitos depois do ponto ("1.09", "1.05a"); "2.1" é seção.
-RE_VERSAO = re.compile(r"^(?P<v>\d{1,2}\.\d{2}[a-z]?)(?P<ast>\*+)?(?=\s|$)")
+# Letra separada ("1.05 a  Correção", "1.05 a  Correção") é da versão quando o
+# próximo caractere não-espaço não é letra minúscula; "1.10 a partir de" não é.
+RE_VERSAO = re.compile(r"^(?P<v>\d{1,2}\.\d{2}[a-z]?)(?:\s(?P<letra>[a-z])(?=\s+[^a-zà-ÿ\s]))?(?P<ast>\*+)?(?=\s|$)")
 # Fim da tabela: título de seção ("2.1 Seção", "1. Introdução"), linha de tabela de
-# campos ("324.35 UB35 ..."), rodapé ("* Implantação ...") ou o detalhamento abaixo.
+# campos ("324.35 UB35 ..."), rodapé ("* Implantação ..."), o detalhamento ou a
+# "Observação:" abaixo dela.
 # Continuação de célula que começa por número ("15 e UB64-20).", "1.949 e 2.949")
 # NÃO encerra: o que segue o número é minúscula.
-RE_NUMERADA = re.compile(r"^(?:\d+(?:\.\d+)*\.?\s+[A-ZÀ-Ý][a-zà-ÿ]|\d+\.\d+\s+[A-Z]{1,3}\d|\*|Detalhamento\b)")
-_DATA = r"\d{2}/\d{2}/\d{4}|\d{2}/\d{4}"
+RE_NUMERADA = re.compile(r"^(?:\d+(?:\.\d+)*\.?\s+[A-ZÀ-Ý][a-zà-ÿ]|\d+\.\d+\s+[A-Z]{1,3}\d|\*|Detalhamento\b|Observa[çc][ãa]o\b)")
+_MESES = "janeiro|fevereiro|março|marco|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro"
+# dd/mm/aaaa, mm/aaaa, ou por extenso ("06 abril 2026", "04 de maio de 2026").
+_DATA = rf"\d{{2}}/\d{{2}}/\d{{4}}|\d{{2}}/\d{{4}}|\d{{1,2}}\s+(?:de\s+)?(?:{_MESES})\s+(?:de\s+)?\d{{4}}"
 RE_ITEM = re.compile(rf"(?<![\d/])(?P<de>De\s+)?(?P<ate>At[ée]\s+)?(?P<d1>{_DATA})(?P<a1>\*+)?"
                      rf"(?:\s+at[ée]\s+(?P<d2>{_DATA})(?P<a2>\*+)?)?(?![\d/])")
 
@@ -95,7 +100,7 @@ def ler_cronograma(md: str) -> dict:
         m = RE_VERSAO.match(trecho)
         itens, marcas = _itens(trecho[m.end():])
         rodape = "; ".join(dict.fromkeys(([m.group("ast")] if m.group("ast") else []) + marcas))
-        base = {"versao": m.group("v"), "pagina": paginas[j], "trecho": trecho}
+        base = {"versao": m.group("v") + (m.group("letra") or ""), "pagina": paginas[j], "trecho": trecho}
         if len(itens) == 2:
             lidas.append(dict(base, teste=itens[0], producao=itens[1], rodape=rodape))
         else:
@@ -113,9 +118,8 @@ def ler_cronograma(md: str) -> dict:
 # Leitura de IA não equivale a revisão humana (`origem` diz quem leu).
 
 DIR_LEITURAS = "cronograma_nt"
-RESULTADOS = ("lida", "ambigua")
-CAMPOS_LEITURA = ("nt", "versao", "pagina", "motivo", "alturas", "teste", "producao", "resultado",
-                  "leitura", "autor", "data")
+RESULTADOS = ("lida", "ambigua", "sem_data")
+CAMPOS_LEITURA = ("nt", "versao", "pagina", "motivo", "teste", "producao", "resultado", "leitura", "autor", "data")
 
 
 def carregar_leituras() -> list[dict]:
@@ -129,15 +133,10 @@ def carregar_leituras() -> list[dict]:
     return leituras
 
 
-def _pendencia(rel: dict, leitura: dict) -> dict | None:
-    for nt in rel["notas_tecnicas"]:
-        if nt["id"] != leitura.get("nt"):
-            continue
-        for p in nt["pendencias"]:
+def _pendencias(rel: dict, leitura: dict) -> list[dict]:
+    return [p for nt in rel["notas_tecnicas"] if nt["id"] == leitura.get("nt") for p in nt["pendencias"]
             if (p.get("versao"), p.get("pagina"), p.get("motivo")) == (
-                    leitura.get("versao"), leitura.get("pagina"), leitura.get("motivo")):
-                return p
-    return None
+                leitura.get("versao"), leitura.get("pagina"), leitura.get("motivo"))]
 
 
 def problemas_da_leitura(leitura: dict, rel: dict, obter_original) -> list[str]:
@@ -151,14 +150,23 @@ def problemas_da_leitura(leitura: dict, rel: dict, obter_original) -> list[str]:
              and c not in ("teste", "producao")]
     if leitura.get("resultado") not in RESULTADOS:
         probs.append(f"{rotulo}: resultado {leitura.get('resultado')!r} fora de {RESULTADOS}")
-    if _pendencia(rel, leitura) is None:
+    casam = _pendencias(rel, leitura)
+    if not casam:
         probs.append(f"{rotulo}: nenhuma pendência {leitura.get('motivo')!r} correspondente na saída do script")
+    elif len(casam) > 1:
+        probs.append(f"{rotulo}: a chave casa com mais de uma pendência — leitura ambígua")
+    if bool(leitura.get("alturas")) == bool(leitura.get("faixa_y")):
+        probs.append(f"{rotulo}: informe `alturas` (linhas da célula) ou `faixa_y` (célula inteira), um só")
     if probs:
         return probs
     dados = obter_original(leitura["nt"])
     for coluna in ("teste", "producao"):
-        no_pdf = cronograma_pdf.texto_nas_alturas(leitura["nt"], leitura["pagina"], leitura["alturas"], coluna,
-                                                  dados=dados)
+        if leitura.get("faixa_y"):
+            ymin, ymax = leitura["faixa_y"]
+            no_pdf = cronograma_pdf.texto_na_faixa(leitura["nt"], leitura["pagina"], ymin, ymax, coluna, dados=dados)
+        else:
+            no_pdf = cronograma_pdf.texto_nas_alturas(leitura["nt"], leitura["pagina"], leitura["alturas"], coluna,
+                                                      dados=dados)
         if normalizar(no_pdf) != normalizar(str(leitura.get(coluna) or "")):
             probs.append(f"{rotulo}: {coluna} registrado {leitura.get(coluna)!r}, no PDF {no_pdf!r}")
     return probs

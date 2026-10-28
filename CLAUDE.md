@@ -155,6 +155,8 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   (`interpretacoes/cronograma_nt/`): diga que não equivale a revisão humana;
   `resultado: ambigua` lista as datas da célula sem dizer a qual item cada uma
   se aplica — apresente-as todas, sem escolher;
+  `resultado: sem_data` (origem `regra:cronograma-celula-vazia/v1`): as colunas
+  estão vazias no PDF — o documento não dá data para aquela versão;
 - ato fora do acervo continua "Não localizado nas fontes indexadas";
 - `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
   `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.
