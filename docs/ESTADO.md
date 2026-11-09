@@ -685,6 +685,12 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   correção") são desambiguadas por `trecho_inicio`. A margem das colunas passou
   de 6 para 12 pontos: a tabela que continua na página seguinte vem deslocada.
   Pendências restantes (NF3e, NFCom, NFAg, NFGas, NFS-e, NT conjunta): 59.
+- **Consulta por data (2026-11-09):** `consultar.py --cronograma-nt --data D
+  [--acervo-id prefixo]`. Estado calculado só quando teste/produção são data exata
+  (dd/mm/aaaa); "Até X", "01/2026", "Implementação futura", "Não se aplica" saem como
+  escritos ("não calculado"); ambígua lista as datas sem escolher; sem_data diz que
+  o documento não dá data; origem de cada linha (regra ou IA) mostrada. Não decide
+  entre versões da mesma NT: cada documento traz o seu cronograma.
 - **Não conferido ainda:** tamanho e tipo dos campos (formatos diferentes na NT e
   no XSD), regras de validação, e o cronograma de implantação por versão (está no
   texto, em linguagem livre).

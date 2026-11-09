@@ -138,6 +138,53 @@ def atos_infralegais_na_consulta(meta: dict) -> list[str]:
             for a in meta.get("remete_a_ato") or []]
 
 
+RE_DATA_EXATA = re.compile(r"^\d{2}/\d{2}/\d{4}$")
+
+
+def _data_exata(texto: str):
+    """Só "dd/mm/aaaa" exato vira data: "Até X", "01/2026", "Implementação futura" não."""
+    texto = (texto or "").strip()
+    if not RE_DATA_EXATA.match(texto):
+        return None
+    try:
+        return _dt.datetime.strptime(texto, "%d/%m/%Y").date()
+    except ValueError:
+        return None
+
+
+def estado_cronograma(linha: dict, referencia: _dt.date) -> str:
+    """Estado de uma versão da NT na data, pelo que o documento declara. Calculado só
+    com data exata nas duas pontas que importam; o resto, como o documento escreve."""
+    teste, producao = linha.get("teste") or "", linha.get("producao") or ""
+    if linha.get("resultado") == "sem_data":
+        return "o documento não dá data para esta versão" + (f" ('{teste}')" if teste else "")
+    if linha.get("resultado") == "ambigua":
+        return (f"ambígua — teste '{teste}', produção: '{producao}' (a célula não diz a qual item cada "
+                "data se aplica; não escolhido)")
+    dt_teste, dt_prod = _data_exata(teste), _data_exata(producao)
+    if dt_prod and referencia >= dt_prod:
+        return f"em produção desde {producao}"
+    if dt_prod and dt_teste and referencia >= dt_teste:
+        return f"em teste desde {teste}; produção prevista em {producao}"
+    if dt_prod and dt_teste:
+        return f"não implantada; teste em {teste}, produção em {producao}"
+    return f"não calculado — teste '{teste}', produção '{producao}' (não é data exata)"
+
+
+def linhas_cronograma(nt: dict, referencia: _dt.date) -> list[str]:
+    saida = [f"{nt['id']} (documento versão {nt.get('versao')})"]
+    for x in nt.get("linhas") or []:
+        origem = x.get("origem") or "regra:cronograma-nt/v1"
+        aviso = " — leitura por IA: não equivale a revisão humana" if origem.startswith("ia:") else ""
+        etapa = f" [{x['etapa']}]" if x.get("etapa") else ""
+        saida.append(f"  v{x['versao']}{etapa} p.{x.get('pagina')}: {estado_cronograma(x, referencia)} "
+                     f"[{origem}]{aviso}")
+    for p in nt.get("pendencias") or []:
+        saida.append(f"  v{p.get('versao')} p.{p.get('pagina')}: Nao localizado nas fontes indexadas "
+                     f"(pendência do script: {p.get('motivo')})")
+    return saida
+
+
 def buscar_no_acervo(indice: dict, termo: str) -> list[dict]:
     """Atos do acervo (indices/acervo.json) cujo título, ementa, número ou órgão
     contém o termo, sem acento nem caixa; na ordem do índice."""
@@ -314,7 +361,29 @@ def main() -> int:
                          "versao e pagina")
     ap.add_argument("--acervo-id", metavar="PREFIXO",
                     help="com --acervo-texto: so os atos cujo id comeca assim (ex.: nfe-nt2025-002)")
+    ap.add_argument("--cronograma-nt", action="store_true",
+                    help="estado de cada versao das NTs na --data, pelo cronograma que o documento declara "
+                         "(filtre com --acervo-id)")
     args = ap.parse_args()
+
+    if args.cronograma_nt:
+        caminho = RAIZ / "indices" / "cronograma_nt.json"
+        rel = json.loads(caminho.read_text(encoding="utf-8")) if caminho.exists() else {}
+        nts = [n for n in rel.get("notas_tecnicas") or []
+               if not args.acervo_id or n["id"].startswith(args.acervo_id)]
+        if not nts:
+            print("Nao localizado no cronograma das NTs indexado.", file=sys.stderr)
+            return 1
+        referencia = _dt.date.fromisoformat(args.data) if args.data else _dt.date.today()
+        if not args.data:
+            print(f"AVISO: data de referencia nao informada. Assumindo hoje ({referencia}).", file=sys.stderr)
+        print(f"Data de referencia: {referencia}\n")
+        for nt in nts:
+            print("\n".join(linhas_cronograma(nt, referencia)) + "\n")
+        print("CRONOGRAMA: o que cada NT declara na sua tabela 'Historico de Alteracoes / Cronograma' — nao e "
+              "decisao normativa. Estado calculado so com data exata (dd/mm/aaaa); versoes posteriores da NT "
+              "podem mudar as datas: compare os documentos da serie.")
+        return 0
 
     if args.acervo_texto:
         import acervo_texto

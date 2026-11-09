@@ -146,6 +146,11 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   não o oficialmente correspondente; divergência é informação, não erro. Campo
   com `escolha: sim` está num `xs:choice`: a ocorrência só vale se a alternativa
   for a escolhida;
+- **cronograma por data**: `python pipeline/consultar.py --cronograma-nt --data
+  AAAA-MM-DD --acervo-id prefixo` dá o estado de cada versão da NT na data
+  ("em produção desde", "em teste", "não implantada") — calculado só com data
+  exata; "Até X", mês/ano e textos saem como o documento escreve. Versões
+  posteriores da NT podem mudar as datas: compare os documentos da série;
 - **cronograma de implantação das NTs**: `indices/cronograma_nt.md` traz, por NT,
   as datas de teste e de produção de cada versão, lidas por script da tabela
   "Histórico de Alterações / Cronograma" — como a NT as escreve, com página. É o

@@ -5232,6 +5232,38 @@ def cronograma_pagina_girada():
            "data solta na página: erro")
 
 
+@cenario("cronograma (consulta): estado na data só com data exata; o resto como o documento escreve")
+def cronograma_consulta():
+    """Quebra: calcular estado a partir de "Até X", "01/2026" ou "Implementação futura"
+    (o documento não dá o dia); escolher uma data de linha ambígua; ou omitir a origem
+    da leitura (IA não equivale a revisão humana)."""
+    import datetime as dt
+
+    import consultar as K
+
+    d = dt.date(2026, 11, 3)
+    linha = lambda **k: {"versao": "1.00", "teste": "01/09/2026", "producao": "03/11/2026", "pagina": 3, **k}  # noqa: E731
+    checar("em produção desde 03/11/2026" in K.estado_cronograma(linha(), d), "produção na data: em produção")
+    checar("em teste" in K.estado_cronograma(linha(), dt.date(2026, 10, 1))
+           and "03/11/2026" in K.estado_cronograma(linha(), dt.date(2026, 10, 1)), "entre teste e produção: em teste")
+    checar("não implantada" in K.estado_cronograma(linha(), dt.date(2026, 8, 1)), "antes do teste: não implantada")
+    vago = K.estado_cronograma(linha(teste="Até 06/04/2026", producao="Implementação futura"), d)
+    checar("não calculado" in vago and "Implementação futura" in vago and "em produção" not in vago,
+           f"texto que não é data exata: não calculado (obteve {vago!r})")
+    mes = K.estado_cronograma(linha(producao="01/2026"), d)
+    checar("não calculado" in mes and "01/2026" in mes, "só mês/ano: não calculado")
+    amb = K.estado_cronograma(linha(producao="01/09/2026 05/10/2026", resultado="ambigua"), d)
+    checar("ambígua" in amb and "01/09/2026 05/10/2026" in amb and "em produção" not in amb, "ambígua: sem escolher")
+    sem = K.estado_cronograma(linha(teste="", producao="", resultado="sem_data"), d)
+    checar("não dá data" in sem, "sem_data: o documento não dá data")
+    ia = K.linhas_cronograma({"id": "nt-x", "versao": "1.52", "linhas": [linha(origem="ia:claude-opus-5-5")],
+                              "pendencias": [{"versao": "1.53", "motivo": "uma_data", "pagina": 4}]}, d)
+    texto = "\n".join(ia)
+    checar("ia:claude-opus-5-5" in texto and "não equivale a revisão humana" in texto
+           and "1.53" in texto and "Nao localizado nas fontes indexadas" in texto,
+           f"origem da IA e pendência mostradas (obteve {texto!r})")
+
+
 @cenario("portabilidade de saída")
 def portabilidade():
     """Regressão: no Windows a saída redirecionada usa a codepage local (cp1252) e
