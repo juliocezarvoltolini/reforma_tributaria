@@ -724,9 +724,9 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   XSD (`[1-9]{1}[0-9]{0,12}(\.[0-9]{2})?` = 13 inteiros, 2 casas). Primeira rodada: 2.429
   conferem, 13 divergem (vBC "3v2-4" e qBCMono "11v0-4" nas primeiras versões da NT
   2025.002 e na RT 2024.002), 1.011 não comparáveis (grupos, ou sem forma reconhecida).
-- **Ainda não conferido:** o TIPO dos campos e (formatos diferentes na NT e
-  no XSD), regras de validação, e o cronograma de implantação por versão (está no
-  texto, em linguagem livre).
+- **Ainda não conferido:** o TIPO dos campos (N/C/D na NT, tipo nomeado no XSD) e
+  as regras de validação (só na NT, sem par no XSD). O cronograma de implantação está
+  feito (ver adiante).
 
 **Em aberto:**
 
