@@ -1,0 +1,298 @@
+# Leituras das pendências do cronograma das NTs aprovadas pelo ATC RFB/SUFIS/CGIBS/DIRETORIA-EXECUTIVA
+# nº 10/2026 (indices/cronograma_nt.json). Camada 3: por IA (ia:...) a partir da POSIÇÃO no PDF original,
+# ou por regra (regra:cronograma-celula-vazia/v1). validar.py extrai de novo o texto das colunas Teste e
+# Produção nas alturas/faixa e exige que seja o registrado. Leitura por IA não equivale a revisão humana.
+leituras:
+- nt: bpe-nota-tecnica-2026-004-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 659
+  - 702
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: cte-nota-tecnica-2026-004-v101
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 605
+  - 702
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: cte-nota-tecnica-2026-004-v1-01-svrs
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 605
+  - 702
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: nf3e-nota-tecnica-2026-004-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 649
+  - 702
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: nfag-nota-tecnica-2026-004-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 616
+  - 681
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: nfcom-nota-tecnica-2026-004-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 638
+  - 702
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: nfgas-nota-tecnica-2026-004-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 606
+  - 681
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-nota-tecnica-2026-005-sn-v100
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 687
+  - 678
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-nota-tecnica-2026-005-sn-v1-00-svrs
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 687
+  - 678
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: cte-nota-tecnica-2026-005-sn-v100
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 687
+  - 678
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: cte-nota-tecnica-2026-005-sn-v1-00-svrs
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 687
+  - 678
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfcom-nota-tecnica-2026-005-v1-00
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 681
+  - 672
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfcom-nota-tecnica-2026-005-v1-00-svrs
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 681
+  - 672
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt-2026-005-v1-00-rtc-simplesnacional
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 545
+  - 533
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is
+  versao: '1.30'
+  pagina: 5
+  motivo: sem_data
+  alturas:
+  - 630
+  - 618
+  teste: Implementação futura
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem ''Implementação futura'' —
+    o documento não dá data.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is
+  versao: '1.35'
+  pagina: 5
+  motivo: uma_data
+  alturas:
+  - 396
+  teste: Até 06/04/2026
+  producao: Não se aplica
+  resultado: lida
+  leitura: 'Teste: ''Até 06/04/2026''; Produção: ''Não se aplica'' (o documento diz que não há implantação em produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is
+  versao: '1.40'
+  pagina: 6
+  motivo: sem_data
+  alturas:
+  - 712
+  teste: Até 01/07/2026
+  producao: 03/11/2026
+  resultado: lida
+  leitura: 'Item da VC02-14 (devolução referenciada só em DFeReferenciado): um par de datas no topo da célula, acima
+    do rótulo centralizado da 1.40 — Teste ''Até 01/07/2026'', Produção ''03/11/2026''. A célula traz a observação
+    ''Regra atualizada na versão v1.53.'' (a v1.52 listava três datas de produção).'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt-2026-008-v1-01-rtc-valorliquido
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 682
+  - 671
+  teste: 05/10/2026 Até 26/10/2026
+  producao: 03/11/2026 16/11/2026
+  resultado: ambigua
+  leitura: 'A célula da 1.00 traz dois pares, um sob o outro: 05/10/2026 / 03/11/2026 e Até 26/10/2026 / 16/11/2026.
+    A linha 1.01 diz ''Alteração das datas de implantação em Homologação e Produção (exceto RV NB01-30)'' com Até
+    26/10/2026 / 16/11/2026. A célula não diz a qual item cada par se aplica. Sem decidir.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt-2026-008-v1-01-rtc-valorliquido
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  trecho_inicio: 1.01 - Retirado
+  alturas:
+  - 565
+  teste: '-'
+  producao: '-'
+  resultado: lida
+  leitura: 'Item retirado (''Composição do valor do produto com informações de IBS e CBS''): as duas colunas trazem
+    ''-'' — o documento não dá data.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt-2026-008-v1-01-rtc-valorliquido
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  trecho_inicio: 1.01 - Regras
+  alturas:
+  - 541
+  - 529
+  teste: Implementação Futura
+  producao: Implementação Futura
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Implementação Futura'': o documento não dá data para este item.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie
+  versao: '1.00'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 540
+  - 523
+  teste: 01/09/2026
+  producao: 03/11/2026 16/11/2026
+  resultado: ambigua
+  leitura: 'Teste 01/09/2026; a célula de Produção traz duas datas, uma sob a outra: 03/11/2026 e 16/11/2026. A
+    linha 1.11 altera as datas de implantação (Até 26/10/2026 / 16/11/2026). A célula não diz qual vale. Sem decidir.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie
+  versao: '1.10'
+  pagina: 3
+  motivo: datas_demais
+  alturas:
+  - 504
+  - 487
+  teste: Até 05/10/2026 Até 26/10/2026
+  producao: 03/11/2026 16/11/2026
+  resultado: ambigua
+  leitura: 'A célula da 1.10 traz dois pares, um sob o outro: Até 05/10/2026 / 03/11/2026 e Até 26/10/2026 / 16/11/2026
+    (o segundo igual ao da 1.11, logo abaixo). A célula não diz a qual item cada par se aplica. Sem decidir.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'

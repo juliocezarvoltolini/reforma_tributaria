@@ -2426,16 +2426,21 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vBP  Inclusão do grupo de informações de Multa e Juros do BPe Até 26/10/2026 16/11/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Grupo endereço do comprador opcional no BPeTA",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.004_v1.01 - Publicada em 30/10/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ir3st/saoU0=",
       "versao": "1.01"
@@ -2445,7 +2450,10 @@
       "id": "bpe-nota-tecnica-2026-005-sn-v1-00-svrs",
       "linhas": [
         {
-          "conferencia_pdf": "um_fragmento",
+          "conferencia_original": "um_fragmento",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "16/11/2026",
           "rodape": "",
@@ -2461,16 +2469,21 @@
           "teste": "16/11/2026",
           "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.005 - Simples Nacional",
       "url": "https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&tipoArquivo=3&nomeArquivo=BPe_Nota_Tecnica_2026_005_SN_v1.00.pdf",
       "versao": "1.00"
@@ -2480,7 +2493,10 @@
       "id": "bpe-nota-tecnica-2026-005-sn-v100",
       "linhas": [
         {
-          "conferencia_pdf": "um_fragmento",
+          "conferencia_original": "um_fragmento",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "16/11/2026",
           "rodape": "",
@@ -2496,16 +2512,21 @@
           "teste": "16/11/2026",
           "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=tsiloeZ6vBw=",
       "versao": "1.00"
@@ -4854,16 +4875,21 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01  Ajuste na Data de produção da NT 2026.004 e ajuste nas regras de validação da EPEC  Alteração da estrutura do CTe Simplificado  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vTPrest  Inclusão do grupo de informações de Multa e Juros do CTe Até 26/10/2026 14/12/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Eliminação da EPEC e FSDA  Criação da emissão offline  Evento de apropriação do crédito presumido pelo tomador do serviço prestado por TAC  Alteração estrutura CTe Simplidicado",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.004 - v1.01",
       "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_004_v1.01.pdf",
       "versao": "1.01"
@@ -4880,16 +4906,21 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01  Ajuste na Data de produção da NT 2026.004 e ajuste nas regras de validação da EPEC  Alteração da estrutura do CTe Simplificado  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vTPrest  Inclusão do grupo de informações de Multa e Juros do CTe Até 26/10/2026 14/12/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Eliminação da EPEC e FSDA  Criação da emissão offline  Evento de apropriação do crédito presumido pelo tomador do serviço prestado por TAC  Alteração estrutura CTe Simplidicado",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=urai6j7wfLM=",
       "versao": "1.01"
@@ -4899,7 +4930,10 @@
       "id": "cte-nota-tecnica-2026-005-sn-v1-00-svrs",
       "linhas": [
         {
-          "conferencia_pdf": "um_fragmento",
+          "conferencia_original": "um_fragmento",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "16/11/2026",
           "rodape": "",
@@ -4915,16 +4949,21 @@
           "teste": "16/11/2026",
           "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.005 - Simples Nacional",
       "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_005_SN_v1.00.pdf",
       "versao": "1.00"
@@ -4934,7 +4973,10 @@
       "id": "cte-nota-tecnica-2026-005-sn-v100",
       "linhas": [
         {
-          "conferencia_pdf": "um_fragmento",
+          "conferencia_original": "um_fragmento",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "16/11/2026",
           "rodape": "",
@@ -4950,16 +4992,21 @@
           "teste": "16/11/2026",
           "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AtaVevRXCIQ=",
       "versao": "1.00"
@@ -5389,7 +5436,10 @@
       "id": "nf3e-nota-tecnica-2026-004-v1-01",
       "linhas": [
         {
-          "conferencia_pdf": "um_fragmento",
+          "conferencia_original": "um_fragmento",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste: a ordem (teste à esquerda, produção à direita) dá as colunas.",
           "pagina": 3,
           "producao": "31/12/2026",
           "rodape": "",
@@ -5405,16 +5455,21 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8THQ/UovR0U=",
       "versao": "1.01"
@@ -5569,16 +5624,21 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação dos campos de IBS e CBS no grupo de processo judicial  Criação dos tipos de faturamento Agregado e Agregador",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JfSmneST0Fc=",
       "versao": "1.01"
@@ -5991,16 +6051,21 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Inclusão do Município do Terminal Principal",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=l1zCFp1N84c=",
       "versao": "1.01"
@@ -6010,7 +6075,10 @@
       "id": "nfcom-nota-tecnica-2026-005-v1-00",
       "linhas": [
         {
-          "conferencia_pdf": "um_fragmento",
+          "conferencia_original": "um_fragmento",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "16/11/2026",
           "rodape": "",
@@ -6026,16 +6094,21 @@
           "teste": "16/11/2026",
           "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=MN1OY+44xXY=",
       "versao": "1.00"
@@ -6045,7 +6118,10 @@
       "id": "nfcom-nota-tecnica-2026-005-v1-00-svrs",
       "linhas": [
         {
-          "conferencia_pdf": "um_fragmento",
+          "conferencia_original": "um_fragmento",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "16/11/2026",
           "rodape": "",
@@ -6061,16 +6137,21 @@
           "teste": "16/11/2026",
           "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.005 - Simples Nacional",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=3&nomeArquivo=NFCom_Nota_Tecnica_2026_005_v1.00.pdf",
       "versao": "1.00"
@@ -6080,7 +6161,10 @@
       "id": "nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00",
       "linhas": [
         {
-          "conferencia_pdf": "nao_achado",
+          "conferencia_original": "nao_achado",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "A data de homologação '30/11/2026*' está no mesmo pedaço de texto do rótulo e da descrição da 1.00, que começa à esquerda da coluna Teste; a de produção, 14/12/2026, está na coluna Produção, na mesma altura. O asterisco remete à nota '* Versão em homologação inicial'. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "14/12/2026",
           "rodape": "*",
@@ -8092,7 +8176,10 @@
           "versao": "1.32"
         },
         {
-          "conferencia_pdf": "rotulo_diverge",
+          "conferencia_original": "rotulo_diverge",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais abaixo. O par de baixo, igual, é da 1.34.",
           "pagina": 5,
           "producao": "Até 15/12/2025",
           "rodape": "",
@@ -8119,35 +8206,55 @@
           "versao": "1.36"
         },
         {
-          "conferencia_pdf": "rotulo_diverge",
+          "conferencia_original": "rotulo_diverge",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "Datas no topo da célula da 1.40 (a descrição dela começa nessa altura); o rótulo é centralizado bem abaixo. O par de cima, igual, é da 1.36.",
           "pagina": 5,
           "producao": "03/08/2026",
           "rodape": "",
           "teste": "Até 01/07/2026",
           "trecho": "1.40 Criação do campo para o Código Indicador do Local da Operação de Fornecimento (cIndOp, B25d); Atualização de valores de tpEnteGov (BB02), tpOperGov (BB04) e criação do campo refDFeAnt (BB05); Criação do campo para Inscrição Suframa do Emitente (ISUFemit, C22); Atualização dos grupos de devolução de tributos (gDevTrib) - cashback; Criação do grupo gALCZFMCBS (UB66a); Validações por cClassTrib x tipo de nota de débito e crédito; Alteração da data de início da aplicação da regra de validação UB12-10. Ajuste no layout do Evento 211110; Eliminação do Evento 211120; Regras de validação incluídas: B25d-10, B25d-20, B25d-30, BB05- 10, BB05-20, BB05-30, BB05-40, BB05-50, BB05-60, BB05-70, BB05-80, BB05-90, BB05-100, BB05-110, BB05-120, BB05-130, BB05-140, BB05-150, BB05-160, BB05-170, BB05-180, BB05- 190, BB05-200, C22-10, C22-20, UB14-60, UB14-70, UB14-80, UB24-10, UB43-10, UB56-20, UB62-10, UB62a-10, UB63-10, UB66a-10, UB66a-20, UB66c-10, UB66e-10, VC02-40, VC02-50, VC03-20; Até 01/07/2026 03/08/2026",
           "versao": "1.40"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Linha 1.30 (início da obrigatoriedade, RV UB12-10): as duas colunas dizem 'Implementação futura' — o documento não dá data.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Implementação futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação futura",
           "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
           "versao": "1.30"
         },
         {
-          "motivo": "uma_data",
+          "etapa": null,
+          "leitura": "Teste: 'Até 06/04/2026'; Produção: 'Não se aplica' (o documento diz que não há implantação em produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 5,
+          "producao": "Não se aplica",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 06/04/2026",
           "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
           "versao": "1.35"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Item da VC02-14 (devolução referenciada só em DFeReferenciado): um par de datas no topo da célula, acima do rótulo centralizado da 1.40 — Teste 'Até 01/07/2026', Produção '03/11/2026'. A célula traz a observação 'Regra atualizada na versão v1.53.' (a v1.52 listava três datas de produção).",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 6,
+          "producao": "03/11/2026",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
           "trecho": "1.40 Na devolução, o referenciamento passa a ser realizado exclusivamente no grupo “DFeReferenciado” (regra de validação VC02-14)",
           "versao": "1.40"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2025.002 v1.53 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=BMcHSMEoepU=",
       "versao": "1.53"
@@ -8535,23 +8642,31 @@
       "id": "nfe-nt-2026-005-v1-00-rtc-simplesnacional",
       "linhas": [
         {
-          "conferencia_pdf": "rotulo_diverge",
+          "conferencia_original": "rotulo_diverge",
+          "conferencia_pdf": "confirmada_ia",
+          "conferida_por": "ia:claude-opus-5-5",
+          "leitura_conferencia": "As datas estão na coluna Teste e na coluna Produção, na mesma altura da primeira linha 1.00 ('Criação de campos relacionados a tributação do Simples Nacional'), cujo rótulo vem no mesmo pedaço de texto da descrição; a segunda linha 1.00, logo abaixo, é a do evento, com 'Implementação Futura'. A ordem no trecho (teste antes de produção) dá as colunas.",
           "pagina": 3,
           "producao": "16/11/2026",
           "rodape": "",
           "teste": "Até 26/10/2026",
           "trecho": "1.00 Criação de campos relacionados a tributação do Simples Nacional Até 26/10/2026 16/11/2026",
           "versao": "1.00"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.00 Criação do Evento Tributação do Simples Nacional Implementação Futura Implementação Futura",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HInG7WD5Sj8=",
       "versao": "1.00"
@@ -8671,28 +8786,45 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01 - Alteração das datas de implantação em Homologação e Produção (exceto RV NB01-30) Até 26/10/2026 16/11/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
+          "etapa": null,
+          "leitura": "A célula da 1.00 traz dois pares, um sob o outro: 05/10/2026 / 03/11/2026 e Até 26/10/2026 / 16/11/2026. A linha 1.01 diz 'Alteração das datas de implantação em Homologação e Produção (exceto RV NB01-30)' com Até 26/10/2026 / 16/11/2026. A célula não diz a qual item cada par se aplica. Sem decidir.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "03/11/2026 16/11/2026",
+          "resultado": "ambigua",
+          "rodape": "",
+          "teste": "05/10/2026 Até 26/10/2026",
           "trecho": "1.00 - Criação dos campos que representam os valores líquidos do produto. - Criação do campo para informar o ICMS previsto no Pagamento Antecipado. - Regras de validação incluídas: I11c-10, I11c-20, NB01-10, NB01-20, W01a-10, W01a-20. - Regras de validação alteradas: B25-80, VB01-10, VB01-20. - Regras de validação removidas: UB16-10. 05/10/2026 Até 26/10/2026 03/11/2026 16/11/2026",
           "versao": "1.00"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Item retirado ('Composição do valor do produto com informações de IBS e CBS'): as duas colunas trazem '-' — o documento não dá data.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "-",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "-",
           "trecho": "1.01 - Retirado item “Composição do valor do produto com informações de IBS e CBS”. - -",
           "versao": "1.01"
         },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "As duas colunas dizem 'Implementação Futura': o documento não dá data para este item.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "Implementação Futura",
+          "resultado": "lida",
+          "rodape": "",
+          "teste": "Implementação Futura",
           "trecho": "1.01 - Regras de validação alteradas: VB01-10, VB01-20. Implementação Futura Implementação Futura",
           "versao": "1.01"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.008 v1.01 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=PVjdIcA/H2s=",
       "versao": "1.01"
@@ -9145,22 +9277,33 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.11 - Alteração das datas de implantação em Homologação e Produção Até 26/10/2026 16/11/2026",
           "versao": "1.11"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "datas_demais",
+          "etapa": null,
+          "leitura": "Teste 01/09/2026; a célula de Produção traz duas datas, uma sob a outra: 03/11/2026 e 16/11/2026. A linha 1.11 altera as datas de implantação (Até 26/10/2026 / 16/11/2026). A célula não diz qual vale. Sem decidir.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "03/11/2026 16/11/2026",
+          "resultado": "ambigua",
+          "rodape": "",
+          "teste": "01/09/2026",
           "trecho": "1.00 - Criação e atualização campos e de Regras de Validação desta NT 01/09/2026 03/11/2026 16/11/2026",
           "versao": "1.00"
         },
         {
-          "motivo": "datas_demais",
+          "etapa": null,
+          "leitura": "A célula da 1.10 traz dois pares, um sob o outro: Até 05/10/2026 / 03/11/2026 e Até 26/10/2026 / 16/11/2026 (o segundo igual ao da 1.11, logo abaixo). A célula não diz a qual item cada par se aplica. Sem decidir.",
+          "origem": "ia:claude-opus-5-5",
           "pagina": 3,
+          "producao": "03/11/2026 16/11/2026",
+          "resultado": "ambigua",
+          "rodape": "",
+          "teste": "Até 05/10/2026 Até 26/10/2026",
           "trecho": "1.10 - Alteração em Regras de Validação para facilitar testes em Homologação. - Correção na RV 1C17-04. Até 05/10/2026 Até 26/10/2026 03/11/2026 16/11/2026",
           "versao": "1.10"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.007 v1.11 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HXzgTeht+5Q=",
       "versao": "1.11"
@@ -9303,16 +9446,21 @@
           "teste": "Até 26/10/2026",
           "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Ampliação das ocorrências do grupo tarifas  Inclusão de valor Mínimo no indOrigemQtd",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ZF+Shyl27wI=",
       "versao": "1.01"

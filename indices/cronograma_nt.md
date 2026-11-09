@@ -3,8 +3,8 @@
 Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / Cronograma' de cada NT: o que o documento declara, nao decisao normativa. teste/producao estao como a NT os escreve. Linha com origem ia:... foi lida por IA a partir da posicao no PDF (interpretacoes/cronograma_nt/): nao equivale a revisao humana; resultado 'ambigua' lista as datas da celula sem dizer a qual item cada uma se aplica.
 
 - NTs: 134; com linhas lidas: 133
-- linhas lidas: 748; pendências: 22
-- conferência pela posição no PDF das linhas lidas pelo script: confere: 291, confirmada_ia: 22, nao_achado: 1, rotulo_diverge: 3, um_fragmento: 7
+- linhas lidas: 770; pendências: 0
+- conferência pela posição no PDF das linhas lidas pelo script: confere: 291, confirmada_ia: 33
 
 | NT | versão do documento | linhas lidas | pendências |
 |---|---|---|---|
@@ -27,9 +27,9 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | bpe-bpe-nota-tecnica-2026-002-v1-00 | 1.00 | 2 | 0 |
 | bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | 3 | 0 |
 | bpe-bpe-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
-| bpe-nota-tecnica-2026-004-v1-01 | 1.01 | 1 | 1 |
-| bpe-nota-tecnica-2026-005-sn-v1-00-svrs | 1.00 | 2 | 1 |
-| bpe-nota-tecnica-2026-005-sn-v100 | 1.00 | 2 | 1 |
+| bpe-nota-tecnica-2026-004-v1-01 | 1.01 | 2 | 0 |
+| bpe-nota-tecnica-2026-005-sn-v1-00-svrs | 1.00 | 3 | 0 |
+| bpe-nota-tecnica-2026-005-sn-v100 | 1.00 | 3 | 0 |
 | ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs | 1.00 | 1 | 0 |
 | ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10 | 1.10 | 2 | 0 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-00 | 1.00 | 1 | 0 |
@@ -55,33 +55,33 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | cte-cte-nota-tecnica-2026-002-v1-00 | 1.00 | 2 | 0 |
 | cte-cte-nota-tecnica-2026-002-v1-01 | 1.01 | 3 | 0 |
 | cte-cte-nota-tecnica-2026-004-v1-00 | 1.00 | 2 | 0 |
-| cte-nota-tecnica-2026-004-v1-01-svrs | 1.01 | 1 | 1 |
-| cte-nota-tecnica-2026-004-v101 | 1.01 | 1 | 1 |
-| cte-nota-tecnica-2026-005-sn-v1-00-svrs | 1.00 | 2 | 1 |
-| cte-nota-tecnica-2026-005-sn-v100 | 1.00 | 2 | 1 |
+| cte-nota-tecnica-2026-004-v1-01-svrs | 1.01 | 2 | 0 |
+| cte-nota-tecnica-2026-004-v101 | 1.01 | 2 | 0 |
+| cte-nota-tecnica-2026-005-sn-v1-00-svrs | 1.00 | 3 | 0 |
+| cte-nota-tecnica-2026-005-sn-v100 | 1.00 | 3 | 0 |
 | nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 21 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-381f1765 | 1.01 | 2 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-002-v1-01 | 1.01 | 3 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-004-v1-00 | 1.00 | 2 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-004-v1-00-6e7bb7fe | 1.00 | 2 | 0 |
-| nf3e-nota-tecnica-2026-004-v1-01 | 1.01 | 2 | 1 |
+| nf3e-nota-tecnica-2026-004-v1-01 | 1.01 | 3 | 0 |
 | nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 | 1.00 | 1 | 0 |
 | nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
 | nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-328a9fde | 1.01 | 2 | 0 |
 | nfag-nfag-nota-tecnica-2026-002-v1-00 | 1.00 | 1 | 0 |
 | nfag-nfag-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | nfag-nfag-nota-tecnica-2026-004-v1-00-f513fd04 | 1.00 | 1 | 0 |
-| nfag-nota-tecnica-2026-004-v1-01 | 1.01 | 1 | 1 |
+| nfag-nota-tecnica-2026-004-v1-01 | 1.01 | 2 | 0 |
 | nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 20 | 0 |
 | nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
 | nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-a961eaa8 | 1.01 | 2 | 0 |
 | nfcom-nfcom-nota-tecnica-2026-002-v1-01a | 1.01a | 4 | 0 |
 | nfcom-nfcom-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | nfcom-nfcom-nota-tecnica-2026-004-v1-00-dd497ae7 | 1.00 | 1 | 0 |
-| nfcom-nota-tecnica-2026-004-v1-01 | 1.01 | 1 | 1 |
-| nfcom-nota-tecnica-2026-005-v1-00 | 1.00 | 2 | 1 |
-| nfcom-nota-tecnica-2026-005-v1-00-svrs | 1.00 | 2 | 1 |
+| nfcom-nota-tecnica-2026-004-v1-01 | 1.01 | 2 | 0 |
+| nfcom-nota-tecnica-2026-005-v1-00 | 1.00 | 3 | 0 |
+| nfcom-nota-tecnica-2026-005-v1-00-svrs | 1.00 | 3 | 0 |
 | nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00 | 1.00 | 1 | 0 |
 | nfe-nfe-nt-2026-010-v1-00-danfe-rtc | 1.00 | 1 | 0 |
 | nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final | 1.10 | 2 | 0 |
@@ -100,7 +100,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is | 1.50 | 18 | 0 |
 | nfe-nt-2025-002-v1-51-rtc | 1.51 | 20 | 0 |
 | nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is | 1.52 | 22 | 0 |
-| nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is | 1.53 | 14 | 3 |
+| nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is | 1.53 | 17 | 0 |
 | nfe-nt-2026-001-nf-e-v1-00-paa | 1.00 | 1 | 0 |
 | nfe-nt-2026-001-v1-02-paa-nfe | 1.02 | 3 | 0 |
 | nfe-nt-2026-001-v1-02a-paa-nfe | 1.02a | 3 | 0 |
@@ -110,12 +110,12 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | nfe-nt-2026-002-v1-10a-danfe-simpl-tp2-emi-offline-autoriz-alerta-v2 | 1.10a | 5 | 0 |
 | nfe-nt-2026-002-v1-11-danfe-simpl-tp2-emi-offline-autoriz-alerta | 1.11 | 6 | 0 |
 | nfe-nt-2026-003-v1-00-danfe-simplificado-tipo-2 | 1.00 | 1 | 0 |
-| nfe-nt-2026-005-v1-00-rtc-simplesnacional | 1.00 | 1 | 1 |
+| nfe-nt-2026-005-v1-00-rtc-simplesnacional | 1.00 | 2 | 0 |
 | nfe-nt-2026-006-v1-00-rtc-vinculacaopagamento | 1.00 | 1 | 0 |
 | nfe-nt-2026-006-v1-00-rtc-vinculacaopagamento-2775 | 1.00 | 1 | 0 |
 | nfe-nt-2026-006-v1-01-rtc-vinculacaopagamento | 1.01 | 2 | 0 |
 | nfe-nt-2026-008-v1-00-rtc-valorliquidoproduto | 1.00 | 2 | 0 |
-| nfe-nt-2026-008-v1-01-rtc-valorliquido | 1.01 | 2 | 3 |
+| nfe-nt-2026-008-v1-01-rtc-valorliquido | 1.01 | 5 | 0 |
 | nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo | 1.0 | 1 | 0 |
 | nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c | 1.0 | 1 | 0 |
 | nfe-nt2021-003-v1-40-validacao-gtin-grupo-iv | 1.40 | 9 | 0 |
@@ -123,14 +123,14 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | nfe-nt2021-003-v1-50-validacao-gtin-grupo-v-20cede26 | 1.50 | 10 | 0 |
 | nfe-nt2026-007-v1-00-emissao-de-nf-e-sem-ie-e-rv-lcc | 1.00 | 1 | 0 |
 | nfe-nt2026-007-v1-10-emissao-nf-e-sem-ie-e-rv-lcc | 1.10 | 2 | 0 |
-| nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie | 1.11 | 1 | 2 |
+| nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie | 1.11 | 3 | 0 |
 | nfe-nt2026-009-v1-00-alteracao-rv-cfop | 1.00 | 1 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 | 1.00 | 1 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-002-v1-00 | 1.00 | 1 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-004-v1-00-3dcbe9f8 | 1.00 | 1 | 0 |
-| nfgas-nota-tecnica-2026-004-v1-01 | 1.01 | 1 | 1 |
+| nfgas-nota-tecnica-2026-004-v1-01 | 1.01 | 2 | 0 |
 | nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00 | 1.00 | 1 | 0 |
 | nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006 |  | 1 | 0 |
 | nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006-leiaute-da-nfs-e-via-versao-1-00 | 1.00 | 1 | 0 |
@@ -432,20 +432,23 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.01 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 
 ## bpe-nota-tecnica-2026-005-sn-v1-00-svrs (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## bpe-nota-tecnica-2026-005-sn-v100 (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs (versão 1.00)
 
@@ -757,26 +760,30 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.01 |  | Até 26/10/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 
 ## cte-nota-tecnica-2026-004-v101 (versão 1.01)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.01 |  | Até 26/10/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 
 ## cte-nota-tecnica-2026-005-sn-v1-00-svrs (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## cte-nota-tecnica-2026-005-sn-v100 (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a)
 
@@ -844,8 +851,9 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 16/11/2026 | 31/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 16/11/2026 | 31/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.01 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 
 ## nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 (versão 1.00)
 
@@ -890,6 +898,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.01 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 
 ## nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a)
 
@@ -956,26 +965,29 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.01 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 
 ## nfcom-nota-tecnica-2026-005-v1-00 (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## nfcom-nota-tecnica-2026-005-v1-00-svrs (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00 (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | 30/11/2026 | 14/12/2026 | * | 3 | regra:cronograma-nt/v1 | lida | nao_achado |
+| 1.00 |  | 30/11/2026 | 14/12/2026 | * | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 
 ## nfe-nfe-nt-2026-010-v1-00-danfe-rtc (versão 1.00)
 
@@ -1252,10 +1264,13 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.36 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
+| 1.30 |  | Implementação futura | Implementação futura |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
+| 1.35 |  | Até 06/04/2026 | Não se aplica |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
+| 1.40 |  | Até 01/07/2026 | 03/11/2026 |  | 6 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## nfe-nt-2026-001-nf-e-v1-00-paa (versão 1.00)
 
@@ -1337,7 +1352,8 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.00 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.00 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
+| 1.00 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## nfe-nt-2026-006-v1-00-rtc-vinculacaopagamento (versão 1.00)
 
@@ -1371,6 +1387,9 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 |---|---|---|---|---|---|---|---|---|
 | 1.00 |  | 01/02/2027 | 01/03/2027 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
 | 1.01 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | 05/10/2026 Até 26/10/2026 | 03/11/2026 16/11/2026 |  | 3 | ia:claude-opus-5-5 | ambigua | na leitura |
+| 1.01 |  | - | - |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
+| 1.01 |  | Implementação Futura | Implementação Futura |  | 3 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo (versão 1.0)
 
@@ -1446,6 +1465,8 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.11 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  | 01/09/2026 | 03/11/2026 16/11/2026 |  | 3 | ia:claude-opus-5-5 | ambigua | na leitura |
+| 1.10 |  | Até 05/10/2026 Até 26/10/2026 | 03/11/2026 16/11/2026 |  | 3 | ia:claude-opus-5-5 | ambigua | na leitura |
 
 ## nfe-nt2026-009-v1-00-alteracao-rv-cfop (versão 1.00)
 
@@ -1489,6 +1510,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.01 |  | Até 26/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 
 ## nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00 (versão 1.00)
 

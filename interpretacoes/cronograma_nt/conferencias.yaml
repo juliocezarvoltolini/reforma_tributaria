@@ -305,3 +305,142 @@ confirmacoes:
   rotulo_y: 212
   leitura: Datas no topo da célula da 1.40 (a descrição dela começa nessa altura); o rótulo é centralizado bem abaixo.
     O par de cima, igual, é da 1.36.
+- nt: bpe-nota-tecnica-2026-005-sn-v100
+  versao: '1.00'
+  pagina: 3
+  teste: 26/10/2026
+  producao: 16/11/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como
+    rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem
+    no trecho (teste antes de produção) dá as colunas.
+- nt: bpe-nota-tecnica-2026-005-sn-v1-00-svrs
+  versao: '1.00'
+  pagina: 3
+  teste: 26/10/2026
+  producao: 16/11/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como
+    rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem
+    no trecho (teste antes de produção) dá as colunas.
+- nt: cte-nota-tecnica-2026-005-sn-v100
+  versao: '1.00'
+  pagina: 3
+  teste: 26/10/2026
+  producao: 16/11/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como
+    rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem
+    no trecho (teste antes de produção) dá as colunas.
+- nt: cte-nota-tecnica-2026-005-sn-v1-00-svrs
+  versao: '1.00'
+  pagina: 3
+  teste: 26/10/2026
+  producao: 16/11/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como
+    rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem
+    no trecho (teste antes de produção) dá as colunas.
+- nt: nfcom-nota-tecnica-2026-005-v1-00
+  versao: '1.00'
+  pagina: 3
+  teste: 26/10/2026
+  producao: 16/11/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como
+    rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem
+    no trecho (teste antes de produção) dá as colunas.
+- nt: nfcom-nota-tecnica-2026-005-v1-00-svrs
+  versao: '1.00'
+  pagina: 3
+  teste: 26/10/2026
+  producao: 16/11/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: O rótulo '1.00' está no mesmo pedaço de texto da descrição, e por isso a posição não o reconhece como
+    rótulo; as duas datas estão num só pedaço, na mesma altura da linha, começando na coluna Homologação. A ordem
+    no trecho (teste antes de produção) dá as colunas.
+- nt: nf3e-nota-tecnica-2026-004-v1-01
+  versao: '1.00'
+  pagina: 3
+  teste: 16/11/2026
+  producao: 31/12/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 633
+  rotulo_y: 633
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 524
+  rotulo_y: 484
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is
+  versao: '1.40'
+  pagina: 5
+  teste: Até 01/07/2026
+  producao: 03/08/2026
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 314
+  rotulo_y: 200
+  leitura: Datas no topo da célula da 1.40 (a descrição dela começa nessa altura); o rótulo é centralizado bem abaixo.
+    O par de cima, igual, é da 1.36.
+- nt: nfe-nt-2026-005-v1-00-rtc-simplesnacional
+  versao: '1.00'
+  pagina: 3
+  teste: Até 26/10/2026
+  producao: 16/11/2026
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: As datas estão na coluna Teste e na coluna Produção, na mesma altura da primeira linha 1.00 ('Criação
+    de campos relacionados a tributação do Simples Nacional'), cujo rótulo vem no mesmo pedaço de texto da descrição;
+    a segunda linha 1.00, logo abaixo, é a do evento, com 'Implementação Futura'. A ordem no trecho (teste antes
+    de produção) dá as colunas.
+- nt: nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00
+  versao: '1.00'
+  pagina: 3
+  teste: 30/11/2026
+  producao: 14/12/2026
+  situacao: nao_achado
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: A data de homologação '30/11/2026*' está no mesmo pedaço de texto do rótulo e da descrição da 1.00, que
+    começa à esquerda da coluna Teste; a de produção, 14/12/2026, está na coluna Produção, na mesma altura. O asterisco
+    remete à nota '* Versão em homologação inicial'. A ordem no trecho (teste antes de produção) dá as colunas.
