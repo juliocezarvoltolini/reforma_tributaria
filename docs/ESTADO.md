@@ -685,6 +685,10 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   correção") são desambiguadas por `trecho_inicio`. A margem das colunas passou
   de 6 para 12 pontos: a tabela que continua na página seguinte vem deslocada.
   Pendências restantes (NF3e, NFCom, NFAg, NFGas, NFS-e, NT conjunta): 59.
+- **Pendências de NF3e e NFCom resolvidas (2026-11-09, a pedido):** 44 leituras —
+  39 por célula vazia, 5 por IA ("Já implantado"; "Implantada"/"Implementação
+  futura"; NFCom 1.01a: "Implantada"/04/01/2027). Restam 15 (NFS-e 11, NFAg 2,
+  NFGas 1, NT conjunta 1).
 - **Consulta por data (2026-11-09):** `consultar.py --cronograma-nt --data D
   [--acervo-id prefixo]`. Estado calculado só quando teste/produção são data exata
   (dd/mm/aaaa); "Até X", "01/2026", "Implementação futura", "Não se aplica" saem como

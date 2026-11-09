@@ -3,7 +3,7 @@
 Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / Cronograma' de cada NT: o que o documento declara, nao decisao normativa. teste/producao estao como a NT os escreve. Linha com origem ia:... foi lida por IA a partir da posicao no PDF (interpretacoes/cronograma_nt/): nao equivale a revisao humana; resultado 'ambigua' lista as datas da celula sem dizer a qual item cada uma se aplica.
 
 - NTs: 115; com linhas lidas: 103
-- linhas lidas: 648; pendências: 59
+- linhas lidas: 692; pendências: 15
 
 | NT | versão do documento | linhas lidas | pendências |
 |---|---|---|---|
@@ -51,10 +51,10 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | cte-cte-nota-tecnica-2026-002-v1-00 | 1.00 | 2 | 0 |
 | cte-cte-nota-tecnica-2026-002-v1-01 | 1.01 | 3 | 0 |
 | cte-cte-nota-tecnica-2026-004-v1-00 | 1.00 | 2 | 0 |
-| nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 2 | 19 |
-| nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 1 | 1 |
-| nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-381f1765 | 1.01 | 1 | 1 |
-| nf3e-nf3e-nota-tecnica-2026-002-v1-01 | 1.01 | 2 | 1 |
+| nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 21 | 0 |
+| nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
+| nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-381f1765 | 1.01 | 2 | 0 |
+| nf3e-nf3e-nota-tecnica-2026-002-v1-01 | 1.01 | 3 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-004-v1-00 | 1.00 | 2 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-004-v1-00-6e7bb7fe | 1.00 | 2 | 0 |
 | nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 | 1.00 | 1 | 0 |
@@ -63,10 +63,10 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | nfag-nfag-nota-tecnica-2026-002-v1-00 | 1.00 | 1 | 0 |
 | nfag-nfag-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | nfag-nfag-nota-tecnica-2026-004-v1-00-f513fd04 | 1.00 | 1 | 0 |
-| nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 2 | 18 |
-| nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 1 | 1 |
-| nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-a961eaa8 | 1.01 | 1 | 1 |
-| nfcom-nfcom-nota-tecnica-2026-002-v1-01a | 1.01a | 2 | 2 |
+| nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 20 | 0 |
+| nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
+| nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-a961eaa8 | 1.01 | 2 | 0 |
+| nfcom-nfcom-nota-tecnica-2026-002-v1-01a | 1.01a | 4 | 0 |
 | nfcom-nfcom-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | nfcom-nfcom-nota-tecnica-2026-004-v1-00-dd497ae7 | 1.00 | 1 | 0 |
 | nfe-nfe-nt-2026-010-v1-00-danfe-rtc | 1.00 | 1 | 0 |
@@ -717,18 +717,39 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 |---|---|---|---|---|---|---|---|
 | 1.13 |  | 03/02/2026 | 02/03/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
 | 1.14a |  | 06/04/2026 | 04/05/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.10 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.11a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12b |  | Já implantado | Já implantado |  | 4 | ia:claude-opus-5-5 | lida |
+| 1.14 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 (versão 1.01)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nf3e-nf3e-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-381f1765 (versão 1.01)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nf3e-nf3e-nota-tecnica-2026-002-v1-01 (versão 1.01)
 
@@ -736,6 +757,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 |---|---|---|---|---|---|---|---|
 | 1.00 |  | 01/07/2026 | 03/08/2026 |  | 3 | regra:cronograma-nt/v1 | lida |
 | 1.00 |  | 03/08/2026 | 31/08/2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.01 |  | Implantada | Implementação futura |  | 3 | ia:claude-opus-5-5 | lida |
 
 ## nf3e-nf3e-nota-tecnica-2026-004-v1-00 (versão 1.00)
 
@@ -793,18 +815,38 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 |---|---|---|---|---|---|---|---|
 | 1.13 |  | 03/02/2026 | 02/03/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
 | 1.14a |  | 06/04/2026 | 04/05/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.10 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.11a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12a |  | Já implantado | Já implantado |  | 4 | ia:claude-opus-5-5 | lida |
+| 1.14 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 (versão 1.01)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nfcom-nfcom-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-a961eaa8 (versão 1.01)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nfcom-nfcom-nota-tecnica-2026-002-v1-01a (versão 1.01a)
 
@@ -812,6 +854,8 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 |---|---|---|---|---|---|---|---|
 | 1.00 |  | 01/07/2026 | 03/08/2026 |  | 3 | regra:cronograma-nt/v1 | lida |
 | 1.00 |  | 03/08/2026 | 31/08/2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.01 |  | Implantada | Implementação futura |  | 3 | ia:claude-opus-5-5 | lida |
+| 1.01a |  | Implantada | 04/01/2027 |  | 3 | ia:claude-opus-5-5 | lida |
 
 ## nfcom-nfcom-nota-tecnica-2026-004-v1-00 (versão 1.00)
 
