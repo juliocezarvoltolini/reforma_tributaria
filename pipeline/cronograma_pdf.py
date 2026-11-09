@@ -59,12 +59,12 @@ def faixas(itens: list[tuple[int, int, str]]) -> dict[str, tuple[int, int]] | No
     # A coluna Teste começa no "Implantação" sobre ela (a descrição ao lado chega
     # perto: "de" em x=376 com a coluna em 392, NT 2021.003 v1.40).
     impl = [x for y, x, t in itens if t == "Implantação" and abs(y - yt) <= 20 and x < xp - 12]
-    inicio = max(impl) - 6 if impl else xt - 40
+    inicio = max(impl) - 12 if impl else xt - 40
     # Divisa: 6 pontos antes do "Implantação" sobre a coluna Produção (ou 12 antes do
     # "Produção"). O fim de uma data da coluna Teste ("6" de "2026") passa do ponto
     # médio entre os cabeçalhos; o início da de Produção não passa da divisa.
     impl_prod = [x for y, x, t in itens if t == "Implantação" and abs(y - yt) <= 20 and abs(x - xp) <= 20]
-    meio = min(impl_prod) - 6 if impl_prod else xp - 12
+    meio = min(impl_prod) - 12 if impl_prod else xp - 12
     return {"teste": (inicio, meio), "producao": (meio, xp + 70)}
 
 

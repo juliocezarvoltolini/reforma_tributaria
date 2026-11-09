@@ -137,10 +137,11 @@ def carregar_leituras() -> list[dict]:
 def _pendencias(rel: dict, leitura: dict) -> list[dict]:
     return [p for nt in rel["notas_tecnicas"] if nt["id"] == leitura.get("nt") for p in nt["pendencias"]
             if (p.get("versao"), p.get("pagina"), p.get("motivo")) == (
-                leitura.get("versao"), leitura.get("pagina"), leitura.get("motivo"))]
+                leitura.get("versao"), leitura.get("pagina"), leitura.get("motivo"))
+            and p.get("trecho", "").startswith(leitura.get("trecho_inicio") or "")]
 
 
-def problemas_da_leitura(leitura: dict, rel: dict, obter_original) -> list[str]:
+def problemas_da_leitura(leitura: dict, rel: dict, obter_original, textos: dict | None = None) -> list[str]:
     """Erros de uma leitura: campos, pendência correspondente na saída do script, e o
     texto de cada coluna no PDF, nas alturas dadas, igual ao registrado."""
     import cronograma_pdf
@@ -156,6 +157,8 @@ def problemas_da_leitura(leitura: dict, rel: dict, obter_original) -> list[str]:
         probs.append(f"{rotulo}: nenhuma pendência {leitura.get('motivo')!r} correspondente na saída do script")
     elif len(casam) > 1:
         probs.append(f"{rotulo}: a chave casa com mais de uma pendência — leitura ambígua")
+    if leitura.get("evidencia") == "texto_da_pagina":
+        return probs or _problemas_pela_pagina(leitura, rel, textos or {}, casam[0], rotulo)
     if bool(leitura.get("alturas")) == bool(leitura.get("faixa_y")):
         probs.append(f"{rotulo}: informe `alturas` (linhas da célula) ou `faixa_y` (célula inteira), um só")
     if probs:
@@ -173,6 +176,37 @@ def problemas_da_leitura(leitura: dict, rel: dict, obter_original) -> list[str]:
     return probs
 
 
+def _problemas_pela_pagina(leitura: dict, rel: dict, textos: dict, pendencia: dict, rotulo: str) -> list[str]:
+    """Página em que a posição não serve (girada, texto em pedaços verticais — BP-e TA):
+    toda data do texto da página pertence a uma linha que o script leu, a linha
+    pendente não tem data, e o valor é o mesmo nas duas colunas (a coluna não está
+    provada) e está no trecho da linha."""
+    from acervo import normalizar
+
+    md = textos.get(leitura["nt"])
+    if md is None:
+        return [f"{rotulo}: texto do acervo ausente"]
+    corpo = _separar(md)[1] if md.startswith("---\n") else md
+    blocos = re.split(r"^## Página (\d+)$", corpo, flags=re.M)
+    pagina = next((blocos[i + 1] for i in range(1, len(blocos), 2) if int(blocos[i]) == leitura["pagina"]), "")
+    lidas = [x for nt in rel["notas_tecnicas"] if nt["id"] == leitura["nt"] for x in nt["linhas"]
+             if x.get("pagina") == leitura["pagina"]]
+    restantes = list(_itens(pagina)[0])
+    for x in lidas:
+        for item in _itens(x["trecho"])[0]:
+            if item in restantes:
+                restantes.remove(item)
+    probs = []
+    if restantes:
+        probs.append(f"{rotulo}: data na página fora das linhas lidas: {restantes}")
+    if leitura.get("teste") != leitura.get("producao"):
+        probs.append(f"{rotulo}: valores devem ser simétricos (a coluna não está provada nesta página)")
+    valor = str(leitura.get("teste") or "")
+    if valor and normalizar(valor) not in normalizar(pendencia["trecho"]):
+        probs.append(f"{rotulo}: {valor!r} não está no trecho da linha")
+    return probs
+
+
 def aplicar_leituras(rel: dict, leituras: list[dict]) -> dict:
     """Cada pendência com leitura vira linha (com `origem`, `resultado`, `leitura`,
     `etapa`); várias leituras da mesma pendência (etapas) viram várias linhas."""
@@ -182,7 +216,8 @@ def aplicar_leituras(rel: dict, leituras: list[dict]) -> dict:
     for nt in rel["notas_tecnicas"]:
         restantes = []
         for p in nt["pendencias"]:
-            lidas = por_chave.get((nt["id"], p.get("versao"), p.get("pagina"), p.get("motivo")))
+            lidas = [lt for lt in por_chave.get((nt["id"], p.get("versao"), p.get("pagina"), p.get("motivo")), [])
+                     if p.get("trecho", "").startswith(lt.get("trecho_inicio") or "")]
             if not lidas:
                 restantes.append(p)
                 continue
@@ -195,11 +230,12 @@ def aplicar_leituras(rel: dict, leituras: list[dict]) -> dict:
     return rel
 
 
-def leituras_conferidas(rel: dict, leituras: list[dict], obter_original) -> tuple[list[dict], list[str]]:
+def leituras_conferidas(rel: dict, leituras: list[dict], obter_original,
+                        textos: dict | None = None) -> tuple[list[dict], list[str]]:
     """(leituras que passam na conferência, erros) — contra o relatório do SCRIPT."""
     validas, erros = [], []
     for lt in leituras:
-        probs = problemas_da_leitura(lt, rel, obter_original)
+        probs = problemas_da_leitura(lt, rel, obter_original, textos)
         (erros.extend(probs) if probs else validas.append(lt))
     return validas, erros
 

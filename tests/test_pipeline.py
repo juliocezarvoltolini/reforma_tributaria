@@ -5120,6 +5120,8 @@ TABELA_POSICIONADA = [
     (130, 40, "Detalhamento"), (330, 30, "Homologação"), (420, 30, "Produção"),
     # Negrito simulado: o mesmo texto impresso de novo 2 pontos abaixo (NT 2025.002 v1.51 p.6).
     (487, 62, "05/10/2025"), (487, 60, "05/10/2025"),
+    # Tabela que continua na página seguinte deslocada ~8 pontos (BP-e NT 2025.001 v1.14 p.4).
+    (399, 70, "Até 01/01/1900"), (476, 70, "Já implantado"),
 ]
 
 
@@ -5142,6 +5144,8 @@ def cronograma_colunas_pdf():
     checar(col([80], "producao") == "01/12/2026" and col([80], "teste") == "-",
            f"fragmentos de data juntados (obteve {col([80], 'producao')!r})")
     checar(col([62], "producao") == "05/10/2025", f"negrito simulado não duplica (obteve {col([62], 'producao')!r})")
+    checar(col([70], "teste") == "Até 01/01/1900" and col([70], "producao") == "Já implantado",
+           f"tabela deslocada: cada valor na sua coluna (obteve {col([70], 'teste')!r} / {col([70], 'producao')!r})")
 
 
 @cenario("cronograma (IA): leitura de pendência conferida pela posição no PDF")
@@ -5171,6 +5175,16 @@ def cronograma_leitura_ia():
         dict(rel["notas_tecnicas"][0]["pendencias"][0]), dict(rel["notas_tecnicas"][0]["pendencias"][0])]}]}
     checar(any("mais de uma" in p for p in C.problemas_da_leitura(leitura, dupla, obter)),
            "chave que casa com duas pendências: erro")
+    # Duas linhas de mesma versão ("1.06" e "1.06 a correção", BP-e TA v2.00): o começo do
+    # trecho desambigua, e só a linha apontada é resolvida.
+    duas = {"notas_tecnicas": [{"id": "nt-x", "linhas": [], "pendencias": [
+        {"versao": "1.30", "pagina": 1, "motivo": "uma_data", "trecho": "1.30 ... Implementação futura 05/01/2026"},
+        {"versao": "1.30", "pagina": 1, "motivo": "uma_data", "trecho": "1.30 a correção fictícia"}]}]}
+    apontada = dict(leitura, trecho_inicio="1.30 ... Implementação")
+    checar(C.problemas_da_leitura(apontada, duas, obter) == [], "trecho_inicio desambigua")
+    resolvido = C.aplicar_leituras(duas, [apontada])["notas_tecnicas"][0]
+    checar([p["trecho"] for p in resolvido["pendencias"]] == ["1.30 a correção fictícia"],
+           f"só a linha apontada sai das pendências (obteve {resolvido['pendencias']})")
     # Célula vazia: faixa vertical da linha, sem texto nas duas colunas (CT-e NT 2025.001).
     vazia = dict(leitura, alturas=None, faixa_y=[5, 25], teste="", producao="", resultado="sem_data",
                  autor="regra:cronograma-celula-vazia/v1")
@@ -5185,6 +5199,37 @@ def cronograma_leitura_ia():
         "rodape": "", "trecho": "1.30 ... Implementação futura 05/01/2026", "origem": "ia:claude-opus-5-5",
         "resultado": "lida", "leitura": "Teste: 'Implementação futura'; Produção: 05/01/2026.", "etapa": None}],
            f"pendência vira linha com a origem da IA (obteve {nt})")
+
+
+@cenario("cronograma (página girada): sem data provada pelo texto da página, valor só simétrico")
+def cronograma_pagina_girada():
+    """BP-e NT 2025.002 TA (medido em 2026-11-09): páginas com /Rotate 90, texto em
+    pedaços verticais — não há prova por coluna. Prova: toda data da página pertence a
+    uma linha que o script leu, e a linha pendente não tem data. Quebra: aceitar com
+    data solta na página; ou aceitar valor diferente nas duas colunas (a coluna não
+    está provada)."""
+    import cronograma_nt as C
+
+    md = ("---\nid: nt-g\n---\n\n## Página 6\n\nHistórico de Alterações / Cronograma\n"
+          "Versão Histórico de atualizações Implantação \nHomologação Implantação Produção \n"
+          "1.00 • Implantação fictícia - -\n1.05 • Tag fictícia Já implantado Já implantado\n"
+          "1.06 • Nova fictícia 06/04/1900 04/05/1900\n\n## Página 7\n\nOutra.\n")
+    rel = {"notas_tecnicas": [{"id": "nt-g", **C.ler_cronograma(md)}]}
+    textos = {"nt-g": md}
+    base = {"nt": "nt-g", "pagina": 6, "motivo": "sem_data", "evidencia": "texto_da_pagina",
+            "leitura": "x", "autor": "regra:cronograma-pagina-girada/v1", "data": "2026-11-09"}
+    traco = dict(base, versao="1.00", teste="-", producao="-", resultado="sem_data")
+    ja = dict(base, versao="1.05", teste="Já implantado", producao="Já implantado", resultado="lida")
+    nada = lambda rid: b""  # noqa: E731 — não lê PDF
+    checar(C.problemas_da_leitura(traco, rel, nada, textos) == [] and C.problemas_da_leitura(ja, rel, nada, textos) == [],
+           "datas da página todas em linha lida; valores simétricos: conferido")
+    torto = dict(ja, producao="-")
+    checar(any("simétric" in p for p in C.problemas_da_leitura(torto, rel, nada, textos)), "valores diferentes: erro")
+    # A data solta fica FORA da tabela (no texto da página), para não mudar a pendência.
+    solta = md.replace("## Página 6\n\n", "## Página 6\n\nTexto da página com prazo 07/07/1900.\n")
+    rel2 = {"notas_tecnicas": [{"id": "nt-g", **C.ler_cronograma(solta)}]}
+    checar(any("data" in p for p in C.problemas_da_leitura(traco, rel2, nada, {"nt-g": solta})),
+           "data solta na página: erro")
 
 
 @cenario("portabilidade de saída")

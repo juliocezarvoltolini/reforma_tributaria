@@ -675,7 +675,16 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   da linha no PDF (`faixa_y`, do rótulo da versão ao seguinte): leitura por regra
   (`regra:cronograma-celula-vazia/v1`, `resultado: sem_data`). 4 lidas por IA
   ("Já implantado" nas duas colunas; "Implantada" / "Implementação futura").
-  Pendências restantes (BP-e, NF3e, NFCom, NFAg, NFGas, NFS-e): 231, NÃO resolvidas.
+- **Pendências da BP-e resolvidas (2026-11-09, a pedido):** 172 leituras. 115 por
+  célula vazia; 7 por IA ("Já implantado", "06/04l/2026" registrado como está,
+  "Implantada"/"Implementação futura"). As 6 versões da NT 2025.002 (BP-e TA) têm
+  páginas com /Rotate 90 e texto em pedaços verticais — sem prova por coluna: 50
+  leituras por `regra:cronograma-pagina-girada/v1` (`evidencia: texto_da_pagina`):
+  toda data do texto da página pertence a linha que o script leu, e o valor é
+  igual nas duas colunas. Duas linhas "1.06" na mesma página ("1.06" e "1.06 a
+  correção") são desambiguadas por `trecho_inicio`. A margem das colunas passou
+  de 6 para 12 pontos: a tabela que continua na página seguinte vem deslocada.
+  Pendências restantes (NF3e, NFCom, NFAg, NFGas, NFS-e, NT conjunta): 59.
 - **Não conferido ainda:** tamanho e tipo dos campos (formatos diferentes na NT e
   no XSD), regras de validação, e o cronograma de implantação por versão (está no
   texto, em linguagem livre).

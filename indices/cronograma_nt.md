@@ -2,29 +2,29 @@
 
 Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / Cronograma' de cada NT: o que o documento declara, nao decisao normativa. teste/producao estao como a NT os escreve. Linha com origem ia:... foi lida por IA a partir da posicao no PDF (interpretacoes/cronograma_nt/): nao equivale a revisao humana; resultado 'ambigua' lista as datas da celula sem dizer a qual item cada uma se aplica.
 
-- NTs: 115; com linhas lidas: 98
-- linhas lidas: 476; pendências: 231
+- NTs: 115; com linhas lidas: 103
+- linhas lidas: 648; pendências: 59
 
 | NT | versão do documento | linhas lidas | pendências |
 |---|---|---|---|
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | 1 | 12 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | 1 | 13 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a | 1.12 | 0 | 17 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 | 1.13 | 1 | 18 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a | 1.13a | 1 | 19 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | 1 | 20 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 2 | 20 |
-| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-00 | 1.00 | 0 | 1 |
-| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05 | 1.05 | 0 | 8 |
-| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06 | 1.06 | 1 | 8 |
-| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a | 1.06a | 1 | 9 |
-| bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00 | 2.00 | 0 | 12 |
-| bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2 | 2.00 | 0 | 12 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | 13 | 0 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | 14 | 0 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a | 1.12 | 17 | 0 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 | 1.13 | 19 | 0 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a | 1.13a | 20 | 0 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | 21 | 0 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | 22 | 0 |
+| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-00 | 1.00 | 1 | 0 |
+| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05 | 1.05 | 8 | 0 |
+| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06 | 1.06 | 9 | 0 |
+| bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a | 1.06a | 10 | 0 |
+| bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00 | 2.00 | 12 | 0 |
+| bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2 | 2.00 | 12 | 0 |
 | bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 | 1.00 | 1 | 0 |
-| bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 1 | 1 |
-| bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-97fca150 | 1.01 | 1 | 1 |
+| bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
+| bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-97fca150 | 1.01 | 2 | 0 |
 | bpe-bpe-nota-tecnica-2026-002-v1-00 | 1.00 | 2 | 0 |
-| bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | 2 | 1 |
+| bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | 3 | 0 |
 | bpe-bpe-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs | 1.00 | 1 | 0 |
 | ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10 | 1.10 | 1 | 1 |
@@ -128,30 +128,134 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.09 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-10 (versão 1.10)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.10 |  | Até 20/10/2025 | 20/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+
+## bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a (versão 1.12)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.10 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.11a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12a |  | Já implantado | Já implantado |  | 4 | ia:claude-opus-5-5 | lida |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 (versão 1.13)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.13 |  | 03/02/2026 | 02/03/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.10 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.11a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12b |  | Já implantado | Já implantado |  | 4 | ia:claude-opus-5-5 | lida |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a (versão 1.13a)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.13a |  | 03/02/2026 | 02/03/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.10 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.11a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12b |  | Já implantado | Já implantado |  | 4 | ia:claude-opus-5-5 | lida |
+| 1.13 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 (versão 1.14)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.13a |  | 03/02/2026 | 02/03/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.10 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.11a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12b |  | Já implantado | Já implantado |  | 4 | ia:claude-opus-5-5 | lida |
+| 1.13 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.14 |  | 06/04l/2026 | 04/05/2026 |  | 4 | ia:claude-opus-5-5 | lida |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a)
 
@@ -159,18 +263,108 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 |---|---|---|---|---|---|---|---|
 | 1.13a |  | 03/02/2026 | 02/03/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
 | 1.14a |  | 06/04/2026 | 04/05/2026 |  | 4 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.03 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.04 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.05b |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.06 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.07 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.08a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.09 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.10 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.11a |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12a |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.12b |  | Já implantado | Já implantado |  | 4 | ia:claude-opus-5-5 | lida |
+| 1.13 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+| 1.14 |  |  |  |  | 4 | regra:cronograma-celula-vazia/v1 | sem_data |
+
+## bpe-bpe-nota-tecnica-2025-002-bpeta-v1-00 (versão 1.00)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| 1.00 |  | - | - |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+
+## bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05 (versão 1.05)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| 1.00 |  | - | - |  | 5 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.01 |  |  |  |  | 5 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.02 |  |  |  |  | 5 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.03 |  |  |  |  | 5 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04 |  |  |  |  | 5 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04a |  |  |  |  | 5 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04b |  |  |  |  | 5 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.05 |  | Já implantado | Já implantado |  | 5 | regra:cronograma-pagina-girada/v1 | lida |
 
 ## bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06 (versão 1.06)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.06 |  | 06/04/2026 | 04/05/2026 |  | 6 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  | - | - |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.01 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.02 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.03 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04a |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04b |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.05 |  | Já implantado | Já implantado |  | 6 | regra:cronograma-pagina-girada/v1 | lida |
 
 ## bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a (versão 1.06a)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.06a |  | 06/04/2026 | 04/05/2026 |  | 6 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  | - | - |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.01 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.02 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.03 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04a |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04b |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.05 |  | Já implantado | Já implantado |  | 6 | regra:cronograma-pagina-girada/v1 | lida |
+| 1.06 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+
+## bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00 (versão 2.00)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| 1.00 |  | - | - |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.01 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.02 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.03 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04a |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04b |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.05 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.06 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.06a |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.06 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 2.00 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+
+## bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2 (versão 2.00)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| 1.00 |  | - | - |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.01 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.02 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.03 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04a |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.04b |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.05 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.06 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.06a |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 1.06 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
+| 2.00 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data |
 
 ## bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 (versão 1.00)
 
@@ -183,12 +377,14 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-97fca150 (versão 1.01)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## bpe-bpe-nota-tecnica-2026-002-v1-00 (versão 1.00)
 
@@ -203,6 +399,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 |---|---|---|---|---|---|---|---|
 | 1.00 |  | 01/07/2026 | 03/08/2026 |  | 3 | regra:cronograma-nt/v1 | lida |
 | 1.00 |  | 03/08/2026 | 31/08/2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.01 |  | Implantada | Implementação futura |  | 3 | ia:claude-opus-5-5 | lida |
 
 ## bpe-bpe-nota-tecnica-2026-004-v1-00 (versão 1.00)
 

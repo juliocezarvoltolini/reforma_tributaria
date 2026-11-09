@@ -1,0 +1,2243 @@
+# Leituras das pendências do cronograma das NTs de BP-e (indices/cronograma_nt.json). Camada 3.
+# regra:cronograma-celula-vazia/v1 — colunas vazias em toda a faixa da linha no PDF (faixa_y).
+# regra:cronograma-pagina-girada/v1 — página com /Rotate 90 (BP-e TA): toda data do texto da página
+#   pertence a linha lida pelo script, a linha pendente não tem data, e o valor é igual nas duas colunas.
+# ia:... — leitura por IA conferida pela posição no PDF; não equivale a revisão humana.
+leituras:
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 599
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 525
+  - 606
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 477
+  - 532
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 430
+  - 484
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 412
+  - 437
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 365
+  - 419
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 372
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 332
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 283
+  - 339
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 267
+  - 290
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 203
+  - 274
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-09
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 187
+  - 210
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 599
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 525
+  - 606
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 477
+  - 532
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 430
+  - 484
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 412
+  - 437
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 365
+  - 419
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 372
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 332
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 283
+  - 339
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 267
+  - 290
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 203
+  - 274
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 187
+  - 210
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-10
+  versao: '1.09'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 154
+  - 194
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 599
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 525
+  - 606
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 477
+  - 532
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 430
+  - 484
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 412
+  - 437
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 365
+  - 419
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 372
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 332
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 283
+  - 339
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 267
+  - 290
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 203
+  - 274
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 187
+  - 210
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.09'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 154
+  - 194
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.10'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 131
+  - 161
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: 1.11a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 702
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 686
+  - 709
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 678
+  - 693
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 599
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 525
+  - 606
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 477
+  - 532
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 430
+  - 484
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 412
+  - 437
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 365
+  - 419
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 372
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 332
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 283
+  - 339
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 267
+  - 290
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 203
+  - 274
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 187
+  - 210
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.09'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 154
+  - 194
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.10'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 90
+  - 161
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: 1.11a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 82
+  - 97
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 734
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 717
+  - 741
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13
+  versao: 1.12b
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 700
+  - 724
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 599
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 525
+  - 606
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 477
+  - 532
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 430
+  - 484
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 412
+  - 437
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 365
+  - 419
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 372
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 332
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 283
+  - 339
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 267
+  - 290
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 203
+  - 274
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 187
+  - 210
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.09'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 154
+  - 194
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.10'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 90
+  - 161
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: 1.11a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 82
+  - 97
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 734
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 717
+  - 741
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: 1.12b
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 700
+  - 724
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a
+  versao: '1.13'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 669
+  - 707
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 599
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 525
+  - 606
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 477
+  - 532
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 430
+  - 484
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 412
+  - 437
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 365
+  - 419
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 372
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 332
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 283
+  - 339
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 267
+  - 290
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 203
+  - 274
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 187
+  - 210
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.09'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 154
+  - 194
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.10'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 90
+  - 161
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.11a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 82
+  - 97
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 734
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 717
+  - 741
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: 1.12b
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 700
+  - 724
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.13'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 669
+  - 707
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14
+  versao: '1.14'
+  pagina: 4
+  motivo: uma_data
+  faixa_y:
+  - 630
+  - 660
+  teste: 06/04l/2026
+  producao: 04/05/2026
+  resultado: lida
+  leitura: Teste escrito '06/04l/2026' (letra 'l' no lugar de '/' no próprio documento; registrado como está — a
+    leitura como 06/04/2026 é da IA); Produção 04/05/2026.
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 599
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 525
+  - 606
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.02'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 477
+  - 532
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.03'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 430
+  - 484
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.04'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 412
+  - 437
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.05'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 365
+  - 419
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.05a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 349
+  - 372
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.05b
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 332
+  - 356
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.06'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 283
+  - 339
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.07'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 267
+  - 290
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.08'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 203
+  - 274
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.08a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 187
+  - 210
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.09'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 154
+  - 194
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.10'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 90
+  - 161
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.11a
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 82
+  - 97
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.12'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 734
+  - 757
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.12a
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 717
+  - 741
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: 1.12b
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 700
+  - 724
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'As duas colunas dizem ''Já implantado'': o documento não dá data, diz que já está implantado.'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.13'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 669
+  - 707
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a
+  versao: '1.14'
+  pagina: 4
+  motivo: sem_data
+  faixa_y:
+  - 620
+  - 660
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 600
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-97fca150
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 600
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2026-002-v1-01
+  versao: '1.01'
+  pagina: 3
+  motivo: sem_data
+  alturas:
+  - 629
+  - 619
+  teste: Implantada
+  producao: Implementação futura
+  resultado: lida
+  leitura: 'Teste: ''Implantada'' (sem data); Produção: ''Implementação futura'' (em duas linhas visuais da célula).'
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-00
+  versao: '1.00'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.00  Implantação do serviço de autoriz
+  teste: '-'
+  producao: '-'
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas trazem ''-'': o documento
+    não dá data.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: '1.00'
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.00 • Implantação do serviço de autoriz
+  teste: '-'
+  producao: '-'
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas trazem ''-'': o documento
+    não dá data.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: '1.01'
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.01 • Ajustes nos campos do IBS/CBS e R
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: '1.02'
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: '1.02 • Ajuste na explicação da regra de '
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: '1.03'
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.03 • Desativação das regras de validaç
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: '1.04'
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 • Esclarecimento do preenchimento d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: 1.04a
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 a • Excluída observação da regra F7
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: 1.04b
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 b  • Correção na regra de redução d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-05
+  versao: '1.05'
+  pagina: 5
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.05 • Tag vTotDFe obrigatória Já implan
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas dizem ''Já implantado''
+    (valor igual nas duas).'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: '1.00'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.00  Implantação do serviço de autoriz
+  teste: '-'
+  producao: '-'
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas trazem ''-'': o documento
+    não dá data.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: '1.01'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.01  Ajustes nos campos do IBS/CBS e R
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: '1.02'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: '1.02  Ajuste na explicação da regra de '
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: '1.03'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.03  Desativação das regras de validaç
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: '1.04'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04  Esclarecimento do preenchimento d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: 1.04a
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 a  Excluída observação da regra F7
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: 1.04b
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 b   Correção na regra de redução d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: '1.05'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.05  Tag vTotDFe obrigatória Já implan
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas dizem ''Já implantado''
+    (valor igual nas duas).'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: '1.00'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.00  Implantação do serviço de autoriz
+  teste: '-'
+  producao: '-'
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas trazem ''-'': o documento
+    não dá data.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: '1.01'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.01  Ajustes nos campos do IBS/CBS e R
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: '1.02'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: '1.02  Ajuste na explicação da regra de '
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: '1.03'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.03  Desativação das regras de validaç
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: '1.04'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04  Esclarecimento do preenchimento d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: 1.04a
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 a  Excluída observação da regra F7
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: 1.04b
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 b   Correção na regra de redução d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: '1.05'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.05  Tag vTotDFe obrigatória Já implan
+  teste: Já implantado
+  producao: Já implantado
+  resultado: lida
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas dizem ''Já implantado''
+    (valor igual nas duas).'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: '1.06'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.06  Inclusão de campos do tipo de ope
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.00'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.00  Implantação do serviço de autoriz
+  teste: '-'
+  producao: '-'
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas trazem ''-'': o documento
+    não dá data.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.01'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.01  Ajustes nos campos do IBS/CBS e R
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.02'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: '1.02  Ajuste na explicação da regra de '
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.03'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.03  Desativação das regras de validaç
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.04'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04  Esclarecimento do preenchimento d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: 1.04a
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 a  Excluída observação da regra F7
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: 1.04b
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 b   Correção na regra de redução d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.05'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.05  Tag vTotDFe obrigatória
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.06'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.06  Inclusão de campos do tipo de ope
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: 1.06a
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.06 a  Ajustes nas mensagens de valida
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '1.06'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.06 a correção  Retirada regra de vali
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00
+  versao: '2.00'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 2.00  Publicação versão final  Observa
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.00'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.00  Implantação do serviço de autoriz
+  teste: '-'
+  producao: '-'
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. As duas colunas trazem ''-'': o documento
+    não dá data.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.01'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.01  Ajustes nos campos do IBS/CBS e R
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.02'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: '1.02  Ajuste na explicação da regra de '
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.03'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.03  Desativação das regras de validaç
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.04'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04  Esclarecimento do preenchimento d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: 1.04a
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 a  Excluída observação da regra F7
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: 1.04b
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.04 b   Correção na regra de redução d
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.05'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.05  Tag vTotDFe obrigatória
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.06'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.06  Inclusão de campos do tipo de ope
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: 1.06a
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.06 a  Ajustes nas mensagens de valida
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '1.06'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 1.06 a correção  Retirada regra de vali
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v2-00-cbb6cda2
+  versao: '2.00'
+  pagina: 6
+  motivo: sem_data
+  evidencia: texto_da_pagina
+  trecho_inicio: 2.00  Publicação versão final  Observa
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição. Nenhuma data na linha nem fora das linhas
+    lidas na página.'
+  autor: regra:cronograma-pagina-girada/v1
+  data: '2026-11-09'

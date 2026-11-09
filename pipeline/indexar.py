@@ -153,7 +153,7 @@ def main() -> int:
     rel_cronograma = cronograma_nt.relatorio(regs_acervo, acervo_texto.carregar_textos())
     # Leituras de pendências (pessoa ou IA): só as que conferem com o PDF entram.
     validas, _ = cronograma_nt.leituras_conferidas(rel_cronograma, cronograma_nt.carregar_leituras(),
-                                                   cronograma_nt.obter_original)
+                                                   cronograma_nt.obter_original, acervo_texto.carregar_textos())
     rel_cronograma = cronograma_nt.aplicar_leituras(rel_cronograma, validas)
     gravar("cronograma_nt.json", rel_cronograma)
     gravar_texto(DIR_INDICES / "cronograma_nt.md", cronograma_nt.resumo_markdown(rel_cronograma))

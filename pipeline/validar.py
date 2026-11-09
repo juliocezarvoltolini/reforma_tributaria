@@ -256,7 +256,7 @@ def validar_acervo() -> None:
 
     rel = cronograma_nt.relatorio(regs, acervo_texto.carregar_textos())
     _, erros_leitura = cronograma_nt.leituras_conferidas(rel, cronograma_nt.carregar_leituras(),
-                                                         cronograma_nt.obter_original)
+                                                         cronograma_nt.obter_original, acervo_texto.carregar_textos())
     for msg in erros_leitura:
         erro(f"interpretacoes/cronograma_nt: {msg}")
 
