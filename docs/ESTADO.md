@@ -796,6 +796,32 @@ entrou: as normas dos links não estão na base. As 2 órfãs do art. 26 (art. 1
 da LC 123) eram desse tipo, e a base ficou com 0 órfãs. Só os 14 arquivos foram
 regravados; nos outros, a diferença era só `ingerido_em`.
 
+**Três defeitos de leitura de remissão corrigidos (2026-11-09)**, cada um com
+teste em `tests/test_pipeline.py`:
+1. **"da referida Lei" e "do mesmo diploma legal"** passam a contar como
+   qualificador de outra norma. Sem link, a menção fica sem ponteiro; com link
+   para outro arquivo, resolve na norma do link. Com isso o decreto ganhou 19
+   ponteiros para anexos da LC 214, em 14 artigos ("Anexo I da Lei Complementar
+   nº 214", com link).
+2. **"§ 4º-A" não é o § 4º.** Rótulo de parágrafo e remissão guardam a letra
+   (`par4-A`). Antes, o § N-A recebia a URN do § N. Afetados: os arts. 26, 31,
+   32, 33, 80, 252, 434, 481 e 517 da LC 214, o art. 105 do decreto e o art. 180
+   da LC 227. As propostas temporais foram corrigidas só no endereço, sem decidir
+   nada: alterações pela ordem das anotações, marcos pela linha "§" do corpo.
+   As exceções das quatro decisões por IA (arts. 31, 32, 252 e 434) foram
+   desdobradas nas URNs novas, com as mesmas datas e o mesmo fundamento. Caso
+   material: a exceção do art. 434 (2026-01-14, LC 227) era do § 2º-A e, com as
+   URNs separadas, cairia no § 2º original.
+3. **Número com ponto de milhar** ("art. 1.358-A", "arts. 1.190 e 1.191 da Lei")
+   é lido inteiro. O ponto de milhar também deixou de cortar a janela do
+   qualificador. Com a janela mais longa, vale o qualificador MAIS PRÓXIMO da
+   menção: no art. 19 da EC 132, "arts. 1º a 4º da Lei nº 9.826, ... desta
+   Emenda" é da Lei.
+
+Defeito anterior, não corrigido: nas propostas, o marco que está numa linha
+riscada de redação anterior ("~~§ 7º ...~~") é atribuído à subdivisão de
+antes (ex.: LC 214, art. 26, "§ 7º São contribuintes" como `art26_par6_incII`).
+
 **Vigência e efeitos: nada decidido (625 de 625 pendentes).** O decreto tem DUAS
 cláusulas: art. 619 ("entra em vigor e produz efeitos na data de sua publicação,
 exceto, quanto: I ... II ...") e art. 620 ("entra em vigor na data de sua

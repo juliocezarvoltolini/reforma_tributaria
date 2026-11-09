@@ -1271,7 +1271,8 @@
     "norma": "dec-12955-2026",
     "remete_a": [
       "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art8",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art125"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art125",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx1"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214",
@@ -1322,7 +1323,11 @@
       "urn:lex:br:federal:decreto:2026-04-29;12955!art222",
       "urn:lex:br:federal:decreto:2026-04-29;12955!art466",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx4",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx5"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx12",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx5",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx13",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx6",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx9"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1362,7 +1367,8 @@
     "dispositivo": "art. 204",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art129"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art129",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx2"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1373,7 +1379,8 @@
     "dispositivo": "art. 205",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art130"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art130",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx3"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1415,7 +1422,8 @@
     "norma": "dec-12955-2026",
     "remete_a": [
       "urn:lex:br:federal:decreto:2026-04-29;12955!art222",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art133"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art133",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx6"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1456,7 +1464,8 @@
     "dispositivo": "art. 210",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art135"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art135",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx7"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1467,7 +1476,8 @@
     "dispositivo": "art. 211",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art136"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art136",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx8"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1494,7 +1504,8 @@
     "norma": "dec-12955-2026",
     "remete_a": [
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art138",
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art475"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art475",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx9"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1523,7 +1534,8 @@
     "dispositivo": "art. 215",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art139"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art139",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx10"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1556,7 +1568,8 @@
     "dispositivo": "art. 218",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art142"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art142",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx11"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -1594,7 +1607,9 @@
     "remete_a": [
       "urn:lex:br:federal:decreto:2026-04-29;12955!art206_par2",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art144",
-      "urn:lex:br:federal:decreto:2026-04-29;12955!art206"
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art206",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx12",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx4"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214",
@@ -1608,7 +1623,9 @@
     "remete_a": [
       "urn:lex:br:federal:decreto:2026-04-29;12955!art207_par2",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art145",
-      "urn:lex:br:federal:decreto:2026-04-29;12955!art207"
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art207",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx13",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx5"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214",
@@ -1624,7 +1641,8 @@
     "dispositivo": "art. 222",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art146"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art146",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx6"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214",
@@ -1647,7 +1665,8 @@
     "dispositivo": "art. 224",
     "norma": "dec-12955-2026",
     "remete_a": [
-      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art148"
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art148",
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx15"
     ],
     "remete_a_externo": [
       "Lei Complementar nº 214"
@@ -8456,6 +8475,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx1": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art199",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx7",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art125"
     ],
@@ -8468,6 +8488,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx10": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art215",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art139"
     ],
     "dispositivo": "anexo X",
@@ -8477,6 +8498,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx11": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art218",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art142"
     ],
     "dispositivo": "anexo XI",
@@ -8486,6 +8508,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx12": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art200",
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art220",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art144"
     ],
     "dispositivo": "anexo XII",
@@ -8495,6 +8519,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx13": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art200",
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art221",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art145"
     ],
     "dispositivo": "anexo XIII",
@@ -8513,6 +8539,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx15": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art224",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx1",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx7",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art148"
@@ -8568,6 +8595,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx2": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art204",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art129"
     ],
     "dispositivo": "anexo II",
@@ -8623,6 +8651,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx3": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art205",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art130"
     ],
     "dispositivo": "anexo III",
@@ -8634,6 +8663,7 @@
     "citado_por": [
       "urn:lex:br:federal:decreto:2026-04-29;12955!art200",
       "urn:lex:br:federal:decreto:2026-04-29;12955!art206",
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art220",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art131",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art144"
     ],
@@ -8646,6 +8676,7 @@
     "citado_por": [
       "urn:lex:br:federal:decreto:2026-04-29;12955!art200",
       "urn:lex:br:federal:decreto:2026-04-29;12955!art207",
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art221",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art132",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art145"
     ],
@@ -8656,7 +8687,10 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx6": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art200",
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art208",
       "urn:lex:br:federal:decreto:2026-04-29;12955!art209",
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art222",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art133",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art134",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art146"
@@ -8668,6 +8702,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx7": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art210",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art135"
     ],
     "dispositivo": "anexo VII",
@@ -8680,6 +8715,7 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx8": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art211",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art136"
     ],
     "dispositivo": "anexo VIII",
@@ -8689,6 +8725,8 @@
   },
   "urn:lex:br:federal:lei.complementar:2025-01-16;214!anx9": {
     "citado_por": [
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art200",
+      "urn:lex:br:federal:decreto:2026-04-29;12955!art213",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art138"
     ],
     "dispositivo": "anexo IX",
@@ -16893,6 +16931,7 @@
     "dispositivo": "art. 180",
     "norma": "lc-227-2026",
     "remete_a": [
+      "urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par5-A",
       "urn:lex:br:federal:lei.complementar:2025-01-16;214!art481"
     ],
     "remete_a_externo": [

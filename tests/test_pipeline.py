@@ -4357,6 +4357,58 @@ def decreto_fatiamento():
            f"Anexo I com título e tabela (obteve {[a['linhas'] for a in anexos]}, {avisos_ax})")
 
 
+@cenario("remissão: 'da referida Lei' e 'do mesmo diploma legal' são de outra norma")
+def remissao_referida_lei():
+    """Quebra (LC 214, art. 501): '§ 2º-A do art. 3º da referida Lei' resolvia no
+    art. 3º DESTA lei — o qualificador externo só era reconhecido colado ao nome
+    ('da Lei'). E 'art. 1.193 do mesmo diploma legal' (o Código Civil, art. 387)."""
+    r = lambda t: extrair_remissoes(t, URN_BASE, "1")  # noqa: E731
+    checar(r("na forma do art. 3º da referida Lei.") == [], "'da referida Lei': outra norma, sem ponteiro")
+    checar(r("nos termos do art. 7º do referido Decreto.") == [], "'do referido Decreto': outra norma")
+    checar(r("observado o disposto no art. 9º do mesmo diploma legal.") == [],
+           "'do mesmo diploma legal': outra norma")
+    checar(r("observado o art. 8º desta Lei.") == [urn_dispositivo(URN_BASE, "8")]
+           and r("observado o art. 8º.") == [urn_dispositivo(URN_BASE, "8")],
+           "'desta Lei' e sem qualificador continuam internos")
+
+
+@cenario("remissão e subdivisão: '§ 4º-A' não é o § 4º")
+def paragrafo_com_letra():
+    """Quebra (Decreto 12.955, art. 105, cujo § 4º-A tem data de efeitos própria):
+    a linha '§ 4º-A ...' abria a subdivisão par4 — a mesma URN do § 4º; e a
+    remissão '§ 4º-A do art. 10' perdia o parágrafo (só o art. 10)."""
+    u = lambda *a, **k: urn_dispositivo(URN_BASE, *a, **k)  # noqa: E731
+    subs = subdivisoes_de(["Art. 10. Texto.", "§ 4º Um.", "§ 4º-A Outro.", "I - item;"], URN_BASE, "10")
+    checar(subs == [u("10", paragrafo="4"), u("10", paragrafo="4-A"), u("10", paragrafo="4-A", inciso="I")],
+           f"§ 4º-A é par4-A, e o inciso abaixo dele também (obteve {subs})")
+    rem = extrair_remissoes("nos termos do § 4º-A do art. 10.", URN_BASE, "1")
+    checar(rem == [u("10", paragrafo="4-A"), u("10")], f"remissão ao § 4º-A do art. 10 (obteve {rem})")
+
+
+@cenario("remissão: número de artigo com ponto ('art. 1.358-A') não é o art. 1")
+def artigo_com_milhar():
+    """Quebra (LC 214, arts. 259 e 387): 'art. 1.358-A da Lei nº 10.406' e 'arts.
+    1.190 e 1.191 da Lei nº 10.406' davam o art. 1º DESTA lei — o número parava
+    no ponto, e o qualificador ('da Lei') ficava fora da janela."""
+    r = lambda t: extrair_remissoes(t, URN_BASE, "2")  # noqa: E731
+    checar(r("nos termos do art. 1.358-A da Lei nº 10.406, de 10 de janeiro de 2002.") == [],
+           "art. 1.358-A do Código Civil: outra norma, sem ponteiro")
+    checar(r("as restrições previstas nos arts. 1.190 e 1.191 da Lei nº 10.406.") == [],
+           "arts. 1.190 e 1.191 da Lei: outra norma")
+    checar(r("conforme o art. 1.020.") == [urn_dispositivo(URN_BASE, "1020")],
+           "sem qualificador, o número inteiro (1020), não o 1")
+    checar(r("conforme o art. 100. Os demais.") == [urn_dispositivo(URN_BASE, "100")],
+           "o ponto final depois do número não é milhar")
+    # EC 132, art. 19: com o ponto de "nº 9.826" sem cortar a janela, o "desta Emenda"
+    # do fim da frase alcançava a menção. Vale o qualificador MAIS PRÓXIMO.
+    t = ("pelos arts. 1º a 4º da Lei nº 9.826, de 23 de agosto de 1999, na data de publicação "
+         "desta Emenda Constitucional.")
+    checar(r(t) == [] and extrair_remissoes(t, URN_BASE, "2", True) == [],
+           "'da Lei nº 9.826' vem antes do 'desta Emenda': a menção é da Lei")
+    checar(r("o art. 5º desta Lei e da Lei nº 9.430.") == [urn_dispositivo(URN_BASE, "5")],
+           "'desta Lei' antes de 'da Lei': interna")
+
+
 @cenario("remissão: menção sem qualificador dentro de link para outro arquivo não é desta norma")
 def remissao_dentro_de_link():
     """Quebra (medido no Decreto 12.955 real): '(Art. 181 e art. 182 da Lei
@@ -4401,6 +4453,13 @@ def remissao_dentro_de_link():
     checar(obtido == [lc("7")],
            f"âncora de OUTRO artigo: o art. 6º fica sem ponteiro, nem desta norma nem da LC "
            f"(obteve {obtido})")
+    texto = "conforme o art. 7º da referida Lei Complementar."
+    trechos = [(texto.index("art. 7º"), len(texto) - 1, "../../../leis/lcp/lcp999.htm#art7")]
+    referida = extrair_remissoes(texto, URN_DEC, "1", False, NORMAS_DEC, links_externos=trechos,
+                                 mapa_links=MAPA_DEC)
+    checar(referida == [lc("7")] and extrair_remissoes(texto, URN_DEC, "1", False, NORMAS_DEC) == [],
+           f"'da referida Lei Complementar': o link diz qual norma; sem link, sem ponteiro "
+           f"(obteve {referida})")
     checar(F.trechos_de_links(["(Art. 7º e art. 8º)", "Texto (Produção de efeitos)"],
                               [(("x/lcp999.htm#art7", "(Art. 7º"), ("x/lcp999.htm#art8", "art. 8º)")),
                                (("#art8", "(Produção de efeitos)"),)])
@@ -4413,9 +4472,9 @@ def remissao_dentro_de_link():
     dois = por_numero(artigos, "2")
     texto2 = "\n\n".join(dois["linhas_proprias"])
     sem = AX.extrair_remissoes_a_anexos(texto2, URN_DEC, False)
-    checar(sem == [f"{URN_DEC}!anx1", f"{URN_DEC}!anx4"],
-           f"anexos sem os links: 'Anexo IV da referida Lei Complementar' vira o Anexo IV do "
-           f"decreto ('referida' não é qualificador; obteve {sem})")
+    checar(sem == [f"{URN_DEC}!anx1"],
+           f"anexos sem os links: 'Anexo IV da referida Lei Complementar' é de outra norma "
+           f"('referida' é qualificador externo) e fica sem ponteiro (obteve {sem})")
     com = AX.extrair_remissoes_a_anexos(
         texto2, URN_DEC, False, F.trechos_de_links(dois["linhas_proprias"], dois["links_proprios"]),
         MAPA_DEC)

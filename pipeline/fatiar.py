@@ -387,7 +387,8 @@ RE_ANOTACAO = re.compile(
 RE_FIM_DO_TEXTO = re.compile(r"^(?:Bras[ií]lia,\s|ANEXO\b)")
 RE_ANEXO = re.compile(r"^ANEXO\s+[IVXLC]+\b")
 
-RE_PARAGRAFO = re.compile(r"^§\s*(\d+)")
+# "§ 4º-A": o sufixo faz parte do rótulo — sem ele, o § 4º-A recebia a URN do § 4º.
+RE_PARAGRAFO = re.compile(r"^§\s*(\d+)\s*[ºo°]?(?:\s*-\s*([A-Z])\b)?")
 RE_PAR_UNICO = re.compile(r"^Par[áa]grafo\s+[úu]nico", re.IGNORECASE)
 RE_INCISO = re.compile(r"^([IVXLC]+)\s*[-–]\s")
 RE_ALINEA = re.compile(r"^([a-z])\)\s")
@@ -473,28 +474,34 @@ def chave_ordem(numero: str) -> tuple[int, str]:
     return (ordinal, sufixo)
 
 
+# Número de artigo, com o ponto de milhar: "art. 1.358-A" é o 1358-A, não o 1 (o
+# ponto parava o número, e o qualificador "da Lei nº 10.406" saía da janela).
+_NUM_ARTIGO = r"(\d{1,3}(?:\.\d{3})+|\d+)"
+
 # Remissões, do mais específico para o mais genérico.
 RE_REMISSOES = [
     (
         "par",
-        re.compile(r"§\s*(\d+)\s*[ºo°]?\s*d[oe]\s*art\.?\s*(\d+)(-[A-Z])?", re.IGNORECASE),
+        re.compile(r"§\s*(\d+)\s*[ºo°]?(?:\s*-\s*([A-Z])\b)?\s*d[oe]\s*art\.?\s*" + _NUM_ARTIGO + r"(-[A-Z])?",
+                   re.IGNORECASE),
     ),
     (
         "inc",
         re.compile(
-            r"inciso\s+([IVXLC]+)\s*d[oe]\s*art\.?\s*(\d+)(-[A-Z])?", re.IGNORECASE
+            r"inciso\s+([IVXLC]+)\s*d[oe]\s*art\.?\s*" + _NUM_ARTIGO + r"(-[A-Z])?", re.IGNORECASE
         ),
     ),
-    ("art", re.compile(r"\bart(?:s|igos?)?\.?\s*(\d+)(-[A-Z])?", re.IGNORECASE)),
+    ("art", re.compile(r"\bart(?:s|igos?)?\.?\s*" + _NUM_ARTIGO + r"(-[A-Z])?", re.IGNORECASE)),
 ]
 
 # Escopo da remissão. "art. 155, II, da Constituição Federal" NÃO é o art. 155
 # desta norma — resolver para o namespace próprio cria ponteiro ERRADO, que é
 # pior que ponteiro ausente: a IA seguiria a remissão para o dispositivo errado
 # e responderia com confiança. Por isso a resolução é conservadora.
+# "da referida Lei", "do mesmo diploma legal": a norma é outra, já nomeada antes.
 RE_ESCOPO_EXTERNO = re.compile(
-    r"\bd[ao]s?\s+(?:Constitui[çc][ãa]o|Leis?|Decretos?|Emenda|"
-    r"Medida\s+Provis[óo]ria|C[óo]digo|Ato|ADCT)\b",
+    r"\bd[ao]s?\s+(?:(?:referid|mencionad|citad|mesm)[ao]s?\s+)?(?:Constitui[çc][ãa]o|Leis?|Decretos?|"
+    r"Emenda|Medida\s+Provis[óo]ria|C[óo]digo|Ato|ADCT|diploma)\b",
     re.IGNORECASE,
 )
 # "desta Lei" / "deste Decreto" afirmam o contrário: a remissão é interna.
@@ -529,23 +536,32 @@ def remissao_externa(texto: str, fim: int) -> bool:
     fim da frase contamina todas as remissões internas que o precedem: em
     "o art. 12 e o art. 15 da Lei nº 9.430" só o art. 15 é externo.
 
-    "desta Lei" vence "da Lei", porque afirma escopo interno explicitamente.
+    Com os dois na janela, vale o MAIS PRÓXIMO da menção: em "arts. 1º a 4º da
+    Lei nº 9.826, ..., na data de publicação desta Emenda" (EC 132, art. 19) a
+    menção é da Lei; em "o art. 5º desta Lei e da Lei nº 9.430", desta.
     """
+    return _qualificador(texto, fim) == "externo"
+
+
+def _qualificador(texto: str, fim: int) -> str | None:
+    """'interno', 'externo' ou None: o qualificador de escopo mais próximo da menção."""
     janela = _janela_da_mencao(texto, fim)
-    if RE_ESCOPO_INTERNO.search(janela):
-        return False
-    return bool(RE_ESCOPO_EXTERNO.search(janela))
+    interno, externo = RE_ESCOPO_INTERNO.search(janela), RE_ESCOPO_EXTERNO.search(janela)
+    if interno and (not externo or interno.start() < externo.start()):
+        return "interno"
+    return "externo" if externo else None
 
 
 def _janela_da_mencao(texto: str, fim: int) -> str:
     janela = texto[fim:fim + 90]
-    corte = re.search(r"[.;:]|\bart", janela, re.IGNORECASE)
+    # O ponto de milhar ("1.191", "nº 10.406") não encerra a frase.
+    corte = re.search(r"[;:]|\.(?!\d)|\bart", janela, re.IGNORECASE)
     return janela[:corte.start()] if corte else janela
 
 
 def escopo_interno_afirmado(texto: str, fim: int) -> bool:
     """A remissão que termina em `fim` diz expressamente "desta Lei/Emenda"?"""
-    return bool(RE_ESCOPO_INTERNO.search(_janela_da_mencao(texto, fim)))
+    return _qualificador(texto, fim) == "interno"
 
 
 def exige_escopo_interno(fonte: dict) -> bool:
@@ -704,9 +720,11 @@ def extrair_remissoes(
             bloco = next((b[2] for b in blocos if b[0] <= m.start() < b[1]), None)
             link = next((h for a, b, h in links_externos or () if a <= m.start() < b), None)
             if tipo == "art":
-                artigo = normalizar_artigo(m.group(1), m.group(2))
+                artigo = normalizar_artigo(m.group(1).replace(".", ""), m.group(2))
+            elif tipo == "par":
+                artigo = normalizar_artigo(m.group(3).replace(".", ""), m.group(4))
             else:
-                artigo = normalizar_artigo(m.group(2), m.group(3))
+                artigo = normalizar_artigo(m.group(2).replace(".", ""), m.group(3))
             if escopo_interno_afirmado(consumido, m.end()):
                 base = urn_base
             elif remissao_externa(consumido, m.end()):
@@ -718,6 +736,9 @@ def extrair_remissoes(
                 qualificador = RE_ESCOPO_EXTERNO.search(trecho)
                 nomeada = RE_NORMA_NOMEADA.match(trecho, qualificador.start()) if qualificador else None
                 base = _base_da_norma(_chave_da_norma(nomeada), normas) if nomeada else None
+                if base is None and nomeada is None and link is not None:
+                    # "da referida Lei Complementar": a norma não é nomeada; o link diz qual.
+                    base = _norma_do_link(link, artigo, mapa_links)
                 if base is None:
                     continue
             elif bloco is not None:
@@ -733,7 +754,7 @@ def extrair_remissoes(
             else:
                 base = urn_base
             if tipo == "par":
-                alvo = urn_dispositivo(base, artigo, paragrafo=m.group(1))
+                alvo = urn_dispositivo(base, artigo, paragrafo=normalizar_artigo(m.group(1), m.group(2)))
             elif tipo == "inc":
                 alvo = urn_dispositivo(base, artigo, inciso=m.group(1))
             else:
@@ -769,7 +790,7 @@ def _subdivisao_aberta_por_linha(
     for linha in linhas:
         urn: str | None = None
         if m := RE_PARAGRAFO.match(linha):
-            par_atual, inc_atual = m.group(1), None
+            par_atual, inc_atual = normalizar_artigo(m.group(1), m.group(2)), None
             urn = urn_dispositivo(urn_base, artigo, paragrafo=par_atual)
         elif RE_PAR_UNICO.match(linha):
             par_atual, inc_atual = "U", None

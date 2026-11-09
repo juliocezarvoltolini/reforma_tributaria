@@ -5953,18 +5953,18 @@ dispositivos:
     tipos:
     - produz_efeitos
     trecho: § 4º A obrigatoriedade de inscrição da pessoa física de que trata este artigo produz efeitos exclusivamente em relação à legislação da CBS e do IBS.
-  - urn: urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4
+  - urn: urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4-A
     tipos:
     - ano
     - data_explicita
     - a_partir_de_ate
     - produz_efeitos
     trecho: '§ 4º-A A obrigatoriedade de inscrição no CNPJ de que trata este artigo produz efeitos a partir de 1º de janeiro de 2027 para: (Incluído pelo Decreto nº 13.075, de 2026)'
-  - urn: urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4_incI
+  - urn: urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4-A_incI
     tipos:
     - ano
     trecho: I - a pessoa física na condição de contribuinte ou de responsável tributário; e (Incluído pelo Decreto nº 13.075, de 2026)
-  - urn: urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4_incII
+  - urn: urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4-A_incII
     tipos:
     - ano
     trecho: II - o produtor rural pessoa física de que trata o art. 239, caput, incisos I e II. (Incluído pelo Decreto nº 13.075, de 2026)

@@ -223,6 +223,8 @@ def extrair_remissoes_a_anexos(texto: str, urn_base: str, exigir_escopo_interno:
         link = next((h for a, b, h in links_externos or () if a <= m.start() < b), None)
         if RE_ESCOPO_INTERNO.search(janela):
             link = None
+        elif link is not None:
+            pass  # o link do compilado diz qual norma ("Anexo IV da referida Lei Complementar")
         elif RE_ESCOPO_EXTERNO.search(janela) or RE_CONSTANTE.search(janela):
             continue
         elif exigir_escopo_interno:
