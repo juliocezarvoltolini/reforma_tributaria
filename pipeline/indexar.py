@@ -155,6 +155,10 @@ def main() -> int:
     validas, _ = cronograma_nt.leituras_conferidas(rel_cronograma, cronograma_nt.carregar_leituras(),
                                                    cronograma_nt.obter_original, acervo_texto.carregar_textos())
     rel_cronograma = cronograma_nt.aplicar_leituras(rel_cronograma, validas)
+    # Linhas lidas pelo script: conferidas pela posição no PDF (conferencia_pdf).
+    import cronograma_conferencia
+
+    rel_cronograma = cronograma_conferencia.conferir_linhas(rel_cronograma, cronograma_nt.obter_original)
     gravar("cronograma_nt.json", rel_cronograma)
     gravar_texto(DIR_INDICES / "cronograma_nt.md", cronograma_nt.resumo_markdown(rel_cronograma))
     print("  indices/cronograma_nt.md")

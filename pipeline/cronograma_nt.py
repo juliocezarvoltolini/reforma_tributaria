@@ -299,7 +299,11 @@ def resumo_markdown(rel: dict) -> str:
     linhas = ["# Cronograma de implantação das NTs (leitura por script)", "", rel["aviso"], "",
               f"- NTs: {len(nts)}; com linhas lidas: {sum(bool(n['linhas']) for n in nts)}",
               f"- linhas lidas: {sum(len(n['linhas']) for n in nts)}; "
-              f"pendências: {sum(len(n['pendencias']) for n in nts)}", "",
+              f"pendências: {sum(len(n['pendencias']) for n in nts)}",
+              "- conferência pela posição no PDF das linhas lidas pelo script: " + ", ".join(
+                  f"{k}: {v}" for k, v in sorted(__import__("collections").Counter(
+                      x["conferencia_pdf"] for n in nts for x in n["linhas"] if x.get("conferencia_pdf")).items())),
+              "",
               "| NT | versão do documento | linhas lidas | pendências |", "|---|---|---|---|"]
     for n in nts:
         linhas.append(f"| {n['id']} | {n.get('versao') or ''} | {len(n['linhas'])} | {len(n['pendencias'])} |")
@@ -307,9 +311,10 @@ def resumo_markdown(rel: dict) -> str:
         if not n["linhas"]:
             continue
         linhas += ["", f"## {n['id']} (versão {n.get('versao') or '?'})", "",
-                   "| versão | etapa | teste | produção | rodapé | página | origem | resultado |",
-                   "|---|---|---|---|---|---|---|---|"]
+                   "| versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |",
+                   "|---|---|---|---|---|---|---|---|---|"]
         linhas += [f"| {x['versao']} | {x.get('etapa') or ''} | {x['teste']} | {x['producao']} | {x['rodape']} | "
-                   f"{x['pagina']} | {x.get('origem', 'regra:cronograma-nt/v1')} | {x.get('resultado', 'lida')} |"
+                   f"{x['pagina']} | {x.get('origem', 'regra:cronograma-nt/v1')} | {x.get('resultado', 'lida')} | "
+                   f"{x.get('conferencia_pdf', 'na leitura')} |"
                    for x in n["linhas"]]
     return "\n".join(linhas) + "\n"

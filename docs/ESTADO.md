@@ -698,6 +698,15 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   não calculadas. O "Histórico de versões" da NT 008 traz datas de PUBLICAÇÃO, não
   de implantação. **Cronograma: 0 pendências em 115 NTs; 707 linhas** (283 lidas pelo
   script, 301 célula vazia, 50 página girada, 11 sem tabela, 62 por IA).
+- **Conferência das linhas do script pela posição no PDF (2026-11-09):**
+  `pipeline/cronograma_conferencia.py`, aplicada por `indexar.py` (campo
+  `conferencia_pdf`). Por proximidade: o par teste/produção nas colunas, a ≤ 15 pontos,
+  cada valor em até 3 linhas visuais com a descrição no meio; o rótulo mais próximo tem
+  de ser a versão lida. Resultado: 260 confere, 13 `rotulo_diverge` (células altas com o
+  rótulo centralizado — NF-e 1.33 e 1.40, que a leitura por posição da v1.33 já mostrou
+  certas), 7 `um_fragmento` (teste e produção num só pedaço de texto: ordem provada,
+  coluna não), 2 `sem_prova` (BP-e TA, página girada), 1 `nao_achado` (BP-e 1.09).
+  NÃO resolvidas: aguardam decisão.
 - **Consulta por data (2026-11-09):** `consultar.py --cronograma-nt --data D
   [--acervo-id prefixo]`. Estado calculado só quando teste/produção são data exata
   (dd/mm/aaaa); "Até X", "01/2026", "Implementação futura", "Não se aplica" saem como

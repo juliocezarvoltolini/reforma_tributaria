@@ -5256,6 +5256,45 @@ def cronograma_sem_tabela():
            "texto com colunas de implantação: erro")
 
 
+@cenario("cronograma (conferência das linhas do script): pela posição no PDF, sem decidir nada")
+def cronograma_conferencia_linhas():
+    """Quebra: dar 'confere' a linha cujas datas não estão nas colunas, ou que está perto
+    do rótulo de outra versão; perder a data em duas linhas visuais com descrição no
+    meio (NF-e NT 2025.002 v1.30: "De 07/07/202" "5" / "a té 28/07/2025"); ou não separar
+    o caso de um só fragmento atravessando as colunas (CT-e NT 2025.001 v1.05)."""
+    import cronograma_conferencia as K
+
+    pdf = pdf_posicionado([
+        (409, 522, "Implantação"), (484, 522, "Implantação"), (422, 510, "Teste"), (489, 510, "Produção"),
+        (71, 440, "1.10"), (406, 444, "De 07/07/190"), (455, 444, "0"), (487, 444, "06/10/1900"),
+        (130, 436, "Descrição fictícia"), (404, 428, "a"), (408, 428, "té"), (418, 428, "28/07/1900"),
+        (459, 428, "*"),
+        (71, 380, "1.20"), (406, 380, "08/09/1900"), (487, 380, "06/10/1900"),
+        (71, 340, "1.30"), (400, 300, "Até 28/07/1900 06/10/1900"),
+        # Negrito simulado: a primeira linha da célula 1.10 reimpressa 2 pontos abaixo.
+        (406, 442, "De 07/07/190"), (455, 442, "0"),
+        # Produção que só existe longe do teste: não é par.
+        (487, 260, "14/12/1900"),
+    ])
+    rel = {"notas_tecnicas": [{"id": "nt-x", "pendencias": [], "linhas": [
+        {"versao": "1.10", "pagina": 1, "teste": "De 07/07/1900 até 28/07/1900", "producao": "06/10/1900"},
+        {"versao": "1.20", "pagina": 1, "teste": "08/09/1900", "producao": "06/10/1900"},
+        {"versao": "1.30", "pagina": 1, "teste": "08/09/1900", "producao": "06/10/1900"},
+        {"versao": "1.30", "pagina": 1, "teste": "Até 28/07/1900", "producao": "06/10/1900"},
+        {"versao": "1.20", "pagina": 1, "teste": "01/01/1901", "producao": "02/01/1901"},
+        {"versao": "1.20", "pagina": 1, "teste": "08/09/1900", "producao": "14/12/1900"},
+        {"versao": "1.10", "pagina": 1, "teste": "x", "producao": "y", "origem": "ia:claude-opus-5-5"}]}]}
+    res = K.conferir_linhas(rel, lambda rid: pdf)
+    sit = [x.get("conferencia_pdf") for x in res["notas_tecnicas"][0]["linhas"]]
+    checar(sit == ["confere", "confere", "rotulo_diverge", "um_fragmento", "nao_achado", "nao_achado", None],
+           f"uma situação por linha do script; leitura de IA não é reconferida aqui (obteve {sit})")
+    girada = K.conferir_linhas({"notas_tecnicas": [{"id": "nt-g", "pendencias": [], "linhas": [
+        {"versao": "1.06", "pagina": 1, "teste": "06/04/1900", "producao": "04/05/1900"}]}]},
+        lambda rid: pdf_posicionado([(533, 700, "5"), (533, 690, "/")]))
+    checar(girada["notas_tecnicas"][0]["linhas"][0]["conferencia_pdf"] == "sem_prova",
+           "página sem cabeçalho de colunas: sem prova")
+
+
 @cenario("cronograma (consulta): estado na data só com data exata; o resto como o documento escreve")
 def cronograma_consulta():
     """Quebra: calcular estado a partir de "Até X", "01/2026" ou "Implementação futura"
