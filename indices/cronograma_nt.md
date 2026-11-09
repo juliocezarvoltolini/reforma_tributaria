@@ -4,7 +4,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 - NTs: 115; com linhas lidas: 114
 - linhas lidas: 707; pendências: 0
-- conferência pela posição no PDF das linhas lidas pelo script: confere: 260, nao_achado: 1, rotulo_diverge: 13, sem_prova: 2, um_fragmento: 7
+- conferência pela posição no PDF das linhas lidas pelo script: confere: 261, confirmada_ia: 22
 
 | NT | versão do documento | linhas lidas | pendências |
 |---|---|---|---|
@@ -128,7 +128,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.09 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | nao_achado |
+| 1.09 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
 | 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
@@ -308,7 +308,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.06 |  | 06/04/2026 | 04/05/2026 |  | 6 | regra:cronograma-nt/v1 | lida | sem_prova |
+| 1.06 |  | 06/04/2026 | 04/05/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | - | - |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data | na leitura |
 | 1.02 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data | na leitura |
@@ -322,7 +322,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.06a |  | 06/04/2026 | 04/05/2026 |  | 6 | regra:cronograma-nt/v1 | lida | sem_prova |
+| 1.06a |  | 06/04/2026 | 04/05/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  | - | - |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data | na leitura |
 | 1.02 |  |  |  |  | 6 | regra:cronograma-pagina-girada/v1 | sem_data | na leitura |
@@ -465,7 +465,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.05 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.05 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
@@ -476,7 +476,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.05 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.05 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.05a |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
 | 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
@@ -488,7 +488,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.05b |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.05b |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
@@ -515,7 +515,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.07 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.07 |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
@@ -546,7 +546,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
-| 1.08a |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.08a |  | Até 28/07/2025 | 06/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.01 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
 | 1.02 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data | na leitura |
@@ -711,7 +711,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.00 |  | 13/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
-| 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 
 ## nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a)
 
@@ -766,14 +766,14 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.00 |  | 13/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
-| 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 
 ## nf3e-nf3e-nota-tecnica-2026-004-v1-00-6e7bb7fe (versão 1.00)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado | conferência PDF |
 |---|---|---|---|---|---|---|---|---|
 | 1.00 |  | 13/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confere |
-| 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | um_fragmento |
+| 1.00 |  | 16/11/2026 | 14/12/2026 |  | 3 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 
 ## nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 (versão 1.00)
 
@@ -977,7 +977,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.30 |  | Implementação futura | Implementação futura |  | 4 | ia:claude-opus-5-5 | lida | na leitura |
 
 ## nfe-nt-2025-002-v1-34-rtc-nf-e-ibs-cbs-is (versão 1.34)
@@ -994,7 +994,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.30 |  | Implementação futura | Implementação futura |  | 4 | ia:claude-opus-5-5 | lida | na leitura |
 
@@ -1012,7 +1012,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.30 |  | Implementação futura | Implementação futura |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
 | 1.35 |  | Até 06/04/2026 | Não se aplica |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
@@ -1031,7 +1031,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.36 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.30 |  | Implementação futura | Implementação futura |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
@@ -1051,10 +1051,10 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.36 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.40 |  | Até 01/07/2026 | 01/09/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.30 |  | Implementação futura | Implementação futura |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
 | 1.35 |  | Até 06/04/2026 | Não se aplica |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
@@ -1073,10 +1073,10 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 4 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.36 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.40 |  | Até 01/07/2026 | 01/09/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.50 |  | Até 01/09/2026 | 03/11/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confere |
 | 1.30 |  | Implementação futura | Implementação futura |  | 5 | ia:claude-opus-5-5 | lida | na leitura |
@@ -1096,10 +1096,10 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.36 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.50 |  | Até 01/09/2026 | 03/11/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confere |
 | 1.51 |  | Até 01/09/2026 | 05/10/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confere |
 | 1.51 |  | Até 03/08/2026 | 03/08/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confere |
@@ -1121,10 +1121,10 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | 1.30 |  | Até 24/11/2025 | 02/02/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.31 |  | Até 14/11/2025 | 17/11/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.32 |  | Até 01/12/2025 | 04/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.33 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.34 |  | Até 10/12/2025 | Até 15/12/2025 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
 | 1.36 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confere |
-| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | rotulo_diverge |
+| 1.40 |  | Até 01/07/2026 | 03/08/2026 |  | 5 | regra:cronograma-nt/v1 | lida | confirmada_ia |
 | 1.50 |  | Até 01/09/2026 | 03/11/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confere |
 | 1.51 |  | Até 01/09/2026 | 05/10/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confere |
 | 1.51 |  | Até 03/08/2026 | 03/08/2026 |  | 6 | regra:cronograma-nt/v1 | lida | confere |

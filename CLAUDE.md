@@ -168,9 +168,11 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   tabela de cronograma; `trechos` traz as menções a data em texto corrido, literais
   e não calculadas — cite-as como texto do documento;
 - **conferência das linhas lidas pelo script**: cada uma tem `conferencia_pdf`
-  (`confere`, `um_fragmento`, `rotulo_diverge`, `nao_achado`, `sem_prova`). Só
-  `confere` foi provada pela posição no PDF; nas outras, diga que a linha não está
-  conferida e por quê;
+  (`confere`, `confirmada_ia`, `um_fragmento`, `rotulo_diverge`, `nao_achado`,
+  `sem_prova`). Só `confere` foi provada pela posição no PDF; `confirmada_ia` foi
+  confirmada por IA com a evidência conferida no PDF
+  (`interpretacoes/cronograma_nt/conferencias.yaml`) — não equivale a revisão
+  humana; nas outras, diga que a linha não está conferida e por quê;
 - ato fora do acervo continua "Não localizado nas fontes indexadas";
 - `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
   `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.

@@ -5122,6 +5122,8 @@ TABELA_POSICIONADA = [
     (487, 62, "05/10/2025"), (487, 60, "05/10/2025"),
     # Tabela que continua na página seguinte deslocada ~8 pontos (BP-e NT 2025.001 v1.14 p.4).
     (399, 70, "Até 01/01/1900"), (476, 70, "Já implantado"),
+    # Valor 13 pontos antes do "Implantação" da coluna (BP-e NT 2025.001 v1.09 p.3: 382 x 395).
+    (396, 50, "Até 02/02/1900"), (487, 50, "03/03/1900"),
 ]
 
 
@@ -5144,6 +5146,7 @@ def cronograma_colunas_pdf():
     checar(col([80], "producao") == "01/12/2026" and col([80], "teste") == "-",
            f"fragmentos de data juntados (obteve {col([80], 'producao')!r})")
     checar(col([62], "producao") == "05/10/2025", f"negrito simulado não duplica (obteve {col([62], 'producao')!r})")
+    checar(col([50], "teste") == "Até 02/02/1900", f"valor 13 pontos antes do cabeçalho (obteve {col([50], 'teste')!r})")
     checar(col([70], "teste") == "Até 01/01/1900" and col([70], "producao") == "Já implantado",
            f"tabela deslocada: cada valor na sua coluna (obteve {col([70], 'teste')!r} / {col([70], 'producao')!r})")
 
@@ -5293,6 +5296,52 @@ def cronograma_conferencia_linhas():
         lambda rid: pdf_posicionado([(533, 700, "5"), (533, 690, "/")]))
     checar(girada["notas_tecnicas"][0]["linhas"][0]["conferencia_pdf"] == "sem_prova",
            "página sem cabeçalho de colunas: sem prova")
+
+
+@cenario("cronograma (confirmação de linha não conferida): evidência apontada e conferida no PDF")
+def cronograma_confirmacao():
+    """NF-e NT 2025.002 v1.40 p.5 (medido em 2026-11-09): o par de datas no topo da célula
+    (y=420) e o rótulo "1.40" centralizado bem abaixo (y=288). Quebra: confirmar com outro
+    rótulo de versão entre as datas e o rótulo apontado; com valor fora da coluna; ou
+    sem a linha não conferida correspondente."""
+    import cronograma_conferencia as K
+
+    pdf = pdf_posicionado([
+        (409, 522, "Implantação"), (484, 522, "Implantação"), (422, 510, "Teste"), (489, 510, "Produção"),
+        (71, 461, "1.36"), (405, 478, "Até 01/07/1900"), (487, 478, "03/08/1900"),
+        (405, 420, "Até 01/07/1900"), (487, 420, "03/08/1900"), (71, 288, "1.40"),
+        (71, 250, "1.05"), (400, 250, "Até 28/07/1900 06/10/1900"),
+    ])
+    linha = {"versao": "1.40", "pagina": 1, "teste": "Até 01/07/1900", "producao": "03/08/1900",
+             "conferencia_pdf": "rotulo_diverge"}
+    rel = {"notas_tecnicas": [{"id": "nt-x", "pendencias": [], "linhas": [dict(linha)]}]}
+    conf = {"nt": "nt-x", "versao": "1.40", "pagina": 1, "teste": "Até 01/07/1900", "producao": "03/08/1900",
+            "situacao": "rotulo_diverge", "evidencia": "posicao_rotulo", "alturas": [420], "rotulo_y": 288,
+            "leitura": "x", "autor": "ia:claude-opus-5-5", "data": "2026-11-09"}
+    obter = lambda rid: pdf  # noqa: E731
+    checar(K.problemas_da_confirmacao(conf, rel, obter) == [], "par nas colunas, rótulo apontado, nada entre: ok")
+    checar(any("entre" in p for p in K.problemas_da_confirmacao(dict(conf, alturas=[478]), rel, obter)),
+           "outro rótulo (1.36) entre as datas e o rótulo apontado: erro")
+    errada = {"notas_tecnicas": [{"id": "nt-x", "pendencias": [], "linhas": [dict(linha, producao="04/08/1900")]}]}
+    checar(any("coluna" in p for p in K.problemas_da_confirmacao(dict(conf, producao="04/08/1900"), errada, obter)),
+           "valor que não está na coluna: erro")
+    checar(any("linha" in p for p in K.problemas_da_confirmacao(dict(conf, situacao="um_fragmento"), rel, obter)),
+           "sem a linha não conferida correspondente: erro")
+    frag = {"nt": "nt-x", "versao": "1.05", "pagina": 1, "teste": "Até 28/07/1900", "producao": "06/10/1900",
+            "situacao": "um_fragmento", "evidencia": "fragmento", "alturas": [250], "rotulo_y": 250,
+            "leitura": "x", "autor": "ia:claude-opus-5-5", "data": "2026-11-09"}
+    rel2 = {"notas_tecnicas": [{"id": "nt-x", "pendencias": [], "linhas": [
+        {"versao": "1.05", "pagina": 1, "teste": "Até 28/07/1900", "producao": "06/10/1900",
+         "conferencia_pdf": "um_fragmento"}]}]}
+    checar(K.problemas_da_confirmacao(frag, rel2, obter) == [], "fragmento único com teste e produção em ordem: ok")
+    checar(any("não é" in p for p in K.problemas_da_confirmacao(dict(conf, rotulo_y=461), rel, obter)),
+           "rótulo apontado de outra versão (1.36): erro")
+    checar(any("fragmento" in p for p in K.problemas_da_confirmacao(dict(frag, alturas=[420]), rel2, obter)),
+           "altura sem fragmento único: erro")
+    aplicado = K.aplicar_confirmacoes(rel, [conf])["notas_tecnicas"][0]["linhas"][0]
+    checar(aplicado["conferencia_pdf"] == "confirmada_ia" and aplicado["conferida_por"] == "ia:claude-opus-5-5"
+           and aplicado["conferencia_original"] == "rotulo_diverge",
+           f"linha confirmada por IA, sem virar 'confere' (obteve {aplicado})")
 
 
 @cenario("cronograma (consulta): estado na data só com data exata; o resto como o documento escreve")

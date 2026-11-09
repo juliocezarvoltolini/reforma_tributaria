@@ -255,10 +255,19 @@ def validar_acervo() -> None:
     import cronograma_nt
 
     rel = cronograma_nt.relatorio(regs, acervo_texto.carregar_textos())
-    _, erros_leitura = cronograma_nt.leituras_conferidas(rel, cronograma_nt.carregar_leituras(),
+    leituras_validas, erros_leitura = cronograma_nt.leituras_conferidas(rel, cronograma_nt.carregar_leituras(),
                                                          cronograma_nt.obter_original, acervo_texto.carregar_textos())
     for msg in erros_leitura:
         erro(f"interpretacoes/cronograma_nt: {msg}")
+    # Confirmações das linhas do script que a posição não confirmou.
+    import cronograma_conferencia
+
+    rel_conf = cronograma_conferencia.conferir_linhas(
+        cronograma_nt.aplicar_leituras(rel, leituras_validas), cronograma_nt.obter_original)
+    _, erros_conf = cronograma_conferencia.confirmacoes_conferidas(
+        rel_conf, cronograma_conferencia.carregar_confirmacoes(), cronograma_nt.obter_original)
+    for msg in erros_conf:
+        erro(f"interpretacoes/cronograma_nt/conferencias.yaml: {msg}")
 
 
 def problemas_de_atos_infralegais(meta: dict, corpo: str) -> list[str]:

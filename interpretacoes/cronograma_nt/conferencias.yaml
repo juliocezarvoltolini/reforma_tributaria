@@ -1,0 +1,307 @@
+# Confirmações das linhas do cronograma lidas pelo script que a posição no PDF não confirmou
+# (indices/cronograma_nt.json, conferencia_pdf). Camada 3: leitura por IA com a evidência apontada no
+# PDF e conferida por pipeline/cronograma_conferencia.py — valores nas alturas/fragmento, rótulo da
+# versão em rotulo_y, e nenhum OUTRO rótulo de versão entre eles. Não equivale a revisão humana.
+confirmacoes:
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06
+  versao: '1.06'
+  pagina: 6
+  teste: 06/04/2026
+  producao: 04/05/2026
+  situacao: sem_prova
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição; o trecho da linha traz o teste antes da
+    produção, na ordem das colunas.'
+- nt: bpe-bpe-nota-tecnica-2025-002-bpeta-v1-06a
+  versao: 1.06a
+  pagina: 6
+  teste: 06/04/2026
+  producao: 04/05/2026
+  situacao: sem_prova
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: texto_da_pagina
+  leitura: 'Página girada (/Rotate 90): coluna não provada pela posição; o trecho da linha traz o teste antes da
+    produção, na ordem das colunas.'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05
+  versao: '1.05'
+  pagina: 3
+  teste: Até 28/07/2025
+  producao: 06/10/2025
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 221
+  rotulo_y: 221
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05a
+  versao: '1.05'
+  pagina: 3
+  teste: Até 28/07/2025
+  producao: 06/10/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 221
+  rotulo_y: 221
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-05b
+  versao: 1.05b
+  pagina: 3
+  teste: Até 28/07/2025
+  producao: 06/10/2025
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 125
+  rotulo_y: 125
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-07
+  versao: '1.07'
+  pagina: 3
+  teste: Até 28/07/2025
+  producao: 06/10/2025
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 162
+  rotulo_y: 162
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: cte-cte-nota-tecnica-2025-001-rtc-v1-08a
+  versao: 1.08a
+  pagina: 3
+  teste: Até 28/07/2025
+  producao: 06/10/2025
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 125
+  rotulo_y: 125
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: cte-cte-nota-tecnica-2026-004-v1-00
+  versao: '1.00'
+  pagina: 3
+  teste: 16/11/2026
+  producao: 14/12/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 578
+  rotulo_y: 578
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: nf3e-nf3e-nota-tecnica-2026-004-v1-00
+  versao: '1.00'
+  pagina: 3
+  teste: 16/11/2026
+  producao: 14/12/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 611
+  rotulo_y: 611
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: nf3e-nf3e-nota-tecnica-2026-004-v1-00-6e7bb7fe
+  versao: '1.00'
+  pagina: 3
+  teste: 16/11/2026
+  producao: 14/12/2026
+  situacao: um_fragmento
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: fragmento
+  alturas:
+  - 611
+  rotulo_y: 611
+  leitura: 'Teste e produção num só pedaço de texto, na mesma altura do rótulo da versão, começando na coluna Teste:
+    a ordem (teste à esquerda, produção à direita) dá as colunas.'
+- nt: nfe-nt-2025-002-v1-33-rtc-nf-e-ibs-cbs-is
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 735
+  rotulo_y: 695
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-34-rtc-nf-e-ibs-cbs-is
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 711
+  rotulo_y: 671
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-35-rtc-nf-e-ibs-cbs-is
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 653
+  rotulo_y: 613
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-36-rtc-nf-e-ibs-cbs-is
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 653
+  rotulo_y: 613
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 629
+  rotulo_y: 590
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final
+  versao: '1.40'
+  pagina: 5
+  teste: Até 01/07/2026
+  producao: 03/08/2026
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 420
+  rotulo_y: 288
+  leitura: Datas no topo da célula da 1.40 (a descrição dela começa nessa altura); o rótulo é centralizado bem abaixo.
+    O par de cima, igual, é da 1.36.
+- nt: nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 606
+  rotulo_y: 567
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is
+  versao: '1.40'
+  pagina: 5
+  teste: Até 01/07/2026
+  producao: 03/08/2026
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 397
+  rotulo_y: 259
+  leitura: Datas no topo da célula da 1.40 (a descrição dela começa nessa altura); o rótulo é centralizado bem abaixo.
+    O par de cima, igual, é da 1.36.
+- nt: nfe-nt-2025-002-v1-51-rtc
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 572
+  rotulo_y: 532
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-51-rtc
+  versao: '1.40'
+  pagina: 5
+  teste: Até 01/07/2026
+  producao: 03/08/2026
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 362
+  rotulo_y: 225
+  leitura: Datas no topo da célula da 1.40 (a descrição dela começa nessa altura); o rótulo é centralizado bem abaixo.
+    O par de cima, igual, é da 1.36.
+- nt: nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is
+  versao: '1.33'
+  pagina: 5
+  teste: Até 10/12/2025
+  producao: Até 15/12/2025
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 548
+  rotulo_y: 508
+  leitura: Datas no topo da célula da 1.33 (a descrição dela começa nessa altura); o rótulo é centralizado mais
+    abaixo. O par de baixo, igual, é da 1.34.
+- nt: nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is
+  versao: '1.40'
+  pagina: 5
+  teste: Até 01/07/2026
+  producao: 03/08/2026
+  situacao: rotulo_diverge
+  autor: ia:claude-opus-5-5
+  data: '2026-11-09'
+  evidencia: posicao_rotulo
+  alturas:
+  - 338
+  rotulo_y: 212
+  leitura: Datas no topo da célula da 1.40 (a descrição dela começa nessa altura); o rótulo é centralizado bem abaixo.
+    O par de cima, igual, é da 1.36.

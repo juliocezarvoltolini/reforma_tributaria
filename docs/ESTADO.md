@@ -706,7 +706,13 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   rótulo centralizado — NF-e 1.33 e 1.40, que a leitura por posição da v1.33 já mostrou
   certas), 7 `um_fragmento` (teste e produção num só pedaço de texto: ordem provada,
   coluna não), 2 `sem_prova` (BP-e TA, página girada), 1 `nao_achado` (BP-e 1.09).
-  NÃO resolvidas: aguardam decisão.
+  Resolvidas a pedido (2026-11-09): a margem da coluna Teste passou a 14 pontos (a
+  BP-e 1.09 ficava de fora por 1 ponto) — 261 conferem; as 22 restantes viraram
+  `confirmada_ia` por `interpretacoes/cronograma_nt/conferencias.yaml`: cada uma aponta
+  as alturas no PDF, e o código confere os valores ali, o rótulo da versão em
+  `rotulo_y` e que NENHUM outro rótulo de versão fica entre eles (célula alta com rótulo
+  centralizado: NF-e 1.33 e 1.40; fragmento único: CT-e e NF3e; página girada: BP-e
+  TA, pela ordem no trecho). **Todas as 283 linhas do script têm conferência.**
 - **Consulta por data (2026-11-09):** `consultar.py --cronograma-nt --data D
   [--acervo-id prefixo]`. Estado calculado só quando teste/produção são data exata
   (dd/mm/aaaa); "Até X", "01/2026", "Implementação futura", "Não se aplica" saem como
