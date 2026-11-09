@@ -6,14 +6,16 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 |---|---|---|---|---|---|---|---|---|
 | bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | bpe-pl-bpe-100b-nt2025-001-rtc-1-09 | 55 | 0 | 27 | 41 | 0 | 14 |
 | bpe-bpe-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | bpe-pl-bpe-100b-nt2025-001-rtc-1-09 | 54 | 0 | 34 | 40 | 0 | 14 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a | 1.12 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 | 1.13 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a | 1.13a | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
-| bpe-bpe-nota-tecnica-2026-002-v1-00 | 1.00 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
-| bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
-| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs | 1.00 | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 17 | 0 | 71 | 7 | 0 | 10 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a | 1.12 | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 | 1.13 | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a | 1.13a | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2026-002-v1-00 | 1.00 | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| bpe-nota-tecnica-2026-005-sn-v1-00-svrs | 1.00 | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 5 | 0 | 6 | 2 | 0 | 3 |
+| bpe-nota-tecnica-2026-005-sn-v100 | 1.00 | bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00 | 5 | 0 | 6 | 2 | 0 | 3 |
+| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs | 1.00 | nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00 | 17 | 0 | 71 | 7 | 0 | 10 |
 | ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10 | 1.10 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 27 | 0 | 62 | 13 | 0 | 14 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-00 | 1.00 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 47 | 0 | 18 | 30 | 0 | 17 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-01 | 1.01 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 55 | 0 | 1 | 37 | 0 | 18 |
@@ -29,17 +31,23 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 | cte-cte-nota-tecnica-2025-001-rtc-v1-08a | 1.08a | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 62 | 0 | 4 | 43 | 0 | 19 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 | 39 | 0 | 17 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 | 39 | 0 | 17 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-14b | 1.14b | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 | 39 | 0 | 17 |
-| cte-cte-nota-tecnica-2026-002-v1-00 | 1.00 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 | 46 | 0 | 18 |
-| cte-cte-nota-tecnica-2026-002-v1-01 | 1.01 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 | 46 | 0 | 18 |
-| cte-cte-nota-tecnica-2026-004-v1-00 | 1.00 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 18 | 0 | 0 | 13 | 0 | 5 |
-| nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00 | 47 | 0 | 27 | 34 | 0 | 13 |
-| nf3e-nf3e-nota-tecnica-2026-002-v1-01 | 1.01 | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
-| nfag-nfag-nota-tecnica-2026-002-v1-00 | 1.00 | nfag-pl-nfag-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 | 46 | 0 | 18 |
-| nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 47 | 0 | 27 | 34 | 0 | 13 |
-| nfcom-nfcom-nota-tecnica-2026-002-v1-01a | 1.01a | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 56 | 0 | 0 | 39 | 0 | 17 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 56 | 0 | 0 | 39 | 0 | 17 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-14b | 1.14b | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 56 | 0 | 0 | 39 | 0 | 17 |
+| cte-cte-nota-tecnica-2026-002-v1-00 | 1.00 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 64 | 0 | 0 | 46 | 0 | 18 |
+| cte-cte-nota-tecnica-2026-002-v1-01 | 1.01 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 64 | 0 | 0 | 46 | 0 | 18 |
+| cte-cte-nota-tecnica-2026-004-v1-00 | 1.00 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 18 | 0 | 0 | 13 | 0 | 5 |
+| cte-nota-tecnica-2026-004-v1-01-svrs | 1.01 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 18 | 0 | 0 | 13 | 0 | 5 |
+| cte-nota-tecnica-2026-004-v101 | 1.01 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 18 | 0 | 0 | 13 | 0 | 5 |
+| cte-nota-tecnica-2026-005-sn-v1-00-svrs | 1.00 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 5 | 0 | 6 | 2 | 0 | 3 |
+| cte-nota-tecnica-2026-005-sn-v100 | 1.00 | cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs | 5 | 0 | 6 | 2 | 0 | 3 |
+| nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01 | 47 | 0 | 27 | 34 | 0 | 13 |
+| nf3e-nf3e-nota-tecnica-2026-002-v1-01 | 1.01 | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01 | 64 | 0 | 0 | 46 | 0 | 18 |
+| nfag-nfag-nota-tecnica-2026-002-v1-00 | 1.00 | nfag-pl-nfag-nt2026-004-rtc-1-01 | 64 | 0 | 0 | 46 | 0 | 18 |
+| nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00 | 47 | 0 | 27 | 34 | 0 | 13 |
+| nfcom-nfcom-nota-tecnica-2026-002-v1-01a | 1.01a | nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| nfcom-nota-tecnica-2026-005-v1-00 | 1.00 | nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00 | 5 | 0 | 6 | 2 | 0 | 3 |
+| nfcom-nota-tecnica-2026-005-v1-00-svrs | 1.00 | nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00 | 5 | 0 | 6 | 2 | 0 | 3 |
 | nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final | 1.10 | nfe-pl-010b-nt2025-002-v1-00 | 36 | 1 | 45 | 22 | 3 | 12 |
 | nfe-nt-2025-002-v1-00-rtc-nf-e-ibs-cbs-is | 1.00 | nfe-pl-010b-nt2025-002-v1-00 | 47 | 3 | 42 | 33 | 3 | 14 |
 | nfe-nt-2025-002-v1-01-rtc-nf-e-ibs-cbs-is | 1.01 | nfe-pl-010b-nt2025-002-v1-00 | 74 | 0 | 9 | 50 | 3 | 21 |
@@ -55,10 +63,11 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 | nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final | 1.40 | nfe-pl-010e-v1-02 | 102 | 0 | 0 | 74 | 0 | 28 |
 | nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is | 1.50 | nfe-pl-010e-v1-02 | 101 | 0 | 0 | 72 | 0 | 29 |
 | nfe-nt-2025-002-v1-51-rtc | 1.51 | nfe-pl-010e-v1-02 | 101 | 0 | 0 | 72 | 0 | 29 |
-| nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is | 1.52 | nfe-pl-010f-v1-04 | 87 | 0 | 0 | 59 | 0 | 28 |
+| nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is | 1.52 | nfe-pl-010g-v1-03 | 87 | 0 | 0 | 59 | 0 | 28 |
+| nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is | 1.53 | nfe-pl-010g-v1-03 | 87 | 0 | 0 | 59 | 0 | 28 |
 | nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo | 1.0 | (nenhum) | 0 | 0 | 99 | 0 | 0 | 0 |
 | nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c | 1.0 | (nenhum) | 0 | 0 | 99 | 0 | 0 | 0 |
-| nfgas-nfgas-nota-tecnica-2026-002-v1-00 | 1.00 | nfgas-pl-nfgas-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| nfgas-nfgas-nota-tecnica-2026-002-v1-00 | 1.00 | nfgas-pl-nfgas-nt2026-004-rtc-1-01 | 64 | 0 | 0 | 46 | 0 | 18 |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 (versão 1.09) × bpe-pl-bpe-100b-nt2025-001-rtc-1-09
 
@@ -127,7 +136,7 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.16 `IBSCBSTot/gIBS/vIBSEstCred` ocorrência 1-1: ausente_no_schema
 - p.16 `IBSCBSTot/gCBS/vCBSEstCred` ocorrência 1-1: ausente_no_schema
 
-## bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a (versão 1.12) × bpe-pl-bpe-100b-nt2026-004-rtc-1-00
+## bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a (versão 1.12) × bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
 
 - p.6 `IBSCBSTot/gIBS/gIBSUF/pIBSUF` ocorrência 1-1: ausente_no_schema
 - p.6 `IBSCBSTot/gIBS/gIBSUF/gDif` ocorrência 0-1: ausente_no_schema
@@ -159,7 +168,7 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.14 `IBSCBSTot/gIBS/vIBSEstCred` ocorrência 1-1: ausente_no_schema
 - p.14 `IBSCBSTot/gCBS/vCBSEstCred` ocorrência 1-1: ausente_no_schema
 
-## bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 (versão 1.13) × bpe-pl-bpe-100b-nt2026-004-rtc-1-00
+## bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 (versão 1.13) × bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
 
 - p.6 `IBSCBSTot/gIBS/gIBSUF/pIBSUF` ocorrência 1-1: ausente_no_schema
 - p.6 `IBSCBSTot/gIBS/gIBSUF/gDif` ocorrência 0-1: ausente_no_schema
@@ -191,7 +200,7 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.15 `IBSCBSTot/gIBS/vIBSEstCred` ocorrência 1-1: ausente_no_schema
 - p.15 `IBSCBSTot/gCBS/vCBSEstCred` ocorrência 1-1: ausente_no_schema
 
-## bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a (versão 1.13a) × bpe-pl-bpe-100b-nt2026-004-rtc-1-00
+## bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a (versão 1.13a) × bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
 
 - p.6 `IBSCBSTot/gIBS/gIBSUF/pIBSUF` ocorrência 1-1: ausente_no_schema
 - p.6 `IBSCBSTot/gIBS/gIBSUF/gDif` ocorrência 0-1: ausente_no_schema
@@ -223,7 +232,7 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.15 `IBSCBSTot/gIBS/vIBSEstCred` ocorrência 1-1: ausente_no_schema
 - p.15 `IBSCBSTot/gCBS/vCBSEstCred` ocorrência 1-1: ausente_no_schema
 
-## bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 (versão 1.14) × bpe-pl-bpe-100b-nt2026-004-rtc-1-00
+## bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 (versão 1.14) × bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
 
 - p.6 `IBSCBSTot/gIBS/gIBSUF/pIBSUF` ocorrência 1-1: ausente_no_schema
 - p.6 `IBSCBSTot/gIBS/gIBSUF/gDif` ocorrência 0-1: ausente_no_schema
@@ -255,7 +264,7 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.16 `IBSCBSTot/gIBS/vIBSEstCred` ocorrência 1-1: ausente_no_schema
 - p.16 `IBSCBSTot/gCBS/vCBSEstCred` ocorrência 1-1: ausente_no_schema
 
-## bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a) × bpe-pl-bpe-100b-nt2026-004-rtc-1-00
+## bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a) × bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
 
 - p.6 `IBSCBSTot/gIBS/gIBSUF/pIBSUF` ocorrência 1-1: ausente_no_schema
 - p.6 `IBSCBSTot/gIBS/gIBSUF/gDif` ocorrência 0-1: ausente_no_schema
@@ -287,7 +296,25 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.16 `IBSCBSTot/gIBS/vIBSEstCred` ocorrência 1-1: ausente_no_schema
 - p.16 `IBSCBSTot/gCBS/vCBSEstCred` ocorrência 1-1: ausente_no_schema
 
-## ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs (versão 1.00) × nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00
+## bpe-nota-tecnica-2026-005-sn-v1-00-svrs (versão 1.00) × bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
+
+- p.5 `IBSCBSTot/gTribSN/gIBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/pIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/vIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/pCBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/vCBSSN` ocorrência 1-1: ausente_no_schema
+
+## bpe-nota-tecnica-2026-005-sn-v100 (versão 1.00) × bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
+
+- p.5 `IBSCBSTot/gTribSN/gIBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/pIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/vIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/pCBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/vCBSSN` ocorrência 1-1: ausente_no_schema
+
+## ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs (versão 1.00) × nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00
 
 - p.5 `IBSCBS/gIBSCBS/gIBSUF/vTribOp` ocorrência 1-1: ausente_no_schema
 - p.5 `IBSCBS/gIBSCBS/gIBSUF/gCredPres` ocorrência 0-1: ausente_no_schema
@@ -470,7 +497,25 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.8 `IBSCBS/gEstornoCred/vIBSEstCred` ocorrência 1-1: ausente_no_schema
 - p.8 `IBSCBS/gEstornoCred/vCBSEstCred` ocorrência 1-1: ausente_no_schema
 
-## nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a) × nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00
+## cte-nota-tecnica-2026-005-sn-v1-00-svrs (versão 1.00) × cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs
+
+- p.5 `IBSCBSTot/gTribSN/gIBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/pIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/vIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/pCBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/vCBSSN` ocorrência 1-1: ausente_no_schema
+
+## cte-nota-tecnica-2026-005-sn-v100 (versão 1.00) × cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs
+
+- p.5 `IBSCBSTot/gTribSN/gIBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/pIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/vIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/pCBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/vCBSSN` ocorrência 1-1: ausente_no_schema
+
+## nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a) × nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01
 
 - p.6 `IBSCBSTot/gIBS/gIBSUF/pIBSUF` ocorrência 1-1: ausente_no_schema
 - p.6 `IBSCBSTot/gIBS/gIBSUF/gDif` ocorrência 0-1: ausente_no_schema
@@ -500,7 +545,7 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.7 `IBSCBSTot/gCBS/gRed/pRedAliq` ocorrência 1-1: ausente_no_schema
 - p.7 `IBSCBSTot/gCBS/gRed/pAliqEfet` ocorrência 1-1: ausente_no_schema
 
-## nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a) × nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00
+## nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a (versão 1.14a) × nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00
 
 - p.6 `IBSCBSTot/gIBS/gIBSUF/pIBSUF` ocorrência 1-1: ausente_no_schema
 - p.6 `IBSCBSTot/gIBS/gIBSUF/gDif` ocorrência 0-1: ausente_no_schema
@@ -529,6 +574,24 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.7 `IBSCBSTot/gCBS/gRed` ocorrência 0-1: ausente_no_schema
 - p.7 `IBSCBSTot/gCBS/gRed/pRedAliq` ocorrência 1-1: ausente_no_schema
 - p.7 `IBSCBSTot/gCBS/gRed/pAliqEfet` ocorrência 1-1: ausente_no_schema
+
+## nfcom-nota-tecnica-2026-005-v1-00 (versão 1.00) × nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00
+
+- p.5 `IBSCBSTot/gTribSN/gIBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/pIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/vIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/pCBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/vCBSSN` ocorrência 1-1: ausente_no_schema
+
+## nfcom-nota-tecnica-2026-005-v1-00-svrs (versão 1.00) × nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00
+
+- p.5 `IBSCBSTot/gTribSN/gIBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/pIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gIBSSN/vIBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN` ocorrência 0-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/pCBSSN` ocorrência 1-1: ausente_no_schema
+- p.5 `IBSCBSTot/gTribSN/gCBSSN/vCBSSN` ocorrência 1-1: ausente_no_schema
 
 ## nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final (versão 1.10) × nfe-pl-010b-nt2025-002-v1-00
 

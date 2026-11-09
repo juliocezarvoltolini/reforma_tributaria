@@ -39,6 +39,7 @@ VERSAO_CONFERENCIA = 1
 # fontes.yaml (EC 1, LC 2): menor prevalece.
 NIVEIS = {
     "lei.ordinaria": 3,
+    "medida.provisoria": 3,  # força de lei (CF, art. 62)
     "decreto": 4,
     "portaria": 5,
     "instrucao.normativa": 5,
@@ -80,6 +81,7 @@ PORTAIS_DFE = (
 )
 CANAIS = {
     "lei.ordinaria": (PLANALTO, DOU),
+    "medida.provisoria": (PLANALTO, DOU),
     "decreto": (PLANALTO, DOU),
     "portaria": (DOU, RFB, SIJUT2, CGIBS),
     "instrucao.normativa": (RFB, SIJUT2, DOU),

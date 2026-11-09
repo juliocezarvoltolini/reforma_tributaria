@@ -2832,7 +2832,7 @@ atos:
   conferir:
   - IBSCBS
   observacao: 'Inclusão: direta — Texto extraído contém: IBS=513, CBS=456, IBSCBS=74, Imposto Seletivo=6,
-    RTC=2, split payment=1. A listagem não traz data de publicação do item; ver capa_pdf_p1.'
+    RTC=2, split payment=1. A listagem não traz data de publicação do item; ver capa_pdf_p1. Em 2026-11-09 a URL deixou de ser servida publicamente: redireciona para o login do gov.br (require_login) e a página /view mostra "Conteúdo Restrito". O original arquivado é a única cópia disponível; não foi rebaixado.'
 - id: nfse-anexovi-leiautesrn-rtc-ibscbs-v1-02-01-nt005
   tipo: leiaute
   orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
@@ -6550,7 +6550,7 @@ atos:
   - tiposEventos_v1.01.xsd
   - IBSCBS
   observacao: 'Inclusão: direta — Texto extraído contém: IBS=54, CBS=40, IBSCBS=30. A listagem não traz
-    data de publicação do item; ver capa_pdf_p1.'
+    data de publicação do item; ver capa_pdf_p1. Em 2026-11-09 a URL deixou de ser servida publicamente: redireciona para o login do gov.br (require_login) e a página /view mostra "Conteúdo Restrito". O original arquivado é a única cópia disponível; não foi rebaixado.'
 - id: nfse-nfse-esquemas-xsd-prodrest-v1-01-20260727
   tipo: schema
   orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
@@ -6566,7 +6566,7 @@ atos:
   - evento_v1.01.xsd
   - IBSCBS
   observacao: 'Inclusão: direta — Texto extraído contém: IBS=54, CBS=40, IBSCBS=30. A listagem não traz
-    data de publicação do item; ver capa_pdf_p1.'
+    data de publicação do item; ver capa_pdf_p1. Em 2026-11-09 a URL deixou de ser servida publicamente: redireciona para o login do gov.br (require_login) e a página /view mostra "Conteúdo Restrito". O original arquivado é a única cópia disponível; não foi rebaixado.'
 - id: nfse-nfse-esquemas-xsd-v1-01-20260209
   tipo: schema
   orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
@@ -6689,3 +6689,1008 @@ atos:
     para padronização nacional do registro civil de pessoas jurídicas.
   observacao: 'Relevância no levantamento: mencao. Texto pela API do Sijut2 (visão vigente, consolidada
     pela RFB). Órgão CGSIM (não RFB/MF). Cita o art. 59 da LC nº 214/2025.'
+- id: nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2025.002 v1.53 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.53'
+  documento_fiscal: NF-e/NFC-e
+  situacao: Notas Técnicas / Documentos vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=BMcHSMEoepU=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
+  conferir:
+  - Reforma Tributária do Consumo – Adequações NF-e / NFC-e Nota Técnica 2025.002-RTC - Versão 1.53 Outubro
+    de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão de NT já catalogada (última catalogada: v1.52). Aprovada pelo
+    Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C,
+    Seção 1 Extra C, p. 6), art. 1º, inciso I, alínea a — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=,
+    sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468). O ATC nº 10/2026 não consta da
+    lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&tipoArquivo=3&nomeArquivo=NT_2025.002_v1.53_RTC_NF-e_IBS_CBS_IS.pdf
+    Termos no texto extraído: IBS=555, CBS=501, IBSCBS=116, Imposto Seletivo=46, Reforma Tributaria=99, RTC=97'
+- id: nfe-nt-2026-005-v1-00-rtc-simplesnacional
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: NF-e/NFC-e
+  situacao: Notas Técnicas / Documentos vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HInG7WD5Sj8=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
+  conferir:
+  - Reforma Tributária do Consumo – Simples Nacional Nota Técnica 2026.005 - Versão 1.00 Outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. NT nova (número não catalogado para NF-e). Aprovada pelo Ato Técnico Conjunto
+    RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p.
+    6), art. 1º, inciso I, alínea b — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=,
+    sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468). O ATC nº 10/2026 não consta da
+    lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&tipoArquivo=3&nomeArquivo=NT_2026.005_v1.00_RTC_SimplesNacional.pdf
+    Termos no texto extraído: IBS=50, CBS=50, IBSCBS=22, Imposto Seletivo=2, Reforma Tributaria=13'
+- id: nfe-nt-2026-006-v1-01-rtc-vinculacaopagamento
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.006 v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: NF-e/NFC-e
+  situacao: Notas Técnicas / Documentos vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=7xf05PpO4Z0=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
+  conferir:
+  - Reforma Tributária do Consumo – Vinculação com a Transação de Pagamento do DF-e Nota Técnica 2026.006 -
+    Versão 1.01 Outubro de 2026
+  - IBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso I, alínea c —
+    lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&tipoArquivo=3&nomeArquivo=NT_2026.006_v1.01_RTC_VinculacaoPagamento.pdf
+    Termos no texto extraído: IBS=1, CBS=1, Reforma Tributaria=1, RTC=1, split payment=11'
+- id: nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.007 v1.11 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.11'
+  documento_fiscal: NF-e/NFC-e
+  situacao: Notas Técnicas / Documentos vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HXzgTeht+5Q=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
+  conferir:
+  - Projeto Nota Fiscal Eletrônica Nota Técnica 2026.007 Emissão por Contribuinte exclusivo do IBS/CBS Versão
+    1.11 – Outubro 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.10). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso I, alínea d —
+    lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&tipoArquivo=3&nomeArquivo=NT2026.007_v1.11%20-%20Emiss%C3%A3o%20NF-e%20sem%20IE.pdf
+    Termos no texto extraído: IBS=45, CBS=45, IBSCBS=3, Imposto Seletivo=2, Reforma Tributaria=3'
+- id: nfe-nt-2026-008-v1-01-rtc-valorliquido
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.008 v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: NF-e/NFC-e
+  situacao: Notas Técnicas / Documentos vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=PVjdIcA/H2s=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY=
+  conferir:
+  - Reforma Tributária do Consumo – Valor Líquido Nota Técnica 2026.008 - Versão 1.01 Outubro de 2026
+  - IBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso I, alínea e —
+    lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&tipoArquivo=3&nomeArquivo=NT_2026.008_v1.01_RTC_ValorLiquido.pdf
+    Termos no texto extraído: IBS=8, CBS=8, Reforma Tributaria=1'
+- id: nfe-pl-010g-v1-03
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Schemas XML NF-e - Pacote de Liberação nº 010g v.1.03 - NT 2026.006 v.1.00 e NT 2026.008 v.1.00 (Publicado
+    em 26/10/26)
+  versao: '1.03'
+  documento_fiscal: NF-e/NFC-e
+  situacao: Esquemas XML / VERSÕES OFICIAIS (em uso)
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=EQhOQMgipXY=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=BMPFMBoln3w=
+  conferir:
+  - PL_010g_v1.03/Evento/e110001_v1.00.xsd
+  - PL_010g_v1.03/Evento/e110300_v1.00.xsd
+  - PL_010g_v1.03/Evento/tiposBasico_v1.03.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. O título da listagem associa o pacote às NT 2026.006 v1.00 e NT 2026.008 v1.00 (não às v1.01
+    publicadas em 30/10/2026). Termos no texto extraído: IBS=92, CBS=77, IBSCBS=16, Imposto Seletivo=11'
+- id: nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.001 v1.00 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: NF-e ABI
+  situacao: Notas Técnicas
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=vDwdfHkjfNc=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=8NGLm789Z+0=
+  conferir:
+  - Sistema Nota Fiscal Eletrônica Nota Técnica 2026.001 Ajustes no Leiaute e nas Regras de Validação da NF-e
+    ABI Versão 1.00 – Outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Primeira NT de NF-e ABI fora da lista (o acervo só tem o pacote de schemas
+    NFeABI 1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026
+    (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso VIII, alínea a — lido no PDF do ATC
+    baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFABI/DownloadArquivoEstatico/?sistema=NFABI&tipoArquivo=3&nomeArquivo=NFeABI_NT%202026.001_Ajustes%20no%20Leiaute%20e%20nas%20Regras%20de%20Valida%C3%A7%C3%A3o_v1.00.pdf
+    Termos no texto extraído: IBS=97, CBS=89, IBSCBS=54, Reforma Tributaria=1'
+- id: nfe-abi-nfeabi-informe-tecnico-nfe-abi-2026-003-v1
+  tipo: informe.tecnico
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Informe Técnico 2026.003 v1.00 - Publicado em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: NF-e ABI
+  situacao: Informes Técnicos / Documentos vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ubZJ18I0T78=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=hXzemuyNHW4=
+  conferir:
+  - Sistema Nota Fiscal Eletrônica Informe Técnico 2026.003 Versão 1.00 – Outubro de 2026
+  - IBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso VIII, alínea b
+    — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Listagem: publicação da Tabela de Códigos da NF-e ABI v1.01
+    e revogação da versão anterior. Termos RTC raros no texto (IBS=1, CBS=1). Espelhos idênticos (mesmo sha256):
+    https://dfe-portal.svrs.rs.gov.br/NFABI/DownloadArquivoEstatico/?sistema=NFABI&tipoArquivo=16&nomeArquivo=NFeABI_Informe%20T%C3%A9cnico%20NFe%20ABI%202026.003%20-%20v1.pdf
+    Termos no texto extraído: IBS=1, CBS=1'
+- id: nfe-abi-nfeabi-tabela-de-codigos-nfe-abi-v1-01
+  tipo: leiaute
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Tabela de Códigos da NF-e ABI v.1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: NF-e ABI
+  situacao: Diversos / Vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=DZxZuO1uSu4=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=vZzcObX90uc=
+  conferir:
+  - Códigos para o campo modOper
+  - Cessão ou Transmissão de direitos
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso VIII, alínea c
+    — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Tabela de códigos (seção "Diversos" do Portal NF-e), não
+    leiaute: classificada no tipo mais próximo da enumeração pedida. Nenhum termo RTC no texto da planilha.
+    Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFABI/DownloadArquivoEstatico/?sistema=NFABI&tipoArquivo=12&nomeArquivo=NFeABI_Tabela%20de%20C%C3%B3digos%20NFe%20ABI%20-%20v1.01.xlsx
+    Termos no texto extraído: '
+- id: nfe-it-2025-002-v-1-71-tabelas-de-classificacao-do-ibs-e-da-cbs
+  tipo: informe.tecnico
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Informe Técnico 2025.002 v1.71 - Publicado em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.71'
+  documento_fiscal: Vários DF-e (tabelas nacionais do IBS/CBS)
+  situacao: Informes Técnicos / Documentos vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=WYEtloOC2CQ=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=hXzemuyNHW4=
+  conferir:
+  - 'Documentos Fiscais Reforma Tributária do Consumo – Lei Complementar 214/2025 IT 2025.002 v.1.71 Versão
+    1.00 Página 1 / 13 Projeto Reforma Tributária do Consumo Tabelas: Código de Classificação Tributária, CST,
+    Classificação do Crédito Presumido do IBS e da CBS Informe Técnico 2025.002 - Versão 1.71 Outubro de 2026'
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (última catalogada: v1.70). Aprovada pelo Ato Técnico Conjunto
+    RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p.
+    6), art. 1º, inciso IX — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=,
+    sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468). O ATC nº 10/2026 não consta da
+    lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/DFE/DownloadArquivoEstatico/?sistema=DFE&tipoArquivo=16&nomeArquivo=IT%202025.002%20v.1.71%20-%20Tabelas%20de%20Classifica%C3%A7%C3%A3o%20do%20IBS%20e%20da%20CBS.pdf
+    Termos no texto extraído: IBS=55, CBS=54, IBSCBS=2, Imposto Seletivo=2, Reforma Tributaria=17'
+- id: nfe-tabela-it-2025-002-v-1-71-cclasstrib
+  tipo: leiaute
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Tabela de Classificação Tributária do IBS e CBS - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.71'
+  documento_fiscal: Vários DF-e (tabelas nacionais do IBS/CBS)
+  situacao: Diversos / Vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Lt6DZCZap0g=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/NJarYc9nus=
+  conferir:
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso X — lido no PDF
+    do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Planilha da seção "Diversos" (Portal NF-e) / "Tabelas"
+    (SVRS), referente ao IT 2025.002 v1.71. Tabela de códigos, não leiaute: tipo mais próximo. As planilhas
+    cClassTrib anteriores (seção Diversos) também não constam da lista do acervo (só os PDFs do IT). Espelhos
+    idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/DFE/DownloadArquivoEstatico/?sistema=DFE&tipoArquivo=12&nomeArquivo=Tabela%20IT%202025.002%20v.1.71%20-%20cClassTrib.xlsx
+    Termos no texto extraído: IBS=386, CBS=376, IBSCBS=2'
+- id: nfcom-nota-tecnica-2026-004-v1-01
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: NFCom
+  situacao: Notas Técnicas / Documentos Vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=l1zCFp1N84c=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=pOpc8eWvlKc=
+  conferir:
+  - Projeto Nota Fiscal Fatura de Serviços de Comunicação Eletrônica Nota Técnica 2026.004 – Valor Líquido
+    Versão 1.01 de outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso III, alínea a
+    — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=3&nomeArquivo=NFCom_Nota_Tecnica_2026_004_v1.01.pdf
+    Termos no texto extraído: IBS=27, CBS=26, IBSCBS=7'
+- id: nfcom-nota-tecnica-2026-005-v1-00
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: NFCom
+  situacao: Notas Técnicas / Documentos Vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=MN1OY+44xXY=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=pOpc8eWvlKc=
+  conferir:
+  - Projeto Nota Fiscal Fatura de Serviços de Comunicação Eletrônica Nota Técnica 2026.005 – Simples Nacional
+    Versão 1.00 de outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. NT nova. Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso III, alínea b
+    — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Há arquivo diferente (mesmo nº de versão 1.00) no portal
+    SVRS — ver registro próprio: na regra da alíquota da CBS, este arquivo indica rejeição 316 e o do SVRS,
+    326. Termos no texto extraído: IBS=46, CBS=51, IBSCBS=41, Reforma Tributaria=12'
+- id: nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-01
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Esquema XML  NFCom - Pacote de Liberação NT 2026.004 v.1.01 (ZIP) - Publicado em 04/11/2026
+  data: '2026-11-04'
+  versao: '1.01'
+  documento_fiscal: NFCom
+  situacao: Esquemas XML / VERSÕES OFICIAIS (em uso)
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=K1diCZP4Njw=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=7+cF7zwBrZ0=
+  conferir:
+  - PL_NFCOM_1.00_NT2026.004 RTC_1.01/consSitNFComTiposBasico_v1.00.xsd
+  - PL_NFCOM_1.00_NT2026.004 RTC_1.01/consSitNFCom_v1.00.xsd
+  - PL_NFCOM_1.00_NT2026.004 RTC_1.01/consStatServNFComTiposBasico_v1.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=2&nomeArquivo=PL_NFCOM_1.00_NT2026.004%20RTC_1.01.zip
+    Termos no texto extraído: IBS=85, CBS=75, IBSCBS=18, Imposto Seletivo=8'
+- id: nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Esquema XML  NFCom - Pacote de Liberação NT 2026.005 v.1.00 (ZIP) - Publicado em 04/11/2026
+  data: '2026-11-04'
+  versao: '1.00'
+  documento_fiscal: NFCom
+  situacao: Esquemas XML / VERSÕES OFICIAIS (em uso)
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Sx6EKb5CQA8=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=7+cF7zwBrZ0=
+  conferir:
+  - PL_NFCOM_1.00_NT2026.005 RTC SN 1.00/consSitNFComTiposBasico_v1.00.xsd
+  - PL_NFCOM_1.00_NT2026.005 RTC SN 1.00/consSitNFCom_v1.00.xsd
+  - PL_NFCOM_1.00_NT2026.005 RTC SN 1.00/consStatServNFComTiposBasico_v1.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=2&nomeArquivo=PL_NFCOM_1.00_NT2026.005%20RTC%20SN%201.00.zip
+    Termos no texto extraído: IBS=96, CBS=87, IBSCBS=21, Imposto Seletivo=8'
+- id: nf3e-nota-tecnica-2026-004-v1-01
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: NF3e
+  situacao: Notas Técnicas / Documentos Vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8THQ/UovR0U=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=v5k1Ww0z+Sw=
+  conferir:
+  - Projeto Nota Fiscal de Energia Elétrica Eletrônica Nota Técnica 2026.004 – Valor Líquido Versão 1.01 de
+    outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso V — lido no PDF
+    do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NF3E/DownloadArquivoEstatico/?sistema=NF3E&tipoArquivo=3&nomeArquivo=NF3e_Nota_Tecnica_2026_004_v1.01.pdf
+    Termos no texto extraído: IBS=26, CBS=25, IBSCBS=7'
+- id: nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Esquema XML  NF3e - Pacote de Liberação NT 2026.004 v.1.01 (ZIP)  - Publicado em 04/11/2026
+  data: '2026-11-04'
+  versao: '1.01'
+  documento_fiscal: NF3e
+  situacao: Esquemas XML / VERSÕES OFICIAIS (em uso)
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OGLCqoR/cLo=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=hgMnsRcQa8I=
+  conferir:
+  - PL_NF3E_1.00a_NT2026.004 RTC_1.01/consReciNF3eTiposBasico_v1.00.xsd
+  - PL_NF3E_1.00a_NT2026.004 RTC_1.01/consReciNF3e_v1.00.xsd
+  - PL_NF3E_1.00a_NT2026.004 RTC_1.01/consSitNF3eTiposBasico_v1.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NF3E/DownloadArquivoEstatico/?sistema=NF3E&tipoArquivo=2&nomeArquivo=PL_NF3E_1.00a_NT2026.004%20RTC_1.01.zip
+    Termos no texto extraído: IBS=85, CBS=75, IBSCBS=18, Imposto Seletivo=8'
+- id: nfag-nota-tecnica-2026-004-v1-01
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: NFAg
+  situacao: Notas Técnicas / Documentos Vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JfSmneST0Fc=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=3Fp/o5Gi3Gk=
+  conferir:
+  - Projeto Nota Fiscal de Água e Saneamento Eletrônica Nota Técnica 2026.004 – Valor Líquido Versão 1.01 de
+    outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso VI — lido no PDF
+    do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFAG&tipoArquivo=3&nomeArquivo=NFAg_Nota_Tecnica_2026_004_v1.01.pdf
+    Termos no texto extraído: IBS=25, CBS=24, IBSCBS=7'
+- id: nfag-pl-nfag-nt2026-004-rtc-1-01
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Esquema XML NFAg - Pacote de Liberação NT 2026.004 v.1.01 (ZIP) - Publicado em 04/11/2026
+  data: '2026-11-04'
+  versao: '1.01'
+  documento_fiscal: NFAg
+  situacao: Esquemas XML / VERSÕES OFICIAIS (em uso)
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=6BTfSAN9Umc=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=2DuboicICSo=
+  conferir:
+  - PL_NFAg_NT2026.004 RTC_1.01/consSitNFAgTiposBasico_v1.00.xsd
+  - PL_NFAg_NT2026.004 RTC_1.01/consSitNFAg_v1.00.xsd
+  - PL_NFAg_NT2026.004 RTC_1.01/consStatServNFAgTiposBasico_v1.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. O Portal NF-e serve este ZIP com Content-Type application/pdf (o conteúdo é ZIP válido). Espelhos
+    idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFAG&tipoArquivo=2&nomeArquivo=PL_NFAg_NT2026.004%20RTC_1.01.zip
+    Termos no texto extraído: IBS=84, CBS=74, IBSCBS=18, Imposto Seletivo=8'
+- id: nfgas-nota-tecnica-2026-004-v1-01
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: NFGas
+  situacao: Notas Técnicas / Documentos Vigentes
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ZF+Shyl27wI=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=LYb9eZ1SOh0=
+  conferir:
+  - Projeto Nota Fiscal Eletrônica do Gás Nota Técnica 2026.004 – Valor Líquido Versão 1.01 de outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso VII — lido no
+    PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFGAS/DownloadArquivoEstatico/?sistema=NFGAS&tipoArquivo=3&nomeArquivo=NFGas_Nota_Tecnica_2026_004_v1.01.pdf
+    Termos no texto extraído: IBS=26, CBS=25, IBSCBS=7'
+- id: nfgas-pl-nfgas-nt2026-004-rtc-1-01
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Schemas XML  NFGas - Pacote de Liberação NT 2026.004 v.1.01 (ZIP) - Publicado em 04/11/2026
+  data: '2026-11-04'
+  versao: '1.01'
+  documento_fiscal: NFGas
+  situacao: Esquemas XML / VERSÕES OFICIAIS (em uso)
+  url: https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=DPkX3LKKVdA=
+  url_listagem: https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=rRDFjf1Ps7M=
+  conferir:
+  - PL_NFGas_NT2026.004 RTC_1.01/consSitNFGasTiposBasico_v1.00.xsd
+  - PL_NFGas_NT2026.004 RTC_1.01/consSitNFGas_v1.00.xsd
+  - PL_NFGas_NT2026.004 RTC_1.01/consStatServNFGasTiposBasico_v1.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/NFGAS/DownloadArquivoEstatico/?sistema=NFGAS&tipoArquivo=2&nomeArquivo=PL_NFGas_NT2026.004%20RTC_1.01.zip
+    Termos no texto extraído: IBS=86, CBS=76, IBSCBS=18, Imposto Seletivo=8'
+- id: bpe-nota-tecnica-2026-004-v1-01
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.004_v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: BP-e (BP-e, BP-e TM, BP-e TA)
+  situacao: Notas Técnicas / 2026
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ir3st/saoU0=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=Y0nErnoZpsg=
+  conferir:
+  - Projeto Bilhete de Passagem Eletrônico Nota Técnica 2026.004 – Valor Líquido Versão 1.01 outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso IV, alínea a —
+    lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. O título na listagem do Portal CT-e não diz o DF-e; identificado
+    pela capa e pelo nome do arquivo servido. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&tipoArquivo=3&nomeArquivo=BPe_Nota_Tecnica_2026_004_v1.01.pdf
+    Termos no texto extraído: IBS=20, CBS=20, IBSCBS=5'
+- id: bpe-nota-tecnica-2026-005-sn-v100
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: BP-e (BP-e, BP-e TM, BP-e TA)
+  situacao: Notas Técnicas / 2026
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=tsiloeZ6vBw=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=Y0nErnoZpsg=
+  conferir:
+  - Projeto Bilhete de Passagem Eletrônico Nota Técnica 2026.005 – Simples Nacional Versão 1.00 de outubro
+    de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. NT nova. Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso IV, alínea b —
+    lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. DF-e identificado pela capa e pelo nome do arquivo. Há
+    arquivo diferente (mesmo nº de versão 1.00) no portal SVRS — ver registro próprio: na regra da alíquota
+    da CBS, este arquivo indica rejeição 316 e o do SVRS, 326. Termos no texto extraído: IBS=46, CBS=51, IBSCBS=41,
+    Reforma Tributaria=8'
+- id: cte-nota-tecnica-2026-004-v101
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: CT-e/CT-e OS
+  situacao: Notas Técnicas / 2026
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=urai6j7wfLM=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=Y0nErnoZpsg=
+  conferir:
+  - Projeto Conhecimento de Transporte Eletrônico Nota Técnica 2026.004 – Valor Líquido Versão 1.01 de outubro
+    de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Nova versão (catalogada: v1.00). Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso II, alínea a —
+    lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. DF-e identificado pela capa e pelo nome do arquivo. O arquivo
+    do SVRS tem sha256 diferente, mas texto extraído idêntico (ver registro próprio). Termos no texto extraído:
+    IBS=82, CBS=61, IBSCBS=12, Reforma Tributaria=2'
+- id: cte-nota-tecnica-2026-005-sn-v100
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: CT-e/CT-e OS
+  situacao: Notas Técnicas / 2026
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AtaVevRXCIQ=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=Y0nErnoZpsg=
+  conferir:
+  - Projeto Conhecimento de Transporte Eletrônico Nota Técnica 2026.005 – Simples Nacional Versão 1.00 de outubro
+    de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. NT nova. Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva
+    nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso II, alínea b —
+    lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. DF-e identificado pela capa e pelo nome do arquivo. Há
+    arquivo diferente (mesmo nº de versão 1.00) no portal SVRS — ver registro próprio: na regra da alíquota
+    da CBS, este arquivo indica rejeição 316 e o do SVRS, 326. Termos no texto extraído: IBS=46, CBS=51, IBSCBS=42,
+    Reforma Tributaria=8'
+- id: bpe-pl-bpe-100b-nt2026-004-rtc-1-01
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Schemas XML BP-e - NT 2026.004_RTC_v.1.01 (Publicado em 04/11/2026)
+  data: '2026-11-04'
+  versao: '1.01'
+  documento_fiscal: BP-e
+  situacao: Esquemas XML
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=oqjJXubRkb0=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=0xlG1bdBass=
+  conferir:
+  - PL_BPe_100b_NT2026.004 RTC 1.01/bpeTA_v1.00.xsd
+  - PL_BPe_100b_NT2026.004 RTC 1.01/bpeTiposBasico_v1.00.xsd
+  - PL_BPe_100b_NT2026.004 RTC 1.01/bpeTM_v1.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&tipoArquivo=2&nomeArquivo=PL_BPe_100b_NT2026.004%20RTC%201.01.zip
+    Termos no texto extraído: IBS=87, CBS=80, IBSCBS=20, Imposto Seletivo=8'
+- id: bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Schemas XML BP-e - NT 2026.005_RTC_SN_v.1.00 (Publicado em 04/11/2026)
+  data: '2026-11-04'
+  versao: '1.00'
+  documento_fiscal: BP-e
+  situacao: Esquemas XML
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ysYXxjwjYyk=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=0xlG1bdBass=
+  conferir:
+  - PL_BPe_100b_NT2026.005 RTC SN_1.00/bpeTA_v1.00.xsd
+  - PL_BPe_100b_NT2026.005 RTC SN_1.00/bpeTiposBasico_v1.00.xsd
+  - PL_BPe_100b_NT2026.005 RTC SN_1.00/bpeTM_v1.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&tipoArquivo=2&nomeArquivo=PL_BPe_100b_NT2026.005%20RTC%20SN_1.00.zip
+    Termos no texto extraído: IBS=108, CBS=102, IBSCBS=27, Imposto Seletivo=8'
+- id: cte-pl-cte-400-nt2026-004-rtc-1-01
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Schemas XML CT-e - NT 2026.004_RTC_ v.1.01 (Publicado em 04/11/2026)
+  data: '2026-11-04'
+  versao: '1.01'
+  documento_fiscal: CT-e/CT-e OS
+  situacao: Esquemas XML
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=QwdGTKSlBAQ=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=0xlG1bdBass=
+  conferir:
+  - PL_CTe_400_NT2026.004 RTC_1.01/consSitCTeTiposBasico_v4.00.xsd
+  - PL_CTe_400_NT2026.004 RTC_1.01/consSitCTe_v4.00.xsd
+  - PL_CTe_400_NT2026.004 RTC_1.01/consStatServCTe_v4.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. Espelhos idênticos (mesmo sha256): https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=2&nomeArquivo=PL_CTe_400_NT2026.004%20RTC_1.01.zip
+    Termos no texto extraído: IBS=88, CBS=82, IBSCBS=19, Imposto Seletivo=8'
+- id: cte-pl-cte-400-nt2026-005-rtc-sn-1-00
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Schemas XML CT-e - NT 2026.005_RTC_ SN_v.1.00 (Publicado em 04/11/2026)
+  data: '2026-11-04'
+  versao: '1.00'
+  documento_fiscal: CT-e/CT-e OS
+  situacao: Esquemas XML
+  url: https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=jLXuXo1j17A=
+  url_listagem: https://www.cte.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=0xlG1bdBass=
+  conferir:
+  - PL_CTe_400_NT2026.005 RTC SN_1.00/consSitCTeTiposBasico_v4.00.xsd
+  - PL_CTe_400_NT2026.005 RTC SN_1.00/consSitCTe_v4.00.xsd
+  - PL_CTe_400_NT2026.005 RTC SN_1.00/consStatServCTe_v4.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Pacote de schemas com grupos/campos IBSCBS (contagem acima); não é citado nominalmente no ATC
+    nº 10/2026. O pacote homônimo do SVRS (listado em 02/11/2026) é diferente: o cteTiposBasico_v4.00.xsd do
+    SVRS acrescenta elementos tpRegimeIBSCBS (tipo TRegimeIBSCBS) ausentes deste pacote. Data interna do membro:
+    30/10/2026 aqui; 02/11/2026 no SVRS. Termos no texto extraído: IBS=94, CBS=89, IBSCBS=20, Imposto Seletivo=8'
+- id: bpe-nota-tecnica-2026-005-sn-v1-00-svrs
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.005 - Simples Nacional
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: BP-e (BP-e, BP-e TM, BP-e TA)
+  situacao: Notas Técnicas
+  url: https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&tipoArquivo=3&nomeArquivo=BPe_Nota_Tecnica_2026_005_SN_v1.00.pdf
+  url_listagem:
+  - https://dfe-portal.svrs.rs.gov.br/Bpe/Documentos
+  conferir:
+  - Projeto Bilhete de Passagem Eletrônico Nota Técnica 2026.005 – Simples Nacional Versão 1.00 de outubro
+    de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Arquivo com sha256 diferente do publicado no Portal CT-e e de todo arquivo
+    do acervo. Aprovada pelo Ato Técnico Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026
+    (DOU 29/10/2026, ed. 205-C, Seção 1 Extra C, p. 6), art. 1º, inciso IV, alínea b — lido no PDF do ATC baixado
+    do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=, sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468).
+    O ATC nº 10/2026 não consta da lista do acervo. Mesmo nº de versão (1.00) do arquivo do Portal CT-e, mas
+    o texto difere em 2 linhas: regra da alíquota da CBS com rejeição 326 (SVRS) vs 316 (Portal CT-e). CreationDate
+    do PDF: 02/11/2026 12:08 (-03). As fontes não dizem qual prevalece. Termos no texto extraído: IBS=46, CBS=51,
+    IBSCBS=41, Reforma Tributaria=8'
+- id: cte-nota-tecnica-2026-005-sn-v1-00-svrs
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.005 - Simples Nacional
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: CT-e/CT-e OS
+  situacao: Notas Técnicas
+  url: https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_005_SN_v1.00.pdf
+  url_listagem:
+  - https://dfe-portal.svrs.rs.gov.br/Cte/Documentos
+  conferir:
+  - Projeto Conhecimento de Transporte Eletrônico Nota Técnica 2026.005 – Simples Nacional Versão 1.00 de outubro
+    de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Arquivo com sha256 diferente do Portal CT-e. Aprovada pelo Ato Técnico
+    Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra
+    C, p. 6), art. 1º, inciso II, alínea b — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=,
+    sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468). O ATC nº 10/2026 não consta da
+    lista do acervo. Mesma versão 1.00; o texto difere: rejeição 326 (SVRS) vs 316 (Portal CT-e) na regra da
+    alíquota da CBS. CreationDate do PDF: 02/11/2026 12:07 (-03). Termos no texto extraído: IBS=46, CBS=51,
+    IBSCBS=42, Reforma Tributaria=8'
+- id: nfcom-nota-tecnica-2026-005-v1-00-svrs
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.005 - Simples Nacional
+  data: '2026-10-30'
+  versao: '1.00'
+  documento_fiscal: NFCom
+  situacao: Notas Técnicas
+  url: https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=3&nomeArquivo=NFCom_Nota_Tecnica_2026_005_v1.00.pdf
+  url_listagem:
+  - https://dfe-portal.svrs.rs.gov.br/Nfcom/Documentos
+  conferir:
+  - Projeto Nota Fiscal Fatura de Serviços de Comunicação Eletrônica Nota Técnica 2026.005 – Simples Nacional
+    Versão 1.00 de outubro de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Arquivo com sha256 diferente do Portal NF-e. Aprovada pelo Ato Técnico
+    Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra
+    C, p. 6), art. 1º, inciso III, alínea b — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=,
+    sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468). O ATC nº 10/2026 não consta da
+    lista do acervo. Mesma versão 1.00; o texto difere: rejeição 326 (SVRS) vs 316 (Portal NF-e). CreationDate:
+    02/11/2026 12:07 (SVRS) vs 28/10/2026 11:55 (Portal NF-e). Termos no texto extraído: IBS=46, CBS=51, IBSCBS=41,
+    Reforma Tributaria=12'
+- id: cte-nota-tecnica-2026-004-v1-01-svrs
+  tipo: nota.tecnica
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Nota Técnica 2026.004 - v1.01
+  data: '2026-10-30'
+  versao: '1.01'
+  documento_fiscal: CT-e/CT-e OS
+  situacao: Notas Técnicas
+  url: https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_004_v1.01.pdf
+  url_listagem:
+  - https://dfe-portal.svrs.rs.gov.br/Cte/Documentos
+  conferir:
+  - Projeto Conhecimento de Transporte Eletrônico Nota Técnica 2026.004 – Valor Líquido Versão 1.01 de outubro
+    de 2026
+  - IBSCBS
+  observacao: 'Inclusão: aprovada_ou_ratificada_por_ATC — URL ausente da lista do acervo; publicação posterior
+    a 2026-10-20 segundo a listagem. Arquivo com sha256 diferente do Portal CT-e. Aprovada pelo Ato Técnico
+    Conjunto RFB/SUFIS/CGIBS/Diretoria-Executiva nº 10, de 28/10/2026 (DOU 29/10/2026, ed. 205-C, Seção 1 Extra
+    C, p. 6), art. 1º, inciso II, alínea a — lido no PDF do ATC baixado do Portal NF-e (exibirArquivo.aspx?conteudo=smW4wB7T1Cs=,
+    sha256 ed0fb21fe64544fa0171b47bae3c5359aad6c0b13f7095ef0fc3593b0b8bd468). O ATC nº 10/2026 não consta da
+    lista do acervo. Texto extraído (pypdf) idêntico ao do arquivo do Portal CT-e; difere só o binário (CreationDate
+    29/10/2026 17:01 no SVRS). Pode ser tratado como espelho de conteúdo. Termos no texto extraído: IBS=82,
+    CBS=61, IBSCBS=12, Reforma Tributaria=2'
+- id: cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Schemas NT 2026.005 SN
+  data: '2026-11-02'
+  versao: '1.00'
+  documento_fiscal: CT-e/CT-e OS
+  situacao: Schemas
+  url: https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=2&nomeArquivo=PL_CTe_400_NT2026.005%20RTC%20SN_1.00.zip
+  url_listagem:
+  - https://dfe-portal.svrs.rs.gov.br/Cte/Documentos
+  conferir:
+  - PL_CTe_400_NT2026.005 RTC SN_1.00/consSitCTeTiposBasico_v4.00.xsd
+  - PL_CTe_400_NT2026.005 RTC SN_1.00/consSitCTe_v4.00.xsd
+  - PL_CTe_400_NT2026.005 RTC SN_1.00/consStatServCTe_v4.00.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. ZIP com sha256 diferente do homônimo do Portal CT-e. Pacote de schemas com grupos/campos IBSCBS
+    (contagem acima); não é citado nominalmente no ATC nº 10/2026. Difere do pacote do Portal CT-e só em cteTiposBasico_v4.00.xsd:
+    este acrescenta elementos opcionais tpRegimeIBSCBS (tipo TRegimeIBSCBS, "Tipo de Regime de Apuração do
+    IBS e da CBS"). Listado no SVRS em 02/11/2026; o do Portal CT-e diz "Publicado em 04/11/2026". Termos no
+    texto extraído: IBS=109, CBS=104, IBSCBS=26, Imposto Seletivo=8'
+- id: nfse-anexo-viii-tabela-correlacao-v01-02-00-20261026
+  tipo: leiaute
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Anexo VIII versão 1.02.00 (26/10/2026) - Correlação entre Item de Serv., NBS, cClassTrib e cIndOp
+    (AnexoVII)
+  data: '2026-10-26'
+  versao: 1.02.00
+  documento_fiscal: NFS-e
+  situacao: RTC
+  url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexo_viii-tabela-correlacao-v01-02-00-20261026.xlsx
+  url_listagem: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc
+  conferir:
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicação posterior a 2026-10-20 segundo
+    a listagem. Nova versão de anexo já catalogado (catalogadas: 1.00.00 e 1.01.00). Contagem baixa porque
+    só o cabeçalho traz os termos; a planilha correlaciona cClassTrib/cIndOp do IBS/CBS. Termos no texto extraído:
+    IBS=3, CBS=2, IBSCBS=1, Reforma Tributaria=1'
+- id: nfse-anexo-i-sefin-adn-dps-nfse-snnfse-prodrest-v1-01-20261020
+  tipo: leiaute
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: ANEXO_I-SEFIN_ADN-DPS_NFSe-SNNFSe-PRODREST-v1.01-20261020
+  data: '2026-10-20'
+  versao: v1.01-20261020
+  documento_fiscal: NFS-e
+  situacao: Documentação Técnica (Homologação/testes)
+  url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita/anexo_i-sefin_adn-dps_nfse-snnfse_prodrest-v1-01-20261020.xlsx
+  url_listagem: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita
+  conferir:
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo; publicado em 20/10/2026 17h12 (página /view),
+    no mesmo dia do levantamento anterior. Leiaute DPS/NFS-e de produção restrita com campos IBS/CBS. Termos
+    no texto extraído: IBS=259, CBS=217, IBSCBS=150'
+- id: nfse-esquemas-prod-restrita-20261020
+  tipo: schema
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: NFSe-ESQUEMAS_XSD-PRODREST-v1.01-20261020
+  data: '2026-10-20'
+  versao: v1.01-20261020
+  documento_fiscal: NFS-e
+  situacao: Documentação Técnica (Homologação/testes)
+  url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita/esquemas_prod_restrita_20261020.zip
+  url_listagem: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita
+  conferir:
+  - evento_v1.01.xsd
+  - NFSe_v1.01.xsd
+  - pedRegEvento_v1.01.xsd
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista; publicado em 20/10/2026 17h16 (página /view). Substitui,
+    na listagem de produção restrita, o pacote catalogado esquemas-nfse-rtc-v1-01-20260727.zip (que deixou
+    de ser listado e hoje exige login). Termos no texto extraído: IBS=62, CBS=48, IBSCBS=31'
+- id: nfse-anexo-i-sefin-adn-dps-nfse-snnfse-v1-01-20260209
+  tipo: leiaute
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: ANEXO_I-SEFIN_ADN-DPS_NFSe-SNNFSe-v1.01-20260209
+  data: '2026-02-12'
+  versao: v1.01-20260209
+  documento_fiscal: NFS-e
+  situacao: Documentação Atual (Produção)
+  url: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_i-sefin_adn-dps_nfse-snnfse-v1-01-20260209.xlsx
+  url_listagem: https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual
+  conferir:
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista do acervo, mas ANTERIOR ao levantamento de 2026-10-20
+    (Atualizado em 12/02/2026 15h33, página /view). Possível omissão do levantamento anterior: o pacote XSD
+    da mesma data (nfse-esquemas_xsd-v1-01-20260209.zip) já está catalogado. Leiaute DPS/NFS-e de produção
+    com campos IBS/CBS. Termos no texto extraído: IBS=143, CBS=102, IBSCBS=122'
+- id: nfse-via-anexo-iv-leiautesrn-adn-snnfsevia-v1-00-05
+  tipo: leiaute
+  orgao: ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)
+  titulo: Anexo IV - Leiautes RN ADN - versão 1.00.05
+  data: '2026-10-13'
+  versao: 1.00.05
+  documento_fiscal: NFS-e Via
+  situacao: NFS-e Via / Manuais e anexos; Leiautes
+  url: https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/manuais-e-anexos/anexo-iv-leiautesrn_adn-snnfsevia_v1-00-05.xlsx
+  url_listagem:
+  - https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/manuais-e-anexos
+  - https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/leiautes
+  conferir:
+  - IBSCBS
+  observacao: 'Inclusão: direta — URL ausente da lista, mas ANTERIOR ao levantamento de 2026-10-20 (Publicado
+    em 13/10/2026 09h25, página /view). Possível omissão anterior. Leiaute com campos IBS/CBS. Termos no texto
+    extraído: IBS=18, CBS=13, IBSCBS=1'
+- id: portaria-cgibs-12-2026
+  tipo: portaria
+  orgao: CGIBS
+  titulo: PORTARIA CGIBS Nº 12/2026, DE 04 DE NOVEMBRO DE 2026
+  data: '2026-11-04'
+  ementa: Designa equipe técnica de assessoramento à Diretoria de Tesouraria na gestão das aplicações financeiras
+    dos recursos próprios e custodiados pelo Comitê Gestor do Imposto sobre Bens e Serviços – CGIBS.
+  url: https://www.cgibs.gov.br/upload/arquivos/202611/05150204-portaria-cgibs-n-12-2026.pdf
+  url_listagem: https://www.cgibs.gov.br/portarias
+  conferir:
+  - PORTARIA CGIBS Nº 12/2026, DE 04 DE NOVEMBRO DE 2026
+  - Designa equipe técnica de assessoramento à Diretoria de Tesouraria na gestão das aplicações financeiras
+    dos recursos próprios e custodiados pelo Comitê Gestor do Imposto sobre Bens e Serviços – CGIBS.
+  observacao: 'Assinada por FLÁVIO CÉSAR MENDES DE OLIVEIRA, "Presidente do Comitê Gestor do IBS", Brasília,
+    04 de novembro de 2026. Fundamento citado: LC 214/2025, LC 227/2026 (art. 39, I e II) e Resolução CGIBS
+    nº 4/2026. Designa dois servidores nominalmente. Art. 3º autoriza a Diretora de Tesouraria e o Diretor-Executivo
+    a aprovar, em ato conjunto, estratégias de aplicação financeira até a aprovação da política de investimentos
+    pelo Conselho Superior. 2 páginas. Publicada no portal do CGIBS (listagem: "Publicada e disponibilizada
+    no site do CGIBS em 05/11/2026"). Art. 5º: "Esta Portaria entra em vigor na data de sua publicação." Publicação
+    no DOU não localizada (buscas DOU ''CGIBS'', ''Comitê Gestor do Imposto sobre Bens e Serviços'', ''"Diretoria
+    de Tesouraria" "Comitê Gestor"'' entre 20/10 e 09/11/2026).'
+- id: ato-tecnico-conjunto-rfb-cgibs-9-2026
+  tipo: ato.tecnico.conjunto
+  orgao: RFB/CGIBS
+  titulo: ATO TÉCNICO CONJUNTO RFB/CGIBS Nº 9, DE 20 DE OUTUBRO DE 2026
+  data: '2026-10-20'
+  ementa: Dispõe sobre os trabalhos conjuntos da Secretaria Especial da Receita Federal do Brasil e da Diretoria
+    Executiva do Comitê Gestor do Imposto sobre Bens e Serviços, destinados à implementação da reforma tributária
+    sobre o consumo.
+  url: https://www.cgibs.gov.br/upload/arquivos/202610/26090508-20261019-atc-rfb-cgibs-nba-9-2026-assinado-29-as-261026-090221.pdf
+  url_listagem: https://www.cgibs.gov.br/atos-tecnicos-conjuntos
+  publicacao_dou: 'DOU de 2026-10-26, edição 202, Seção: 1, página 35: https://www.in.gov.br/web/dou/-/ato-tecnico-conjunto-rfb/cgibs-n-9-de-20-de-outubro-de-2026-740391670'
+  conferir:
+  - ATO TÉCNICO CONJUNTO RFB/CGIBS Nº 9, DE 20 DE OUTUBRO DE 2026
+  - Dispõe sobre os trabalhos conjuntos da Secretaria Especial da Receita Federal do Brasil e da Diretoria
+    Executiva do Comitê Gestor do Imposto sobre Bens e Serviços, destinados à implementação da reforma tributária
+    sobre o consumo.
+  observacao: 'Assinado por ADRIANA GOMES RÊGO (Secretária Especial Adjunta da RFB) e MIQUEAS LIBÓRIO DE JESUS
+    (Diretor Executivo do CGIBS). Fundamento citado: art. 350, III, do Regimento Interno da RFB; Resolução
+    CGIBS nº 17/2026; arts. 156-A e 156-B, § 7º, da CF; art. 27, I, III, XXIII, XXIV e XXVII, da LC 227/2026.
+    Institui Coordenação Normativa, Coordenação Operacional e 25 GTI (Grupos de Trabalho Interinstitucionais)
+    RFB/DIREX; Anexos I e II com nomes dos membros. O nome do arquivo traz ''20261019'', mas o cabeçalho diz
+    20 de outubro. Art. 13 contém ''III II - Anexo II'' (erro material no original, repetido no DOU). O DOU
+    classifica o ato como ''Ato Declaratório Conjunto''. Publicado no DOU em 26/10/2026 e no portal (listagem:
+    "Publicado e disponibilizado no site do CGIBS em 26/10/2026"). Art. 17: "Este Ato Técnico Conjunto entra
+    em vigor na data de sua publicação no Diário Oficial da União, produzindo efeitos até 31 de março de 2027."'
+- id: ato-tecnico-conjunto-rfb-cgibs-10-2026
+  tipo: ato.tecnico.conjunto
+  orgao: RFB/CGIBS
+  titulo: ATO TÉCNICO CONJUNTO RFB/SUFIS/CGIBS/DIRETORIA-EXECUTIVA Nº 10, DE 29 DE OUTUBRO DE 2026
+  ementa: Dispõe sobre a aprovação conjunta da Secretaria Especial da Receita Federal do Brasil (RFB) e do
+    Comitê Gestor do Imposto sobre Bens e Serviços (CGIBS) da documentação técnica dos documentos fiscais que
+    especifica.
+  url: https://www.cgibs.gov.br/upload/arquivos/202610/30102301-atc-10-vf-assinado-assinado-261030-102245.pdf
+  url_listagem: https://www.cgibs.gov.br/atos-tecnicos-conjuntos
+  publicacao_dou: 'DOU de 2026-10-29, edição 205-C, Seção: 1 - Extra C, página 6: https://www.in.gov.br/web/dou/-/ato-tecnico-conjunto-rfb/sufis/cgibs/diretoria-executiva-n-10-de-28-de-outubro-de-2026-741177669'
+  conferir:
+  - ATO TÉCNICO CONJUNTO RFB/SUFIS/CGIBS/DIRETORIA-EXECUTIVA Nº 10, DE 29 DE OUTUBRO DE 2026
+  - Dispõe sobre a aprovação conjunta da Secretaria Especial da Receita Federal do Brasil (RFB) e do Comitê
+    Gestor do Imposto sobre Bens e Serviços (CGIBS) da documentação técnica dos documentos fiscais que especifica.
+  observacao: 'Assinado por VANDREIA MOTA ROCHA (Subsecretária de Fiscalização da RFB), JULIANO CARDOSO DE
+    SOUZA LAPA (Coordenador-Geral de Fiscalização da RFB), MIQUEAS LIBÓRIO DE JESUS (Diretor-Executivo do CGIBS)
+    e LUIZ DIAS DE ALENCAR NETO (Diretor de Informações Econômico-Fiscais do CGIBS). Fundamento citado: arts.
+    112 e 116 do Decreto nº 12.955/2026 e da Resolução CGIBS nº 6/2026; e-processo nº 10265.419510/2026-47.
+    Art. 1º aprova: NF-e/NFC-e: NT 2025.002 v1.53, NT 2026.005 v1.00, NT 2026.006 v1.01, NT 2026.007 v1.11,
+    NT 2026.008 v1.01; CT-e/CT-e OS, NFCom e BP-e: NT 2026.004 v1.01 e NT 2026.005 v1.00; NF3e, NFAg e NFGas:
+    NT 2026.004 v1.01; NF-e ABI (mod. 77): NT 2026.001 v1.00, Informe Técnico 2026.003 v1.00, Tabela de Códigos
+    v1.01; Informe Técnico 2025.002 v1.71; Tabela cClassTrib v1.71. Documentação a ser disponibilizada em dfe-portal.svrs.rs.gov.br,
+    cte.fazenda.gov.br e nfe.fazenda.gov.br (as NTs não foram baixadas nesta tarefa). Na listagem, o bloco
+    do ATC 10 contém também um link repetido para o PDF do ATC 9. O texto não diz que altera ou revoga atos
+    anteriores. DIVERGÊNCIA não resolvida: o PDF do portal (e o título na listagem) diz ''29 DE OUTUBRO DE
+    2026''; o DOU diz ''28 DE OUTUBRO DE 2026''. Não escolhi. Publicado no DOU em 29/10/2026 (Edição Extra
+    C) e no portal (listagem: "Publicado e disponibilizado no site do CGIBS em 30/10/2026"). Art. 2º: "Este
+    Ato Técnico Conjunto entra em vigor e produz efeitos na data de sua publicação no Diário Oficial da União
+    e no sítio eletrônico do Comitê Gestor do Imposto sobre Bens e Serviços." (as duas publicações têm datas
+    diferentes: 29/10 DOU, 30/10 portal).'
+- id: resolucao-cgsn-195-2026
+  tipo: resolucao
+  orgao: CGSN
+  titulo: Resolução CGSN nº 195, de 21 de outubro de 2026
+  numero: '195'
+  data: '2026-10-21'
+  ementa: Altera a Resolução CGSN nº 140, de 22 de maio de 2018, que dispõe sobre o Regime Especial Unificado
+    de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - Simples
+    Nacional.
+  situacao: Ato vigente que nunca foi alterado
+  url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/154194/visao/vigente
+  url_listagem: https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=154194
+  publicacao_dou: Publicado(a) no DOU de 22/10/2026, seção 1, página 35
+  conferir:
+  - Resolução CGSN nº 195, de 21 de outubro de 2026
+  - Altera a Resolução CGSN nº 140, de 22 de maio de 2018, que dispõe sobre o Regime Especial Unificado de
+    Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - Simples
+    Nacional.
+  observacao: 'Texto pela API do Sijut2 (visão vigente). Altera/revoga: Altera Resol. CGSN nº 140 (idAto 92278,
+    de 22/05/2018, publicado 24/05/2018, início de vigência da anotação 01/01/2027). Levantado por alterar
+    ato já catalogado (resolucao-cgsn-140-2018).'
+- id: portaria-rfb-742-2026
+  tipo: portaria
+  orgao: RFB
+  titulo: Portaria RFB nº 742, de 27 de outubro de 2026
+  numero: '742'
+  data: '2026-10-27'
+  ementa: Prorroga o prazo para adesão às transações de créditos tributários em contencioso administrativo
+    fiscal de que tratam o Edital de Transação nº 9, de 13 de julho de 2026, e o Edital de Transação nº 10,
+    de 13 de julho de 2026.
+  situacao: Ato vigente que nunca foi alterado
+  url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/154314/visao/vigente
+  url_listagem: https://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=154314
+  publicacao_dou: Publicado(a) no DOU de 29/10/2026, seção 1, página 30
+  conferir:
+  - Portaria RFB nº 742, de 27 de outubro de 2026
+  - Prorroga o prazo para adesão às transações de créditos tributários em contencioso administrativo fiscal
+    de que tratam o Edital de Transação nº 9, de 13 de julho de 2026, e o Edital de Transação nº 10, de 13
+    de julho de 2026.
+  observacao: 'Texto pela API do Sijut2 (visão vigente). Altera/revoga: Altera ET RFB nº 9 (idAto 152379, de
+    13/07/2026, publicado 15/07/2026, início de vigência da anotação 29/10/2026); Altera ET RFB nº 10 (idAto
+    152380, de 13/07/2026, publicado 15/07/2026, início de vigência da anotação 29/10/2026). Levantado por
+    alterar ato já catalogado (edital-transacao-rfb-9-2026).'
+- id: convenio-icms-129-26
+  tipo: convenio
+  orgao: CONFAZ
+  titulo: Convênio ICMS 129/26
+  numero: 129/26
+  data: '2026-10-27'
+  ementa: Altera o Convênio ICMS nº 15, de 31 de março de 2023, que dispõe sobre o regime de tributação monofásica
+    do ICMS a ser aplicado nas operações com gasolina e etanol anidro combustível, nos termos da Lei Complementar
+    nº 192, de 11 de março de 2022, e estabelece procedimentos para o controle, apuração, repasse e dedução
+    do imposto e revoga o Convênio ICMS nº 181, de 6 de dezembro de 2024, que dispõe sobre a substituição tributária
+    nas operações com nafta não petroquímica relativos ao ICMS devido pelas operações subsequentes.
+  url: https://www.confaz.fazenda.gov.br/legislacao/convenios/2026/CV129_26
+  publicacao_dou: Publicado no DOU de 29.10.2026
+  conferir:
+  - CONVÊNIO ICMS Nº 129, DE 27 DE OUTUBRO DE 2026
+  - na Lei Complementar nº 192, de 11 de março de 2022, com as alterações introduzidas pela Lei Complementar
+    nº 227, de 13 de janeiro de 2026, resolve celebrar o seguinte
+  observacao: 'Critério do levantamento: mencao_literal — Lei Complementar nº 227, de 13 de janeiro de 2026
+    (preâmbulo (fundamento legal)). Data no título: 27 DE OUTUBRO DE 2026. Publicado pelo Despacho 51/26 (página
+    do despacho lista CONVÊNIO ICMS Nº 129, DE 27 DE OUTUBRO DE 2026; https://www.confaz.fazenda.gov.br/legislacao/despacho/2026/despacho-51-26).
+    A menção à LC 227/2026 está só no preâmbulo, como alteradora da LC 192/2022 (ICMS monofásico de combustíveis);
+    o corpo não menciona IBS, CBS nem Imposto Seletivo. Vigência literal (cláusula quarta): "Este convênio
+    entra em vigor na data da publicação de sua ratificação nacional no Diário Oficial da União, produzindo
+    efeitos a partir de 1º de março de 2027." A página não registra ratificação nacional nem atos alteradores
+    (alterado_por null por ausência de anotação na fonte, não por verificação negativa). Data do ato posterior
+    ao levantamento anterior (2026-10-20).'
+- id: convenio-icms-130-26
+  tipo: convenio
+  orgao: CONFAZ
+  titulo: Convênio ICMS 130/26
+  numero: 130/26
+  data: '2026-10-27'
+  ementa: Altera o Convênio ICMS nº 199, de 22 de dezembro de 2022, que dispõe sobre o regime de tributação
+    monofásica do ICMS a ser aplicado nas operações com combustíveis nos termos da Lei Complementar nº 192,
+    de 11 de março de 2022, e estabelece procedimentos para o controle, apuração, repasse e dedução do imposto.
+  url: https://www.confaz.fazenda.gov.br/legislacao/convenios/2026/CV130_26
+  publicacao_dou: Publicado no DOU de 29.10.2026
+  conferir:
+  - CONVÊNIO ICMS Nº 130, DE 27 DE OUTUBRO DE 2026
+  - na Lei Complementar nº 192, de 11 de março de 2022, com as alterações introduzidas pela Lei Complementar
+    nº 227, de 13 de janeiro de 2026, resolve celebrar o seguinte
+  observacao: 'Critério do levantamento: mencao_literal — Lei Complementar nº 227, de 13 de janeiro de 2026
+    (preâmbulo (fundamento legal)). Data no título: 27 DE OUTUBRO DE 2026. Publicado pelo Despacho 51/26 (https://www.confaz.fazenda.gov.br/legislacao/despacho/2026/despacho-51-26).
+    A menção à LC 227/2026 está só no preâmbulo, como alteradora da LC 192/2022; o corpo não menciona IBS,
+    CBS nem Imposto Seletivo. Vigência literal (cláusula terceira): "Este convênio entra em vigor na data da
+    publicação de sua ratificação nacional no Diário Oficial da União, produzindo efeitos a partir de 1º de
+    março de 2027." A página não registra ratificação nacional nem atos alteradores (alterado_por null por
+    ausência de anotação na fonte). Data do ato posterior ao levantamento anterior (2026-10-20).'
+- id: decreto-13140-2026
+  tipo: decreto
+  orgao: Presidência da República
+  titulo: DECRETO Nº 13.140
+  numero: '13.140'
+  data: '2026-10-21'
+  ementa: Dispõe, no âmbito da União, sobre as hipóteses de dispensa de inscrição no Cadastro Nacional da Pessoa
+    Jurídica – CNPJ e de emissão de documentos fiscais eletrônicos aplicáveis ao nanoempreendedor e ao microempreendedor
+    individual.
+  url: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d13140.htm
+  publicacao_dou: 'DOU de 2026-10-21, edição 199-A, seção 1 - Extra A, página 2: https://www.in.gov.br/web/dou/-/decreto-n-13.140-de-21-de-outubro-de-2026-739686339'
+  conferir:
+  - Dispõe, no âmbito da União, sobre as hipóteses de dispensa de inscrição no Cadastro Nacional da Pessoa
+    Jurídica – CNPJ e de emissão de documentos fiscais eletrônicos aplicáveis ao nanoempreendedor e ao microempreendedor
+    individual.
+  - 'Para o nanoempreendedor, de que trata o art. 25, caput, inciso IV, do Decreto nº 12.955, de 29 de abril
+    de 2026, ficam dispensadas, a exigência pela União de:'
+  - não se aplicam ao nanoempreendedor que optar pelo regime regular do Imposto sobre Bens e Serviços – IBS
+    e da Contribuição Social sobre Bens e Serviços – CBS
+  observacao: 'Não altera o texto do Decreto 12.955 (não há "Redação dada"/"Incluído" pelo 13.140 no compilado;
+    só a anotação "Vide" no art. 25, IV). O art. 1º, parágrafo único, II, diz que as dispensas "produzirão
+    efeitos, no âmbito das competências relacionadas ao IBS, a partir de 1º de janeiro de 2029, e após manifestação
+    favorável do Comitê Gestor". Art. 3º: "entra em vigor na data da sua publicação"; nota do Planalto: "publicado
+    no DOU de 21.10.2026 - Edição extra". O art. 2º trata da DASN-SIMEI como documento fiscal eletrônico do
+    MEI (LC 123/2006, art. 26, § 6º, II, "na redação dada pela Lei Complementar nº 214"). O compilado do 12.955
+    no Planalto mudou desde o arquivado no repositório (sha256 2abc6102... de 2026-10-20): a única diferença
+    de texto é essa anotação; o resto é o script F5 da página. Hashes de páginas do Planalto e do DOU variam
+    a cada download (script/token dinâmico); os valores aqui são do download de 2026-11-09.'
+- id: medida-provisoria-1399-2026
+  tipo: medida.provisoria
+  orgao: Presidência da República
+  titulo: MEDIDA PROVISÓRIA Nº 1.399
+  numero: '1.399'
+  data: '2026-11-04'
+  ementa: Estabelece alíquotas e normas complementares aplicáveis ao Imposto Seletivo para o ano-calendário
+    de 2027, em Regime de Implementação Gradual.
+  url: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1399.htm
+  publicacao_dou: 'DOU de 2026-11-04, edição 207-B, seção 1 - Extra B, página 1: https://www.in.gov.br/web/dou/-/medida-provisoria-n-1.399-de-4-de-novembro-de-2026-741754451'
+  conferir:
+  - Estabelece alíquotas e normas complementares aplicáveis ao Imposto Seletivo para o ano-calendário de 2027,
+    em Regime de Implementação Gradual.
+  - relacionados no Anexo XVII à Lei Complementar nº 214, de 16 de janeiro de 2025, serão apuradas mediante
+    a multiplicação das respectivas alíquotas iniciais
+  - a estimativa de arrecadação do IS será considerada no cálculo da alíquota de referência da CBS para o ano-calendário
+    de 2027, de forma a reduzi-la.
+  - Esta Medida Provisória entra em vigor na data de sua publicação, produzindo efeitos a partir de 2 de fevereiro
+    de 2027
+  observacao: 'Medida provisória, não lei nem emenda: está aqui como categoria 3 por ter força de lei e tratar
+    de IS, mas não altera EC 132, LC 214, LC 227 nem LC 235. No compilado da LC 214 no Planalto não aparece
+    "(Redação dada"/"(Incluído"/"(Vide" pela MP 1.399; a única mudança na página desde o arquivado (2026-10-14)
+    são âncoras HTML novas (art. 5º § 2º, 16 § 1º, 26 § 1º II, 414, 418, 420, 430, 430 I, 431, 434 e outros),
+    que batem com os dispositivos que a MP cita. Preâmbulo: "art. 62, combinado com o art. 153, § 6º, inciso
+    VI, da Constituição". Art. 19: vale "até o início da produção de efeitos da lei prevista no art. 15" (projeto
+    de lei das alíquotas a partir de 2028, a enviar até 31/05/2027). Art. 18: "O Poder Executivo federal regulamentará
+    o disposto nesta Medida Provisória". Encaminhada ao Congresso pela Mensagem nº 830/2026 (Despachos do Presidente,
+    DOU de 04/11/2026, Extra B, p. 4). Câmara dos Deputados: MPV 1399/2026, id 2651183 (API dadosabertos.camara.leg.br).
+    Tramitação e prazo de conversão não foram levantados.'

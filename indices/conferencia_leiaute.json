@@ -770,7 +770,7 @@
       ],
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a",
-      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.12 - Publicada em 16/01/2026",
       "versao": "1.12"
@@ -1020,7 +1020,7 @@
       ],
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-13",
-      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.13 - Publicada em 26/01/2026",
       "versao": "1.13"
@@ -1270,7 +1270,7 @@
       ],
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a",
-      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.13a - Publicada em 05/02/2026",
       "versao": "1.13a"
@@ -1520,7 +1520,7 @@
       ],
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-14",
-      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.14 - Publicada em 07/04/2026",
       "versao": "1.14"
@@ -1770,7 +1770,7 @@
       ],
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a",
-      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica BPe - Nota_Técnica_2025_001 - RTC_v1.14a - Publicada em 07/04/2026",
       "versao": "1.14a"
@@ -1786,7 +1786,7 @@
       "divergencias": [],
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2026-002-v1-00",
-      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota_Tecnica BP-e 2026_002 -RTC_v1.00 - Publicada em 11/06/2026",
       "versao": "1.00"
@@ -1802,10 +1802,142 @@
       "divergencias": [],
       "documento_fiscal": "BP-e",
       "id": "bpe-bpe-nota-tecnica-2026-002-v1-01",
-      "pacote": "bpe-pl-bpe-100b-nt2026-004-rtc-1-00",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica BP-e 2026.002 v.1.01 - Publicada em 04/08/2026",
       "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 6,
+        "confere": 5
+      },
+      "contagem_tamanho": {
+        "confere": 2,
+        "nao_comparavel": 3
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN",
+          "campo": "gIBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/pIBSSN",
+          "campo": "pIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/vIBSSN",
+          "campo": "vIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN",
+          "campo": "gCBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/pCBSSN",
+          "campo": "pCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/vCBSSN",
+          "campo": "vCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        }
+      ],
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-005-sn-v1-00-svrs",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 6,
+        "confere": 5
+      },
+      "contagem_tamanho": {
+        "confere": 2,
+        "nao_comparavel": 3
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN",
+          "campo": "gIBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/pIBSSN",
+          "campo": "pIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/vIBSSN",
+          "campo": "vIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN",
+          "campo": "gCBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/pCBSSN",
+          "campo": "pCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/vCBSSN",
+          "campo": "vCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        }
+      ],
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-005-sn-v100",
+      "pacote": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
+      "versao": "1.00"
     },
     {
       "contagem": {
@@ -2388,7 +2520,7 @@
       ],
       "documento_fiscal": "CT-e/BP-e/NF3e/NFCom (NT conjunta DFe)",
       "id": "ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs",
-      "pacote": "nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "DFe - Nota Técnica 2024.001 - IBS/CBS - Publicada em 01/08/24",
       "versao": "1.00"
@@ -3362,7 +3494,7 @@
       "divergencias": [],
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-14",
-      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica CT-e - Nota_Técnica_2025_001 - RTC_v1.14 - Publicada em 07/04/2026",
       "versao": "1.14"
@@ -3378,7 +3510,7 @@
       "divergencias": [],
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-14a",
-      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica CT-e - Nota_Técnica_2025_001 - RTC_v1.14a - Publicada em 07/04/2026",
       "versao": "1.14a"
@@ -3394,7 +3526,7 @@
       "divergencias": [],
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2025-001-rtc-v1-14b",
-      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica CT-e 2025.001 v.1.14b - Publicada em 30/04/2026",
       "versao": "1.14b"
@@ -3410,7 +3542,7 @@
       "divergencias": [],
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2026-002-v1-00",
-      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
       "tamanho_diverge": [],
       "titulo": "Nota_Tecnica CT-e 2026_002 -RTC_v1.00 - Publicada em 11/06/2026",
       "versao": "1.00"
@@ -3426,7 +3558,7 @@
       "divergencias": [],
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2026-002-v1-01",
-      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica CT-e 2026.002 v.1.01 - Publicada em 04/08/2026",
       "versao": "1.01"
@@ -3442,9 +3574,173 @@
       "divergencias": [],
       "documento_fiscal": "CT-e/CT-e OS/GTV-e",
       "id": "cte-cte-nota-tecnica-2026-004-v1-00",
-      "pacote": "cte-pl-cte-400-nt2026-004-rtc-1-00-correcao",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica CT-e 2026.004 v.1.00 - Publicada em 01/10/2026",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "confere": 18
+      },
+      "contagem_tamanho": {
+        "confere": 13,
+        "nao_comparavel": 5
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-004-v1-01-svrs",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.004 - v1.01",
+      "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "confere": 18
+      },
+      "contagem_tamanho": {
+        "confere": 13,
+        "nao_comparavel": 5
+      },
+      "divergencias": [],
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-004-v101",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "versao": "1.01"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 6,
+        "confere": 5
+      },
+      "contagem_tamanho": {
+        "confere": 2,
+        "nao_comparavel": 3
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN",
+          "campo": "gIBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/pIBSSN",
+          "campo": "pIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/vIBSSN",
+          "campo": "vIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN",
+          "campo": "gCBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/pCBSSN",
+          "campo": "pCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/vCBSSN",
+          "campo": "vCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-005-sn-v1-00-svrs",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 6,
+        "confere": 5
+      },
+      "contagem_tamanho": {
+        "confere": 2,
+        "nao_comparavel": 3
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN",
+          "campo": "gIBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/pIBSSN",
+          "campo": "pIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/vIBSSN",
+          "campo": "vIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN",
+          "campo": "gCBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/pCBSSN",
+          "campo": "pCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/vCBSSN",
+          "campo": "vCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        }
+      ],
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-005-sn-v100",
+      "pacote": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
       "versao": "1.00"
     },
     {
@@ -3676,7 +3972,7 @@
       ],
       "documento_fiscal": "NF3e",
       "id": "nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a",
-      "pacote": "nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00",
+      "pacote": "nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica 2025.001 v.1.14a - Publicada em 12/03/2026",
       "versao": "1.14a"
@@ -3692,7 +3988,7 @@
       "divergencias": [],
       "documento_fiscal": "NF3e",
       "id": "nf3e-nf3e-nota-tecnica-2026-002-v1-01",
-      "pacote": "nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00",
+      "pacote": "nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica 2026.002 v.1.01 - Publicada em 01/08/2026 - Publicada em 01/08/2026",
       "versao": "1.01"
@@ -3708,7 +4004,7 @@
       "divergencias": [],
       "documento_fiscal": "NFAg",
       "id": "nfag-nfag-nota-tecnica-2026-002-v1-00",
-      "pacote": "nfag-pl-nfag-nt2026-004-rtc-1-00-correcao",
+      "pacote": "nfag-pl-nfag-nt2026-004-rtc-1-01",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica 2026.002 v.1.00 - Publicada em 10/06/2026",
       "versao": "1.00"
@@ -3942,7 +4238,7 @@
       ],
       "documento_fiscal": "NFCom",
       "id": "nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a",
-      "pacote": "nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica 2025.001 v.1.14a - Publicada em 12/03/2026",
       "versao": "1.14a"
@@ -3958,10 +4254,142 @@
       "divergencias": [],
       "documento_fiscal": "NFCom",
       "id": "nfcom-nfcom-nota-tecnica-2026-002-v1-01a",
-      "pacote": "nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica 2026.002 v.1.01a - Publicada em 14/08/2026",
       "versao": "1.01a"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 6,
+        "confere": 5
+      },
+      "contagem_tamanho": {
+        "confere": 2,
+        "nao_comparavel": 3
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN",
+          "campo": "gIBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/pIBSSN",
+          "campo": "pIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/vIBSSN",
+          "campo": "vIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN",
+          "campo": "gCBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/pCBSSN",
+          "campo": "pCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/vCBSSN",
+          "campo": "vCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        }
+      ],
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-005-v1-00",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026",
+      "versao": "1.00"
+    },
+    {
+      "contagem": {
+        "ausente_no_schema": 6,
+        "confere": 5
+      },
+      "contagem_tamanho": {
+        "confere": 2,
+        "nao_comparavel": 3
+      },
+      "divergencias": [
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN",
+          "campo": "gIBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/pIBSSN",
+          "campo": "pIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gIBSSN/vIBSSN",
+          "campo": "vIBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN",
+          "campo": "gCBSSN",
+          "ocorrencia_nt": "0-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": null
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/pCBSSN",
+          "campo": "pCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "3v2-4"
+        },
+        {
+          "caminho_nt": "IBSCBSTot/gTribSN/gCBSSN/vCBSSN",
+          "campo": "vCBSSN",
+          "ocorrencia_nt": "1-1",
+          "pagina": 5,
+          "situacao": "ausente_no_schema",
+          "tamanho_nt": "13v2"
+        }
+      ],
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-005-v1-00-svrs",
+      "pacote": "nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "versao": "1.00"
     },
     {
       "contagem": {
@@ -5460,10 +5888,26 @@
       "divergencias": [],
       "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is",
-      "pacote": "nfe-pl-010f-v1-04",
+      "pacote": "nfe-pl-010g-v1-03",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica 2025.002 v.1.52 - Publicada em 01/10/2026",
       "versao": "1.52"
+    },
+    {
+      "contagem": {
+        "confere": 87
+      },
+      "contagem_tamanho": {
+        "confere": 59,
+        "nao_comparavel": 28
+      },
+      "divergencias": [],
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is",
+      "pacote": "nfe-pl-010g-v1-03",
+      "tamanho_diverge": [],
+      "titulo": "Nota Técnica 2025.002 v1.53 - Publicada em 30/10/2026",
+      "versao": "1.53"
     },
     {
       "contagem": {
@@ -7088,7 +7532,7 @@
       "divergencias": [],
       "documento_fiscal": "NFGas",
       "id": "nfgas-nfgas-nota-tecnica-2026-002-v1-00",
-      "pacote": "nfgas-pl-nfgas-nt2026-004-rtc-1-00",
+      "pacote": "nfgas-pl-nfgas-nt2026-004-rtc-1-01",
       "tamanho_diverge": [],
       "titulo": "Nota Técnica 2026.002 v.1.00 - Publicada em 10/06/2026",
       "versao": "1.00"

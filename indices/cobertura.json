@@ -1,27 +1,28 @@
 {
   "acervo": {
-    "arquivados": 370,
+    "arquivados": 418,
     "bloqueados": 0,
     "por_tipo": {
       "ajuste.sinief": 6,
       "ato.conjunto": 6,
       "ato.cotepe": 10,
       "ato.declaratorio": 4,
-      "ato.tecnico.conjunto": 8,
+      "ato.tecnico.conjunto": 10,
       "comunicado": 2,
-      "convenio": 1,
-      "decreto": 10,
+      "convenio": 3,
+      "decreto": 11,
       "edital": 3,
-      "informe.tecnico": 20,
+      "informe.tecnico": 22,
       "instrucao.normativa": 6,
-      "leiaute": 11,
+      "leiaute": 17,
+      "medida.provisoria": 1,
       "nota": 3,
-      "nota.tecnica": 115,
-      "portaria": 45,
+      "nota.tecnica": 134,
+      "portaria": 47,
       "recomendacao": 1,
-      "resolucao": 31,
+      "resolucao": 32,
       "retificacao": 2,
-      "schema": 86
+      "schema": 98
     }
   },
   "aviso": "Esta base cobre apenas o que esta listado aqui. Nao presuma que uma norma esta indexada porque ela existe no mundo.",

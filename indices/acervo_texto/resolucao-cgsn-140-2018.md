@@ -5,10 +5,10 @@ tipo: resolucao
 data: '2018-05-22'
 url: https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/92278/visao/vigente
 arquivo_original: fontes/acervo/resolucao-cgsn-140-2018.json
-sha256_original: 49009c6217b95007d174759c801577f556ebc06b19f26dba2bf639d6e232576a
+sha256_original: 47150ed7dc93a5dd6822da2164a9b4cbb931ebef22767f0c668b852cf357d861
 gerado_por: pipeline/acervo_texto.py
 versao_gerador: 3
-sha256_corpo: a9a597aadb63a6834db478338c492e3cb72068c2f53a32e7804df6791537cf99
+sha256_corpo: 240b5b2716c0d48a7b457f64f0b9bbc24c4e9792615e43058135af8dd7ffaeaf
 ---
 
 Resol.
@@ -1925,23 +1925,55 @@ Dos Documentos e Livros Fiscais e Contábeis
 Art. 59. A ME ou EPP optante pelo Simples Nacional utilizará, conforme as operações e prestações que realizar, os documentos fiscais: (Lei Complementar nº 123, de 2006, art. 18-A, § 20; art. 26, inciso I e § 8º)
 I - autorizados pelos entes federados onde a empresa tiver estabelecimento, inclusive os emitidos por meio eletrônico;
 II - emitidos diretamente por sistema nacional informatizado, com autorização eletrônica, sem custos para a ME ou EPP, quando houver sua disponibilização no Portal do Simples Nacional.
-§ 1º Relativamente à prestação de serviços sujeita ao ISS, a ME ou EPP optante pelo Simples Nacional utilizará a Nota Fiscal de Serviços, conforme modelo aprovado e autorizado pelo Município, ou Distrito Federal, ou outro documento fiscal autorizado conjuntamente pelo Estado e pelo Município da sua circunscrição fiscal. (Lei Complementar nº 123, de 2006, art. 26, inciso I e § 4º)
-
+§ 1º  Relativamente à prestação de serviços sujeita ao ISS, a ME ou EPP optante pelo Simples Nacional utilizará a Nota Fiscal de Serviços, conforme modelo aprovado e autorizado pelo Município, ou Distrito Federal, ou outro documento fiscal autorizado conjuntamente pelo Estado e pelo Município da sua circunscrição fiscal. (Lei Complementar nº 123, de 2006, art. 26, inciso I e § 4º)
+§ 1º Relativamente à prestação de serviços sujeita à Nota Fiscal de Serviços, a Microempresa (ME) ou Empresa de Pequeno Porte (EPP) optante pelo Simples Nacional utilizará, obrigatoriamente, a Nota Fiscal de Serviço eletrônica (NFS-e) de padrão nacional, emitida pelo Emissor Nacional da NFS-e, por meio das seguintes versões:
 152781
 [Redação dada pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
 01/11/2026
-[Vide modificação prevista para 01/11/2026, nos termos do(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
-
-
-
-
-
-
-
-
-
-
-
+I - emissor de NFS-e web; e
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+II - serviço de comunicação do tipo Interface de Programação de Aplicativos (API).
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+§ 1º-A A ME ou EPP emitirá, ainda, o documento fiscal pelo Emissor Nacional da NFS-e de que trata o § 1º deste artigo quando:
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+I - a opção pelo Simples Nacional estiver pendente, em discussão administrativa ou judicial, que possa resultar em inclusão retroativa no regime simplificado, ainda que futura e incerta, hipótese em que a emissão pelo Emissor Nacional da NFS-e será realizada como optante pendente a partir do início do período abrangido pela opção;
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+II - estiver sob efeitos do impedimento de que trata o art. 12 desta Resolução.
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+§ 1º-B É vedada a emissão, pela ME ou EPP, da NFS-e de que tratam os §§ 1º e 1º-A em operações sujeitas apenas à incidência do ICMS.
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+§ 1º-C A NFS-e de que tratam os §§ 1º e 1º-A possuirá validade em todo o território nacional e será elemento suficiente para a fundamentação e a constituição do crédito tributário.
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+§ 1º-D O acesso dos Entes da Federação aos arquivos de dados da NFS-e de padrão nacional ocorrerá por meio de:
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+I - área restrita do Painel Municipal NFS-e, no caso dos municípios; e
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+II - disponibilização dos documentos fiscais aos Entes da Federação em ambiente compartilhado de dados.
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
+§ 1º-E O acesso nos termos definidos no § 1º-D se dará mediante o atendimento a requisitos mínimos de segurança do ambiente de dados da NFS-e.
+152781
+[Incluído(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
+01/11/2026
 § 2º O salão-parceiro de que trata a Lei nº 12.592, de 2012 deverá emitir documento fiscal para o consumidor com a indicação do total das receitas de serviços e produtos neles empregados e a discriminação das cotas-parte do salão-parceiro e do profissional-parceiro, bem como o CNPJ deste. (Lei Complementar nº 123, de 2006, art. 26, inciso I)
 § 3º O profissional-parceiro emitirá documento fiscal destinado ao salão-parceiro relativamente ao valor das cotas-parte recebidas. (Lei Complementar nº 123, de 2006, art. 26, inciso I)
 § 4º A utilização dos documentos fiscais fica condicionada: (Lei Complementar nº 123, de 2006, art. 26, inciso I e § 4º)
@@ -2296,11 +2328,10 @@ Da Certificação Digital para a ME e a EPP
 Art. 79. A ME ou a EPP optante pelo Simples Nacional poderá ser obrigada ao uso de certificação digital para cumprimento das seguintes obrigações: (Lei Complementar nº 123, de 2006, art. 26, § 7º)
 I - entrega da Guia de Recolhimento do Fundo de Garantia do Tempo de Serviço e Informações à Previdência Social (GFIP), bem como o recolhimento do FGTS, ou de declarações relativas ao Sistema de Escrituração Digital das Obrigações Fiscais, Previdenciárias e Trabalhistas (eSocial), para empresas com empregado;
 II - emissão de documento fiscal eletrônico, quando a obrigatoriedade estiver prevista em norma do Confaz ou na legislação municipal;
-
+II - emissão de documento fiscal eletrônico, quando a obrigatoriedade estiver prevista em norma específica.
 152781
 [Redação dada pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
 01/11/2026
-[Vide modificação prevista para 01/11/2026, nos termos do(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
 III - prestação de informações relativas ao ICMS a que se refere o caput do art. 76, desde que a ME ou a EPP esteja obrigada ao uso de documento fiscal eletrônico na forma prevista no inciso II; e
 IV - prestação de informações à RFB relativas à manutenção de recursos no exterior na forma prevista no art. 1º da Lei nº 11.371, de 28 de novembro de 2006.
 § 1º Poderá ser exigida a utilização de códigos de acesso para cumprimento das obrigações não previstas nos incisos do caput. (Lei Complementar nº 123, de 2006, art. 2º, inciso I e § 6º; art. 26, § 7º)
@@ -2621,6 +2652,13 @@ Art. 91. Aplicam-se à ME e à EPP optantes pelo Simples Nacional todas as presu
 Parágrafo único. A existência de tributação prévia por estimativa, estabelecida em legislação do ente federado não desobrigará:
 I - da apuração da base de cálculo real efetuada pelo contribuinte ou pelas administrações tributárias; e (Lei Complementar nº 123, de 2006, art. 18, caput e § 3º)
 II - da emissão de documento fiscal previsto no art. 59, ressalvadas as prerrogativas do MEI, nos termos do inciso II do art. 106. (Lei Complementar nº 123, de 2006, art. 26, inciso I e § 1º)
+
+154194
+[Redação dada pelo(a) Resolução CGSN nº 195, de 21 de outubro de 2026]
+01/01/2027
+[Vide modificação prevista para 01/01/2027, nos termos do(a) Resolução CGSN nº 195, de 21 de outubro de 2026]
+text-indent
+63px
 Art. 92. No caso em que a ME ou a EPP optante pelo Simples Nacional exerça atividades incluídas no campo de incidência do ICMS e do ISS e seja apurada omissão de receita de origem não identificável, a autuação será feita com utilização da maior das alíquotas relativas à faixa de receita bruta de enquadramento do contribuinte, dentre as tabelas aplicáveis às respectivas atividades. (Lei Complementar nº 123, de 2006, art. 39, § 2º)
 § 1º Na hipótese de as alíquotas das tabelas aplicáveis serem iguais, será utilizada a tabela que tiver a maior alíquota na última faixa, para definir a alíquota a que se refere o caput. (Lei Complementar nº 123, de 2006, art. 2º, inciso I e § 6º; art. 39, § 2º)
 § 2º A parcela autuada que não seja correspondente aos tributos federais será rateada entre Estados, Distrito Federal e Municípios na proporção dos percentuais de ICMS e ISS relativos à faixa de receita bruta de enquadramento do contribuinte, dentre as tabelas aplicáveis. (Lei Complementar nº 123, de 2006, art. 2º, inciso I e § 6º; art. 39, § 2º)
@@ -3496,6 +3534,9 @@ II - serviços de comunicação API disponibilizados aos Municípios para a dist
 [Vide o(a) Resolução CGSN nº 169, de 27 de julho de 2022]
 01/09/2023
 
+
+text-indent
+63px
 Art. 107. A simplificação da exigência referente ao cadastro fiscal estadual ou municipal do MEI não dispensa a emissão de documentos fiscais de compra, venda ou prestação de serviços, e é vedada, em qualquer hipótese, a imposição de custos pela autorização para emissão, inclusive na modalidade avulsa. (Lei Complementar nº 123, de 2006, art. 4º, § 3º)
 Art. 108. O MEI que não contratar empregado na forma prevista no art. 105 fica dispensado:
 I - de prestar a informação prevista no inciso IV do art. 32 da Lei nº 8.212, de 1991, no que se refere à remuneração paga ou creditada decorrente do seu trabalho, salvo se presentes outras hipóteses de obrigatoriedade de prestação de informações, na forma estabelecida pela RFB; (Lei Complementar nº 123, de 2006, art. 18-A, § 13, inciso I)
@@ -4824,11 +4865,14 @@ Anexo XII.pdf
 152781
 [Alterado(a) pelo(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
 01/11/2026
-[Vide modificação prevista para 01/11/2026, nos termos do(a) Resolução CGSN nº 191, de 4 de agosto de 2026]
 152832
 [Alterado(a) pelo(a) Resolução CGSN nº 190, de 4 de agosto de 2026]
 01/01/2027
 [Vide dispositivo a ser incluído em 01/01/2027, nos termos do(a) Resolução CGSN nº 190, de 4 de agosto de 2026]
+154194
+[Alterado(a) pelo(a) Resolução CGSN nº 195, de 21 de outubro de 2026]
+01/01/2027
+[Vide dispositivo a ser incluído em 01/01/2027, nos termos do(a) Resolução CGSN nº 195, de 21 de outubro de 2026]
 global
 Global
 ementa

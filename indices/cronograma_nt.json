@@ -2415,6 +2415,102 @@
       "versao": "1.00"
     },
     {
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-004-v1-01",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vBP  Inclusão do grupo de informações de Multa e Juros do BPe Até 26/10/2026 16/11/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Grupo endereço do comprador opcional no BPeTA",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.004_v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ir3st/saoU0=",
+      "versao": "1.01"
+    },
+    {
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-005-sn-v1-00-svrs",
+      "linhas": [
+        {
+          "conferencia_pdf": "um_fragmento",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "26/10/2026",
+          "trecho": "1.00 Criação de campos da tributação de IBS e da CBS no Simples Nacional 26/10/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "16/11/2026",
+          "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "url": "https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&tipoArquivo=3&nomeArquivo=BPe_Nota_Tecnica_2026_005_SN_v1.00.pdf",
+      "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-005-sn-v100",
+      "linhas": [
+        {
+          "conferencia_pdf": "um_fragmento",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "26/10/2026",
+          "trecho": "1.00 Criação de campos da tributação de IBS e da CBS no Simples Nacional 26/10/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "16/11/2026",
+          "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=tsiloeZ6vBw=",
+      "versao": "1.00"
+    },
+    {
       "documento_fiscal": "CT-e/BP-e/NF3e/NFCom (NT conjunta DFe)",
       "id": "ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs",
       "linhas": [
@@ -4747,6 +4843,128 @@
       "versao": "1.00"
     },
     {
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-004-v1-01-svrs",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01  Ajuste na Data de produção da NT 2026.004 e ajuste nas regras de validação da EPEC  Alteração da estrutura do CTe Simplificado  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vTPrest  Inclusão do grupo de informações de Multa e Juros do CTe Até 26/10/2026 14/12/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Eliminação da EPEC e FSDA  Criação da emissão offline  Evento de apropriação do crédito presumido pelo tomador do serviço prestado por TAC  Alteração estrutura CTe Simplidicado",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.004 - v1.01",
+      "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_004_v1.01.pdf",
+      "versao": "1.01"
+    },
+    {
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-004-v101",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01  Ajuste na Data de produção da NT 2026.004 e ajuste nas regras de validação da EPEC  Alteração da estrutura do CTe Simplificado  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vTPrest  Inclusão do grupo de informações de Multa e Juros do CTe Até 26/10/2026 14/12/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Eliminação da EPEC e FSDA  Criação da emissão offline  Evento de apropriação do crédito presumido pelo tomador do serviço prestado por TAC  Alteração estrutura CTe Simplidicado",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=urai6j7wfLM=",
+      "versao": "1.01"
+    },
+    {
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-005-sn-v1-00-svrs",
+      "linhas": [
+        {
+          "conferencia_pdf": "um_fragmento",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "26/10/2026",
+          "trecho": "1.00 Criação de campos da tributação de IBS e da CBS no Simples Nacional 26/10/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "16/11/2026",
+          "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_005_SN_v1.00.pdf",
+      "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-005-sn-v100",
+      "linhas": [
+        {
+          "conferencia_pdf": "um_fragmento",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "26/10/2026",
+          "trecho": "1.00 Criação de campos da tributação de IBS e da CBS no Simples Nacional 26/10/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "16/11/2026",
+          "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AtaVevRXCIQ=",
+      "versao": "1.00"
+    },
+    {
       "documento_fiscal": "NF3e",
       "id": "nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a",
       "linhas": [
@@ -5167,6 +5385,41 @@
       "versao": "1.00"
     },
     {
+      "documento_fiscal": "NF3e",
+      "id": "nf3e-nota-tecnica-2026-004-v1-01",
+      "linhas": [
+        {
+          "conferencia_pdf": "um_fragmento",
+          "pagina": 3,
+          "producao": "31/12/2026",
+          "rodape": "",
+          "teste": "16/11/2026",
+          "trecho": "1.00  Descontinuidade da NF3e normal com ajuste 16/11/2026 31/12/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8THQ/UovR0U=",
+      "versao": "1.01"
+    },
+    {
       "documento_fiscal": "NFAg",
       "id": "nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00",
       "linhas": [
@@ -5303,6 +5556,32 @@
       "titulo": "Nota Técnica 2026.004 RTC",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFAG&tipoArquivo=3&nomeArquivo=NFAg_Nota_Tecnica_2026_004_v1.00.pdf",
       "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "NFAg",
+      "id": "nfag-nota-tecnica-2026-004-v1-01",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação dos campos de IBS e CBS no grupo de processo judicial  Criação dos tipos de faturamento Agregado e Agregador",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JfSmneST0Fc=",
+      "versao": "1.01"
     },
     {
       "documento_fiscal": "NFCom",
@@ -5698,6 +5977,121 @@
       "pendencias": [],
       "titulo": "Nota Técnica 2026.004 RTC",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=3&nomeArquivo=NFCom_Nota_Tecnica_2026_004_v1.00.pdf",
+      "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-004-v1-01",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Inclusão do Município do Terminal Principal",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=l1zCFp1N84c=",
+      "versao": "1.01"
+    },
+    {
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-005-v1-00",
+      "linhas": [
+        {
+          "conferencia_pdf": "um_fragmento",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "26/10/2026",
+          "trecho": "1.00 Criação de campos da tributação de IBS e da CBS no Simples Nacional 26/10/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "16/11/2026",
+          "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=MN1OY+44xXY=",
+      "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-005-v1-00-svrs",
+      "linhas": [
+        {
+          "conferencia_pdf": "um_fragmento",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "26/10/2026",
+          "trecho": "1.00 Criação de campos da tributação de IBS e da CBS no Simples Nacional 26/10/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "",
+          "teste": "16/11/2026",
+          "trecho": "1.00 Aplicação da Regras de Validação desta NT 16/11/2026 14/12/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00 Evento de Tributação do SN Implementação Futura Implementação Futura",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "url": "https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=3&nomeArquivo=NFCom_Nota_Tecnica_2026_005_v1.00.pdf",
+      "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "NF-e ABI",
+      "id": "nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00",
+      "linhas": [
+        {
+          "conferencia_pdf": "nao_achado",
+          "pagina": 3,
+          "producao": "14/12/2026",
+          "rodape": "*",
+          "teste": "30/11/2026",
+          "trecho": "1.00 Publicação da primeira versão                       30/11/2026* 14/12/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [],
+      "titulo": "Nota Técnica 2026.001 v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=vDwdfHkjfNc=",
       "versao": "1.00"
     },
     {
@@ -7605,6 +7999,161 @@
     },
     {
       "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 4,
+          "producao": "01/10/2025",
+          "rodape": "",
+          "teste": "01/07/2025",
+          "trecho": "1.01 Inserção de campos de controle e criação de eventos para utilização na apuração do IBS, CBS e IS 01/07/2025 01/10/2025",
+          "versao": "1.01"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 4,
+          "producao": "01/2026",
+          "rodape": "",
+          "teste": "01/07/2025",
+          "trecho": "1.01 Aplicação das Regras de Validação 01/07/2025 01/2026",
+          "versao": "1.01"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 4,
+          "producao": "06/10/2025",
+          "rodape": "**; *",
+          "teste": "De 07/07/2025 até 28/07/2025",
+          "trecho": "1.10** Implantação de novo schema com os campos para apuração do IBS, CBS e IS, com preenchimento opcional, conforme detalhamento do cronograma abaixo. De 07/07/2025 até 28/07/2025* 06/10/2025",
+          "versao": "1.10"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 4,
+          "producao": "06/10/2025",
+          "rodape": "**; *",
+          "teste": "De 07/07/2025 até 11/08/2025",
+          "trecho": "1.10** Aplicação das regras de validação, conforme detalhamento do cronograma abaixo. De 07/07/2025 até 11/08/2025* 06/10/2025",
+          "versao": "1.10"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 4,
+          "producao": "06/10/2025",
+          "rodape": "***",
+          "teste": "25/08/2025",
+          "trecho": "1.10 Implantação dos eventos para utilização na apuração do IBS, CBS e IS. 25/08/2025*** 06/10/2025",
+          "versao": "1.10"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 5,
+          "producao": "06/10/2025",
+          "rodape": "",
+          "teste": "08/09/2025",
+          "trecho": "1.20 Detalhamentos do cronograma, novas regras de validação e ajustes diversos. 08/09/2025 06/10/2025",
+          "versao": "1.20"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 5,
+          "producao": "10/11/2025",
+          "rodape": "",
+          "teste": "Até 29/10/2025",
+          "trecho": "1.30 Entrada do schema, das Regras de Validação e dos Eventos, com exceção das Regras de Validação listadas no item a seguir. Até 29/10/2025 10/11/2025",
+          "versao": "1.30"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 5,
+          "producao": "02/02/2026",
+          "rodape": "",
+          "teste": "Até 24/11/2025",
+          "trecho": "1.30 Entrada das seguintes Regras de Validação: B10a-10, B10a-20, B10a-30, B10a-40, B10a-50, B25-110, B25-120, I05k-10, I05k- 20, UB112-10, UB112-20, UB112-30, UB116-10, UB116-20, UB116-30, UB120-10, UB120-20, UB122-10, UB123-10, UB123- 20, UB125-10, UB126-10, UB127-10, UB127-20, UB129-10, UB130-10, UB131-10, UB131-20, UB131-30, UB131-40, UB131- 50, UB132-10, UB133-10, W59f-10, W59g-10 Até 24/11/2025 02/02/2026",
+          "versao": "1.30"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 5,
+          "producao": "17/11/2025",
+          "rodape": "",
+          "teste": "Até 14/11/2025",
+          "trecho": "1.31 Correção nas regras de validação B25-80, B25-90, B25-100, Q01- 20, S01-20, UB56-10 e VC02-30. Inclusão de observação explicativa nas regras de validação UB27- 10, UB46-10 e UB65-10, sem impacto nas validações. Até 14/11/2025 17/11/2025",
+          "versao": "1.31"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 5,
+          "producao": "04/12/2025",
+          "rodape": "",
+          "teste": "Até 01/12/2025",
+          "trecho": "1.32 Correção nas regras de validação B25b-20, 3BA02-10, 3BA02-70 e NA01-20. Até 01/12/2025  04/12/2025",
+          "versao": "1.32"
+        },
+        {
+          "conferencia_pdf": "rotulo_diverge",
+          "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.33 Correção na regra de validação UB56-10, permitindo alíquota zero para a CBS em operações específicas dentro de áreas incentivadas. Ajuste para permitir a informação do grupo de Redução de Alíquota (gRed) somente quando a alíquota for maior que zero (regras de validação: UB26-15, UB26-20, UB45-15, UB45-20, UB64-15 e UB64-20). Alteração da data de início da aplicação da regra de validação UB12-10. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.33"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 5,
+          "producao": "Até 15/12/2025",
+          "rodape": "",
+          "teste": "Até 10/12/2025",
+          "trecho": "1.34 Regras de validação desabilitadas: UB26-15, UB45-15 e UB64-15. Regras de validação alteradas: UB26-20, UB45-20, e UB64-20. Até 10/12/2025 Até 15/12/2025",
+          "versao": "1.34"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 5,
+          "producao": "03/08/2026",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
+          "trecho": "1.36 Regras de validação incluídas: I08-141. Regras de validação alteradas: I08-140, I08-144, VC02-07, VC02-10, UB18-10, UB37-10, UB56-10, B25-80 Criação de novo tipo de nota de crédito: 06=Retorno por recusa parcial na entrega. Até 01/07/2026 03/08/2026",
+          "versao": "1.36"
+        },
+        {
+          "conferencia_pdf": "rotulo_diverge",
+          "pagina": 5,
+          "producao": "03/08/2026",
+          "rodape": "",
+          "teste": "Até 01/07/2026",
+          "trecho": "1.40 Criação do campo para o Código Indicador do Local da Operação de Fornecimento (cIndOp, B25d); Atualização de valores de tpEnteGov (BB02), tpOperGov (BB04) e criação do campo refDFeAnt (BB05); Criação do campo para Inscrição Suframa do Emitente (ISUFemit, C22); Atualização dos grupos de devolução de tributos (gDevTrib) - cashback; Criação do grupo gALCZFMCBS (UB66a); Validações por cClassTrib x tipo de nota de débito e crédito; Alteração da data de início da aplicação da regra de validação UB12-10. Ajuste no layout do Evento 211110; Eliminação do Evento 211120; Regras de validação incluídas: B25d-10, B25d-20, B25d-30, BB05- 10, BB05-20, BB05-30, BB05-40, BB05-50, BB05-60, BB05-70, BB05-80, BB05-90, BB05-100, BB05-110, BB05-120, BB05-130, BB05-140, BB05-150, BB05-160, BB05-170, BB05-180, BB05- 190, BB05-200, C22-10, C22-20, UB14-60, UB14-70, UB14-80, UB24-10, UB43-10, UB56-20, UB62-10, UB62a-10, UB63-10, UB66a-10, UB66a-20, UB66c-10, UB66e-10, VC02-40, VC02-50, VC03-20; Até 01/07/2026 03/08/2026",
+          "versao": "1.40"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 5,
+          "trecho": "1.30 Início da obrigatoriedade da informação dos novos tributos (RV UB12-10) Implementação futura Implementação futura",
+          "versao": "1.30"
+        },
+        {
+          "motivo": "uma_data",
+          "pagina": 5,
+          "trecho": "1.35 Regras de validação alteradas: UB13-40, UB84a-10, UB90-10, UB94-10, UB99-10. Até 06/04/2026 Não se aplica",
+          "versao": "1.35"
+        },
+        {
+          "motivo": "sem_data",
+          "pagina": 6,
+          "trecho": "1.40 Na devolução, o referenciamento passa a ser realizado exclusivamente no grupo “DFeReferenciado” (regra de validação VC02-14)",
+          "versao": "1.40"
+        }
+      ],
+      "titulo": "Nota Técnica 2025.002 v1.53 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=BMcHSMEoepU=",
+      "versao": "1.53"
+    },
+    {
+      "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-2026-001-nf-e-v1-00-paa",
       "linhas": [
         {
@@ -7983,6 +8532,32 @@
     },
     {
       "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2026-005-v1-00-rtc-simplesnacional",
+      "linhas": [
+        {
+          "conferencia_pdf": "rotulo_diverge",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.00 Criação de campos relacionados a tributação do Simples Nacional Até 26/10/2026 16/11/2026",
+          "versao": "1.00"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00 Criação do Evento Tributação do Simples Nacional Implementação Futura Implementação Futura",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HInG7WD5Sj8=",
+      "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-2026-006-v1-00-rtc-vinculacaopagamento",
       "linhas": [
         {
@@ -8021,6 +8596,34 @@
     },
     {
       "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2026-006-v1-01-rtc-vinculacaopagamento",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "03/11/2026",
+          "rodape": "",
+          "teste": "05/10/2026",
+          "trecho": "1.00 Criação do grupo YC. Informações da vinculação da transação de pagamento do DF-e (Split Payment) e regras de validação relacionadas. Criação do Evento de Informações da Vinculação da Transação de Pagamento do DF-e (110300). 05/10/2026 03/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01 Alteração das datas de implantação em Homologação e Produção Até 26/10/2026 16/11/2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e de mais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes: • Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção; • A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027; • Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB. • O preenchimento do grupo criado nesta Nota Técnica para Vinculação da Transação de Pagamento não exclu i a obrigação de preenchimento dos campos dos grupos “YA. Informações de Pagamento” e “YB. Informações do Intermediador da Transação”, exigidos conforme legislação tributária estadual, mesmo que os grupos estejam preenchidos com os mesmos códigos do tipo de pagamento. Além disso, o Evento criado nesta Nota Técnica não substitui o Evento “Conciliação Financeira – ECONF” instituído pela Nota Técnica 2024.002, conforme legislação tributária estadual.",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [],
+      "titulo": "Nota Técnica 2026.006 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=7xf05PpO4Z0=",
+      "versao": "1.01"
+    },
+    {
+      "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt-2026-008-v1-00-rtc-valorliquidoproduto",
       "linhas": [
         {
@@ -8046,6 +8649,53 @@
       "titulo": "Nota Técnica 2026.008 v.1.00 - Publicada em 01/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=qAoMot6VyiY=",
       "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2026-008-v1-01-rtc-valorliquido",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "01/03/2027",
+          "rodape": "",
+          "teste": "01/02/2027",
+          "trecho": "1.00 - Regra de validação incluída: NB01-30. 01/02/2027 01/03/2027",
+          "versao": "1.00"
+        },
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01 - Alteração das datas de implantação em Homologação e Produção (exceto RV NB01-30) Até 26/10/2026 16/11/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "datas_demais",
+          "pagina": 3,
+          "trecho": "1.00 - Criação dos campos que representam os valores líquidos do produto. - Criação do campo para informar o ICMS previsto no Pagamento Antecipado. - Regras de validação incluídas: I11c-10, I11c-20, NB01-10, NB01-20, W01a-10, W01a-20. - Regras de validação alteradas: B25-80, VB01-10, VB01-20. - Regras de validação removidas: UB16-10. 05/10/2026 Até 26/10/2026 03/11/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.01 - Retirado item “Composição do valor do produto com informações de IBS e CBS”. - -",
+          "versao": "1.01"
+        },
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.01 - Regras de validação alteradas: VB01-10, VB01-20. Implementação Futura Implementação Futura",
+          "versao": "1.01"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.008 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=PVjdIcA/H2s=",
+      "versao": "1.01"
     },
     {
       "documento_fiscal": "NF-e/NFC-e",
@@ -8485,6 +9135,38 @@
     },
     {
       "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.11 - Alteração das datas de implantação em Homologação e Produção Até 26/10/2026 16/11/2026",
+          "versao": "1.11"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "datas_demais",
+          "pagina": 3,
+          "trecho": "1.00 - Criação e atualização campos e de Regras de Validação desta NT 01/09/2026 03/11/2026 16/11/2026",
+          "versao": "1.00"
+        },
+        {
+          "motivo": "datas_demais",
+          "pagina": 3,
+          "trecho": "1.10 - Alteração em Regras de Validação para facilitar testes em Homologação. - Correção na RV 1C17-04. Até 05/10/2026 Até 26/10/2026 03/11/2026 16/11/2026",
+          "versao": "1.10"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.007 v1.11 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HXzgTeht+5Q=",
+      "versao": "1.11"
+    },
+    {
+      "documento_fiscal": "NF-e/NFC-e",
       "id": "nfe-nt2026-009-v1-00-alteracao-rv-cfop",
       "linhas": [
         {
@@ -8608,6 +9290,32 @@
       "titulo": "Nota Técnica 2026.004 RTC",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFGAS/DownloadArquivoEstatico/?sistema=NFGAS&tipoArquivo=3&nomeArquivo=NFGas_Nota_Tecnica_2026_004_v1.00.pdf",
       "versao": "1.00"
+    },
+    {
+      "documento_fiscal": "NFGas",
+      "id": "nfgas-nota-tecnica-2026-004-v1-01",
+      "linhas": [
+        {
+          "conferencia_pdf": "confere",
+          "pagina": 3,
+          "producao": "16/11/2026",
+          "rodape": "",
+          "teste": "Até 26/10/2026",
+          "trecho": "1.01  Ajuste da data de Homologação  A regra do valor total do DFe retorna a soma de IBS e CBS a partir de 2027  Retirada orientação de inclusão de IBS e CBS na composição do vProd Até 26/10/2026 16/11/2026",
+          "versao": "1.01"
+        }
+      ],
+      "pendencias": [
+        {
+          "motivo": "sem_data",
+          "pagina": 3,
+          "trecho": "1.00  Criação dos campos que representam os valores líquidos de impostos nos itens  Exceção nas regras de validação de alíquotas para o ambiente de homologação  Ajuste na regra do valor total do DFe  Criação do Campo de previsão do ICMS para antecipação de pagamento  Ampliação das ocorrências do grupo tarifas  Inclusão de valor Mínimo no indOrigemQtd",
+          "versao": "1.00"
+        }
+      ],
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ZF+Shyl27wI=",
+      "versao": "1.01"
     },
     {
       "documento_fiscal": "NFS-e (NFS-e Via)",

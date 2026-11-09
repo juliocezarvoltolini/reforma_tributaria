@@ -1,6 +1,20 @@
 {
   "atos": [
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/medida-provisoria-1399-2026.html",
+      "data": "2026-11-04",
+      "ementa": "Estabelece alíquotas e normas complementares aplicáveis ao Imposto Seletivo para o ano-calendário de 2027, em Regime de Implementação Gradual.",
+      "id": "medida-provisoria-1399-2026",
+      "nivel": 3,
+      "numero": "1.399",
+      "orgao": "Presidência da República",
+      "sha256": "b63b8949c3878bcc4be85b8717d7105948488da2bd84d1821aacc5a742b084e1",
+      "tipo": "medida.provisoria",
+      "titulo": "MEDIDA PROVISÓRIA Nº 1.399",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/mpv/mpv1399.htm"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/decreto-12668-2025.html",
       "data": "2025-10-13",
@@ -139,6 +153,20 @@
       "tipo": "decreto",
       "titulo": "DECRETO Nº 13.133, DE 9 DE OUTUBRO DE 2026",
       "url": "https://www.in.gov.br/web/dou/-/decreto-n-13.133-de-9-de-outubro-de-2026-737756208"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/decreto-13140-2026.html",
+      "data": "2026-10-21",
+      "ementa": "Dispõe, no âmbito da União, sobre as hipóteses de dispensa de inscrição no Cadastro Nacional da Pessoa Jurídica – CNPJ e de emissão de documentos fiscais eletrônicos aplicáveis ao nanoempreendedor e ao microempreendedor individual.",
+      "id": "decreto-13140-2026",
+      "nivel": 4,
+      "numero": "13.140",
+      "orgao": "Presidência da República",
+      "sha256": "9a6189910526e06de9f2ff885eef9a374b6d915cd8c578c1be90be196c2dd117",
+      "tipo": "decreto",
+      "titulo": "DECRETO Nº 13.140",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d13140.htm"
     },
     {
       "acesso": "2026-10-20",
@@ -292,6 +320,18 @@
       "url": "https://www.cgibs.gov.br/upload/arquivos/202608/01153321-am-ato-tecnico-conjunto-rfb-e-cgibs-ratificacao-nts-dfes-revisao-assinado.pdf"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-10-2026.pdf",
+      "ementa": "Dispõe sobre a aprovação conjunta da Secretaria Especial da Receita Federal do Brasil (RFB) e do Comitê Gestor do Imposto sobre Bens e Serviços (CGIBS) da documentação técnica dos documentos fiscais que especifica.",
+      "id": "ato-tecnico-conjunto-rfb-cgibs-10-2026",
+      "nivel": 5,
+      "orgao": "RFB/CGIBS",
+      "sha256": "75ce566980581dd4092961cabc67a19e627ba24d9d2140cb72473f54a416c966",
+      "tipo": "ato.tecnico.conjunto",
+      "titulo": "ATO TÉCNICO CONJUNTO RFB/SUFIS/CGIBS/DIRETORIA-EXECUTIVA Nº 10, DE 29 DE OUTUBRO DE 2026",
+      "url": "https://www.cgibs.gov.br/upload/arquivos/202610/30102301-atc-10-vf-assinado-assinado-261030-102245.pdf"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-2-2026.pdf",
       "data": "2026-08-21",
@@ -381,6 +421,19 @@
       "tipo": "ato.tecnico.conjunto",
       "titulo": "ATO TÉCNICO CONJUNTO RFB/SUFIS/CGIBS/DIRETORIA-EXECUTIVA Nº 8, DE 29 DE SETEMBRO DE 2026",
       "url": "https://www.cgibs.gov.br/upload/arquivos/202610/01120217-nfe-nfc-cte-notas-faturas-e-demais-atc-rfb-sufis-cgibs-diretoria-executiva-n-8-de-29-de-setembro-de-2026.pdf"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/ato-tecnico-conjunto-rfb-cgibs-9-2026.pdf",
+      "data": "2026-10-20",
+      "ementa": "Dispõe sobre os trabalhos conjuntos da Secretaria Especial da Receita Federal do Brasil e da Diretoria Executiva do Comitê Gestor do Imposto sobre Bens e Serviços, destinados à implementação da reforma tributária sobre o consumo.",
+      "id": "ato-tecnico-conjunto-rfb-cgibs-9-2026",
+      "nivel": 5,
+      "orgao": "RFB/CGIBS",
+      "sha256": "4d8bb7b574b79154110cc3cb06dfd099e594695dc162b4681d43b94a543ab253",
+      "tipo": "ato.tecnico.conjunto",
+      "titulo": "ATO TÉCNICO CONJUNTO RFB/CGIBS Nº 9, DE 20 DE OUTUBRO DE 2026",
+      "url": "https://www.cgibs.gov.br/upload/arquivos/202610/26090508-20261019-atc-rfb-cgibs-nba-9-2026-assinado-29-as-261026-090221.pdf"
     },
     {
       "acesso": "2026-10-20",
@@ -567,6 +620,19 @@
       "tipo": "portaria",
       "titulo": "PORTARIA CGIBS Nº 11/2026",
       "url": "https://www.cgibs.gov.br/upload/arquivos/202610/05150102-portaria-cgibs-n-11-2026.pdf"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/portaria-cgibs-12-2026.pdf",
+      "data": "2026-11-04",
+      "ementa": "Designa equipe técnica de assessoramento à Diretoria de Tesouraria na gestão das aplicações financeiras dos recursos próprios e custodiados pelo Comitê Gestor do Imposto sobre Bens e Serviços – CGIBS.",
+      "id": "portaria-cgibs-12-2026",
+      "nivel": 5,
+      "orgao": "CGIBS",
+      "sha256": "c192bf8186588555138f70593fcdfa9f8fb67a16e7006d9ba3714ac991850f60",
+      "tipo": "portaria",
+      "titulo": "PORTARIA CGIBS Nº 12/2026, DE 04 DE NOVEMBRO DE 2026",
+      "url": "https://www.cgibs.gov.br/upload/arquivos/202611/05150204-portaria-cgibs-n-12-2026.pdf"
     },
     {
       "acesso": "2026-10-20",
@@ -1098,6 +1164,21 @@
       "url": "https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/153401/visao/vigente"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/portaria-rfb-742-2026.json",
+      "data": "2026-10-27",
+      "ementa": "Prorroga o prazo para adesão às transações de créditos tributários em contencioso administrativo fiscal de que tratam o Edital de Transação nº 9, de 13 de julho de 2026, e o Edital de Transação nº 10, de 13 de julho de 2026.",
+      "id": "portaria-rfb-742-2026",
+      "nivel": 5,
+      "numero": "742",
+      "orgao": "RFB",
+      "sha256": "6f8efffae94716395133347dbd1aaf1073139ccd8592c10f6ed3892bc4ba4b86",
+      "situacao": "Ato vigente que nunca foi alterado",
+      "tipo": "portaria",
+      "titulo": "Portaria RFB nº 742, de 27 de outubro de 2026",
+      "url": "https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/154314/visao/vigente"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/portaria-srrf03-595-2026.json",
       "data": "2026-03-23",
@@ -1462,7 +1543,7 @@
       "url": "https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/31842/visao/vigente"
     },
     {
-      "acesso": "2026-10-20",
+      "acesso": "2026-11-09",
       "arquivo": "fontes/acervo/resolucao-cgsn-140-2018.json",
       "data": "2018-05-22",
       "ementa": "Dispõe sobre o Regime Especial Unificado de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte (Simples Nacional).",
@@ -1470,7 +1551,7 @@
       "nivel": 5,
       "numero": "140",
       "orgao": "CGSN",
-      "sha256": "49009c6217b95007d174759c801577f556ebc06b19f26dba2bf639d6e232576a",
+      "sha256": "47150ed7dc93a5dd6822da2164a9b4cbb931ebef22767f0c668b852cf357d861",
       "situacao": "Ato vigente que já foi alterado",
       "tipo": "resolucao",
       "titulo": "Resolução CGSN nº 140, de 22 de maio de 2018",
@@ -1550,6 +1631,21 @@
       "tipo": "resolucao",
       "titulo": "Resolução CGSN nº 194, de 25 de setembro de 2026",
       "url": "https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/153801/visao/vigente"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/resolucao-cgsn-195-2026.json",
+      "data": "2026-10-21",
+      "ementa": "Altera a Resolução CGSN nº 140, de 22 de maio de 2018, que dispõe sobre o Regime Especial Unificado de Arrecadação de Tributos e Contribuições devidos pelas Microempresas e Empresas de Pequeno Porte - Simples Nacional.",
+      "id": "resolucao-cgsn-195-2026",
+      "nivel": 5,
+      "numero": "195",
+      "orgao": "CGSN",
+      "sha256": "ba63f6de8e74f965ee2b2c138b2b62381e4a3b6603c89cf44845050bf71b2190",
+      "situacao": "Ato vigente que nunca foi alterado",
+      "tipo": "resolucao",
+      "titulo": "Resolução CGSN nº 195, de 21 de outubro de 2026",
+      "url": "https://normasinternet2.receita.fazenda.gov.br/api/consulta-externa/ato/154194/visao/vigente"
     },
     {
       "acesso": "2026-10-20",
@@ -2144,6 +2240,51 @@
       "versao": "1.01"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/bpe-nota-tecnica-2026-004-v1-01.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-004-v1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "81bc605202f3d1b64b365aa9c5a0ccb0dc3d2ea9a7b7c1c7986cc83f9a7741d0",
+      "situacao": "Notas Técnicas / 2026",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.004_v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ir3st/saoU0=",
+      "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/bpe-nota-tecnica-2026-005-sn-v1-00-svrs.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-005-sn-v1-00-svrs",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "3a6146773f3504cde615516d572a0ec1cffa47f33f60314ce5dab1cfeddd25e0",
+      "situacao": "Notas Técnicas",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "url": "https://dfe-portal.svrs.rs.gov.br/BPE/DownloadArquivoEstatico/?sistema=BPE&tipoArquivo=3&nomeArquivo=BPe_Nota_Tecnica_2026_005_SN_v1.00.pdf",
+      "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/bpe-nota-tecnica-2026-005-sn-v100.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "BP-e (BP-e, BP-e TM, BP-e TA)",
+      "id": "bpe-nota-tecnica-2026-005-sn-v100",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "7168ca6237d4ba365505bd258b66501ad9593aedb30a59441fdbd0a93f008837",
+      "situacao": "Notas Técnicas / 2026",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=tsiloeZ6vBw=",
+      "versao": "1.00"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/bpe-pl-bpe-100b-nt2025-001-rtc-1-09.zip",
       "data": "2025-09-16",
@@ -2313,6 +2454,36 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/bpe-pl-bpe-100b-nt2026-004-rtc-1-01.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "BP-e",
+      "id": "bpe-pl-bpe-100b-nt2026-004-rtc-1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "4268d1a3df379a923e2ddf38d2ce4caaa4314e866cc3d459f6df1381cecf1ca4",
+      "situacao": "Esquemas XML",
+      "tipo": "schema",
+      "titulo": "Schemas XML BP-e - NT 2026.004_RTC_v.1.01 (Publicado em 04/11/2026)",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=oqjJXubRkb0=",
+      "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "BP-e",
+      "id": "bpe-pl-bpe-100b-nt2026-005-rtc-sn-1-00",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "f3037df108e278911f5361146ee475ae72d445849edba31df10993704e6c507b",
+      "situacao": "Esquemas XML",
+      "tipo": "schema",
+      "titulo": "Schemas XML BP-e - NT 2026.005_RTC_SN_v.1.00 (Publicado em 04/11/2026)",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ysYXxjwjYyk=",
+      "versao": "1.00"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/convenio-icms-100-26.html",
       "data": "2026-09-04",
@@ -2325,6 +2496,34 @@
       "tipo": "convenio",
       "titulo": "Convênio ICMS 100/26",
       "url": "https://www.confaz.fazenda.gov.br/legislacao/convenios/2026/CV100_26"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/convenio-icms-129-26.html",
+      "data": "2026-10-27",
+      "ementa": "Altera o Convênio ICMS nº 15, de 31 de março de 2023, que dispõe sobre o regime de tributação monofásica do ICMS a ser aplicado nas operações com gasolina e etanol anidro combustível, nos termos da Lei Complementar nº 192, de 11 de março de 2022, e estabelece procedimentos para o controle, apuração, repasse e dedução do imposto e revoga o Convênio ICMS nº 181, de 6 de dezembro de 2024, que dispõe sobre a substituição tributária nas operações com nafta não petroquímica relativos ao ICMS devido pelas operações subsequentes.",
+      "id": "convenio-icms-129-26",
+      "nivel": 6,
+      "numero": "129/26",
+      "orgao": "CONFAZ",
+      "sha256": "b6cf052e0d1762e0ddd8809830b0ded2fb0a76b31ed81763b345a14c7f20552f",
+      "tipo": "convenio",
+      "titulo": "Convênio ICMS 129/26",
+      "url": "https://www.confaz.fazenda.gov.br/legislacao/convenios/2026/CV129_26"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/convenio-icms-130-26.html",
+      "data": "2026-10-27",
+      "ementa": "Altera o Convênio ICMS nº 199, de 22 de dezembro de 2022, que dispõe sobre o regime de tributação monofásica do ICMS a ser aplicado nas operações com combustíveis nos termos da Lei Complementar nº 192, de 11 de março de 2022, e estabelece procedimentos para o controle, apuração, repasse e dedução do imposto.",
+      "id": "convenio-icms-130-26",
+      "nivel": 6,
+      "numero": "130/26",
+      "orgao": "CONFAZ",
+      "sha256": "7889ce53a085ffb06d6e0dab89ec6d848a0c3dc720e66498decf5ff0a46d6921",
+      "tipo": "convenio",
+      "titulo": "Convênio ICMS 130/26",
+      "url": "https://www.confaz.fazenda.gov.br/legislacao/convenios/2026/CV130_26"
     },
     {
       "acesso": "2026-10-20",
@@ -2702,6 +2901,66 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/cte-nota-tecnica-2026-004-v1-01-svrs.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-004-v1-01-svrs",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "942a97f41c203b33f4c2cfa28bceea28762103cc51f8ecfd6a231f4f306571bb",
+      "situacao": "Notas Técnicas",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.004 - v1.01",
+      "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_004_v1.01.pdf",
+      "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/cte-nota-tecnica-2026-004-v101.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-004-v101",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "5a45d15e462c89733e42872163f014b2c1f17788f099428220ad037bbe3b7743",
+      "situacao": "Notas Técnicas / 2026",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=urai6j7wfLM=",
+      "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/cte-nota-tecnica-2026-005-sn-v1-00-svrs.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-005-sn-v1-00-svrs",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "5d3524903096bde91c7487b0d0a92d46f6e964d585fa32680fb91e8a0987da20",
+      "situacao": "Notas Técnicas",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=3&nomeArquivo=CTe_Nota_Tecnica_2026_005_SN_v1.00.pdf",
+      "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/cte-nota-tecnica-2026-005-sn-v100.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-nota-tecnica-2026-005-sn-v100",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "3df8ab6a7f055fee3882c3c7b2d1ae4d61e966f7fb0273b145dd0867942ba766",
+      "situacao": "Notas Técnicas / 2026",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.005_v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=AtaVevRXCIQ=",
+      "versao": "1.00"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/cte-pl-cte-400-nt2025-001-rtc-1-01.zip",
       "data": "2025-04-14",
@@ -2996,6 +3255,51 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/cte-pl-cte-400-nt2026-004-rtc-1-01.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-pl-cte-400-nt2026-004-rtc-1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "91825f649ffa4cbce197fe1c8555696c08417cee3f18d2e9340b7a6c0eab8f95",
+      "situacao": "Esquemas XML",
+      "tipo": "schema",
+      "titulo": "Schemas XML CT-e - NT 2026.004_RTC_ v.1.01 (Publicado em 04/11/2026)",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=QwdGTKSlBAQ=",
+      "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/cte-pl-cte-400-nt2026-005-rtc-sn-1-00.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "31cf4c4bc66b897100eeb52cd24ea7d8dd04ba3a652ebff06734f48af0d876de",
+      "situacao": "Esquemas XML",
+      "tipo": "schema",
+      "titulo": "Schemas XML CT-e - NT 2026.005_RTC_ SN_v.1.00 (Publicado em 04/11/2026)",
+      "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=jLXuXo1j17A=",
+      "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs.zip",
+      "data": "2026-11-02",
+      "documento_fiscal": "CT-e/CT-e OS",
+      "id": "cte-pl-cte-400-nt2026-005-rtc-sn-1-00-svrs",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "5e6f008d0421a85342272edb0f5018cd57d4f6ba6aca56ff2f67a84270d2b163",
+      "situacao": "Schemas",
+      "tipo": "schema",
+      "titulo": "Schemas NT 2026.005 SN",
+      "url": "https://dfe-portal.svrs.rs.gov.br/CTE/DownloadArquivoEstatico/?sistema=CTE&tipoArquivo=2&nomeArquivo=PL_CTe_400_NT2026.005%20RTC%20SN_1.00.zip",
+      "versao": "1.00"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a.pdf",
       "data": "2026-03-12",
@@ -3086,6 +3390,21 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nf3e-nota-tecnica-2026-004-v1-01.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF3e",
+      "id": "nf3e-nota-tecnica-2026-004-v1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "3da81975d95070e7331cde13b7d5f8fb516af5aca0d88f65c4b3f690f66b03c8",
+      "situacao": "Notas Técnicas / Documentos Vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=8THQ/UovR0U=",
+      "versao": "1.01"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nf3e-pl-nf3e-1-00a-nt2025-001-rtc-1-14.zip",
       "data": "2026-03-13",
@@ -3159,6 +3478,21 @@
       "titulo": "Esquema XML NF3e - Pacote de Liberação NT 2026.004 v.1.00 (ZIP) - Publicado em 05/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=QBOC2idkdlk=",
       "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "NF3e",
+      "id": "nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "15f0c12d042bfa805bf4d8d697a633a79abe8a5db2a75e74f9d43bf360cd34f4",
+      "situacao": "Esquemas XML / VERSÕES OFICIAIS (em uso)",
+      "tipo": "schema",
+      "titulo": "Esquema XML  NF3e - Pacote de Liberação NT 2026.004 v.1.01 (ZIP)  - Publicado em 04/11/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OGLCqoR/cLo=",
+      "versao": "1.01"
     },
     {
       "acesso": "2026-10-20",
@@ -3249,6 +3583,21 @@
       "titulo": "Nota Técnica 2026.004 RTC",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFAG&tipoArquivo=3&nomeArquivo=NFAg_Nota_Tecnica_2026_004_v1.00.pdf",
       "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfag-nota-tecnica-2026-004-v1-01.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NFAg",
+      "id": "nfag-nota-tecnica-2026-004-v1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "2fee7823f80b731f9dae7cd7bb66b2c8a532f387f7b48d1364492a15af41b154",
+      "situacao": "Notas Técnicas / Documentos Vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=JfSmneST0Fc=",
+      "versao": "1.01"
     },
     {
       "acesso": "2026-10-20",
@@ -3415,6 +3764,21 @@
       "url": "https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFAG&tipoArquivo=2&nomeArquivo=PL_NFAg_NT2026.004%20RTC_1.00_correcao.zip"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfag-pl-nfag-nt2026-004-rtc-1-01.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "NFAg",
+      "id": "nfag-pl-nfag-nt2026-004-rtc-1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "b2a6d77da9ce288d5b16e38ab84071f61fa344dc988bc5f3f7cb3a7f67b703cc",
+      "situacao": "Esquemas XML / VERSÕES OFICIAIS (em uso)",
+      "tipo": "schema",
+      "titulo": "Esquema XML NFAg - Pacote de Liberação NT 2026.004 v.1.01 (ZIP) - Publicado em 04/11/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=6BTfSAN9Umc=",
+      "versao": "1.01"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a.pdf",
       "data": "2026-03-12",
@@ -3505,6 +3869,51 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfcom-nota-tecnica-2026-004-v1-01.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-004-v1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "44df3269c835fa60fdb2ed1bfec5b9b3ea9123ace11cd942b610848089fd70fe",
+      "situacao": "Notas Técnicas / Documentos Vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=l1zCFp1N84c=",
+      "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfcom-nota-tecnica-2026-005-v1-00.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-005-v1-00",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "6b295817deb451f789093ebffbd51c30fd82dea4797921c06e7b94af11cdfbbc",
+      "situacao": "Notas Técnicas / Documentos Vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=MN1OY+44xXY=",
+      "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfcom-nota-tecnica-2026-005-v1-00-svrs.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-nota-tecnica-2026-005-v1-00-svrs",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "f8dd2b80bf16030599a827b06294492544ac34398bc5fdf0794b0740d8e6f681",
+      "situacao": "Notas Técnicas",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.005 - Simples Nacional",
+      "url": "https://dfe-portal.svrs.rs.gov.br/NFCOM/DownloadArquivoEstatico/?sistema=NFCOM&tipoArquivo=3&nomeArquivo=NFCom_Nota_Tecnica_2026_005_v1.00.pdf",
+      "versao": "1.00"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nfcom-pl-nfcom-1-00-nt2025-001-rtc-1-14.zip",
       "data": "2026-05-12",
@@ -3574,6 +3983,81 @@
       "titulo": "Esquema XML NFCom - Pacote de Liberação NT 2026.004 v.1.00 (ZIP) - Publicado em 05/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=vQ4Xq950sfM=",
       "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-01.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "b2edf3435c0227eca4f86db71f88933eaca64b25fc1922ccf7d7bb6304baecd4",
+      "situacao": "Esquemas XML / VERSÕES OFICIAIS (em uso)",
+      "tipo": "schema",
+      "titulo": "Esquema XML  NFCom - Pacote de Liberação NT 2026.004 v.1.01 (ZIP) - Publicado em 04/11/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=K1diCZP4Njw=",
+      "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "NFCom",
+      "id": "nfcom-pl-nfcom-1-00-nt2026-005-rtc-sn-1-00",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "88b84bd46f0142a768149dc697c27a9dee0e9ab8d340933cfd0735f5ae93f891",
+      "situacao": "Esquemas XML / VERSÕES OFICIAIS (em uso)",
+      "tipo": "schema",
+      "titulo": "Esquema XML  NFCom - Pacote de Liberação NT 2026.005 v.1.00 (ZIP) - Publicado em 04/11/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Sx6EKb5CQA8=",
+      "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-abi-nfeabi-informe-tecnico-nfe-abi-2026-003-v1.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e ABI",
+      "id": "nfe-abi-nfeabi-informe-tecnico-nfe-abi-2026-003-v1",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "2118c85b0d7a03fa2daccc65c1ccdf7cff2cdd052d95261e49bd6f95167f0581",
+      "situacao": "Informes Técnicos / Documentos vigentes",
+      "tipo": "informe.tecnico",
+      "titulo": "Informe Técnico 2026.003 v1.00 - Publicado em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ubZJ18I0T78=",
+      "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e ABI",
+      "id": "nfe-abi-nfeabi-nt-2026-001-ajustes-no-leiaute-e-nas-regras-de-validacao-v1-00",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "98cae11e3efd288a5ead4e6b455eca3ed75998ec27450c0507d9873228355d4c",
+      "situacao": "Notas Técnicas",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.001 v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=vDwdfHkjfNc=",
+      "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-abi-nfeabi-tabela-de-codigos-nfe-abi-v1-01.xlsx",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e ABI",
+      "id": "nfe-abi-nfeabi-tabela-de-codigos-nfe-abi-v1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "b37c21fd847d4b397622e72c6765ed9470dbec7cf941751ae04d42adb5b11ece",
+      "situacao": "Diversos / Vigentes",
+      "tipo": "leiaute",
+      "titulo": "Tabela de Códigos da NF-e ABI v.1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=DZxZuO1uSu4=",
+      "versao": "1.01"
     },
     {
       "acesso": "2026-10-20",
@@ -3859,6 +4343,21 @@
       "titulo": "Informe Técnico 2025.002 v.1.60 - Publicado em 23/06/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=jxTMMQeEVM8=",
       "versao": "1.60"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-it-2025-002-v-1-71-tabelas-de-classificacao-do-ibs-e-da-cbs.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "Vários DF-e (tabelas nacionais do IBS/CBS)",
+      "id": "nfe-it-2025-002-v-1-71-tabelas-de-classificacao-do-ibs-e-da-cbs",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "96fb4d462e5973096534e7c3cfef77b2ca1054bff5a4237a2c2a74726e162da1",
+      "situacao": "Informes Técnicos / Documentos vigentes",
+      "tipo": "informe.tecnico",
+      "titulo": "Informe Técnico 2025.002 v1.71 - Publicado em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=WYEtloOC2CQ=",
+      "versao": "1.71"
     },
     {
       "acesso": "2026-10-20",
@@ -4191,6 +4690,21 @@
       "versao": "1.52"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2025-002-v1-53-rtc-nf-e-ibs-cbs-is",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "d62445d7429806b0403b44818e252fea16107794319a029ac7025017e5f4e34c",
+      "situacao": "Notas Técnicas / Documentos vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2025.002 v1.53 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=BMcHSMEoepU=",
+      "versao": "1.53"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nfe-nt-2026-001-nf-e-v1-00-paa.pdf",
       "data": "2026-04-22",
@@ -4326,6 +4840,21 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-nt-2026-005-v1-00-rtc-simplesnacional.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2026-005-v1-00-rtc-simplesnacional",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "5219882256663336301c0daa36e9d4bcece49b15f100025b39c9cf913055b85e",
+      "situacao": "Notas Técnicas / Documentos vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.005 v1.00 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HInG7WD5Sj8=",
+      "versao": "1.00"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nfe-nt-2026-006-v1-00-rtc-vinculacaopagamento.pdf",
       "data": "2026-08-25",
@@ -4356,6 +4885,21 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-nt-2026-006-v1-01-rtc-vinculacaopagamento.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2026-006-v1-01-rtc-vinculacaopagamento",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "2c5770b54d19b66ff61200fad20d1a4373b71a48d42f0ee5e005e808ce0eb206",
+      "situacao": "Notas Técnicas / Documentos vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.006 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=7xf05PpO4Z0=",
+      "versao": "1.01"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nfe-nt-2026-008-v1-00-rtc-valorliquidoproduto.pdf",
       "data": "2026-10-01",
@@ -4369,6 +4913,21 @@
       "titulo": "Nota Técnica 2026.008 v.1.00 - Publicada em 01/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=qAoMot6VyiY=",
       "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-nt-2026-008-v1-01-rtc-valorliquido.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt-2026-008-v1-01-rtc-valorliquido",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "8134a3f1f460650262ce359566b7993ac3503037f24b223a4c8c53b237b50090",
+      "situacao": "Notas Técnicas / Documentos vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.008 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=PVjdIcA/H2s=",
+      "versao": "1.01"
     },
     {
       "acesso": "2026-10-20",
@@ -4474,6 +5033,21 @@
       "titulo": "Nota Técnica 2026.007 v.1.10 - Publicada em 01/10/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=fpJlwzhffcQ=",
       "versao": "1.10"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-nt2026-007-v1-11-emissao-nf-e-sem-ie",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "b13006ce48488111ac077356e137817545957db6748cdf41a3eeea21818dd4e8",
+      "situacao": "Notas Técnicas / Documentos vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.007 v1.11 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=HXzgTeht+5Q=",
+      "versao": "1.11"
     },
     {
       "acesso": "2026-10-20",
@@ -4671,6 +5245,20 @@
       "versao": "1.50"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-pl-010g-v1-03.zip",
+      "documento_fiscal": "NF-e/NFC-e",
+      "id": "nfe-pl-010g-v1-03",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "b329ecbe7e4c05a41bfbc1527f105defb7047328acfeada7c77e1666da485eaf",
+      "situacao": "Esquemas XML / VERSÕES OFICIAIS (em uso)",
+      "tipo": "schema",
+      "titulo": "Schemas XML NF-e - Pacote de Liberação nº 010g v.1.03 - NT 2026.006 v.1.00 e NT 2026.008 v.1.00 (Publicado em 26/10/26)",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=EQhOQMgipXY=",
+      "versao": "1.03"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nfe-schema-evento-211110-nt2025-002-v1-40.zip",
       "data": "2026-07-23",
@@ -4684,6 +5272,21 @@
       "titulo": "Evento 211110 - NT 2025.002 v1.40",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFE/DownloadArquivoEstatico/?sistema=NFE&tipoArquivo=2&nomeArquivo=Schema_Evento_211110_NT2025.002%20v1.40.zip",
       "versao": "1.40"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfe-tabela-it-2025-002-v-1-71-cclasstrib.xlsx",
+      "data": "2026-10-30",
+      "documento_fiscal": "Vários DF-e (tabelas nacionais do IBS/CBS)",
+      "id": "nfe-tabela-it-2025-002-v-1-71-cclasstrib",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "d104ce4df4d2fd8ea6329ce794d8d8ce03855f3adc1692b99f5446d87c4c71f8",
+      "situacao": "Diversos / Vigentes",
+      "tipo": "leiaute",
+      "titulo": "Tabela de Classificação Tributária do IBS e CBS - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Lt6DZCZap0g=",
+      "versao": "1.71"
     },
     {
       "acesso": "2026-10-20",
@@ -4759,6 +5362,21 @@
       "titulo": "Nota Técnica 2026.004 RTC",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFGAS/DownloadArquivoEstatico/?sistema=NFGAS&tipoArquivo=3&nomeArquivo=NFGas_Nota_Tecnica_2026_004_v1.00.pdf",
       "versao": "1.00"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfgas-nota-tecnica-2026-004-v1-01.pdf",
+      "data": "2026-10-30",
+      "documento_fiscal": "NFGas",
+      "id": "nfgas-nota-tecnica-2026-004-v1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "be8f7ea6621381b2eed3e017f52d2c42050320824c78ae7a1ca59df45168d62a",
+      "situacao": "Notas Técnicas / Documentos Vigentes",
+      "tipo": "nota.tecnica",
+      "titulo": "Nota Técnica 2026.004 v1.01 - Publicada em 30/10/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ZF+Shyl27wI=",
+      "versao": "1.01"
     },
     {
       "acesso": "2026-10-20",
@@ -4896,6 +5514,21 @@
       "versao": "1.00"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfgas-pl-nfgas-nt2026-004-rtc-1-01.zip",
+      "data": "2026-11-04",
+      "documento_fiscal": "NFGas",
+      "id": "nfgas-pl-nfgas-nt2026-004-rtc-1-01",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "bc2e83ea5c9021177ab6156404bbbfcffab5ce49bc0486487fbbadeae86dd0b1",
+      "situacao": "Esquemas XML / VERSÕES OFICIAIS (em uso)",
+      "tipo": "schema",
+      "titulo": "Schemas XML  NFGas - Pacote de Liberação NT 2026.004 v.1.01 (ZIP) - Publicado em 04/11/2026",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=DPkX3LKKVdA=",
+      "versao": "1.01"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/nfs-e-nfs-e-via-esquemas-xsd-versao-1-01-atualizado.zip",
       "documento_fiscal": "NFS-e (NFS-e Via)",
@@ -4977,6 +5610,51 @@
       "titulo": "ANEXO_C-INDOP_IBSCBS-SNNFSe-v1.01",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo-c-indop-ibscbs-snnfse-v1-01.xlsx",
       "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfse-anexo-i-sefin-adn-dps-nfse-snnfse-prodrest-v1-01-20261020.xlsx",
+      "data": "2026-10-20",
+      "documento_fiscal": "NFS-e",
+      "id": "nfse-anexo-i-sefin-adn-dps-nfse-snnfse-prodrest-v1-01-20261020",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "72b05981c8882cdd807f3acf901b669465360f9cf1b9d9e235ac4363dacfb2d8",
+      "situacao": "Documentação Técnica (Homologação/testes)",
+      "tipo": "leiaute",
+      "titulo": "ANEXO_I-SEFIN_ADN-DPS_NFSe-SNNFSe-PRODREST-v1.01-20261020",
+      "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita/anexo_i-sefin_adn-dps_nfse-snnfse_prodrest-v1-01-20261020.xlsx",
+      "versao": "v1.01-20261020"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfse-anexo-i-sefin-adn-dps-nfse-snnfse-v1-01-20260209.xlsx",
+      "data": "2026-02-12",
+      "documento_fiscal": "NFS-e",
+      "id": "nfse-anexo-i-sefin-adn-dps-nfse-snnfse-v1-01-20260209",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "de5bc492959eadc8bfa7540e16939995924f2188f743648eaf84d3b31e9eeb7c",
+      "situacao": "Documentação Atual (Produção)",
+      "tipo": "leiaute",
+      "titulo": "ANEXO_I-SEFIN_ADN-DPS_NFSe-SNNFSe-v1.01-20260209",
+      "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual/anexo_i-sefin_adn-dps_nfse-snnfse-v1-01-20260209.xlsx",
+      "versao": "v1.01-20260209"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfse-anexo-viii-tabela-correlacao-v01-02-00-20261026.xlsx",
+      "data": "2026-10-26",
+      "documento_fiscal": "NFS-e",
+      "id": "nfse-anexo-viii-tabela-correlacao-v01-02-00-20261026",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "12cc80bc92687856b47e961b98cdbaa3f8cae568c099b3ef71994e73482ac7d0",
+      "situacao": "RTC",
+      "tipo": "leiaute",
+      "titulo": "Anexo VIII versão 1.02.00 (26/10/2026) - Correlação entre Item de Serv., NBS, cClassTrib e cIndOp (AnexoVII)",
+      "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexo_viii-tabela-correlacao-v01-02-00-20261026.xlsx",
+      "versao": "1.02.00"
     },
     {
       "acesso": "2026-10-20",
@@ -5098,6 +5776,21 @@
       "titulo": "AnexoVIII versão 1.01.00 - Correlação entre Item de Serv., NBS, cClassTrib e cIndOp (AnexoVII)",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/anexoviii-correlacaoitemnbsindopcclasstrib_ibscbs_v1-01-00.xlsx",
       "versao": "1.01"
+    },
+    {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfse-esquemas-prod-restrita-20261020.zip",
+      "data": "2026-10-20",
+      "documento_fiscal": "NFS-e",
+      "id": "nfse-esquemas-prod-restrita-20261020",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "25fdcecc651a67a216496ab10d7566631e6ed10f721e37d62c7845dadb0ea267",
+      "situacao": "Documentação Técnica (Homologação/testes)",
+      "tipo": "schema",
+      "titulo": "NFSe-ESQUEMAS_XSD-PRODREST-v1.01-20261020",
+      "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita/esquemas_prod_restrita_20261020.zip",
+      "versao": "v1.01-20261020"
     },
     {
       "acesso": "2026-10-20",
@@ -5254,6 +5947,21 @@
       "versao": "1.01"
     },
     {
+      "acesso": "2026-11-09",
+      "arquivo": "fontes/acervo/nfse-via-anexo-iv-leiautesrn-adn-snnfsevia-v1-00-05.xlsx",
+      "data": "2026-10-13",
+      "documento_fiscal": "NFS-e Via",
+      "id": "nfse-via-anexo-iv-leiautesrn-adn-snnfsevia-v1-00-05",
+      "nivel": 6,
+      "orgao": "ENCAT/RFB/CGIBS e administrações do DF-e (portal oficial)",
+      "sha256": "ab37255cd235695e46007488d42c87290854d081a48ab5761828e471c816cb07",
+      "situacao": "NFS-e Via / Manuais e anexos; Leiautes",
+      "tipo": "leiaute",
+      "titulo": "Anexo IV - Leiautes RN ADN - versão 1.00.05",
+      "url": "https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/manuais-e-anexos/anexo-iv-leiautesrn_adn-snnfsevia_v1-00-05.xlsx",
+      "versao": "1.00.05"
+    },
+    {
       "acesso": "2026-10-20",
       "arquivo": "fontes/acervo/comunicado-cgibs-1-2025.pdf",
       "data": "2025-11-20",
@@ -5339,28 +6047,29 @@
     }
   ],
   "totais": {
-    "arquivados": 370,
+    "arquivados": 418,
     "bloqueados": 0,
     "por_tipo": {
       "ajuste.sinief": 6,
       "ato.conjunto": 6,
       "ato.cotepe": 10,
       "ato.declaratorio": 4,
-      "ato.tecnico.conjunto": 8,
+      "ato.tecnico.conjunto": 10,
       "comunicado": 2,
-      "convenio": 1,
-      "decreto": 10,
+      "convenio": 3,
+      "decreto": 11,
       "edital": 3,
-      "informe.tecnico": 20,
+      "informe.tecnico": 22,
       "instrucao.normativa": 6,
-      "leiaute": 11,
+      "leiaute": 17,
+      "medida.provisoria": 1,
       "nota": 3,
-      "nota.tecnica": 115,
-      "portaria": 45,
+      "nota.tecnica": 134,
+      "portaria": 47,
       "recomendacao": 1,
-      "resolucao": 31,
+      "resolucao": 32,
       "retificacao": 2,
-      "schema": 86
+      "schema": 98
     }
   }
 }
