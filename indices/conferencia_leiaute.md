@@ -2,63 +2,63 @@
 
 Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os schemas (XSD) do mesmo documento fiscal. 'pacote' e o que mais confere, nao o oficialmente correspondente. Divergencia e informacao, nao erro: a NT pode ser mais nova ou mais antiga que o pacote.
 
-| NT | versão | pacote comparado | confere | diverge | ausente |
-|---|---|---|---|---|---|
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | bpe-pl-bpe-100b-nt2025-001-rtc-1-09 | 55 | 0 | 27 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | bpe-pl-bpe-100b-nt2025-001-rtc-1-09 | 54 | 0 | 34 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a | 1.12 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 | 1.13 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a | 1.13a | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 |
-| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 |
-| bpe-bpe-nota-tecnica-2026-002-v1-00 | 1.00 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 64 | 0 | 0 |
-| bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 64 | 0 | 0 |
-| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs | 1.00 | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 17 | 0 | 71 |
-| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10 | 1.10 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 27 | 0 | 62 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-00 | 1.00 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 47 | 0 | 18 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-01 | 1.01 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 55 | 0 | 1 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-02 | 1.02 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 55 | 0 | 1 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-03 | 1.03 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 56 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-04 | 1.04 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 56 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-05 | 1.05 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 62 | 0 | 1 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-05a | 1.05a | cte-pl-cte-400-nt2025-001-rtc-1-09 | 62 | 0 | 1 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-05b | 1.05b | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-06 | 1.06 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-07 | 1.07 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-08 | 1.08 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-08a | 1.08a | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 62 | 0 | 4 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 |
-| cte-cte-nota-tecnica-2025-001-rtc-v1-14b | 1.14b | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 |
-| cte-cte-nota-tecnica-2026-002-v1-00 | 1.00 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 |
-| cte-cte-nota-tecnica-2026-002-v1-01 | 1.01 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 |
-| cte-cte-nota-tecnica-2026-004-v1-00 | 1.00 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 18 | 0 | 0 |
-| nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00 | 47 | 0 | 27 |
-| nf3e-nf3e-nota-tecnica-2026-002-v1-01 | 1.01 | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00 | 64 | 0 | 0 |
-| nfag-nfag-nota-tecnica-2026-002-v1-00 | 1.00 | nfag-pl-nfag-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 |
-| nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 47 | 0 | 27 |
-| nfcom-nfcom-nota-tecnica-2026-002-v1-01a | 1.01a | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 64 | 0 | 0 |
-| nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final | 1.10 | nfe-pl-010b-nt2025-002-v1-00 | 36 | 1 | 45 |
-| nfe-nt-2025-002-v1-00-rtc-nf-e-ibs-cbs-is | 1.00 | nfe-pl-010b-nt2025-002-v1-00 | 47 | 3 | 42 |
-| nfe-nt-2025-002-v1-01-rtc-nf-e-ibs-cbs-is | 1.01 | nfe-pl-010b-nt2025-002-v1-00 | 74 | 0 | 9 |
-| nfe-nt-2025-002-v1-10-rtc-nf-e-ibs-cbs-is | 1.10 | nfe-pl-010b-nt2025-002-v1-21 | 88 | 0 | 9 |
-| nfe-nt-2025-002-v1-20-rtc-nf-e-ibs-cbs-is | 1.20 | nfe-pl-010b-nt2025-002-v1-21 | 92 | 0 | 0 |
-| nfe-nt-2025-002-v1-30-rtc-nf-e-ibs-cbs-is | 1.30 | nfe-pl-010e-v1-02 | 102 | 2 | 10 |
-| nfe-nt-2025-002-v1-31-rtc-nf-e-ibs-cbs-is | 1.31 | nfe-pl-010e-v1-02 | 102 | 2 | 10 |
-| nfe-nt-2025-002-v1-32-rtc-nf-e-ibs-cbs-is | 1.32 | nfe-pl-010e-v1-02 | 102 | 0 | 0 |
-| nfe-nt-2025-002-v1-33-rtc-nf-e-ibs-cbs-is | 1.33 | nfe-pl-010e-v1-02 | 102 | 0 | 0 |
-| nfe-nt-2025-002-v1-34-rtc-nf-e-ibs-cbs-is | 1.34 | nfe-pl-010e-v1-02 | 102 | 0 | 0 |
-| nfe-nt-2025-002-v1-35-rtc-nf-e-ibs-cbs-is | 1.35 | nfe-pl-010e-v1-02 | 102 | 0 | 0 |
-| nfe-nt-2025-002-v1-36-rtc-nf-e-ibs-cbs-is | 1.36 | nfe-pl-010e-v1-02 | 102 | 0 | 0 |
-| nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final | 1.40 | nfe-pl-010e-v1-02 | 102 | 0 | 0 |
-| nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is | 1.50 | nfe-pl-010e-v1-02 | 101 | 0 | 0 |
-| nfe-nt-2025-002-v1-51-rtc | 1.51 | nfe-pl-010e-v1-02 | 101 | 0 | 0 |
-| nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is | 1.52 | nfe-pl-010f-v1-04 | 87 | 0 | 0 |
-| nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo | 1.0 | (nenhum) | 0 | 0 | 99 |
-| nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c | 1.0 | (nenhum) | 0 | 0 | 99 |
-| nfgas-nfgas-nota-tecnica-2026-002-v1-00 | 1.00 | nfgas-pl-nfgas-nt2026-004-rtc-1-00 | 64 | 0 | 0 |
+| NT | versão | pacote comparado | confere | diverge | ausente | tamanho confere | tamanho diverge | tamanho não comparável |
+|---|---|---|---|---|---|---|---|---|
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | bpe-pl-bpe-100b-nt2025-001-rtc-1-09 | 55 | 0 | 27 | 41 | 0 | 14 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | bpe-pl-bpe-100b-nt2025-001-rtc-1-09 | 54 | 0 | 34 | 40 | 0 | 14 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-12a | 1.12 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13 | 1.13 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-13a | 1.13a | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 45 | 0 | 29 | 32 | 0 | 13 |
+| bpe-bpe-nota-tecnica-2026-002-v1-00 | 1.00 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | bpe-pl-bpe-100b-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs | 1.00 | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 17 | 0 | 71 | 7 | 0 | 10 |
+| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10 | 1.10 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 27 | 0 | 62 | 13 | 0 | 14 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-00 | 1.00 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 47 | 0 | 18 | 30 | 0 | 17 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-01 | 1.01 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 55 | 0 | 1 | 37 | 0 | 18 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-02 | 1.02 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 55 | 0 | 1 | 37 | 0 | 18 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-03 | 1.03 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 56 | 0 | 0 | 38 | 0 | 18 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-04 | 1.04 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 56 | 0 | 0 | 38 | 0 | 18 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-05 | 1.05 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 62 | 0 | 1 | 43 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-05a | 1.05a | cte-pl-cte-400-nt2025-001-rtc-1-09 | 62 | 0 | 1 | 43 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-05b | 1.05b | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-06 | 1.06 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-07 | 1.07 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-08 | 1.08 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-08a | 1.08a | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-09 | 1.09 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 63 | 0 | 0 | 44 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-10 | 1.10 | cte-pl-cte-400-nt2025-001-rtc-1-09 | 62 | 0 | 4 | 43 | 0 | 19 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-14 | 1.14 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 | 39 | 0 | 17 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 | 39 | 0 | 17 |
+| cte-cte-nota-tecnica-2025-001-rtc-v1-14b | 1.14b | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 56 | 0 | 0 | 39 | 0 | 17 |
+| cte-cte-nota-tecnica-2026-002-v1-00 | 1.00 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 | 46 | 0 | 18 |
+| cte-cte-nota-tecnica-2026-002-v1-01 | 1.01 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 | 46 | 0 | 18 |
+| cte-cte-nota-tecnica-2026-004-v1-00 | 1.00 | cte-pl-cte-400-nt2026-004-rtc-1-00-correcao | 18 | 0 | 0 | 13 | 0 | 5 |
+| nf3e-nf3e-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00 | 47 | 0 | 27 | 34 | 0 | 13 |
+| nf3e-nf3e-nota-tecnica-2026-002-v1-01 | 1.01 | nf3e-pl-nf3e-1-00a-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| nfag-nfag-nota-tecnica-2026-002-v1-00 | 1.00 | nfag-pl-nfag-nt2026-004-rtc-1-00-correcao | 64 | 0 | 0 | 46 | 0 | 18 |
+| nfcom-nfcom-nota-tecnica-2025-001-rtc-v1-14a | 1.14a | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 47 | 0 | 27 | 34 | 0 | 13 |
+| nfcom-nfcom-nota-tecnica-2026-002-v1-01a | 1.01a | nfcom-pl-nfcom-1-00-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
+| nfe-nt-2024-002-nfe-v1-10-ibs-cbs-e-imposto-seletivo-final | 1.10 | nfe-pl-010b-nt2025-002-v1-00 | 36 | 1 | 45 | 22 | 3 | 12 |
+| nfe-nt-2025-002-v1-00-rtc-nf-e-ibs-cbs-is | 1.00 | nfe-pl-010b-nt2025-002-v1-00 | 47 | 3 | 42 | 33 | 3 | 14 |
+| nfe-nt-2025-002-v1-01-rtc-nf-e-ibs-cbs-is | 1.01 | nfe-pl-010b-nt2025-002-v1-00 | 74 | 0 | 9 | 50 | 3 | 21 |
+| nfe-nt-2025-002-v1-10-rtc-nf-e-ibs-cbs-is | 1.10 | nfe-pl-010b-nt2025-002-v1-21 | 88 | 0 | 9 | 62 | 2 | 24 |
+| nfe-nt-2025-002-v1-20-rtc-nf-e-ibs-cbs-is | 1.20 | nfe-pl-010b-nt2025-002-v1-21 | 92 | 0 | 0 | 65 | 2 | 25 |
+| nfe-nt-2025-002-v1-30-rtc-nf-e-ibs-cbs-is | 1.30 | nfe-pl-010e-v1-02 | 102 | 2 | 10 | 75 | 0 | 29 |
+| nfe-nt-2025-002-v1-31-rtc-nf-e-ibs-cbs-is | 1.31 | nfe-pl-010e-v1-02 | 102 | 2 | 10 | 75 | 0 | 29 |
+| nfe-nt-2025-002-v1-32-rtc-nf-e-ibs-cbs-is | 1.32 | nfe-pl-010e-v1-02 | 102 | 0 | 0 | 74 | 0 | 28 |
+| nfe-nt-2025-002-v1-33-rtc-nf-e-ibs-cbs-is | 1.33 | nfe-pl-010e-v1-02 | 102 | 0 | 0 | 74 | 0 | 28 |
+| nfe-nt-2025-002-v1-34-rtc-nf-e-ibs-cbs-is | 1.34 | nfe-pl-010e-v1-02 | 102 | 0 | 0 | 74 | 0 | 28 |
+| nfe-nt-2025-002-v1-35-rtc-nf-e-ibs-cbs-is | 1.35 | nfe-pl-010e-v1-02 | 102 | 0 | 0 | 74 | 0 | 28 |
+| nfe-nt-2025-002-v1-36-rtc-nf-e-ibs-cbs-is | 1.36 | nfe-pl-010e-v1-02 | 102 | 0 | 0 | 74 | 0 | 28 |
+| nfe-nt-2025-002-v1-40-rtc-nf-e-ibs-cbs-is-final | 1.40 | nfe-pl-010e-v1-02 | 102 | 0 | 0 | 74 | 0 | 28 |
+| nfe-nt-2025-002-v1-50-rtc-nf-e-ibs-cbs-is | 1.50 | nfe-pl-010e-v1-02 | 101 | 0 | 0 | 72 | 0 | 29 |
+| nfe-nt-2025-002-v1-51-rtc | 1.51 | nfe-pl-010e-v1-02 | 101 | 0 | 0 | 72 | 0 | 29 |
+| nfe-nt-2025-002-v1-52-rtc-nf-e-ibs-cbs-is | 1.52 | nfe-pl-010f-v1-04 | 87 | 0 | 0 | 59 | 0 | 28 |
+| nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo | 1.0 | (nenhum) | 0 | 0 | 99 | 0 | 0 | 0 |
+| nfe-nt-rt-2024-002-nf-e-e-nfc-e-v1-00-ibs-cbs-e-imposto-seletivo-8b75d14c | 1.0 | (nenhum) | 0 | 0 | 99 | 0 | 0 | 0 |
+| nfgas-nfgas-nota-tecnica-2026-002-v1-00 | 1.00 | nfgas-pl-nfgas-nt2026-004-rtc-1-00 | 64 | 0 | 0 | 46 | 0 | 18 |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 (versão 1.09) × bpe-pl-bpe-100b-nt2025-001-rtc-1-09
 
@@ -578,6 +578,9 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.26 `IBSCBSSelTot/gIBS/vCredPresCondSus/vDevTrib` ocorrência 1-1: ausente_no_schema
 - p.27 `IBSCBSSelTot/gIBS/vCredPresCondSus/vDeson` ocorrência 1-1: ausente_no_schema
 - p.27 `IBSCBSSelTot/gIBS/vCredPresCondSus/vCBS` ocorrência 1-1: ausente_no_schema
+- p.19 `gIBSCBS/vBC` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/vBC
+- p.24 `gIBSCBSMono/qBCMono` tamanho 11v0-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/qBCMono
+- p.25 `pDifCBS` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/pDifCBS
 
 ## nfe-nt-2025-002-v1-00-rtc-nf-e-ibs-cbs-is (versão 1.00) × nfe-pl-010b-nt2025-002-v1-00
 
@@ -626,6 +629,9 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.17 `IBSCBSSelTot/gMono/vTotIBSMono` ocorrência 1-1: ausente_no_schema
 - p.17 `IBSCBSSelTot/gMono/vTotCBSMono` ocorrência 1-1: ausente_no_schema
 - p.17 `IBSCBSSelTot/gMono/vTotNF` ocorrência 1-1: ausente_no_schema
+- p.11 `IBSCBS/gIBSCBS/vBC` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/vBC
+- p.14 `IBSCBS/gIBSCBSMono/qBCMono` tamanho 11v0-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/qBCMono
+- p.16 `pDifCBS` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/pDifCBS
 
 ## nfe-nt-2025-002-v1-01-rtc-nf-e-ibs-cbs-is (versão 1.01) × nfe-pl-010b-nt2025-002-v1-00
 
@@ -638,6 +644,9 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.15 `IBSCBS/gIBSCBS/gIBSMun/gTribRegular/CSTReg` ocorrência 1-1: ausente_no_schema
 - p.15 `IBSCBS/gIBSCBS/gIBSMun/gTribRegular/cClassTribReg` ocorrência 1-1: ausente_no_schema
 - p.15 `IBSCBS/gIBSCBS/gIBSMun/gTribRegular/vTribReg` ocorrência 1-1: ausente_no_schema
+- p.14 `IBSCBS/gIBSCBS/vBC` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/vBC
+- p.17 `IBSCBS/gIBSCBSMono/qBCMono` tamanho 11v0-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/qBCMono
+- p.18 `pDifCBS` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/pDifCBS
 
 ## nfe-nt-2025-002-v1-10-rtc-nf-e-ibs-cbs-is (versão 1.10) × nfe-pl-010b-nt2025-002-v1-21
 
@@ -650,6 +659,13 @@ Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os sche
 - p.17 `gIBSCBS/gIBSMun/gTribRegular/CSTReg` ocorrência 1-1: ausente_no_schema
 - p.17 `gIBSCBS/gIBSMun/gTribRegular/cClassTribReg` ocorrência 1-1: ausente_no_schema
 - p.17 `gIBSCBS/gIBSMun/gTribRegular/vTribReg` ocorrência 1-1: ausente_no_schema
+- p.15 `gIBSCBS/vBC` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/vBC
+- p.21 `pDifCBS` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoDif/pDifCBS
+
+## nfe-nt-2025-002-v1-20-rtc-nf-e-ibs-cbs-is (versão 1.20) × nfe-pl-010b-nt2025-002-v1-21
+
+- p.16 `gIBSCBS/vBC` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBS/vBC
+- p.21 `pDifCBS` tamanho 3v2-4: diverge do XSD em NFe/infNFe/det/imposto/IBSCBS/gIBSCBSMono/gMonoDif/pDifCBS
 
 ## nfe-nt-2025-002-v1-30-rtc-nf-e-ibs-cbs-is (versão 1.30) × nfe-pl-010e-v1-02
 

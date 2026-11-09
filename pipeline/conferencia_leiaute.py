@@ -28,7 +28,8 @@ from acervo_texto import _do_imposto, _separar
 
 _ELE = r"(?:CE|CG|RC|CC|E|G|A)"
 _ID = r"[A-Z]{1,3}\d{1,3}[a-z]?"
-_OC = r"(?P<oc>\d+-(?:\d+|[Nn]))(?=\s|$)"
+# Ocorrência e, logo depois, o tamanho ("13v2", "3v2-4", "3,2/3,4", "6", "1-60", "-").
+_OC = r"(?P<oc>\d+-(?:\d+|[Nn]))(?=\s|$)(?:\s+(?P<tam>[\d,/v\-]+)(?=\s|$))?"
 _TIPO = r"(?:(?:N|C|D|B64|-)\s+)?"
 TEM_OCORRENCIA = re.compile(r"\s\d+-(?:\d+|[Nn])(?=\s|$)")
 RE_NFE = re.compile(rf"^(?P<num>\d+(?:\.\d+)?)\s+(?P<id>{_ID})\s+(?P<campo>[a-zA-Z]\w*)\s+(?P<desc>.*?)\s+"
@@ -63,11 +64,50 @@ def linhas_de_tabela(md: str) -> list[dict]:
             m, n = achou
             d = m.groupdict()
             saida.append({"campo": d["campo"], "id": d.get("id"), "pai": d["pai"],
-                          "ocorrencia": d["oc"].replace("n", "N"), "pagina": pagina})
+                          "ocorrencia": d["oc"].replace("n", "N"), "tamanho": d.get("tam"), "pagina": pagina})
             i += n
         else:
             i += 1
     return saida
+
+
+def _tamanho_nt(tam: str | None):
+    """("dec", inteiros, casas_min, casas_max) | ("fixo", n) | ("faixa", a, b) | None."""
+    tam = (tam or "").strip()
+    if m := re.fullmatch(r"(\d+)v(\d+)(?:-(\d+))?", tam):
+        return ("dec", int(m[1]), int(m[2]), int(m[3] or m[2]))
+    if m := re.fullmatch(r"(\d+),(\d+)(?:/(\d+),(\d+))?", tam):
+        inteiros = {int(m[1])} | ({int(m[3])} if m[3] else set())
+        casas = [int(m[2])] + ([int(m[4])] if m[4] else [])
+        return ("dec", max(inteiros), min(casas), max(casas)) if len(inteiros) == 1 else None
+    if m := re.fullmatch(r"(\d+)", tam):
+        return ("fixo", int(m[1]))
+    if m := re.fullmatch(r"(\d+)-(\d+)", tam):
+        return ("faixa", int(m[1]), int(m[2]))
+    return None
+
+
+def _tamanho_xsd(campo: dict):
+    """A mesma forma, lida do tamanho declarado ou do padrão do XSD."""
+    tam, padrao = (campo.get("tamanho") or "").strip(), (campo.get("padrao") or "").strip()
+    if m := re.fullmatch(r"(\d+)", tam):
+        return ("fixo", int(m[1]))
+    if m := re.fullmatch(r"(\d+)-(\d+)", tam):
+        return ("faixa", int(m[1]), int(m[2]))
+    if m := re.fullmatch(r"\\d\{(\d+)\}|\[0-9\]\{(\d+)\}", padrao):
+        return ("fixo", int(m[1] or m[2]))
+    # Decimal: a alternativa "[1-9]{1}[0-9]{0,N}(\.[0-9]{a,b})?" dá 1+N inteiros e a..b casas.
+    if m := re.search(r"\[1-9\](?:\{1\})?\[0-9\]\{0,(\d+)\}\(\\\.\[0-9\]\{(\d+)(?:,(\d+))?\}\)\?", padrao):
+        return ("dec", 1 + int(m[1]), int(m[2]), int(m[3] or m[2]))
+    return None
+
+
+def comparar_tamanho(tam_nt: str | None, campo_xsd: dict) -> str:
+    """confere | diverge | nao_comparavel — só quando os dois lados têm forma reconhecida."""
+    a, b = _tamanho_nt(tam_nt), _tamanho_xsd(campo_xsd)
+    if a is None or b is None:
+        return "nao_comparavel"
+    return "confere" if a == b else "diverge"
 
 
 def caminho_na_nt(linhas: list[dict], linha: dict) -> str:
@@ -91,8 +131,9 @@ def caminho_na_nt(linhas: list[dict], linha: dict) -> str:
     return "/".join(caminho)
 
 
-def campos_do_pacote(md: str) -> list[tuple[str, str]]:
-    """(caminho, ocorrência) da tabela de campos do texto de um pacote de schemas."""
+def campos_do_pacote(md: str) -> list[tuple[str, str, str, str]]:
+    """(caminho, ocorrência, tamanho, padrão) da tabela de campos do texto de um pacote de
+    schemas; o "|" escapado do padrão volta a ser "|"."""
     corpo = _separar(md)[1] if md.startswith("---\n") else md
     if "## Campos de IBS, CBS e IS (lidos dos XSD)" not in corpo:
         return []
@@ -101,22 +142,26 @@ def campos_do_pacote(md: str) -> list[tuple[str, str]]:
         if not linha.startswith("| ") or linha.startswith("| caminho |"):
             continue
         celulas = [c.strip() for c in re.split(r"(?<!\\)\|", linha)[1:-1]]
-        saida.append((celulas[0], celulas[2]))
+        saida.append((celulas[0], celulas[2], celulas[3], celulas[5].replace("\\|", "|")))
     return saida
 
 
-def _conferir(campos_nt: list[dict], schema: list[tuple[str, str]]) -> list[dict]:
+def _conferir(campos_nt: list[dict], schema: list[tuple[str, str, str, str]]) -> list[dict]:
     resultado = []
     for c in campos_nt:
-        casam = [(cam, oc) for cam, oc in schema if cam == c["caminho_nt"] or cam.endswith("/" + c["caminho_nt"])]
+        casam = [s for s in schema if s[0] == c["caminho_nt"] or s[0].endswith("/" + c["caminho_nt"])]
         item = dict(c)
         if not casam:
             item["situacao"] = "ausente_no_schema"
-        elif any(oc == c["ocorrencia_nt"] for _, oc in casam):
-            item["situacao"] = "confere"
-            item["caminho_schema"] = next(cam for cam, oc in casam if oc == c["ocorrencia_nt"])
+            resultado.append(item)
+            continue
+        mesmo = [s for s in casam if s[1] == c["ocorrencia_nt"]]
+        achado = (mesmo or casam)[0]
+        if mesmo:
+            item.update(situacao="confere", caminho_schema=achado[0])
         else:
-            item.update(situacao="ocorrencia_diverge", caminho_schema=casam[0][0], ocorrencia_schema=casam[0][1])
+            item.update(situacao="ocorrencia_diverge", caminho_schema=achado[0], ocorrencia_schema=achado[1])
+        item["tamanho_situacao"] = comparar_tamanho(c.get("tamanho_nt"), {"tamanho": achado[2], "padrao": achado[3]})
         resultado.append(item)
     return resultado
 
@@ -130,7 +175,8 @@ def conferir_nt(md_nt: str, pacotes: dict[str, str]) -> dict:
         caminho = caminho_na_nt(linhas, linha)
         if any(_do_imposto(parte) for parte in caminho.split("/")):
             campos_nt.append({"campo": linha["campo"], "caminho_nt": caminho,
-                              "ocorrencia_nt": linha["ocorrencia"], "pagina": linha["pagina"]})
+                              "ocorrencia_nt": linha["ocorrencia"], "tamanho_nt": linha.get("tamanho"),
+                              "pagina": linha["pagina"]})
     if not campos_nt:
         return {"pacote": None, "campos": [], "linhas_lidas": len(linhas)}
     melhor = None
@@ -167,12 +213,15 @@ def relatorio(regs: list[dict], textos: dict[str, str]) -> dict:
         r = conferir_nt(textos[reg["id"]], candidatos)
         if not r["campos"]:
             continue
-        cont = {}
+        cont, cont_tam = {}, {}
         for c in r["campos"]:
             cont[c["situacao"]] = cont.get(c["situacao"], 0) + 1
+            if c.get("tamanho_situacao"):
+                cont_tam[c["tamanho_situacao"]] = cont_tam.get(c["tamanho_situacao"], 0) + 1
         nts.append({"id": reg["id"], "titulo": reg.get("titulo"), "versao": reg.get("versao"),
                     "documento_fiscal": reg.get("documento_fiscal"), "pacote": r["pacote"],
-                    "contagem": cont,
+                    "contagem": cont, "contagem_tamanho": cont_tam,
+                    "tamanho_diverge": [c for c in r["campos"] if c.get("tamanho_situacao") == "diverge"],
                     "divergencias": [c for c in r["campos"] if c["situacao"] != "confere"]})
     return {"aviso": ("Conferencia mecanica das tabelas de campos das NTs (texto do PDF) contra os schemas "
                       "(XSD) do mesmo documento fiscal. 'pacote' e o que mais confere, nao o oficialmente "
@@ -183,15 +232,18 @@ def relatorio(regs: list[dict], textos: dict[str, str]) -> dict:
 
 def resumo_markdown(rel: dict) -> str:
     linhas = ["# Conferência das tabelas de campos das NTs contra os schemas", "",
-              rel["aviso"], "", "| NT | versão | pacote comparado | confere | diverge | ausente |",
-              "|---|---|---|---|---|---|"]
+              rel["aviso"], "", "| NT | versão | pacote comparado | confere | diverge | ausente | tamanho confere | "
+              "tamanho diverge | tamanho não comparável |", "|---|---|---|---|---|---|---|---|---|"]
     for nt in rel["notas_tecnicas"]:
         c = nt["contagem"]
         linhas.append(f"| {nt['id']} | {nt.get('versao') or ''} | {nt['pacote'] or '(nenhum)'} | "
                       f"{c.get('confere', 0)} | {c.get('ocorrencia_diverge', 0)} | "
-                      f"{c.get('ausente_no_schema', 0) + c.get('sem_pacote', 0) + c.get('sem_correspondencia', 0)} |")
+                      f"{c.get('ausente_no_schema', 0) + c.get('sem_pacote', 0) + c.get('sem_correspondencia', 0)} | "
+                      f"{nt.get('contagem_tamanho', {}).get('confere', 0)} | "
+                      f"{nt.get('contagem_tamanho', {}).get('diverge', 0)} | "
+                      f"{nt.get('contagem_tamanho', {}).get('nao_comparavel', 0)} |")
     for nt in rel["notas_tecnicas"]:
-        if not nt["divergencias"]:
+        if not nt["divergencias"] and not nt.get("tamanho_diverge"):
             continue
         linhas += ["", f"## {nt['id']} (versão {nt.get('versao') or '?'}) × {nt['pacote']}", ""]
         for d in nt["divergencias"]:
@@ -199,4 +251,7 @@ def resumo_markdown(rel: dict) -> str:
                      if d["situacao"] == "ocorrencia_diverge" else "")
             linhas.append(f"- p.{d['pagina']} `{d['caminho_nt']}` ocorrência {d['ocorrencia_nt']}: "
                           f"{d['situacao']}{extra}")
+        for d in nt.get("tamanho_diverge") or []:
+            linhas.append(f"- p.{d['pagina']} `{d['caminho_nt']}` tamanho {d['tamanho_nt']}: diverge do XSD em "
+                          f"{d['caminho_schema']}")
     return "\n".join(linhas) + "\n"

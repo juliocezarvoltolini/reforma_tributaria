@@ -5383,6 +5383,46 @@ def cronograma_consulta():
            f"origem da IA e pendência mostradas (obteve {texto!r})")
 
 
+@cenario("conferência do leiaute: tamanho da NT contra o padrão ou o tamanho do XSD")
+def leiaute_tamanho():
+    """Formatos medidos em 2026-11-09: NT "13v2" (13 inteiros, 2 decimais), "3v2-4" (3 inteiros,
+    2 a 4 decimais), "3,2/3,4" (NT conjunta), "6" (fixo), "1-60" (faixa); XSD pelo padrão
+    (TDec1302RTC: "0|0\\.[0-9]{2}|[1-9]{1}[0-9]{0,12}(\\.[0-9]{2})?") ou pelo tamanho. Quebra:
+    dar 'confere' a tamanho diferente; ou forçar comparação do que não tem forma reconhecida."""
+    import conferencia_leiaute as L
+
+    dec13 = {"tamanho": "", "padrao": r"0|0\.[0-9]{2}|[1-9]{1}[0-9]{0,12}(\.[0-9]{2})?"}
+    dec3 = {"tamanho": "", "padrao": r"0|0\.[0-9]{2,4}|[1-9]{1}[0-9]{0,2}(\.[0-9]{2,4})?"}
+    checar(L.comparar_tamanho("13v2", dec13) == "confere" and L.comparar_tamanho("13v4", dec13) == "diverge",
+           "decimal 13v2 contra o padrão do XSD")
+    checar(L.comparar_tamanho("3v2-4", dec3) == "confere" and L.comparar_tamanho("3,2/3,4", dec3) == "confere",
+           "decimal com faixa de casas (NF-e e NT conjunta)")
+    checar(L.comparar_tamanho("6", {"tamanho": "", "padrao": r"\d{6}"}) == "confere"
+           and L.comparar_tamanho("6", {"tamanho": "3", "padrao": ""}) == "diverge"
+           and L.comparar_tamanho("3", {"tamanho": "3", "padrao": ""}) == "confere", "tamanho fixo")
+    checar(L.comparar_tamanho("1-60", {"tamanho": "1-60", "padrao": ""}) == "confere"
+           and L.comparar_tamanho("1-60", {"tamanho": "1-30", "padrao": ""}) == "diverge", "faixa de tamanho")
+    checar(L.comparar_tamanho("-", dec13) == "nao_comparavel"
+           and L.comparar_tamanho("13v2", {"tamanho": "", "padrao": ""}) == "nao_comparavel",
+           "sem forma reconhecida de um dos lados: não comparável")
+    linhas = L.linhas_de_tabela("324.35 UB35 vIBSUF Valor do IBS da UF E UB17 N 1-1 13v2\n"
+                                "7 pIBSUF E gIBSUF N 1-1 3,2/3,4 Alíquota fictícia\n")
+    checar([x.get("tamanho") for x in linhas] == ["13v2", "3,2/3,4"], f"tamanho lido da linha (obteve {linhas})")
+    nt = ("## Página 9\n\n324.12 UB12 IBSCBS Grupo G M01 0-1 -\n"
+          "324.35 UB35 vIBSUF Valor do IBS da UF E UB12 N 1-1 13v2\n"
+          "324.36 UB36 vCBSUF Valor da CBS E UB12 N 1-1 13v4\n")
+    pacote = ("## Campos de IBS, CBS e IS (lidos dos XSD)\n\n"
+              "| caminho | tipo | ocorrencia | tamanho | enumeracao | padrao | descricao | arquivo | escolha |\n"
+              "|---|---|---|---|---|---|---|---|---|\n"
+              "| NF/IBSCBS | (grupo) | 0-1 |  |  |  |  | x.xsd |  |\n"
+              "| NF/IBSCBS/vIBSUF | T | 1-1 |  |  | 0\\|0\\.[0-9]{2}\\|[1-9]{1}[0-9]{0,12}(\\.[0-9]{2})? |  | x.xsd |  |\n"
+              "| NF/IBSCBS/vCBSUF | T | 1-1 |  |  | 0\\|0\\.[0-9]{2}\\|[1-9]{1}[0-9]{0,12}(\\.[0-9]{2})? |  | x.xsd |  |\n")
+    r = L.conferir_nt(nt, {"pl": pacote})
+    tam = {c["campo"]: c.get("tamanho_situacao") for c in r["campos"]}
+    checar(tam == {"IBSCBS": "nao_comparavel", "vIBSUF": "confere", "vCBSUF": "diverge"},
+           f"tamanho conferido no campo achado, com o padrão do XSD desescapado (obteve {tam})")
+
+
 @cenario("portabilidade de saída")
 def portabilidade():
     """Regressão: no Windows a saída redirecionada usa a codepage local (cp1252) e

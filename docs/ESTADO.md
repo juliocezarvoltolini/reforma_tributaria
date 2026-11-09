@@ -719,7 +719,12 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   escritos ("não calculado"); ambígua lista as datas sem escolher; sem_data diz que
   o documento não dá data; origem de cada linha (regra ou IA) mostrada. Não decide
   entre versões da mesma NT: cada documento traz o seu cronograma.
-- **Não conferido ainda:** tamanho e tipo dos campos (formatos diferentes na NT e
+- **Tamanho NT × XSD (2026-11-09):** a conferência do leiaute compara também o
+  tamanho da NT ("13v2", "3v2-4", "3,2/3,4", "6", "1-60") com o tamanho ou o padrão do
+  XSD (`[1-9]{1}[0-9]{0,12}(\.[0-9]{2})?` = 13 inteiros, 2 casas). Primeira rodada: 2.429
+  conferem, 13 divergem (vBC "3v2-4" e qBCMono "11v0-4" nas primeiras versões da NT
+  2025.002 e na RT 2024.002), 1.011 não comparáveis (grupos, ou sem forma reconhecida).
+- **Ainda não conferido:** o TIPO dos campos e (formatos diferentes na NT e
   no XSD), regras de validação, e o cronograma de implantação por versão (está no
   texto, em linguagem livre).
 
