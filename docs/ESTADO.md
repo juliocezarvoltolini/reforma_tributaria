@@ -818,9 +818,25 @@ teste em `tests/test_pipeline.py`:
    menção: no art. 19 da EC 132, "arts. 1º a 4º da Lei nº 9.826, ... desta
    Emenda" é da Lei.
 
-Defeito anterior, não corrigido: nas propostas, o marco que está numa linha
-riscada de redação anterior ("~~§ 7º ...~~") é atribuído à subdivisão de
-antes (ex.: LC 214, art. 26, "§ 7º São contribuintes" como `art26_par6_incII`).
+**Subdivisão com redação anterior riscada, corrigida em 2026-11-09**
+(`fatiar.subdivisao_por_linha_com_riscado`, com teste). Cada redação segue os
+próprios rótulos: a linha riscada fica na subdivisão do rótulo dela, e o texto
+vigente segue só os rótulos vigentes. Havia dois erros, de sinais opostos:
+- `marcos_proprios` lia o riscado com as marcas, e o rótulo ficava invisível.
+  Na LC 214, art. 26, "~~§ 7º ...~~ (Revogado ...)" era registrado como
+  `art26_par6_incII`.
+- `alteracoes_do_artigo` e `vetados_do_artigo` liam sem as marcas, e o
+  "Parágrafo único" da redação anterior, que o compilado põe antes do texto
+  atual, abria a subdivisão do caput atual. No art. 361, a "(Redação dada pela
+  LC 227)" do caput ficava como `art361_parU_incII`, e os incisos do caput
+  como incisos de um parágrafo único que só existe no riscado. O mesmo
+  acontecia nos arts. 28, 146 e 362 a 365, e em parte no 517.
+
+Nas normas, mudaram 8 artigos (`alterado_por`). Nas propostas, só os
+endereços foram corrigidos: 41 alterações e 32 marcos. As exceções de 7
+decisões por IA (arts. 28, 146 e 361 a 365) foram refeitas sobre as URNs
+novas, com as mesmas datas e a regra de `revisar_por_regra` (o caput em
+`_par0`). Nenhuma decisão foi tomada.
 
 **Vigência e efeitos: nada decidido (625 de 625 pendentes).** O decreto tem DUAS
 cláusulas: art. 619 ("entra em vigor e produz efeitos na data de sua publicação,

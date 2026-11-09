@@ -56,12 +56,13 @@ def resolver_link(href: str, mapa: dict[str, str]) -> str | None:
 def alteracoes_do_artigo(linhas: list[str], links: list[tuple], urn_base: str, artigo: str,
                          mapa: dict[str, str]) -> list[dict]:
     """`alterado_por` de um artigo: um registro por anotação com link."""
-    from fatiar import MARCA_RISCADO, RE_ANOTACAO, subdivisao_por_linha
+    from fatiar import MARCA_RISCADO, RE_ANOTACAO, subdivisao_por_linha_com_riscado
 
-    # Sem as marcas do riscado: o dispositivo revogado ("~~§ 2º ...~~ (Revogado
-    # pela ...)") é a subdivisão da anotação, e o rótulo dele está no riscado.
+    # O dispositivo revogado ("~~§ 2º ...~~ (Revogado pela ...)") é a subdivisão da
+    # anotação, e o rótulo dele está no riscado; o texto vigente segue só os
+    # rótulos vigentes (a redação anterior riscada não abre subdivisão para ele).
     sem_marca = [linha.replace(MARCA_RISCADO, "") for linha in linhas]
-    subdivisoes = subdivisao_por_linha(sem_marca, urn_base, artigo)
+    subdivisoes = subdivisao_por_linha_com_riscado(linhas, urn_base, artigo)
     saida = []
     for linha, subdivisao, links_da_linha in zip(sem_marca, subdivisoes, links):
         # Anotação sozinha na linha: não se sabe a que trecho ela se refere. Na LC

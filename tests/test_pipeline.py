@@ -1273,6 +1273,14 @@ def proposta_marcos_proprios():
     )
     checar(r["marcos"][0]["urn"] == urn_dispositivo(URN_BASE, "5", paragrafo="1"),
            "cada marco traz a URN da subdivisão em que está")
+    # LC 214, art. 26: a linha da redação anterior começa no riscado ("~~§ 7º ...") e
+    # o rótulo dela ficava invisível — o marco seguinte caía na subdivisão de antes.
+    riscado = ["Art. 5º Texto.", "§ 6º Vale a partir de 2030.", "I - item;",
+               "~~§ 7º Texto antigo.~~ (Revogado pela Lei Complementar nº 999, de 2026)"]
+    urns = [m["urn"] for m in _pv().marcos_proprios(riscado, URN_BASE, "5")["marcos"]]
+    checar(urns == [urn_dispositivo(URN_BASE, "5", paragrafo="6"), urn_dispositivo(URN_BASE, "5", paragrafo="7")],
+           f"o rótulo dentro do riscado abre a subdivisão: o marco do § 7º revogado é do § 7º, não do "
+           f"inciso I do § 6º (obteve {urns})")
     checar(r["citado_com_marcos"] == 1,
            "o ano do texto citado é contado à parte, não como marco desta norma")
 
@@ -4370,6 +4378,25 @@ def remissao_referida_lei():
     checar(r("observado o art. 8º desta Lei.") == [urn_dispositivo(URN_BASE, "8")]
            and r("observado o art. 8º.") == [urn_dispositivo(URN_BASE, "8")],
            "'desta Lei' e sem qualificador continuam internos")
+
+
+@cenario("subdivisão por linha com redação anterior riscada: cada redação segue os próprios rótulos")
+def subdivisao_com_riscado():
+    """Quebra (LC 214, arts. 26, 28, 146, 361): com o riscado, o rótulo da redação
+    anterior ficava invisível ('~~§ 7º ...~~ (Revogado ...)' caía no inciso do § 6º);
+    sem o riscado, o 'Parágrafo único' da redação ANTERIOR, que vem antes do texto
+    atual, abria a subdivisão do caput ATUAL ('Art. 361. ... (Redação dada ...)' como
+    art361_parU_incII). A linha riscada fica na subdivisão do próprio rótulo; o texto
+    vigente segue só os rótulos vigentes."""
+    u = lambda *a, **k: urn_dispositivo(URN_BASE, "5", *a, **k)  # noqa: E731
+    linhas = ["~~Art. 5º Texto antigo:~~", "~~I - antigo;~~", "~~Parágrafo único. Antigo:~~",
+              "~~I - antigo do parágrafo.~~", "Art. 5º Texto novo: (Redação dada pela Lei nº 9)",
+              "I - novo; (Redação dada pela Lei nº 9)", "§ 6º Vale.", "I - item;",
+              "~~§ 7º Velho.~~ (Revogado pela Lei nº 9)", "Continua o § 6º, inciso I, vigente."]
+    obtido = F.subdivisao_por_linha_com_riscado(linhas, URN_BASE, "5")
+    esperado = [u(), u(inciso="I"), u(paragrafo="U"), u(paragrafo="U", inciso="I"), u(), u(inciso="I"),
+                u(paragrafo="6"), u(paragrafo="6", inciso="I"), u(paragrafo="7"), u(paragrafo="6", inciso="I")]
+    checar(obtido == esperado, f"cada redação nos próprios rótulos (obteve {[x.split('!')[1] for x in obtido]})")
 
 
 @cenario("remissão e subdivisão: '§ 4º-A' não é o § 4º")

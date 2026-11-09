@@ -2327,7 +2327,7 @@ dispositivos:
     tipos:
     - ano
     trecho: 'II - o local do estabelecimento principal do adquirente, definido nos termos do § 4º deste artigo, nas operações que não envolvam efetivo consumo: (Redação dada pela Lei Complementar nº 227, de 2026)'
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art11_par7_incII_ali-b
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art11_par8
     tipos:
     - ano
     trecho: ~~§ 8º Na hipótese de que trata o inciso X do caput deste artigo, caso o adquirente seja residente ou domiciliado no exterior e o destinatário seja residente ou domiciliado no País, considera-se como local da operação o domicílio do destinatário.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -3389,7 +3389,7 @@ dispositivos:
     tipos:
     - ano
     trecho: II - a plataforma digital apresente as informações de que trata o § 5º deste artigo. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art22_par7_incII
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art22_par8
     tipos:
     - ano
     trecho: ~~§ 8º Na hipótese em que o fornecedor seja residente ou domiciliado no País e o processo de pagamento da operação não seja iniciado pela plataforma digital, esta não será responsável tributária caso cumpra o disposto no § 5º e o fornecedor emita documento fiscal eletrônico pelo valor da operação realizada por meio da plataforma.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -3397,7 +3397,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 8º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art22_par8
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art22_par9
     tipos:
     - ano
     trecho: ~~§ 9º Aplica-se o disposto no § 8º, também, caso o processo de pagamento da operação seja iniciado pela plataforma digital e não seja realizado o split payment.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -4138,7 +4138,7 @@ dispositivos:
     tipos:
     - ano
     trecho: II - os Fundos de Investimento em Direitos Creditórios (FIDC) e os demais fundos de investimentos que liquidem antecipadamente recebíveis, não caracterizados como entidade de investimento, nos termos previstos no art. 193, § 5º, ou no art. 219, § 6º, ambos desta Lei Complementar. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art26_par6_incII
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art26_par7
     tipos:
     - ano
     trecho: ~~§ 7º São contribuintes do IBS e da CBS no regime regular os fundos de investimento que liquidem antecipadamente recebíveis, nos termos previstos no art. 193 ou no art. 219 desta Lei Complementar.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -4796,7 +4796,7 @@ dispositivos:
   - (Redação dada pela Lei Complementar nº 227, de 2026)
   - (Incluído pela Lei Complementar nº 227, de 2026)
   alteracoes:
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art28_incIV
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art28
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -4962,13 +4962,17 @@ dispositivos:
     fundamento_efeitos:
     - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     excecoes_subdivisao:
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art28_incIV
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art28_par0
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento:
+      fundamento: &id001
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art28_incIV
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: *id001
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art28_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
@@ -5439,36 +5443,36 @@ dispositivos:
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento: &id001
+      fundamento: &id002
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1-A
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento: *id001
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1_incI
-      vigencia_inicio: '2026-01-14'
-      efeitos_inicio: '2026-01-14'
-      fundamento: &id002
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1-A_incI
-      vigencia_inicio: '2026-01-14'
-      efeitos_inicio: '2026-01-14'
       fundamento: *id002
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento: &id003
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1-A_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1-A_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento: *id003
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1_incII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: &id004
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1-A_incII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: *id004
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art31_par1-A_incIII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
@@ -5718,14 +5722,14 @@ dispositivos:
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art32_par2
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento: &id004
+      fundamento: &id005
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art32_par2-A
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento: *id004
+      fundamento: *id005
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art32_par2_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
@@ -5814,7 +5818,7 @@ dispositivos:
     - ano
     - prazo_relativo
     trecho: § 4º O Comitê Gestor do IBS (CGIBS) e a RFB transferirão ao fornecedor, em até 3 (três) dias úteis contados da conclusão da apuração, os valores do IBS e da CBS recolhidos por meio do procedimento simplificado no período de apuração e não utilizados nos termos do § 3º deste artigo. (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art33_par4
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art33_par5
     tipos:
     - ano
     trecho: ~~§ 5º A opção de que trata o caput deste artigo será irretratável para todo o período de apuração.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -7952,7 +7956,7 @@ dispositivos:
     tipos:
     - ano
     trecho: h) fornecimento de vale-transporte, vale-refeição e vale-alimentação, sendo os créditos na aquisição desses serviços equivalentes aos respectivos débitos do fornecedor apurados e extintos de acordo com o disposto no regime específico de serviços financeiros, observada a disciplina aplicável aos arranjos de pagamento; (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art57_par3_incV
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art57_par4
     tipos:
     - ano
     trecho: ~~§ 4º Os bens e serviços que não estejam relacionados ao desenvolvimento de atividade econômica por pessoa física caracterizada como contribuinte do regime regular serão consideradas de uso ou consumo pessoal.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -7960,7 +7964,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 4º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art57_par5
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art57_par6
     tipos:
     - ano
     trecho: ~~§ 6º Caso tenha havido a apropriação de créditos na aquisição de bens ou serviços de uso ou consumo pessoal, serão exigidos débitos em valores equivalentes aos dos créditos, com os acréscimos legais de que trata o § 2º do art. 29, calculados desde a data da apropriação.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -7968,7 +7972,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 6º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art57_par6
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art57_par7
     tipos:
     - ano
     trecho: ~~§ 7º Na hipótese de fornecimento de bem do contribuinte para utilização temporária pelas pessoas físicas de que trata o inciso II do caput deste artigo, serão exigidos débitos em valores equivalentes aos dos créditos, calculados proporcionalmente ao tempo de vida útil do bem em relação ao tempo utilizado pelo contribuinte, com os acréscimos legais de que trata o § 2º do art. 29, na forma do regulamento.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -8854,7 +8858,7 @@ dispositivos:
     tipos:
     - ano
     trecho: II - em que o adquirente ou o destinatário tenham residência ou domicílio no País, nos demais casos. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art64_par5_incI_ali-a
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art64_par5_incI_ali-b
     tipos:
     - ano
     trecho: ~~b) no local definido conforme o disposto no art. 11 desta Lei Complementar;~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -8874,7 +8878,7 @@ dispositivos:
     tipos:
     - ano
     trecho: b) do domicílio principal do adquirente ou do destinatário, nos demais casos; (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art64_par6
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art64_par7
     tipos:
     - ano
     trecho: ~~§ 7º Não será considerado como importação de serviço ou de bem imaterial, inclusive direitos, o consumo eventual por pessoa física não residente que permaneça temporariamente no País, nos termos do regulamento.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -10245,7 +10249,7 @@ dispositivos:
     tipos:
     - ano
     trecho: II - em que o adquirente e o destinatário sejam residentes ou domiciliados no exterior, nos demais casos. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art80_par1_incII
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art80_par2
     tipos:
     - ano
     trecho: ~~§ 2º Caso não seja possível ao fornecedor nacional identificar o local do consumo pelas condições e características do fornecimento, presumir-se-á local do consumo o local do domicílio do adquirente no exterior.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -10253,7 +10257,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 2º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art80_par2
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art80_par3
     tipos:
     - ano
     trecho: ~~§ 3º Caso o consumo de que trata o § 2º ocorra no País, será considerada importação de serviço ou bem imaterial, inclusive direito, observado o disposto no art. 64 desta Lei Complementar.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -10261,7 +10265,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 3º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art80_par5
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art80_par6
     tipos:
     - ano
     trecho: ~~§ 6º Aplica-se o disposto no § 1º do art. 64 desta Lei Complementar para fins da definição de consumo no exterior de serviços ou de bens imateriais, inclusive direitos.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -15553,7 +15557,7 @@ dispositivos:
   - (Redação dada pela Lei Complementar nº 227, de 2026)
   - (Incluído pela Lei Complementar nº 227, de 2026)
   alteracoes:
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15569,7 +15573,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incI
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incI
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15585,7 +15589,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incII
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15601,7 +15605,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incIII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incIII
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15617,7 +15621,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incIV
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incIV
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15633,7 +15637,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incV
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incV
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15649,7 +15653,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incVI
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incVI
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15665,7 +15669,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incVII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incVII
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -15815,56 +15819,60 @@ dispositivos:
     fundamento_efeitos:
     - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     excecoes_subdivisao:
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par0
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: &id006
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento:
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incI
+      fundamento: *id006
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incIII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incIV
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incIV
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incV
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incV
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incVI
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incVI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_par4_incVII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art146_incVII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
@@ -16096,7 +16104,7 @@ dispositivos:
     tipos:
     - ano
     trecho: II - na hipótese do inciso II do caput deste artigo, a automóvel cujo preço de venda ao consumidor, incluídos os tributos incidentes caso não houvesse as reduções e não incluídos os custos necessários para a adaptação a que se refere o § 3º deste artigo, não seja superior a R$ 200.000,00 (duzentos mil reais), limitado o benefício ao valor da operação de até R$ 100.000,00 (cem mil reais). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art149_par2_incII
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art149_par3
     tipos:
     - ano
     trecho: ~~§ 3º Na hipótese da alínea “a” do inciso II do caput deste artigo, quando a pessoa for fisicamente capaz de dirigir, o benefício alcançará somente automóveis adaptados, consideradas adaptações aquelas necessárias para viabilizar a condução e não ofertadas ao público em geral.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -20434,7 +20442,7 @@ dispositivos:
     vigencia_inicio: '2025-01-16'
     efeitos_inicio: '2026-01-01'
   marcos_proprios:
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art201_incII_ali-b
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art201_incII_ali-c
     tipos:
     - ano
     trecho: ~~c) das provisões para créditos de liquidação duvidosa relativas às operações de arrendamento mercantil, observado o disposto no inciso V do caput do art. 192 desta Lei Complementar.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -23671,7 +23679,7 @@ dispositivos:
     tipos:
     - ano
     trecho: VI - em 2033, a 12,50% (doze inteiros e cinquenta centésimos por cento). (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_incVI
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par1
     tipos:
     - ano
     trecho: ~~§ 1º O cálculo da alíquota de que trata o caput deste artigo será feito de acordo com os seguintes critérios:~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -23679,7 +23687,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 1º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par1
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par2
     tipos:
     - ano
     trecho: ~~§ 2º O cálculo de que trata o § 1º deste artigo será feito com base em dados do período de 1º de janeiro de 2022 a 31 de dezembro de 2023.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -23691,7 +23699,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 3º Observada, a cada ano, a proporção entre as alíquotas da CBS e do IBS nos termos do § 2º do art. 189 desta Lei Complementar, as alíquotas da CBS e do IBS serão fixadas de modo que a soma das alíquotas corresponda ao percentual fixado nos incisos do caput deste artigo. (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par3
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par4
     tipos:
     - ano
     trecho: ~~§ 4º A metodologia de cálculo para a fixação das alíquotas de que trata o caput deste artigo será aprovada por ato conjunto do Ministro de Estado da Fazenda e do Comitê Gestor do IBS, após consulta e homologação pelo Tribunal de Contas da União em prazo não superior a 180 (cento e oitenta) dias.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -23699,7 +23707,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 4º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par4
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par5
     tipos:
     - ano
     trecho: ~~§ 5º A União, os Estados, o Distrito Federal e os Municípios fornecerão ao Comitê Gestor do IBS e ao Poder Executivo da União os subsídios necessários para o cálculo das alíquotas do IBS e da CBS, mediante o compartilhamento de dados e informações.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -23707,7 +23715,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 5º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par6_incII
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par7
     tipos:
     - ano
     trecho: ~~§ 7º Para fins do disposto neste artigo, consideram-se instituições financeiras bancárias os bancos de qualquer espécie e as caixas econômicas.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -23715,7 +23723,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 7º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par7
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art233_par8
     tipos:
     - ano
     trecho: ~~§ 8º As alíquotas definidas de acordo com o procedimento estabelecido neste artigo, em relação ao disposto no inciso III do § 1º, serão fixadas levando em consideração a regra de transição estabelecida no Título VIII deste Livro, de modo que o respectivo impacto nas alíquotas do IBS e da CBS seja introduzido proporcionalmente à redução e à supressão dos tributos que serão extintos.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -25813,14 +25821,14 @@ dispositivos:
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art252_par5
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento: &id005
+      fundamento: &id007
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art252_par5-A
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
-      fundamento: *id005
+      fundamento: *id007
     - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art252_par5-A_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
@@ -39617,7 +39625,7 @@ dispositivos:
     tipos:
     - ano
     trecho: II - corresponderá, a cada período, ao valor médio das contribuições efetivamente arrecadadas de 2021 a 2023, corrigidas pela variação da receita do imposto de que trata o art. 155, inciso II, da Constituição Federal, do respectivo Estado ou Distrito Federal;
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art350_par3
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art350_par3_incI
     tipos:
     - ano
     trecho: ~~I - o Comitê Gestor do IBS deverá encaminhar a proposta de metodologia ao Tribunal de Contas da União até 31 de junho de 2026; e~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -40630,7 +40638,7 @@ dispositivos:
   - (Redação dada pela Lei Complementar nº 227, de 2026)
   - (Incluído pela Lei Complementar nº 227, de 2026)
   alteracoes:
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -40646,7 +40654,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incI
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incI
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -40662,7 +40670,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incII
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -40678,7 +40686,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incIII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incIII
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -40694,7 +40702,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incIV
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incIV
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -40876,28 +40884,32 @@ dispositivos:
     fundamento_efeitos:
     - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     excecoes_subdivisao:
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_par0
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: &id008
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: *id008
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incI
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incIII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incIII
-      vigencia_inicio: '2026-01-14'
-      efeitos_inicio: '2026-01-14'
-      fundamento:
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_parU_incIV
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art361_incIV
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
@@ -41091,7 +41103,7 @@ dispositivos:
   - (Redação dada pela Lei Complementar nº 227, de 2026)
   - (Incluído pela Lei Complementar nº 227, de 2026)
   alteracoes:
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41107,7 +41119,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incI
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incI
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41123,7 +41135,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incII
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41139,7 +41151,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incIII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incIII
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41155,7 +41167,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incIV
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incIV
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41401,28 +41413,32 @@ dispositivos:
     fundamento_efeitos:
     - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     excecoes_subdivisao:
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_par0
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: &id009
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: *id009
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incI
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incIII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incIII
-      vigencia_inicio: '2026-01-14'
-      efeitos_inicio: '2026-01-14'
-      fundamento:
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_parU_incIV
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art362_incIV
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
@@ -41668,7 +41684,7 @@ dispositivos:
   - (Redação dada pela Lei Complementar nº 227, de 2026)
   - (Incluído pela Lei Complementar nº 227, de 2026)
   alteracoes:
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41684,7 +41700,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incI
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incI
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41700,7 +41716,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incII
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41716,7 +41732,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIII
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41732,7 +41748,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIII_ali-a
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIII_ali-a
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41748,7 +41764,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIII_ali-b
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIII_ali-b
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41764,7 +41780,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIV
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIV
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41780,7 +41796,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIV_ali-a
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIV_ali-a
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -41796,7 +41812,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIV_ali-b
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIV_ali-b
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42074,56 +42090,60 @@ dispositivos:
     fundamento_efeitos:
     - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     excecoes_subdivisao:
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_par0
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: &id010
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
+      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incII
+      vigencia_inicio: '2026-01-14'
+      efeitos_inicio: '2026-01-14'
+      fundamento: *id010
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incI
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIII_ali-a
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIII_ali-a
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIII_ali-b
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIII_ali-b
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIV
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIV
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIV_ali-a
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIV_ali-a
-      vigencia_inicio: '2026-01-14'
-      efeitos_inicio: '2026-01-14'
-      fundamento:
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
-      - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_parU_incIV_ali-b
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art363_incIV_ali-b
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
@@ -42367,7 +42387,7 @@ dispositivos:
   - (Redação dada pela Lei Complementar nº 227, de 2026)
   - (Incluído pela Lei Complementar nº 227, de 2026)
   alteracoes:
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42383,7 +42403,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incI
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incI
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42399,7 +42419,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incII
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42415,7 +42435,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIII
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42431,7 +42451,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIII_ali-a
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIII_ali-a
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42447,7 +42467,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIII_ali-b
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIII_ali-b
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42463,7 +42483,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIV
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIV
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42479,7 +42499,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIV_ali-a
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIV_ali-a
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42495,7 +42515,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIV_ali-b
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIV_ali-b
     tipo: incluido
     anotacao: (Incluído pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42709,63 +42729,63 @@ dispositivos:
     fundamento_efeitos:
     - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     excecoes_subdivisao:
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_par0
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incI
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIII_ali-a
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIII_ali-a
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIII_ali-b
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIII_ali-b
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIV
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIV
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIV_ali-a
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIV_ali-a
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_parU_incIV_ali-b
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art364_incIV_ali-b
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
@@ -42941,7 +42961,7 @@ dispositivos:
   - (Redação dada pela Lei Complementar nº 227, de 2026)
   - (Incluído pela Lei Complementar nº 227, de 2026)
   alteracoes:
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_parU
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42957,7 +42977,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_parU_incI
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_incI
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -42973,7 +42993,7 @@ dispositivos:
       efeitos_inicio: '2026-01-14'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_parU_incII
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_incII
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -43123,21 +43143,21 @@ dispositivos:
     fundamento_efeitos:
     - urn:lex:br:federal:lei.complementar:2025-01-16;214!art544_incVI
     excecoes_subdivisao:
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_parU
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_par0
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_parU_incI
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_incI
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182
       - urn:lex:br:federal:lei.complementar:2026-01-13;227!art182_incIII
-    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_parU_incII
+    - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art365_incII
       vigencia_inicio: '2026-01-14'
       efeitos_inicio: '2026-01-14'
       fundamento:
@@ -54217,7 +54237,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 2º A escolha dos representantes dos Municípios no Conselho Superior do CGIBS, a que se refere o inciso II do caput deste artigo, será efetuada, excepcionalmente para fins de instalação do CGIBS provisório de que trata o caput do art. 480 desta Lei Complementar, mediante indicação pela Confederação Nacional de Municípios (CNM) e pela Frente Nacional de Prefeitas e Prefeitos (FNP). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par2
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par3
     tipos:
     - ano
     trecho: ~~§ 3º A eleição de que trata o § 2º deste artigo:~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -54243,7 +54263,7 @@ dispositivos:
     - data_explicita
     - a_partir_de_ate
     trecho: § 5º-A. Se uma das associações de representação de Municípios não apresentar as indicações conforme dispõe o § 5º deste artigo até 31 de outubro de 2025, a outra associação poderá indicar os representantes em seu lugar. (Incluído pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par5
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par6
     tipos:
     - ano
     trecho: ~~§ 6º Cada associação, de que trata o inciso IV do § 3º, para a eleição prevista no § 2º, em relação aos representantes referidos na alínea “b” do inciso II do § 1º deste artigo, apresentará até uma chapa, a qual deverá contar com o apoiamento de Municípios que representem, no mínimo, 20% (vinte por cento) do total da população do País, contendo 13 (treze) nomes titulares, observado o disposto nos incisos do § 5º deste artigo.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -54251,7 +54271,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 6º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par6
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par7
     tipos:
     - ano
     trecho: ~~§ 7º O membro eleito na forma dos §§ 5º e 6º deste artigo poderá ser:~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -54259,7 +54279,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 7º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par7
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par8
     tipos:
     - ano
     trecho: ~~§ 8º Na hipótese de destituição do titular e dos respectivos suplentes, será realizada nova eleição para a ocupação das respectivas vagas, no prazo previsto pelo regimento interno do CGIBS.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -54267,7 +54287,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 8º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par8
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par9
     tipos:
     - ano
     trecho: ~~§ 9º Exceto na primeira eleição, prevista no § 2º deste artigo, as demais eleições terão o acompanhamento durante todo o processo eleitoral de 4 (quatro) membros do Conselho Superior do CGIBS, escolhidos pelos 27 (vinte e sete) representantes dos Municípios de que trata o inciso II do caput deste artigo.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -54275,7 +54295,7 @@ dispositivos:
     tipos:
     - ano
     trecho: § 9º (Revogado). (Redação dada pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par9
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art481_par10
     tipos:
     - ano
     trecho: ~~§ 10. O regulamento eleitoral poderá definir outras atribuições dos membros de que trata o § 9º deste artigo para acompanhamento do processo eleitoral.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -54712,15 +54732,15 @@ dispositivos:
     tipos:
     - prazo_relativo
     trecho: '§ 2º Os membros do Conselho Superior do CGIBS serão nomeados e investidos para o exercício da função pelo prazo de que trata o caput do art. 480 e poderão ser substituídos ou destituídos:'
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art482_par2
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art482_par2_incI
     tipos:
     - ano
     trecho: ~~I - em relação à representação dos Estados e do Distrito Federal, pelo Chefe do Poder Executivo;~~ (Revogado pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art482_par2
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art482_par2_incII
     tipos:
     - ano
     trecho: ~~II - em relação à representação dos Municípios e do Distrito Federal, na forma prevista no § 7º do art. 481 desta Lei Complementar; e~~ (Revogado pela Lei Complementar nº 227, de 2026)
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art482_par4
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art482_par5
     tipos:
     - ano
     trecho: ~~§ 5º O membro do Conselho Superior do CGIBS investido na função com fundamento na alínea “a” do inciso II do caput deste artigo que vier a deixar de ocupar o cargo de Secretário de Fazenda, Finanças, Tributação ou similar deverá ser substituído ou destituído no prazo de 10 (dez) dias, contado da data de exoneração, caso não preencha outro requisito para ser membro do Conselho Superior do CGIBS.~~ (Revogado pela Lei Complementar nº 227, de 2026)
@@ -58971,7 +58991,7 @@ dispositivos:
       efeitos_inicio: '2027-01-01'
     proposta: null
     motivo: null
-  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art517_par1_ali-a
+  - subdivisao: urn:lex:br:federal:lei.complementar:2025-01-16;214!art517_par1
     tipo: redacao_dada
     anotacao: (Redação dada pela Lei Complementar nº 227, de 2026)
     ato: urn:lex:br:federal:lei.complementar:2026-01-13;227!art174
@@ -60914,7 +60934,7 @@ dispositivos:
     tipos:
     - ano
     trecho: VII - os arts. 11-A a 11-C da Lei nº 9.440, de 14 de março 1997;
-  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art542_incXXXVI_ali-h
+  - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art542_incXXXVI_ali-i
     tipos:
     - ano
     trecho: ~~i) os incisos I e II do § 4º do art. 41.~~ (Revogado pela Lei Complementar nº 227, de 2026)

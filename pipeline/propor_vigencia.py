@@ -61,7 +61,7 @@ from fatiar import (
     extrair_remissoes,
     html_para_linhas,
     linhas_citadas,
-    subdivisao_por_linha,
+    subdivisao_por_linha_com_riscado,
 )
 from alteracoes import conferir
 from regras_temporais import aprovada, carregar_regras, primeiro_dia_do_mes_subsequente
@@ -522,7 +522,9 @@ def marcos_proprios(corpo: list[str], urn_base: str, artigo: str) -> dict:
     ele diz sobre o tempo pertence à norma alterada. É só contado à parte.
     """
     citada = linhas_citadas(corpo)
-    urns = subdivisao_por_linha(corpo, urn_base, artigo)
+    # Cada redação nos próprios rótulos: o marco da linha riscada ("~~§ 7º ...~~
+    # (Revogado ...)") é do § 7º, e o do texto vigente não herda rótulo riscado.
+    urns = subdivisao_por_linha_com_riscado(corpo, urn_base, artigo)
     marcos, citado_com_marcos = [], 0
     for linha, e_citada, urn in zip(corpo, citada, urns):
         tipos = _tipos_de_marco(linha)
@@ -682,7 +684,7 @@ def vetados_do_artigo(corpo: list[str], urn_base: str, artigo: str) -> dict:
     próprio caput é vetado (o artigo inteiro sem texto)."""
     sem_marca = [linha.replace("~~", "") for linha in corpo]
     ocorrencias, subdivisoes = 0, []
-    for linha, sub in zip(sem_marca, subdivisao_por_linha(sem_marca, urn_base, artigo)):
+    for linha, sub in zip(sem_marca, subdivisao_por_linha_com_riscado(corpo, urn_base, artigo)):
         achadas = len(RE_VETADO.findall(linha))
         if achadas:
             ocorrencias += achadas

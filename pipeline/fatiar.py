@@ -822,6 +822,22 @@ def subdivisao_por_linha(linhas: list[str], urn_base: str, artigo: str) -> list[
     return saida
 
 
+def subdivisao_por_linha_com_riscado(linhas: list[str], urn_base: str, artigo: str) -> list[str]:
+    """`subdivisao_por_linha` de um corpo com redação anterior riscada (`~~ ~~`).
+
+    Cada redação segue os próprios rótulos. A linha riscada ("~~§ 7º ...~~
+    (Revogado ...)") fica na subdivisão do rótulo dela, lido sem as marcas; o texto
+    vigente segue só os rótulos vigentes. Sem isso, ou o rótulo riscado ficava
+    invisível (o § 7º revogado caía no inciso do § 6º), ou o "Parágrafo único" da
+    redação ANTERIOR, que o compilado põe antes do texto atual, abria a subdivisão
+    do caput ATUAL (LC 214, art. 361: o caput como `art361_parU_incII`).
+    """
+    riscada = [linha.lstrip().startswith(MARCA_RISCADO) for linha in linhas]
+    vigente = subdivisao_por_linha(["" if r else linha for linha, r in zip(linhas, riscada)], urn_base, artigo)
+    todas = subdivisao_por_linha([linha.replace(MARCA_RISCADO, "") for linha in linhas], urn_base, artigo)
+    return [t if r else v for v, t, r in zip(vigente, todas, riscada)]
+
+
 def linhas_citadas(linhas: list[str]) -> list[bool]:
     """Para as linhas do CORPO de um dispositivo, quais são texto de outra norma.
 
