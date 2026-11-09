@@ -1,9 +1,16 @@
 {
   "ainda importação de serviço": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art66",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64"
   ],
   "alienação": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art254"
+  ],
+  "ambiente de dados nacional de uso comum": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art146"
+  ],
+  "ativo financeiro garantidor": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art319"
   ],
   "aumento extraordinário de receita da união": [
     "urn:lex:br:federal:lei.complementar:2026-08-27;235!art3"
@@ -11,54 +18,106 @@
   "autoridade fiscal": [
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art4"
   ],
+  "base de cálculo": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art286"
+  ],
   "bem móvel usado": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art258",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art171"
   ],
   "benefício oneroso, não se aplicando": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art385"
   ],
   "coligada": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art5",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art5"
   ],
+  "como consumo domiciliar": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art496"
+  ],
   "como domicílio principal do adquirente": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art12",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
   ],
   "como ibs extinto relativo": [
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art106"
   ],
+  "como resgate parcial do ativo garantidor": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art319"
+  ],
   "como saf": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art421",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art292"
   ],
+  "comprovada": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art103"
+  ],
   "constituído": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art46",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art46"
   ],
+  "contingência": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art136"
+  ],
   "desconto incondicional": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art13",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art12",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art417"
   ],
+  "destinatário do serviço de intermediação": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art325"
+  ],
   "devido": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art97",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art427"
+  ],
+  "disponível": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art20"
+  ],
+  "documento auxiliar": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art135"
+  ],
+  "documento fiscal": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art117"
   ],
   "documento fiscal idôneo": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art60"
   ],
   "documento fiscal não idôneo, entre outros,": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art577",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-G"
+  ],
+  "efetivada": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art102"
+  ],
+  "estabelecimento fornecedor": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art106"
+  ],
+  "evento fiscal": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art140"
+  ],
+  "exigível": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art11"
   ],
   "exportação": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art98"
   ],
   "fornecimento de produto florestal inclusive": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art212",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art137"
   ],
   "impedido": [
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art66"
   ],
   "in natura": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art212",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art137"
   ],
   "indenizações correspondentes": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art235"
+  ],
+  "internamento": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art543"
   ],
   "interposto ex lege": [
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art77"
@@ -67,26 +126,60 @@
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art64"
   ],
   "local da entrega ou disponibilização do bem ao destinatário": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art12",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
+  ],
+  "local da importação": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art79"
   ],
   "local da operação": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art12",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
   ],
+  "local de entrega dos bens ao destinatário final": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art79"
+  ],
   "local do domicílio principal do adquirente ou, conforme": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art12",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
   ],
   "local do imóvel": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art12",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11"
   ],
   "matéria-prima para fins do disposto no caput": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art180",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art100"
   ],
+  "na base de cálculo": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art286"
+  ],
+  "não efetivado": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art548"
+  ],
   "ocorrida": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art12",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art12",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art69",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art11",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art64"
   ],
+  "ocorrida operação onerosa e será exigido do exportador, com": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art96"
+  ],
   "ocorrido": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art11",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art11",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art11",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art11",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art22",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art363",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art363",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art363",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art439",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art69",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art78",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art10",
@@ -99,24 +192,39 @@
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art151",
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art151"
   ],
+  "paa": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art129"
+  ],
   "pessoa jurídica inclusive": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art164"
   ],
   "pessoal, para": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art562",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art332"
   ],
   "produtor rural integrado": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art164"
   ],
   "que": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art123",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art5",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art5"
   ],
+  "que exerce precipuamente": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art190"
+  ],
   "receita bruta": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art462",
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art463",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art486",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art487"
   ],
   "reincidência específica": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art577",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art341-G"
+  ],
+  "resgate do ativo garantidor, inclusive,": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art332"
   ],
   "saldo credor": [
     "urn:lex:br:federal:lei.complementar:2026-01-13;227!art132"
@@ -124,7 +232,35 @@
   "saldo devedor do ibs, para cada percentual de incentivo,": [
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art450"
   ],
+  "saída interna de que trata": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art434"
+  ],
+  "serviço de agências de turismo": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art417"
+  ],
+  "serviço de construção civil": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art360"
+  ],
   "serviço de hotelaria": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art408",
     "urn:lex:br:federal:lei.complementar:2025-01-16;214!art278"
+  ],
+  "também entrada de bens de procedência estrangeira": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art75"
+  ],
+  "termo inicial": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art517"
+  ],
+  "titular do plano de assistência à saúde": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art339"
+  ],
+  "unidade de uso exclusivo dos hóspedes": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art408"
+  ],
+  "utilizada": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art501"
+  ],
+  "valor de mercado": [
+    "urn:lex:br:federal:decreto:2026-04-29;12955!art14"
   ]
 }

@@ -1,4 +1,388 @@
 {
+  "urn:lex:br:federal:decreto:2026-04-29;12955!anx1": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(INCLUÍDOS OS QUE POSSAM SER UTILIZADOS ACESSORIAMENTE NO AQUECIMENTO CENTRAL)",
+      "(INCLUÍDOS OS DISTRIBUIDORES QUE POSSAM TAMBÉM FUNCIONAR COMO DISTRIBUIDORES DE AR FRIO OU CONDICIONADO)",
+      "(INCLUÍDAS AS FRESAS-SERRAS E AS FOLHAS NÃO DENTADAS PARA SERRAR)",
+      "(INCLUÍDAS AS CHAVES DINAMOMÉTRICAS)",
+      "(INCLUÍDOS OS CORTA-VIDROS)",
+      "(INCLUÍDAS AS MÁQUINAS E APARELHOS PARA EMBALAR COM PELÍCULA TERMO-RETRÁTIL)",
+      "(INCLUÍDAS AS BOBINADEIRAS DE TRAMA)",
+      "(INCLUÍDAS AS PRENSAS FIXADORAS)",
+      "(INCLUÍDOS OS CENTROS DE TORNEAMENTO)",
+      "(INCLUÍDAS AS UNIDADES COM CABEÇA DESLIZANTE)",
+      "(INCLUÍDOS OS CENTROS DE TORNEAMENTO)",
+      "(INCLUÍDAS AS PRENSAS)",
+      "(INCLUÍDAS AS PRENSAS)",
+      "(INCLUÍDAS AS MÁQUINAS PARA PREGAR, GRAMPEAR, COLAR OU REUNIR POR QUALQUER OUTRO MODO)",
+      "(INCLUÍDOS OS PÓS E PASTAS)",
+      "(INCLUÍDOS OS A GÁS AQUECIDO ELETRICAMENTE)",
+      "(INCLUÍDOS OS ELETROMECÂNICOS)",
+      "(INCLUÍDOS OS ELETROMECÂNICOS)",
+      "(INCLUÍDOS OS CICLOMOTORES)",
+      "(INCLUÍDOS OS SATÉLITES)",
+      "(INCLUÍDOS OS PÁRA-QUEDAS DIRIGÍVEIS E OS PARAPENTES)",
+      "(INCLUÍDOS OS APARELHOS PARA PROJEÇÃO OU EXECUÇÃO DE TRAÇADOS DE CIRCUITOS SOBRE SUPERFÍCIES SENSIBILIZADAS DE MATERIAIS SEMICONDUTORES)",
+      "(incluídos os aparelhos de exploração funcional e os de verificação de parâmetros fisiológicos)",
+      "(INCLUÍDOS OS INDICADORES DE TEMPO DE EXPOSIÇÃO)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art105": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Vide Produção de efeitos)",
+        "ato": null,
+        "link": "#art105§4a",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art105"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4_incI"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art105_par4_incII"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Vide Produção de efeitos)",
+      "(Produção de efeitos)",
+      "(Produção de efeitos)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art112": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art115": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Vide Produção de efeitos)",
+        "ato": null,
+        "link": "#art115§3",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art115"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art115_par3"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art115_par3_incI"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art115_par3_incII"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Vide Produção de efeitos)",
+      "(Produção de efeitos)",
+      "(Produção de efeitos)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art245": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art246": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art247": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art248": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art249": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art25": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Vide Decreto nº 13.140, de 2026)",
+        "ato": null,
+        "link": "d13140.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art25_incIV"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Vide Decreto nº 13.140, de 2026)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art250": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art252": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art253": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art254": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art255": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art256": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art257": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art258": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art471": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Redação dada pelo Decreto nº 13.133, de 2026)",
+        "ato": null,
+        "link": "d13133.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art471_incIII"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Redação dada pelo Decreto nº 13.133, de 2026)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art476": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Redação dada pelo Decreto nº 13.133, de 2026)",
+        "ato": null,
+        "link": "d13133.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art476"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Redação dada pelo Decreto nº 13.133, de 2026)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art477": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Revogado pelo Decreto nº 13.133, de 2026)",
+        "ato": null,
+        "link": "d13133.htm#art2",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art477"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Revogado pelo Decreto nº 13.133, de 2026)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art518": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art519": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art520": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art521": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art522": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art523": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art524": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art525": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art526": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art527": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art528": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art531": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art539": {
+    "altera": [],
+    "alterado_por": [],
+    "anotacoes_oficiais": [
+      "(Produção de efeitos)"
+    ]
+  },
+  "urn:lex:br:federal:decreto:2026-04-29;12955!art619": {
+    "altera": [],
+    "alterado_por": [
+      {
+        "anotacao": "(Redação dada pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art619_incII_ali-d"
+      },
+      {
+        "anotacao": "(Redação dada pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art619_incII_ali-e"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art619_incII_ali-f"
+      },
+      {
+        "anotacao": "(Incluído pelo Decreto nº 13.075, de 2026)",
+        "ato": null,
+        "link": "d13075.htm#art1",
+        "subdivisao": "urn:lex:br:federal:decreto:2026-04-29;12955!art619_incII_ali-g"
+      }
+    ],
+    "anotacoes_oficiais": [
+      "(Redação dada pelo Decreto nº 13.075, de 2026)",
+      "(Redação dada pelo Decreto nº 13.075, de 2026)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)",
+      "(Incluído pelo Decreto nº 13.075, de 2026)"
+    ]
+  },
   "urn:lex:br:federal:emenda.constitucional:2023-12-20;132!art11": {
     "altera": [],
     "alterado_por": [
