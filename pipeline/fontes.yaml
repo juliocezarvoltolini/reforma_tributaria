@@ -33,6 +33,9 @@ fontes:
       Ingerir primeiro: os demais diplomas remetem a ela.
 
   # ---------------------------------------------------------------- nível 1
+  # `remissoes_por_link`: menção sem qualificador dentro de link do compilado
+  # para outro arquivo (ex.: "art. 155" -> constituicao.htm) não é desta LC.
+  # Ligado em 2026-11-09 por decisão do usuário (docs/ESTADO.md §9, item 2).
   - id: lcp-214-2025
     titulo: "Lei Complementar nº 214, de 16 de janeiro de 2025"
     slug: lc-214-2025
@@ -41,6 +44,7 @@ fontes:
     data: "2025-01-16"
     autoridade: "br:federal:lei.complementar"
     prioridade: 2
+    remissoes_por_link: true
     urls:
       - tipo: texto_compilado
         url: "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm"

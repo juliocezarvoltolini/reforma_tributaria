@@ -782,12 +782,19 @@ arquivo. Com a marca, essa menção resolve na norma do link se ela está na bas
 a âncora é o mesmo artigo/anexo; senão fica sem ponteiro. Resultado: 701
 remissões ao próprio decreto, 550 à LC 214, 2 à EC 132, **0 órfãs**.
 
-A marca vale só para o decreto. **O mesmo defeito existe na LC 214**, a outra
+**LC 214: marca ligada em 2026-11-09, por decisão do usuário.** Era a outra
 norma da base com o padrão "interno salvo qualificador externo" (EC 132, LC 227 e
-LC 235 só resolvem o escopo afirmado): medidas no compilado, 176 menções sem
-qualificador, lidas como da própria LC, estão dentro de link para outro arquivo
-(ex.: "art. 155" da Constituição como art. 155 da LC 214). Ligar a marca nela
-muda remissões gravadas — decisão de §9, item 2.
+LC 235 só resolvem o escopo afirmado). No compilado havia 176 menções sem
+qualificador, lidas como da própria LC, dentro de link para outro arquivo. Ao
+refatiar, isso deu 22 ponteiros errados, em 14 artigos (12, 26, 174, 259, 348,
+350, 367, 371, 380, 381, 387, 404, 485 e 488); os demais alvos continuam
+ligados por outra menção do mesmo artigo. Todos foram conferidos no texto:
+eram da Constituição/ADCT, da LC 101, da LC 123, das Leis 10.637, 10.147,
+10.485 e 10.931 e do Código Civil. Por exemplo, "art. 1.358-A da Lei nº 10.406
+(Código Civil)" apontava para o art. 1º da LC 214. Saíram os 22, e nenhum
+entrou: as normas dos links não estão na base. As 2 órfãs do art. 26 (art. 18-A
+da LC 123) eram desse tipo, e a base ficou com 0 órfãs. Só os 14 arquivos foram
+regravados; nos outros, a diferença era só `ingerido_em`.
 
 **Vigência e efeitos: nada decidido (625 de 625 pendentes).** O decreto tem DUAS
 cláusulas: art. 619 ("entra em vigor e produz efeitos na data de sua publicação,
