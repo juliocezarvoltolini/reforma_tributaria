@@ -138,7 +138,11 @@ remete_a: ["urn:...!art9", "urn:...!art57_par2"]   # desta norma e de outra da b
 #   EC 132 se ela está no catálogo (tipo e número) e a data dita é a dela; vale o
 #   PRIMEIRO qualificador depois da menção. Sob "os seguintes dispositivos da Lei
 #   nº ...:" (ou "IX - da Lei nº ...:"), os itens são daquela lei: resolvem nela se
-#   está na base, e nunca nesta.
+#   está na base, e nunca nesta. Com `remissoes_por_link: true` no catálogo (o
+#   Decreto 12.955), a menção sem qualificador dentro de link do compilado para
+#   OUTRO arquivo ("(Art. 181</a> e <a>art. 182 da Lei Complementar nº 214") é da
+#   norma do link: resolve nela se está na base e a âncora é o mesmo artigo ou
+#   anexo; senão, fica sem ponteiro.
 remete_a_ato:                     # regulamento e atos infralegais que o texto manda editar
   - tipo: "ato_conjunto"          #   regulamento|ato_conjunto|ato_poder_executivo|
     subdivisao: "urn:...;214!art168_par4"   ato_comite_gestor|ato_rfb

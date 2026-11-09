@@ -188,7 +188,18 @@ def _expandir(grupo: str) -> list[int]:
     return numeros
 
 
-def extrair_remissoes_a_anexos(texto: str, urn_base: str, exigir_escopo_interno: bool) -> list[str]:
+def _anexo_do_link(href: str, numero: int, mapa_links: dict | None) -> str | None:
+    """URN do anexo `numero` da norma do link, se ela está na base e a âncora é
+    "anexo<numero>" ("lcp214.htm#anexo4")."""
+    arquivo, _, ancora = href.partition("#")
+    base = (mapa_links or {}).get(arquivo.rsplit("/", 1)[-1].lower())
+    m = RE_ANCORA_ANEXO.match(ancora)
+    return f"{base}!anx{numero}" if base and m and int(m.group(1)) == numero else None
+
+
+def extrair_remissoes_a_anexos(texto: str, urn_base: str, exigir_escopo_interno: bool,
+                               links_externos: list | None = None,
+                               mapa_links: dict | None = None) -> list[str]:
     """URNs dos anexos DESTA norma mencionados no texto.
 
     Mesma política das remissões a artigo (fatiar.extrair_remissoes): "desta Lei"
@@ -196,7 +207,12 @@ def extrair_remissoes_a_anexos(texto: str, urn_base: str, exigir_escopo_interno:
     resolve, salvo onde se exige escopo afirmado. A janela do qualificador vai
     até a próxima menção a anexo ou artigo, para que o "desta Lei" do Anexo XXIII
     não valha para o Anexo VII que o precede, e não passa do parágrafo (num
-    anexo, a linha seguinte da tabela não qualifica a menção)."""
+    anexo, a linha seguinte da tabela não qualifica a menção).
+
+    `links_externos`, como em fatiar.extrair_remissoes: a menção sem qualificador
+    dentro de link para outro arquivo ("Anexo IV da referida Lei Complementar" ->
+    lcp214.htm#anexo4) não é desta norma; resolve na do link se ela está na base
+    e a âncora é o mesmo anexo, senão fica sem ponteiro."""
     from fatiar import RE_ESCOPO_EXTERNO, RE_ESCOPO_INTERNO
 
     achados: list[str] = []
@@ -204,14 +220,18 @@ def extrair_remissoes_a_anexos(texto: str, urn_base: str, exigir_escopo_interno:
         janela = texto[m.end():m.end() + 90]
         corte = re.search(r"[.;:\n]|\bart|\b(?i:anexos?)\b", janela)
         janela = janela[:corte.start()] if corte else janela
+        link = next((h for a, b, h in links_externos or () if a <= m.start() < b), None)
         if RE_ESCOPO_INTERNO.search(janela):
-            pass
+            link = None
         elif RE_ESCOPO_EXTERNO.search(janela) or RE_CONSTANTE.search(janela):
             continue
         elif exigir_escopo_interno:
             continue
         for numero in _expandir(m.group(1)):
-            urn = f"{urn_base}!anx{numero}"
+            urn = (f"{urn_base}!anx{numero}" if link is None
+                   else _anexo_do_link(link, numero, mapa_links))
+            if urn is None:
+                continue
             if urn not in achados:
                 achados.append(urn)
     return achados

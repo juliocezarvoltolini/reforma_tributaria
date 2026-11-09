@@ -967,7 +967,7 @@ def fontes_reais():
     os defeitos anteriores foram achados rodando contra o documento real e nenhum
     pelos testes. Verifica PROPRIEDADES — numeração consecutiva, estritamente
     crescente, aspas balanceadas — nunca contagens copiadas da saída do parser."""
-    for slug in ("emc-132-2023", "lc-214-2025"):
+    for slug in ("emc-132-2023", "lc-214-2025", "dec-12955-2026"):
         caminho = RAIZ / "fontes" / slug / "texto_compilado.html"
         if not caminho.exists():
             print(f"  pulado: {slug} (fontes/ não contém o original)")
@@ -4298,6 +4298,188 @@ def remissao_em_enumeracao():
              "a) arts. 3º a 9º; e\n\nb) o art. 16;\n\nV - o art. 6º desta Lei Complementar.")
     checar(extrair_remissoes(curto, URN_BASE, "9", False, normas) == [urn_dispositivo(URN_BASE, "6")],
            "cabeçalho curto 'IV - da Lei nº ...:' também abre a enumeração daquela lei")
+
+
+# ---------------------------------------------------------------------------
+# Decreto (tests/fixtures/planalto-decreto.html: marcação do Decreto 12.955/2026)
+# ---------------------------------------------------------------------------
+
+URN_DEC = urn_norma("br:federal:decreto", "1900-03-03", "99999")
+# A lei que o decreto fictício regulamenta é a "LC 999" dos outros fixtures.
+NORMAS_DEC = {("lei.complementar", "999"): (URN_BASE, "1900-01-01")}
+MAPA_DEC = {"lcp999.htm": URN_BASE}
+
+
+def _decreto():
+    linhas = F.html_para_linhas(fixture("planalto-decreto.html"))
+    artigos, avisos, stats = F.fatiar(linhas)
+    return linhas, artigos, avisos, stats
+
+
+@cenario("decreto: fatiamento sobre a marcação real do compilado do Planalto")
+def decreto_fatiamento():
+    """Contrato com a marcação do decreto: cabeçalho em tabela, 'DECRETA:', redação
+    anterior em <strike> com a âncora dentro, revogado, cláusula com alíneas, um
+    segundo artigo de vigência, assinatura, rodapé do DOU e anexo com tabela.
+    Quebra: ler o cabeçalho ou o preâmbulo como artigo, colidir a redação riscada
+    com a nova, perder o fim do texto ou o anexo."""
+    import anexos as AX
+
+    linhas, artigos, avisos, stats = _decreto()
+    checar(sem_erro(avisos) and [a["numero"] for a in artigos] == [str(n) for n in range(1, 10)],
+           f"arts. 1 a 9, sem ERRO (obteve {[a['numero'] for a in artigos]}, {avisos})")
+    checar(por_numero(artigos, "2")["hierarquia"]
+           == ["LIVRO I — DAS NORMAS FICTÍCIAS", "CAPÍTULO I — DISPOSIÇÕES PRELIMINARES"]
+           and por_numero(artigos, "6")["hierarquia"][-1] == "Seção II — Das alíquotas fictícias revogadas"
+           and por_numero(artigos, "8")["hierarquia"] == ["LIVRO II — DAS DISPOSIÇÕES FINAIS"],
+           "hierarquia: Livro, Capítulo e Seção com o título")
+    cinco = por_numero(artigos, "5")
+    checar(stats["redacoes_anteriores_mescladas"] == 1 and len(cinco["linhas"]) == 2
+           and cinco["linhas"][0].startswith("~~Art. 5º A alíquota fictícia")
+           and cinco["linhas"][1].endswith("(Redação dada pelo Decreto nº 99.998, de 1900)"),
+           "art. 5º: redação riscada e redação nova num artigo só")
+    checar(por_numero(artigos, "6")["linhas"]
+           == ["~~Art. 6º A alíquota fictícia da mistura será fixada em 90% (noventa por cento) da "
+               "alíquota de comparação.~~ (Revogado pelo Decreto nº 99.998, de 1900)"],
+           "art. 6º: revogado, com a anotação fora do riscado")
+    checar(stats["aspas_fechamento_sem_abertura"] == 1 and stats["aspas_estado_final"] == 0,
+           "o ” solto da última alínea da cláusula é contado, e não abre bloco")
+    checar(linhas[stats["linha_do_fim"]].completa.startswith("Brasília, 3 de março de 1900"),
+           "o texto termina na assinatura")
+    refs = F.extrair_referencias([ln.completa for ln in linhas])
+    checar(refs["data_do_ato"]["valor"] == "1900-03-03" and refs["data_do_ato"]["concordam"] is True
+           and refs["publicacao_dou"]["valores"] == ["1900-03-04"],
+           f"data do ato no título e na assinatura; publicação no rodapé (obteve {refs})")
+    anexos, avisos_ax = AX.fatiar_anexos(linhas[stats["linha_do_fim"]:])
+    checar(sem_erro(avisos_ax) and len(anexos) == 1
+           and AX.titulo(anexos[0]) == "BENS FICTÍCIOS (ART. 2º, § 1º)"
+           and anexos[0]["linhas"][-2:] == ["ITEM | BENS", "1 | BEM FICTÍCIO ALFA"],
+           f"Anexo I com título e tabela (obteve {[a['linhas'] for a in anexos]}, {avisos_ax})")
+
+
+@cenario("remissão: menção sem qualificador dentro de link para outro arquivo não é desta norma")
+def remissao_dentro_de_link():
+    """Quebra (medido no Decreto 12.955 real): '(Art. 181 e art. 182 da Lei
+    Complementar nº 214 ...)' dava o art. 181 DO DECRETO, e 'art. 156, caput,
+    inciso III, e art. 195, ..., da Constituição', o art. 156 do decreto —
+    ponteiro errado, que a validação não vê porque o alvo existe. O compilado
+    liga cada menção ao arquivo da norma citada: dentro desse link, a menção sem
+    qualificador não é desta norma. Resolve na norma do link só se ela está na
+    base e a âncora é o MESMO artigo; senão, fica sem ponteiro."""
+    d = lambda n: urn_dispositivo(URN_DEC, n)  # noqa: E731
+    lc = lambda n: urn_dispositivo(URN_BASE, n)  # noqa: E731
+    _, artigos, _, _ = _decreto()
+
+    def rem(numero, com_links=True):
+        art = por_numero(artigos, numero)
+        texto = "\n\n".join(art["linhas_proprias"])
+        if not com_links:
+            return extrair_remissoes(texto, URN_DEC, numero, False, NORMAS_DEC)
+        trechos = F.trechos_de_links(art["linhas_proprias"], art["links_proprios"])
+        return extrair_remissoes(texto, URN_DEC, numero, False, NORMAS_DEC,
+                                 links_externos=trechos, mapa_links=MAPA_DEC)
+
+    checar(rem("3", com_links=False) == [d("2"), d("4"), d("7"), lc("8")],
+           f"sem os links, o '(Art. 7º' sem qualificador vira o art. 7º do decreto "
+           f"(o comportamento das outras normas; obteve {rem('3', com_links=False)})")
+    checar(rem("3") == [d("2"), d("4"), lc("7"), lc("8")],
+           f"com os links: '(Art. 7º' é o art. 7º da LC, pela âncora do link (obteve {rem('3')})")
+    checar(rem("4", com_links=False) == [d("156"), d("1"), d("9")],
+           f"sem os links: arts. 156, 1º e 9º do decreto, os três errados (obteve {rem('4', com_links=False)})")
+    checar(rem("4") == [lc("9")],
+           f"com os links: Constituição e Lei 9.999 fora da base não resolvem; '(Art. 9º, Lei "
+           f"Complementar nº 999' resolve na LC pelo link (obteve {rem('4')})")
+    checar(rem("7") == [d("2"), lc("11")] and rem("2") == [lc("3")] and rem("1") == [],
+           f"link para o próprio arquivo ('#art8') e menção qualificada não mudam (obteve "
+           f"{rem('7')}, {rem('2')}, {rem('1')})")
+
+    texto = "conforme o art. 6º e o art. 7º da Lei Complementar nº 999."
+    inicio = texto.index("art. 6º")
+    trechos = [(inicio, len(texto) - 1, "../../../leis/lcp/lcp999.htm#art7")]
+    obtido = extrair_remissoes(texto, URN_DEC, "1", False, NORMAS_DEC,
+                               links_externos=trechos, mapa_links=MAPA_DEC)
+    checar(obtido == [lc("7")],
+           f"âncora de OUTRO artigo: o art. 6º fica sem ponteiro, nem desta norma nem da LC "
+           f"(obteve {obtido})")
+    checar(F.trechos_de_links(["(Art. 7º e art. 8º)", "Texto (Produção de efeitos)"],
+                              [(("x/lcp999.htm#art7", "(Art. 7º"), ("x/lcp999.htm#art8", "art. 8º)")),
+                               (("#art8", "(Produção de efeitos)"),)])
+           == [(0, 8, "x/lcp999.htm#art7"), (11, 19, "x/lcp999.htm#art8")],
+           "trechos: posição de cada link para outro arquivo no texto unido por linha em branco; "
+           "o link para o próprio arquivo não conta")
+
+    import anexos as AX
+
+    dois = por_numero(artigos, "2")
+    texto2 = "\n\n".join(dois["linhas_proprias"])
+    sem = AX.extrair_remissoes_a_anexos(texto2, URN_DEC, False)
+    checar(sem == [f"{URN_DEC}!anx1", f"{URN_DEC}!anx4"],
+           f"anexos sem os links: 'Anexo IV da referida Lei Complementar' vira o Anexo IV do "
+           f"decreto ('referida' não é qualificador; obteve {sem})")
+    com = AX.extrair_remissoes_a_anexos(
+        texto2, URN_DEC, False, F.trechos_de_links(dois["linhas_proprias"], dois["links_proprios"]),
+        MAPA_DEC)
+    checar(com == [f"{URN_DEC}!anx1", f"{URN_BASE}!anx4"],
+           f"anexos com os links: o Anexo IV é o da LC (âncora anexo4); o Anexo I, com link para o "
+           f"próprio arquivo, continua do decreto (obteve {com})")
+    texto = "nos Anexos IV e V da referida Lei Complementar."
+    trechos = [(texto.index("Anexos"), len(texto) - 1, "x/lcp999.htm#anexo4")]
+    so_ancora = AX.extrair_remissoes_a_anexos(texto, URN_DEC, False, trechos, MAPA_DEC)
+    checar(so_ancora == [f"{URN_BASE}!anx4"],
+           f"anexos: só o da âncora resolve na norma do link; o V fica sem ponteiro (obteve {so_ancora})")
+
+
+@cenario("decreto: o catálogo liga as remissões pelos links só onde a fonte pede")
+def decreto_montar_meta_por_link():
+    """Quebra: aplicar o veto pelos links a todas as normas mudaria as remissões já
+    gravadas da LC 214 e da LC 227 sem decisão (docs/ESTADO.md §9, item 2); não
+    aplicá-lo ao decreto deixaria os ponteiros errados do real."""
+    _, artigos, _, _ = _decreto()
+    registro = {"url": "https://exemplo.invalido", "tipo_documento": "texto_compilado",
+                "acesso": "1900-03-05", "sha256": "a" * 64}
+    pub = {"datas": ["1900-03-04"], "fonte": "rodape_compilado", "trechos": []}
+    fonte = {"titulo": "Decreto nº 99.999, de 3 de março de 1900", "slug": "dec-99999-1900",
+             "data": "1900-03-03", "tipo": "decreto"}
+    art3 = por_numero(artigos, "3")
+    com, _ = F.montar_meta(art3, {**fonte, "remissoes_por_link": True}, registro, URN_DEC, pub,
+                           False, MAPA_DEC, NORMAS_DEC)
+    sem, _ = F.montar_meta(art3, fonte, registro, URN_DEC, pub, False, MAPA_DEC, NORMAS_DEC)
+    checar(com["urn"] == "urn:lex:br:federal:decreto:1900-03-03;99999!art3",
+           f"URN LexML de decreto (obteve {com['urn']})")
+    checar(urn_dispositivo(URN_BASE, "7") in com["remete_a"]
+           and urn_dispositivo(URN_DEC, "7") not in com["remete_a"],
+           f"remissoes_por_link: o art. 7º é da LC (obteve {com['remete_a']})")
+    checar(urn_dispositivo(URN_DEC, "7") in sem["remete_a"],
+           f"sem a marca no catálogo, como antes (obteve {sem['remete_a']})")
+    art2 = por_numero(artigos, "2")
+    com2, _ = F.montar_meta(art2, {**fonte, "remissoes_por_link": True}, registro, URN_DEC, pub,
+                            False, MAPA_DEC, NORMAS_DEC)
+    checar(com2["remete_a"] == [urn_dispositivo(URN_BASE, "3"), f"{URN_DEC}!anx1", f"{URN_BASE}!anx4"],
+           f"remissoes_por_link vale também para os anexos (obteve {com2['remete_a']})")
+
+
+@cenario("catálogo: o Decreto 12.955 tem as URLs do acervo, abaixo das LCs")
+def catalogo_decreto_12955():
+    """Quebra: URL, número ou data escritos de memória. O ato já estava conferido
+    no acervo; o catálogo das normas fatiadas tem de dizer o mesmo."""
+    import yaml
+
+    from fatiar import CATALOGO
+
+    fontes = yaml.safe_load(CATALOGO.read_text(encoding="utf-8"))["fontes"]
+    acervo = {r["id"]: r for r in yaml.safe_load(
+        (RAIZ / "pipeline" / "acervo.yaml").read_text(encoding="utf-8"))["atos"]}
+    dec = next(f for f in fontes if f["id"] == "dec-12955-2026")
+    urls = {u["tipo"]: u["url"] for u in dec["urls"]}
+    checar(urls == {"texto_compilado": acervo["decreto-12955-2026"]["url"],
+                    "texto_publicado": acervo["decreto-12955-2026-dou"]["url"]},
+           f"compilado e publicado: as URLs dos registros do acervo (obteve {urls})")
+    checar(dec["tipo"] == "decreto" and dec["autoridade"] == "br:federal:decreto"
+           and dec["data"] == acervo["decreto-12955-2026"]["data"]
+           and dec["numero"] == acervo["decreto-12955-2026"]["numero"].replace(".", ""),
+           "tipo, autoridade, data e número (sem o ponto, como na URN) conferem com o acervo")
+    lcs = [f["prioridade"] for f in fontes if f["tipo"] == "lei.complementar"]
+    checar(dec["prioridade"] > max(lcs), "prioridade abaixo das LCs (PREMISSAS.md §2.1)")
 
 
 @cenario("ato infralegal: regulamento e ato conjunto remetidos pelo texto, com o trecho literal")

@@ -128,6 +128,38 @@ fontes:
     observacao: >-
       Altera a LC 214/2025 (4 anotações no compilado da LC 214).
 
+  # ---------------------------------------------------------------- nível 3
+  # Decreto (abaixo das LCs, PREMISSAS.md §2.1). Título, número, data e URLs
+  # copiados de pipeline/acervo.yaml (ids `decreto-12955-2026`, compilado do
+  # Planalto, e `decreto-12955-2026-dou`), onde o ato já estava arquivado e
+  # conferido; aqui ele passa a ser fatiado em /normas/. O acervo continua com os
+  # dois registros.
+  # `remissoes_por_link`: o compilado liga cada remissão a outra norma ao arquivo
+  # dela ("(Art. 181" -> lcp214.htm#art181; "art. 156, caput, inciso III" ->
+  # constituicao.htm). Menção sem qualificador dentro de link para outro arquivo
+  # não é deste decreto (ver fatiar.extrair_remissoes).
+  - id: dec-12955-2026
+    titulo: "Decreto nº 12.955, de 29 de abril de 2026"
+    slug: dec-12955-2026
+    tipo: decreto
+    numero: "12955"
+    data: "2026-04-29"
+    autoridade: "br:federal:decreto"
+    prioridade: 3
+    remissoes_por_link: true
+    urls:
+      - tipo: texto_compilado
+        url: "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d12955.htm"
+        url_verificada: false
+      - tipo: texto_publicado
+        url: "https://www.in.gov.br/web/dou/-/decreto-n-12.955-de-29-de-abril-de-2026-702415229"
+        url_verificada: false
+    observacao: >-
+      Regulamento da CBS ("Regulamenta a Contribuição Social sobre Bens e
+      Serviços – CBS e dá outras providências."). Alterado pelos Decretos
+      13.075/2026 e 13.133/2026, que estão só no acervo: as anotações do
+      compilado que apontam para eles ficam com `ato: null`.
+
 # ---------------------------------------------------------------------------
 # A INGERIR — pendente de identificação da URL oficial.
 #
