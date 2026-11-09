@@ -1,0 +1,16 @@
+# Leituras das pendências do cronograma das NTs de NT conjunta CT-e/BP-e/NF3e/NFCom (indices/cronograma_nt.json). Camada 3.
+# regra:cronograma-celula-vazia/v1 — colunas vazias em toda a faixa da linha no PDF (faixa_y).
+leituras:
+- nt: ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 650
+  - 680
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'

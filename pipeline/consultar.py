@@ -156,6 +156,10 @@ def estado_cronograma(linha: dict, referencia: _dt.date) -> str:
     """Estado de uma versão da NT na data, pelo que o documento declara. Calculado só
     com data exata nas duas pontas que importam; o resto, como o documento escreve."""
     teste, producao = linha.get("teste") or "", linha.get("producao") or ""
+    if linha.get("resultado") == "sem_tabela":
+        mencoes = "; ".join(f"'{t}'" for t in linha.get("trechos") or []) or "nenhuma"
+        return ("o documento não tem tabela de cronograma — não calculado; menções em texto corrido: "
+                + mencoes)
     if linha.get("resultado") == "sem_data":
         return "o documento não dá data para esta versão" + (f" ('{teste}')" if teste else "")
     if linha.get("resultado") == "ambigua":
@@ -177,8 +181,8 @@ def linhas_cronograma(nt: dict, referencia: _dt.date) -> list[str]:
         origem = x.get("origem") or "regra:cronograma-nt/v1"
         aviso = " — leitura por IA: não equivale a revisão humana" if origem.startswith("ia:") else ""
         etapa = f" [{x['etapa']}]" if x.get("etapa") else ""
-        saida.append(f"  v{x['versao']}{etapa} p.{x.get('pagina')}: {estado_cronograma(x, referencia)} "
-                     f"[{origem}]{aviso}")
+        onde = f"v{x['versao']}{etapa} p.{x.get('pagina')}" if x.get("versao") else "documento inteiro"
+        saida.append(f"  {onde}: {estado_cronograma(x, referencia)} [{origem}]{aviso}")
     for p in nt.get("pendencias") or []:
         saida.append(f"  v{p.get('versao')} p.{p.get('pagina')}: Nao localizado nas fontes indexadas "
                      f"(pendência do script: {p.get('motivo')})")

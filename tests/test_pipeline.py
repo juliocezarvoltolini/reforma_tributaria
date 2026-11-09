@@ -5232,6 +5232,30 @@ def cronograma_pagina_girada():
            "data solta na página: erro")
 
 
+@cenario("cronograma (sem tabela): documento sem tabela de implantação, com menções em texto corrido")
+def cronograma_sem_tabela():
+    """NTs da NFS-e (medido em 2026-11-09): sem tabela de cronograma; datas em texto
+    corrido ("deverá vigorar a partir de janeiro de 2026"). Quebra: aceitar 'sem
+    tabela' num texto que tem cabeçalho de colunas de implantação; ou citar trecho que
+    o texto não tem."""
+    import cronograma_nt as C
+
+    md = ("---\nid: nt-s\n---\n\n## Página 3\n\nO novo padrão deverá vigorar a partir de janeiro de 1901.\n"
+          "HISTÓRICO DE VERSÕES\nVersão Data Alterações de Versão\n1.01 30/06/1900 Alteração fictícia.\n")
+    rel = {"notas_tecnicas": [{"id": "nt-s", **C.ler_cronograma(md)}]}
+    leitura = {"nt": "nt-s", "versao": None, "pagina": None, "motivo": "tabela_nao_localizada",
+               "evidencia": "sem_tabela_no_texto", "teste": "", "producao": "", "resultado": "sem_tabela",
+               "trechos": ["deverá vigorar a partir de janeiro de 1901"], "leitura": "x",
+               "autor": "regra:cronograma-sem-tabela/v1", "data": "2026-11-09"}
+    nada = lambda rid: b""  # noqa: E731
+    checar(C.problemas_da_leitura(leitura, rel, nada, {"nt-s": md}) == [], "sem tabela e trecho no texto: conferido")
+    checar(any("trecho" in p for p in C.problemas_da_leitura(dict(leitura, trechos=["outra coisa"]), rel, nada,
+                                                             {"nt-s": md})), "trecho ausente: erro")
+    com_colunas = md.replace("HISTÓRICO DE VERSÕES", "Implantação Homologação\nProdução")
+    checar(any("cabeçalho" in p for p in C.problemas_da_leitura(leitura, rel, nada, {"nt-s": com_colunas})),
+           "texto com colunas de implantação: erro")
+
+
 @cenario("cronograma (consulta): estado na data só com data exata; o resto como o documento escreve")
 def cronograma_consulta():
     """Quebra: calcular estado a partir de "Até X", "01/2026" ou "Implementação futura"
@@ -5256,6 +5280,13 @@ def cronograma_consulta():
     checar("ambígua" in amb and "01/09/2026 05/10/2026" in amb and "em produção" not in amb, "ambígua: sem escolher")
     sem = K.estado_cronograma(linha(teste="", producao="", resultado="sem_data"), d)
     checar("não dá data" in sem, "sem_data: o documento não dá data")
+    st = K.estado_cronograma(linha(versao=None, teste="", producao="", resultado="sem_tabela",
+                                   trechos=["vigorar a partir de janeiro de 2026"]), d)
+    checar("não tem tabela" in st and "vigorar a partir de janeiro de 2026" in st and "não calculado" in st,
+           f"sem_tabela: menções em texto corrido, sem cálculo (obteve {st!r})")
+    doc = "\n".join(K.linhas_cronograma({"id": "nt-s", "versao": "1.0", "pendencias": [], "linhas": [
+        linha(versao=None, pagina=None, teste="", producao="", resultado="sem_tabela", trechos=[])]}, d))
+    checar("documento inteiro" in doc and "vNone" not in doc, f"sem_tabela vale para o documento (obteve {doc!r})")
     ia = K.linhas_cronograma({"id": "nt-x", "versao": "1.52", "linhas": [linha(origem="ia:claude-opus-5-5")],
                               "pendencias": [{"versao": "1.53", "motivo": "uma_data", "pagina": 4}]}, d)
     texto = "\n".join(ia)

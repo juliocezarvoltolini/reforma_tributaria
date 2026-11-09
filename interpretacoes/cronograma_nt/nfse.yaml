@@ -1,0 +1,164 @@
+# Leituras das pendências do cronograma das NTs de NFS-e (indices/cronograma_nt.json). Camada 3.
+# regra:cronograma-sem-tabela/v1 — o texto não tem cabeçalho de colunas de implantação;
+#   `trechos`: menções a data em texto corrido, literais do texto, não calculadas.
+leituras:
+- nt: nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos: []
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Nenhuma menção a data de implantação no texto.
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos: []
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Nenhuma menção a data de implantação no texto.
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006-leiaute-da-nfs-e-via-versao-1-00
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos: []
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Nenhuma menção a data de implantação no texto.
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-001
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos:
+  - que deverá vigorar a partir de janeiro de 2026. Os estudos técnicos permanecem e n ovas versões
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Menções a datas em texto corrido estão em `trechos` (não calculadas).
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-002
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos:
+  - se familiarizar com o novo padrão que deverá vigorar a partir de janeiro de 2026. Os estudos técnicos
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Menções a datas em texto corrido estão em `trechos` (não calculadas).
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-003
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos:
+  - para que possam se familiarizar com o novo padrão que deve rá vigorar a partir de janeiro de 2026.
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Menções a datas em texto corrido estão em `trechos` (não calculadas).
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-004
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos:
+  - para que possam se familiarizar com o novo padrão que deve rá vigorar a partir de janeiro de 2026.
+  - No dia 10 de dezembro  de 2025  foi implantado no ambiente de Produção Restrita
+  - Produção, com validade jurídica, a partir de 5 de janeiro de 2026.
+  - Nota Técnica SE\CGNFS-e nº 005, de 19 de novembro de 2025, não serão implantadas no ambiente
+  - 'Produção em janeiro de 2026: essas evoluções serão disponibilizadas em data futura, ao longo do ano'
+  - de 2026. Cronograma com novas datas de implantação será publicado no portal da NFS -e nas
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Menções a datas em texto corrido estão em `trechos` (não calculadas).
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-005
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos:
+  - para que possam se familiarizar com o novo padrão que deve rá vigorar a partir de janeiro de 2026.
+  - Produção e de Produção Restrita (homologação/testes) em janeiro de 2026 serão aqueles
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Menções a datas em texto corrido estão em `trechos` (não calculadas).
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-007
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos: []
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Nenhuma menção a data de implantação no texto.
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-008
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos:
+  - 1.01 30/06/2026 Alteração da data de suspensão da API de geração do DANFSe.
+  - 1.02 14/07/2026 Alteração da data de suspensão da API de geração do DANFSe ;
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Nenhuma menção a data de implantação no texto. O 'Histórico de versões' traz datas de PUBLICAÇÃO das versões,
+    não de implantação (também em `trechos`).
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'
+- nt: nfse-nota-tecnica-se-cgnfs-e-no-009-versao-1-01-01-10-2026
+  versao: null
+  pagina: null
+  motivo: tabela_nao_localizada
+  evidencia: sem_tabela_no_texto
+  teste: ''
+  producao: ''
+  resultado: sem_tabela
+  trechos:
+  - alfanumérico do Cadastro Nacional de Pessoas Jurídicas a ser implementado a partir de julho de 2026.
+  - Por fim, a partir de 01/01/2027, o domínio "Desconhecido (tipo não informado na nota de origem)"
+  - (vAjusteBCIBSCBSComExt) (a partir de 2027 até 2032)
+  leitura: O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção).
+    Menções a datas em texto corrido estão em `trechos` (não calculadas).
+  autor: regra:cronograma-sem-tabela/v1
+  data: '2026-11-09'

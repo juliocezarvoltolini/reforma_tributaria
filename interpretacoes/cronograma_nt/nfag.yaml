@@ -1,0 +1,29 @@
+# Leituras das pendências do cronograma das NTs de NFAg (indices/cronograma_nt.json). Camada 3.
+# regra:cronograma-celula-vazia/v1 — colunas vazias em toda a faixa da linha no PDF (faixa_y).
+leituras:
+- nt: nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 600
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'
+- nt: nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-328a9fde
+  versao: '1.00'
+  pagina: 3
+  motivo: sem_data
+  faixa_y:
+  - 600
+  - 701
+  teste: ''
+  producao: ''
+  resultado: sem_data
+  leitura: 'Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.'
+  autor: regra:cronograma-celula-vazia/v1
+  data: '2026-11-09'

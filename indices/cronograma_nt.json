@@ -2420,16 +2420,21 @@
           "teste": "01/09/2025",
           "trecho": "1.10  Atualização da documentação e leiaute 01/09/2025 31/10/2025",
           "versao": "1.10"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Previsão das informações do IBS/CBS nos DFe",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "DFe - Nota Técnica 2024.001.v.1.10 - IBS/CBS - Publicada em 11/12/24",
       "url": "https://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=OK31wgvsgf0=",
       "versao": "1.10"
@@ -5101,16 +5106,21 @@
           "teste": "06 abril 2026",
           "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 v.1.01 - Publicada em 02/03/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=MyOfjogTTIo=",
       "versao": "1.01"
@@ -5126,16 +5136,21 @@
           "teste": "06 abril 2026",
           "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 - RTC Vinculação Pagamento v1.01",
       "url": "https://dfe-portal.svrs.rs.gov.br/NFAG/DownloadArquivoEstatico/?sistema=NFAG&tipoArquivo=3&nomeArquivo=NFAg_Nota_Tecnica_2026_001_RTC_VinculacaoPgto_v1.01.pdf",
       "versao": "1.01"
@@ -8172,16 +8187,21 @@
           "teste": "06 abril 2026",
           "trecho": "1.01  Equalização dos códigos de meios de pagamento conforme tabela utilizada na NFe 06 abril 2026 04 maio 2026 A implantação do split payment está prevista para ocorrer a partir de 2027. Dessa forma, os campos mencionados nesta Nota Técnica têm caráter preparatório e visam permitir que os sistemas das administrações tributárias, emissores de documentos fiscais e demais atores envolvidos possam planejar, desenvolver e testar, com a devida antecedência, as adaptações necessárias. Considerações importantes:  Não há exigência de preenchimento ou uso dos campos de split payment em 2026 no ambiente de produção das empresas.  A ativação efetiva desses campos ocorrerá somente quando o mecanismo de split payment entrar em vigência, prevista para 2027.  Orientações adicionais e cronogramas serão divulgados oportunamente por meio dos canais oficiais do CGIBS e da RFB.",
           "versao": "1.01"
-        }
-      ],
-      "pendencias": [
+        },
         {
-          "motivo": "sem_data",
+          "etapa": null,
+          "leitura": "Colunas Teste e Produção vazias em toda a faixa da linha no PDF: o documento não dá data para esta versão.",
+          "origem": "regra:cronograma-celula-vazia/v1",
           "pagina": 3,
+          "producao": "",
+          "resultado": "sem_data",
+          "rodape": "",
+          "teste": "",
           "trecho": "1.00  Criação do grupo de informações da vinculação da transação de pagamento do DFe  Criação do evento de informações da vinculação da transação de pagamento do DFe  Criação do evento de cancelamento da vinculação da transação de pagamento do DFe",
           "versao": "1.00"
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 2026.001 v.1.01 - Publicada em 02/03/2026",
       "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Pvw9kDdOu1Y=",
       "versao": "1.01"
@@ -8243,15 +8263,21 @@
     {
       "documento_fiscal": "NFS-e (NFS-e Via)",
       "id": "nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Nenhuma menção a data de implantação no texto.",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica 010 SE/CGNFS-e nº 010 versão 1.00",
       "url": "https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/notas-tecnicas/nt-010-se-cgnfse-leiaute-nfse-via-v-1.00.pdf",
       "versao": "1.00"
@@ -8259,15 +8285,21 @@
     {
       "documento_fiscal": "NFS-e (NFS-e Via)",
       "id": "nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Nenhuma menção a data de implantação no texto.",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 006",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-006-se-cgnfse-leiaute-nfse-via.pdf",
       "versao": null
@@ -8275,15 +8307,21 @@
     {
       "documento_fiscal": "NFS-e (NFS-e Via)",
       "id": "nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006-leiaute-da-nfs-e-via-versao-1-00",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Nenhuma menção a data de implantação no texto.",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 006 - Leiaute da NFS-e Via - versão 1.00",
       "url": "https://www.gov.br/nfse/pt-br/nfs-e-via/documentacao-tecnica/notas-tecnicas/nt-006-se-cgnfse-leiaute-nfse-via-v-1.00.pdf",
       "versao": "1.00"
@@ -8291,15 +8329,24 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-001",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Menções a datas em texto corrido estão em `trechos` (não calculadas).",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
+          "trechos": [
+            "que deverá vigorar a partir de janeiro de 2026. Os estudos técnicos permanecem e n ovas versões"
+          ],
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 001",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nota-tecnica-001-se-cgnfse-novo-layout-rtc.pdf",
       "versao": "1.0"
@@ -8307,15 +8354,24 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-002",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Menções a datas em texto corrido estão em `trechos` (não calculadas).",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
+          "trechos": [
+            "se familiarizar com o novo padrão que deverá vigorar a partir de janeiro de 2026. Os estudos técnicos"
+          ],
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 002",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nota-tecnica-se-cgnfs-e-no-002-de-28-de-fevereiro-de-2025",
       "versao": "1.0"
@@ -8323,15 +8379,24 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-003",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Menções a datas em texto corrido estão em `trechos` (não calculadas).",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
+          "trechos": [
+            "para que possam se familiarizar com o novo padrão que deve rá vigorar a partir de janeiro de 2026."
+          ],
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 003",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-003-1-2-se-cgnfse-novo-layout-rtc.pdf",
       "versao": "1.2"
@@ -8339,15 +8404,29 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-004",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Menções a datas em texto corrido estão em `trechos` (não calculadas).",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
+          "trechos": [
+            "para que possam se familiarizar com o novo padrão que deve rá vigorar a partir de janeiro de 2026.",
+            "No dia 10 de dezembro  de 2025  foi implantado no ambiente de Produção Restrita",
+            "Produção, com validade jurídica, a partir de 5 de janeiro de 2026.",
+            "Nota Técnica SE\\CGNFS-e nº 005, de 19 de novembro de 2025, não serão implantadas no ambiente",
+            "Produção em janeiro de 2026: essas evoluções serão disponibilizadas em data futura, ao longo do ano",
+            "de 2026. Cronograma com novas datas de implantação será publicado no portal da NFS -e nas"
+          ],
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 004",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/producao-restrita/nt-004-se-cgnfse-novo-layout-rtc-v2-00-20251210.pdf",
       "versao": "2.0"
@@ -8355,15 +8434,25 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-005",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Menções a datas em texto corrido estão em `trechos` (não calculadas).",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
+          "trechos": [
+            "para que possam se familiarizar com o novo padrão que deve rá vigorar a partir de janeiro de 2026.",
+            "Produção e de Produção Restrita (homologação/testes) em janeiro de 2026 serão aqueles"
+          ],
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 005",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-005-se-cgnfse-novo-layout-rtc.pdf",
       "versao": "1.1"
@@ -8371,15 +8460,21 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-007",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Nenhuma menção a data de implantação no texto.",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 007",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-007-se-cgnfse-v1-0.pdf",
       "versao": "1.0"
@@ -8387,15 +8482,25 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-008",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Nenhuma menção a data de implantação no texto. O 'Histórico de versões' traz datas de PUBLICAÇÃO das versões, não de implantação (também em `trechos`).",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
+          "trechos": [
+            "1.01 30/06/2026 Alteração da data de suspensão da API de geração do DANFSe.",
+            "1.02 14/07/2026 Alteração da data de suspensão da API de geração do DANFSe ;"
+          ],
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 008",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nt-008-se-cgnfse-danfse-20260714-v1-02.pdf",
       "versao": "1.02"
@@ -8403,15 +8508,26 @@
     {
       "documento_fiscal": "NFS-e",
       "id": "nfse-nota-tecnica-se-cgnfs-e-no-009-versao-1-01-01-10-2026",
-      "linhas": [],
-      "pendencias": [
+      "linhas": [
         {
-          "motivo": "tabela_nao_localizada",
+          "etapa": null,
+          "leitura": "O documento não tem tabela de cronograma de implantação (nenhum cabeçalho de colunas Teste/Homologação/Produção). Menções a datas em texto corrido estão em `trechos` (não calculadas).",
+          "origem": "regra:cronograma-sem-tabela/v1",
           "pagina": null,
+          "producao": "",
+          "resultado": "sem_tabela",
+          "rodape": "",
+          "teste": "",
           "trecho": "",
+          "trechos": [
+            "alfanumérico do Cadastro Nacional de Pessoas Jurídicas a ser implementado a partir de julho de 2026.",
+            "Por fim, a partir de 01/01/2027, o domínio \"Desconhecido (tipo não informado na nota de origem)\"",
+            "(vAjusteBCIBSCBSComExt) (a partir de 2027 até 2032)"
+          ],
           "versao": null
         }
       ],
+      "pendencias": [],
       "titulo": "Nota Técnica SE/CGNFS-e nº 009 versão 1.01 (01/10/2026)",
       "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/rtc/nota-tecnica-009-se-cgnfs-e-v-1-01.pdf",
       "versao": "1.01"

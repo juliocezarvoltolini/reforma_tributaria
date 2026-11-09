@@ -119,7 +119,7 @@ def ler_cronograma(md: str) -> dict:
 # Leitura de IA não equivale a revisão humana (`origem` diz quem leu).
 
 DIR_LEITURAS = "cronograma_nt"
-RESULTADOS = ("lida", "ambigua", "sem_data")
+RESULTADOS = ("lida", "ambigua", "sem_data", "sem_tabela")
 CAMPOS_LEITURA = ("nt", "versao", "pagina", "motivo", "teste", "producao", "resultado", "leitura", "autor", "data")
 
 
@@ -148,8 +148,9 @@ def problemas_da_leitura(leitura: dict, rel: dict, obter_original, textos: dict 
     from acervo import normalizar
 
     rotulo = f"{leitura.get('nt')} v{leitura.get('versao')} p.{leitura.get('pagina')}"
+    sem_tabela = leitura.get("evidencia") == "sem_tabela_no_texto"
     probs = [f"{rotulo}: campo {c} ausente" for c in CAMPOS_LEITURA if leitura.get(c) in (None, [])
-             and c not in ("teste", "producao")]
+             and c not in ("teste", "producao") and not (sem_tabela and c in ("versao", "pagina"))]
     if leitura.get("resultado") not in RESULTADOS:
         probs.append(f"{rotulo}: resultado {leitura.get('resultado')!r} fora de {RESULTADOS}")
     casam = _pendencias(rel, leitura)
@@ -157,6 +158,8 @@ def problemas_da_leitura(leitura: dict, rel: dict, obter_original, textos: dict 
         probs.append(f"{rotulo}: nenhuma pendência {leitura.get('motivo')!r} correspondente na saída do script")
     elif len(casam) > 1:
         probs.append(f"{rotulo}: a chave casa com mais de uma pendência — leitura ambígua")
+    if sem_tabela:
+        return probs or _problemas_sem_tabela(leitura, textos or {}, rotulo)
     if leitura.get("evidencia") == "texto_da_pagina":
         return probs or _problemas_pela_pagina(leitura, rel, textos or {}, casam[0], rotulo)
     if bool(leitura.get("alturas")) == bool(leitura.get("faixa_y")):
@@ -173,6 +176,31 @@ def problemas_da_leitura(leitura: dict, rel: dict, obter_original, textos: dict 
                                                       dados=dados)
         if normalizar(no_pdf) != normalizar(str(leitura.get(coluna) or "")):
             probs.append(f"{rotulo}: {coluna} registrado {leitura.get(coluna)!r}, no PDF {no_pdf!r}")
+    return probs
+
+
+# Cabeçalho de colunas de implantação: se o texto tem um, a tabela existe e o script
+# é que não a achou — "sem tabela" não vale.
+RE_COLUNAS_IMPLANTACAO = re.compile(r"^(?:Implantação\s+(?:Teste|Homologação|Produção)|Produção)\s*$", re.M)
+
+
+def _problemas_sem_tabela(leitura: dict, textos: dict, rotulo: str) -> list[str]:
+    """NT sem tabela de cronograma (NFS-e): o texto não tem cabeçalho de colunas de
+    implantação, e cada menção em texto corrido citada está literalmente no texto."""
+    from acervo import normalizar
+
+    md = textos.get(leitura["nt"])
+    if md is None:
+        return [f"{rotulo}: texto do acervo ausente"]
+    probs = []
+    linhas = [x.strip() for x in md.split("\n")]
+    if any(RE_COLUNAS_IMPLANTACAO.match(x) or RE_CABECALHO.match(x) for x in linhas):
+        probs.append(f"{rotulo}: o texto tem cabeçalho de colunas de implantação — a tabela existe")
+    for trecho in leitura.get("trechos") or []:
+        if normalizar(trecho) not in normalizar(md):
+            probs.append(f"{rotulo}: trecho citado ausente do texto: {trecho!r}")
+    if leitura.get("teste") or leitura.get("producao"):
+        probs.append(f"{rotulo}: sem tabela, teste e produção ficam vazios")
     return probs
 
 
@@ -225,7 +253,8 @@ def aplicar_leituras(rel: dict, leituras: list[dict]) -> dict:
                 nt["linhas"].append({"versao": p["versao"], "pagina": p["pagina"], "teste": lt.get("teste") or "",
                                      "producao": lt.get("producao") or "", "rodape": "", "trecho": p["trecho"],
                                      "origem": lt["autor"], "resultado": lt["resultado"],
-                                     "leitura": lt["leitura"], "etapa": lt.get("etapa")})
+                                     "leitura": lt["leitura"], "etapa": lt.get("etapa"),
+                                     **({"trechos": lt["trechos"]} if lt.get("trechos") else {})})
         nt["pendencias"] = restantes
     return rel
 

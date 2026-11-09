@@ -2,8 +2,8 @@
 
 Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / Cronograma' de cada NT: o que o documento declara, nao decisao normativa. teste/producao estao como a NT os escreve. Linha com origem ia:... foi lida por IA a partir da posicao no PDF (interpretacoes/cronograma_nt/): nao equivale a revisao humana; resultado 'ambigua' lista as datas da celula sem dizer a qual item cada uma se aplica.
 
-- NTs: 115; com linhas lidas: 103
-- linhas lidas: 692; pendências: 15
+- NTs: 115; com linhas lidas: 114
+- linhas lidas: 707; pendências: 0
 
 | NT | versão do documento | linhas lidas | pendências |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | bpe-bpe-nota-tecnica-2026-002-v1-01 | 1.01 | 3 | 0 |
 | bpe-bpe-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs | 1.00 | 1 | 0 |
-| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10 | 1.10 | 1 | 1 |
+| ct-e-bp-e-nf3e-nfcom-nt-conjunta-dfe-dfe-nota-tecnica-2024-001-ibscbs-v1-10 | 1.10 | 2 | 0 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-00 | 1.00 | 1 | 0 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-01 | 1.01 | 2 | 0 |
 | cte-cte-nota-tecnica-2025-001-rtc-v1-02 | 1.02 | 3 | 0 |
@@ -58,8 +58,8 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | nf3e-nf3e-nota-tecnica-2026-004-v1-00 | 1.00 | 2 | 0 |
 | nf3e-nf3e-nota-tecnica-2026-004-v1-00-6e7bb7fe | 1.00 | 2 | 0 |
 | nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 | 1.00 | 1 | 0 |
-| nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 1 | 1 |
-| nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-328a9fde | 1.01 | 1 | 1 |
+| nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
+| nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-328a9fde | 1.01 | 2 | 0 |
 | nfag-nfag-nota-tecnica-2026-002-v1-00 | 1.00 | 1 | 0 |
 | nfag-nfag-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | nfag-nfag-nota-tecnica-2026-004-v1-00-f513fd04 | 1.00 | 1 | 0 |
@@ -107,21 +107,21 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | nfe-nt2026-007-v1-10-emissao-nf-e-sem-ie-e-rv-lcc | 1.10 | 2 | 0 |
 | nfe-nt2026-009-v1-00-alteracao-rv-cfop | 1.00 | 1 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-00 | 1.00 | 1 | 0 |
-| nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 1 | 1 |
+| nfgas-nfgas-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01 | 1.01 | 2 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-002-v1-00 | 1.00 | 1 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-004-v1-00 | 1.00 | 1 | 0 |
 | nfgas-nfgas-nota-tecnica-2026-004-v1-00-3dcbe9f8 | 1.00 | 1 | 0 |
-| nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00 | 1.00 | 0 | 1 |
-| nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006 |  | 0 | 1 |
-| nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006-leiaute-da-nfs-e-via-versao-1-00 | 1.00 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-001 | 1.0 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-002 | 1.0 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-003 | 1.2 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-004 | 2.0 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-005 | 1.1 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-007 | 1.0 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-008 | 1.02 | 0 | 1 |
-| nfse-nota-tecnica-se-cgnfs-e-no-009-versao-1-01-01-10-2026 | 1.01 | 0 | 1 |
+| nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00 | 1.00 | 1 | 0 |
+| nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006 |  | 1 | 0 |
+| nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006-leiaute-da-nfs-e-via-versao-1-00 | 1.00 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-001 | 1.0 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-002 | 1.0 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-003 | 1.2 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-004 | 2.0 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-005 | 1.1 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-007 | 1.0 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-008 | 1.02 | 1 | 0 |
+| nfse-nota-tecnica-se-cgnfs-e-no-009-versao-1-01-01-10-2026 | 1.01 | 1 | 0 |
 
 ## bpe-bpe-nota-tecnica-2025-001-rtc-v1-09 (versão 1.09)
 
@@ -418,6 +418,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.10 |  | 01/09/2025 | 31/10/2025 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## cte-cte-nota-tecnica-2025-001-rtc-v1-00 (versão 1.00)
 
@@ -784,12 +785,14 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nfag-nfag-nota-tecnica-2026-001-rtc-vinculacaopgto-v1-01-328a9fde (versão 1.01)
 
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nfag-nfag-nota-tecnica-2026-002-v1-00 (versão 1.00)
 
@@ -1311,6 +1314,7 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.01 |  | 06 abril 2026 | 04 maio 2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+| 1.00 |  |  |  |  | 3 | regra:cronograma-celula-vazia/v1 | sem_data |
 
 ## nfgas-nfgas-nota-tecnica-2026-002-v1-00 (versão 1.00)
 
@@ -1329,3 +1333,69 @@ Cronograma de implantacao lido por script da tabela 'Historico de Alteracoes / C
 | versão | etapa | teste | produção | rodapé | página | origem | resultado |
 |---|---|---|---|---|---|---|---|
 | 1.00 |  | 13/10/2026 | 16/11/2026 |  | 3 | regra:cronograma-nt/v1 | lida |
+
+## nfs-e-nfs-e-via-nota-tecnica-010-se-cgnfs-e-no-010-versao-1-00 (versão 1.00)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006 (versão ?)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfs-e-nfs-e-via-nota-tecnica-se-cgnfs-e-no-006-leiaute-da-nfs-e-via-versao-1-00 (versão 1.00)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-001 (versão 1.0)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-002 (versão 1.0)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-003 (versão 1.2)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-004 (versão 2.0)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-005 (versão 1.1)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-007 (versão 1.0)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-008 (versão 1.02)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |
+
+## nfse-nota-tecnica-se-cgnfs-e-no-009-versao-1-01-01-10-2026 (versão 1.01)
+
+| versão | etapa | teste | produção | rodapé | página | origem | resultado |
+|---|---|---|---|---|---|---|---|
+| None |  |  |  |  | None | regra:cronograma-sem-tabela/v1 | sem_tabela |

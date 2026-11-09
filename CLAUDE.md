@@ -164,6 +164,9 @@ trechos de `pipeline/acervo.yaml` estão no original), mas **não fatiados**:
   `regra:cronograma-pagina-girada/v1`): o documento não dá data para aquela
   versão — colunas vazias no PDF, ou, em página girada, nenhuma data na página
   fora das linhas lidas;
+  `resultado: sem_tabela` (`regra:cronograma-sem-tabela/v1`, NFS-e): a NT não tem
+  tabela de cronograma; `trechos` traz as menções a data em texto corrido, literais
+  e não calculadas — cite-as como texto do documento;
 - ato fora do acervo continua "Não localizado nas fontes indexadas";
 - `nivel` dá a prevalência (PREMISSAS.md §2.1): EC/LC prevalecem; `comunicado`,
   `nota` e `recomendacao` (nível 7) são orientação, não ato normativo.

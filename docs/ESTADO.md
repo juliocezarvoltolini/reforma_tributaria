@@ -689,6 +689,15 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   39 por célula vazia, 5 por IA ("Já implantado"; "Implantada"/"Implementação
   futura"; NFCom 1.01a: "Implantada"/04/01/2027). Restam 15 (NFS-e 11, NFAg 2,
   NFGas 1, NT conjunta 1).
+- **Últimas pendências resolvidas (2026-11-09, a pedido):** NT conjunta, NFAg e
+  NFGas — 4 linhas por célula vazia (a versão 1.00 dessas NTs não tem data; a 1.01
+  ou 1.10, sim). NFS-e e NFS-e Via — 11 NTs SEM tabela de cronograma
+  (`regra:cronograma-sem-tabela/v1`): o texto não tem cabeçalho de colunas de
+  implantação; as menções a data em texto corrido ("deverá vigorar a partir de
+  janeiro de 2026", "a partir de 5 de janeiro de 2026") vão em `trechos`, literais e
+  não calculadas. O "Histórico de versões" da NT 008 traz datas de PUBLICAÇÃO, não
+  de implantação. **Cronograma: 0 pendências em 115 NTs; 707 linhas** (283 lidas pelo
+  script, 301 célula vazia, 50 página girada, 11 sem tabela, 62 por IA).
 - **Consulta por data (2026-11-09):** `consultar.py --cronograma-nt --data D
   [--acervo-id prefixo]`. Estado calculado só quando teste/produção são data exata
   (dd/mm/aaaa); "Até X", "01/2026", "Implementação futura", "Não se aplica" saem como
