@@ -3,7 +3,7 @@
 Documento de trabalho. Registra o que está pronto, o que está aberto e o que já
 foi tentado sem sucesso. Atualize ao fechar cada frente.
 
-**Última atualização:** 2026-10-16
+**Última atualização:** 2026-11-09
 
 ---
 
@@ -753,3 +753,55 @@ versão do gerador). Busca: `consultar.py --acervo-texto`. Decisões:
   ~17 s. Clone novo paga os 5 min uma vez.
 - **Tamanho:** os originais do acervo somam ~230 MB em `fontes/acervo/`
   (maior arquivo ~4,8 MB). É o custo de P1.1 (cópia arquivada de tudo).
+
+---
+
+## 13. Decreto 12.955/2026 (Regulamento da CBS) fatiado em /normas/ (2026-11-09)
+
+Entrou em `pipeline/fontes.yaml` (`dec-12955-2026`, `br:federal:decreto`,
+prioridade 3), com título, número, data e as duas URLs copiados dos registros
+`decreto-12955-2026` e `decreto-12955-2026-dou` do acervo (que continuam lá). Os
+dois documentos foram baixados por `baixar.py --id dec-12955-2026`. O compilado
+de hoje difere do arquivado no acervo em 2026-10-20 numa linha: o inciso do
+nanoempreendedor ganhou "(Vide Decreto nº 13.140, de 2026)" — ato que não está
+no acervo.
+
+**Fatiamento** (`fatiar.py --slug dec-12955-2026`): 620 artigos (1..620, sem
+lacunas, nenhum citado), 5 anexos (I a V), publicação 30/04/2026 lida do DOU
+("Publicado em: 30/04/2026 | Edição: 80 | Seção: 1 | Página: 2"). 1 redação
+anterior fundida (art. 476); 1 ” sem abertura na fonte (art. 619, II, g: "alíneas
+“b” e “c”.”"), reportado. Fixture `tests/fixtures/planalto-decreto.html`.
+
+**Remissões pelos links (`remissoes_por_link: true` no catálogo).** O compilado
+do decreto liga cada remissão a outra norma ao arquivo dela, e o texto sozinho
+engana: "(Art. 181</a> e <a>art. 182 da Lei Complementar nº 214 ...)" dava o
+art. 181 DO DECRETO; "art. 156, caput, inciso III, e art. 195, ..., da
+Constituição", o art. 156; "Anexo IV da referida Lei Complementar", o Anexo IV
+do decreto. Medido: 47 menções sem qualificador dentro de link para outro
+arquivo. Com a marca, essa menção resolve na norma do link se ela está na base e
+a âncora é o mesmo artigo/anexo; senão fica sem ponteiro. Resultado: 701
+remissões ao próprio decreto, 550 à LC 214, 2 à EC 132, **0 órfãs**.
+
+A marca vale só para o decreto. **O mesmo defeito existe na LC 214**, a outra
+norma da base com o padrão "interno salvo qualificador externo" (EC 132, LC 227 e
+LC 235 só resolvem o escopo afirmado): medidas no compilado, 176 menções sem
+qualificador, lidas como da própria LC, estão dentro de link para outro arquivo
+(ex.: "art. 155" da Constituição como art. 155 da LC 214). Ligar a marca nela
+muda remissões gravadas — decisão de §9, item 2.
+
+**Vigência e efeitos: nada decidido (625 de 625 pendentes).** O decreto tem DUAS
+cláusulas: art. 619 ("entra em vigor e produz efeitos na data de sua publicação,
+exceto, quanto: I ... II ...") e art. 620 ("entra em vigor na data de sua
+publicação"). `propor_vigencia.py` não escolhe ("cláusula de vigência não
+localizada de forma única (candidatos: ['619', '620'])"), e a forma do caput do
+619 não é uma das reconhecidas. `revisar_por_regra.py`: 0 decisões. Decidir qual
+cláusula vale, ou se as duas se combinam, é de pessoa.
+
+**Lacunas:** as 8 tiveram a busca refeita no decreto (`pesquisado_em`); nenhuma
+foi suprida — o decreto repete a remissão (arts. 237, 466, 468 e 503, parágrafo
+único, registrados como contexto literal).
+
+**Não tratado:** "§ 4º-A" (art. 105, incluído pelo Decreto 13.075) vira a URN do
+§ 4º (`par4`), como "§ 5º-A" na LC 214 — defeito do leitor de subdivisões
+anterior a esta frente; os Decretos 13.075 e 13.133 seguem só no acervo
+(`alterado_por` com `ato: null`).

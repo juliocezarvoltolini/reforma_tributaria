@@ -27,6 +27,11 @@
   },
   "aviso": "Esta base cobre apenas o que esta listado aqui. Nao presuma que uma norma esta indexada porque ela existe no mundo.",
   "normas": {
+    "dec-12955-2026": {
+      "anexos": 5,
+      "dispositivos": 625,
+      "revisao_temporal_pendente": 625
+    },
     "emc-132-2023": {
       "anexos": 0,
       "dispositivos": 23,
@@ -48,5 +53,5 @@
       "revisao_temporal_pendente": 0
     }
   },
-  "total_dispositivos": 825
+  "total_dispositivos": 1450
 }

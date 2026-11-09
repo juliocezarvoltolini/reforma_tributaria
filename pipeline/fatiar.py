@@ -39,7 +39,7 @@ from comum import (
 )
 import datetime as _dt
 
-from alteracoes import alteracoes_do_artigo, mapa_de_links  # noqa: E402
+from alteracoes import alteracoes_do_artigo, mapa_de_links, resolver_link  # noqa: E402
 from anexos import extrair_remissoes_a_anexos, fatiar_anexos, montar_meta_anexo  # noqa: E402
 from infralegal import atos_infralegais  # noqa: E402
 from anexos import nome_arquivo as nome_arquivo_anexo  # noqa: E402
@@ -631,12 +631,47 @@ def _blocos_de_enumeracao(texto: str) -> list[tuple[int, int, tuple]]:
     return blocos
 
 
+def trechos_de_links(linhas: list[str], links: list[tuple]) -> list[tuple[int, int, str]]:
+    """(início, fim, href) de cada link para OUTRO arquivo no texto
+    "\\n\\n".join(linhas) — o texto de que `extrair_remissoes` lê as menções.
+
+    `links[i]` são os (href, texto) da linha i (`Linha.links`). O texto do link é
+    procurado na linha a partir do fim do anterior; link que não está nela (o de
+    trecho riscado, ausente do texto vigente) não conta. Link para o próprio
+    arquivo ("#art619") não é de outra norma.
+    """
+    saida: list[tuple[int, int, str]] = []
+    inicio = 0
+    for linha, links_da_linha in zip(linhas, links):
+        cursor = 0
+        for href, texto in links_da_linha:
+            pos = linha.find(texto, cursor)
+            if pos < 0:
+                continue
+            cursor = pos + len(texto)
+            if href.split("#", 1)[0].strip():
+                saida.append((inicio + pos, inicio + cursor, href))
+        inicio += len(linha) + 2
+    return saida
+
+
+def _norma_do_link(href: str, artigo: str, mapa_links: dict | None) -> str | None:
+    """URN da norma do link, se ela está na base e a âncora é o artigo `artigo`."""
+    alvo = resolver_link(href, mapa_links or {})
+    if alvo is None:
+        return None
+    base = alvo.split("!", 1)[0]
+    return base if alvo == urn_dispositivo(base, artigo) else None
+
+
 def extrair_remissoes(
     texto: str,
     urn_base: str,
     artigo_atual: str,
     exigir_escopo_interno: bool = False,
     normas: dict | None = None,
+    links_externos: list[tuple[int, int, str]] | None = None,
+    mapa_links: dict | None = None,
 ) -> list[str]:
     """Remissões resolvidas em URN. É o índice de maior retorno: um artigo lido
     isoladamente frequentemente diz o oposto do aplicável.
@@ -653,6 +688,12 @@ def extrair_remissoes(
     norma nomeada, se a data dita for a dela. Na enumeração sob "os seguintes
     dispositivos da <norma>:", os itens são daquela norma: resolvem nela se está
     na base; senão, não resolvem — nunca nesta.
+
+    `links_externos` (de `trechos_de_links`): onde o compilado liga o texto ao
+    arquivo de OUTRA norma. A menção sem qualificador dentro de um desses links
+    não é desta norma ("(Art. 181</a> e <a>art. 182 da Lei Complementar nº 214"):
+    resolve na norma do link se ela está na base (`mapa_links`) e a âncora é o
+    mesmo artigo; senão, fica sem ponteiro. Sem `links_externos`, como antes.
     """
     achados: list[str] = []
     consumido = texto
@@ -661,6 +702,11 @@ def extrair_remissoes(
     for tipo, regex in RE_REMISSOES:
         for m in regex.finditer(consumido):
             bloco = next((b[2] for b in blocos if b[0] <= m.start() < b[1]), None)
+            link = next((h for a, b, h in links_externos or () if a <= m.start() < b), None)
+            if tipo == "art":
+                artigo = normalizar_artigo(m.group(1), m.group(2))
+            else:
+                artigo = normalizar_artigo(m.group(2), m.group(3))
             if escopo_interno_afirmado(consumido, m.end()):
                 base = urn_base
             elif remissao_externa(consumido, m.end()):
@@ -680,18 +726,18 @@ def extrair_remissoes(
                     continue
             elif exigir_escopo_interno:
                 continue
+            elif link is not None:
+                base = _norma_do_link(link, artigo, mapa_links)
+                if base is None:
+                    continue
             else:
                 base = urn_base
             if tipo == "par":
-                alvo = urn_dispositivo(
-                    base, normalizar_artigo(m.group(2), m.group(3)), paragrafo=m.group(1)
-                )
+                alvo = urn_dispositivo(base, artigo, paragrafo=m.group(1))
             elif tipo == "inc":
-                alvo = urn_dispositivo(
-                    base, normalizar_artigo(m.group(2), m.group(3)), inciso=m.group(1)
-                )
+                alvo = urn_dispositivo(base, artigo, inciso=m.group(1))
             else:
-                alvo = urn_dispositivo(base, normalizar_artigo(m.group(1), m.group(2)))
+                alvo = urn_dispositivo(base, artigo)
             if alvo not in achados:
                 achados.append(alvo)
 
@@ -816,6 +862,9 @@ def _novo_artigo(numero: str, hierarquia: list[str]) -> dict:
         # dos conceitos e das subdivisões: as que aparecem no texto citado
         # pertencem à norma alterada, e as do texto riscado não valem mais.
         "linhas_proprias": [],
+        # Links de cada linha de `linhas_proprias`: onde o texto próprio liga a
+        # outra norma (ver `trechos_de_links`).
+        "links_proprios": [],
         "citados": [],
         # O cabeçalho mais recente está riscado: é redação superada, e um
         # cabeçalho de mesmo número logo a seguir é a redação que a substitui.
@@ -830,6 +879,7 @@ def _anexar(artigo: dict, linha: Linha, proprio: bool) -> None:
         artigo["linhas_vigentes"].append(linha.vigente)
         if proprio:
             artigo["linhas_proprias"].append(linha.vigente)
+            artigo["links_proprios"].append(linha.links)
 
 
 def fatiar(entrada: str | list[Linha]) -> tuple[list[dict], list[str], dict]:
@@ -1185,6 +1235,12 @@ def montar_meta(
     # captura ("Redação dada"), perdendo a norma que promoveu a alteração.
     anotacoes = [re.sub(r"\s+", " ", m.group(0)) for m in RE_ANOTACAO.finditer(vigente)]
     conceitos = [c.strip() for c in RE_CONCEITO.findall(corpo_proprio)]
+    # `remissoes_por_link` no catálogo: o compilado liga cada remissão a outra
+    # norma ao arquivo dela, e esse link decide a menção sem qualificador (ver
+    # extrair_remissoes). Só onde o catálogo pede: nas outras normas mudaria as
+    # remissões gravadas sem decisão (docs/ESTADO.md §9, item 2).
+    links_externos = (trechos_de_links(artigo["linhas_proprias"], artigo["links_proprios"])
+                      if fonte.get("remissoes_por_link") else None)
 
     # Datas PROVISÓRIAS até a revisão humana da cláusula de vigência (ver
     # revisao_temporal_pendente): a primeira publicação, ou a data do ato se a
@@ -1214,8 +1270,10 @@ def montar_meta(
         },
         "ingerido_em": hoje(),
         # Artigos e anexos desta norma ("Anexo I desta Lei Complementar").
-        "remete_a": (extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo, normas)
-                     + extrair_remissoes_a_anexos(corpo_proprio, base, exigir_escopo)),
+        "remete_a": (extrair_remissoes(corpo_proprio, base, artigo["numero"], exigir_escopo, normas,
+                                       links_externos, mapa_links)
+                     + extrair_remissoes_a_anexos(corpo_proprio, base, exigir_escopo,
+                                                  links_externos, mapa_links)),
         "remete_a_externo": extrair_externas(vigente),
         # Regulamento e atos infralegais que o texto manda editar: a base não os tem.
         "remete_a_ato": atos_infralegais(artigo["linhas_proprias"], base, artigo["numero"]),

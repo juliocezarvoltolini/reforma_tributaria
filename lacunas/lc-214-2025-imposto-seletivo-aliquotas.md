@@ -3,7 +3,7 @@ camada: 2
 tipo: lacuna
 titulo: LC 214, arts. 419, 421, 422, 434 e 436 — alíquotas do Imposto Seletivo em lei ordinária
 autor: ia:claude-opus-5-5
-data: '2026-10-16'
+data: '2026-11-09'
 situacao: nao_localizado
 remissoes:
 - urn: urn:lex:br:federal:lei.complementar:2025-01-16;214!art419
@@ -27,6 +27,7 @@ pesquisado_em:
 - lc-214-2025
 - lc-227-2026
 - lc-235-2026
+- dec-12955-2026
 termos_buscados:
 - Imposto Seletivo
 - alíquotas do Imposto Seletivo
@@ -58,4 +59,4 @@ Não localizada nas fontes indexadas a lei ordinária que fixe essas alíquotas.
   (`urn:lex:br:federal:lei.complementar:2025-01-16;214!art422_par2`).
 - O que está sujeito ao imposto é o Anexo XVII (`urn:lex:br:federal:lei.complementar:2025-01-16;214!anx17`), que está na base.
 
-Busca por IA (claude-opus-5-5) em 2026-10-16, sem revisão humana. A base cobre só o que `indices/cobertura.json` lista; legislação estadual, distrital e municipal está fora do escopo (`docs/ESTADO.md`, §11).
+Busca por IA (claude-opus-5-5) em 2026-10-16, refeita em 2026-11-09 com o Decreto nº 12.955/2026 na base, sem resultado; sem revisão humana. A base cobre só o que `indices/cobertura.json` lista; legislação estadual, distrital e municipal está fora do escopo (`docs/ESTADO.md`, §11).
